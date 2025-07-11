@@ -53,8 +53,6 @@
 
 如果這個工具對您的工作或研究有所幫助，歡迎考慮請我喝杯咖啡，支持我持續開發與維護！
 
-\<a href="https://www.buymeacoffee.com/hugocc0825" target="\_blank"\>\<img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 45px \!important;width: 160px \!important;" \>\</a\>
-
 ## **版權**
 
 Copyright (c) 2025 Dr. Cheng-Che Chen (陳正哲). All Rights Reserved.  
