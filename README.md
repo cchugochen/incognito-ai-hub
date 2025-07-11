@@ -4,7 +4,7 @@
 
 ## **開發動機**
 
-身為非專業工程師，在公用電腦上閱讀學術論文（特別是鎖右鍵或圖片格式的 PDF），或臨時需要語音輸入處理不同語言時，時常感到現有工具的不足，例如Google翻譯。本專案的初衷，避開便是打造一個簡單且盡可能尊重使用者隱私的 AI 輔助工具。
+身為臨床人員，在公用電腦上閱讀學術論文（特別是鎖右鍵或圖片格式的 PDF），或臨時需要語音輸入或處理不同語言時，時常感到現有工具(例如Google翻譯)的不足。本專案的初衷，避開便是打造一個簡單且盡可能尊重使用者隱私的 Gemini AI 輔助工具。
 
 專案以「颱風天」命名，獻給所有在崗位上努力不懈的專業人士。
 
@@ -18,12 +18,16 @@
 * **沉浸式閱讀體驗**：在專屬的閱讀模式中，逐段對照原文與翻譯，並可自訂字體、行高與背景。  
 * **使用者資料安全**：  
   * 以Google Gemini API為核心工具。 需由使用者自行提供 Google Gemini API 金鑰，確保所有 AI 請求都在使用者與 Google 之間進行。  
-  * 所有操作皆在使用者本機瀏覽器端完成，無後台伺服器。
+  * 所有操作皆在使用者本機瀏覽器端完成，無後台伺服器
+  * No user-data collection — all inputs stay on your device.
+  * Google 可能保留提示/回應 ≤ 55 days 僅用於安全稽核，不用於模型訓練。
+ 
 
 ## **安裝與使用**
 
 ### **安裝方式**
-
+   **推薦：Google Web Store**：https://chromewebstore.google.com/detail/idgjihjkhbkeapkikoajehmldbiphaaf?utm_source=item-share-cb
+   
 1. **下載專案**：點擊此頁面右上方的 Code \-\> Download ZIP，並解壓縮。  
 2. **開啟 Chrome 擴充功能頁面**：在 Chrome 網址列輸入 chrome://extensions。  
 3. **啟用開發人員模式**：在頁面右上角，開啟「開發人員模式」。  
