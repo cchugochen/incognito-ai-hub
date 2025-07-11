@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>風颱翻譯工作台 - 隱私權政策</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6; 
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2 { 
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .last-updated {
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>風颱翻譯工作台 (HongThai Reader) 隱私權政策</h1>
+    <p class="last-updated">最後更新日期：2025年7月11日</p>
+
+    <p>感謝您使用「風颱翻譯工作台」（以下簡稱「本擴充功能」）。我們非常重視您的隱私權。本隱私權政策旨在說明本擴充功能如何處理您的資料。</p>
+
+    <h2>核心原則：您的資料，由您掌控</h2>
+    <p>本擴充功能的設計核心是**完全在您的瀏覽器本機端運作**。No user-data collection — all inputs stay on your device. 我們**沒有**任何後端伺服器，也**不會**收集、儲存、或傳輸任何您的個人可識別資訊或您處理的內容。</p>
+
+    <h2>資料處理說明</h2>
+    
+    <h3>1. Google Gemini API 金鑰</h3>
+    <ul>
+        <li>本擴充功能需要您提供自己的 Google Gemini API 金鑰才能運作。</li>
+        <li>您的金鑰僅會透過 Chrome 的標準儲存空間 (<code>chrome.storage.sync</code>) **加密儲存於您自己的瀏覽器中**。此金鑰只會被用來向 Google Gemini 的官方 API 端點發送請求。</li>
+        <li>我們（開發者）絕不會存取、看見或儲存您的 API 金鑰。</li>
+    </ul>
+
+    <h3>2. 您處理的內容（文字、圖片、語音）</h3>
+    <ul>
+        <li>無論您是透過「翻譯當前網頁」、「貼上文字」、「上傳圖片」或「語音筆記」功能處理資料，所有內容都只會**在您的瀏覽器與 Google 的伺服器之間直接傳輸**。</li>
+        <li>Only outbound host: https://generativelanguage.googleapis.com/ (TLS1.3).</li>
+        <li>這些內容**不會**經過或儲存在任何由我們（開發者）控制的伺服器上。</li>
+        <li>當您關閉閱讀器分頁後，透過 <code>chrome.storage.local</code> 暫存的文字內容會被清除。</li>
+        <li>Google 保留提示/回應 ≤ 55 days 僅用於安全稽核，不用於模型訓練。</li>
+    </ul>
+
+    <h3>3. （選用）雲端日誌功能</h3>
+    <ul>
+        <li>本擴充功能提供一個**選用**的日誌功能，讓您可以將操作紀錄傳送到**您自己指定**的雲端端點（例如您自己的 Google Cloud Function）以供研究分析。</li>
+        <li>此功能預設為關閉。只有在您明確於設定頁面中填入您自己的端點網址與金鑰時，才會啟用。</li>
+        <li>所有日誌資料的流向完全由您自己控制。</li>
+    </ul>
+
+    <h2>權限使用說明</h2>
+    <ul>
+        <li><strong>activeTab</strong>: 僅在您主動點擊擴充功能圖示時，臨時存取您當前的分頁，以便進行網頁擷取。</li>
+        <li><strong>storage</strong>: 用於在本機安全地儲存您的 API 金鑰與設定。</li>
+        <li><strong>debugger</strong>: 僅在您使用「翻譯當前網頁」功能時，臨時啟用以擷取完整的網頁畫面，擷取後立即關閉。</li>
+    </ul>
+
+    <h2>政策變更</h2>
+    <p>我們可能會更新本隱私權政策。任何變更都將發布在此頁面上。我們鼓勵您定期查看本政策以了解最新資訊。</p>
+
+    <h2>聯絡我們</h2>
+    <p>如果您對本隱私權政策有任何疑問，歡迎透過 GitHub Issues 或電子郵件與我們聯繫。</p>
+    <p>開發者：Cheng-Che Hugo Chen</p>
+
+</body>
+</html>
