@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>閱讀模式</title>
+    <link rel="stylesheet" href="reader.css">
+</head>
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <div class="tool-group">
+                <label for="font-size">字體大小:</label>
+                <input type="range" id="font-size" min="12" max="32" value="20">
+                <span id="font-size-value">20px</span>
+            </div>
+            <div class="tool-group">
+                <label for="line-height">行距:</label>
+                <input type="range" id="line-height" min="1.2" max="2.5" step="0.1" value="1.6">
+                <span id="line-height-value">1.6</span>
+            </div>
+            <div class="tool-group">
+                <label>背景顏色:</label>
+                <button class="color-btn" data-color="#FFFFFF" style="background-color: #FFFFFF;"></button>
+                <button class="color-btn" data-color="#FDF6E3" style="background-color: #FDF6E3;"></button>
+                <button class="color-btn" data-color="#1E1E1E" style="background-color: #1E1E1E;"></button>
+            </div>
+            <div class="tool-group">
+                 <button id="save-text">儲存為 TXT</button>
+            </div>
+        </div>
+        <div id="content-area">
+            <div id="loading-indicator">
+                <p>正在載入內容...</p>
+            </div>
+        </div>
+
+        <!-- [v19.2 新增] 語音筆記翻譯工具 -->
+        <div id="voice-translate-tool" class="hidden">
+            <h3>翻譯辨識結果</h3>
+            <div class="tool-group">
+                <label for="voice-target-lang">翻譯為：</label>
+                <select id="voice-target-lang">
+                    <option value="English">英文</option>
+                    <option value="Traditional Chinese">繁體中文</option>
+                    <option value="Japanese">日文</option>
+                    <option value="Korean">韓文</option>
+                    <option value="Vietnamese">越南文</option>
+                    <option value="Hindi">印度文</option>
+                    <option value="Russian">俄羅斯文</option>
+                    <option value="French">法文</option>
+                    <option value="German">德文</option>
+                    <option value="Dutch">荷蘭文</option>
+                </select>
+                <button id="translate-voice-btn">開始翻譯</button>
+            </div>
+            <div id="voice-translation-output" class="translation"></div>
+        </div>
+
+        <footer class="page-footer">
+            <div class="footer-text">
+                風颱翻譯工作台 (HongThai Reader) 2025<br>
+                作者hugocc是新竹台大員工，颱風天完成初版，以此命名。<br>
+                如果覺得好用或意見回饋，歡迎使用右側連結，請我喝杯咖啡。<br>
+                If you find value in my projects, you're welcome to buy me a coffee.
+            </div>
+            <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 160px !important;" ></a>
+        </footer>
+    </div>
+    <script src="reader.js"></script>
+</body>
+</html>

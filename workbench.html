@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>智慧翻譯工作台</title>
+    <link rel="stylesheet" href="workbench.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-link active" data-tab="paste-text">貼上文字</button>
+            <button class="tab-link" data-tab="upload-image">上傳截圖</button>
+        </div>
+
+        <!-- 文字貼上分頁 -->
+        <div id="paste-text" class="tab-content active">
+            <h2>模式二：文字貼上工作台</h2>
+            <p class="description">適用於可選取文字的網頁、Word 或 PDF。直接複製文字並貼於下方，以獲得最快、最精準的處理結果。</p>
+            
+            <!-- [v19.2 新增] 語言選擇 -->
+            <div class="lang-selector-grid">
+                <div>
+                    <label for="text-source-lang">來源語言</label>
+                    <select id="text-source-lang">
+                        <option value="auto">自動偵測</option>
+                        <option value="English">英文 (English)</option>
+                        <option value="Traditional Chinese">繁體中文 (Traditional Chinese)</option>
+                        <option value="Japanese">日文 (Japanese)</option>
+                        <option value="Korean">韓文 (Korean)</option>
+                    </select>
+                </div>
+                <div class="arrow">→</div>
+                <div>
+                    <label for="text-target-lang">目標語言</label>
+                    <select id="text-target-lang">
+                        <option value="Traditional Chinese">繁體中文</option>
+                        <option value="English">英文</option>
+                        <option value="Japanese">日文</option>
+                        <option value="Korean">韓文</option>
+                        <option value="Vietnamese">越南文</option>
+                        <option value="Hindi">印度文</option>
+                        <option value="Russian">俄羅斯文</option>
+                        <option value="French">法文</option>
+                        <option value="German">德文</option>
+                        <option value="Dutch">荷蘭文</option>
+                    </select>
+                </div>
+            </div>
+
+            <textarea id="text-input" placeholder="在此處貼上您複製的文字..."></textarea>
+            <button id="process-text-btn" class="submit-btn">處理文字</button>
+        </div>
+
+        <!-- 圖片上傳分頁 -->
+        <div id="upload-image" class="tab-content">
+            <h2>模式三：桌面截圖上傳</h2>
+             <div class="instructions">
+                <div class="os-instruction"><p><strong>macOS:</strong> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd></p></div>
+                <div class="os-instruction"><p><strong>Windows:</strong> <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd></p></div>
+            </div>
+
+            <!-- [v19.2 新增] 語言選擇 -->
+            <div class="lang-selector-grid">
+                 <div>
+                    <label for="img-source-lang">來源語言 (圖片內文字)</label>
+                    <select id="img-source-lang">
+                        <option value="auto">自動偵測</option>
+                        <option value="English">英文 (English)</option>
+                        <option value="Traditional Chinese">繁體中文 (Traditional Chinese)</option>
+                        <option value="Japanese">日文 (Japanese)</option>
+                        <option value="Korean">韓文 (Korean)</option>
+                    </select>
+                </div>
+                <div class="arrow">→</div>
+                <div>
+                    <label for="img-target-lang">目標語言</label>
+                    <select id="img-target-lang">
+                        <option value="Traditional Chinese">繁體中文</option>
+                        <option value="English">英文</option>
+                        <option value="Japanese">日文</option>
+                        <option value="Korean">韓文</option>
+                        <option value="Vietnamese">越南文</option>
+                        <option value="Hindi">印度文</option>
+                        <option value="Russian">俄羅斯文</option>
+                        <option value="French">法文</option>
+                        <option value="German">德文</option>
+                        <option value="Dutch">荷蘭文</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="upload-box">
+                <input type="file" id="file-input" accept="image/jpeg, image/png, image/bmp" hidden>
+                <div id="upload-placeholder"><p>點擊或拖曳檔案至此</p><span>(支援 JPG, PNG, BMP)</span></div>
+                <img id="preview-image" src="#" alt="圖片預覽" class="hidden">
+            </div>
+            <button id="process-image-btn" class="submit-btn hidden">開始辨識</button>
+        </div>
+        <div id="status-text"></div>
+        
+        <footer class="page-footer">
+            <div class="footer-text">
+                風颱翻譯工作台 (HongThai Reader) 2025<br>
+                作者hugocc是新竹台大員工，颱風天完成初版，以此命名。<br>
+                如果覺得好用或意見回饋，歡迎使用右側連結，請我喝杯無糖紅茶或咖啡。<br>
+                If you find value in my projects, you're welcome to buy me a coffee.
+            </div>
+            <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 160px !important;" ></a>
+        </footer>
+    </div>
+    <script src="workbench.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* reader.css (v19.2) */
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.toolbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    z-index: 100;
+    border-radius: 0 0 12px 12px;
+}
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+label {
+    font-size: 14px;
+}
+input[type="range"] {
+    cursor: pointer;
+}
+.color-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+}
+#save-text, #translate-voice-btn { /* [v19.2] 合併按鈕樣式 */
+    padding: 6px 12px;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+#save-text:hover, #translate-voice-btn:hover {
+    background-color: #138496;
+}
+#content-area {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+#content-area p {
+    margin-bottom: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    padding: 8px;
+    border-radius: 6px;
+}
+#content-area p:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+.translation {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-left: 3px solid #007bff;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #444;
+    white-space: pre-wrap;
+}
+.translating::after {
+    content: ' (翻譯中...)';
+    color: #888;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-left: 8px;
+}
+#loading-indicator {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+    color: #888;
+}
+/* [v19.2 新增] 語音翻譯工具樣式 */
+#voice-translate-tool {
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+#voice-translate-tool.hidden {
+    display: none;
+}
+#voice-translate-tool h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+#voice-translate-tool select {
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+#voice-translation-output {
+    margin-top: 15px;
+    min-height: 50px;
+    background-color: #e9ecef;
+}
+/* 暗色模式 */
+body.dark-mode { background-color: #1E1E1E; color: #E0E0E0; }
+body.dark-mode .toolbar { background: rgba(40, 40, 40, 0.9); border-bottom: 1px solid #555; }
+body.dark-mode #content-area p:hover { background-color: rgba(255, 255, 255, 0.1); }
+body.dark-mode .translation { background-color: #333; border-left-color: #4da3ff; color: #ccc; }
+body.dark-mode #voice-translate-tool { background-color: #2c2c2c; border-color: #555; }
+body.dark-mode #voice-translation-output { background-color: #3a3a3a; }
+
+.page-footer {
+    border-top: 1px solid #e5e5e5;
+    margin-top: 40px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #888;
+    font-size: 12px;
+}
+body.dark-mode .page-footer { border-top-color: #444; }

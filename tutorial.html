@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何申請免費的 Google Gemini API 金鑰 (2025年版)</title>
+    <link rel="stylesheet" href="styles/local_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900">如何申請免費的 Google Gemini API 金鑰</h1>
+            <p class="text-lg text-gray-600 mt-2">專為「風颱翻譯工作台」使用者設計的簡易教學 (2025年版)</p>
+        </header>
+
+        <main class="space-y-10">
+            <!-- 介紹 -->
+            <div class="bg-indigo-50 border-l-4 border-indigo-500 text-indigo-800 p-4 rounded-r-lg" role="alert">
+                <p class="font-bold">前言</p>
+                <p>「風颱翻譯工作台」透過串接 Google 的 Gemini AI 模型來提供強大的翻譯與辨識功能。為了確保您的資料安全與隱私，本工具需要您使用自己的 API 金鑰。以下將引導您完成免費申請流程。</p>
+            </div>
+
+            <!-- 步驟一 -->
+            <div class="step-card">
+                <div class="flex items-start space-x-6">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-2">前往 Google AI Studio</h2>
+                        <p class="text-gray-700 mb-4">首先，請點擊下方按鈕，開啟 Google AI Studio 官方網站。這是 Google 提供給開發者測試與獲取 Gemini API 的平台。</p>
+                        <a href="https://aistudio.google.com/" target="_blank" class="inline-block bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition">
+                            前往 Google AI Studio
+                        </a>
+                        <img src="images/tutorial-step1-aistudio.png" alt="Google AI Studio 網站首頁截圖" class="screenshot">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 步驟二 -->
+            <div class="step-card">
+                <div class="flex items-start space-x-6">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-2">取得 API 金鑰</h2>
+                        <p class="text-gray-700 mb-4">登入您的 Google 帳號後，點擊頁面左側選單的「<code class="bg-gray-200 px-1 rounded">Get API key</code>」按鈕。接著，在主畫面點擊藍色的「<code class="bg-gray-200 px-1 rounded">+ Create API key</code>」按鈕。</p>
+                        <img src="images/tutorial-step2-getkey.png" alt="點擊 Get API key 按鈕的示意圖" class="screenshot">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 步驟三 -->
+            <div class="step-card">
+                <div class="flex items-start space-x-6">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-2">建立並複製您的金鑰</h2>
+                        <p class="text-gray-700 mb-4">在跳出的視窗中，系統會引導您為這個金鑰建立一個新的 Google Cloud 專案 (您通常只需點擊同意即可)。完成後，點擊「<code class="bg-gray-200 px-1 rounded">Create API key</code>」。</p>
+                        <p class="text-gray-700 mb-4">畫面會顯示一組由許多英文字母和數字組成的字串，這就是您的 API 金鑰。請點擊旁邊的複製圖示，將它完整複製下來。</p>
+                        <img src="images/tutorial-step3-showkey.png" alt="顯示並複製金鑰的示意圖" class="screenshot">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 步驟四 -->
+            <div class="step-card">
+                <div class="flex items-start space-x-6">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-2">貼到擴充功能設定中</h2>
+                        <p class="text-gray-700 mb-4">回到 Chrome 瀏覽器，在「風颱翻譯工作台」的「⚙️ 設定」頁面，將剛剛複製的金鑰貼到「Gemini API 金鑰」欄位中，並點擊「儲存設定」。</p>
+                        <p class="text-green-600 font-semibold">恭喜您！至此已完成所有設定，可以開始使用擴充功能的所有 AI 服務了。</p>
+                        <img src="images/tutorial-step4-options.png" alt="將金鑰貼到擴充功能設定頁的示意圖" class="screenshot">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 安全性提醒 -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded-r-lg" role="alert">
+                <p class="font-bold">重要安全性提醒</p>
+                <p>您的 API 金鑰就如同您家裡的鑰匙，**請絕對不要**將它分享給任何人，或張貼在任何公開的網站（如 GitHub、論壇）上，以免被盜用並產生非預期的費用。</p>
+            </div>
+        </main>
+
+        <footer class="text-center text-gray-500 mt-12 text-sm">
+            <p>&copy; 2025 風颱翻譯工作台 | 教學由 Gemini 輔助編寫</p>
+        </footer>
+    </div>
+</body>
+</html>
