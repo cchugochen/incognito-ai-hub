@@ -55,5 +55,5 @@
 
 ## **版權**
 
-Copyright (c) 2025 Dr. Cheng-Che Chen (陳正哲). All Rights Reserved.  
+Copyright (c) 2025 Dr. Cheng-Che Chen. All Rights Reserved.  
 This project is licensed under the MIT License. See the LICENSE file for details.
