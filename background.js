@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2025 Dr. Cheng-Che Chen (陳正哲). All Rights Reserved.
  *
- * 風颱翻譯工作台 (HongThai Reader) v22.6 (Stable)
+ * 無痕風颱工作台 (Hong-Thai Incognito Reader) v23.3 (Stable)
  * Developed in collaboration with Gemini.
  * - Corrected the Content Security Policy in manifest.json to allow tutorial styles.
  * - OCR prompt remains tuned for complex academic layouts.

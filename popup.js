@@ -14,7 +14,12 @@ document.getElementById('open-voice-notes').addEventListener('click', () => {
   window.close();
 });
 
-// 新增的事件監聽器
+// v23.0: Add listener for the incognito chat page
+document.getElementById('open-incognito').addEventListener('click', () => {
+  chrome.tabs.create({ url: 'incognito.html' });
+  window.close();
+});
+
 document.getElementById('open-tutorial').addEventListener('click', () => {
   chrome.tabs.create({ url: 'tutorial.html' });
   window.close();

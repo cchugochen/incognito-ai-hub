@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <title>閱讀器的AI設定</title>
+    <title>無痕風颱工作台 - 設定</title>
     <link rel="stylesheet" href="styles/local_styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -14,11 +14,22 @@
             border-color: #4f46e5;
             box-shadow: 0 0 0 2px #c7d2fe;
         }
+        .highlight-list li { padding-left: 1.5em; position: relative; }
+        .highlight-list li::before { content: '✓'; color: #34d399; position: absolute; left: 0; font-weight: bold; }
     </style>
 </head>
 <body class="bg-gray-100 p-8">
     <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        <h1 class="text-2xl font-bold text-gray-800 mb-6">閱讀器的AI設定</h1>
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">無痕風颱工作台 - 設定</h1>
+
+        <section id="highlights" class="mb-6 p-4 bg-indigo-50 rounded-lg">
+            <h2 class="text-lg font-bold text-indigo-800 mb-2">產品亮點</h2>
+            <ul class="space-y-2 text-gray-700 text-sm highlight-list">
+                <li>無痕、無使用者記憶、無後台追蹤紀錄、無廣告</li>
+                <li>使用者自行申請金鑰直連 Google Gemini API</li>
+                <li>新增「2.5 Pro 無痕對話模式」</li>
+            </ul>
+        </section>
 
         <div class="mb-6">
             <label for="api-key" class="block text-sm font-medium text-gray-700 mb-1">Gemini API 金鑰:</label>
@@ -26,7 +37,7 @@
         </div>
 
         <div class="mb-6">
-            <label class="block text-sm font-medium text-gray-700 mb-2">翻譯與辨識模型:</label>
+            <label class="block text-sm font-medium text-gray-700 mb-2">翻譯與辨識模型 (文字/截圖/語音功能使用):</label>
             <div class="space-y-4">
                 
                 <!-- Gemini 2.0 Flash -->
@@ -35,11 +46,11 @@
                     <label for="gemini-2.0-flash" class="model-card block p-4 border border-gray-300 rounded-lg cursor-pointer">
                         <div class="flex justify-between items-center">
                             <span class="text-lg font-bold text-indigo-700">Gemini 2.0 Flash</span>
-                            <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">預設推薦</span>
+                            <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">預設</span>
                         </div>
                         <p class="text-xs text-gray-500 mb-3">gemini-2.0-flash-001</p>
                         <div class="text-sm space-y-4 text-gray-600">
-                            <p><strong class="font-medium text-gray-800">最適合：</strong> 多模態理解、即時串流</p>
+                            <p><strong class="font-medium text-gray-800">最適合：</strong> 多模態理解、即時串流、成本低</p>
                             <p><strong class="font-medium text-gray-800">知識截止：</strong> 2024年8月</p>
                             <p><strong class="font-medium text-gray-800">免費速率：</strong> 15 RPM / 1500 req/day</p>
                         </div>
@@ -55,7 +66,7 @@
                         </div>
                         <p class="text-xs text-gray-500 mb-3">gemini-2.5-flash-lite-preview-06-17</p>
                         <div class="text-sm space-y-4 text-gray-600">
-                            <p><strong class="font-medium text-gray-800">最適合：</strong> 大規模處理、低延遲、成本較低</p>
+                            <p><strong class="font-medium text-gray-800">最適合：</strong> 單次處理更多tokens、低延遲、成本較低</p>
                             <p><strong class="font-medium text-gray-800">知識截止：</strong> 2025年1月</p>
                             <p><strong class="font-medium text-gray-800">免費速率：</strong> 15 RPM / 500 req/day</p>
                         </div>

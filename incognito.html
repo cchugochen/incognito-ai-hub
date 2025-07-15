@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>無痕-Gemini 2.5Pro對話框</title>
+    <link rel="stylesheet" href="incognito.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h2>無痕-Gemini 2.5Pro對話框</h2>
+            <div class="description">
+                <p>這是直接呼叫 Gemini 2.5 Pro API 的無痕模式，無使用者記憶。預設可進行5-6輪對話，可上傳圖片搭配分析。對話僅保留在當前頁面，關閉即消失。</p>
+                <p><b>注意:</b> 2.5 Pro 是Google目前最強大的模型，但單位費用是 2.0-flash 的12倍，且處理時間較長！詳情請見 <a href="https://ai.google.dev/pricing" target="_blank">Google AI 官方定價</a>。</p>
+            </div>
+        </header>
+
+        <main id="chat-window" class="chat-window"></main>
+
+        <div class="input-area">
+            <div id="image-preview-container"></div>
+            <textarea id="prompt" placeholder="在此輸入提示..."></textarea>
+            <div class="controls">
+                <button id="upload-btn" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳圖片</button>
+                <input type="file" id="file-input" accept="image/*" multiple hidden>
+                <button id="send-btn" class="submit-btn">Send▶️</button>
+            </div>
+        </div>
+
+        <footer class="page-footer">
+            <div class="footer-text">
+                作者 Hugo Chen 是台灣公家機關員工，於颱風天完成初版，以此命名。<br>
+                好用請在 Chrome 應用商店給好評，或到本人 Buy Me a Coffee 網頁請我喝一杯飲料。
+            </div>
+            <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 160px !important;" ></a>
+        </footer>
+    </div>
+    <script src="incognito.js"></script>
+</body>
+</html>
