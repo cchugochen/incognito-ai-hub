@@ -3,28 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>無痕-Gemini 2.5Pro對話框</title>
+    <title>無痕 Gemini 對話框</title>
     <link rel="stylesheet" href="incognito.css">
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <h2>無痕-Gemini 2.5Pro對話框</h2>
-            <div class="description">
-                <p>這是直接呼叫 Gemini 2.5 Pro API 的無痕模式，無使用者記憶。預設可進行5-6輪對話，可上傳圖片搭配分析。對話僅保留在當前頁面，關閉即消失。</p>
-                <p><b>注意:</b> 2.5 Pro 是Google目前最強大的模型，但單位費用是 2.0-flash 的12倍，且處理時間較長！詳情請見 <a href="https://ai.google.dev/pricing" target="_blank">Google AI 官方定價</a>。</p>
+        <!-- 頁籤選擇器 -->
+        <div class="tabs">
+            <button class="tab-link active" data-tab="default">系統預設</button>
+            <button class="tab-link" data-tab="flash">2.5 Flash</button>
+            <button class="tab-link" data-tab="pro">2.5 Pro</button>
+        </div>
+
+        <!-- 系統預設模型對話區 -->
+        <div id="default" class="tab-content active">
+            <header class="header">
+                <h2>系統預設模型</h2>
+                <p class="description">輕量Gemini模型：使用您在「選項」頁面中設定的模型 (預設為 2.0 Flash或 2.5-Flash-Lite)，適合一般翻譯與快速問答。</p>
+            </header>
+            <main id="chat-window-default" class="chat-window"></main>
+            <div class="input-area">
+                <div id="image-preview-container-default" class="image-preview-container"></div>
+                <textarea id="prompt-default" class="prompt-input" placeholder="在此輸入提示..."></textarea>
+                <div class="controls">
+                    <button id="upload-btn-default" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳圖片</button>
+                    <input type="file" id="file-input-default" class="file-input" accept="image/*" multiple hidden>
+                    <button id="send-btn-default" class="submit-btn">Send ▶️</button>
+                </div>
             </div>
-        </header>
+        </div>
 
-        <main id="chat-window" class="chat-window"></main>
+        <!-- 2.5 Flash 模型對話區 -->
+        <div id="flash" class="tab-content">
+            <header class="header">
+                <h2>Gemini 2.5 Flash</h2>
+                <p class="description">中型Gemini模型，適合需要較長上下文理解或快速摘要的任務。</p>
+            </header>
+            <main id="chat-window-flash" class="chat-window"></main>
+            <div class="input-area">
+                <div id="image-preview-container-flash" class="image-preview-container"></div>
+                <textarea id="prompt-flash" class="prompt-input" placeholder="在此輸入提示..."></textarea>
+                <div class="controls">
+                    <button id="upload-btn-flash" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳圖片</button>
+                    <input type="file" id="file-input-flash" class="file-input" accept="image/*" multiple hidden>
+                    <button id="send-btn-flash" class="submit-btn">Send ▶️</button>
+                </div>
+            </div>
+        </div>
 
-        <div class="input-area">
-            <div id="image-preview-container"></div>
-            <textarea id="prompt" placeholder="在此輸入提示..."></textarea>
-            <div class="controls">
-                <button id="upload-btn" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳圖片</button>
-                <input type="file" id="file-input" accept="image/*" multiple hidden>
-                <button id="send-btn" class="submit-btn">Send▶️</button>
+        <!-- 2.5 Pro 模型對話區 -->
+        <div id="pro" class="tab-content">
+            <header class="header">
+                <h2>Gemini 2.5 Pro</h2>
+                <p class="description">Google 目前最強大的模型，用於高度複雜的邏輯推理與創意生成。<b>注意：</b>單位費用高，詳情請見<a href="https://ai.google.dev/pricing" target="_blank">官方定價</a>。</p>
+            </header>
+            <main id="chat-window-pro" class="chat-window"></main>
+            <div class="input-area">
+                <div id="image-preview-container-pro" class="image-preview-container"></div>
+                <textarea id="prompt-pro" class="prompt-input" placeholder="在此輸入提示..."></textarea>
+                <div class="controls">
+                    <button id="upload-btn-pro" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳圖片</button>
+                    <input type="file" id="file-input-pro" class="file-input" accept="image/*" multiple hidden>
+                    <button id="send-btn-pro" class="submit-btn">Send ▶️</button>
+                </div>
             </div>
         </div>
 
