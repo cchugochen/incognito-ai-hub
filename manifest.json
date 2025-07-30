@@ -1,16 +1,20 @@
 {
   "manifest_version": 3,
   "name": "無痕風颱工作台 (Hong-Thai Incognito Reader)",
-  "version": "23.3",
-  "description": "(1) 整合網頁讀取、文字、截圖、語音輸入四大模式的AI 輔助翻譯與小工具。\n(2) 為在醫院與機構合法使用，請使用者自行申請Google Gemini的API。\n(3) 本外掛工具無後台伺服器儲存，需要者請自己建立端點。",
+  "version": "24.1",
+  "description": "(1) Gemini AI無痕對話框，以及整合網頁讀取、文字、截圖、語音輸入四大模式的AI 輔助翻譯與小工具。\n(2) 請使用者自行向Google申請Gemini API使用。\n(3) 本外掛工具無後台伺服器儲存，需要者請自己建立端點。",
   "permissions": [
     "activeTab",
     "storage",
-    "debugger"
+    "debugger",
+    "clipboardRead"
   ],
   "host_permissions": [
     "https://generativelanguage.googleapis.com/"
   ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://generativelanguage.googleapis.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://cdn.buymeacoffee.com data:;"
+  },
   "action": {
     "default_title": "無痕風颱工作台",
     "default_popup": "popup.html"
@@ -24,9 +28,11 @@
       "resources": [
         "reader.html", "reader.js", "reader.css",
         "workbench.html", "workbench.js", "workbench.css",
-        "voice_notes.html", "voice_notes.js",
+        "voice_notes.html", "voice_notes.js", "voice_notes.css",
         "tutorial.html",
         "incognito.html", "incognito.js", "incognito.css",
+        "privacy.html", "privacy.css",
+        "popup.css",
         "LICENSE",
         "icons/*.png",
         "images/*.jpg",

@@ -5,81 +5,90 @@
     <title>無痕風颱工作台 - 設定</title>
     <link rel="stylesheet" href="styles/local_styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Custom styles can remain here */
-        .model-card {
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        input:checked + .model-card {
-            border-color: #4f46e5;
-            box-shadow: 0 0 0 2px #c7d2fe;
-        }
-        .highlight-list li { padding-left: 1.5em; position: relative; }
-        .highlight-list li::before { content: '✓'; color: #34d399; position: absolute; left: 0; font-weight: bold; }
-    </style>
 </head>
 <body class="bg-gray-100 p-8">
     <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        <h1 class="text-2xl font-bold text-gray-800 mb-4">無痕風颱工作台 - 設定</h1>
+        <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">無痕風颱工作台 - 設定</h1>
 
-        <section id="highlights" class="mb-6 p-4 bg-indigo-50 rounded-lg">
-            <h2 class="text-lg font-bold text-indigo-800 mb-2">產品亮點</h2>
-            <ul class="space-y-2 text-gray-700 text-sm highlight-list">
-                <li>無痕、無使用者記憶、無後台追蹤紀錄、無廣告</li>
-                <li>使用者自行申請金鑰直連 Google Gemini API</li>
-                <li>新增「2.5 Pro 無痕對話模式」</li>
-            </ul>
+        <!-- (1) Gemini金鑰輸入區 -->
+        <section class="mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-2">1. Gemini金鑰輸入區</h2>
+            <label for="api-key" class="block text-sm font-medium text-gray-700 mb-1">您的 Google Gemini API 金鑰:</label>
+            <input type="password" id="api-key" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
         </section>
 
-        <div class="mb-6">
-            <label for="api-key" class="block text-sm font-medium text-gray-700 mb-1">Gemini API 金鑰:</label>
-            <input type="password" id="api-key" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-        </div>
+        <hr class="my-6">
 
-        <div class="mb-6">
-            <label class="block text-sm font-medium text-gray-700 mb-2">翻譯與辨識模型 (文字/截圖/語音功能使用):</label>
+        <!-- (2) 翻譯與辨識模型 -->
+        <section class="mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-2">2. 翻譯與辨識模型</h2>
+            <p class="text-sm text-gray-600 mb-4">選擇「翻譯網頁」、「文字/截圖工作台」及「語音筆記」功能所使用的預設模型。</p>
             <div class="space-y-4">
-                
                 <!-- Gemini 2.0 Flash -->
                 <div>
                     <input type="radio" name="model-select" id="gemini-2.0-flash" value="gemini-2.0-flash" class="sr-only" checked>
                     <label for="gemini-2.0-flash" class="model-card block p-4 border border-gray-300 rounded-lg cursor-pointer">
                         <div class="flex justify-between items-center">
                             <span class="text-lg font-bold text-indigo-700">Gemini 2.0 Flash</span>
-                            <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">預設</span>
+                            <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">預設推薦</span>
                         </div>
                         <p class="text-xs text-gray-500 mb-3">gemini-2.0-flash-001</p>
                         <div class="text-sm space-y-4 text-gray-600">
                             <p><strong class="font-medium text-gray-800">最適合：</strong> 多模態理解、即時串流、成本低</p>
-                            <p><strong class="font-medium text-gray-800">知識截止：</strong> 2024年8月</p>
-                            <p><strong class="font-medium text-gray-800">免費速率：</strong> 15 RPM / 1500 req/day</p>
                         </div>
                     </label>
                 </div>
-
                 <!-- Gemini 2.5 Flash Lite -->
                 <div>
                     <input type="radio" name="model-select" id="gemini-2.5-flash-lite" value="models/gemini-2.5-flash-lite-preview-06-17" class="sr-only">
                     <label for="gemini-2.5-flash-lite" class="model-card block p-4 border border-gray-300 rounded-lg cursor-pointer">
                         <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-green-700">Gemini 2.5 Flash Lite (Preview 06-17)</span>
+                            <span class="text-lg font-bold text-green-700">Gemini 2.5 Flash Lite (Preview)</span>
                         </div>
                         <p class="text-xs text-gray-500 mb-3">gemini-2.5-flash-lite-preview-06-17</p>
                         <div class="text-sm space-y-4 text-gray-600">
                             <p><strong class="font-medium text-gray-800">最適合：</strong> 單次處理更多tokens、低延遲、成本較低</p>
-                            <p><strong class="font-medium text-gray-800">知識截止：</strong> 2025年1月</p>
-                            <p><strong class="font-medium text-gray-800">免費速率：</strong> 15 RPM / 500 req/day</p>
                         </div>
                     </label>
                 </div>
-
             </div>
-        </div>
+        </section>
+
+        <hr class="my-6">
+
+        <!-- (3) 無痕對話 - 內建提示語記憶 -->
+        <section id="preset-prompts-section" class="mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-2">3. 無痕對話 - 內建提示語記憶</h2>
+            <p class="text-sm text-gray-600 mb-4">在此輸入您常用的指令或模板，方便在「無痕Gemini對話」中快速取用。</p>
+            <div class="space-y-4">
+                <div>
+                    <label for="preset-prompt-a" class="block text-sm font-medium text-gray-700 mb-1">預設提示語 A:</label>
+                    <textarea id="preset-prompt-a" rows="2" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                </div>
+                <div>
+                    <label for="preset-prompt-b" class="block text-sm font-medium text-gray-700 mb-1">預設提示語 B:</label>
+                    <textarea id="preset-prompt-b" rows="2" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                </div>
+                <div>
+                    <label for="preset-prompt-c" class="block text-sm font-medium text-gray-700 mb-1">預設提示語 C:</label>
+                    <textarea id="preset-prompt-c" rows="2" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                </div>
+                <div>
+                    <label for="preset-prompt-d" class="block text-sm font-medium text-gray-700 mb-1">預設提示語 D:</label>
+                    <textarea id="preset-prompt-d" rows="2" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                </div>
+                <div>
+                    <label for="preset-prompt-e" class="block text-sm font-medium text-gray-700 mb-1">預設提示語 E:</label>
+                    <textarea id="preset-prompt-e" rows="2" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                </div>
+            </div>
+        </section>
 
         <hr class="my-6">
         
-        <div>
-            <h2 class="text-xl font-bold text-gray-800 mb-2">(選用) 雲端日誌設定</h2>
+        <!-- (4) (選用) 雲端日誌設定 -->
+        <section>
+            <h2 class="text-xl font-bold text-gray-800 mb-2">4. (選用) 雲端日誌設定</h2>
             <p class="text-sm text-gray-600 mb-4">將處理紀錄發送到您自己的 Google Cloud Functions 端點，以供研究分析。</p>
             <div class="space-y-4">
                 <div>
@@ -91,7 +100,7 @@
                     <input type="password" id="log-key" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                 </div>
             </div>
-        </div>
+        </section>
 
         <div class="mt-8 flex items-center">
             <button id="save" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition">儲存設定</button>

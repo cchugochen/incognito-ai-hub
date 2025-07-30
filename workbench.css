@@ -53,7 +53,6 @@ h2 {
     color: #666;
     margin-bottom: 15px;
 }
-/* [v19.2 新增] 語言選擇器樣式 */
 .lang-selector-grid {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -147,10 +146,17 @@ kbd {
     margin-top: 15px;
     font-size: 16px;
     font-weight: bold;
-    color: #007bff;
     text-align: center;
     height: 20px;
 }
+/* [修復] 新增狀態文字顏色 class */
+.status-success {
+    color: #007bff;
+}
+.status-error {
+    color: #dc3545;
+}
+
 .page-footer {
     border-top: 1px solid #e5e5e5;
     margin-top: 30px;
@@ -160,4 +166,10 @@ kbd {
     align-items: center;
     color: #888;
     font-size: 12px;
+}
+
+/* [修復] Buy Me a Coffee 按鈕樣式 */
+.buymeacoffee-img {
+    height: 45px !important;
+    width: 160px !important;
 }

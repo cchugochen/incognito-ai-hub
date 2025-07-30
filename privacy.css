@@ -1,0 +1,23 @@
+/* Styles for privacy.html */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    color: #333;
+}
+h1, h2, h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+code {
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+.last-updated {
+    color: #888;
+    font-size: 0.9em;
+}

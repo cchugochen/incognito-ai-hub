@@ -1,6 +1,5 @@
-// voice_notes.js (v19.4)
-// - Ensured correct payload structure for background script.
-// - Refined UI state management.
+// voice_notes.js (v24.1)
+// - Refactored to be CSP compliant by using CSS classes for status text.
 document.addEventListener('DOMContentLoaded', () => {
     const recordBtn = document.getElementById('record-btn');
     const timerDisplay = document.getElementById('timer');
@@ -15,16 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let seconds = 0;
     const MAX_RECORDING_TIME = 600;
 
+    // [修復] 改用 CSS class 來設定顏色，以符合 CSP
     function setStatus(message, isError = false) {
         statusText.textContent = message;
-        statusText.style.color = isError ? '#dc3545' : '#007aff';
-        if (!isError && message !== '錄音中...') {
+        statusText.classList.remove('status-success', 'status-error');
+        if (message) {
+            statusText.classList.add(isError ? 'status-error' : 'status-success');
+        }
+        
+        if (!isError && message && message !== '錄音中...') {
             setTimeout(() => setStatus(''), 3000);
         }
     }
 
     async function initializeAudio() {
         try {
+            // 先請求權限，確保裝置列表不是空的
             await navigator.mediaDevices.getUserMedia({ audio: true });
             const devices = await navigator.mediaDevices.enumerateDevices();
             const audioDevices = devices.filter(device => device.kind === 'audioinput');
@@ -42,8 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 option.textContent = device.label || `麥克風 ${audioSourceSelect.length + 1}`;
                 audioSourceSelect.appendChild(option);
             });
+            recordBtn.disabled = false;
         } catch (err) {
-            setStatus('無法取得麥克風權限。請檢查瀏覽器設定。', true);
+            setStatus('無法取得麥克風權限。請在瀏覽器設定中允許本擴充功能使用麥克風。', true);
             recordBtn.disabled = true;
         }
     }
@@ -59,6 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
     async function startRecording() {
         if (recordBtn.disabled) return;
         const deviceId = audioSourceSelect.value;
+        if (!deviceId) {
+            setStatus('請選擇一個音訊來源。', true);
+            return;
+        }
         const constraints = { audio: { deviceId: { exact: deviceId } } };
 
         try {
@@ -75,15 +85,17 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             mediaRecorder.start();
+            setStatus('錄音中...');
             updateUIRecording(true);
         } catch (err) {
-            setStatus('無法啟動錄音，請檢查裝置。', true);
+            setStatus(`無法啟動錄音: ${err.message}`, true);
         }
     }
 
     function stopRecording() {
         if (mediaRecorder?.state === "recording") {
             mediaRecorder.stop();
+            updateUIRecording(false);
         }
     }
     
@@ -91,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const reader = new FileReader();
         reader.onloadend = () => {
             const base64data = reader.result.split(',')[1];
-            // This is the correct payload structure expected by background.js v19.3+
             const payload = {
                 audioData: { mimeType: audioBlob.type, data: base64data },
                 spokenLang: spokenLangSelect.value
@@ -101,7 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
             recordBtn.disabled = true;
 
             chrome.runtime.sendMessage({ type: 'PROCESS_VOICE_NOTE', payload: payload }, (response) => {
-                if (response && response.success) {
+                if (chrome.runtime.lastError) {
+                    setStatus(`通訊錯誤: ${chrome.runtime.lastError.message}`, true);
+                } else if (response && response.success) {
                     setStatus('辨識完成，已開啟新分頁。');
                     setTimeout(() => window.close(), 1500);
                 } else {
@@ -109,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     setStatus(`辨識失敗: ${errorMessage}`, true);
                 }
                 recordBtn.disabled = false;
-                updateUIRecording(false); // Reset UI after processing
             });
         };
         reader.readAsDataURL(audioBlob);
@@ -144,5 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(timerInterval);
     }
 
+    // 頁面載入時就初始化
     initializeAudio();
 });

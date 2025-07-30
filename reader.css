@@ -1,10 +1,8 @@
-/* reader.css (v19.2) */
+/* reader.css (v24.1) - CSP Compliant */
 body {
     margin: 0;
     font-family: "Helvetica Neue", "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
     transition: background-color 0.3s, color 0.3s;
-    background-color: #FFFFFF;
-    color: #333333;
 }
 .container {
     max-width: 800px;
@@ -14,7 +12,6 @@ body {
 .toolbar {
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
@@ -25,17 +22,9 @@ body {
     z-index: 100;
     border-radius: 0 0 12px 12px;
 }
-.tool-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-label {
-    font-size: 14px;
-}
-input[type="range"] {
-    cursor: pointer;
-}
+.tool-group { display: flex; align-items: center; gap: 10px; }
+label { font-size: 14px; }
+input[type="range"] { cursor: pointer; }
 .color-btn {
     width: 24px;
     height: 24px;
@@ -44,7 +33,11 @@ input[type="range"] {
     cursor: pointer;
     padding: 0;
 }
-#save-text, #translate-voice-btn { /* [v19.2] 合併按鈕樣式 */
+.color-btn[data-color="bg-white"] { background-color: #FFFFFF; }
+.color-btn[data-color="bg-sepia"] { background-color: #FDF6E3; }
+.color-btn[data-color="bg-dark"] { background-color: #1E1E1E; }
+
+#save-text, #translate-voice-btn {
     padding: 6px 12px;
     background-color: #17a2b8;
     color: white;
@@ -53,24 +46,10 @@ input[type="range"] {
     cursor: pointer;
     font-size: 14px;
 }
-#save-text:hover, #translate-voice-btn:hover {
-    background-color: #138496;
-}
-#content-area {
-    margin-top: 20px;
-    font-size: 18px;
-    line-height: 1.6;
-}
-#content-area p {
-    margin-bottom: 1.5em;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    padding: 8px;
-    border-radius: 6px;
-}
-#content-area p:hover {
-    background-color: rgba(0, 123, 255, 0.05);
-}
+#save-text:hover, #translate-voice-btn:hover { background-color: #138496; }
+#content-area { margin-top: 20px; }
+#content-area p { margin-bottom: 1.5em; cursor: pointer; transition: background-color 0.2s; padding: 8px; border-radius: 6px; }
+#content-area p:hover { background-color: rgba(0, 123, 255, 0.05); }
 .translation {
     margin-top: 10px;
     padding: 10px;
@@ -81,60 +60,31 @@ input[type="range"] {
     color: #444;
     white-space: pre-wrap;
 }
-.translating::after {
-    content: ' (翻譯中...)';
-    color: #888;
-    font-style: italic;
-    font-size: 0.9em;
-    margin-left: 8px;
-}
-#loading-indicator {
-    text-align: center;
-    padding: 50px;
-    font-size: 18px;
-    color: #888;
-}
-/* [v19.2 新增] 語音翻譯工具樣式 */
-#voice-translate-tool {
-    margin-top: 40px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f8f9fa;
-}
-#voice-translate-tool.hidden {
-    display: none;
-}
-#voice-translate-tool h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-#voice-translate-tool select {
-    padding: 6px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-#voice-translation-output {
-    margin-top: 15px;
-    min-height: 50px;
-    background-color: #e9ecef;
-}
-/* 暗色模式 */
-body.dark-mode { background-color: #1E1E1E; color: #E0E0E0; }
-body.dark-mode .toolbar { background: rgba(40, 40, 40, 0.9); border-bottom: 1px solid #555; }
-body.dark-mode #content-area p:hover { background-color: rgba(255, 255, 255, 0.1); }
-body.dark-mode .translation { background-color: #333; border-left-color: #4da3ff; color: #ccc; }
-body.dark-mode #voice-translate-tool { background-color: #2c2c2c; border-color: #555; }
-body.dark-mode #voice-translation-output { background-color: #3a3a3a; }
+.translating::after { content: ' (翻譯中...)'; color: #888; font-style: italic; font-size: 0.9em; margin-left: 8px; }
+#loading-indicator { text-align: center; padding: 50px; font-size: 18px; color: #888; }
+#voice-translate-tool { margin-top: 40px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f8f9fa; }
+#voice-translate-tool.hidden { display: none; }
+#voice-translate-tool h3 { margin-top: 0; margin-bottom: 15px; }
+#voice-translate-tool select { padding: 6px; border-radius: 4px; border: 1px solid #ccc; }
+#voice-translation-output { margin-top: 15px; min-height: 50px; background-color: #e9ecef; }
 
-.page-footer {
-    border-top: 1px solid #e5e5e5;
-    margin-top: 40px;
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #888;
-    font-size: 12px;
+body.bg-white { background-color: #FFFFFF; color: #333333; }
+body.bg-sepia { background-color: #FDF6E3; color: #5B4636; }
+body.bg-dark { background-color: #1E1E1E; color: #E0E0E0; }
+
+body.bg-white .toolbar { background: rgba(255, 255, 255, 0.9); }
+body.bg-sepia .toolbar { background: rgba(253, 246, 227, 0.9); }
+body.bg-dark .toolbar { background: rgba(40, 40, 40, 0.9); border-bottom: 1px solid #555; }
+body.bg-dark #content-area p:hover { background-color: rgba(255, 255, 255, 0.1); }
+body.bg-dark .translation { background-color: #333; border-left-color: #4da3ff; color: #ccc; }
+body.bg-dark #voice-translate-tool { background-color: #2c2c2c; border-color: #555; }
+body.bg-dark #voice-translation-output { background-color: #3a3a3a; }
+
+.page-footer { border-top: 1px solid #e5e5e5; margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; color: #888; font-size: 12px; }
+body.bg-dark .page-footer { border-top-color: #444; }
+
+/* [修復] Buy Me a Coffee 按鈕樣式 */
+.buymeacoffee-img {
+    height: 45px !important;
+    width: 160px !important;
 }
-body.dark-mode .page-footer { border-top-color: #444; }

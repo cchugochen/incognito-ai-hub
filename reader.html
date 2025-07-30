@@ -6,6 +6,7 @@
     <title>閱讀模式</title>
     <link rel="stylesheet" href="reader.css">
 </head>
+<!-- [修正] class 由 JS 動態加入 -->
 <body>
     <div class="container">
         <div class="toolbar">
@@ -21,9 +22,10 @@
             </div>
             <div class="tool-group">
                 <label>背景顏色:</label>
-                <button class="color-btn" data-color="#FFFFFF" style="background-color: #FFFFFF;"></button>
-                <button class="color-btn" data-color="#FDF6E3" style="background-color: #FDF6E3;"></button>
-                <button class="color-btn" data-color="#1E1E1E" style="background-color: #1E1E1E;"></button>
+                <!-- [修正] 移除行內 style，改由 data-color 屬性控制 -->
+                <button class="color-btn" data-color="bg-white"></button>
+                <button class="color-btn" data-color="bg-sepia"></button>
+                <button class="color-btn" data-color="bg-dark"></button>
             </div>
             <div class="tool-group">
                  <button id="save-text">儲存為 TXT</button>
@@ -35,7 +37,6 @@
             </div>
         </div>
 
-        <!-- [v19.2 新增] 語音筆記翻譯工具 -->
         <div id="voice-translate-tool" class="hidden">
             <h3>翻譯辨識結果</h3>
             <div class="tool-group">
@@ -62,7 +63,8 @@
                 作者 Hugo Chen 是台灣公家機關員工，於颱風天完成初版，以此命名。<br>
                 好用請在 Chrome 應用商店給好評，或到本人 Buy Me a Coffee 網頁請我喝一杯飲料。
             </div>
-            <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 160px !important;" ></a>
+            <!-- [修正] 移除行內 style，改用 class -->
+            <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank"><img class="buymeacoffee-img" src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee"></a>
         </footer>
     </div>
     <script src="reader.js"></script>

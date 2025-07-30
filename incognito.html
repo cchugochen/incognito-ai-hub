@@ -10,24 +10,32 @@
     <div class="container">
         <!-- 頁籤選擇器 -->
         <div class="tabs">
-            <button class="tab-link active" data-tab="default">系統預設</button>
+            <button class="tab-link active" data-tab="default">Lite</button>
             <button class="tab-link" data-tab="flash">2.5 Flash</button>
             <button class="tab-link" data-tab="pro">2.5 Pro</button>
         </div>
 
-        <!-- 系統預設模型對話區 -->
+        <!-- Lite 模型對話區 -->
         <div id="default" class="tab-content active">
             <header class="header">
-                <h2>系統預設模型</h2>
+                <h2>系統預設模型 (Lite)</h2>
                 <p class="description">輕量Gemini模型：使用您在「選項」頁面中設定的模型 (預設為 2.0 Flash或 2.5-Flash-Lite)，適合一般翻譯與快速問答。</p>
             </header>
             <main id="chat-window-default" class="chat-window"></main>
             <div class="input-area">
                 <div id="image-preview-container-default" class="image-preview-container"></div>
-                <textarea id="prompt-default" class="prompt-input" placeholder="在此輸入提示..."></textarea>
+                <textarea id="prompt-default" class="prompt-input" placeholder="在此輸入提示，或貼上(Ctrl+V)截圖..."></textarea>
                 <div class="controls">
-                    <button id="upload-btn-default" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳圖片</button>
-                    <input type="file" id="file-input-default" class="file-input" accept="image/*" multiple hidden>
+                    <button id="upload-btn-default" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳</button>
+                    <!-- [修復] 將隱藏的檔案上傳 input 加回 -->
+                    <input type="file" id="file-input-default" accept="image/*" multiple hidden>
+                    <div id="preset-buttons-container-default" class="preset-buttons">
+                        <button class="preset-btn" data-preset="A" title="使用預設提示A">A</button>
+                        <button class="preset-btn" data-preset="B" title="使用預設提示B">B</button>
+                        <button class="preset-btn" data-preset="C" title="使用預設提示C">C</button>
+                        <button class="preset-btn" data-preset="D" title="使用預設提示D">D</button>
+                        <button class="preset-btn" data-preset="E" title="使用預設提示E">E</button>
+                    </div>
                     <button id="send-btn-default" class="submit-btn">Send ▶️</button>
                 </div>
             </div>
@@ -42,10 +50,18 @@
             <main id="chat-window-flash" class="chat-window"></main>
             <div class="input-area">
                 <div id="image-preview-container-flash" class="image-preview-container"></div>
-                <textarea id="prompt-flash" class="prompt-input" placeholder="在此輸入提示..."></textarea>
+                <textarea id="prompt-flash" class="prompt-input" placeholder="在此輸入提示，或貼上(Ctrl+V)截圖..."></textarea>
                 <div class="controls">
-                    <button id="upload-btn-flash" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳圖片</button>
-                    <input type="file" id="file-input-flash" class="file-input" accept="image/*" multiple hidden>
+                    <button id="upload-btn-flash" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳</button>
+                    <!-- [修復] 將隱藏的檔案上傳 input 加回 -->
+                    <input type="file" id="file-input-flash" accept="image/*" multiple hidden>
+                    <div id="preset-buttons-container-flash" class="preset-buttons">
+                        <button class="preset-btn" data-preset="A" title="使用預設提示A">A</button>
+                        <button class="preset-btn" data-preset="B" title="使用預設提示B">B</button>
+                        <button class="preset-btn" data-preset="C" title="使用預設提示C">C</button>
+                        <button class="preset-btn" data-preset="D" title="使用預設提示D">D</button>
+                        <button class="preset-btn" data-preset="E" title="使用預設提示E">E</button>
+                    </div>
                     <button id="send-btn-flash" class="submit-btn">Send ▶️</button>
                 </div>
             </div>
@@ -60,10 +76,18 @@
             <main id="chat-window-pro" class="chat-window"></main>
             <div class="input-area">
                 <div id="image-preview-container-pro" class="image-preview-container"></div>
-                <textarea id="prompt-pro" class="prompt-input" placeholder="在此輸入提示..."></textarea>
+                <textarea id="prompt-pro" class="prompt-input" placeholder="在此輸入提示，或貼上(Ctrl+V)截圖..."></textarea>
                 <div class="controls">
-                    <button id="upload-btn-pro" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳圖片</button>
-                    <input type="file" id="file-input-pro" class="file-input" accept="image/*" multiple hidden>
+                    <button id="upload-btn-pro" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳</button>
+                    <!-- [修復] 將隱藏的檔案上傳 input 加回 -->
+                    <input type="file" id="file-input-pro" accept="image/*" multiple hidden>
+                    <div id="preset-buttons-container-pro" class="preset-buttons">
+                        <button class="preset-btn" data-preset="A" title="使用預設提示A">A</button>
+                        <button class="preset-btn" data-preset="B" title="使用預設提示B">B</button>
+                        <button class="preset-btn" data-preset="C" title="使用預設提示C">C</button>
+                        <button class="preset-btn" data-preset="D" title="使用預設提示D">D</button>
+                        <button class="preset-btn" data-preset="E" title="使用預設提示E">E</button>
+                    </div>
                     <button id="send-btn-pro" class="submit-btn">Send ▶️</button>
                 </div>
             </div>
@@ -74,7 +98,8 @@
                 作者 Hugo Chen 是台灣公家機關員工，於颱風天完成初版，以此命名。<br>
                 好用請在 Chrome 應用商店給好評，或到本人 Buy Me a Coffee 網頁請我喝一杯飲料。
             </div>
-            <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 160px !important;" ></a>
+
+            <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank"><img class="buymeacoffee-img" src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee"></a>
         </footer>
     </div>
     <script src="incognito.js"></script>

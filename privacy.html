@@ -4,34 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>無痕風颱工作台 - 隱私權政策</title>
-    <style>
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6; 
-            margin: 0 auto;
-            max-width: 800px;
-            padding: 20px;
-            color: #333;
-        }
-        h1, h2, h3 { 
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-        code {
-            background-color: #f4f4f4;
-            padding: 2px 4px;
-            border-radius: 4px;
-            font-family: monospace;
-        }
-        .last-updated {
-            color: #888;
-            font-size: 0.9em;
-        }
-    </style>
+    <!-- [修正] 引用外部 CSS 檔案 -->
+    <link rel="stylesheet" href="privacy.css">
 </head>
 <body>
     <h1>無痕風颱工作台 (Hong-Thai Incognito Reader) 隱私權政策</h1>
-    <p class="last-updated">最後更新日期：2025年7月15日</p>
+    <p class="last-updated">最後更新日期：2025年7月30日</p>
 
     <p>感謝您使用「無痕風颱工作台」（以下簡稱「本擴充功能」）。我們極度重視您的隱私權。本隱私權政策旨在說明本擴充功能如何處理您的資料。</p>
 
@@ -50,7 +28,7 @@
     <h3>2. 您處理的內容（文字、圖片、語音）</h3>
     <ul>
         <li><strong>一般功能</strong>：當您使用「翻譯當前網頁」、「文字/截圖工作台」或「無痕-語音輸入筆記」功能時，為了在不同分頁間傳遞資料，處理中的文字內容可能會**暫時**儲存於您本機的 <code>chrome.storage.local</code> 中。這些暫存資料會在您關閉對應的功能分頁後被清除。</li>
-        <li><strong>無痕-Gemini 2.5 Pro 對話框 (最高隱私模式)</strong>：當您使用此功能時，所有的對話歷史（包含文字與圖片）**只會儲存在您電腦的記憶體 (RAM) 中**。這些資料**不會**寫入任何硬碟儲存區 (包含 <code>chrome.storage</code>)。**一旦您關閉該分頁，所有對話紀錄將立即永久消失，無法復原。**</li>
+        <li><strong>無痕-Gemini 2.5 對話框 (最高隱私模式)</strong>：當您使用此功能時，所有的對話歷史（包含文字與圖片）**只會儲存在您電腦的記憶體 (RAM) 中**。這些資料**不會**寫入任何硬碟儲存區 (包含 <code>chrome.storage</code>)。**一旦您關閉該分頁，所有對話紀錄將立即永久消失，無法復原。**</li>
         <li><strong>資料流向</strong>：在所有情況下，您的內容都只會**在您的瀏覽器與 Google 的伺服器之間直接傳輸**，不會經過或儲存在任何由我們（開發者）控制的伺服器上。</li>
         <li><strong>Google 的政策</strong>：根據 Google 的 API 政策，他們可能保留 API 請求的內容（不含個人資訊）最長 30 天，僅用於服務維護與安全稽核，不會用於模型訓練。</li>
     </ul>

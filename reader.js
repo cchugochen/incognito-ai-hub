@@ -1,7 +1,6 @@
 /**
- * reader.js (v19.4)
- * - Restored correct code to fix file mix-up issue.
- * - Handles display, paragraph translation, and voice note translation tool.
+ * reader.js (v24.0)
+ * - Refactored to be CSP compliant by using CSS classes instead of inline styles.
  */
 document.addEventListener('DOMContentLoaded', () => {
     const contentArea = document.getElementById('content-area');
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const translateVoiceBtn = document.getElementById('translate-voice-btn');
     const voiceTranslationOutput = document.getElementById('voice-translation-output');
 
-    let globalTargetLang = 'Traditional Chinese'; // Default translation target
+    let globalTargetLang = 'Traditional Chinese';
 
     initializeUI();
 
@@ -25,8 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data.articleText && data.articleText.trim().length > 0) {
             globalTargetLang = data.targetLang || 'Traditional Chinese';
             renderArticle(data.articleText);
-
-            // If the source is from voice notes, show the translation tool
             if (data.sourceType === 'voice') {
                 voiceTranslateTool.classList.remove('hidden');
             }
@@ -134,17 +131,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- UI and Save Functions ---
+    // --- [修正] UI and Save Functions for CSP ---
     function initializeUI() {
-        const defaultFontSize = '20';
-        fontSizeSlider.value = defaultFontSize;
-        contentArea.style.fontSize = `${defaultFontSize}px`;
-        fontSizeValue.textContent = `${defaultFontSize}px`;
-        const defaultLineHeight = '1.6';
-        lineHeightSlider.value = defaultLineHeight;
-        contentArea.style.lineHeight = defaultLineHeight;
-        lineHeightValue.textContent = defaultLineHeight;
-        document.body.style.backgroundColor = '#FFFFFF';
+        fontSizeSlider.value = '20';
+        fontSizeValue.textContent = '20px';
+        lineHeightSlider.value = '1.6';
+        lineHeightValue.textContent = '1.6';
+        
+        // 設定預設樣式
+        updateFontSize('20');
+        updateLineHeight('1.6');
+        updateBgColor('bg-white');
+    }
+
+    function updateFontSize(size) {
+        contentArea.style.fontSize = `${size}px`; // 直接設定 style
+        fontSizeValue.textContent = `${size}px`;
+    }
+
+    function updateLineHeight(height) {
+        contentArea.style.lineHeight = height; // 直接設定 style
+        lineHeightValue.textContent = height;
+    }
+
+    function updateBgColor(colorClass) {
+        document.body.classList.remove('bg-white', 'bg-sepia', 'bg-dark');
+        document.body.classList.add(colorClass);
+        document.body.classList.toggle('dark-mode', colorClass === 'bg-dark');
     }
 
     function saveContentAsTxt() {
@@ -171,22 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
         URL.revokeObjectURL(url);
     }
 
-    fontSizeSlider.addEventListener('input', (e) => {
-        const size = e.target.value;
-        contentArea.style.fontSize = `${size}px`;
-        fontSizeValue.textContent = `${size}px`;
-    });
-    lineHeightSlider.addEventListener('input', (e) => {
-        const height = e.target.value;
-        contentArea.style.lineHeight = height;
-        lineHeightValue.textContent = height;
-    });
+    fontSizeSlider.addEventListener('input', (e) => updateFontSize(e.target.value));
+    lineHeightSlider.addEventListener('input', (e) => updateLineHeight(e.target.value));
     colorButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const color = e.target.dataset.color;
-            document.body.style.backgroundColor = color;
-            document.body.classList.toggle('dark-mode', color === '#1E1E1E');
-        });
+        button.addEventListener('click', (e) => updateBgColor(e.currentTarget.dataset.color));
     });
     saveButton.addEventListener('click', saveContentAsTxt);
 });
