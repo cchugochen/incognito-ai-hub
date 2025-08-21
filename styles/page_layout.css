@@ -1,0 +1,108 @@
+/* styles/page_layout.css */
+/* Shared layout styles for Incognito AI Hub pages */
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--bg-content);
+    padding: 20px 30px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 800px; /* Default max-width */
+}
+
+h2 {
+    font-size: 22px;
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.description b {
+    color: var(--color-accent);
+}
+.description a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+.description a:hover {
+    text-decoration: underline;
+}
+
+.header {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+/* Form elements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.form-group select {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Status text */
+#status-text {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    height: 20px;
+    transition: color 0.3s;
+}
+.status-success {
+    color: var(--color-primary);
+}
+.status-error {
+    color: #c0392b; /* A strong red for errors */
+}
+
+
+/* Footer */
+.page-footer {
+    border-top: 1px solid var(--border-color);
+    margin-top: 30px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 12px;
+    flex-shrink: 0;
+}
+.page-footer .footer-text {
+    line-height: 1.5;
+}
+.buymeacoffee-img {
+    height: 45px !important;
+    width: 160px !important;
+    border-radius: 8px;
+}

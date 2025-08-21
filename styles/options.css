@@ -1,0 +1,153 @@
+/* styles/options.css (v25.5 - Visual Fix) */
+/* Layout and component styles specific to the options page. */
+
+body {
+    padding: 2rem;
+    background-color: var(--bg-main);
+}
+
+.options-container {
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    background-color: var(--bg-content);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.page-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.options-section {
+    margin-bottom: 1.5rem;
+}
+
+.section-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.description {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.text-input, .select-input {
+    margin-top: 0.25rem;
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    box-sizing: border-box;
+    border-radius: 8px !important;
+}
+
+textarea.text-input {
+    resize: vertical;
+    min-height: 4rem;
+}
+
+.divider {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem;
+}
+
+.save-area {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.status-text {
+    margin-left: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* --- Custom Model Card --- */
+.model-card {
+    display: block;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative; /* Needed for the checkmark */
+}
+
+/* [v25.5 Fix] Make selection much more prominent */
+input.sr-only:checked + .model-card {
+    border-color: #3B82F6; /* Blue-500 */
+    background-color: #EFF6FF; /* Blue-50 */
+    box-shadow: 0 0 0 2px #BFDBFE; /* Blue-200 */
+}
+
+/* [v25.5 Fix] Add a checkmark for clear visual feedback */
+input.sr-only:checked + .model-card::after {
+    content: '✓';
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2563EB; /* Blue-600 */
+}
+
+.model-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.model-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+.model-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background-color: #FEF3C7; /* Amber 100 */
+    color: #B45309; /* Amber 700 */
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+}
+.model-id {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    margin-top: 0.25rem;
+}
+.model-desc {
+    font-size: 0.875rem;
+}

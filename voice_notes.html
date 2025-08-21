@@ -1,53 +1,43 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>無痕-語音輸入筆記</title>
-    <link rel="stylesheet" href="workbench.css">
-    <!-- [修正] 引用專屬的外部 CSS 檔案 -->
+    <title>__MSG_voiceTitle__</title>
+    <!-- 載入新的共用主題與版面樣式 -->
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/page_layout.css"> <!-- 新的共用版面樣式 -->
     <link rel="stylesheet" href="voice_notes.css">
 </head>
 <body>
     <div class="container">
-        <h2>無痕-語音輸入筆記</h2>
-        <p class="description">選擇您的主要口說語言，點擊開始錄音，將您的想法快速轉換為文字。<br>受限於瀏覽器單次上傳的大小，本功能建議用於數分鐘內的快速筆記。</p>
+        <h2 data-i18n="voiceTitle"></h2>
+        <p class="description" data-i18n="voiceDesc"></p>
         
         <div class="form-group">
-            <label for="audio-source">音訊來源:</label>
-            <select id="audio-source" class="lang-selector-grid select"></select>
+            <label for="audio-source" data-i18n="voiceLabelAudioSource"></label>
+            <select id="audio-source"></select>
         </div>
 
         <div class="form-group">
-            <label for="spoken-lang">主要口說語言:</label>
-            <select id="spoken-lang" class="lang-selector-grid select">
-                <option value="Traditional Chinese with some English">中文 (夾雜英文)</option>
-                <option value="English">英文 (English)</option>
-                <option value="Japanese">日文 (Japanese)</option>
-                <option value="Korean">韓文 (Korean)</option>
-                <option value="Vietnamese">越南文 (Vietnamese)</option>
-                <option value="Hindi">印度文 (Hindi)</option>
-                <option value="Russian">俄羅斯文 (Russian)</option>
-                <option value="French">法文 (French)</option>
-                <option value="German">德文 (German)</option>
-                <option value="Dutch">荷蘭文 (Dutch)</option>
-            </select>
+            <label for="spoken-lang" data-i18n="voiceLabelSpokenLang"></label>
+            <!-- 選項將由 JS 動態生成 -->
+            <select id="spoken-lang"></select>
         </div>
 
         <div class="voice-controls">
-            <button id="record-btn">開始錄音</button>
+            <button id="record-btn" data-i18n="voiceButtonStart"></button>
             <p id="timer">00:00</p>
         </div>
 
         <div id="status-text"></div>
         
         <footer class="page-footer">
-            <div class="footer-text">
-                作者 Hugo Chen 是台灣公家機關員工，於颱風天完成初版，以此命名。<br>
-                好用請在 Chrome 應用商店給好評，或到本人 Buy Me a Coffee 網頁請我喝一杯飲料。
-            </div>
+            <div class="footer-text" data-i18n="incognitoFooter"></div>
             <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank"><img class="buymeacoffee-img" src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee"></a>
         </footer>
     </div>
-    <script src="voice_notes.js"></script>
+    <script src="i18n.js"></script>
+    <!-- 類型改為 module 以使用 import -->
+    <script type="module" src="voice_notes.js"></script>
 </body>
 </html>

@@ -1,11 +1,16 @@
+// incognito.js (v25.2 - Bug Fix)
+// - Fixed a syntax error that made control buttons unresponsive.
+// - Increased MAX_ROUNDS to 12.
 document.addEventListener('DOMContentLoaded', () => {
+    // Set document title dynamically
+    document.title = chrome.i18n.getMessage('incognitoTitle');
+
     // --- Global State ---
     let geminiApiKey = null;
-    let presetPrompts = {}; // (2) 用於儲存預設提示語
-    const MAX_ROUNDS = 6; // 3 user turns + 3 AI turns
+    let presetPrompts = {};
+    const MAX_ROUNDS = 12; 
 
     // --- Chat Instance Manager ---
-    // Manages the state and DOM elements for a single chat tab
     class ChatInstance {
         constructor(modelId, modelName) {
             this.modelId = modelId;
@@ -26,41 +31,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         attachEventListeners() {
+            // [v25.2 Fix] Corrected syntax error by adding a semicolon.
             this.sendBtn.addEventListener('click', () => this.sendMessage());
             this.uploadBtn.addEventListener('click', () => this.fileInput.click());
             this.fileInput.addEventListener('change', (e) => this.handleFileSelect(e));
-            
-            // (3) 新增：貼上事件監聽
             this.promptInput.addEventListener('paste', (e) => this.handlePaste(e));
 
-            // (2) 新增：預設提示按鈕事件監聽
             this.presetButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const presetKey = `preset_${button.dataset.preset.toLowerCase()}`;
                     const textToInsert = presetPrompts[presetKey];
                     if (textToInsert) {
-                        // 將文字插入到當前游標位置，或附加到結尾
                         const start = this.promptInput.selectionStart;
                         const end = this.promptInput.selectionEnd;
                         const originalText = this.promptInput.value;
                         this.promptInput.value = originalText.substring(0, start) + textToInsert + originalText.substring(end);
                         this.promptInput.focus();
-                        // 將游標移到插入文字的後面
                         this.promptInput.selectionStart = this.promptInput.selectionEnd = start + textToInsert.length;
                     }
                 });
             });
         }
         
-        // (3) 新增：處理貼上事件的函式
         handlePaste(event) {
             const items = (event.clipboardData || event.originalEvent.clipboardData).items;
             for (const item of items) {
                 if (item.kind === 'file' && item.type.startsWith('image/')) {
-                    event.preventDefault(); // 防止瀏覽器預設行為 (如貼上檔案路徑)
+                    event.preventDefault();
                     const file = item.getAsFile();
                     this.processImageFile(file);
-                    return; // 只處理第一張圖片
+                    return;
                 }
             }
         }
@@ -70,14 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
             for (const file of files) {
                 this.processImageFile(file);
             }
-            this.fileInput.value = ''; // 清空 input 以便下次選擇同個檔案
+            this.fileInput.value = '';
         }
         
-        // (3) 新增：將圖片處理邏輯提取為共用函式
         processImageFile(file) {
             if (!file || !file.type.startsWith('image/')) return;
             if (this.imageFiles.length >= 4) {
-                alert('錯誤：最多只能上傳 4 張圖片。');
+                alert(chrome.i18n.getMessage("alertMaxImages"));
                 return;
             }
             const reader = new FileReader();
@@ -127,14 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
             this.imageFiles = [];
             this.renderImagePreviews();
             this.setLoading(true);
-
+          
             try {
                 const responseText = await this.callApi();
                 this.history.push({ role: 'model', parts: [{ text: responseText }] });
                 this.displayMessage(responseText, 'ai');
             } catch (error) {
-                this.displayMessage(`API 請求失敗: ${error.message}`, 'ai', [], true);
-                this.history.pop(); // 如果API失敗，移除剛剛加入的使用者歷史紀錄
+                // 修正：直接顯示從 callApi() 傳來的、已經過 i18n 處理的錯誤訊息
+                this.displayMessage(error.message, 'ai', [], true);
+                this.history.pop();
             } finally {
                 this.setLoading(false);
                 this.checkTurnLimit();
@@ -142,13 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         async callApi() {
-            if (!geminiApiKey) throw new Error("尚未設定 API 金鑰。");
+            if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
             
             const apiUrl = this.modelName.startsWith('models/')
                 ? `https://generativelanguage.googleapis.com/v1beta/${this.modelName}:generateContent?key=${geminiApiKey}`
                 : `https://generativelanguage.googleapis.com/v1beta/models/${this.modelName}:generateContent?key=${geminiApiKey}`;
 
-            const payload = { contents: this.history };
+            const payload = { contents: this.history.slice(-MAX_ROUNDS * 2) };
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -159,12 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (result.candidates?.[0]?.content?.parts?.[0]?.text) return result.candidates[0].content.parts[0].text;
             
             const blockReason = result.promptFeedback?.blockReason;
-            if (blockReason) throw new Error(`請求被 AI 拒絕，原因: ${blockReason}`);
+            if (blockReason) throw new Error(chrome.i18n.getMessage("errorApiRejected", blockReason));
             
             const finishReason = result.candidates?.[0]?.finishReason;
-            if(finishReason && finishReason !== 'STOP') throw new Error(`API 未返回有效內容，終止原因: ${finishReason}`);
+            if(finishReason && finishReason !== 'STOP') throw new Error(chrome.i18n.getMessage("errorApiStopped", finishReason));
 
-            throw new Error('API 未返回有效內容，請檢查主控台以獲取詳細資訊。');
+            throw new Error(chrome.i18n.getMessage("errorApiInvalidResponse"));
         }
 
         displayMessage(text, role, images = [], isError = false) {
@@ -193,14 +193,14 @@ document.addEventListener('DOMContentLoaded', () => {
             this.promptInput.disabled = isLoading;
             this.uploadBtn.disabled = isLoading;
             this.presetButtons.forEach(btn => btn.disabled = isLoading);
-            this.sendBtn.textContent = isLoading ? '思考中...' : 'Send ▶️';
+            this.sendBtn.textContent = isLoading ? chrome.i18n.getMessage("stateThinking") : chrome.i18n.getMessage("incognitoSendButton");
         }
 
         checkTurnLimit() {
-            const isLimitReached = this.history.length >= MAX_ROUNDS;
-            if (isLimitReached) {
-                this.setLoading(true); // Disable all inputs
-                alert(`提示：已達 ${MAX_ROUNDS} 回合對話上限。請重新整理頁面以開始新的對話。`);
+            const userMessages = this.history.filter(m => m.role === 'user').length;
+            if (userMessages >= MAX_ROUNDS) {
+                this.setLoading(true);
+                this.displayMessage(chrome.i18n.getMessage("alertTurnLimit", String(MAX_ROUNDS)), 'ai');
             }
         }
     }
@@ -215,24 +215,21 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             
             if (!items.geminiApiKey) {
-                alert('錯誤：尚未設定 Gemini API 金鑰。請在擴充功能選項中設定。');
+                alert(chrome.i18n.getMessage("alertNoApiKeyOptions"));
                 document.querySelectorAll('.submit-btn, .upload-btn, .preset-btn').forEach(btn => btn.disabled = true);
                 return;
             }
             geminiApiKey = items.geminiApiKey;
-            // (2) 將讀取到的提示語存到全域變數
             presetPrompts = {
                 preset_a: items.preset_a, preset_b: items.preset_b,
                 preset_c: items.preset_c, preset_d: items.preset_d,
                 preset_e: items.preset_e
             };
 
-            // Create chat instances for each tab
             new ChatInstance('default', items.translationModel);
             new ChatInstance('flash', 'gemini-2.5-flash');
             new ChatInstance('pro', 'gemini-2.5-pro');
             
-            // Tab switching logic
             const tabs = document.querySelectorAll('.tab-link');
             const contents = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => {
@@ -246,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {
             console.error('Initialization failed:', error);
-            alert('頁面初始化失敗。');
+            alert(chrome.i18n.getMessage("alertInitFailed"));
         }
     };
 

@@ -1,58 +1,45 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>智慧翻譯工作台</title>
+    <title>__MSG_workbenchTitle__</title>
+    <!-- 載入新的主題與佈局 CSS -->
+    <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="workbench.css">
 </head>
 <body>
     <div class="container">
         <div class="tabs">
-            <button class="tab-link active" data-tab="paste-text">貼上文字</button>
-            <button class="tab-link" data-tab="upload-image">上傳截圖</button>
+            <button class="tab-link active" data-tab="paste-text" data-i18n="workbenchTabText"></button>
+            <button class="tab-link" data-tab="upload-image" data-i18n="workbenchTabImage"></button>
         </div>
 
         <!-- 文字貼上分頁 -->
         <div id="paste-text" class="tab-content active">
-            <h2>模式二：文字貼上工作台</h2>
-            <p class="description">適用於可選取文字的網頁、Word 或 PDF。直接複製文字並貼於下方，以獲得最快、最精準的處理結果。</p>
+            <h2 data-i18n="workbenchTextHeader"></h2>
+            <p class="description" data-i18n="workbenchTextDesc"></p>
             
             <div class="lang-selector-grid">
                 <div>
-                    <label for="text-source-lang">來源語言</label>
-                    <select id="text-source-lang">
-                        <option value="auto">自動偵測</option>
-                        <option value="English">英文 (English)</option>
-                        <option value="Traditional Chinese">繁體中文 (Traditional Chinese)</option>
-                        <option value="Japanese">日文 (Japanese)</option>
-                        <option value="Korean">韓文 (Korean)</option>
-                    </select>
+                    <label for="text-source-lang" data-i18n="workbenchLabelSourceLang"></label>
+                    <!-- 選項將由 JS 動態生成 -->
+                    <select id="text-source-lang"></select>
                 </div>
                 <div class="arrow">→</div>
                 <div>
-                    <label for="text-target-lang">目標語言</label>
-                    <select id="text-target-lang">
-                        <option value="Traditional Chinese">繁體中文</option>
-                        <option value="English">英文</option>
-                        <option value="Japanese">日文</option>
-                        <option value="Korean">韓文</option>
-                        <option value="Vietnamese">越南文</option>
-                        <option value="Hindi">印度文</option>
-                        <option value="Russian">俄羅斯文</option>
-                        <option value="French">法文</option>
-                        <option value="German">德文</option>
-                        <option value="Dutch">荷蘭文</option>
-                    </select>
+                    <label for="text-target-lang" data-i18n="workbenchLabelTargetLang"></label>
+                    <!-- 選項將由 JS 動態生成 -->
+                    <select id="text-target-lang"></select>
                 </div>
             </div>
 
-            <textarea id="text-input" placeholder="在此處貼上您複製的文字..."></textarea>
-            <button id="process-text-btn" class="submit-btn">處理文字</button>
+            <textarea id="text-input" data-i18n-placeholder="workbenchTextPlaceholder"></textarea>
+            <button id="process-text-btn" class="submit-btn" data-i18n="workbenchProcessTextButton"></button>
         </div>
 
         <!-- 圖片上傳分頁 -->
         <div id="upload-image" class="tab-content">
-            <h2>模式三：桌面截圖上傳</h2>
+            <h2 data-i18n="workbenchImageHeader"></h2>
              <div class="instructions">
                 <div class="os-instruction"><p><strong>macOS:</strong> <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd></p></div>
                 <div class="os-instruction"><p><strong>Windows:</strong> <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd></p></div>
@@ -60,51 +47,37 @@
 
             <div class="lang-selector-grid">
                  <div>
-                    <label for="img-source-lang">來源語言 (圖片內文字)</label>
-                    <select id="img-source-lang">
-                        <option value="auto">自動偵測</option>
-                        <option value="English">英文 (English)</option>
-                        <option value="Traditional Chinese">繁體中文 (Traditional Chinese)</option>
-                        <option value="Japanese">日文 (Japanese)</option>
-                        <option value="Korean">韓文 (Korean)</option>
-                    </select>
+                    <label for="img-source-lang" data-i18n="workbenchLabelImageSourceLang"></label>
+                     <!-- 選項將由 JS 動態生成 -->
+                    <select id="img-source-lang"></select>
                 </div>
                 <div class="arrow">→</div>
                 <div>
-                    <label for="img-target-lang">目標語言</label>
-                    <select id="img-target-lang">
-                        <option value="Traditional Chinese">繁體中文</option>
-                        <option value="English">英文</option>
-                        <option value="Japanese">日文</option>
-                        <option value="Korean">韓文</option>
-                        <option value="Vietnamese">越南文</option>
-                        <option value="Hindi">印度文</option>
-                        <option value="Russian">俄羅斯文</option>
-                        <option value="French">法文</option>
-                        <option value="German">德文</option>
-                        <option value="Dutch">荷蘭文</option>
-                    </select>
+                    <label for="img-target-lang" data-i18n="workbenchLabelTargetLang"></label>
+                    <!-- 選項將由 JS 動態生成 -->
+                    <select id="img-target-lang"></select>
                 </div>
             </div>
 
             <div id="upload-box">
                 <input type="file" id="file-input" accept="image/jpeg, image/png, image/bmp" hidden>
-                <div id="upload-placeholder"><p>點擊或拖曳檔案至此</p><span>(支援 JPG, PNG, BMP)</span></div>
-                <img id="preview-image" src="#" alt="圖片預覽" class="hidden">
+                <div id="upload-placeholder">
+                    <p data-i18n="workbenchUploadBox"></p>
+                    <span data-i18n="workbenchUploadBoxDesc"></span>
+                </div>
+                <img id="preview-image" src="#" alt="Image Preview" class="hidden">
             </div>
-            <button id="process-image-btn" class="submit-btn hidden">開始辨識</button>
+            <button id="process-image-btn" class="submit-btn hidden" data-i18n="workbenchProcessImageButton"></button>
         </div>
         <div id="status-text"></div>
         
         <footer class="page-footer">
-            <div class="footer-text">
-                作者 Hugo Chen 是台灣公家機關員工，於颱風天完成初版，以此命名。<br>
-                好用請在 Chrome 應用商店給好評，或到本人 Buy Me a Coffee 網頁請我喝一杯飲料。
-            </div>
-            <!-- [修復] 移除行內 style，改用 class -->
+            <div class="footer-text" data-i18n="incognitoFooter"></div>
             <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank"><img class="buymeacoffee-img" src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee"></a>
         </footer>
     </div>
-    <script src="workbench.js"></script>
+    <script src="i18n.js"></script>
+    <!-- 類型改為 module 以使用 import -->
+    <script type="module" src="workbench.js"></script>
 </body>
 </html>

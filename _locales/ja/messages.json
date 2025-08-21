@@ -1,0 +1,562 @@
+{
+  "appName": {
+    "message": "Incognito AI Hub by Gemini",
+    "description": "拡張機能の名前。"
+  },
+  "appDesc": {
+    "message": "(1) Incognito Geminiチャット、ウェブページ読み込み、テキスト/スクリーンショット、音声入力の4つのAI Incognitoモードを統合したユーティリティツール。\n(2) 合法的な使用のため、ご自身のGoogle Gemini APIキーを申請してください。\n(3) この拡張機能にはバックエンドサーバーがないため、ロギングが必要な方はご自身でエンドポイントを設定してください。",
+    "description": "マニフェスト内の拡張機能の説明。"
+  },
+  "popupTranslatePage": {
+    "message": "現在のウェブページを翻訳 (Google翻訳が使えない場合)",
+    "description": "popup.htmlのボタンテキスト。"
+  },
+  "popupOpenWorkbench": {
+    "message": "スマート翻訳ワークベンチを開く",
+    "description": "popup.htmlのボタンテキスト。「テキスト/スクリーンショット翻訳ワークベンチ」から変更。"
+  },
+  "popupOpenVoiceNotes": {
+    "message": "Incognito 音声メモ",
+    "description": "popup.htmlのボタンテキスト。"
+  },
+  "popupOpenIncognito": {
+    "message": "Incognito Gemini チャット",
+    "description": "popup.htmlのボタンテキスト。"
+  },
+  "popupOpenTutorial": {
+    "message": "Gemini APIキー 簡単申請チュートリアル",
+    "description": "popup.htmlのボタンテキスト。"
+  },
+  "popupShowLicense": {
+    "message": "MITライセンス情報",
+    "description": "popup.htmlのボタンテキスト。"
+  },
+  "optionsTitle": {
+    "message": "Incognito AI Hub - 設定",
+    "description": "設定ページのタイトル。"
+  },
+  "optionsHeader": {
+    "message": "Incognito AI Hub - 設定",
+    "description": "設定ページのヘッダー。"
+  },
+  "optionsDisplayLangSectionHeader": {
+    "message": "1. 表示言語",
+    "description": "設定のセクションヘッダー。"
+  },
+  "optionsDisplayLangLabel": {
+    "message": "拡張機能インターフェースの表示言語を設定します:",
+    "description": "設定の言語選択ラベル。"
+  },
+  "optionsDisplayLangDefault": {
+    "message": "Chromeのシステムデフォルト",
+    "description": "言語選択のデフォルトオプション。"
+  },
+  "optionsPrefLangSectionHeader": {
+    "message": "2. 優先翻訳言語",
+    "description": "設定の優先言語セクションヘッダー。"
+  },
+  "optionsPrefLangDesc": {
+    "message": "説明：最も良い方法は、フィールドに必要な言語をその言語で記述することです。例：Français, Español, Русский",
+    "description": "優先言語セクションの説明。"
+  },
+  "optionsPrefLangLabelA": {
+    "message": "優先言語 A:",
+    "description": "優先言語Aのラベル。"
+  },
+  "optionsPrefLangLabelB": {
+    "message": "優先言語 B:",
+    "description": "優先言語Bのラベル。"
+  },
+  "optionsPrefLangPlaceholder": {
+    "message": "例：Français",
+    "description": "優先言語入力のプレースホルダー。"
+  },
+  "optionsApiKeySectionHeader": {
+    "message": "3. Gemini APIキー入力",
+    "description": "設定のセクションヘッダー。"
+  },
+  "optionsApiKeyLabel": {
+    "message": "あなたのGoogle Gemini APIキー:",
+    "description": "APIキー入力のラベル。"
+  },
+  "optionsModelSectionHeader": {
+    "message": "4. 翻訳と認識モデル",
+    "description": "設定のセクションヘッダー。"
+  },
+  "optionsModelDesc": {
+    "message": "「ページを翻訳」、「スマート翻訳ワークベンチ」、「音声メモ」機能で使用するデフォルトモデルを選択します。",
+    "description": "モデル選択の説明。"
+  },
+  "optionsModel1Name": {
+    "message": "Gemini 2.0 Flash",
+    "description": "モデル名。"
+  },
+  "optionsModel1Tag": {
+    "message": "デフォルト",
+    "description": "推奨モデルのタグ。"
+  },
+  "optionsModel1Desc": {
+    "message": "最適：マルチモーダル理解、リアルタイムストリーミング、低コスト。",
+    "description": "モデルの説明。"
+  },
+  "optionsModel2Name": {
+    "message": "Gemini 2.5 Flash Lite (プレビュー)",
+    "description": "モデル名。"
+  },
+  "optionsModel2Desc": {
+    "message": "最適：リクエストごとにより多くのトークンを処理、低遅延、低コスト。",
+    "description": "モデルの説明。"
+  },
+  "optionsPresetSectionHeader": {
+    "message": "5. Incognitoチャット - 内蔵プロンプトメモリ",
+    "description": "設定のセクションヘッダー。"
+  },
+  "optionsPresetDesc": {
+    "message": "「Incognito Geminiチャット」で素早くアクセスできるよう、よく使うコマンドやテンプレートをここに入力します。",
+    "description": "プリセットプロンプトの説明。"
+  },
+  "optionsPresetLabelA": {
+    "message": "プリセットプロンプト A:",
+    "description": "プリセットプロンプトのラベル。"
+  },
+  "optionsPresetLabelB": {
+    "message": "プリセットプロンプト B:",
+    "description": "プリセットプロンプトのラベル。"
+  },
+  "optionsPresetLabelC": {
+    "message": "プリセットプロンプト C:",
+    "description": "プリセットプロンプトのラベル。"
+  },
+  "optionsPresetLabelD": {
+    "message": "プリセットプロンプト D:",
+    "description": "プリセットプロンプトのラベル。"
+  },
+  "optionsPresetLabelE": {
+    "message": "プリセットプロンプト E:",
+    "description": "プリセットプロンプトのラベル。"
+  },
+  "optionsLogSectionHeader": {
+    "message": "6. (任意) クラウドロギング設定",
+    "description": "設定のセクションヘッダー。"
+  },
+  "optionsLogDesc": {
+    "message": "研究分析のため、処理ログをご自身のGoogle Cloud Functionsエンドポイントに送信します。",
+    "description": "ロギング機能の説明。"
+  },
+  "optionsLogEndpointLabel": {
+    "message": "Cloud Function エンドポイントURL:",
+    "description": "ログエンドポイントURLのラベル。"
+  },
+  "optionsLogKeyLabel": {
+    "message": "認証キー (任意):",
+    "description": "ログキーのラベル。"
+  },
+  "optionsSaveButton": {
+    "message": "設定を保存",
+    "description": "保存ボタンのテキスト。"
+  },
+  "optionsStatusSaved": {
+    "message": "設定が保存されました。",
+    "description": "設定保存時のステータスメッセージ。"
+  },
+  "incognitoTitle": {
+    "message": "Incognito Gemini チャット",
+    "description": "Incognitoチャットページのタイトル。"
+  },
+  "incognitoDefaultModelHeader": {
+    "message": "システムデフォルトモデル (Lite)",
+    "description": "Incognitoチャットのデフォルトモデルヘッダー。"
+  },
+  "incognitoDefaultModelDesc": {
+    "message": "Lite Geminiモデル：「設定」ページで設定したモデル（デフォルトは2.0 Flashまたは2.5-Flash-Lite）を使用し、一般的な翻訳や簡単な質疑応答に適しています。",
+    "description": "Incognitoチャットのデフォルトモデルの説明。"
+  },
+  "incognitoFlashModelHeader": {
+    "message": "Gemini 2.5 Flash",
+    "description": "IncognitoチャットのFlashモデルヘッダー。"
+  },
+  "incognitoFlashModelDesc": {
+    "message": "中規模のGeminiモデルで、より長い文脈の理解や迅速な要約が必要なタスクに適しています。",
+    "description": "IncognitoチャットのFlashモデルの説明。"
+  },
+  "incognitoProModelHeader": {
+    "message": "Gemini 2.5 Pro",
+    "description": "IncognitoチャットのProモデルヘッダー。"
+  },
+  "incognitoProModelDesc": {
+    "message": "現在Googleの最も強力なモデルで、非常に複雑な論理的推論や創造的な生成に使用されます。<b>注意：</b>単価が高いです。詳細は<a href='https://ai.google.dev/pricing' target='_blank'>公式価格</a>をご覧ください。",
+    "description": "IncognitoチャットのProモデルの説明。HTMLタグを保持。"
+  },
+  "incognitoPlaceholder": {
+    "message": "ここにプロンプトを入力、またはスクリーンショットを貼り付け(Ctrl+V)...",
+    "description": "プロンプト入力のプレースホルダー。"
+  },
+  "incognitoUploadButton": {
+    "message": "🖼️ アップロード",
+    "description": "アップロードボタンのテキスト。"
+  },
+  "incognitoUploadTitle": {
+    "message": "画像をアップロード (最大4枚)",
+    "description": "アップロードボタンのタイトル属性。"
+  },
+  "incognitoPresetTitleA": { "message": "プリセットAを使用", "description": "プリセットボタンAのタイトル。" },
+  "incognitoPresetTitleB": { "message": "プリセットBを使用", "description": "プリセットボタンBのタイトル。" },
+  "incognitoPresetTitleC": { "message": "プリセットCを使用", "description": "プリセットボタンCのタイトル。" },
+  "incognitoPresetTitleD": { "message": "プリセットDを使用", "description": "プリセットボタンDのタイトル。" },
+  "incognitoPresetTitleE": { "message": "プリセットEを使用", "description": "プリセットボタンEのタイトル。" },
+  "incognitoSendButton": {
+    "message": "送信 ▶️",
+    "description": "送信ボタンのテキスト。"
+  },
+  "incognitoFooter": {
+    "message": "作者のHugo Chenは台湾の医師で、2025年のある台風の日に初版を完成させました。初版は台湾語で「風颱」(Hong-Thai)と名付けられました。もし便利だと感じたり、アイデアがあれば、Chromeウェブストアでレビューや提案をお願いします。もしよろしければ、右のリンクから私のBuy Me a Coffeeページへ進み、一杯のコーヒーで応援していただけると嬉しいです。",
+    "description": "Footer text. Keep HTML tags."
+  },
+  "errorNoActiveTab": {
+    "message": "アクティブなタブが見つかりませんでした。",
+    "description": "background.jsのエラーメッセージ。"
+  },
+  "errorInvalidText": {
+    "message": "無効または空のテキストコンテンツです。",
+    "description": "background.jsのエラーメッセージ。"
+  },
+  "errorNoImageData": {
+    "message": "画像データが提供されていません。",
+    "description": "background.jsのエラーメッセージ。"
+  },
+  "errorOcrFailed": {
+    "message": "AIが十分なテキストを認識できませんでした。",
+    "description": "background.jsのエラーメッセージ。"
+  },
+  "errorNoAudioData": {
+    "message": "音声データが提供されていません。",
+    "description": "background.jsのエラーメッセージ。"
+  },
+  "errorSttFailed": {
+    "message": "AIが音声を認識できませんでした。",
+    "description": "background.jsのエラーメッセージ。"
+  },
+  "errorDebuggerAttach": {
+    "message": "デバッガーのアタッチに失敗しました。ページを再読み込みするか、他の拡張機能との競合を確認してください。",
+    "description": "background.jsのエラーメッセージ。"
+  },
+  "errorScreenshotFailed": {
+    "message": "スクリーンショットのキャプチャに失敗しました。",
+    "description": "background.jsのエラーメッセージ。"
+  },
+  "errorOcrFailedLong": {
+    "message": "AIが十分なテキストコンテンツを認識できませんでした。",
+    "description": "background.jsのエラーメッセージ。"
+  },
+  "errorNoApiKey": {
+    "message": "APIキーが設定されていません。",
+    "description": "background.jsやその他のエラーメッセージ。"
+  },
+  "errorApiRequestFailed": {
+    "message": "APIリクエストに失敗しました: $details$",
+    "description": "background.jsのエラーメッセージ。$details$はプレースホルダー。",
+    "placeholders": {
+      "details": {
+        "content": "$1",
+        "example": "無効なAPIキー。"
+      }
+    }
+  },
+  "errorApiRejected": {
+    "message": "AIによってリクエストが拒否されました、理由: $reason$",
+    "description": "background.jsのエラーメッセージ。$reason$はプレースホルダー。",
+    "placeholders": {
+      "reason": {
+        "content": "$1",
+        "example": "SAFETY"
+      }
+    }
+  },
+  "errorApiStopped": {
+    "message": "AIの処理が途中で停止しました、理由: $reason$",
+    "description": "background.jsのエラーメッセージ。$reason$はプレースホルダー。",
+    "placeholders": {
+      "reason": {
+        "content": "$1",
+        "example": "MAX_TOKENS"
+      }
+    }
+  },
+  "errorApiInvalidResponse": {
+    "message": "無効または空のAPIレスポンス形式です。",
+    "description": "background.jsのエラーメッセージ。"
+  },
+  "errorNetwork": {
+    "message": "ネットワークエラー、Gemini APIに接続できません。",
+    "description": "background.jsのエラーメッセージ。"
+  },
+  "alertMaxImages": {
+    "message": "エラー：最大4枚の画像しかアップロードできません。",
+    "description": "incognito.jsのアラートメッセージ。"
+  },
+  "alertTurnLimit": {
+    "message": "注意：会話の上限$limit$回に達しました。新しい会話を開始するにはページを更新してください。",
+    "description": "incognito.jsのアラートメッセージ。$limit$はプレースホルダー。",
+    "placeholders": {
+      "limit": {
+        "content": "$1",
+        "example": "12"
+      }
+    }
+  },
+  "alertNoApiKeyOptions": {
+    "message": "エラー：Gemini APIキーが設定されていません。拡張機能のオプションで設定してください。",
+    "description": "incognito.jsのアラートメッセージ。"
+  },
+  "alertInitFailed": {
+    "message": "ページの初期化に失敗しました。",
+    "description": "incognito.jsのアラートメッセージ。"
+  },
+  "stateThinking": {
+    "message": "考え中...",
+    "description": "送信ボタンの読み込み状態。"
+  },
+  "readerTitle": {
+    "message": "リーダーモード",
+    "description": "リーダーページのタイトル。"
+  },
+  "readerLabelTargetLang": {
+    "message": "ターゲット出力言語:",
+    "description": "reader.htmlのメインターゲット言語セレクターのラベル。"
+  },
+  "readerLabelFontSize": {
+    "message": "フォントサイズ:",
+    "description": "リーダーツールバーのラベル。"
+  },
+  "readerLabelLineHeight": {
+    "message": "行の高さ:",
+    "description": "リーダーツールバーのラベル。"
+  },
+  "readerLabelBgColor": {
+    "message": "背景色:",
+    "description": "リーダーツールバーのラベル。"
+  },
+  "readerSaveButton": {
+    "message": "TXTとして保存",
+    "description": "リーダーツールバーのボタンテキスト。"
+  },
+  "readerLoading": {
+    "message": "コンテンツを読み込み中...",
+    "description": "リーダーの読み込みメッセージ。"
+  },
+  "readerErrorNotFound": {
+    "message": "記事のコンテンツが見つからないか、抽出されたコンテンツが空です。元のページに戻って再試行してください。",
+    "description": "リーダーのエラーメッセージ。"
+  },
+  "readerTranslating": {
+    "message": " (翻訳中...)",
+    "description": "リーダーの翻訳ステータス。"
+  },
+  "readerTranslateFailed": {
+    "message": "翻訳に失敗しました: $error$",
+    "description": "リーダーの翻訳失敗メッセージ。",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "readerVoiceToolHeader": {
+    "message": "文字起こし結果",
+    "description": "リーダーの音声ツールヘッダー。"
+  },
+  "readerVoiceToolLabel": {
+    "message": "翻訳先:",
+    "description": "リーダーの音声ツールラベル。"
+  },
+  "readerVoiceToolButton": {
+    "message": "翻訳を開始",
+    "description": "リーダーの音声ツールボタン。"
+  },
+  "readerSaveOriginal": {
+    "message": "[原文 $index$]",
+    "description": "保存ファイル内の原文ラベル。",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "readerSaveTranslated": {
+    "message": "[翻訳 $index$]",
+    "description": "保存ファイル内の翻訳文ラベル。",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "workbenchTitle": {
+    "message": "スマート翻訳ワークベンチ",
+    "description": "ワークベンチページのタイトル。"
+  },
+  "workbenchTabText": {
+    "message": "テキストを貼り付け",
+    "description": "ワークベンチのタブラベル。"
+  },
+  "workbenchTabImage": {
+    "message": "スクリーンショットをアップロード",
+    "description": "ワークベンチのタブラベル。"
+  },
+  "workbenchTextHeader": {
+    "message": "モード2：テキスト貼り付けワークベンチ",
+    "description": "ワークベンチのヘッダー。"
+  },
+  "workbenchTextDesc": {
+    "message": "ウェブページ、Word、PDFから選択可能なテキストに適しています。テキストをコピーして以下に貼り付けると、最も速く正確な結果が得られます。",
+    "description": "ワークベンチの説明。"
+  },
+  "workbenchImageHeader": {
+    "message": "モード3：デスクトップスクリーンショットのアップロード",
+    "description": "ワークベンチのヘッダー。"
+  },
+  "workbenchLabelSourceLang": {
+    "message": "ソース言語",
+    "description": "言語選択のラベル。"
+  },
+  "workbenchLabelImageSourceLang": {
+    "message": "ソース言語（画像内）",
+    "description": "言語選択のラベル。"
+  },
+  "workbenchLabelTargetLang": {
+    "message": "ターゲット出力言語",
+    "description": "言語選択のラベル。"
+  },
+  "workbenchTextPlaceholder": {
+    "message": "コピーしたテキストをここに貼り付けてください...",
+    "description": "テキスト入力のプレースホルダー。"
+  },
+  "workbenchProcessTextButton": {
+    "message": "テキストを処理",
+    "description": "ボタンテキスト。"
+  },
+  "workbenchUploadBox": {
+    "message": "ここをクリックまたはファイルをドラッグ",
+    "description": "アップロードボックス内のテキスト。"
+  },
+  "workbenchUploadBoxDesc": {
+    "message": "（JPG、PNG、BMPをサポート）",
+    "description": "アップロードボックス内の説明。"
+  },
+  "workbenchProcessImageButton": {
+    "message": "認識を開始",
+    "description": "ボタンテキスト。"
+  },
+  "statusProcessing": {
+    "message": "処理中...",
+    "description": "ステータスメッセージ。"
+  },
+  "statusPleasePaste": {
+    "message": "最初にテキストを貼り付けてください。",
+    "description": "ステータスメッセージ。"
+  },
+  "statusSuccess": {
+    "message": "成功！リーダーモードを開いています...",
+    "description": "ステータスメッセージ。"
+  },
+  "statusFailed": {
+    "message": "処理に失敗しました: $error$",
+    "description": "ステータスメッセージ。",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "statusUploading": {
+    "message": "AIに送信して認識中...",
+    "description": "ステータスメッセージ。"
+  },
+  "statusUploadSuccess": {
+    "message": "認識成功！リーダーモードを開いています...",
+    "description": "ステータスメッセージ。"
+  },
+  "errorPleaseUploadImage": {
+    "message": "エラー：画像ファイルをアップロードしてください。",
+    "description": "エラーメッセージ。"
+  },
+  "voiceTitle": {
+    "message": "Incognito 音声メモ",
+    "description": "音声メモページのタイトル。"
+  },
+  "voiceDesc": {
+    "message": "主な話し言葉を選択し、録音を開始して、あなたの考えを素早くテキストに変換します。<br>ブラウザのアップロードサイズ制限のため、この機能は数分以内の短いメモに推奨されます。",
+    "description": "音声メモページの説明。"
+  },
+  "voiceLabelAudioSource": {
+    "message": "オーディオソース:",
+    "description": "オーディオソースのラベル。"
+  },
+  "voiceLabelSpokenLang": {
+    "message": "主な話し言葉:",
+    "description": "話し言葉のラベル。"
+  },
+  "voiceButtonStart": {
+    "message": "録音を開始",
+    "description": "ボタンテキスト。"
+  },
+  "voiceButtonStop": {
+    "message": "録音を停止",
+    "description": "ボタンテキスト。"
+  },
+  "voiceStatusNoMic": {
+    "message": "マイクデバイスが見つかりません。",
+    "description": "ステータスメッセージ。"
+  },
+  "voiceStatusNoMicPermission": {
+    "message": "マイクの許可が取得できませんでした。ブラウザの設定でこの拡張機能にマイクの使用を許可してください。",
+    "description": "ステータスメッセージ。"
+  },
+  "voiceStatusSelectSource": {
+    "message": "オーディオソースを選択してください。",
+    "description": "ステータスメッセージ。"
+  },
+  "voiceStatusRecording": {
+    "message": "録音中...",
+    "description": "ステータスメッセージ。"
+  },
+  "voiceStatusSending": {
+    "message": "AIに送信して認識中...",
+    "description": "ステータスメッセージ。"
+  },
+  "voiceStatusSuccess": {
+    "message": "認識完了、新しいタブが開きました。",
+    "description": "ステータスメッセージ。"
+  },
+  "voiceStatusCommError": {
+    "message": "通信エラー: $error$",
+    "description": "ステータスメッセージ。",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "voiceStatusFailed": {
+    "message": "認識に失敗しました: $error$",
+    "description": "ステータスメッセージ。",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "langAutoDetect": {
+    "message": "自動検出",
+    "description": "自動検出の言語オプション。"
+  },
+  "langSystemDefault": {
+    "message": "システムデフォルト ($langName$)",
+    "description": "システムデフォルトの言語オプション。$langName$は実際の言語名のプレースホルダー。",
+    "placeholders": { "langName": { "content": "$1", "example": "日本語" } }
+  },
+  "langPrefA": {
+    "message": "優先-A ($langName$)",
+    "description": "優先言語Aの言語オプション。",
+    "placeholders": { "langName": { "content": "$1", "example": "Français" } }
+  },
+  "langPrefB": {
+    "message": "優先-B ($langName$)",
+    "description": "優先言語Bの言語オプション。",
+    "placeholders": { "langName": { "content": "$1", "example": "Español" } }
+  },
+  "voiceLangZhEn": {
+    "message": "中国語（英語混じり）",
+    "description": "音声入力の特別言語オプション。"
+  },
+  "voiceMicLabel": {
+    "message": "マイク $index$",
+    "description": "マイクのデフォルトラベル。",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "voiceErrorStartRecording": {
+    "message": "録音の開始に失敗しました: $error$",
+    "description": "録音開始失敗時のエラーメッセージ。",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "errorUnknown": {
+    "message": "不明なエラーが発生しました。",
+    "description": "一般的なエラーメッセージ。"
+  }
+}

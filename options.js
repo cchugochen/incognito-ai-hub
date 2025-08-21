@@ -1,61 +1,104 @@
-// options.js (v24.0)
-// - Added support for saving and restoring 5 preset prompts.
+// options.js (v25.3 - Bug Fix)
+// - Fixed model radio buttons being unselectable by removing preventDefault().
+import { populateLanguageSelector } from './scripts/language_manager.js';
 
+/**
+ * Saves options to chrome.storage.sync.
+ */
 function save_options() {
-  const selectedModel = document.querySelector('input[name="model-select"]:checked').value;
-
-  chrome.storage.sync.set({
-    geminiApiKey: document.getElementById('api-key').value,
-    translationModel: selectedModel,
-    logEndpoint: document.getElementById('log-endpoint').value,
-    logKey: document.getElementById('log-key').value,
-    // (2) 儲存預設提示語
-    preset_a: document.getElementById('preset-prompt-a').value,
-    preset_b: document.getElementById('preset-prompt-b').value,
-    preset_c: document.getElementById('preset-prompt-c').value,
-    preset_d: document.getElementById('preset-prompt-d').value,
-    preset_e: document.getElementById('preset-prompt-e').value
-  }, function() {
-    const status = document.getElementById('status');
-    status.textContent = '設定已儲存。';
-    setTimeout(() => { status.textContent = ''; }, 1500);
-  });
-}
-
-function restore_options() {
-  chrome.storage.sync.get({
-    geminiApiKey: '',
-    translationModel: 'gemini-2.0-flash', // Default model
-    logEndpoint: '',
-    logKey: '',
-    // (2) 讀取預設提示語的預設值
-    preset_a: '',
-    preset_b: '',
-    preset_c: '',
-    preset_d: '',
-    preset_e: ''
-  }, function(items) {
-    document.getElementById('api-key').value = items.geminiApiKey;
-    document.getElementById('log-endpoint').value = items.logEndpoint;
-    document.getElementById('log-key').value = items.logKey;
-    
-    // (2) 還原預設提示語到輸入框
-    document.getElementById('preset-prompt-a').value = items.preset_a;
-    document.getElementById('preset-prompt-b').value = items.preset_b;
-    document.getElementById('preset-prompt-c').value = items.preset_c;
-    document.getElementById('preset-prompt-d').value = items.preset_d;
-    document.getElementById('preset-prompt-e').value = items.preset_e;
-
-    // Find the radio button that corresponds to the saved model and check it.
-    const savedModelRadio = document.querySelector(`input[name="model-select"][value="${items.translationModel}"]`);
-    if (savedModelRadio) {
-      savedModelRadio.checked = true;
-    } else {
-      // If the saved model is not found (e.g., it was removed), default to the first one.
-      document.querySelector('input[name="model-select"]').checked = true;
+    // [v25.3 Fix] Ensure a model is selected before saving
+    const selectedModelEl = document.querySelector('input[name="model-select"]:checked');
+    if (!selectedModelEl) {
+        // This case should ideally not happen with the fix, but as a safeguard:
+        alert("Please select a translation model.");
+        return;
     }
-  });
+    const selectedModel = selectedModelEl.value;
+    const lang = document.getElementById('display-language').value;
+
+    chrome.storage.sync.set({
+        displayLanguage: lang,
+        geminiApiKey: document.getElementById('api-key').value,
+        translationModel: selectedModel,
+        logEndpoint: document.getElementById('log-endpoint').value,
+        logKey: document.getElementById('log-key').value,
+        prefLangA: document.getElementById('pref-lang-a').value.trim(),
+        prefLangB: document.getElementById('pref-lang-b').value.trim(),
+        preset_a: document.getElementById('preset-prompt-a').value,
+        preset_b: document.getElementById('preset-prompt-b').value,
+        preset_c: document.getElementById('preset-prompt-c').value,
+        preset_d: document.getElementById('preset-prompt-d').value,
+        preset_e: document.getElementById('preset-prompt-e').value
+    }, () => {
+        const status = document.getElementById('status');
+        status.textContent = chrome.i18n.getMessage('optionsStatusSaved');
+        status.style.color = 'green';
+        setTimeout(() => { status.textContent = ''; }, 2000);
+    });
 }
 
-document.addEventListener('DOMContentLoaded', restore_options);
-document.getElementById('save').addEventListener('click', save_options);
+/**
+ * Restores options from chrome.storage.sync.
+ */
+function restore_options() {
+    chrome.storage.sync.get({
+        displayLanguage: 'default',
+        geminiApiKey: '',
+        translationModel: 'gemini-2.0-flash',
+        logEndpoint: '',
+        logKey: '',
+        prefLangA: '',
+        prefLangB: '',
+        preset_a: '',
+        preset_b: '',
+        preset_c: '',
+        preset_d: '',
+        preset_e: ''
+    }, (items) => {
+        document.getElementById('display-language').value = items.displayLanguage;
+        document.getElementById('api-key').value = items.geminiApiKey;
+        document.getElementById('log-endpoint').value = items.logEndpoint;
+        document.getElementById('log-key').value = items.logKey;
+        
+        document.getElementById('pref-lang-a').value = items.prefLangA;
+        document.getElementById('pref-lang-b').value = items.prefLangB;
+
+        document.getElementById('preset-prompt-a').value = items.preset_a;
+        document.getElementById('preset-prompt-b').value = items.preset_b;
+        document.getElementById('preset-prompt-c').value = items.preset_c;
+        document.getElementById('preset-prompt-d').value = items.preset_d;
+        document.getElementById('preset-prompt-e').value = items.preset_e;
+
+        const savedModelRadio = document.querySelector(`input[name="model-select"][value="${items.translationModel}"]`);
+        if (savedModelRadio) {
+            savedModelRadio.checked = true;
+        } else {
+            document.querySelector('input[name="model-select"]').checked = true;
+        }
+    });
+}
+
+// --- Main Execution ---
+document.addEventListener('DOMContentLoaded', async () => {
+    document.title = chrome.i18n.getMessage('optionsTitle');
+    
+    const displayLangSelect = document.getElementById('display-language');
+    const defaultOption = new Option(chrome.i18n.getMessage('optionsDisplayLangDefault'), 'default');
+    displayLangSelect.add(defaultOption);
+    await populateLanguageSelector(displayLangSelect, { isDisplayLangSelector: true });
+
+    restore_options();
+    
+    document.getElementById('save').addEventListener('click', save_options);
+
+    // [v25.3 Fix] Removed e.preventDefault() to allow native label behavior.
+    document.querySelectorAll('.model-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const radioId = card.getAttribute('for');
+            const radio = document.getElementById(radioId);
+            if (radio) {
+                radio.checked = true;
+            }
+        });
+    });
+});

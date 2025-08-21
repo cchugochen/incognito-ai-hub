@@ -1,0 +1,562 @@
+{
+  "appName": {
+    "message": "無痕AI工作台 Incognito AI Hub by Gemini",
+    "description": "The name of the extension."
+  },
+  "appDesc": {
+    "message": "(1) 整合無痕Gemini對話框、網頁讀取、文字、截圖、語音輸入四種AI無痕翻譯模式的小工具。\n(2) 為合法使用，請使用者自行申請Google Gemini的API。\n(3) 本外掛工具無後台伺服器儲存，需要者請自己建立端點。",
+    "description": "The description of the extension in the manifest."
+  },
+  "popupTranslatePage": {
+    "message": "翻譯當前網頁 (若Google翻譯無法使用)",
+    "description": "Button text in popup.html"
+  },
+  "popupOpenWorkbench": {
+    "message": "開啟智慧翻譯工作台",
+    "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
+  },
+  "popupOpenVoiceNotes": {
+    "message": "無痕-語音輸入筆記",
+    "description": "Button text in popup.html"
+  },
+  "popupOpenIncognito": {
+    "message": "無痕Gemini對話",
+    "description": "Button text in popup.html"
+  },
+  "popupOpenTutorial": {
+    "message": "新手申請Gemini金鑰簡易教學",
+    "description": "Button text in popup.html"
+  },
+  "popupShowLicense": {
+    "message": "MIT版權說明",
+    "description": "Button text in popup.html"
+  },
+  "optionsTitle": {
+    "message": "Incognito AI Hub - 設定",
+    "description": "Title for options page."
+  },
+  "optionsHeader": {
+    "message": "Incognito AI Hub - 設定",
+    "description": "Header for options page."
+  },
+  "optionsDisplayLangSectionHeader": {
+    "message": "1. 介面顯示語言",
+    "description": "Section header in options."
+  },
+  "optionsDisplayLangLabel": {
+    "message": "設定擴充功能介面的顯示語言：",
+    "description": "Label for language selection in options."
+  },
+  "optionsDisplayLangDefault": {
+    "message": "Chrome 系統預設語言",
+    "description": "Default option for language selection."
+  },
+  "optionsPrefLangSectionHeader": {
+    "message": "2. 翻譯偏好語言",
+    "description": "Section header for preferred languages in options."
+  },
+  "optionsPrefLangDesc": {
+    "message": "說明：最佳方式是在欄位裡用你需要的語言寫你需要的語言種類。例如 Français, Español, Русский",
+    "description": "Description for preferred languages section."
+  },
+  "optionsPrefLangLabelA": {
+    "message": "偏好語言-A:",
+    "description": "Label for preferred language A."
+  },
+  "optionsPrefLangLabelB": {
+    "message": "偏好語言-B:",
+    "description": "Label for preferred language B."
+  },
+  "optionsPrefLangPlaceholder": {
+    "message": "例如：Français",
+    "description": "Placeholder for preferred language input."
+  },
+  "optionsApiKeySectionHeader": {
+    "message": "3. Gemini金鑰輸入區",
+    "description": "Section header in options."
+  },
+  "optionsApiKeyLabel": {
+    "message": "您的 Google Gemini API 金鑰:",
+    "description": "Label for API key input."
+  },
+  "optionsModelSectionHeader": {
+    "message": "4. 翻譯與辨識模型",
+    "description": "Section header in options."
+  },
+  "optionsModelDesc": {
+    "message": "選擇「翻譯網頁」、「智慧翻譯工作台」及「語音筆記」功能所使用的預設模型。",
+    "description": "Description for model selection."
+  },
+  "optionsModel1Name": {
+    "message": "Gemini 2.0 Flash",
+    "description": "Model name."
+  },
+  "optionsModel1Tag": {
+    "message": "預設",
+    "description": "Tag for recommended model."
+  },
+  "optionsModel1Desc": {
+    "message": "最適合： 多模態理解、即時串流、成本低",
+    "description": "Description for a model."
+  },
+  "optionsModel2Name": {
+    "message": "Gemini 2.5 Flash Lite (Preview)",
+    "description": "Model name."
+  },
+  "optionsModel2Desc": {
+    "message": "最適合： 單次處理更多tokens、低延遲、成本較低",
+    "description": "Description for a model."
+  },
+  "optionsPresetSectionHeader": {
+    "message": "5. 無痕對話 - 內建提示語記憶",
+    "description": "Section header in options."
+  },
+  "optionsPresetDesc": {
+    "message": "在此輸入您常用的指令或模板，方便在「無痕Gemini對話」中快速取用。",
+    "description": "Description for preset prompts."
+  },
+  "optionsPresetLabelA": {
+    "message": "預設提示語 A:",
+    "description": "Label for preset prompt."
+  },
+  "optionsPresetLabelB": {
+    "message": "預設提示語 B:",
+    "description": "Label for preset prompt."
+  },
+  "optionsPresetLabelC": {
+    "message": "預設提示語 C:",
+    "description": "Label for preset prompt."
+  },
+  "optionsPresetLabelD": {
+    "message": "預設提示語 D:",
+    "description": "Label for preset prompt."
+  },
+  "optionsPresetLabelE": {
+    "message": "預設提示語 E:",
+    "description": "Label for preset prompt."
+  },
+  "optionsLogSectionHeader": {
+    "message": "6. (選用) 雲端日誌設定",
+    "description": "Section header in options."
+  },
+  "optionsLogDesc": {
+    "message": "將處理紀錄發送到您自己的 Google Cloud Functions 端點，以供研究分析。",
+    "description": "Description for logging feature."
+  },
+  "optionsLogEndpointLabel": {
+    "message": "Cloud Function 端點網址:",
+    "description": "Label for log endpoint URL."
+  },
+  "optionsLogKeyLabel": {
+    "message": "認證金鑰 (選填):",
+    "description": "Label for log key."
+  },
+  "optionsSaveButton": {
+    "message": "儲存設定",
+    "description": "Save button text."
+  },
+  "optionsStatusSaved": {
+    "message": "設定已儲存。",
+    "description": "Status message when options are saved."
+  },
+  "incognitoTitle": {
+    "message": "無痕 Gemini 對話框",
+    "description": "Title for incognito chat page."
+  },
+  "incognitoDefaultModelHeader": {
+    "message": "系統預設模型 (Lite)",
+    "description": "Header for default model in incognito chat."
+  },
+  "incognitoDefaultModelDesc": {
+    "message": "輕量Gemini模型：使用您在「選項」頁面中設定的模型 (預設為 2.0 Flash或 2.5-Flash-Lite)，適合一般翻譯與快速問答。",
+    "description": "Description for default model in incognito chat."
+  },
+  "incognitoFlashModelHeader": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Header for Flash model in incognito chat."
+  },
+  "incognitoFlashModelDesc": {
+    "message": "中型Gemini模型，適合需要較長上下文理解或快速摘要的任務。",
+    "description": "Description for Flash model in incognito chat."
+  },
+  "incognitoProModelHeader": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Header for Pro model in incognito chat."
+  },
+  "incognitoProModelDesc": {
+    "message": "Google 目前最強大的模型，用於高度複雜的邏輯推理與創意生成。<b>注意：</b>單位費用高，詳情請見<a href='https://ai.google.dev/pricing' target='_blank'>官方定價</a>。",
+    "description": "Description for Pro model in incognito chat. Keep HTML tags."
+  },
+  "incognitoPlaceholder": {
+    "message": "在此輸入提示，或貼上(Ctrl+V)截圖...",
+    "description": "Placeholder for prompt input."
+  },
+  "incognitoUploadButton": {
+    "message": "🖼️ 上傳",
+    "description": "Upload button text."
+  },
+  "incognitoUploadTitle": {
+    "message": "上傳圖片 (最多 4 張)",
+    "description": "Title attribute for upload button."
+  },
+  "incognitoPresetTitleA": { "message": "使用預設提示A", "description": "Title for preset button A." },
+  "incognitoPresetTitleB": { "message": "使用預設提示B", "description": "Title for preset button B." },
+  "incognitoPresetTitleC": { "message": "使用預設提示C", "description": "Title for preset button C." },
+  "incognitoPresetTitleD": { "message": "使用預設提示D", "description": "Title for preset button D." },
+  "incognitoPresetTitleE": { "message": "使用預設提示E", "description": "Title for preset button E." },
+  "incognitoSendButton": {
+    "message": "Send ▶️",
+    "description": "Send button text."
+  },
+  "incognitoFooter": {
+    "message": "作者Hugo Chen是一位台灣的醫師，在2025某個颱風天完成初版，初版以台語命名為「風颱」(Hong-Thai)。如果您覺得好用或有想法，請到Chrome網頁商店評論建議。如果願意，歡迎到右邊連結本人的Buy Me a Coffee網頁，用實際行動請我喝一杯飲料。",
+    "description": "Footer text. Keep HTML tags."
+  },
+  "errorNoActiveTab": {
+    "message": "無法找到當前活動的分頁。",
+    "description": "Error message in background.js"
+  },
+  "errorInvalidText": {
+    "message": "無效或空白的文字內容。",
+    "description": "Error message in background.js"
+  },
+  "errorNoImageData": {
+    "message": "未提供圖片資料。",
+    "description": "Error message in background.js"
+  },
+  "errorOcrFailed": {
+    "message": "AI 未能辨識出足夠的文字。",
+    "description": "Error message in background.js"
+  },
+  "errorNoAudioData": {
+    "message": "未提供音訊資料。",
+    "description": "Error message in background.js"
+  },
+  "errorSttFailed": {
+    "message": "AI 未能辨識出任何語音。",
+    "description": "Error message in background.js"
+  },
+  "errorDebuggerAttach": {
+    "message": "無法附加偵錯器。請重新載入頁面或檢查是否有其他擴充功能衝突。",
+    "description": "Error message in background.js"
+  },
+  "errorScreenshotFailed": {
+    "message": "擷取螢幕畫面失敗。",
+    "description": "Error message in background.js"
+  },
+  "errorOcrFailedLong": {
+    "message": "AI 未能辨識出足夠的文字內容。",
+    "description": "Error message in background.js"
+  },
+  "errorNoApiKey": {
+    "message": "尚未設定 API 金鑰。",
+    "description": "Error message in background.js and others."
+  },
+  "errorApiRequestFailed": {
+    "message": "API 請求失敗: $details$",
+    "description": "Error message in background.js. $details$ is a placeholder.",
+    "placeholders": {
+      "details": {
+        "content": "$1",
+        "example": "Invalid API key."
+      }
+    }
+  },
+  "errorApiRejected": {
+    "message": "請求被 AI 拒絕，原因: $reason$",
+    "description": "Error message in background.js. $reason$ is a placeholder.",
+    "placeholders": {
+      "reason": {
+        "content": "$1",
+        "example": "SAFETY"
+      }
+    }
+  },
+  "errorApiStopped": {
+    "message": "AI 處理提前終止，原因: $reason$",
+    "description": "Error message in background.js. $reason$ is a placeholder.",
+    "placeholders": {
+      "reason": {
+        "content": "$1",
+        "example": "MAX_TOKENS"
+      }
+    }
+  },
+  "errorApiInvalidResponse": {
+    "message": "API 回應格式不正確或為空。",
+    "description": "Error message in background.js"
+  },
+  "errorNetwork": {
+    "message": "網路錯誤，無法連接至 Gemini API。",
+    "description": "Error message in background.js"
+  },
+  "alertMaxImages": {
+    "message": "錯誤：最多只能上傳 4 張圖片。",
+    "description": "Alert message in incognito.js"
+  },
+  "alertTurnLimit": {
+    "message": "提示：已達 $limit$ 回合對話上限。請重新整理頁面以開始新的對話。",
+    "description": "Alert message in incognito.js. $limit$ is a placeholder.",
+    "placeholders": {
+      "limit": {
+        "content": "$1",
+        "example": "12"
+      }
+    }
+  },
+  "alertNoApiKeyOptions": {
+    "message": "錯誤：尚未設定 Gemini API 金鑰。請在擴充功能選項中設定。",
+    "description": "Alert message in incognito.js"
+  },
+  "alertInitFailed": {
+    "message": "頁面初始化失敗。",
+    "description": "Alert message in incognito.js"
+  },
+  "stateThinking": {
+    "message": "思考中...",
+    "description": "Loading state for send button."
+  },
+  "readerTitle": {
+    "message": "閱讀模式",
+    "description": "Title for reader page."
+  },
+  "readerLabelTargetLang": {
+    "message": "目標輸出語言:",
+    "description": "Label for the main target language selector in reader.html"
+  },
+  "readerLabelFontSize": {
+    "message": "字體大小:",
+    "description": "Label in reader toolbar."
+  },
+  "readerLabelLineHeight": {
+    "message": "行距:",
+    "description": "Label in reader toolbar."
+  },
+  "readerLabelBgColor": {
+    "message": "背景顏色:",
+    "description": "Label in reader toolbar."
+  },
+  "readerSaveButton": {
+    "message": "儲存為 TXT",
+    "description": "Button text in reader toolbar."
+  },
+  "readerLoading": {
+    "message": "正在載入內容...",
+    "description": "Loading message in reader."
+  },
+  "readerErrorNotFound": {
+    "message": "找不到文章內容，或提取的內容為空。請返回原始頁面重試。",
+    "description": "Error message in reader."
+  },
+  "readerTranslating": {
+    "message": " (翻譯中...)",
+    "description": "Translating status in reader."
+  },
+  "readerTranslateFailed": {
+    "message": "翻譯失敗: $error$",
+    "description": "Translation failed message in reader.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "readerVoiceToolHeader": {
+    "message": "翻譯辨識結果",
+    "description": "Header for voice tool in reader."
+  },
+  "readerVoiceToolLabel": {
+    "message": "翻譯為：",
+    "description": "Label for voice tool in reader."
+  },
+  "readerVoiceToolButton": {
+    "message": "開始翻譯",
+    "description": "Button for voice tool in reader."
+  },
+  "readerSaveOriginal": {
+    "message": "[原文 $index$]",
+    "description": "Label for original text in saved file.",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "readerSaveTranslated": {
+    "message": "[翻譯 $index$]",
+    "description": "Label for translated text in saved file.",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "workbenchTitle": {
+    "message": "智慧翻譯工作台",
+    "description": "Title for workbench page."
+  },
+  "workbenchTabText": {
+    "message": "貼上文字",
+    "description": "Tab label in workbench."
+  },
+  "workbenchTabImage": {
+    "message": "上傳截圖",
+    "description": "Tab label in workbench."
+  },
+  "workbenchTextHeader": {
+    "message": "模式二：文字貼上工作台",
+    "description": "Header in workbench."
+  },
+  "workbenchTextDesc": {
+    "message": "適用於可選取文字的網頁、Word 或 PDF。直接複製文字並貼於下方，以獲得最快、最精準的處理結果。",
+    "description": "Description in workbench."
+  },
+  "workbenchImageHeader": {
+    "message": "模式三：桌面截圖上傳",
+    "description": "Header in workbench."
+  },
+  "workbenchLabelSourceLang": {
+    "message": "來源語言",
+    "description": "Label for language selection."
+  },
+  "workbenchLabelImageSourceLang": {
+    "message": "來源語言 (圖片內文字)",
+    "description": "Label for language selection."
+  },
+  "workbenchLabelTargetLang": {
+    "message": "目標輸出語言",
+    "description": "Label for language selection."
+  },
+  "workbenchTextPlaceholder": {
+    "message": "在此處貼上您複製的文字...",
+    "description": "Placeholder for text input."
+  },
+  "workbenchProcessTextButton": {
+    "message": "處理文字",
+    "description": "Button text."
+  },
+  "workbenchUploadBox": {
+    "message": "點擊或拖曳檔案至此",
+    "description": "Text in upload box."
+  },
+  "workbenchUploadBoxDesc": {
+    "message": "(支援 JPG, PNG, BMP)",
+    "description": "Description in upload box."
+  },
+  "workbenchProcessImageButton": {
+    "message": "開始辨識",
+    "description": "Button text."
+  },
+  "statusProcessing": {
+    "message": "處理中...",
+    "description": "Status message."
+  },
+  "statusPleasePaste": {
+    "message": "請先貼上文字。",
+    "description": "Status message."
+  },
+  "statusSuccess": {
+    "message": "處理成功！正在打開閱讀模式...",
+    "description": "Status message."
+  },
+  "statusFailed": {
+    "message": "處理失敗: $error$",
+    "description": "Status message.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "statusUploading": {
+    "message": "正在發送到 AI 進行辨識...",
+    "description": "Status message."
+  },
+  "statusUploadSuccess": {
+    "message": "辨識成功！正在打開閱讀模式...",
+    "description": "Status message."
+  },
+  "errorPleaseUploadImage": {
+    "message": "錯誤：請上傳圖片檔案。",
+    "description": "Error message."
+  },
+  "voiceTitle": {
+    "message": "無痕-語音輸入筆記",
+    "description": "Title for voice notes page."
+  },
+  "voiceDesc": {
+    "message": "選擇您的主要口說語言，點擊開始錄音，將您的想法快速轉換為文字。<br>受限於瀏覽器單次上傳的大小，本功能建議用於數分鐘內的快速筆記。",
+    "description": "Description on voice notes page."
+  },
+  "voiceLabelAudioSource": {
+    "message": "音訊來源:",
+    "description": "Label for audio source."
+  },
+  "voiceLabelSpokenLang": {
+    "message": "主要口說語言:",
+    "description": "Label for spoken language."
+  },
+  "voiceButtonStart": {
+    "message": "開始錄音",
+    "description": "Button text."
+  },
+  "voiceButtonStop": {
+    "message": "停止錄音",
+    "description": "Button text."
+  },
+  "voiceStatusNoMic": {
+    "message": "找不到麥克風裝置。",
+    "description": "Status message."
+  },
+  "voiceStatusNoMicPermission": {
+    "message": "無法取得麥克風權限。請在瀏覽器設定中允許本擴充功能使用麥克風。",
+    "description": "Status message."
+  },
+  "voiceStatusSelectSource": {
+    "message": "請選擇一個音訊來源。",
+    "description": "Status message."
+  },
+  "voiceStatusRecording": {
+    "message": "錄音中...",
+    "description": "Status message."
+  },
+  "voiceStatusSending": {
+    "message": "正在傳送至 AI 進行辨識...",
+    "description": "Status message."
+  },
+  "voiceStatusSuccess": {
+    "message": "辨識完成，已開啟新分頁。",
+    "description": "Status message."
+  },
+  "voiceStatusCommError": {
+    "message": "通訊錯誤: $error$",
+    "description": "Status message.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "voiceStatusFailed": {
+    "message": "辨識失敗: $error$",
+    "description": "Status message.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "langAutoDetect": {
+    "message": "自動偵測",
+    "description": "Language option for auto-detection."
+  },
+  "langSystemDefault": {
+    "message": "系統預設語言 ($langName$)",
+    "description": "Language option for system default, with placeholder for the actual language name.",
+    "placeholders": { "langName": { "content": "$1", "example": "Traditional Chinese" } }
+  },
+  "langPrefA": {
+    "message": "偏好語言-A ($langName$)",
+    "description": "Language option for preferred language A.",
+    "placeholders": { "langName": { "content": "$1", "example": "Français" } }
+  },
+  "langPrefB": {
+    "message": "偏好語言-B ($langName$)",
+    "description": "Language option for preferred language B.",
+    "placeholders": { "langName": { "content": "$1", "example": "Español" } }
+  },
+  "voiceLangZhEn": {
+    "message": "中文 (夾雜英文)",
+    "description": "Special language option for voice input."
+  },
+  "voiceMicLabel": {
+    "message": "麥克風 $index$",
+    "description": "Default label for a microphone.",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "voiceErrorStartRecording": {
+    "message": "無法啟動錄音: $error$",
+    "description": "Error message when starting recording fails.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "errorUnknown": {
+    "message": "發生未知錯誤。",
+    "description": "A generic error message."
+  }
+}

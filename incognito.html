@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>無痕 Gemini 對話框</title>
+    <title>__MSG_incognitoTitle__</title>
+    <!-- 載入新的共用主題與版面樣式 -->
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/page_layout.css">
     <link rel="stylesheet" href="incognito.css">
 </head>
 <body>
@@ -18,25 +21,24 @@
         <!-- Lite 模型對話區 -->
         <div id="default" class="tab-content active">
             <header class="header">
-                <h2>系統預設模型 (Lite)</h2>
-                <p class="description">輕量Gemini模型：使用您在「選項」頁面中設定的模型 (預設為 2.0 Flash或 2.5-Flash-Lite)，適合一般翻譯與快速問答。</p>
+                <h2 data-i18n="incognitoDefaultModelHeader"></h2>
+                <p class="description" data-i18n="incognitoDefaultModelDesc"></p>
             </header>
             <main id="chat-window-default" class="chat-window"></main>
             <div class="input-area">
                 <div id="image-preview-container-default" class="image-preview-container"></div>
-                <textarea id="prompt-default" class="prompt-input" placeholder="在此輸入提示，或貼上(Ctrl+V)截圖..."></textarea>
+                <textarea id="prompt-default" class="prompt-input" data-i18n-placeholder="incognitoPlaceholder"></textarea>
                 <div class="controls">
-                    <button id="upload-btn-default" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳</button>
-                    <!-- [修復] 將隱藏的檔案上傳 input 加回 -->
+                    <button id="upload-btn-default" class="upload-btn" data-i18n="incognitoUploadButton" data-i18n-title="incognitoUploadTitle"></button>
                     <input type="file" id="file-input-default" accept="image/*" multiple hidden>
                     <div id="preset-buttons-container-default" class="preset-buttons">
-                        <button class="preset-btn" data-preset="A" title="使用預設提示A">A</button>
-                        <button class="preset-btn" data-preset="B" title="使用預設提示B">B</button>
-                        <button class="preset-btn" data-preset="C" title="使用預設提示C">C</button>
-                        <button class="preset-btn" data-preset="D" title="使用預設提示D">D</button>
-                        <button class="preset-btn" data-preset="E" title="使用預設提示E">E</button>
+                        <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
+                        <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
+                        <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
+                        <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
+                        <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
                     </div>
-                    <button id="send-btn-default" class="submit-btn">Send ▶️</button>
+                    <button id="send-btn-default" class="submit-btn" data-i18n="incognitoSendButton"></button>
                 </div>
             </div>
         </div>
@@ -44,25 +46,24 @@
         <!-- 2.5 Flash 模型對話區 -->
         <div id="flash" class="tab-content">
             <header class="header">
-                <h2>Gemini 2.5 Flash</h2>
-                <p class="description">中型Gemini模型，適合需要較長上下文理解或快速摘要的任務。</p>
+                <h2 data-i18n="incognitoFlashModelHeader"></h2>
+                <p class="description" data-i18n="incognitoFlashModelDesc"></p>
             </header>
             <main id="chat-window-flash" class="chat-window"></main>
             <div class="input-area">
                 <div id="image-preview-container-flash" class="image-preview-container"></div>
-                <textarea id="prompt-flash" class="prompt-input" placeholder="在此輸入提示，或貼上(Ctrl+V)截圖..."></textarea>
+                <textarea id="prompt-flash" class="prompt-input" data-i18n-placeholder="incognitoPlaceholder"></textarea>
                 <div class="controls">
-                    <button id="upload-btn-flash" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳</button>
-                    <!-- [修復] 將隱藏的檔案上傳 input 加回 -->
+                    <button id="upload-btn-flash" class="upload-btn" data-i18n="incognitoUploadButton" data-i18n-title="incognitoUploadTitle"></button>
                     <input type="file" id="file-input-flash" accept="image/*" multiple hidden>
                     <div id="preset-buttons-container-flash" class="preset-buttons">
-                        <button class="preset-btn" data-preset="A" title="使用預設提示A">A</button>
-                        <button class="preset-btn" data-preset="B" title="使用預設提示B">B</button>
-                        <button class="preset-btn" data-preset="C" title="使用預設提示C">C</button>
-                        <button class="preset-btn" data-preset="D" title="使用預設提示D">D</button>
-                        <button class="preset-btn" data-preset="E" title="使用預設提示E">E</button>
+                        <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
+                        <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
+                        <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
+                        <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
+                        <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
                     </div>
-                    <button id="send-btn-flash" class="submit-btn">Send ▶️</button>
+                    <button id="send-btn-flash" class="submit-btn" data-i18n="incognitoSendButton"></button>
                 </div>
             </div>
         </div>
@@ -70,38 +71,37 @@
         <!-- 2.5 Pro 模型對話區 -->
         <div id="pro" class="tab-content">
             <header class="header">
-                <h2>Gemini 2.5 Pro</h2>
-                <p class="description">Google 目前最強大的模型，用於高度複雜的邏輯推理與創意生成。<b>注意：</b>單位費用高，詳情請見<a href="https://ai.google.dev/pricing" target="_blank">官方定價</a>。</p>
+                <h2 data-i18n="incognitoProModelHeader"></h2>
+                <p class="description" data-i18n="incognitoProModelDesc"></p>
             </header>
             <main id="chat-window-pro" class="chat-window"></main>
             <div class="input-area">
                 <div id="image-preview-container-pro" class="image-preview-container"></div>
-                <textarea id="prompt-pro" class="prompt-input" placeholder="在此輸入提示，或貼上(Ctrl+V)截圖..."></textarea>
+                <textarea id="prompt-pro" class="prompt-input" data-i18n-placeholder="incognitoPlaceholder"></textarea>
                 <div class="controls">
-                    <button id="upload-btn-pro" class="upload-btn" title="上傳圖片 (最多 4 張)">🖼️ 上傳</button>
-                    <!-- [修復] 將隱藏的檔案上傳 input 加回 -->
+                    <button id="upload-btn-pro" class="upload-btn" data-i18n="incognitoUploadButton" data-i18n-title="incognitoUploadTitle"></button>
                     <input type="file" id="file-input-pro" accept="image/*" multiple hidden>
                     <div id="preset-buttons-container-pro" class="preset-buttons">
-                        <button class="preset-btn" data-preset="A" title="使用預設提示A">A</button>
-                        <button class="preset-btn" data-preset="B" title="使用預設提示B">B</button>
-                        <button class="preset-btn" data-preset="C" title="使用預設提示C">C</button>
-                        <button class="preset-btn" data-preset="D" title="使用預設提示D">D</button>
-                        <button class="preset-btn" data-preset="E" title="使用預設提示E">E</button>
+                        <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
+                        <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
+                        <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
+                        <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
+                        <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
                     </div>
-                    <button id="send-btn-pro" class="submit-btn">Send ▶️</button>
+                    <button id="send-btn-pro" class="submit-btn" data-i18n="incognitoSendButton"></button>
                 </div>
             </div>
         </div>
 
-        <footer class="page-footer">
-            <div class="footer-text">
-                作者 Hugo Chen 是台灣公家機關員工，於颱風天完成初版，以此命名。<br>
-                好用請在 Chrome 應用商店給好評，或到本人 Buy Me a Coffee 網頁請我喝一杯飲料。
-            </div>
+        <!-- 新增的分隔線 -->
+        <hr class="controls-divider">
 
+        <footer class="page-footer">
+            <div class="footer-text" data-i18n="incognitoFooter"></div>
             <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank"><img class="buymeacoffee-img" src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee"></a>
         </footer>
     </div>
+    <script src="i18n.js"></script>
     <script src="incognito.js"></script>
 </body>
 </html>

@@ -1,16 +1,45 @@
 /**
- * Copyright (c) 2025 Dr. Cheng-Che Chen (陳正哲). All Rights Reserved.
- *
- * 無痕風颱工作台 (Hong-Thai Incognito Reader) v23.3 (Stable)
- * Developed in collaboration with Gemini.
- * - Corrected the Content Security Policy in manifest.json to allow tutorial styles.
- * - OCR prompt remains tuned for complex academic layouts.
+ * background.js (v25.1 - Full Language Integration)
+ * - Aligns language list and logic with the new language_manager.js.
+ * - Resolves 'system-default' language preference within the service worker context.
  */
 
 const protocolVersion = "1.3";
 let attachedTabs = {};
 
-// --- 主訊息路由器 ---
+// --- Language Logic (for Service Worker context) ---
+// This list must be kept in sync with language_manager.js
+const supportedLanguagesForBg = [
+    { code: 'ar', name: 'Arabic' }, { code: 'en', name: 'English' },
+    { code: 'hi', name: 'Hindi' }, { code: 'ja', name: 'Japanese' },
+    { code: 'ko', name: 'Korean' }, { code: 'pt', name: 'Portuguese' },
+    { code: 'ru', name: 'Russian' }, { code: 'tr', name: 'Turkish' },
+    { code: 'uk', name: 'Ukrainian' }, { code: 'vi', name: 'Vietnamese' },
+    { code: 'zh-TW', name: 'Traditional Chinese' }
+];
+
+async function getEffectiveUILanguageNameForBg() {
+    try {
+        const { displayLanguage } = await chrome.storage.sync.get({ displayLanguage: 'default' });
+        if (displayLanguage && displayLanguage !== 'default') {
+            const lang = supportedLanguagesForBg.find(l => l.code === displayLanguage);
+            return lang ? lang.name : 'English';
+        }
+        const uiLang = chrome.i18n.getUILanguage();
+        if (uiLang.toLowerCase().startsWith('zh')) {
+            return 'Traditional Chinese';
+        }
+        const langCode = uiLang.split('-')[0];
+        const found = supportedLanguagesForBg.find(l => l.code === langCode);
+        return found ? found.name : 'English';
+    } catch (error) {
+        console.error("Error getting effective UI language name:", error);
+        return 'English';
+    }
+}
+
+
+// --- Main Message Router ---
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const handler = {
         'PROCESS_WEBPAGE': async () => {
@@ -18,7 +47,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             if (tabs && tabs.length > 0 && tabs[0].id) {
                 await captureAndRecognize(tabs[0].id);
             } else {
-                throw new Error("無法找到當前活動的分頁。");
+                throw new Error(chrome.i18n.getMessage("errorNoActiveTab"));
             }
         },
         'PROCESS_UPLOADED_FILE': () => processUploadedFile(request.payload),
@@ -32,47 +61,64 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 await handler();
                 sendResponse({ success: true });
             } catch (error) {
-                console.error(`[HongThai Reader] Error processing '${request.type}':`, error);
+                console.error(`[Incognito AI Hub] Error processing '${request.type}':`, error);
                 sendResponse({ success: false, error: error.message });
             }
         })();
-        return true;
+        return true; // Indicates that the response is sent asynchronously.
     }
 });
 
-// --- 核心處理函數 ---
+// --- Core Processing Functions ---
 async function processPastedText(payload) {
-    const { text, targetLang } = payload;
-    if (!text || typeof text !== 'string' || text.trim() === '') throw new Error("無效或空白的文字內容。");
+    let { text, targetLang } = payload;
+    if (!text || typeof text !== 'string' || text.trim() === '') {
+        throw new Error(chrome.i18n.getMessage("errorInvalidText"));
+    }
+    if (targetLang === 'system-default') {
+        targetLang = await getEffectiveUILanguageNameForBg();
+    }
     await logActivity({ type: 'paste', sourceUrl: 'pasted_text', originalText: text });
     await openReader({ text: text, targetLang: targetLang, sourceType: 'text' });
 }
 
 async function processUploadedFile(payload) {
-    const { imageData, sourceLang, targetLang } = payload;
-    if (!imageData) throw new Error("未提供圖片資料。");
+    let { imageData, sourceLang, targetLang } = payload;
+    if (!imageData) throw new Error(chrome.i18n.getMessage("errorNoImageData"));
+    if (targetLang === 'system-default') {
+        targetLang = await getEffectiveUILanguageNameForBg();
+    }
+    
     const recognizedText = await callGeminiVision(imageData, sourceLang);
     if (!recognizedText || recognizedText.trim().length < 10) {
-        throw new Error("AI 未能辨識出足夠的文字。");
+        throw new Error(chrome.i18n.getMessage("errorOcrFailed"));
     }
     await logActivity({ type: 'upload_ocr', sourceUrl: 'uploaded_file', originalText: recognizedText });
     await openReader({ text: recognizedText, targetLang: targetLang, sourceType: 'image' });
 }
 
 async function processVoiceNote(payload) {
-    const { audioData, spokenLang } = payload;
-    if (!audioData || !audioData.data) throw new Error("未提供音訊資料。");
+    let { audioData, spokenLang } = payload;
+    if (!audioData || !audioData.data) throw new Error(chrome.i18n.getMessage("errorNoAudioData"));
+
+    if (spokenLang === 'system-default') {
+        spokenLang = await getEffectiveUILanguageNameForBg();
+    }
+
     const transcribedText = await callGeminiSpeechToText(audioData, spokenLang);
     if (!transcribedText || transcribedText.trim().length === 0) {
-        throw new Error("AI 未能辨識出任何語音。");
+        throw new Error(chrome.i18n.getMessage("errorSttFailed"));
     }
     await logActivity({ type: 'voice_note', sourceUrl: 'voice_input', originalText: transcribedText });
-    await openReader({ text: transcribedText, targetLang: 'English', sourceType: 'voice' });
+    
+    // The target language for the reader page should be the system default.
+    const defaultTargetLang = await getEffectiveUILanguageNameForBg();
+    await openReader({ text: transcribedText, targetLang: defaultTargetLang, sourceType: 'voice' });
 }
 
 async function captureAndRecognize(tabId) {
     if (!tabId) {
-        throw new Error("無效的分頁 ID。");
+        throw new Error("Invalid tab ID.");
     }
     
     await setActionBadge(tabId, '...', '#007BFF');
@@ -93,7 +139,7 @@ async function captureAndRecognize(tabId) {
             });
         } catch (e) {
             await setActionBadge(tabId, 'ERR', '#DC3545');
-            throw new Error(`無法附加偵錯器。請重新載入頁面或檢查是否有其他擴充功能衝突。`);
+            throw new Error(chrome.i18n.getMessage("errorDebuggerAttach"));
         }
     }
 
@@ -102,7 +148,7 @@ async function captureAndRecognize(tabId) {
         const screenshot = await sendDebuggerCommand(tabId, "Page.captureScreenshot", { format: "jpeg", quality: 90, captureBeyondViewport: true });
         
         if (!screenshot || !screenshot.data) {
-            throw new Error("擷取螢幕畫面失敗。");
+            throw new Error(chrome.i18n.getMessage("errorScreenshotFailed"));
         }
 
         await setActionBadge(tabId, 'AI', '#17A2B8');
@@ -111,10 +157,11 @@ async function captureAndRecognize(tabId) {
         if (recognizedText && recognizedText.trim().length > 50) {
             const tab = await chrome.tabs.get(tabId);
             await logActivity({ type: 'webpage_ocr', sourceUrl: tab.url, originalText: recognizedText });
-            await openReader({ text: recognizedText, targetLang: 'Traditional Chinese', sourceType: 'webpage' });
+            const defaultTargetLang = await getEffectiveUILanguageNameForBg();
+            await openReader({ text: recognizedText, targetLang: defaultTargetLang, sourceType: 'webpage' });
             await setActionBadge(tabId, 'OK', '#28A745');
         } else {
-            throw new Error("AI 未能辨識出足夠的文字內容。");
+            throw new Error(chrome.i18n.getMessage("errorOcrFailedLong"));
         }
     } catch (e) {
         await setActionBadge(tabId, 'ERR', '#DC3545');
@@ -122,7 +169,7 @@ async function captureAndRecognize(tabId) {
     }
 }
 
-// --- 輔助與 API 呼叫函數 ---
+// --- Helper and API Call Functions ---
 
 async function openReader(payload) {
     const { text, targetLang, sourceType } = payload;
@@ -136,15 +183,15 @@ async function openReader(payload) {
 }
 
 async function callGeminiVision(base64ImageData, sourceLang = 'auto') {
-    const items = await chrome.storage.sync.get({ geminiApiKey: '', translationModel: 'gemini-2.0-flash' });
-    if (!items.geminiApiKey) throw new Error("尚未設定 API 金鑰。");
+    const { geminiApiKey, translationModel } = await chrome.storage.sync.get({ geminiApiKey: '', translationModel: 'gemini-2.0-flash' });
+    if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
-    const model = items.translationModel;
+    const model = translationModel;
     const apiUrl = model.startsWith('models/') ?
-        `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${items.geminiApiKey}` :
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${items.geminiApiKey}`;
+        `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${geminiApiKey}` :
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiApiKey}`;
     
-    let langHint = (sourceLang !== 'auto') ? `The text in the image is primarily in ${sourceLang}.` : "";
+    let langHint = (sourceLang !== 'auto' && sourceLang) ? `The text in the image is primarily in ${sourceLang}.` : "";
     
     const prompt = `You are a highly specialized AI assistant for document analysis. Your primary task is to perform OCR on the provided image and reconstruct the text into a clean, readable format. Please analyze the layout carefully. ${langHint}
 
@@ -161,15 +208,20 @@ Here are the key guidelines for your output:
 }
 
 async function callGeminiSpeechToText(audioData, spokenLang) {
-    const items = await chrome.storage.sync.get({ geminiApiKey: '', translationModel: 'gemini-2.0-flash' });
-    if (!items.geminiApiKey) throw new Error("尚未設定 API 金鑰。");
+    const { geminiApiKey, translationModel } = await chrome.storage.sync.get({ geminiApiKey: '', translationModel: 'gemini-2.0-flash' });
+    if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
-    const model = items.translationModel;
+    const model = translationModel;
     const apiUrl = model.startsWith('models/') ?
-        `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${items.geminiApiKey}` :
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${items.geminiApiKey}`;
+        `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${geminiApiKey}` :
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiApiKey}`;
     
-    const prompt = `You are a highly accurate transcription service. Transcribe the following audio. The user's primary spoken language is ${spokenLang}. Provide a clean and accurate transcript. If you are unsure about a specific word or phrase, transcribe it as best you can and put it inside parentheses. Do not add any other comments.`;
+    let langHint = `The user's primary spoken language is ${spokenLang}.`;
+    if (spokenLang === 'auto' || !spokenLang) {
+        langHint = "Please transcribe the audio, automatically detecting the language spoken.";
+    }
+    
+    const prompt = `You are a highly accurate transcription service. Transcribe the following audio. ${langHint} Provide a clean and accurate transcript. If you are unsure about a specific word or phrase, transcribe it as best you can and put it inside parentheses. Do not add any other comments.`;
     const payload = { "contents": [{ "parts": [ { "text": prompt }, { "inline_data": { "mime_type": audioData.mimeType, "data": audioData.data } } ] }] };
 
     return geminiApiCall(apiUrl, payload);
@@ -186,25 +238,25 @@ async function geminiApiCall(apiUrl, payload) {
 
         if (!response.ok) {
             const errorDetails = result.error?.message || JSON.stringify(result);
-            throw new Error(`API 請求失敗: ${errorDetails}`);
+            throw new Error(chrome.i18n.getMessage("errorApiRequestFailed", errorDetails));
         }
 
         if (result.candidates && result.candidates.length > 0 && result.candidates[0].content?.parts?.[0]?.text) {
             return result.candidates[0].content.parts[0].text;
         } else {
             if (result.promptFeedback?.blockReason) {
-                throw new Error(`請求被 AI 拒絕，原因: ${result.promptFeedback.blockReason}`);
+                throw new Error(chrome.i18n.getMessage("errorApiRejected", result.promptFeedback.blockReason));
             }
             const finishReason = result.candidates?.[0]?.finishReason;
             if (finishReason && finishReason !== 'STOP') {
-                 throw new Error(`AI 處理提前終止，原因: ${finishReason}`);
+                 throw new Error(chrome.i18n.getMessage("errorApiStopped", finishReason));
             }
             console.error("Invalid API response structure:", result);
-            throw new Error("API 回應格式不正確或為空。");
+            throw new Error(chrome.i18n.getMessage("errorApiInvalidResponse"));
         }
     } catch (error) {
         if (error instanceof TypeError) {
-             throw new Error("網路錯誤，無法連接至 Gemini API。");
+             throw new Error(chrome.i18n.getMessage("errorNetwork"));
         }
         throw error;
     }
@@ -232,15 +284,15 @@ async function setActionBadge(tabId, text, color) {
 }
 
 async function logActivity(data) {
-    const items = await chrome.storage.sync.get({ logEndpoint: '', logKey: '' });
-    if (!items.logEndpoint) return;
+    const { logEndpoint, logKey } = await chrome.storage.sync.get({ logEndpoint: '', logKey: '' });
+    if (!logEndpoint) return;
     try {
-        await fetch(items.logEndpoint, {
+        await fetch(logEndpoint, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'x-api-key': items.logKey || '' },
+            headers: { 'Content-Type': 'application/json', 'x-api-key': logKey || '' },
             body: JSON.stringify({ timestamp: new Date().toISOString(), ...data })
         });
     } catch (error) {
-        console.error('發送日誌失敗:', error);
+        console.error('Failed to send log:', error);
     }
 }

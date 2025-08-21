@@ -1,8 +1,11 @@
-/**
- * reader.js (v24.0)
- * - Refactored to be CSP compliant by using CSS classes instead of inline styles.
- */
-document.addEventListener('DOMContentLoaded', () => {
+// reader.js (v25.1 - Dynamic Target Language)
+import { populateLanguageSelector, getEffectiveUILanguageCode, supportedLanguages } from './scripts/language_manager.js';
+
+document.addEventListener('DOMContentLoaded', async () => {
+    // Set document title dynamically
+    document.title = chrome.i18n.getMessage('readerTitle');
+
+    // --- DOM Elements ---
     const contentArea = document.getElementById('content-area');
     const fontSizeSlider = document.getElementById('font-size');
     const fontSizeValue = document.getElementById('font-size-value');
@@ -10,26 +13,56 @@ document.addEventListener('DOMContentLoaded', () => {
     const lineHeightValue = document.getElementById('line-height-value');
     const colorButtons = document.querySelectorAll('.color-btn');
     const saveButton = document.getElementById('save-text');
+    
+    // [v25.1] New main target language selector
+    const mainTargetLangSelect = document.getElementById('target-lang');
 
     const voiceTranslateTool = document.getElementById('voice-translate-tool');
     const voiceTargetLangSelect = document.getElementById('voice-target-lang');
     const translateVoiceBtn = document.getElementById('translate-voice-btn');
     const voiceTranslationOutput = document.getElementById('voice-translation-output');
 
-    let globalTargetLang = 'Traditional Chinese';
+    // --- State ---
+    let globalTargetLang = 'Traditional Chinese'; // Default fallback
+    
+    // --- Language & UI Initialization ---
+    // Populate the new main target language selector
+    await populateLanguageSelector(mainTargetLangSelect, { 
+        includeSystemDefault: true, 
+        includePrefLangs: true 
+    });
+
+    // Populate the voice tool's language selector (can be the same list)
+    await populateLanguageSelector(voiceTargetLangSelect, { 
+        includeSystemDefault: true, 
+        includePrefLangs: true 
+    });
 
     initializeUI();
 
-    chrome.storage.local.get(['articleText', 'targetLang', 'sourceType'], (data) => {
+    // --- Load Content and Set Initial Language ---
+    chrome.storage.local.get(['articleText', 'targetLang', 'sourceType'], async (data) => {
         if (data.articleText && data.articleText.trim().length > 0) {
-            globalTargetLang = data.targetLang || 'Traditional Chinese';
+            // Determine initial target language based on what was passed
+            if (data.targetLang === 'system-default' || !data.targetLang) {
+                const code = await getEffectiveUILanguageCode();
+                globalTargetLang = supportedLanguages.find(l => l.code === code)?.name || 'English';
+                mainTargetLangSelect.value = 'system-default'; // Set dropdown to show 'System Default'
+            } else {
+                globalTargetLang = data.targetLang;
+                mainTargetLangSelect.value = globalTargetLang; // Set dropdown to the specific language
+            }
+            
             renderArticle(data.articleText);
+
             if (data.sourceType === 'voice') {
                 voiceTranslateTool.classList.remove('hidden');
             }
         } else {
-            contentArea.innerHTML = '<p>找不到文章內容，或提取的內容為空。請返回原始頁面重試。</p>';
+            contentArea.innerHTML = `<p>${chrome.i18n.getMessage("readerErrorNotFound")}</p>`;
         }
+        // Clean up local storage after use
+        chrome.storage.local.remove(['articleText', 'targetLang', 'sourceType']);
     });
 
     function renderArticle(text) {
@@ -55,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         p.classList.add('translating');
         try {
+            // [v25.1] The globalTargetLang is now updated by the new dropdown
             const translatedText = await callGeminiForTranslation(p.textContent, globalTargetLang);
             const translationDiv = document.createElement('div');
             translationDiv.className = 'translation';
@@ -62,8 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
             p.after(translationDiv);
         } catch (error) {
             const errorDiv = document.createElement('div');
-            errorDiv.className = 'translation';
-            errorDiv.textContent = `翻譯失敗: ${error.message}`;
+            errorDiv.className = 'translation error';
+            errorDiv.textContent = chrome.i18n.getMessage("readerTranslateFailed", error.message);
             p.after(errorDiv);
         } finally {
             p.classList.remove('translating');
@@ -71,16 +105,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function callGeminiForTranslation(textToTranslate, targetLanguage) {
-        const items = await chrome.storage.sync.get({
+        const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
             geminiApiKey: '',
             translationModel: 'gemini-2.0-flash'
         });
-        if (!items.geminiApiKey) throw new Error("尚未設定 Gemini API 金鑰。");
+        if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
         
-        const model = items.translationModel;
+        const model = translationModel;
         const apiUrl = model.startsWith('models/') ?
-            `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${items.geminiApiKey}` :
-            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${items.geminiApiKey}`;
+            `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${geminiApiKey}` :
+            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiApiKey}`;
         
         const payload = {
             "contents": [{
@@ -107,57 +141,70 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
              const finishReason = result.candidates?.[0]?.finishReason;
              if (finishReason === 'SAFETY') {
-                  throw new Error("內容因違反安全政策被 AI 拒絕。");
+                  throw new Error(chrome.i18n.getMessage("errorApiRejected", "SAFETY"));
              }
-             throw new Error("API 未返回有效的翻譯結果。");
+             throw new Error(chrome.i18n.getMessage("errorApiInvalidResponse"));
         }
     }
     
+    // --- Event Listeners ---
+
+    // [v25.1] Listener for the new main target language dropdown
+    mainTargetLangSelect.addEventListener('change', async (e) => {
+        const selectedValue = e.target.value;
+        if (selectedValue === 'system-default') {
+            const code = await getEffectiveUILanguageCode();
+            globalTargetLang = supportedLanguages.find(l => l.code === code)?.name || 'English';
+        } else {
+            globalTargetLang = selectedValue;
+        }
+        // Remove existing translations as the target language has changed
+        document.querySelectorAll('.translation').forEach(el => el.remove());
+    });
+
     translateVoiceBtn.addEventListener('click', async () => {
         const fullText = Array.from(contentArea.querySelectorAll('p')).map(p => p.textContent).join('\n');
         if (!fullText) return;
         
-        const targetLang = voiceTargetLangSelect.value;
-        voiceTranslationOutput.textContent = '翻譯中...';
+        let targetLang = voiceTargetLangSelect.value;
+        if (targetLang === 'system-default') {
+            const code = await getEffectiveUILanguageCode();
+            targetLang = supportedLanguages.find(l => l.code === code)?.name || 'English';
+        }
+
+        voiceTranslationOutput.textContent = chrome.i18n.getMessage("readerTranslating").trim();
         translateVoiceBtn.disabled = true;
 
         try {
             const translatedText = await callGeminiForTranslation(fullText, targetLang);
             voiceTranslationOutput.textContent = translatedText;
         } catch (error) {
-            voiceTranslationOutput.textContent = `翻譯失敗: ${error.message}`;
+            voiceTranslationOutput.textContent = chrome.i18n.getMessage("readerTranslateFailed", error.message);
         } finally {
             translateVoiceBtn.disabled = false;
         }
     });
 
-    // --- [修正] UI and Save Functions for CSP ---
     function initializeUI() {
         fontSizeSlider.value = '20';
-        fontSizeValue.textContent = '20px';
         lineHeightSlider.value = '1.6';
-        lineHeightValue.textContent = '1.6';
-        
-        // 設定預設樣式
         updateFontSize('20');
         updateLineHeight('1.6');
         updateBgColor('bg-white');
     }
 
     function updateFontSize(size) {
-        contentArea.style.fontSize = `${size}px`; // 直接設定 style
+        contentArea.style.fontSize = `${size}px`;
         fontSizeValue.textContent = `${size}px`;
     }
 
     function updateLineHeight(height) {
-        contentArea.style.lineHeight = height; // 直接設定 style
+        contentArea.style.lineHeight = height;
         lineHeightValue.textContent = height;
     }
 
     function updateBgColor(colorClass) {
-        document.body.classList.remove('bg-white', 'bg-sepia', 'bg-dark');
-        document.body.classList.add(colorClass);
-        document.body.classList.toggle('dark-mode', colorClass === 'bg-dark');
+        document.body.className = colorClass;
     }
 
     function saveContentAsTxt() {
@@ -165,10 +212,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let fullText = "";
         const title = document.title || 'reading_session';
         paragraphs.forEach((p, index) => {
-            fullText += `[原文 ${index + 1}]\n${p.textContent}\n\n`;
+            fullText += `${chrome.i18n.getMessage("readerSaveOriginal", String(index + 1))}\n${p.textContent}\n\n`;
             const translationDiv = p.nextElementSibling;
             if (translationDiv && translationDiv.classList.contains('translation')) {
-                fullText += `[翻譯 ${index + 1}]\n${translationDiv.textContent}\n\n`;
+                fullText += `${chrome.i18n.getMessage("readerSaveTranslated", String(index + 1))}\n${translationDiv.textContent}\n\n`;
             }
             fullText += "----------------------------------------\n\n";
         });

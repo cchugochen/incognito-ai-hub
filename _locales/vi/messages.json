@@ -1,0 +1,562 @@
+{
+  "appName": {
+    "message": "Incognito AI Hub bởi Gemini",
+    "description": "Tên của tiện ích."
+  },
+  "appDesc": {
+    "message": "(1) Một công cụ tiện ích tích hợp bốn chế độ ẩn danh AI: Trò chuyện Gemini ẩn danh, Đọc trang web, Văn bản/Ảnh chụp màn hình và Nhập liệu bằng giọng nói.\n(2) Để sử dụng hợp pháp, vui lòng đăng ký khóa API Google Gemini của riêng bạn.\n(3) Tiện ích này không có máy chủ phụ trợ để lưu trữ; người dùng cần ghi nhật ký nên thiết lập điểm cuối của riêng họ.",
+    "description": "Mô tả của tiện ích trong tệp kê khai."
+  },
+  "popupTranslatePage": {
+    "message": "Dịch trang hiện tại (nếu Google Dịch không thành công)",
+    "description": "Văn bản nút trong popup.html"
+  },
+  "popupOpenWorkbench": {
+    "message": "Mở Bàn làm việc Dịch thông minh",
+    "description": "Văn bản nút trong popup.html. Đã thay đổi từ 'Bàn làm việc Dịch văn bản/Ảnh chụp màn hình'"
+  },
+  "popupOpenVoiceNotes": {
+    "message": "Ghi chú bằng giọng nói ẩn danh",
+    "description": "Văn bản nút trong popup.html"
+  },
+  "popupOpenIncognito": {
+    "message": "Trò chuyện Gemini ẩn danh",
+    "description": "Văn bản nút trong popup.html"
+  },
+  "popupOpenTutorial": {
+    "message": "Hướng dẫn dễ dàng để lấy khóa API Gemini",
+    "description": "Văn bản nút trong popup.html"
+  },
+  "popupShowLicense": {
+    "message": "Thông tin Giấy phép MIT",
+    "description": "Văn bản nút trong popup.html"
+  },
+  "optionsTitle": {
+    "message": "Incognito AI Hub - Cài đặt",
+    "description": "Tiêu đề cho trang tùy chọn."
+  },
+  "optionsHeader": {
+    "message": "Incognito AI Hub - Cài đặt",
+    "description": "Tiêu đề cho trang tùy chọn."
+  },
+  "optionsDisplayLangSectionHeader": {
+    "message": "1. Ngôn ngữ hiển thị",
+    "description": "Tiêu đề phần trong tùy chọn."
+  },
+  "optionsDisplayLangLabel": {
+    "message": "Đặt ngôn ngữ hiển thị cho giao diện tiện ích:",
+    "description": "Nhãn để chọn ngôn ngữ trong tùy chọn."
+  },
+  "optionsDisplayLangDefault": {
+    "message": "Mặc định của hệ thống Chrome",
+    "description": "Tùy chọn mặc định để chọn ngôn ngữ."
+  },
+  "optionsPrefLangSectionHeader": {
+    "message": "2. Ngôn ngữ dịch ưu tiên",
+    "description": "Tiêu đề phần cho các ngôn ngữ ưu tiên trong tùy chọn."
+  },
+  "optionsPrefLangDesc": {
+    "message": "Hướng dẫn: Cách tốt nhất là viết ngôn ngữ bạn cần vào trường bằng chính ngôn ngữ đó. Ví dụ: Français, Español, Русский",
+    "description": "Mô tả cho phần ngôn ngữ ưu tiên."
+  },
+  "optionsPrefLangLabelA": {
+    "message": "Ngôn ngữ ưu tiên A:",
+    "description": "Nhãn cho ngôn ngữ ưu tiên A."
+  },
+  "optionsPrefLangLabelB": {
+    "message": "Ngôn ngữ ưu tiên B:",
+    "description": "Nhãn cho ngôn ngữ ưu tiên B."
+  },
+  "optionsPrefLangPlaceholder": {
+    "message": "ví dụ: Français",
+    "description": "Văn bản giữ chỗ cho đầu vào ngôn ngữ ưu tiên."
+  },
+  "optionsApiKeySectionHeader": {
+    "message": "3. Nhập khóa API Gemini",
+    "description": "Tiêu đề phần trong tùy chọn."
+  },
+  "optionsApiKeyLabel": {
+    "message": "Khóa API Google Gemini của bạn:",
+    "description": "Nhãn cho đầu vào khóa API."
+  },
+  "optionsModelSectionHeader": {
+    "message": "4. Mô hình dịch & nhận dạng",
+    "description": "Tiêu đề phần trong tùy chọn."
+  },
+  "optionsModelDesc": {
+    "message": "Chọn mô hình mặc định cho các tính năng 'Dịch trang', 'Bàn làm việc dịch thông minh' và 'Ghi chú bằng giọng nói'.",
+    "description": "Mô tả để chọn mô hình."
+  },
+  "optionsModel1Name": {
+    "message": "Gemini 2.0 Flash",
+    "description": "Tên mô hình."
+  },
+  "optionsModel1Tag": {
+    "message": "Mặc định",
+    "description": "Thẻ cho mô hình được đề xuất."
+  },
+  "optionsModel1Desc": {
+    "message": "Tốt nhất cho: Hiểu đa phương thức, phát trực tuyến thời gian thực, chi phí thấp.",
+    "description": "Mô tả cho một mô hình."
+  },
+  "optionsModel2Name": {
+    "message": "Gemini 2.5 Flash Lite (Xem trước)",
+    "description": "Tên mô hình."
+  },
+  "optionsModel2Desc": {
+    "message": "Tốt nhất cho: Xử lý nhiều mã thông báo hơn cho mỗi yêu cầu, độ trễ thấp, chi phí thấp hơn.",
+    "description": "Mô tả cho một mô hình."
+  },
+  "optionsPresetSectionHeader": {
+    "message": "5. Trò chuyện ẩn danh - Bộ nhớ lời nhắc tích hợp",
+    "description": "Tiêu đề phần trong tùy chọn."
+  },
+  "optionsPresetDesc": {
+    "message": "Nhập các lệnh hoặc mẫu thường dùng tại đây để truy cập nhanh trong 'Trò chuyện Gemini ẩn danh'.",
+    "description": "Mô tả cho các lời nhắc đặt trước."
+  },
+  "optionsPresetLabelA": {
+    "message": "Lời nhắc đặt trước A:",
+    "description": "Nhãn cho lời nhắc đặt trước."
+  },
+  "optionsPresetLabelB": {
+    "message": "Lời nhắc đặt trước B:",
+    "description": "Nhãn cho lời nhắc đặt trước."
+  },
+  "optionsPresetLabelC": {
+    "message": "Lời nhắc đặt trước C:",
+    "description": "Nhãn cho lời nhắc đặt trước."
+  },
+  "optionsPresetLabelD": {
+    "message": "Lời nhắc đặt trước D:",
+    "description": "Nhãn cho lời nhắc đặt trước."
+  },
+  "optionsPresetLabelE": {
+    "message": "Lời nhắc đặt trước E:",
+    "description": "Nhãn cho lời nhắc đặt trước."
+  },
+  "optionsLogSectionHeader": {
+    "message": "6. (Tùy chọn) Cài đặt ghi nhật ký đám mây",
+    "description": "Tiêu đề phần trong tùy chọn."
+  },
+  "optionsLogDesc": {
+    "message": "Gửi nhật ký xử lý đến điểm cuối Google Cloud Functions của riêng bạn để nghiên cứu và phân tích.",
+    "description": "Mô tả cho tính năng ghi nhật ký."
+  },
+  "optionsLogEndpointLabel": {
+    "message": "URL điểm cuối của Cloud Function:",
+    "description": "Nhãn cho URL điểm cuối nhật ký."
+  },
+  "optionsLogKeyLabel": {
+    "message": "Khóa xác thực (Tùy chọn):",
+    "description": "Nhãn cho khóa nhật ký."
+  },
+  "optionsSaveButton": {
+    "message": "Lưu cài đặt",
+    "description": "Văn bản nút lưu."
+  },
+  "optionsStatusSaved": {
+    "message": "Đã lưu cài đặt.",
+    "description": "Thông báo trạng thái khi các tùy chọn được lưu."
+  },
+  "incognitoTitle": {
+    "message": "Trò chuyện Gemini ẩn danh",
+    "description": "Tiêu đề cho trang trò chuyện ẩn danh."
+  },
+  "incognitoDefaultModelHeader": {
+    "message": "Mô hình mặc định của hệ thống (Lite)",
+    "description": "Tiêu đề cho mô hình mặc định trong trò chuyện ẩn danh."
+  },
+  "incognitoDefaultModelDesc": {
+    "message": "Mô hình Gemini Lite: Sử dụng mô hình bạn đã đặt trên trang 'Cài đặt' (mặc định là 2.0 Flash hoặc 2.5-Flash-Lite), phù hợp để dịch thông thường và Hỏi & Đáp nhanh.",
+    "description": "Mô tả cho mô hình mặc định trong trò chuyện ẩn danh."
+  },
+  "incognitoFlashModelHeader": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Tiêu đề cho mô hình Flash trong trò chuyện ẩn danh."
+  },
+  "incognitoFlashModelDesc": {
+    "message": "Một mô hình Gemini cỡ trung, phù hợp cho các tác vụ đòi hỏi sự hiểu biết về ngữ cảnh dài hơn hoặc tóm tắt nhanh.",
+    "description": "Mô tả cho mô hình Flash trong trò chuyện ẩn danh."
+  },
+  "incognitoProModelHeader": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Tiêu đề cho mô hình Pro trong trò chuyện ẩn danh."
+  },
+  "incognitoProModelDesc": {
+    "message": "Mô hình mạnh nhất của Google hiện tại, dành cho lý luận logic rất phức tạp và tạo ra sự sáng tạo. <b>Lưu ý:</b> Chi phí đơn vị cao, xem <a href='https://ai.google.dev/pricing' target='_blank'>giá chính thức</a> để biết chi tiết.",
+    "description": "Mô tả cho mô hình Pro trong trò chuyện ẩn danh. Giữ các thẻ HTML."
+  },
+  "incognitoPlaceholder": {
+    "message": "Nhập lời nhắc tại đây hoặc dán (Ctrl+V) ảnh chụp màn hình...",
+    "description": "Văn bản giữ chỗ cho đầu vào lời nhắc."
+  },
+  "incognitoUploadButton": {
+    "message": "🖼️ Tải lên",
+    "description": "Văn bản nút tải lên."
+  },
+  "incognitoUploadTitle": {
+    "message": "Tải lên hình ảnh (Tối đa 4)",
+    "description": "Thuộc tính tiêu đề cho nút tải lên."
+  },
+  "incognitoPresetTitleA": { "message": "Sử dụng cài đặt trước A", "description": "Tiêu đề cho nút cài đặt trước A." },
+  "incognitoPresetTitleB": { "message": "Sử dụng cài đặt trước B", "description": "Tiêu đề cho nút cài đặt trước B." },
+  "incognitoPresetTitleC": { "message": "Sử dụng cài đặt trước C", "description": "Tiêu đề cho nút cài đặt trước C." },
+  "incognitoPresetTitleD": { "message": "Sử dụng cài đặt trước D", "description": "Tiêu đề cho nút cài đặt trước D." },
+  "incognitoPresetTitleE": { "message": "Sử dụng cài đặt trước E", "description": "Tiêu đề cho nút cài đặt trước E." },
+  "incognitoSendButton": {
+    "message": "Gửi ▶️",
+    "description": "Văn bản nút gửi."
+  },
+  "incognitoFooter": {
+    "message": "Tác giả, Hugo Chen, là một bác sĩ người Đài Loan, đã hoàn thành phiên bản đầu tiên trong một ngày bão năm 2025. Phiên bản ban đầu được đặt tên là 'Hong-Thai' (bão) trong tiếng Đài Loan. Nếu bạn thấy hữu ích hoặc có ý tưởng, vui lòng để lại đánh giá hoặc gợi ý trên Cửa hàng Chrome trực tuyến. Nếu muốn, bạn có thể ủng hộ tôi một ly cà phê qua liên kết Buy Me a Coffee ở bên phải.",
+    "description": "Footer text. Keep HTML tags."
+  },
+  "errorNoActiveTab": {
+    "message": "Không thể tìm thấy tab đang hoạt động.",
+    "description": "Thông báo lỗi trong background.js"
+  },
+  "errorInvalidText": {
+    "message": "Nội dung văn bản không hợp lệ hoặc trống.",
+    "description": "Thông báo lỗi trong background.js"
+  },
+  "errorNoImageData": {
+    "message": "Không có dữ liệu hình ảnh được cung cấp.",
+    "description": "Thông báo lỗi trong background.js"
+  },
+  "errorOcrFailed": {
+    "message": "AI không nhận dạng được đủ văn bản.",
+    "description": "Thông báo lỗi trong background.js"
+  },
+  "errorNoAudioData": {
+    "message": "Không có dữ liệu âm thanh được cung cấp.",
+    "description": "Thông báo lỗi trong background.js"
+  },
+  "errorSttFailed": {
+    "message": "AI không nhận dạng được bất kỳ giọng nói nào.",
+    "description": "Thông báo lỗi trong background.js"
+  },
+  "errorDebuggerAttach": {
+    "message": "Không thể đính kèm trình gỡ lỗi. Vui lòng tải lại trang hoặc kiểm tra xung đột với các tiện ích khác.",
+    "description": "Thông báo lỗi trong background.js"
+  },
+  "errorScreenshotFailed": {
+    "message": "Không thể chụp ảnh màn hình.",
+    "description": "Thông báo lỗi trong background.js"
+  },
+  "errorOcrFailedLong": {
+    "message": "AI không nhận dạng được đủ nội dung văn bản.",
+    "description": "Thông báo lỗi trong background.js"
+  },
+  "errorNoApiKey": {
+    "message": "Chưa đặt khóa API.",
+    "description": "Thông báo lỗi trong background.js và các tệp khác."
+  },
+  "errorApiRequestFailed": {
+    "message": "Yêu cầu API không thành công: $details$",
+    "description": "Thông báo lỗi trong background.js. $details$ là một trình giữ chỗ.",
+    "placeholders": {
+      "details": {
+        "content": "$1",
+        "example": "Khóa API không hợp lệ."
+      }
+    }
+  },
+  "errorApiRejected": {
+    "message": "Yêu cầu bị AI từ chối, lý do: $reason$",
+    "description": "Thông báo lỗi trong background.js. $reason$ là một trình giữ chỗ.",
+    "placeholders": {
+      "reason": {
+        "content": "$1",
+        "example": "SAFETY"
+      }
+    }
+  },
+  "errorApiStopped": {
+    "message": "Quá trình xử lý của AI đã dừng sớm, lý do: $reason$",
+    "description": "Thông báo lỗi trong background.js. $reason$ là một trình giữ chỗ.",
+    "placeholders": {
+      "reason": {
+        "content": "$1",
+        "example": "MAX_TOKENS"
+      }
+    }
+  },
+  "errorApiInvalidResponse": {
+    "message": "Định dạng phản hồi API không hợp lệ hoặc trống.",
+    "description": "Thông báo lỗi trong background.js"
+  },
+  "errorNetwork": {
+    "message": "Lỗi mạng, không thể kết nối với API Gemini.",
+    "description": "Thông báo lỗi trong background.js"
+  },
+  "alertMaxImages": {
+    "message": "Lỗi: Bạn có thể tải lên tối đa 4 hình ảnh.",
+    "description": "Thông báo cảnh báo trong incognito.js"
+  },
+  "alertTurnLimit": {
+    "message": "Thông báo: Đã đạt đến giới hạn cuộc trò chuyện $limit$ lượt. Vui lòng làm mới trang để bắt đầu cuộc trò chuyện mới.",
+    "description": "Thông báo cảnh báo trong incognito.js. $limit$ là một trình giữ chỗ.",
+    "placeholders": {
+      "limit": {
+        "content": "$1",
+        "example": "12"
+      }
+    }
+  },
+  "alertNoApiKeyOptions": {
+    "message": "Lỗi: Chưa đặt khóa API Gemini. Vui lòng đặt khóa trong tùy chọn tiện ích.",
+    "description": "Thông báo cảnh báo trong incognito.js"
+  },
+  "alertInitFailed": {
+    "message": "Không thể khởi tạo trang.",
+    "description": "Thông báo cảnh báo trong incognito.js"
+  },
+  "stateThinking": {
+    "message": "Đang suy nghĩ...",
+    "description": "Trạng thái tải cho nút gửi."
+  },
+  "readerTitle": {
+    "message": "Chế độ đọc",
+    "description": "Tiêu đề cho trang đọc."
+  },
+  "readerLabelTargetLang": {
+    "message": "Ngôn ngữ đầu ra mục tiêu:",
+    "description": "Nhãn cho bộ chọn ngôn ngữ mục tiêu chính trong reader.html"
+  },
+  "readerLabelFontSize": {
+    "message": "Cỡ chữ:",
+    "description": "Nhãn trong thanh công cụ của trình đọc."
+  },
+  "readerLabelLineHeight": {
+    "message": "Chiều cao dòng:",
+    "description": "Nhãn trong thanh công cụ của trình đọc."
+  },
+  "readerLabelBgColor": {
+    "message": "Màu nền:",
+    "description": "Nhãn trong thanh công cụ của trình đọc."
+  },
+  "readerSaveButton": {
+    "message": "Lưu dưới dạng TXT",
+    "description": "Văn bản nút trong thanh công cụ của trình đọc."
+  },
+  "readerLoading": {
+    "message": "Đang tải nội dung...",
+    "description": "Thông báo tải trong trình đọc."
+  },
+  "readerErrorNotFound": {
+    "message": "Không tìm thấy nội dung bài viết hoặc nội dung được trích xuất trống. Vui lòng quay lại trang gốc và thử lại.",
+    "description": "Thông báo lỗi trong trình đọc."
+  },
+  "readerTranslating": {
+    "message": " (Đang dịch...)",
+    "description": "Trạng thái dịch trong trình đọc."
+  },
+  "readerTranslateFailed": {
+    "message": "Dịch không thành công: $error$",
+    "description": "Thông báo dịch không thành công trong trình đọc.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "readerVoiceToolHeader": {
+    "message": "Kết quả phiên âm",
+    "description": "Tiêu đề cho công cụ giọng nói trong trình đọc."
+  },
+  "readerVoiceToolLabel": {
+    "message": "Dịch sang:",
+    "description": "Nhãn cho công cụ giọng nói trong trình đọc."
+  },
+  "readerVoiceToolButton": {
+    "message": "Bắt đầu dịch",
+    "description": "Nút cho công cụ giọng nói trong trình đọc."
+  },
+  "readerSaveOriginal": {
+    "message": "[Bản gốc $index$]",
+    "description": "Nhãn cho văn bản gốc trong tệp đã lưu.",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "readerSaveTranslated": {
+    "message": "[Bản dịch $index$]",
+    "description": "Nhãn cho văn bản đã dịch trong tệp đã lưu.",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "workbenchTitle": {
+    "message": "Bàn làm việc dịch thông minh",
+    "description": "Tiêu đề cho trang bàn làm việc."
+  },
+  "workbenchTabText": {
+    "message": "Dán văn bản",
+    "description": "Nhãn tab trong bàn làm việc."
+  },
+  "workbenchTabImage": {
+    "message": "Tải lên ảnh chụp màn hình",
+    "description": "Nhãn tab trong bàn làm việc."
+  },
+  "workbenchTextHeader": {
+    "message": "Chế độ 2: Bàn làm việc dán văn bản",
+    "description": "Tiêu đề trong bàn làm việc."
+  },
+  "workbenchTextDesc": {
+    "message": "Thích hợp cho văn bản có thể chọn từ các trang web, Word hoặc PDF. Sao chép và dán văn bản bên dưới để có kết quả nhanh nhất và chính xác nhất.",
+    "description": "Mô tả trong bàn làm việc."
+  },
+  "workbenchImageHeader": {
+    "message": "Chế độ 3: Tải lên ảnh chụp màn hình máy tính để bàn",
+    "description": "Tiêu đề trong bàn làm việc."
+  },
+  "workbenchLabelSourceLang": {
+    "message": "Ngôn ngữ nguồn",
+    "description": "Nhãn để chọn ngôn ngữ."
+  },
+  "workbenchLabelImageSourceLang": {
+    "message": "Ngôn ngữ nguồn (trong ảnh)",
+    "description": "Nhãn để chọn ngôn ngữ."
+  },
+  "workbenchLabelTargetLang": {
+    "message": "Ngôn ngữ đầu ra mục tiêu",
+    "description": "Nhãn để chọn ngôn ngữ."
+  },
+  "workbenchTextPlaceholder": {
+    "message": "Dán văn bản đã sao chép của bạn vào đây...",
+    "description": "Văn bản giữ chỗ cho đầu vào văn bản."
+  },
+  "workbenchProcessTextButton": {
+    "message": "Xử lý văn bản",
+    "description": "Văn bản nút."
+  },
+  "workbenchUploadBox": {
+    "message": "Nhấp hoặc kéo tệp vào đây",
+    "description": "Văn bản trong hộp tải lên."
+  },
+  "workbenchUploadBoxDesc": {
+    "message": "(Hỗ trợ JPG, PNG, BMP)",
+    "description": "Mô tả trong hộp tải lên."
+  },
+  "workbenchProcessImageButton": {
+    "message": "Bắt đầu nhận dạng",
+    "description": "Văn bản nút."
+  },
+  "statusProcessing": {
+    "message": "Đang xử lý...",
+    "description": "Thông báo trạng thái."
+  },
+  "statusPleasePaste": {
+    "message": "Vui lòng dán văn bản trước.",
+    "description": "Thông báo trạng thái."
+  },
+  "statusSuccess": {
+    "message": "Thành công! Đang mở chế độ đọc...",
+    "description": "Thông báo trạng thái."
+  },
+  "statusFailed": {
+    "message": "Xử lý không thành công: $error$",
+    "description": "Thông báo trạng thái.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "statusUploading": {
+    "message": "Đang gửi đến AI để nhận dạng...",
+    "description": "Thông báo trạng thái."
+  },
+  "statusUploadSuccess": {
+    "message": "Nhận dạng thành công! Đang mở chế độ đọc...",
+    "description": "Thông báo trạng thái."
+  },
+  "errorPleaseUploadImage": {
+    "message": "Lỗi: Vui lòng tải lên một tệp hình ảnh.",
+    "description": "Thông báo lỗi."
+  },
+  "voiceTitle": {
+    "message": "Ghi chú bằng giọng nói ẩn danh",
+    "description": "Tiêu đề cho trang ghi chú bằng giọng nói."
+  },
+  "voiceDesc": {
+    "message": "Chọn ngôn ngữ nói chính của bạn, nhấp để bắt đầu ghi âm và nhanh chóng chuyển đổi suy nghĩ của bạn thành văn bản.<br>Do giới hạn kích thước tải lên của trình duyệt, tính năng này được khuyến nghị cho các ghi chú ngắn trong vài phút.",
+    "description": "Mô tả trên trang ghi chú bằng giọng nói."
+  },
+  "voiceLabelAudioSource": {
+    "message": "Nguồn âm thanh:",
+    "description": "Nhãn cho nguồn âm thanh."
+  },
+  "voiceLabelSpokenLang": {
+    "message": "Ngôn ngữ nói chính:",
+    "description": "Nhãn cho ngôn ngữ nói."
+  },
+  "voiceButtonStart": {
+    "message": "Bắt đầu ghi âm",
+    "description": "Văn bản nút."
+  },
+  "voiceButtonStop": {
+    "message": "Dừng ghi âm",
+    "description": "Văn bản nút."
+  },
+  "voiceStatusNoMic": {
+    "message": "Không tìm thấy thiết bị micrô.",
+    "description": "Thông báo trạng thái."
+  },
+  "voiceStatusNoMicPermission": {
+    "message": "Không thể nhận được quyền truy cập micrô. Vui lòng cho phép tiện ích này sử dụng micrô trong cài đặt trình duyệt của bạn.",
+    "description": "Thông báo trạng thái."
+  },
+  "voiceStatusSelectSource": {
+    "message": "Vui lòng chọn một nguồn âm thanh.",
+    "description": "Thông báo trạng thái."
+  },
+  "voiceStatusRecording": {
+    "message": "Đang ghi âm...",
+    "description": "Thông báo trạng thái."
+  },
+  "voiceStatusSending": {
+    "message": "Đang gửi đến AI để nhận dạng...",
+    "description": "Thông báo trạng thái."
+  },
+  "voiceStatusSuccess": {
+    "message": "Nhận dạng hoàn tất, đã mở tab mới.",
+    "description": "Thông báo trạng thái."
+  },
+  "voiceStatusCommError": {
+    "message": "Lỗi giao tiếp: $error$",
+    "description": "Thông báo trạng thái.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "voiceStatusFailed": {
+    "message": "Nhận dạng không thành công: $error$",
+    "description": "Thông báo trạng thái.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "langAutoDetect": {
+    "message": "Tự động phát hiện",
+    "description": "Tùy chọn ngôn ngữ để tự động phát hiện."
+  },
+  "langSystemDefault": {
+    "message": "Mặc định của hệ thống ($langName$)",
+    "description": "Tùy chọn ngôn ngữ cho mặc định của hệ thống, với trình giữ chỗ cho tên ngôn ngữ thực tế.",
+    "placeholders": { "langName": { "content": "$1", "example": "Tiếng Việt" } }
+  },
+  "langPrefA": {
+    "message": "Ưu tiên-A ($langName$)",
+    "description": "Tùy chọn ngôn ngữ cho ngôn ngữ ưu tiên A.",
+    "placeholders": { "langName": { "content": "$1", "example": "Français" } }
+  },
+  "langPrefB": {
+    "message": "Ưu tiên-B ($langName$)",
+    "description": "Tùy chọn ngôn ngữ cho ngôn ngữ ưu tiên B.",
+    "placeholders": { "langName": { "content": "$1", "example": "Español" } }
+  },
+  "voiceLangZhEn": {
+    "message": "Tiếng Trung (có tiếng Anh)",
+    "description": "Tùy chọn ngôn ngữ đặc biệt cho đầu vào bằng giọng nói."
+  },
+  "voiceMicLabel": {
+    "message": "Micrô $index$",
+    "description": "Nhãn mặc định cho micrô.",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "voiceErrorStartRecording": {
+    "message": "Không thể bắt đầu ghi âm: $error$",
+    "description": "Thông báo lỗi khi không thể bắt đầu ghi âm.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "errorUnknown": {
+    "message": "Đã xảy ra lỗi không xác định.",
+    "description": "Một thông báo lỗi chung."
+  }
+}

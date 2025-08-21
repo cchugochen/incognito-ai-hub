@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "無痕風颱工作台 (Hong-Thai Incognito Reader)",
-  "version": "24.2",
-  "description": "(1) Gemini AI無痕對話框，以及整合網頁讀取、文字、截圖、語音輸入四大模式的AI 輔助翻譯與小工具。\n(2) 請使用者自行向Google申請Gemini API使用。\n(3) 本外掛工具無後台伺服器儲存，需要者請自己建立端點。",
+  "name": "__MSG_appName__",
+  "version": "26.0",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en",
   "permissions": [
     "activeTab",
     "storage",
@@ -15,7 +16,7 @@
     "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://generativelanguage.googleapis.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://cdn.buymeacoffee.com data:;"
   },
   "action": {
-    "default_title": "無痕風颱工作台",
+    "default_title": "__MSG_appName__",
     "default_popup": "popup.html"
   },
   "background": {
@@ -36,6 +37,7 @@
         "icons/*.png",
         "images/*.jpg",
         "images/*.png",
+        "scripts/language_manager.js",
         "styles/*.css"
       ],
       "matches": [

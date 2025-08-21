@@ -2,57 +2,48 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>無痕風颱工作台 - 隱私權政策</title>
-    <!-- [修正] 引用外部 CSS 檔案 -->
+    <title>Incognito AI Hub - 隱私權政策 (Privacy Policy)</title>
     <link rel="stylesheet" href="privacy.css">
 </head>
 <body>
-    <h1>無痕風颱工作台 (Hong-Thai Incognito Reader) 隱私權政策</h1>
-    <p class="last-updated">最後更新日期：2025年7月30日</p>
-
-    <p>感謝您使用「無痕風颱工作台」（以下簡稱「本擴充功能」）。我們極度重視您的隱私權。本隱私權政策旨在說明本擴充功能如何處理您的資料。</p>
+    <h1>Incognito AI Hub 隱私權政策 (Privacy Policy)</h1>
+    <p class="last-updated">最後更新：2025年8月20日 / Last Updated: August 20, 2025</p>
 
     <h2>核心原則：您的資料，由您掌控</h2>
-    <p>本擴充功能的設計核心是**完全在您的瀏覽器本機端運作**。我們**沒有**任何後端伺服器，也**不會**收集、儲存、或傳輸任何您的個人可識別資訊或您處理的內容。</p>
+    <h2>Our Core Principle: Your Data, Your Control</h2>
+    <p>本擴充功能<strong>完全在您的瀏覽器本機端運作</strong>。我們**沒有**任何後端伺服器，也**不會**收集、儲存或看見任何您處理的內容或個人資訊。</p>
+    <p>This extension operates **entirely locally on your browser**. We do **not** have any backend servers, nor do we collect, store, or see any of the content you process or your personal information.</p>
 
-    <h2>資料處理說明</h2>
+    <h2>資料處理說明 / How Your Data Is Handled</h2>
     
-    <h3>1. Google Gemini API 金鑰</h3>
+    <h3>1. 您的 Google Gemini API 金鑰 (Your API Key)</h3>
     <ul>
-        <li>本擴充功能需要您提供自己的 Google Gemini API 金鑰才能運作。</li>
-        <li>您的金鑰僅會透過 Chrome 的標準儲存空間 (<code>chrome.storage.sync</code>) **加密儲存於您自己的瀏覽器中**。此金鑰只會被用來向 Google Gemini 的官方 API 端點發送請求。</li>
-        <li>我們（開發者）絕不會存取、看見或儲存您的 API 金鑰。</li>
+        <li>您的金鑰會透過 Chrome 的標準儲存 API (<code>chrome.storage.sync</code>) **加密儲存在您自己的瀏覽器中**，且只用於向 Google 的官方 API 發送請求。我們絕不會存取您的金鑰。</li>
+        <li>Your key is stored **encrypted within your own browser** using Chrome's standard storage API (<code>chrome.storage.sync</code>). It is only used to send requests to Google's official API. We never access your key.</li>
     </ul>
 
-    <h3>2. 您處理的內容（文字、圖片、語音）</h3>
+    <h3>2. 您處理的內容：文字、圖片、語音 (Your Content)</h3>
     <ul>
-        <li><strong>一般功能</strong>：當您使用「翻譯當前網頁」、「文字/截圖工作台」或「無痕-語音輸入筆記」功能時，為了在不同分頁間傳遞資料，處理中的文字內容可能會**暫時**儲存於您本機的 <code>chrome.storage.local</code> 中。這些暫存資料會在您關閉對應的功能分頁後被清除。</li>
-        <li><strong>無痕-Gemini 2.5 對話框 (最高隱私模式)</strong>：當您使用此功能時，所有的對話歷史（包含文字與圖片）**只會儲存在您電腦的記憶體 (RAM) 中**。這些資料**不會**寫入任何硬碟儲存區 (包含 <code>chrome.storage</code>)。**一旦您關閉該分頁，所有對話紀錄將立即永久消失，無法復原。**</li>
-        <li><strong>資料流向</strong>：在所有情況下，您的內容都只會**在您的瀏覽器與 Google 的伺服器之間直接傳輸**，不會經過或儲存在任何由我們（開發者）控制的伺服器上。</li>
-        <li><strong>Google 的政策</strong>：根據 Google 的 API 政策，他們可能保留 API 請求的內容（不含個人資訊）最長 30 天，僅用於服務維護與安全稽核，不會用於模型訓練。</li>
+        <li><strong>一般功能</strong>：在使用翻譯或辨識功能時，內容資料僅會**暫時**儲存於您本機的 <code>chrome.storage.local</code>，並在功能分頁關閉後清除。</li>
+        <li><strong>General Features</strong>: When using translation or recognition, content is **temporarily** stored in your local <code>chrome.storage.local</code> and is cleared when the feature's tab is closed.</li>
+        <br>
+        <li><strong>無痕對話框 (最高隱私)</strong>：所有對話（包含文字與圖片）**僅存於您電腦的記憶體 (RAM) 中**。關閉分頁後，紀錄將**立即永久消失**，無法復原。</li>
+        <li><strong>Incognito Chat (Highest Privacy)</strong>: All conversations (including text and images) are **stored only in your computer's memory (RAM)**. When the tab is closed, this history is **permanently and irretrievably deleted.**</li>
     </ul>
 
-    <h3>3. （選用）雲端日誌功能</h3>
+    <h3>3. （選用）雲端日誌 (Optional Cloud Logging)</h3>
     <ul>
-        <li>本擴充功能提供一個**選用**的日誌功能，讓您可以將操作紀錄傳送到**您自己指定**的雲端端點（例如您自己的 Google Cloud Function）以供研究分析。</li>
-        <li>此功能預設為關閉。只有在您明確於設定頁面中填入您自己的端點網址與金鑰時，才會啟用。</li>
-        <li>所有日誌資料的流向完全由您自己控制。</li>
+        <li>此功能預設為關閉。只有在您明確於設定頁面填入**您自己的**端點網址時，才會將操作紀錄傳送到該網址。</li>
+        <li>This feature is disabled by default. Only when you explicitly provide **your own** endpoint URL in the settings will operational logs be sent there.</li>
     </ul>
 
-    <h2>權限使用說明</h2>
+    <h2>權限使用說明 / Permissions Usage</h2>
     <ul>
-        <li><strong>activeTab</strong>: 僅在您主動點擊擴充功能圖示時，臨時存取您當前的分頁，以便進行網頁擷取。</li>
-        <li><strong>storage</strong>: 用於在本機安全地儲存您的 API 金鑰與設定。</li>
-        <li><strong>debugger</strong>: 僅在您使用「翻譯當前網頁」功能時，臨時啟用以擷取完整的網頁畫面，擷取後立即關閉。</li>
+        <li><strong>storage</strong>: 用於在本機安全地儲存您的 API 金鑰與設定。/ Used to securely store your API key and settings locally.</li>
+        <li><strong>debugger</strong>: 僅在您使用「翻譯當前網頁」功能時臨時啟用以擷取完整頁面，擷取後立即分離。/ Temporarily enabled only when using the "Translate Current Page" feature to capture the full page, and it is detached immediately after.</li>
     </ul>
-
-    <h2>政策變更</h2>
-    <p>我們可能會更新本隱私權政策。任何變更都將發布在此頁面上。我們鼓勵您定期查看本政策以了解最新資訊。</p>
-
-    <h2>聯絡我們</h2>
-    <p>如果您對本隱私權政策有任何疑問，歡迎透過 [GitHub Issues](https://github.com/cchugochen/hongthai-reader/issues) 與我們聯繫。</p>
-    <p>開發者：Cheng-Che Hugo Chen</p>
-
+    
+    <p>若有任何疑問，歡迎透過 [GitHub Issues](https://github.com/cchugochen/hongthai-reader/issues) 與我們聯繫。</p>
+    <p>If you have any questions, please contact us via [GitHub Issues](https://github.com/cchugochen/hongthai-reader/issues).</p>
 </body>
 </html>

@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>無痕風颱工作台</title>
-    <!-- [修復] 移除行內樣式，改為引用外部 CSS 檔案以符合 CSP -->
+    <title>__MSG_appName__</title>
+    <!-- 載入新的共用主題 -->
+    <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <button id="process-webpage">翻譯當前網頁 (若Google翻譯無法使用)</button>
-    <button id="open-workbench">開啟文字/截圖翻譯工作台</button>
+    <button id="process-webpage" data-i18n="popupTranslatePage"></button>
+    <button id="open-workbench" data-i18n="popupOpenWorkbench"></button>
     <hr>
-    <button id="open-voice-notes">無痕語音輸入筆記</button>
-    <button id="open-incognito" class="pro-btn">無痕Gemini對話</button>
+    <button id="open-voice-notes" data-i18n="popupOpenVoiceNotes"></button>
+    <button id="open-incognito" class="pro-btn" data-i18n="popupOpenIncognito"></button>
     <hr>
-    <button id="open-tutorial">新手申請Gemini金鑰簡易教學</button>
-    <button id="show-license">MIT版權說明</button>
+    <button id="open-tutorial" data-i18n="popupOpenTutorial"></button>
+    <button id="show-license" data-i18n="popupShowLicense"></button>
+    
+    <!-- Scripts -->
+    <script src="i18n.js"></script>
     <script src="popup.js"></script>
 </body>
 </html>

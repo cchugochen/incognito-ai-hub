@@ -1,72 +1,63 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>閱讀模式</title>
+    <title>__MSG_readerTitle__</title>
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/page_layout.css">
     <link rel="stylesheet" href="reader.css">
 </head>
-<!-- [修正] class 由 JS 動態加入 -->
 <body>
     <div class="container">
         <div class="toolbar">
+            <!-- [v25.1 New Feature] Target Language Selector -->
             <div class="tool-group">
-                <label for="font-size">字體大小:</label>
+                <label for="target-lang" data-i18n="readerLabelTargetLang"></label>
+                <select id="target-lang" class="select-input"></select>
+            </div>
+            <div class="tool-group">
+                <label for="font-size" data-i18n="readerLabelFontSize"></label>
                 <input type="range" id="font-size" min="12" max="32" value="20">
                 <span id="font-size-value">20px</span>
             </div>
             <div class="tool-group">
-                <label for="line-height">行距:</label>
+                <label for="line-height" data-i18n="readerLabelLineHeight"></label>
                 <input type="range" id="line-height" min="1.2" max="2.5" step="0.1" value="1.6">
                 <span id="line-height-value">1.6</span>
             </div>
             <div class="tool-group">
-                <label>背景顏色:</label>
-                <!-- [修正] 移除行內 style，改由 data-color 屬性控制 -->
-                <button class="color-btn" data-color="bg-white"></button>
-                <button class="color-btn" data-color="bg-sepia"></button>
-                <button class="color-btn" data-color="bg-dark"></button>
+                <label data-i18n="readerLabelBgColor"></label>
+                <button class="color-btn" data-color="bg-white" title="Default"></button>
+                <button class="color-btn" data-color="bg-sepia" title="Sepia"></button>
+                <button class="color-btn" data-color="bg-dark" title="Dark"></button>
             </div>
             <div class="tool-group">
-                 <button id="save-text">儲存為 TXT</button>
+                 <button id="save-text" class="submit-btn" data-i18n="readerSaveButton"></button>
             </div>
         </div>
         <div id="content-area">
             <div id="loading-indicator">
-                <p>正在載入內容...</p>
+                <p data-i18n="readerLoading"></p>
             </div>
         </div>
 
         <div id="voice-translate-tool" class="hidden">
-            <h3>翻譯辨識結果</h3>
+            <h3 data-i18n="readerVoiceToolHeader"></h3>
             <div class="tool-group">
-                <label for="voice-target-lang">翻譯為：</label>
-                <select id="voice-target-lang">
-                    <option value="English">英文</option>
-                    <option value="Traditional Chinese">繁體中文</option>
-                    <option value="Japanese">日文</option>
-                    <option value="Korean">韓文</option>
-                    <option value="Vietnamese">越南文</option>
-                    <option value="Hindi">印度文</option>
-                    <option value="Russian">俄羅斯文</option>
-                    <option value="French">法文</option>
-                    <option value="German">德文</option>
-                    <option value="Dutch">荷蘭文</option>
-                </select>
-                <button id="translate-voice-btn">開始翻譯</button>
+                <label for="voice-target-lang" data-i18n="readerVoiceToolLabel"></label>
+                <select id="voice-target-lang" class="select-input"></select>
+                <button id="translate-voice-btn" class="submit-btn" data-i18n="readerVoiceToolButton"></button>
             </div>
             <div id="voice-translation-output" class="translation"></div>
         </div>
 
         <footer class="page-footer">
-            <div class="footer-text">
-                作者 Hugo Chen 是台灣公家機關員工，於颱風天完成初版，以此命名。<br>
-                好用請在 Chrome 應用商店給好評，或到本人 Buy Me a Coffee 網頁請我喝一杯飲料。
-            </div>
-            <!-- [修正] 移除行內 style，改用 class -->
+            <div class="footer-text" data-i18n="incognitoFooter"></div>
             <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank"><img class="buymeacoffee-img" src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee"></a>
         </footer>
     </div>
-    <script src="reader.js"></script>
+    <script src="i18n.js"></script>
+    <script type="module" src="reader.js"></script>
 </body>
 </html>

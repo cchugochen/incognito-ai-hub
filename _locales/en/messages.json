@@ -1,0 +1,562 @@
+{
+  "appName": {
+    "message": "Incognito AI Hub by Gemini",
+    "description": "The name of the extension."
+  },
+  "appDesc": {
+    "message": "(1) A utility tool integrating four AI incognito modes: Incognito Gemini Chat, Webpage Reading, Text/Screenshot, and Voice Input.\n(2) For legal use, please apply for your own Google Gemini API key.\n(3) This extension has no backend server for storage; users who need logging should set up their own endpoint.",
+    "description": "The description of the extension in the manifest."
+  },
+  "popupTranslatePage": {
+    "message": "Translate Current Page (if Google Translate fails)",
+    "description": "Button text in popup.html"
+  },
+  "popupOpenWorkbench": {
+    "message": "Open Smart Translation Workbench",
+    "description": "Button text in popup.html. Changed from 'Text/Screenshot Translation Workbench'"
+  },
+  "popupOpenVoiceNotes": {
+    "message": "Incognito Voice Notes",
+    "description": "Button text in popup.html"
+  },
+  "popupOpenIncognito": {
+    "message": "Incognito Gemini Chat",
+    "description": "Button text in popup.html"
+  },
+  "popupOpenTutorial": {
+    "message": "Easy Tutorial for Gemini API Key",
+    "description": "Button text in popup.html"
+  },
+  "popupShowLicense": {
+    "message": "MIT License Information",
+    "description": "Button text in popup.html"
+  },
+  "optionsTitle": {
+    "message": "Incognito AI Hub - Settings",
+    "description": "Title for options page."
+  },
+  "optionsHeader": {
+    "message": "Incognito AI Hub - Settings",
+    "description": "Header for options page."
+  },
+  "optionsDisplayLangSectionHeader": {
+    "message": "1. Display Language",
+    "description": "Section header in options."
+  },
+  "optionsDisplayLangLabel": {
+    "message": "Set the display language for the extension interface:",
+    "description": "Label for language selection in options."
+  },
+  "optionsDisplayLangDefault": {
+    "message": "Chrome System Default",
+    "description": "Default option for language selection."
+  },
+  "optionsPrefLangSectionHeader": {
+    "message": "2. Preferred Translation Languages",
+    "description": "Section header for preferred languages in options."
+  },
+  "optionsPrefLangDesc": {
+    "message": "Instructions: The best way is to write the language you need in the field using that language. For example: Français, Español, Русский",
+    "description": "Description for preferred languages section."
+  },
+  "optionsPrefLangLabelA": {
+    "message": "Preferred Language A:",
+    "description": "Label for preferred language A."
+  },
+  "optionsPrefLangLabelB": {
+    "message": "Preferred Language B:",
+    "description": "Label for preferred language B."
+  },
+  "optionsPrefLangPlaceholder": {
+    "message": "e.g., Français",
+    "description": "Placeholder for preferred language input."
+  },
+  "optionsApiKeySectionHeader": {
+    "message": "3. Gemini API Key Input",
+    "description": "Section header in options."
+  },
+  "optionsApiKeyLabel": {
+    "message": "Your Google Gemini API Key:",
+    "description": "Label for API key input."
+  },
+  "optionsModelSectionHeader": {
+    "message": "4. Translation & Recognition Model",
+    "description": "Section header in options."
+  },
+  "optionsModelDesc": {
+    "message": "Select the default model for 'Translate Page', 'Smart Translation Workbench', and 'Voice Notes' features.",
+    "description": "Description for model selection."
+  },
+  "optionsModel1Name": {
+    "message": "Gemini 2.0 Flash",
+    "description": "Model name."
+  },
+  "optionsModel1Tag": {
+    "message": "Default",
+    "description": "Tag for recommended model."
+  },
+  "optionsModel1Desc": {
+    "message": "Best for: Multimodal understanding, real-time streaming, low cost.",
+    "description": "Description for a model."
+  },
+  "optionsModel2Name": {
+    "message": "Gemini 2.5 Flash Lite (Preview)",
+    "description": "Model name."
+  },
+  "optionsModel2Desc": {
+    "message": "Best for: Handling more tokens per request, low latency, lower cost.",
+    "description": "Description for a model."
+  },
+  "optionsPresetSectionHeader": {
+    "message": "5. Incognito Chat - Built-in Prompt Memory",
+    "description": "Section header in options."
+  },
+  "optionsPresetDesc": {
+    "message": "Enter frequently used commands or templates here for quick access in 'Incognito Gemini Chat'.",
+    "description": "Description for preset prompts."
+  },
+  "optionsPresetLabelA": {
+    "message": "Preset Prompt A:",
+    "description": "Label for preset prompt."
+  },
+  "optionsPresetLabelB": {
+    "message": "Preset Prompt B:",
+    "description": "Label for preset prompt."
+  },
+  "optionsPresetLabelC": {
+    "message": "Preset Prompt C:",
+    "description": "Label for preset prompt."
+  },
+  "optionsPresetLabelD": {
+    "message": "Preset Prompt D:",
+    "description": "Label for preset prompt."
+  },
+  "optionsPresetLabelE": {
+    "message": "Preset Prompt E:",
+    "description": "Label for preset prompt."
+  },
+  "optionsLogSectionHeader": {
+    "message": "6. (Optional) Cloud Logging Settings",
+    "description": "Section header in options."
+  },
+  "optionsLogDesc": {
+    "message": "Send processing logs to your own Google Cloud Functions endpoint for research and analysis.",
+    "description": "Description for logging feature."
+  },
+  "optionsLogEndpointLabel": {
+    "message": "Cloud Function Endpoint URL:",
+    "description": "Label for log endpoint URL."
+  },
+  "optionsLogKeyLabel": {
+    "message": "Authentication Key (Optional):",
+    "description": "Label for log key."
+  },
+  "optionsSaveButton": {
+    "message": "Save Settings",
+    "description": "Save button text."
+  },
+  "optionsStatusSaved": {
+    "message": "Settings saved.",
+    "description": "Status message when options are saved."
+  },
+  "incognitoTitle": {
+    "message": "Incognito Gemini Chat",
+    "description": "Title for incognito chat page."
+  },
+  "incognitoDefaultModelHeader": {
+    "message": "System Default Model (Lite)",
+    "description": "Header for default model in incognito chat."
+  },
+  "incognitoDefaultModelDesc": {
+    "message": "Lite Gemini Model: Uses the model you set on the 'Settings' page (defaults to 2.0 Flash or 2.5-Flash-Lite), suitable for general translation and quick Q&A.",
+    "description": "Description for default model in incognito chat."
+  },
+  "incognitoFlashModelHeader": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Header for Flash model in incognito chat."
+  },
+  "incognitoFlashModelDesc": {
+    "message": "A mid-size Gemini model, suitable for tasks requiring longer context understanding or quick summarization.",
+    "description": "Description for Flash model in incognito chat."
+  },
+  "incognitoProModelHeader": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Header for Pro model in incognito chat."
+  },
+  "incognitoProModelDesc": {
+    "message": "Google's most powerful model currently, for highly complex logical reasoning and creative generation. <b>Note:</b> Unit cost is high, see <a href='https://ai.google.dev/pricing' target='_blank'>official pricing</a> for details.",
+    "description": "Description for Pro model in incognito chat. Keep HTML tags."
+  },
+  "incognitoPlaceholder": {
+    "message": "Enter prompt here, or paste (Ctrl+V) a screenshot...",
+    "description": "Placeholder for prompt input."
+  },
+  "incognitoUploadButton": {
+    "message": "🖼️ Upload",
+    "description": "Upload button text."
+  },
+  "incognitoUploadTitle": {
+    "message": "Upload Images (Max 4)",
+    "description": "Title attribute for upload button."
+  },
+  "incognitoPresetTitleA": { "message": "Use Preset A", "description": "Title for preset button A." },
+  "incognitoPresetTitleB": { "message": "Use Preset B", "description": "Title for preset button B." },
+  "incognitoPresetTitleC": { "message": "Use Preset C", "description": "Title for preset button C." },
+  "incognitoPresetTitleD": { "message": "Use Preset D", "description": "Title for preset button D." },
+  "incognitoPresetTitleE": { "message": "Use Preset E", "description": "Title for preset button E." },
+  "incognitoSendButton": {
+    "message": "Send ▶️",
+    "description": "Send button text."
+  },
+  "incognitoFooter": {
+    "message": "The author, Hugo Chen, is a physician from Taiwan who completed the first version during a typhoon day in 2025. The initial version was named 'Hong-Thai' (Typhoon) in Taiwanese. If you find it useful or have any ideas, please leave a review or suggestion on the Chrome Web Store. If you're willing, you're welcome to buy me a coffee via the link on the right as a practical show of support.",
+    "description": "Footer text. Keep HTML tags."
+  },
+  "errorNoActiveTab": {
+    "message": "Could not find the active tab.",
+    "description": "Error message in background.js"
+  },
+  "errorInvalidText": {
+    "message": "Invalid or empty text content.",
+    "description": "Error message in background.js"
+  },
+  "errorNoImageData": {
+    "message": "No image data provided.",
+    "description": "Error message in background.js"
+  },
+  "errorOcrFailed": {
+    "message": "AI failed to recognize sufficient text.",
+    "description": "Error message in background.js"
+  },
+  "errorNoAudioData": {
+    "message": "No audio data provided.",
+    "description": "Error message in background.js"
+  },
+  "errorSttFailed": {
+    "message": "AI failed to recognize any speech.",
+    "description": "Error message in background.js"
+  },
+  "errorDebuggerAttach": {
+    "message": "Failed to attach debugger. Please reload the page or check for conflicts with other extensions.",
+    "description": "Error message in background.js"
+  },
+  "errorScreenshotFailed": {
+    "message": "Failed to capture screenshot.",
+    "description": "Error message in background.js"
+  },
+  "errorOcrFailedLong": {
+    "message": "AI failed to recognize sufficient text content.",
+    "description": "Error message in background.js"
+  },
+  "errorNoApiKey": {
+    "message": "API key has not been set.",
+    "description": "Error message in background.js and others."
+  },
+  "errorApiRequestFailed": {
+    "message": "API request failed: $details$",
+    "description": "Error message in background.js. $details$ is a placeholder.",
+    "placeholders": {
+      "details": {
+        "content": "$1",
+        "example": "Invalid API key."
+      }
+    }
+  },
+  "errorApiRejected": {
+    "message": "Request rejected by AI, reason: $reason$",
+    "description": "Error message in background.js. $reason$ is a placeholder.",
+    "placeholders": {
+      "reason": {
+        "content": "$1",
+        "example": "SAFETY"
+      }
+    }
+  },
+  "errorApiStopped": {
+    "message": "AI processing stopped prematurely, reason: $reason$",
+    "description": "Error message in background.js. $reason$ is a placeholder.",
+    "placeholders": {
+      "reason": {
+        "content": "$1",
+        "example": "MAX_TOKENS"
+      }
+    }
+  },
+  "errorApiInvalidResponse": {
+    "message": "Invalid or empty API response format.",
+    "description": "Error message in background.js"
+  },
+  "errorNetwork": {
+    "message": "Network error, unable to connect to Gemini API.",
+    "description": "Error message in background.js"
+  },
+  "alertMaxImages": {
+    "message": "Error: You can upload a maximum of 4 images.",
+    "description": "Alert message in incognito.js"
+  },
+  "alertTurnLimit": {
+    "message": "Notice: Conversation limit of $limit$ turns reached. Please refresh the page to start a new conversation.",
+    "description": "Alert message in incognito.js. $limit$ is a placeholder.",
+    "placeholders": {
+      "limit": {
+        "content": "$1",
+        "example": "12"
+      }
+    }
+  },
+  "alertNoApiKeyOptions": {
+    "message": "Error: Gemini API key not set. Please set it in the extension options.",
+    "description": "Alert message in incognito.js"
+  },
+  "alertInitFailed": {
+    "message": "Page initialization failed.",
+    "description": "Alert message in incognito.js"
+  },
+  "stateThinking": {
+    "message": "Thinking...",
+    "description": "Loading state for send button."
+  },
+  "readerTitle": {
+    "message": "Reader Mode",
+    "description": "Title for reader page."
+  },
+  "readerLabelTargetLang": {
+    "message": "Target Output Language:",
+    "description": "Label for the main target language selector in reader.html"
+  },
+  "readerLabelFontSize": {
+    "message": "Font Size:",
+    "description": "Label in reader toolbar."
+  },
+  "readerLabelLineHeight": {
+    "message": "Line Height:",
+    "description": "Label in reader toolbar."
+  },
+  "readerLabelBgColor": {
+    "message": "Background Color:",
+    "description": "Label in reader toolbar."
+  },
+  "readerSaveButton": {
+    "message": "Save as TXT",
+    "description": "Button text in reader toolbar."
+  },
+  "readerLoading": {
+    "message": "Loading content...",
+    "description": "Loading message in reader."
+  },
+  "readerErrorNotFound": {
+    "message": "Article content not found or the extracted content is empty. Please return to the original page and try again.",
+    "description": "Error message in reader."
+  },
+  "readerTranslating": {
+    "message": " (Translating...)",
+    "description": "Translating status in reader."
+  },
+  "readerTranslateFailed": {
+    "message": "Translation failed: $error$",
+    "description": "Translation failed message in reader.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "readerVoiceToolHeader": {
+    "message": "Transcription Result",
+    "description": "Header for voice tool in reader."
+  },
+  "readerVoiceToolLabel": {
+    "message": "Translate to:",
+    "description": "Label for voice tool in reader."
+  },
+  "readerVoiceToolButton": {
+    "message": "Start Translation",
+    "description": "Button for voice tool in reader."
+  },
+  "readerSaveOriginal": {
+    "message": "[Original $index$]",
+    "description": "Label for original text in saved file.",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "readerSaveTranslated": {
+    "message": "[Translation $index$]",
+    "description": "Label for translated text in saved file.",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "workbenchTitle": {
+    "message": "Smart Translation Workbench",
+    "description": "Title for workbench page."
+  },
+  "workbenchTabText": {
+    "message": "Paste Text",
+    "description": "Tab label in workbench."
+  },
+  "workbenchTabImage": {
+    "message": "Upload Screenshot",
+    "description": "Tab label in workbench."
+  },
+  "workbenchTextHeader": {
+    "message": "Mode 2: Text Paste Workbench",
+    "description": "Header in workbench."
+  },
+  "workbenchTextDesc": {
+    "message": "Suitable for selectable text from web pages, Word, or PDF. Copy and paste text below for the fastest and most accurate results.",
+    "description": "Description in workbench."
+  },
+  "workbenchImageHeader": {
+    "message": "Mode 3: Desktop Screenshot Upload",
+    "description": "Header in workbench."
+  },
+  "workbenchLabelSourceLang": {
+    "message": "Source Language",
+    "description": "Label for language selection."
+  },
+  "workbenchLabelImageSourceLang": {
+    "message": "Source Language (in image)",
+    "description": "Label for language selection."
+  },
+  "workbenchLabelTargetLang": {
+    "message": "Target Output Language",
+    "description": "Label for language selection."
+  },
+  "workbenchTextPlaceholder": {
+    "message": "Paste your copied text here...",
+    "description": "Placeholder for text input."
+  },
+  "workbenchProcessTextButton": {
+    "message": "Process Text",
+    "description": "Button text."
+  },
+  "workbenchUploadBox": {
+    "message": "Click or drag file here",
+    "description": "Text in upload box."
+  },
+  "workbenchUploadBoxDesc": {
+    "message": "(Supports JPG, PNG, BMP)",
+    "description": "Description in upload box."
+  },
+  "workbenchProcessImageButton": {
+    "message": "Start Recognition",
+    "description": "Button text."
+  },
+  "statusProcessing": {
+    "message": "Processing...",
+    "description": "Status message."
+  },
+  "statusPleasePaste": {
+    "message": "Please paste text first.",
+    "description": "Status message."
+  },
+  "statusSuccess": {
+    "message": "Success! Opening reader mode...",
+    "description": "Status message."
+  },
+  "statusFailed": {
+    "message": "Processing failed: $error$",
+    "description": "Status message.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "statusUploading": {
+    "message": "Sending to AI for recognition...",
+    "description": "Status message."
+  },
+  "statusUploadSuccess": {
+    "message": "Recognition successful! Opening reader mode...",
+    "description": "Status message."
+  },
+  "errorPleaseUploadImage": {
+    "message": "Error: Please upload an image file.",
+    "description": "Error message."
+  },
+  "voiceTitle": {
+    "message": "Incognito Voice Notes",
+    "description": "Title for voice notes page."
+  },
+  "voiceDesc": {
+    "message": "Select your primary spoken language, click to start recording, and quickly convert your thoughts into text.<br>Due to browser upload size limits, this feature is recommended for short notes of a few minutes.",
+    "description": "Description on voice notes page."
+  },
+  "voiceLabelAudioSource": {
+    "message": "Audio Source:",
+    "description": "Label for audio source."
+  },
+  "voiceLabelSpokenLang": {
+    "message": "Primary Spoken Language:",
+    "description": "Label for spoken language."
+  },
+  "voiceButtonStart": {
+    "message": "Start Recording",
+    "description": "Button text."
+  },
+  "voiceButtonStop": {
+    "message": "Stop Recording",
+    "description": "Button text."
+  },
+  "voiceStatusNoMic": {
+    "message": "No microphone device found.",
+    "description": "Status message."
+  },
+  "voiceStatusNoMicPermission": {
+    "message": "Could not get microphone permission. Please allow this extension to use the microphone in your browser settings.",
+    "description": "Status message."
+  },
+  "voiceStatusSelectSource": {
+    "message": "Please select an audio source.",
+    "description": "Status message."
+  },
+  "voiceStatusRecording": {
+    "message": "Recording...",
+    "description": "Status message."
+  },
+  "voiceStatusSending": {
+    "message": "Sending to AI for recognition...",
+    "description": "Status message."
+  },
+  "voiceStatusSuccess": {
+    "message": "Recognition complete, new tab opened.",
+    "description": "Status message."
+  },
+  "voiceStatusCommError": {
+    "message": "Communication error: $error$",
+    "description": "Status message.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "voiceStatusFailed": {
+    "message": "Recognition failed: $error$",
+    "description": "Status message.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "langAutoDetect": {
+    "message": "Auto-Detect",
+    "description": "Language option for auto-detection."
+  },
+  "langSystemDefault": {
+    "message": "System Default ($langName$)",
+    "description": "Language option for system default, with placeholder for the actual language name.",
+    "placeholders": { "langName": { "content": "$1", "example": "Traditional Chinese" } }
+  },
+  "langPrefA": {
+    "message": "Preferred-A ($langName$)",
+    "description": "Language option for preferred language A.",
+    "placeholders": { "langName": { "content": "$1", "example": "Français" } }
+  },
+  "langPrefB": {
+    "message": "Preferred-B ($langName$)",
+    "description": "Language option for preferred language B.",
+    "placeholders": { "langName": { "content": "$1", "example": "Español" } }
+  },
+  "voiceLangZhEn": {
+    "message": "Chinese (with English)",
+    "description": "Special language option for voice input."
+  },
+  "voiceMicLabel": {
+    "message": "Microphone $index$",
+    "description": "Default label for a microphone.",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "voiceErrorStartRecording": {
+    "message": "Failed to start recording: $error$",
+    "description": "Error message when starting recording fails.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "errorUnknown": {
+    "message": "An unknown error occurred.",
+    "description": "A generic error message."
+  }
+}
