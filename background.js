@@ -1,14 +1,11 @@
 /**
- * background.js (v25.1 - Full Language Integration)
- * - Aligns language list and logic with the new language_manager.js.
- * - Resolves 'system-default' language preference within the service worker context.
+ * background.js (v26.1 - Model Update)
  */
 
 const protocolVersion = "1.3";
 let attachedTabs = {};
 
 // --- Language Logic (for Service Worker context) ---
-// This list must be kept in sync with language_manager.js
 const supportedLanguagesForBg = [
     { code: 'ar', name: 'Arabic' }, { code: 'en', name: 'English' },
     { code: 'hi', name: 'Hindi' }, { code: 'ja', name: 'Japanese' },
@@ -111,7 +108,6 @@ async function processVoiceNote(payload) {
     }
     await logActivity({ type: 'voice_note', sourceUrl: 'voice_input', originalText: transcribedText });
     
-    // The target language for the reader page should be the system default.
     const defaultTargetLang = await getEffectiveUILanguageNameForBg();
     await openReader({ text: transcribedText, targetLang: defaultTargetLang, sourceType: 'voice' });
 }
@@ -183,7 +179,10 @@ async function openReader(payload) {
 }
 
 async function callGeminiVision(base64ImageData, sourceLang = 'auto') {
-    const { geminiApiKey, translationModel } = await chrome.storage.sync.get({ geminiApiKey: '', translationModel: 'gemini-2.0-flash' });
+    const { geminiApiKey, translationModel } = await chrome.storage.sync.get({ 
+        geminiApiKey: '', 
+        translationModel: 'gemini-2.5-flash-lite' // UPDATED DEFAULT
+    });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
     const model = translationModel;
@@ -208,7 +207,10 @@ Here are the key guidelines for your output:
 }
 
 async function callGeminiSpeechToText(audioData, spokenLang) {
-    const { geminiApiKey, translationModel } = await chrome.storage.sync.get({ geminiApiKey: '', translationModel: 'gemini-2.0-flash' });
+    const { geminiApiKey, translationModel } = await chrome.storage.sync.get({ 
+        geminiApiKey: '', 
+        translationModel: 'gemini-2.5-flash-lite' // UPDATED DEFAULT
+    });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
     const model = translationModel;

@@ -1,562 +1,431 @@
 {
   "appName": {
-    "message": "Incognito AI Hub بواسطة Gemini",
-    "description": "اسم الإضافة."
+    "message": "Incognito AI Hub by Gemini",
+    "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "(1) أداة مساعدة تدمج أربعة أوضاع للتخفي بالذكاء الاصطناعي: دردشة Gemini المتخفية، وقراءة صفحات الويب، والنصوص/لقطات الشاشة، والإدخال الصوتي.\n(2) للاستخدام القانوني، يرجى التقدم بطلب للحصول على مفتاح واجهة برمجة تطبيقات Google Gemini الخاص بك.\n(3) لا يحتوي هذا الامتداد على خادم خلفي للتخزين؛ يجب على المستخدمين الذين يحتاجون إلى التسجيل إعداد نقطة النهاية الخاصة بهم.",
-    "description": "وصف الإضافة في البيان."
+    "message": "(1) واجهة دردشة Gemini بسيطة في وضع التصفح المتخفي ومجموعة أدوات مجانية لترجمة صفحات الويب والنصوص ولقطات الشاشة واستخدام الإدخال الصوتي بالذكاء الاصطناعي مع Gemini. (2) يجب على المستخدمين الحصول على مفتاح Google Gemini API الخاص بهم.",
+    "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
     "message": "ترجمة الصفحة الحالية (إذا فشل مترجم Google)",
-    "description": "نص الزر في popup.html"
+    "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
-    "message": "افتح منضدة الترجمة الذكية",
-    "description": "نص الزر في popup.html. تم التغيير من 'منضدة ترجمة النصوص/لقطات الشاشة'"
+    "message": "فتح منصة الترجمة الذكية",
+    "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
   },
   "popupOpenVoiceNotes": {
-    "message": "ملاحظات صوتية متخفية",
-    "description": "نص الزر في popup.html"
+    "message": "متخفي - ملاحظات صوتية",
+    "description": "Button text in popup.html"
   },
   "popupOpenIncognito": {
-    "message": "دردشة Gemini المتخفية",
-    "description": "نص الزر في popup.html"
+    "message": "دردشة Gemini في وضع التصفح المتخفي",
+    "description": "Button text in popup.html"
   },
   "popupOpenTutorial": {
-    "message": "برنامج تعليمي سهل لمفتاح واجهة برمجة تطبيقات Gemini",
-    "description": "نص الزر في popup.html"
+    "message": "برنامج تعليمي بسيط لمفتاح Gemini API",
+    "description": "Button text in popup.html"
   },
   "popupShowLicense": {
     "message": "معلومات ترخيص MIT",
-    "description": "نص الزر في popup.html"
+    "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "Incognito AI Hub - الإعدادات",
-    "description": "عنوان صفحة الخيارات."
+    "message": "إعدادات Incognito AI Hub",
+    "description": "Title for the options page."
   },
   "optionsHeader": {
-    "message": "Incognito AI Hub - الإعدادات",
-    "description": "رأس صفحة الخيارات."
+    "message": "⚙️ الإعدادات",
+    "description": "Header text on the options page."
   },
   "optionsDisplayLangSectionHeader": {
-    "message": "1. لغة العرض",
-    "description": "رأس القسم في الخيارات."
+    "message": "لغة العرض",
+    "description": "Section header on options page."
   },
   "optionsDisplayLangLabel": {
-    "message": "قم بتعيين لغة العرض لواجهة الإضافة:",
-    "description": "تسمية لاختيار اللغة في الخيارات."
+    "message": "لغة واجهة الإضافة",
+    "description": "Label for language selection on options page."
   },
   "optionsDisplayLangDefault": {
-    "message": "النظام الافتراضي لـ Chrome",
-    "description": "الخيار الافتراضي لاختيار اللغة."
+    "message": "افتراضي (اتبع المتصفح)",
+    "description": "Default option for language selection."
   },
   "optionsPrefLangSectionHeader": {
-    "message": "2. لغات الترجمة المفضلة",
-    "description": "رأس قسم اللغات المفضلة في الخيارات."
+    "message": "اللغات المفضلة",
+    "description": "Section header for preferred languages."
   },
   "optionsPrefLangDesc": {
-    "message": "التعليمات: أفضل طريقة هي كتابة اللغة التي تحتاجها في الحقل باستخدام تلك اللغة. على سبيل المثال: Français, Español, Русский",
-    "description": "وصف قسم اللغات المفضلة."
+    "message": "قم بتعيين اللغتين الهدف الأكثر استخدامًا. ستظهران في قوائم الاختيار السريع لميزات الترجمة المختلفة.",
+    "description": "Description for preferred languages setting."
   },
   "optionsPrefLangLabelA": {
-    "message": "اللغة المفضلة أ:",
-    "description": "تسمية اللغة المفضلة أ."
+    "message": "اللغة المفضلة أ",
+    "description": "Label for preferred language A."
   },
   "optionsPrefLangLabelB": {
-    "message": "اللغة المفضلة ب:",
-    "description": "تسمية اللغة المفضلة ب."
-  },
-  "optionsPrefLangPlaceholder": {
-    "message": "على سبيل المثال، Français",
-    "description": "عنصر نائب لإدخال اللغة المفضلة."
+    "message": "اللغة المفضلة ب",
+    "description": "Label for preferred language B."
   },
   "optionsApiKeySectionHeader": {
-    "message": "3. إدخال مفتاح واجهة برمجة تطبيقات Gemini",
-    "description": "رأس القسم في الخيارات."
+    "message": "مفتاح API والنموذج",
+    "description": "Section header for API key settings."
   },
   "optionsApiKeyLabel": {
-    "message": "مفتاح واجهة برمجة تطبيقات Google Gemini الخاص بك:",
-    "description": "تسمية إدخال مفتاح واجهة برمجة التطبيقات."
+    "message": "مفتاح Google Gemini API الخاص بك",
+    "description": "Label for API key input field."
   },
-  "optionsModelSectionHeader": {
-    "message": "4. نموذج الترجمة والتعرف",
-    "description": "رأس القسم في الخيارات."
+  "optionsApiKeyPlaceholder": {
+    "message": "الصق مفتاح API الخاص بك هنا",
+    "description": "Placeholder text for API key input."
   },
-  "optionsModelDesc": {
-    "message": "حدد النموذج الافتراضي لميزات 'ترجمة الصفحة' و 'منضدة الترجمة الذكية' و 'الملاحظات الصوتية'.",
-    "description": "وصف اختيار النموذج."
+  "optionsModelSelectLabel": {
+    "message": "النموذج الافتراضي لترجمة صفحات الويب/الصور",
+    "description": "Label for the model selection radio buttons."
   },
-  "optionsModel1Name": {
-    "message": "Gemini 2.0 Flash",
-    "description": "اسم النموذج."
+  "optionsModelFlashName": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Name of the Flash model."
   },
-  "optionsModel1Tag": {
-    "message": "افتراضي",
-    "description": "علامة للنموذج الموصى به."
+  "optionsModelFlashDesc": {
+    "message": "الأسرع والأكثر فعالية من حيث التكلفة، ومناسب لمهام الترجمة والتلخيص السريعة وذات الحجم الكبير.",
+    "description": "Description of the Flash model."
   },
-  "optionsModel1Desc": {
-    "message": "الأفضل لـ: الفهم متعدد الوسائط ، البث في الوقت الفعلي ، التكلفة المنخفضة.",
-    "description": "وصف لنموذج."
+  "optionsModelProName": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Name of the Pro model."
   },
-  "optionsModel2Name": {
-    "message": "Gemini 2.5 Flash Lite (معاينة)",
-    "description": "اسم النموذج."
-  },
-  "optionsModel2Desc": {
-    "message": "الأفضل لـ: معالجة المزيد من الرموز لكل طلب ، زمن انتقال منخفض ، تكلفة أقل.",
-    "description": "وصف لنموذج."
+  "optionsModelProDesc": {
+    "message": "الأقوى، بدقة أعلى لفهم السياقات والصور المعقدة، ولكن بتكلفة أعلى.",
+    "description": "Description of the Pro model."
   },
   "optionsPresetSectionHeader": {
-    "message": "5. دردشة متخفية - ذاكرة موجه مدمجة",
-    "description": "رأس القسم في الخيارات."
+    "message": "دردشة متخفية - الإعدادات المسبقة للمطالبات",
+    "description": "Section header for preset prompts."
   },
   "optionsPresetDesc": {
-    "message": "أدخل الأوامر أو القوالب المستخدمة بشكل متكرر هنا للوصول السريع في 'دردشة Gemini المتخفية'.",
-    "description": "وصف للموجهات المسبقة."
+    "message": "قم بتعيين التعليمات الأولية المستخدمة بشكل متكرر (مطالبات النظام) لأزرار A/B/C/D/E في صفحة 'دردشة Gemini المتخفية'.",
+    "description": "Description for preset prompts."
   },
-  "optionsPresetLabelA": {
-    "message": "موجه مسبق أ:",
-    "description": "تسمية للموجه المسبق."
-  },
-  "optionsPresetLabelB": {
-    "message": "موجه مسبق ب:",
-    "description": "تسمية للموجه المسبق."
-  },
-  "optionsPresetLabelC": {
-    "message": "موجه مسبق ج:",
-    "description": "تسمية للموجه المسبق."
-  },
-  "optionsPresetLabelD": {
-    "message": "موجه مسبق د:",
-    "description": "تسمية للموجه المسبق."
-  },
-  "optionsPresetLabelE": {
-    "message": "موجه مسبق هـ:",
-    "description": "تسمية للموجه المسبق."
-  },
+  "optionsPresetLabelA": { "message": "إعداد مسبق أ", "description": "Label for preset A." },
+  "optionsPresetLabelB": { "message": "إعداد مسبق ب", "description": "Label for preset B." },
+  "optionsPresetLabelC": { "message": "إعداد مسبق ج", "description": "Label for preset C." },
+  "optionsPresetLabelD": { "message": "إعداد مسبق د", "description": "Label for preset D." },
+  "optionsPresetLabelE": { "message": "إعداد مسبق هـ", "description": "Label for preset E." },
   "optionsLogSectionHeader": {
-    "message": "6. (اختياري) إعدادات تسجيل السحابة",
-    "description": "رأس القسم في الخيارات."
+    "message": "(اختياري) تسجيل السحابة",
+    "description": "Section header for optional logging."
   },
   "optionsLogDesc": {
-    "message": "أرسل سجلات المعالجة إلى نقطة نهاية وظائف Google Cloud الخاصة بك للبحث والتحليل.",
-    "description": "وصف لميزة التسجيل."
+    "message": "إذا كنت بحاجة إلى إرسال سجلات التشغيل (مثل استخدام الرموز) إلى خدمة الواجهة الخلفية الخاصة بك، فأدخل عنوان URL لنقطة النهاية والمفتاح هنا. يتم تعطيل هذه الميزة تمامًا إذا تركت فارغة.",
+    "description": "Description for optional logging."
   },
   "optionsLogEndpointLabel": {
-    "message": "عنوان URL لنقطة نهاية وظيفة السحابة:",
-    "description": "تسمية لعنوان URL لنقطة نهاية السجل."
+    "message": "عنوان URL لنقطة نهاية السجل الخاص بك",
+    "description": "Label for log endpoint input."
   },
   "optionsLogKeyLabel": {
-    "message": "مفتاح المصادقة (اختياري):",
-    "description": "تسمية لمفتاح السجل."
+    "message": "مفتاح API للسجل الخاص بك",
+    "description": "Label for log key input."
   },
   "optionsSaveButton": {
     "message": "حفظ الإعدادات",
-    "description": "نص زر الحفظ."
+    "description": "Save button text."
   },
   "optionsStatusSaved": {
-    "message": "تم حفظ الإعدادات.",
-    "description": "رسالة الحالة عند حفظ الخيارات."
+    "message": "تم حفظ الإعدادات!",
+    "description": "Status message when settings are saved."
   },
-  "incognitoTitle": {
-    "message": "دردشة Gemini المتخفية",
-    "description": "عنوان صفحة الدردشة المتخفية."
-  },
-  "incognitoDefaultModelHeader": {
-    "message": "نموذج النظام الافتراضي (لايت)",
-    "description": "رأس النموذج الافتراضي في الدردشة المتخفية."
-  },
-  "incognitoDefaultModelDesc": {
-    "message": "نموذج Gemini Lite: يستخدم النموذج الذي قمت بتعيينه في صفحة 'الإعدادات' (افتراضيًا 2.0 Flash أو 2.5-Flash-Lite) ، وهو مناسب للترجمة العامة والأسئلة والأجوبة السريعة.",
-    "description": "وصف للنموذج الافتراضي في الدردشة المتخفية."
-  },
-  "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
-    "description": "رأس نموذج Flash في الدردشة المتخفية."
-  },
-  "incognitoFlashModelDesc": {
-    "message": "نموذج Gemini متوسط ​​الحجم ، مناسب للمهام التي تتطلب فهمًا أطول للسياق أو تلخيصًا سريعًا.",
-    "description": "وصف لنموذج Flash في الدردشة المتخفية."
-  },
-  "incognitoProModelHeader": {
-    "message": "Gemini 2.5 Pro",
-    "description": "رأس نموذج Pro في الدردشة المتخفية."
-  },
-  "incognitoProModelDesc": {
-    "message": "أقوى نموذج من Google حاليًا ، للتفكير المنطقي المعقد للغاية والتوليد الإبداعي. <b>ملاحظة:</b> تكلفة الوحدة مرتفعة ، راجع <a href='https://ai.google.dev/pricing' target='_blank'>التسعير الرسمي</a> للحصول على التفاصيل.",
-    "description": "وصف لنموذج Pro في الدردشة المتخفية. احتفظ بعلامات HTML."
-  },
-  "incognitoPlaceholder": {
-    "message": "أدخل الموجه هنا ، أو الصق (Ctrl + V) لقطة شاشة ...",
-    "description": "عنصر نائب لإدخال الموجه."
-  },
-  "incognitoUploadButton": {
-    "message": "🖼️ تحميل",
-    "description": "نص زر التحميل."
-  },
-  "incognitoUploadTitle": {
-    "message": "تحميل الصور (4 كحد أقصى)",
-    "description": "سمة العنوان لزر التحميل."
-  },
-  "incognitoPresetTitleA": { "message": "استخدم الإعداد المسبق أ", "description": "عنوان الزر المسبق أ." },
-  "incognitoPresetTitleB": { "message": "استخدم الإعداد المسبق ب", "description": "عنوان الزر المسبق ب." },
-  "incognitoPresetTitleC": { "message": "استخدم الإعداد المسبق ج", "description": "عنوان الزر المسبق ج." },
-  "incognitoPresetTitleD": { "message": "استخدم الإعداد المسبق د", "description": "عنوان الزر المسبق د." },
-  "incognitoPresetTitleE": { "message": "استخدم الإعداد المسبق هـ", "description": "عنوان الزر المسبق هـ." },
-  "incognitoSendButton": {
-    "message": "إرسال ▶️",
-    "description": "نص زر الإرسال."
-  },
-  "incognitoFooter": {
-    "message": "المؤلف، هوغو تشين، هو طبيب من تايوان أكمل الإصدار الأول خلال يوم إعصار في عام 2025. تم تسمية الإصدار الأولي 'هونغ-تاي' (إعصار) باللغة التايوانية. إذا وجدته مفيدًا أو لديك أي أفكار، فالرجاء ترك مراجعة أو اقتراح على متجر Chrome الإلكتروني. وإذا كنت ترغب في ذلك، يمكنك دعمي عمليًا بشراء فنجان قهوة لي عبر رابط Buy Me a Coffee على اليمين.",
-    "description": "Footer text. Keep HTML tags."
-  },
-  "errorNoActiveTab": {
-    "message": "تعذر العثور على علامة التبويب النشطة.",
-    "description": "رسالة خطأ في background.js"
-  },
-  "errorInvalidText": {
-    "message": "محتوى نصي غير صالح أو فارغ.",
-    "description": "رسالة خطأ في background.js"
-  },
-  "errorNoImageData": {
-    "message": "لم يتم توفير بيانات صورة.",
-    "description": "رسالة خطأ في background.js"
-  },
-  "errorOcrFailed": {
-    "message": "فشل الذكاء الاصطناعي في التعرف على نص كافٍ.",
-    "description": "رسالة خطأ في background.js"
-  },
-  "errorNoAudioData": {
-    "message": "لم يتم توفير بيانات صوتية.",
-    "description": "رسالة خطأ في background.js"
-  },
-  "errorSttFailed": {
-    "message": "فشل الذكاء الاصطناعي في التعرف على أي كلام.",
-    "description": "رسالة خطأ في background.js"
-  },
-  "errorDebuggerAttach": {
-    "message": "فشل إرفاق مصحح الأخطاء. يرجى إعادة تحميل الصفحة أو التحقق من وجود تعارضات مع الإضافات الأخرى.",
-    "description": "رسالة خطأ في background.js"
-  },
-  "errorScreenshotFailed": {
-    "message": "فشل التقاط لقطة شاشة.",
-    "description": "رسالة خطأ في background.js"
-  },
-  "errorOcrFailedLong": {
-    "message": "فشل الذكاء الاصطناعي في التعرف على محتوى نصي كافٍ.",
-    "description": "رسالة خطأ في background.js"
-  },
-  "errorNoApiKey": {
-    "message": "لم يتم تعيين مفتاح واجهة برمجة التطبيقات.",
-    "description": "رسالة خطأ في background.js وغيرها."
-  },
-  "errorApiRequestFailed": {
-    "message": "فشل طلب واجهة برمجة التطبيقات: $details$",
-    "description": "رسالة خطأ في background.js. $details$ هو عنصر نائب.",
-    "placeholders": {
-      "details": {
-        "content": "$1",
-        "example": "مفتاح واجهة برمجة تطبيقات غير صالح."
-      }
-    }
-  },
-  "errorApiRejected": {
-    "message": "تم رفض الطلب بواسطة الذكاء الاصطناعي ، السبب: $reason$",
-    "description": "رسالة خطأ في background.js. $reason$ هو عنصر نائب.",
-    "placeholders": {
-      "reason": {
-        "content": "$1",
-        "example": "SAFETY"
-      }
-    }
-  },
-  "errorApiStopped": {
-    "message": "توقفت معالجة الذكاء الاصطناعي قبل الأوان ، السبب: $reason$",
-    "description": "رسالة خطأ في background.js. $reason$ هو عنصر نائب.",
-    "placeholders": {
-      "reason": {
-        "content": "$1",
-        "example": "MAX_TOKENS"
-      }
-    }
-  },
-  "errorApiInvalidResponse": {
-    "message": "تنسيق استجابة واجهة برمجة التطبيقات غير صالح أو فارغ.",
-    "description": "رسالة خطأ في background.js"
-  },
-  "errorNetwork": {
-    "message": "خطأ في الشبكة ، غير قادر على الاتصال بواجهة برمجة تطبيقات Gemini.",
-    "description": "رسالة خطأ في background.js"
-  },
-  "alertMaxImages": {
-    "message": "خطأ: يمكنك تحميل 4 صور كحد أقصى.",
-    "description": "رسالة تنبيه في incognito.js"
-  },
-  "alertTurnLimit": {
-    "message": "ملاحظة: تم الوصول إلى حد المحادثة وهو $limit$ دور. يرجى تحديث الصفحة لبدء محادثة جديدة.",
-    "description": "رسالة تنبيه في incognito.js. $limit$ هو عنصر نائب.",
-    "placeholders": {
-      "limit": {
-        "content": "$1",
-        "example": "12"
-      }
-    }
+  "alertNoApiKey": {
+    "message": "خطأ: لم يتم العثور على مفتاح Gemini API. يرجى إدخال مفتاحك في صفحة الإعدادات أولاً.",
+    "description": "Alert message when API key is missing."
   },
   "alertNoApiKeyOptions": {
-    "message": "خطأ: لم يتم تعيين مفتاح واجهة برمجة تطبيقات Gemini. يرجى تعيينه في خيارات الإضافة.",
-    "description": "رسالة تنبيه في incognito.js"
+    "message": "يرجى لصق مفتاح Google Gemini API الخاص بك في قسم 'مفتاح API والنموذج' أدناه.",
+    "description": "Alert message shown on the options page if API key is missing."
   },
   "alertInitFailed": {
-    "message": "فشل تهيئة الصفحة.",
-    "description": "رسالة تنبيه في incognito.js"
+    "message": "فشل التهيئة. يرجى التحقق من وحدة التحكم بحثًا عن رسائل الخطأ.",
+    "description": "Alert on initialization failure."
   },
-  "stateThinking": {
-    "message": "أفكر...",
-    "description": "حالة التحميل لزر الإرسال."
+  "errorNetwork": {
+    "message": "خطأ في الشبكة أو غير قادر على الاتصال بـ Gemini API. يرجى التحقق من اتصالك بالإنترنت وإعدادات جدار الحماية.",
+    "description": "Error message for network issues."
+  },
+  "errorApiInvalidResponse": {
+    "message": "تنسيق استجابة API غير صالح. ربما لم يرجع النموذج محتوى صالحًا.",
+    "description": "Error when API response is malformed."
+  },
+  "errorUnknown": {
+    "message": "حدث خطأ غير معروف.",
+    "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "وضع القارئ",
-    "description": "عنوان صفحة القارئ."
-  },
-  "readerLabelTargetLang": {
-    "message": "لغة الإخراج الهدف:",
-    "description": "تسمية لمحدد اللغة الهدف الرئيسي في reader.html"
-  },
-  "readerLabelFontSize": {
-    "message": "حجم الخط:",
-    "description": "تسمية في شريط أدوات القارئ."
-  },
-  "readerLabelLineHeight": {
-    "message": "ارتفاع السطر:",
-    "description": "تسمية في شريط أدوات القارئ."
-  },
-  "readerLabelBgColor": {
-    "message": "لون الخلفية:",
-    "description": "تسمية في شريط أدوات القارئ."
-  },
-  "readerSaveButton": {
-    "message": "حفظ كملف TXT",
-    "description": "نص الزر في شريط أدوات القارئ."
+    "message": "وضع القارئ - Incognito AI Hub",
+    "description": "Title for the reader page."
   },
   "readerLoading": {
-    "message": "جاري تحميل المحتوى...",
-    "description": "رسالة التحميل في القارئ."
+    "message": "يقوم الذكاء الاصطناعي بالمعالجة، يرجى الانتظار...",
+    "description": "Loading message in reader."
   },
-  "readerErrorNotFound": {
-    "message": "لم يتم العثور على محتوى المقال أو أن المحتوى المستخرج فارغ. يرجى العودة إلى الصفحة الأصلية والمحاولة مرة أخرى.",
-    "description": "رسالة خطأ في القارئ."
+  "readerLabelTargetLang": {
+    "message": "ترجمة إلى",
+    "description": "Label for target language selector in reader."
   },
-  "readerTranslating": {
-    "message": " (جاري الترجمة...)",
-    "description": "حالة الترجمة في القارئ."
+  "readerLabelFontSize": {
+    "message": "حجم الخط",
+    "description": "Label for font size slider."
   },
-  "readerTranslateFailed": {
-    "message": "فشلت الترجمة: $error$",
-    "description": "رسالة فشل الترجمة في القارئ.",
-    "placeholders": { "error": { "content": "$1" } }
+  "readerLabelLineHeight": {
+    "message": "ارتفاع السطر",
+    "description": "Label for line height slider."
   },
-  "readerVoiceToolHeader": {
-    "message": "نتيجة النسخ",
-    "description": "رأس أداة الصوت في القارئ."
-  },
-  "readerVoiceToolLabel": {
-    "message": "ترجمة إلى:",
-    "description": "تسمية أداة الصوت في القارئ."
-  },
-  "readerVoiceToolButton": {
-    "message": "بدء الترجمة",
-    "description": "زر أداة الصوت في القارئ."
+  "readerSaveButton": {
+    "message": "حفظ باسم .txt",
+    "description": "Save button text in reader."
   },
   "readerSaveOriginal": {
-    "message": "[الأصلي $index$]",
-    "description": "تسمية للنص الأصلي في الملف المحفوظ.",
+    "message": "[الفقرة الأصلية $index$]",
+    "description": "Label for original text paragraph when saving.",
     "placeholders": { "index": { "content": "$1" } }
   },
   "readerSaveTranslated": {
-    "message": "[ترجمة $index$]",
-    "description": "تسمية للنص المترجم في الملف المحفوظ.",
+    "message": "[الفقرة المترجمة $index$]",
+    "description": "Label for translated text paragraph when saving.",
     "placeholders": { "index": { "content": "$1" } }
   },
+  "readerVoiceToolHeader": { "message": "أداة تحويل النص إلى كلام (قيد التطوير)", "description": "Header for the text-to-speech tool in reader." },
+  "readerVoiceToolLabel": { "message": "لغة الكلام", "description": "Label for TTS language selection." },
+  "readerVoiceToolButton": { "message": "قراءة الترجمة بصوت عالٍ", "description": "Button to trigger TTS." },
   "workbenchTitle": {
-    "message": "منضدة الترجمة الذكية",
-    "description": "عنوان صفحة منضدة العمل."
+    "message": "منصة الترجمة الذكية",
+    "description": "Title for the workbench page."
   },
   "workbenchTabText": {
     "message": "لصق النص",
-    "description": "تسمية علامة التبويب في منضدة العمل."
+    "description": "Tab label for pasting text."
   },
   "workbenchTabImage": {
-    "message": "تحميل لقطة شاشة",
-    "description": "تسمية علامة التبويب في منضدة العمل."
+    "message": "تحميل صورة",
+    "description": "Tab label for uploading image."
   },
-  "workbenchTextHeader": {
-    "message": "الوضع 2: منضدة لصق النص",
-    "description": "رأس في منضدة العمل."
-  },
-  "workbenchTextDesc": {
-    "message": "مناسب للنص القابل للتحديد من صفحات الويب أو Word أو PDF. انسخ والصق النص أدناه للحصول على أسرع وأدق النتائج.",
-    "description": "وصف في منضدة العمل."
-  },
-  "workbenchImageHeader": {
-    "message": "الوضع 3: تحميل لقطة شاشة سطح المكتب",
-    "description": "رأس في منضدة العمل."
-  },
-  "workbenchLabelSourceLang": {
-    "message": "اللغة المصدر",
-    "description": "تسمية لاختيار اللغة."
-  },
-  "workbenchLabelImageSourceLang": {
-    "message": "اللغة المصدر (في الصورة)",
-    "description": "تسمية لاختيار اللغة."
-  },
-  "workbenchLabelTargetLang": {
-    "message": "لغة الإخراج الهدف",
-    "description": "تسمية لاختيار اللغة."
-  },
-  "workbenchTextPlaceholder": {
-    "message": "الصق النص المنسوخ هنا ...",
-    "description": "عنصر نائب لإدخال النص."
-  },
-  "workbenchProcessTextButton": {
-    "message": "معالجة النص",
-    "description": "نص الزر."
-  },
-  "workbenchUploadBox": {
-    "message": "انقر أو اسحب الملف هنا",
-    "description": "نص في مربع التحميل."
-  },
-  "workbenchUploadBoxDesc": {
-    "message": "(يدعم JPG ، PNG ، BMP)",
-    "description": "وصف في مربع التحميل."
-  },
-  "workbenchProcessImageButton": {
-    "message": "بدء التعرف",
-    "description": "نص الزر."
-  },
-  "statusProcessing": {
-    "message": "جاري المعالجة...",
-    "description": "رسالة الحالة."
-  },
-  "statusPleasePaste": {
-    "message": "يرجى لصق النص أولاً.",
-    "description": "رسالة الحالة."
-  },
-  "statusSuccess": {
-    "message": "نجاح! فتح وضع القارئ ...",
-    "description": "رسالة الحالة."
-  },
-  "statusFailed": {
-    "message": "فشلت المعالجة: $error$",
-    "description": "رسالة الحالة.",
-    "placeholders": { "error": { "content": "$1" } }
-  },
-  "statusUploading": {
-    "message": "جاري الإرسال إلى الذكاء الاصطناعي للتعرف ...",
-    "description": "رسالة الحالة."
-  },
-  "statusUploadSuccess": {
-    "message": "نجح التعرف! فتح وضع القارئ ...",
-    "description": "رسالة الحالة."
-  },
-  "errorPleaseUploadImage": {
-    "message": "خطأ: يرجى تحميل ملف صورة.",
-    "description": "رسالة خطأ."
-  },
+  "workbenchTextHeader": { "message": "ترجمة النص", "description": "Header for text translation section." },
+  "workbenchTextDesc": { "message": "الصق النص المنسوخ أدناه للترجمة.", "description": "Description for text translation." },
+  "workbenchImageHeader": { "message": "ترجمة الصور (OCR)", "description": "Header for image translation section." },
+  "workbenchImageDesc": { "message": "قم بتحميل أو لصق لقطة شاشة. سيتعرف الذكاء الاصطناعي تلقائيًا على النص الموجود داخل الصورة ويترجمه.", "description": "Description for image translation." },
+  "workbenchLabelSourceLang": { "message": "اللغة المصدر", "description": "Label for source language selector." },
+  "workbenchLabelTargetLang": { "message": "اللغة الهدف", "description": "Label for target language selector." },
+  "workbenchProcessTextButton": { "message": "ترجمة النص", "description": "Button to process text." },
+  "workbenchProcessImageButton": { "message": "التعرف على الصورة وترجمتها", "description": "Button to process image." },
+  "workbenchUploadBox": { "message": "انقر هنا لتحديد صورة، أو الصق لقطة شاشة مباشرة (Cmd+V / Ctrl+V)", "description": "Placeholder for image upload box." },
+  "workbenchUploadBoxDesc": { "message": "يدعم تنسيقات JPG, PNG, BMP", "description": "Subtitle for image upload box." },
+  "workbenchImageResultTitle": { "message": "نتيجة ترجمة الصورة", "description": "Title for the reader tab showing image OCR result." },
   "voiceTitle": {
-    "message": "ملاحظات صوتية متخفية",
-    "description": "عنوان صفحة الملاحظات الصوتية."
+    "message": "متخفي - ملاحظات صوتية",
+    "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "حدد لغتك المنطوقة الأساسية ، وانقر لبدء التسجيل ، وقم بتحويل أفكارك بسرعة إلى نص. <br> نظرًا لقيود حجم تحميل المتصفح ، يوصى باستخدام هذه الميزة للملاحظات القصيرة التي تستغرق بضع دقائق.",
-    "description": "وصف على صفحة الملاحظات الصوتية."
+    "message": "اضغط على 'بدء التسجيل' أو قم بتحميل ملف صوتي. سيقوم الذكاء الاصطناعي بنسخ الكلام إلى نص ومحاولة التمييز بين المتحدثين المختلفين.",
+    "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
-    "message": "مصدر الصوت:",
-    "description": "تسمية مصدر الصوت."
+    "message": "مصدر الصوت",
+    "description": "Label for audio source dropdown."
   },
   "voiceLabelSpokenLang": {
-    "message": "اللغة المنطوقة الأساسية:",
-    "description": "تسمية اللغة المنطوقة."
+    "message": "اللغة المنطوقة الأساسية",
+    "description": "Label for spoken language dropdown."
   },
   "voiceButtonStart": {
     "message": "بدء التسجيل",
-    "description": "نص الزر."
+    "description": "Start recording button."
   },
   "voiceButtonStop": {
     "message": "إيقاف التسجيل",
-    "description": "نص الزر."
-  },
-  "voiceStatusNoMic": {
-    "message": "لم يتم العثور على جهاز ميكروفون.",
-    "description": "رسالة الحالة."
-  },
-  "voiceStatusNoMicPermission": {
-    "message": "تعذر الحصول على إذن الميكروفون. يرجى السماح لهذا الامتداد باستخدام الميكروفون في إعدادات متصفحك.",
-    "description": "رسالة الحالة."
-  },
-  "voiceStatusSelectSource": {
-    "message": "يرجى تحديد مصدر صوتي.",
-    "description": "رسالة الحالة."
+    "description": "Stop recording button."
   },
   "voiceStatusRecording": {
-    "message": "جاري التسجيل...",
-    "description": "رسالة الحالة."
+    "message": "جارٍ التسجيل...",
+    "description": "Status message."
   },
-  "voiceStatusSending": {
-    "message": "جاري الإرسال إلى الذكاء الاصطناعي للتعرف ...",
-    "description": "رسالة الحالة."
+  "voiceStatusTranscribing": {
+    "message": "جارٍ النسخ، يرجى الانتظار...",
+    "description": "Status message."
   },
   "voiceStatusSuccess": {
-    "message": "اكتمل التعرف ، تم فتح علامة تبويب جديدة.",
-    "description": "رسالة الحالة."
+    "message": "اكتمل النسخ! جارٍ فتح صفحة النتائج...",
+    "description": "Status message."
   },
-  "voiceStatusCommError": {
-    "message": "خطأ في الاتصال: $error$",
-    "description": "رسالة الحالة.",
+  "errorNoMic": {
+    "message": "خطأ: لم يتم العثور على ميكروفون متاح.",
+    "description": "Error message."
+  },
+  "errorMicPermission": {
+    "message": "خطأ: تعذر الحصول على إذن الميكروفون. يرجى التحقق من إعدادات المتصفح. التفاصيل: $error$",
+    "description": "Error message.",
     "placeholders": { "error": { "content": "$1" } }
   },
   "voiceStatusFailed": {
-    "message": "فشل التعرف: $error$",
-    "description": "رسالة الحالة.",
+    "message": "فشل النسخ: $error$",
+    "description": "Status message.",
     "placeholders": { "error": { "content": "$1" } }
   },
   "langAutoDetect": {
     "message": "الكشف التلقائي",
-    "description": "خيار اللغة للكشف التلقائي."
+    "description": "Language option for auto-detection."
   },
   "langSystemDefault": {
     "message": "النظام الافتراضي ($langName$)",
-    "description": "خيار اللغة للنظام الافتراضي ، مع عنصر نائب لاسم اللغة الفعلي.",
-    "placeholders": { "langName": { "content": "$1", "example": "العربية" } }
+    "description": "Language option for system default, with placeholder for the actual language name.",
+    "placeholders": { "langName": { "content": "$1", "example": "English" } }
   },
   "langPrefA": {
-    "message": "المفضلة-أ ($langName$)",
-    "description": "خيار اللغة للغة المفضلة أ.",
+    "message": "المفضل-أ ($langName$)",
+    "description": "Language option for preferred language A.",
     "placeholders": { "langName": { "content": "$1", "example": "Français" } }
   },
   "langPrefB": {
-    "message": "المفضلة-ب ($langName$)",
-    "description": "خيار اللغة للغة المفضلة ب.",
+    "message": "المفضل-ب ($langName$)",
+    "description": "Language option for preferred language B.",
     "placeholders": { "langName": { "content": "$1", "example": "Español" } }
   },
   "voiceLangZhEn": {
-    "message": "الصينية (مع الإنجليزية)",
-    "description": "خيار لغة خاص للإدخال الصوتي."
+    "message": "الصينية (مختلطة بالإنجليزية)",
+    "description": "Special language option for voice input."
   },
   "voiceMicLabel": {
     "message": "ميكروفون $index$",
-    "description": "التسمية الافتراضية للميكروفون.",
-    "placeholders": { "index": { "content": "$1" } }
+    "description": "Default label for a microphone.",
+    "placeholders": { "index": { "content": "$1", "example": "1" } }
   },
-  "voiceErrorStartRecording": {
-    "message": "فشل بدء التسجيل: $error$",
-    "description": "رسالة خطأ عند فشل بدء التسجيل.",
+  "incognitoFooter": {
+    "message": "Incognito AI Hub: أنشأه هوغو تشين، طبيب تايواني، خلال يوم إعصار في صيف عام 2025. تم تسمية الإصدار الأول 'هونغ-تاي' باللغة التايوانية. إذا وجدته مفيدًا، يرجى ترك مراجعة إيجابية على متجر Chrome الإلكتروني. إذا كنت على استعداد، فلا تتردد في دعوتي لتناول مشروب عبر رابط Buy Me a Coffee على اليمين.",
+    "description": "Footer text."
+  },
+  "promptWebpageProcessing": {
+    "message": "You are a helpful assistant. The user has provided the HTML content and a screenshot of a webpage. Please analyze both to understand the main content of the page, ignoring ads, navigation bars, and footers. Then, provide a concise summary of the key points in a well-structured, easy-to-read format. Finally, translate the summary into $lang$. Here is the HTML content: ```html\n$pageContent$\n```",
+    "description": "Prompt for webpage processing in background.js.",
+    "placeholders": { "pageContent": { "content": "$1" }, "lang": { "content": "$2" } }
+  },
+  "promptTranslateTo": {
+    "message": "Please translate the text in the image into $lang$.",
+    "description": "Prompt for image translation, asking to translate to a specific language.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "promptSourceLangAuto": {
+    "message": "First, identify the language of the text in the image.",
+    "description": "Part of the prompt for auto-detecting source language."
+  },
+  "promptSourceLangIs": {
+    "message": "The language of the text in the image is $lang$.",
+    "description": "Part of the prompt specifying the source language.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "incognitoTitle": {
+    "message": "دردشة Gemini في وضع التصفح المتخفي",
+    "description": "Title for the incognito chat page."
+  },
+  "incognitoDefaultModelHeader": {
+    "message": "نموذج Gemini الافتراضي",
+    "description": "Header for the default model tab."
+  },
+  "incognitoDefaultModelDesc": {
+    "message": "يعتمد النموذج المستخدم في علامة التبويب هذه على اختيارك في '⚙️ الإعدادات' (الافتراضي هو 2.5 Flash). النموذج الأصغر مناسب للترجمة البسيطة وتنظيم النصوص والتعامل مع ملفات PDF والصور البسيطة.",
+    "description": "Description for the default model tab."
+  },
+  "incognitoSendButton": {
+    "message": "إرسال",
+    "description": "Send button text."
+  },
+  "incognitoUploadTitle": {
+    "message": "تحميل الصور (4 كحد أقصى)",
+    "description": "Tooltip for the upload button."
+  },
+  "incognitoUploadPdfTitle": {
+    "message": "تحميل مستند PDF (1)",
+    "description": "Tooltip for the PDF upload button."
+  },
+  "incognitoPresetTitleA": { "message": "استخدام الإعداد المسبق أ", "description": "Tooltip for preset button A." },
+  "incognitoPresetTitleB": { "message": "استخدام الإعداد المسبق ب", "description": "Tooltip for preset button B." },
+  "incognitoPresetTitleC": { "message": "استخدام الإعداد المسبق ج", "description": "Tooltip for preset button C." },
+  "incognitoPresetTitleD": { "message": "استخدام الإعداد المسبق د", "description": "Tooltip for preset button D." },
+  "incognitoPresetTitleE": { "message": "استخدام الإعداد المسبق هـ", "description": "Tooltip for preset button E." },
+  "stateThinking": {
+    "message": "جارٍ التفكير...",
+    "description": "Thinking indicator text."
+  },
+  "incognitoApiError": {
+    "message": "فشل طلب API",
+    "description": "Error message prefix for API failures."
+  },
+  "incognitoInitialMessage": {
+    "message": "أهلاً! كيف يمكنني مساعدتك اليوم؟",
+    "description": "Initial greeting message from the assistant."
+  },
+  "incognitoClearConfirm": {
+    "message": "هل أنت متأكد من أنك تريد مسح سجل المحادثة؟ لا يمكن التراجع عن هذا الإجراء.",
+    "description": "Confirmation message before clearing chat history."
+  },
+  "incognitoPlaceholder": {
+    "message": "أدخل رسالتك هنا (يمكنك تحميل الصور أو ملف PDF)...",
+    "description": "Placeholder for the prompt input area."
+  },
+  "incognitoFlashModelHeader": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Header for the Flash model tab."
+  },
+  "incognitoFlashModelDesc": {
+    "message": "نموذج Google القياسي متوسط المستوى. مناسب للتطبيقات التي تتطلب استجابات سريعة وإنتاجية عالية بتكلفة معتدلة. يدعم أيضًا إدخال الصور وملفات PDF.",
+    "description": "Description for the Flash model tab."
+  },
+  "incognitoProModelHeader": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Header for the Pro model tab."
+  },
+  "incognitoProModelDesc": {
+    "message": "أقوى نموذج من Google، يتميز بنافذة سياق ضخمة تبلغ مليون رمز. يتفوق في التفكير المعقد والترميز والفهم متعدد الوسائط. الأعلى تكلفة، مثالي لمعالجة ملفات PDF والصور المعقدة.",
+    "description": "Description for the Pro model tab."
+  },
+  "statusUploading": {
+    "message": "جارٍ التحميل والمعالجة...",
+    "description": "Status for file upload."
+  },
+  "statusFailed": {
+    "message": "فشلت المعالجة: $error$",
+    "description": "Generic failure status.",
     "placeholders": { "error": { "content": "$1" } }
   },
-  "errorUnknown": {
-    "message": "حدث خطأ غير معروف.",
-    "description": "رسالة خطأ عامة."
+  "statusUploadSuccess": {
+    "message": "نجاح! جارٍ فتح النتائج...",
+    "description": "Success status for file upload."
+  },
+  "voiceOrDivider": {
+    "message": "أو",
+    "description": "The 'OR' divider between record and upload buttons."
+  },
+  "voiceButtonUpload": {
+    "message": "تحميل ملف صوتي",
+    "description": "The new button to upload an audio file."
+  },
+  "voiceButtonSubmit": {
+    "message": "نسخ الملف",
+    "description": "The text on the record button when a file is ready to be submitted."
+  },
+  "errorInvalidFileType": {
+    "message": "خطأ: نوع الملف غير صالح. يرجى تحديد ملف صوتي.",
+    "description": "Error when a non-audio file is selected."
+  },
+  "errorFileRead": {
+    "message": "خطأ: حدثت مشكلة أثناء قراءة الملف.",
+    "description": "Error when the FileReader API fails."
+  },
+  "promptVoiceTranscribeDiarize": {
+    "message": "Please transcribe the following audio. The primary language spoken is $lang$. Pay close attention to pauses and changes in tone or speech patterns to identify and label different speakers (e.g., Speaker 1, Speaker 2). Provide the output as a clear, readable transcript.",
+    "description": "Prompt for voice transcription with speaker diarization.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "voiceResultTitle": {
+    "message": "نتيجة النسخ الصوتي",
+    "description": "Title for the reader tab showing voice transcription result."
   }
 }

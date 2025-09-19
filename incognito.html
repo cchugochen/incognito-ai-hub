@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>__MSG_incognitoTitle__</title>
-    <!-- 載入新的共用主題與版面樣式 -->
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/page_layout.css">
     <link rel="stylesheet" href="incognito.css">
 </head>
 <body>
     <div class="container">
-        <!-- 頁籤選擇器 -->
         <div class="tabs">
             <button class="tab-link active" data-tab="default">Lite</button>
             <button class="tab-link" data-tab="flash">2.5 Flash</button>
             <button class="tab-link" data-tab="pro">2.5 Pro</button>
         </div>
 
-        <!-- Lite 模型對話區 -->
         <div id="default" class="tab-content active">
             <header class="header">
                 <h2 data-i18n="incognitoDefaultModelHeader"></h2>
@@ -29,21 +26,30 @@
                 <div id="image-preview-container-default" class="image-preview-container"></div>
                 <textarea id="prompt-default" class="prompt-input" data-i18n-placeholder="incognitoPlaceholder"></textarea>
                 <div class="controls">
-                    <button id="upload-btn-default" class="upload-btn" data-i18n="incognitoUploadButton" data-i18n-title="incognitoUploadTitle"></button>
-                    <input type="file" id="file-input-default" accept="image/*" multiple hidden>
-                    <div id="preset-buttons-container-default" class="preset-buttons">
-                        <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
-                        <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
-                        <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
-                        <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
-                        <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
+                    <div class="upload-buttons">
+                        <button id="upload-pdf-btn-default" class="upload-btn pdf-btn" data-i18n-title="incognitoUploadPdfTitle">PDF</button>
+                        <input type="file" id="pdf-file-input-default" accept="application/pdf" hidden>
+
+                        <button id="upload-img-btn-default" class="upload-btn" data-i18n-title="incognitoUploadTitle">IMG</button>
+                        <input type="file" id="image-file-input-default" accept="image/*" multiple hidden>
                     </div>
+
+                    <div class="preset-controls">
+                        <span class="preset-label">提示語:</span>
+                        <div id="preset-buttons-container-default" class="preset-buttons">
+                            <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
+                            <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
+                            <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
+                            <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
+                            <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
+                        </div>
+                    </div>
+                    
                     <button id="send-btn-default" class="submit-btn" data-i18n="incognitoSendButton"></button>
                 </div>
             </div>
         </div>
 
-        <!-- 2.5 Flash 模型對話區 -->
         <div id="flash" class="tab-content">
             <header class="header">
                 <h2 data-i18n="incognitoFlashModelHeader"></h2>
@@ -54,21 +60,30 @@
                 <div id="image-preview-container-flash" class="image-preview-container"></div>
                 <textarea id="prompt-flash" class="prompt-input" data-i18n-placeholder="incognitoPlaceholder"></textarea>
                 <div class="controls">
-                    <button id="upload-btn-flash" class="upload-btn" data-i18n="incognitoUploadButton" data-i18n-title="incognitoUploadTitle"></button>
-                    <input type="file" id="file-input-flash" accept="image/*" multiple hidden>
-                    <div id="preset-buttons-container-flash" class="preset-buttons">
-                        <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
-                        <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
-                        <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
-                        <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
-                        <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
+                    <div class="upload-buttons">
+                        <button id="upload-pdf-btn-flash" class="upload-btn pdf-btn" data-i18n-title="incognitoUploadPdfTitle">PDF</button>
+                        <input type="file" id="pdf-file-input-flash" accept="application/pdf" hidden>
+
+                        <button id="upload-img-btn-flash" class="upload-btn" data-i18n-title="incognitoUploadTitle">IMG</button>
+                        <input type="file" id="image-file-input-flash" accept="image/*" multiple hidden>
                     </div>
+
+                    <div class="preset-controls">
+                        <span class="preset-label">提示語:</span>
+                        <div id="preset-buttons-container-flash" class="preset-buttons">
+                            <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
+                            <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
+                            <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
+                            <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
+                            <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
+                        </div>
+                    </div>
+                    
                     <button id="send-btn-flash" class="submit-btn" data-i18n="incognitoSendButton"></button>
                 </div>
             </div>
         </div>
 
-        <!-- 2.5 Pro 模型對話區 -->
         <div id="pro" class="tab-content">
             <header class="header">
                 <h2 data-i18n="incognitoProModelHeader"></h2>
@@ -79,21 +94,30 @@
                 <div id="image-preview-container-pro" class="image-preview-container"></div>
                 <textarea id="prompt-pro" class="prompt-input" data-i18n-placeholder="incognitoPlaceholder"></textarea>
                 <div class="controls">
-                    <button id="upload-btn-pro" class="upload-btn" data-i18n="incognitoUploadButton" data-i18n-title="incognitoUploadTitle"></button>
-                    <input type="file" id="file-input-pro" accept="image/*" multiple hidden>
-                    <div id="preset-buttons-container-pro" class="preset-buttons">
-                        <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
-                        <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
-                        <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
-                        <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
-                        <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
+                    <div class="upload-buttons">
+                        <button id="upload-pdf-btn-pro" class="upload-btn pdf-btn" data-i18n-title="incognitoUploadPdfTitle">PDF</button>
+                        <input type="file" id="pdf-file-input-pro" accept="application/pdf" hidden>
+
+                        <button id="upload-img-btn-pro" class="upload-btn" data-i18n-title="incognitoUploadTitle">IMG</button>
+                        <input type="file" id="image-file-input-pro" accept="image/*" multiple hidden>
                     </div>
+
+                    <div class="preset-controls">
+                        <span class="preset-label">提示語:</span>
+                        <div id="preset-buttons-container-pro" class="preset-buttons">
+                            <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
+                            <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
+                            <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
+                            <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
+                            <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
+                        </div>
+                    </div>
+                    
                     <button id="send-btn-pro" class="submit-btn" data-i18n="incognitoSendButton"></button>
                 </div>
             </div>
         </div>
 
-        <!-- 新增的分隔線 -->
         <hr class="controls-divider">
 
         <footer class="page-footer">

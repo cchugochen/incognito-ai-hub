@@ -1,15 +1,12 @@
-// options.js (v25.3 - Bug Fix)
-// - Fixed model radio buttons being unselectable by removing preventDefault().
+// options.js (v26.1 - Model Update)
 import { populateLanguageSelector } from './scripts/language_manager.js';
 
 /**
  * Saves options to chrome.storage.sync.
  */
 function save_options() {
-    // [v25.3 Fix] Ensure a model is selected before saving
     const selectedModelEl = document.querySelector('input[name="model-select"]:checked');
     if (!selectedModelEl) {
-        // This case should ideally not happen with the fix, but as a safeguard:
         alert("Please select a translation model.");
         return;
     }
@@ -44,7 +41,7 @@ function restore_options() {
     chrome.storage.sync.get({
         displayLanguage: 'default',
         geminiApiKey: '',
-        translationModel: 'gemini-2.0-flash',
+        translationModel: 'gemini-2.5-flash-lite', // UPDATED DEFAULT
         logEndpoint: '',
         logKey: '',
         prefLangA: '',
@@ -73,6 +70,7 @@ function restore_options() {
         if (savedModelRadio) {
             savedModelRadio.checked = true;
         } else {
+            // Fallback to the first radio button if saved model is not found
             document.querySelector('input[name="model-select"]').checked = true;
         }
     });
@@ -91,7 +89,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     document.getElementById('save').addEventListener('click', save_options);
 
-    // [v25.3 Fix] Removed e.preventDefault() to allow native label behavior.
     document.querySelectorAll('.model-card').forEach(card => {
         card.addEventListener('click', () => {
             const radioId = card.getAttribute('for');

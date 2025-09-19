@@ -1,562 +1,431 @@
 {
   "appName": {
-    "message": "Gemini용 시크릿 AI 허브",
-    "description": "확장 프로그램의 이름입니다."
+    "message": "Incognito AI Hub by Gemini",
+    "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "(1) 시크릿 Gemini 채팅, 웹페이지 읽기, 텍스트/스크린샷, 음성 입력 등 네 가지 AI 시크릿 모드를 통합한 유틸리티 도구입니다.\n(2) 합법적인 사용을 위해 자신만의 Google Gemini API 키를 신청하십시오.\n(3) 이 확장 프로그램에는 저장을 위한 백엔드 서버가 없으므로 로깅이 필요한 사용자는 직접 엔드포인트를 설정해야 합니다.",
-    "description": "매니페스트에 있는 확장 프로그램의 설명입니다."
+    "message": "(1) 간단한 시크릿 Gemini 채팅 인터페이스 및 웹페이지, 텍스트, 스크린샷 번역, 음성 AI 입력을 위한 무료 도구 모음. (2) 사용자는 자신의 Google Gemini API 키를 직접 발급받아야 합니다.",
+    "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
-    "message": "현재 페이지 번역 (Google 번역 실패 시)",
-    "description": "popup.html의 버튼 텍스트입니다."
+    "message": "현재 웹페이지 번역 (Google 번역 사용 불가 시)",
+    "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
     "message": "스마트 번역 워크벤치 열기",
-    "description": "'텍스트/스크린샷 번역 워크벤치'에서 변경된 popup.html의 버튼 텍스트입니다."
+    "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
   },
   "popupOpenVoiceNotes": {
-    "message": "시크릿 음성 메모",
-    "description": "popup.html의 버튼 텍스트입니다."
+    "message": "시크릿 - 음성 메모",
+    "description": "Button text in popup.html"
   },
   "popupOpenIncognito": {
     "message": "시크릿 Gemini 채팅",
-    "description": "popup.html의 버튼 텍스트입니다."
+    "description": "Button text in popup.html"
   },
   "popupOpenTutorial": {
-    "message": "Gemini API 키를 위한 쉬운 튜토리얼",
-    "description": "popup.html의 버튼 텍스트입니다."
+    "message": "Gemini API 키 신청 간편 가이드",
+    "description": "Button text in popup.html"
   },
   "popupShowLicense": {
     "message": "MIT 라이선스 정보",
-    "description": "popup.html의 버튼 텍스트입니다."
+    "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "시크릿 AI 허브 - 설정",
-    "description": "옵션 페이지의 제목입니다."
+    "message": "Incognito AI Hub 설정",
+    "description": "Title for the options page."
   },
   "optionsHeader": {
-    "message": "시크릿 AI 허브 - 설정",
-    "description": "옵션 페이지의 헤더입니다."
+    "message": "⚙️ 설정",
+    "description": "Header text on the options page."
   },
   "optionsDisplayLangSectionHeader": {
-    "message": "1. 표시 언어",
-    "description": "옵션의 섹션 헤더입니다."
+    "message": "표시 언어",
+    "description": "Section header on options page."
   },
   "optionsDisplayLangLabel": {
-    "message": "확장 프로그램 인터페이스의 표시 언어를 설정합니다:",
-    "description": "옵션의 언어 선택 레이블입니다."
+    "message": "확장 프로그램 인터페이스 언어",
+    "description": "Label for language selection on options page."
   },
   "optionsDisplayLangDefault": {
-    "message": "Chrome 시스템 기본값",
-    "description": "언어 선택의 기본 옵션입니다."
+    "message": "기본값 (브라우저 설정 따름)",
+    "description": "Default option for language selection."
   },
   "optionsPrefLangSectionHeader": {
-    "message": "2. 선호하는 번역 언어",
-    "description": "옵션에서 선호하는 언어의 섹션 헤더입니다."
+    "message": "선호 언어",
+    "description": "Section header for preferred languages."
   },
   "optionsPrefLangDesc": {
-    "message": "지침: 가장 좋은 방법은 해당 언어를 사용하여 필드에 필요한 언어를 작성하는 것입니다. 예: Français, Español, Русский",
-    "description": "선호하는 언어 섹션에 대한 설명입니다."
+    "message": "가장 자주 사용하는 두 가지 대상 언어를 설정하세요. 이 언어들은 다양한 번역 기능의 빠른 선택 메뉴에 표시됩니다.",
+    "description": "Description for preferred languages setting."
   },
   "optionsPrefLangLabelA": {
-    "message": "선호 언어 A:",
-    "description": "선호 언어 A의 레이블입니다."
+    "message": "선호 언어 A",
+    "description": "Label for preferred language A."
   },
   "optionsPrefLangLabelB": {
-    "message": "선호 언어 B:",
-    "description": "선호 언어 B의 레이블입니다."
-  },
-  "optionsPrefLangPlaceholder": {
-    "message": "예: Français",
-    "description": "선호 언어 입력의 플레이스홀더입니다."
+    "message": "선호 언어 B",
+    "description": "Label for preferred language B."
   },
   "optionsApiKeySectionHeader": {
-    "message": "3. Gemini API 키 입력",
-    "description": "옵션의 섹션 헤더입니다."
+    "message": "API 키 및 모델",
+    "description": "Section header for API key settings."
   },
   "optionsApiKeyLabel": {
-    "message": "Google Gemini API 키:",
-    "description": "API 키 입력 레이블입니다."
+    "message": "사용자의 Google Gemini API 키",
+    "description": "Label for API key input field."
   },
-  "optionsModelSectionHeader": {
-    "message": "4. 번역 및 인식 모델",
-    "description": "옵션의 섹션 헤더입니다."
+  "optionsApiKeyPlaceholder": {
+    "message": "API 키를 여기에 붙여넣으세요",
+    "description": "Placeholder text for API key input."
   },
-  "optionsModelDesc": {
-    "message": "'페이지 번역', '스마트 번역 워크벤치' 및 '음성 메모' 기능의 기본 모델을 선택합니다.",
-    "description": "모델 선택에 대한 설명입니다."
+  "optionsModelSelectLabel": {
+    "message": "기본 웹/이미지 번역 모델",
+    "description": "Label for the model selection radio buttons."
   },
-  "optionsModel1Name": {
-    "message": "Gemini 2.0 Flash",
-    "description": "모델 이름입니다."
+  "optionsModelFlashName": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Name of the Flash model."
   },
-  "optionsModel1Tag": {
-    "message": "기본값",
-    "description": "권장 모델의 태그입니다."
+  "optionsModelFlashDesc": {
+    "message": "가장 빠르고 경제적이며, 신속하고 대량의 번역 및 요약 작업에 적합합니다.",
+    "description": "Description of the Flash model."
   },
-  "optionsModel1Desc": {
-    "message": "최적: 다중 모드 이해, 실시간 스트리밍, 저비용.",
-    "description": "모델에 대한 설명입니다."
+  "optionsModelProName": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Name of the Pro model."
   },
-  "optionsModel2Name": {
-    "message": "Gemini 2.5 Flash Lite (미리보기)",
-    "description": "모델 이름입니다."
-  },
-  "optionsModel2Desc": {
-    "message": "최적: 요청당 더 많은 토큰 처리, 낮은 지연 시간, 저렴한 비용.",
-    "description": "모델에 대한 설명입니다."
+  "optionsModelProDesc": {
+    "message": "가장 강력하며 복잡한 상황과 이미지 이해의 정확도가 높지만 비용이 더 많이 듭니다.",
+    "description": "Description of the Pro model."
   },
   "optionsPresetSectionHeader": {
-    "message": "5. 시크릿 채팅 - 내장 프롬프트 메모리",
-    "description": "옵션의 섹션 헤더입니다."
+    "message": "시크릿 채팅 - 프롬프트 프리셋",
+    "description": "Section header for preset prompts."
   },
   "optionsPresetDesc": {
-    "message": "'시크릿 Gemini 채팅'에서 빠른 액세스를 위해 자주 사용하는 명령이나 템플릿을 여기에 입력하십시오.",
-    "description": "사전 설정 프롬프트에 대한 설명입니다."
+    "message": "'시크릿 Gemini 채팅' 페이지의 A/B/C/D/E 버튼에 자주 사용하는 시작 지침(시스템 프롬프트)을 설정하세요.",
+    "description": "Description for preset prompts."
   },
-  "optionsPresetLabelA": {
-    "message": "사전 설정 프롬프트 A:",
-    "description": "사전 설정 프롬프트의 레이블입니다."
-  },
-  "optionsPresetLabelB": {
-    "message": "사전 설정 프롬프트 B:",
-    "description": "사전 설정 프롬프트의 레이블입니다."
-  },
-  "optionsPresetLabelC": {
-    "message": "사전 설정 프롬프트 C:",
-    "description": "사전 설정 프롬프트의 레이블입니다."
-  },
-  "optionsPresetLabelD": {
-    "message": "사전 설정 프롬프트 D:",
-    "description": "사전 설정 프롬프트의 레이블입니다."
-  },
-  "optionsPresetLabelE": {
-    "message": "사전 설정 프롬프트 E:",
-    "description": "사전 설정 프롬프트의 레이블입니다."
-  },
+  "optionsPresetLabelA": { "message": "프리셋 A", "description": "Label for preset A." },
+  "optionsPresetLabelB": { "message": "프리셋 B", "description": "Label for preset B." },
+  "optionsPresetLabelC": { "message": "프리셋 C", "description": "Label for preset C." },
+  "optionsPresetLabelD": { "message": "프리셋 D", "description": "Label for preset D." },
+  "optionsPresetLabelE": { "message": "프리셋 E", "description": "Label for preset E." },
   "optionsLogSectionHeader": {
-    "message": "6. (선택 사항) 클라우드 로깅 설정",
-    "description": "옵션의 섹션 헤더입니다."
+    "message": "(선택 사항) 클라우드 로깅",
+    "description": "Section header for optional logging."
   },
   "optionsLogDesc": {
-    "message": "연구 및 분석을 위해 처리 로그를 자신의 Google Cloud Functions 엔드포인트로 보냅니다.",
-    "description": "로깅 기능에 대한 설명입니다."
+    "message": "작업 기록(예: 토큰 사용량)을 자체 백엔드 서비스로 전송해야 하는 경우, 여기에 엔드포인트 URL과 키를 입력하세요. 비워두면 이 기능은 완전히 비활성화됩니다.",
+    "description": "Description for optional logging."
   },
   "optionsLogEndpointLabel": {
-    "message": "클라우드 기능 엔드포인트 URL:",
-    "description": "로그 엔드포인트 URL의 레이블입니다."
+    "message": "로그 엔드포인트 URL",
+    "description": "Label for log endpoint input."
   },
   "optionsLogKeyLabel": {
-    "message": "인증 키 (선택 사항):",
-    "description": "로그 키의 레이블입니다."
+    "message": "로그 API 키",
+    "description": "Label for log key input."
   },
   "optionsSaveButton": {
     "message": "설정 저장",
-    "description": "저장 버튼 텍스트입니다."
+    "description": "Save button text."
   },
   "optionsStatusSaved": {
-    "message": "설정이 저장되었습니다.",
-    "description": "옵션이 저장될 때의 상태 메시지입니다."
+    "message": "설정이 저장되었습니다!",
+    "description": "Status message when settings are saved."
   },
-  "incognitoTitle": {
-    "message": "시크릿 Gemini 채팅",
-    "description": "시크릿 채팅 페이지의 제목입니다."
-  },
-  "incognitoDefaultModelHeader": {
-    "message": "시스템 기본 모델 (라이트)",
-    "description": "시크릿 채팅의 기본 모델 헤더입니다."
-  },
-  "incognitoDefaultModelDesc": {
-    "message": "라이트 Gemini 모델: '설정' 페이지에서 설정한 모델(기본값 2.0 Flash 또는 2.5-Flash-Lite)을 사용하며 일반 번역 및 빠른 Q&A에 적합합니다.",
-    "description": "시크릿 채팅의 기본 모델에 대한 설명입니다."
-  },
-  "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
-    "description": "시크릿 채팅의 Flash 모델 헤더입니다."
-  },
-  "incognitoFlashModelDesc": {
-    "message": "더 긴 컨텍스트 이해 또는 빠른 요약이 필요한 작업에 적합한 중간 크기의 Gemini 모델입니다.",
-    "description": "시크릿 채팅의 Flash 모델에 대한 설명입니다."
-  },
-  "incognitoProModelHeader": {
-    "message": "Gemini 2.5 Pro",
-    "description": "시크릿 채팅의 Pro 모델 헤더입니다."
-  },
-  "incognitoProModelDesc": {
-    "message": "현재 Google의 가장 강력한 모델로, 매우 복잡한 논리적 추론 및 창의적인 생성을 위해 사용됩니다. <b>참고:</b> 단위 비용이 높으니 자세한 내용은 <a href='https://ai.google.dev/pricing' target='_blank'>공식 가격 책정</a>을 참조하십시오.",
-    "description": "시크릿 채팅의 Pro 모델에 대한 설명입니다. HTML 태그를 유지하십시오."
-  },
-  "incognitoPlaceholder": {
-    "message": "여기에 프롬프트를 입력하거나 스크린샷을 붙여넣기(Ctrl+V)하세요...",
-    "description": "프롬프트 입력의 플레이스홀더입니다."
-  },
-  "incognitoUploadButton": {
-    "message": "🖼️ 업로드",
-    "description": "업로드 버튼 텍스트입니다."
-  },
-  "incognitoUploadTitle": {
-    "message": "이미지 업로드 (최대 4개)",
-    "description": "업로드 버튼의 제목 속성입니다."
-  },
-  "incognitoPresetTitleA": { "message": "사전 설정 A 사용", "description": "사전 설정 버튼 A의 제목입니다." },
-  "incognitoPresetTitleB": { "message": "사전 설정 B 사용", "description": "사전 설정 버튼 B의 제목입니다." },
-  "incognitoPresetTitleC": { "message": "사전 설정 C 사용", "description": "사전 설정 버튼 C의 제목입니다." },
-  "incognitoPresetTitleD": { "message": "사전 설정 D 사용", "description": "사전 설정 버튼 D의 제목입니다." },
-  "incognitoPresetTitleE": { "message": "사전 설정 E 사용", "description": "사전 설정 버튼 E의 제목입니다." },
-  "incognitoSendButton": {
-    "message": "보내기 ▶️",
-    "description": "보내기 버튼 텍스트입니다."
-  },
-  "incognitoFooter": {
-    "message": "저자인 Hugo Chen은 대만의 의사로, 2025년 어느 태풍이 부는 날 첫 버전을 완성했습니다. 초기 버전은 대만어로 'Hong-Thai'(태풍)라고 명명되었습니다. 유용하게 사용하셨거나 아이디어가 있으시다면 Chrome 웹 스토어에서 리뷰나 제안을 남겨주세요. 원하신다면, 오른쪽 링크를 통해 제 Buy Me a Coffee 페이지에서 커피 한 잔으로 응원해주시면 감사하겠습니다.",
-    "description": "Footer text. Keep HTML tags."
-  },
-  "errorNoActiveTab": {
-    "message": "활성 탭을 찾을 수 없습니다.",
-    "description": "background.js의 오류 메시지입니다."
-  },
-  "errorInvalidText": {
-    "message": "잘못되었거나 비어 있는 텍스트 콘텐츠입니다.",
-    "description": "background.js의 오류 메시지입니다."
-  },
-  "errorNoImageData": {
-    "message": "이미지 데이터가 제공되지 않았습니다.",
-    "description": "background.js의 오류 메시지입니다."
-  },
-  "errorOcrFailed": {
-    "message": "AI가 충분한 텍스트를 인식하지 못했습니다.",
-    "description": "background.js의 오류 메시지입니다."
-  },
-  "errorNoAudioData": {
-    "message": "오디오 데이터가 제공되지 않았습니다.",
-    "description": "background.js의 오류 메시지입니다."
-  },
-  "errorSttFailed": {
-    "message": "AI가 음성을 인식하지 못했습니다.",
-    "description": "background.js의 오류 메시지입니다."
-  },
-  "errorDebuggerAttach": {
-    "message": "디버거를 연결하지 못했습니다. 페이지를 새로 고치거나 다른 확장 프로그램과의 충돌을 확인하십시오.",
-    "description": "background.js의 오류 메시지입니다."
-  },
-  "errorScreenshotFailed": {
-    "message": "스크린샷을 캡처하지 못했습니다.",
-    "description": "background.js의 오류 메시지입니다."
-  },
-  "errorOcrFailedLong": {
-    "message": "AI가 충분한 텍스트 콘텐츠를 인식하지 못했습니다.",
-    "description": "background.js의 오류 메시지입니다."
-  },
-  "errorNoApiKey": {
-    "message": "API 키가 설정되지 않았습니다.",
-    "description": "background.js 및 기타의 오류 메시지입니다."
-  },
-  "errorApiRequestFailed": {
-    "message": "API 요청 실패: $details$",
-    "description": "background.js의 오류 메시지입니다. $details$는 플레이스홀더입니다.",
-    "placeholders": {
-      "details": {
-        "content": "$1",
-        "example": "잘못된 API 키입니다."
-      }
-    }
-  },
-  "errorApiRejected": {
-    "message": "AI에 의해 요청이 거부되었습니다. 이유: $reason$",
-    "description": "background.js의 오류 메시지입니다. $reason$은 플레이스홀더입니다.",
-    "placeholders": {
-      "reason": {
-        "content": "$1",
-        "example": "SAFETY"
-      }
-    }
-  },
-  "errorApiStopped": {
-    "message": "AI 처리가 조기에 중단되었습니다. 이유: $reason$",
-    "description": "background.js의 오류 메시지입니다. $reason$은 플레이스홀더입니다.",
-    "placeholders": {
-      "reason": {
-        "content": "$1",
-        "example": "MAX_TOKENS"
-      }
-    }
-  },
-  "errorApiInvalidResponse": {
-    "message": "잘못되었거나 비어 있는 API 응답 형식입니다.",
-    "description": "background.js의 오류 메시지입니다."
-  },
-  "errorNetwork": {
-    "message": "네트워크 오류, Gemini API에 연결할 수 없습니다.",
-    "description": "background.js의 오류 메시지입니다."
-  },
-  "alertMaxImages": {
-    "message": "오류: 최대 4개의 이미지를 업로드할 수 있습니다.",
-    "description": "incognito.js의 경고 메시지입니다."
-  },
-  "alertTurnLimit": {
-    "message": "알림: 대화 한도인 $limit$ 턴에 도달했습니다. 새 대화를 시작하려면 페이지를 새로 고치십시오.",
-    "description": "incognito.js의 경고 메시지입니다. $limit$는 플레이스홀더입니다.",
-    "placeholders": {
-      "limit": {
-        "content": "$1",
-        "example": "12"
-      }
-    }
+  "alertNoApiKey": {
+    "message": "오류: Gemini API 키를 찾을 수 없습니다. 먼저 설정 페이지에서 키를 입력해 주세요.",
+    "description": "Alert message when API key is missing."
   },
   "alertNoApiKeyOptions": {
-    "message": "오류: Gemini API 키가 설정되지 않았습니다. 확장 프로그램 옵션에서 설정하십시오.",
-    "description": "incognito.js의 경고 메시지입니다."
+    "message": "아래 'API 키 및 모델' 섹션에 Google Gemini API 키를 붙여넣으십시오.",
+    "description": "Alert message shown on the options page if API key is missing."
   },
   "alertInitFailed": {
-    "message": "페이지 초기화에 실패했습니다.",
-    "description": "incognito.js의 경고 메시지입니다."
+    "message": "초기화에 실패했습니다. 콘솔에서 오류 메시지를 확인하세요.",
+    "description": "Alert on initialization failure."
   },
-  "stateThinking": {
-    "message": "생각 중...",
-    "description": "보내기 버튼의 로딩 상태입니다."
+  "errorNetwork": {
+    "message": "네트워크 오류 또는 Gemini API에 연결할 수 없습니다. 인터넷 연결 및 방화벽 설정을 확인하세요.",
+    "description": "Error message for network issues."
+  },
+  "errorApiInvalidResponse": {
+    "message": "API 응답 형식이 잘못되었습니다. 모델이 유효한 콘텐츠를 반환하지 않았을 수 있습니다.",
+    "description": "Error when API response is malformed."
+  },
+  "errorUnknown": {
+    "message": "알 수 없는 오류가 발생했습니다.",
+    "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "리더 모드",
-    "description": "리더 페이지의 제목입니다."
-  },
-  "readerLabelTargetLang": {
-    "message": "대상 출력 언어:",
-    "description": "reader.html의 기본 대상 언어 선택기 레이블입니다."
-  },
-  "readerLabelFontSize": {
-    "message": "글꼴 크기:",
-    "description": "리더 도구 모음의 레이블입니다."
-  },
-  "readerLabelLineHeight": {
-    "message": "줄 높이:",
-    "description": "리더 도구 모음의 레이블입니다."
-  },
-  "readerLabelBgColor": {
-    "message": "배경색:",
-    "description": "리더 도구 모음의 레이블입니다."
-  },
-  "readerSaveButton": {
-    "message": "TXT로 저장",
-    "description": "리더 도구 모음의 버튼 텍스트입니다."
+    "message": "읽기 모드 - Incognito AI Hub",
+    "description": "Title for the reader page."
   },
   "readerLoading": {
-    "message": "콘텐츠 로딩 중...",
-    "description": "리더의 로딩 메시지입니다."
+    "message": "AI가 처리 중입니다. 잠시만 기다려 주세요...",
+    "description": "Loading message in reader."
   },
-  "readerErrorNotFound": {
-    "message": "기사 내용을 찾을 수 없거나 추출된 내용이 비어 있습니다. 원래 페이지로 돌아가서 다시 시도하십시오.",
-    "description": "리더의 오류 메시지입니다."
+  "readerLabelTargetLang": {
+    "message": "번역할 언어",
+    "description": "Label for target language selector in reader."
   },
-  "readerTranslating": {
-    "message": " (번역 중...)",
-    "description": "리더의 번역 상태입니다."
+  "readerLabelFontSize": {
+    "message": "글자 크기",
+    "description": "Label for font size slider."
   },
-  "readerTranslateFailed": {
-    "message": "번역 실패: $error$",
-    "description": "리더의 번역 실패 메시지입니다.",
-    "placeholders": { "error": { "content": "$1" } }
+  "readerLabelLineHeight": {
+    "message": "줄 간격",
+    "description": "Label for line height slider."
   },
-  "readerVoiceToolHeader": {
-    "message": "전사 결과",
-    "description": "리더의 음성 도구 헤더입니다."
-  },
-  "readerVoiceToolLabel": {
-    "message": "번역 대상:",
-    "description": "리더의 음성 도구 레이블입니다."
-  },
-  "readerVoiceToolButton": {
-    "message": "번역 시작",
-    "description": "리더의 음성 도구 버튼입니다."
+  "readerSaveButton": {
+    "message": ".txt로 저장",
+    "description": "Save button text in reader."
   },
   "readerSaveOriginal": {
-    "message": "[원본 $index$]",
-    "description": "저장된 파일의 원본 텍스트 레이블입니다.",
+    "message": "[원본 단락 $index$]",
+    "description": "Label for original text paragraph when saving.",
     "placeholders": { "index": { "content": "$1" } }
   },
   "readerSaveTranslated": {
-    "message": "[번역 $index$]",
-    "description": "저장된 파일의 번역된 텍스트 레이블입니다.",
+    "message": "[번역 단락 $index$]",
+    "description": "Label for translated text paragraph when saving.",
     "placeholders": { "index": { "content": "$1" } }
   },
+  "readerVoiceToolHeader": { "message": "음성 읽어주기 도구 (개발 중)", "description": "Header for the text-to-speech tool in reader." },
+  "readerVoiceToolLabel": { "message": "읽기 언어", "description": "Label for TTS language selection." },
+  "readerVoiceToolButton": { "message": "번역문 읽어주기", "description": "Button to trigger TTS." },
   "workbenchTitle": {
     "message": "스마트 번역 워크벤치",
-    "description": "워크벤치 페이지의 제목입니다."
+    "description": "Title for the workbench page."
   },
   "workbenchTabText": {
     "message": "텍스트 붙여넣기",
-    "description": "워크벤치의 탭 레이블입니다."
+    "description": "Tab label for pasting text."
   },
   "workbenchTabImage": {
-    "message": "스크린샷 업로드",
-    "description": "워크벤치의 탭 레이블입니다."
+    "message": "이미지 업로드",
+    "description": "Tab label for uploading image."
   },
-  "workbenchTextHeader": {
-    "message": "모드 2: 텍스트 붙여넣기 워크벤치",
-    "description": "워크벤치의 헤더입니다."
-  },
-  "workbenchTextDesc": {
-    "message": "웹 페이지, Word 또는 PDF에서 선택 가능한 텍스트에 적합합니다. 가장 빠르고 정확한 결과를 위해 아래에 텍스트를 복사하여 붙여넣으십시오.",
-    "description": "워크벤치의 설명입니다."
-  },
-  "workbenchImageHeader": {
-    "message": "모드 3: 데스크톱 스크린샷 업로드",
-    "description": "워크벤치의 헤더입니다."
-  },
-  "workbenchLabelSourceLang": {
-    "message": "소스 언어",
-    "description": "언어 선택 레이블입니다."
-  },
-  "workbenchLabelImageSourceLang": {
-    "message": "소스 언어 (이미지 내)",
-    "description": "언어 선택 레이블입니다."
-  },
-  "workbenchLabelTargetLang": {
-    "message": "대상 출력 언어",
-    "description": "언어 선택 레이블입니다."
-  },
-  "workbenchTextPlaceholder": {
-    "message": "복사한 텍스트를 여기에 붙여넣으세요...",
-    "description": "텍스트 입력의 플레이스홀더입니다."
-  },
-  "workbenchProcessTextButton": {
-    "message": "텍스트 처리",
-    "description": "버튼 텍스트입니다."
-  },
-  "workbenchUploadBox": {
-    "message": "여기를 클릭하거나 파일을 드래그하십시오",
-    "description": "업로드 상자의 텍스트입니다."
-  },
-  "workbenchUploadBoxDesc": {
-    "message": "(JPG, PNG, BMP 지원)",
-    "description": "업로드 상자의 설명입니다."
-  },
-  "workbenchProcessImageButton": {
-    "message": "인식 시작",
-    "description": "버튼 텍스트입니다."
-  },
-  "statusProcessing": {
-    "message": "처리 중...",
-    "description": "상태 메시지입니다."
-  },
-  "statusPleasePaste": {
-    "message": "먼저 텍스트를 붙여넣으십시오.",
-    "description": "상태 메시지입니다."
-  },
-  "statusSuccess": {
-    "message": "성공! 리더 모드를 여는 중...",
-    "description": "상태 메시지입니다."
-  },
-  "statusFailed": {
-    "message": "처리 실패: $error$",
-    "description": "상태 메시지입니다.",
-    "placeholders": { "error": { "content": "$1" } }
-  },
-  "statusUploading": {
-    "message": "인식을 위해 AI에 보내는 중...",
-    "description": "상태 메시지입니다."
-  },
-  "statusUploadSuccess": {
-    "message": "인식 성공! 리더 모드를 여는 중...",
-    "description": "상태 메시지입니다."
-  },
-  "errorPleaseUploadImage": {
-    "message": "오류: 이미지 파일을 업로드하십시오.",
-    "description": "오류 메시지입니다."
-  },
+  "workbenchTextHeader": { "message": "텍스트 번역", "description": "Header for text translation section." },
+  "workbenchTextDesc": { "message": "복사한 텍스트를 아래에 붙여넣어 번역하세요.", "description": "Description for text translation." },
+  "workbenchImageHeader": { "message": "이미지 번역 (OCR)", "description": "Header for image translation section." },
+  "workbenchImageDesc": { "message": "스크린샷을 업로드하거나 붙여넣으면 AI가 이미지 속 텍스트를 자동으로 인식하고 번역합니다.", "description": "Description for image translation." },
+  "workbenchLabelSourceLang": { "message": "원본 언어", "description": "Label for source language selector." },
+  "workbenchLabelTargetLang": { "message": "대상 언어", "description": "Label for target language selector." },
+  "workbenchProcessTextButton": { "message": "텍스트 번역", "description": "Button to process text." },
+  "workbenchProcessImageButton": { "message": "이미지 인식 및 번역", "description": "Button to process image." },
+  "workbenchUploadBox": { "message": "여기를 클릭하여 이미지를 선택하거나 스크린샷을 직접 붙여넣으세요 (Cmd+V / Ctrl+V)", "description": "Placeholder for image upload box." },
+  "workbenchUploadBoxDesc": { "message": "JPG, PNG, BMP 형식 지원", "description": "Subtitle for image upload box." },
+  "workbenchImageResultTitle": { "message": "이미지 번역 결과", "description": "Title for the reader tab showing image OCR result." },
   "voiceTitle": {
-    "message": "시크릿 음성 메모",
-    "description": "음성 메모 페이지의 제목입니다."
+    "message": "시크릿 - 음성 메모",
+    "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "기본 음성 언어를 선택하고 녹음을 시작하려면 클릭하여 생각을 빠르게 텍스트로 변환하십시오.<br>브라우저 업로드 크기 제한으로 인해 이 기능은 몇 분 길이의 짧은 메모에 권장됩니다.",
-    "description": "음성 메모 페이지의 설명입니다."
+    "message": "'녹음 시작'을 누르거나 오디오 파일을 업로드하세요. AI가 음성을 텍스트로 변환하고 다른 화자를 구별하려고 시도합니다.",
+    "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
-    "message": "오디오 소스:",
-    "description": "오디오 소스의 레이블입니다."
+    "message": "오디오 소스",
+    "description": "Label for audio source dropdown."
   },
   "voiceLabelSpokenLang": {
-    "message": "기본 음성 언어:",
-    "description": "음성 언어의 레이블입니다."
+    "message": "주요 사용 언어",
+    "description": "Label for spoken language dropdown."
   },
   "voiceButtonStart": {
     "message": "녹음 시작",
-    "description": "버튼 텍스트입니다."
+    "description": "Start recording button."
   },
   "voiceButtonStop": {
     "message": "녹음 중지",
-    "description": "버튼 텍스트입니다."
-  },
-  "voiceStatusNoMic": {
-    "message": "마이크 장치를 찾을 수 없습니다.",
-    "description": "상태 메시지입니다."
-  },
-  "voiceStatusNoMicPermission": {
-    "message": "마이크 권한을 얻을 수 없습니다. 브라우저 설정에서 이 확장 프로그램이 마이크를 사용하도록 허용하십시오.",
-    "description": "상태 메시지입니다."
-  },
-  "voiceStatusSelectSource": {
-    "message": "오디오 소스를 선택하십시오.",
-    "description": "상태 메시지입니다."
+    "description": "Stop recording button."
   },
   "voiceStatusRecording": {
     "message": "녹음 중...",
-    "description": "상태 메시지입니다."
+    "description": "Status message."
   },
-  "voiceStatusSending": {
-    "message": "인식을 위해 AI에 보내는 중...",
-    "description": "상태 메시지입니다."
+  "voiceStatusTranscribing": {
+    "message": "음성 변환 중, 잠시만 기다려 주세요...",
+    "description": "Status message."
   },
   "voiceStatusSuccess": {
-    "message": "인식 완료, 새 탭이 열렸습니다.",
-    "description": "상태 메시지입니다."
+    "message": "변환 완료! 결과 페이지를 엽니다...",
+    "description": "Status message."
   },
-  "voiceStatusCommError": {
-    "message": "통신 오류: $error$",
-    "description": "상태 메시지입니다.",
+  "errorNoMic": {
+    "message": "오류: 사용 가능한 마이크를 찾을 수 없습니다.",
+    "description": "Error message."
+  },
+  "errorMicPermission": {
+    "message": "오류: 마이크 권한을 얻을 수 없습니다. 브라우저 설정을 확인하세요. 세부 정보: $error$",
+    "description": "Error message.",
     "placeholders": { "error": { "content": "$1" } }
   },
   "voiceStatusFailed": {
-    "message": "인식 실패: $error$",
-    "description": "상태 메시지입니다.",
+    "message": "변환 실패: $error$",
+    "description": "Status message.",
     "placeholders": { "error": { "content": "$1" } }
   },
   "langAutoDetect": {
     "message": "자동 감지",
-    "description": "자동 감지를 위한 언어 옵션입니다."
+    "description": "Language option for auto-detection."
   },
   "langSystemDefault": {
     "message": "시스템 기본값 ($langName$)",
-    "description": "시스템 기본값의 언어 옵션으로, 실제 언어 이름의 플레이스홀더가 있습니다.",
-    "placeholders": { "langName": { "content": "$1", "example": "한국어" } }
+    "description": "Language option for system default, with placeholder for the actual language name.",
+    "placeholders": { "langName": { "content": "$1", "example": "English" } }
   },
   "langPrefA": {
     "message": "선호-A ($langName$)",
-    "description": "선호 언어 A의 언어 옵션입니다.",
+    "description": "Language option for preferred language A.",
     "placeholders": { "langName": { "content": "$1", "example": "Français" } }
   },
   "langPrefB": {
     "message": "선호-B ($langName$)",
-    "description": "선호 언어 B의 언어 옵션입니다.",
+    "description": "Language option for preferred language B.",
     "placeholders": { "langName": { "content": "$1", "example": "Español" } }
   },
   "voiceLangZhEn": {
-    "message": "중국어 (영문 포함)",
-    "description": "음성 입력을 위한 특별 언어 옵션입니다."
+    "message": "중국어 (영어 혼용)",
+    "description": "Special language option for voice input."
   },
   "voiceMicLabel": {
     "message": "마이크 $index$",
-    "description": "마이크의 기본 레이블입니다.",
-    "placeholders": { "index": { "content": "$1" } }
+    "description": "Default label for a microphone.",
+    "placeholders": { "index": { "content": "$1", "example": "1" } }
   },
-  "voiceErrorStartRecording": {
-    "message": "녹음을 시작하지 못했습니다: $error$",
-    "description": "녹음 시작이 실패할 때의 오류 메시지입니다.",
+  "incognitoFooter": {
+    "message": "Incognito AI Hub: 대만 의사 Hugo Chen이 2025년 여름 어느 태풍 오는 날 첫 버전을 완성했습니다. 첫 버전은 대만어로 'Hong-Thai'라고 이름 붙였습니다. 유용하게 사용하셨다면 Chrome 웹 스토어에 긍정적인 리뷰를 남겨주세요. 괜찮으시다면 오른쪽 Buy Me a Coffee 링크를 통해 음료 한 잔 사주시면 감사하겠습니다.",
+    "description": "Footer text."
+  },
+  "promptWebpageProcessing": {
+    "message": "You are a helpful assistant. The user has provided the HTML content and a screenshot of a webpage. Please analyze both to understand the main content of the page, ignoring ads, navigation bars, and footers. Then, provide a concise summary of the key points in a well-structured, easy-to-read format. Finally, translate the summary into $lang$. Here is the HTML content: ```html\n$pageContent$\n```",
+    "description": "Prompt for webpage processing in background.js.",
+    "placeholders": { "pageContent": { "content": "$1" }, "lang": { "content": "$2" } }
+  },
+  "promptTranslateTo": {
+    "message": "Please translate the text in the image into $lang$.",
+    "description": "Prompt for image translation, asking to translate to a specific language.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "promptSourceLangAuto": {
+    "message": "First, identify the language of the text in the image.",
+    "description": "Part of the prompt for auto-detecting source language."
+  },
+  "promptSourceLangIs": {
+    "message": "The language of the text in the image is $lang$.",
+    "description": "Part of the prompt specifying the source language.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "incognitoTitle": {
+    "message": "시크릿 Gemini 채팅",
+    "description": "Title for the incognito chat page."
+  },
+  "incognitoDefaultModelHeader": {
+    "message": "Gemini 기본 모델",
+    "description": "Header for the default model tab."
+  },
+  "incognitoDefaultModelDesc": {
+    "message": "이 탭에서 사용되는 모델은 '⚙️ 설정'에서의 선택에 따라 결정됩니다(기본값은 2.5 Flash). 가장 작은 모델은 간단한 번역과 텍스트 정리, 간단한 PDF 및 이미지 처리에 적합합니다.",
+    "description": "Description for the default model tab."
+  },
+  "incognitoSendButton": {
+    "message": "보내기",
+    "description": "Send button text."
+  },
+  "incognitoUploadTitle": {
+    "message": "이미지 업로드 (최대 4개)",
+    "description": "Tooltip for the upload button."
+  },
+  "incognitoUploadPdfTitle": {
+    "message": "PDF 문서 업로드 (1개)",
+    "description": "Tooltip for the PDF upload button."
+  },
+  "incognitoPresetTitleA": { "message": "프리셋 A 사용", "description": "Tooltip for preset button A." },
+  "incognitoPresetTitleB": { "message": "프리셋 B 사용", "description": "Tooltip for preset button B." },
+  "incognitoPresetTitleC": { "message": "프리셋 C 사용", "description": "Tooltip for preset button C." },
+  "incognitoPresetTitleD": { "message": "프리셋 D 사용", "description": "Tooltip for preset button D." },
+  "incognitoPresetTitleE": { "message": "프리셋 E 사용", "description": "Tooltip for preset button E." },
+  "stateThinking": {
+    "message": "생각 중...",
+    "description": "Thinking indicator text."
+  },
+  "incognitoApiError": {
+    "message": "API 요청 실패",
+    "description": "Error message prefix for API failures."
+  },
+  "incognitoInitialMessage": {
+    "message": "안녕하세요! 무엇을 도와드릴까요?",
+    "description": "Initial greeting message from the assistant."
+  },
+  "incognitoClearConfirm": {
+    "message": "대화 기록을 정말로 지우시겠습니까? 이 작업은 되돌릴 수 없습니다.",
+    "description": "Confirmation message before clearing chat history."
+  },
+  "incognitoPlaceholder": {
+    "message": "여기에 메시지를 입력하세요 (이미지 또는 PDF 업로드 가능)...",
+    "description": "Placeholder for the prompt input area."
+  },
+  "incognitoFlashModelHeader": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Header for the Flash model tab."
+  },
+  "incognitoFlashModelDesc": {
+    "message": "Google의 표준 중급 모델. 빠른 응답과 높은 처리량이 필요한 애플리케이션에 적합하며 비용이 적당합니다. 이미지 및 PDF 입력도 지원합니다.",
+    "description": "Description for the Flash model tab."
+  },
+  "incognitoProModelHeader": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Header for the Pro model tab."
+  },
+  "incognitoProModelDesc": {
+    "message": "Google의 가장 강력한 모델로, 거대한 100만 토큰 컨텍스트 창을 특징으로 합니다. 복잡한 추론, 코딩 및 다중 모드 이해에서 뛰어납니다. 비용이 가장 높으며 복잡한 PDF 및 이미지 처리에 이상적입니다.",
+    "description": "Description for the Pro model tab."
+  },
+  "statusUploading": {
+    "message": "업로드 및 처리 중...",
+    "description": "Status for file upload."
+  },
+  "statusFailed": {
+    "message": "처리 실패: $error$",
+    "description": "Generic failure status.",
     "placeholders": { "error": { "content": "$1" } }
   },
-  "errorUnknown": {
-    "message": "알 수 없는 오류가 발생했습니다.",
-    "description": "일반적인 오류 메시지입니다."
+  "statusUploadSuccess": {
+    "message": "성공! 결과를 여는 중...",
+    "description": "Success status for file upload."
+  },
+  "voiceOrDivider": {
+    "message": "또는",
+    "description": "The 'OR' divider between record and upload buttons."
+  },
+  "voiceButtonUpload": {
+    "message": "오디오 파일 업로드",
+    "description": "The new button to upload an audio file."
+  },
+  "voiceButtonSubmit": {
+    "message": "파일 변환",
+    "description": "The text on the record button when a file is ready to be submitted."
+  },
+  "errorInvalidFileType": {
+    "message": "오류: 잘못된 파일 형식입니다. 오디오 파일을 선택해 주세요.",
+    "description": "Error when a non-audio file is selected."
+  },
+  "errorFileRead": {
+    "message": "오류: 파일을 읽는 중에 문제가 발생했습니다.",
+    "description": "Error when the FileReader API fails."
+  },
+  "promptVoiceTranscribeDiarize": {
+    "message": "Please transcribe the following audio. The primary language spoken is $lang$. Pay close attention to pauses and changes in tone or speech patterns to identify and label different speakers (e.g., Speaker 1, Speaker 2). Provide the output as a clear, readable transcript.",
+    "description": "Prompt for voice transcription with speaker diarization.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "voiceResultTitle": {
+    "message": "음성 변환 결과",
+    "description": "Title for the reader tab showing voice transcription result."
   }
 }

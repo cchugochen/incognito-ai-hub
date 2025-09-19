@@ -1,562 +1,431 @@
 {
   "appName": {
-    "message": "Gemini için Gizli Yapay Zeka Merkezi",
-    "description": "Uzantının adı."
+    "message": "Incognito AI Hub by Gemini",
+    "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "(1) Dört yapay zeka gizli modunu birleştiren bir yardımcı program aracı: Gizli Gemini Sohbeti, Web Sayfası Okuma, Metin/Ekran Görüntüsü ve Ses Girişi.\n(2) Yasal kullanım için lütfen kendi Google Gemini API anahtarınıza başvurun.\n(3) Bu uzantının depolama için bir arka uç sunucusu yoktur; günlük kaydına ihtiyaç duyan kullanıcılar kendi uç noktalarını kurmalıdır.",
-    "description": "Manifest dosyasındaki uzantının açıklaması."
+    "message": "(1) Basit bir gizli Gemini sohbet arayüzü ve web sayfalarını, metinleri, ekran görüntülerini çevirmek ve Gemini ile sesli yapay zeka girişi kullanmak için ücretsiz bir araç seti. (2) Kullanıcılar kendi Google Gemini API anahtarlarını edinmelidir.",
+    "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
     "message": "Mevcut Sayfayı Çevir (Google Çeviri başarısız olursa)",
-    "description": "popup.html'deki düğme metni."
+    "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
-    "message": "Akıllı Çeviri Tezgahını Aç",
-    "description": "'Metin/Ekran Görüntüsü Çeviri Tezgahı'ndan değiştirilen popup.html'deki düğme metni."
+    "message": "Akıllı Çeviri Çalışma Alanını Aç",
+    "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
   },
   "popupOpenVoiceNotes": {
-    "message": "Gizli Sesli Notlar",
-    "description": "popup.html'deki düğme metni."
+    "message": "Gizli - Sesli Notlar",
+    "description": "Button text in popup.html"
   },
   "popupOpenIncognito": {
     "message": "Gizli Gemini Sohbeti",
-    "description": "popup.html'deki düğme metni."
+    "description": "Button text in popup.html"
   },
   "popupOpenTutorial": {
-    "message": "Gemini API Anahtarı için Kolay Eğitim",
-    "description": "popup.html'deki düğme metni."
+    "message": "Gemini API Anahtarı için Basit Eğitim",
+    "description": "Button text in popup.html"
   },
   "popupShowLicense": {
     "message": "MIT Lisans Bilgileri",
-    "description": "popup.html'deki düğme metni."
+    "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "Gizli Yapay Zeka Merkezi - Ayarlar",
-    "description": "Seçenekler sayfası için başlık."
+    "message": "Incognito AI Hub Ayarları",
+    "description": "Title for the options page."
   },
   "optionsHeader": {
-    "message": "Gizli Yapay Zeka Merkezi - Ayarlar",
-    "description": "Seçenekler sayfası için başlık."
+    "message": "⚙️ Ayarlar",
+    "description": "Header text on the options page."
   },
   "optionsDisplayLangSectionHeader": {
-    "message": "1. Görüntüleme Dili",
-    "description": "Seçeneklerdeki bölüm başlığı."
+    "message": "Görüntüleme Dili",
+    "description": "Section header on options page."
   },
   "optionsDisplayLangLabel": {
-    "message": "Uzantı arayüzü için görüntüleme dilini ayarlayın:",
-    "description": "Seçeneklerdeki dil seçimi için etiket."
+    "message": "Uzantı Arayüz Dili",
+    "description": "Label for language selection on options page."
   },
   "optionsDisplayLangDefault": {
-    "message": "Chrome Sistem Varsayılanı",
-    "description": "Dil seçimi için varsayılan seçenek."
+    "message": "Varsayılan (Tarayıcıyı takip et)",
+    "description": "Default option for language selection."
   },
   "optionsPrefLangSectionHeader": {
-    "message": "2. Tercih Edilen Çeviri Dilleri",
-    "description": "Seçeneklerde tercih edilen diller için bölüm başlığı."
+    "message": "Tercih Edilen Diller",
+    "description": "Section header for preferred languages."
   },
   "optionsPrefLangDesc": {
-    "message": "Talimatlar: En iyi yol, ihtiyacınız olan dili o dili kullanarak alana yazmaktır. Örneğin: Français, Español, Русский",
-    "description": "Tercih edilen diller bölümü için açıklama."
+    "message": "En sık kullandığınız iki hedef dili ayarlayın. Bu diller, çeşitli çeviri özelliklerinin hızlı seçim menülerinde görünecektir.",
+    "description": "Description for preferred languages setting."
   },
   "optionsPrefLangLabelA": {
-    "message": "Tercih Edilen Dil A:",
-    "description": "Tercih edilen dil A için etiket."
+    "message": "Tercih Edilen Dil A",
+    "description": "Label for preferred language A."
   },
   "optionsPrefLangLabelB": {
-    "message": "Tercih Edilen Dil B:",
-    "description": "Tercih edilen dil B için etiket."
-  },
-  "optionsPrefLangPlaceholder": {
-    "message": "ör. Français",
-    "description": "Tercih edilen dil girişi için yer tutucu."
+    "message": "Tercih Edilen Dil B",
+    "description": "Label for preferred language B."
   },
   "optionsApiKeySectionHeader": {
-    "message": "3. Gemini API Anahtarı Girişi",
-    "description": "Seçeneklerdeki bölüm başlığı."
+    "message": "API Anahtarı ve Model",
+    "description": "Section header for API key settings."
   },
   "optionsApiKeyLabel": {
-    "message": "Google Gemini API Anahtarınız:",
-    "description": "API anahtarı girişi için etiket."
+    "message": "Google Gemini API Anahtarınız",
+    "description": "Label for API key input field."
   },
-  "optionsModelSectionHeader": {
-    "message": "4. Çeviri ve Tanıma Modeli",
-    "description": "Seçeneklerdeki bölüm başlığı."
+  "optionsApiKeyPlaceholder": {
+    "message": "API anahtarınızı buraya yapıştırın",
+    "description": "Placeholder text for API key input."
   },
-  "optionsModelDesc": {
-    "message": "'Sayfayı Çevir', 'Akıllı Çeviri Tezgahı' ve 'Sesli Notlar' özellikleri için varsayılan modeli seçin.",
-    "description": "Model seçimi için açıklama."
+  "optionsModelSelectLabel": {
+    "message": "Web sayfası/Görüntü Çevirisi için Varsayılan Model",
+    "description": "Label for the model selection radio buttons."
   },
-  "optionsModel1Name": {
-    "message": "Gemini 2.0 Flash",
-    "description": "Model adı."
+  "optionsModelFlashName": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Name of the Flash model."
   },
-  "optionsModel1Tag": {
-    "message": "Varsayılan",
-    "description": "Önerilen model için etiket."
+  "optionsModelFlashDesc": {
+    "message": "En hızlı ve en uygun maliyetli, hızlı, yüksek hacimli çeviri ve özetleme görevleri için uygundur.",
+    "description": "Description of the Flash model."
   },
-  "optionsModel1Desc": {
-    "message": "En iyisi: Çok modlu anlama, gerçek zamanlı akış, düşük maliyet.",
-    "description": "Bir model için açıklama."
+  "optionsModelProName": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Name of the Pro model."
   },
-  "optionsModel2Name": {
-    "message": "Gemini 2.5 Flash Lite (Önizleme)",
-    "description": "Model adı."
-  },
-  "optionsModel2Desc": {
-    "message": "En iyisi: İstek başına daha fazla jeton işleme, düşük gecikme süresi, daha düşük maliyet.",
-    "description": "Bir model için açıklama."
+  "optionsModelProDesc": {
+    "message": "En güçlüsü, karmaşık bağlamları ve görüntüleri anlamada daha yüksek doğrulukla, ancak daha yüksek maliyetle.",
+    "description": "Description of the Pro model."
   },
   "optionsPresetSectionHeader": {
-    "message": "5. Gizli Sohbet - Dahili Bilgi İstemi Belleği",
-    "description": "Seçeneklerdeki bölüm başlığı."
+    "message": "Gizli Sohbet - Komut Ön Ayarları",
+    "description": "Section header for preset prompts."
   },
   "optionsPresetDesc": {
-    "message": "'Gizli Gemini Sohbeti'nde hızlı erişim için sık kullanılan komutları veya şablonları buraya girin.",
-    "description": "Önceden ayarlanmış istemler için açıklama."
+    "message": "'Gizli Gemini Sohbeti' sayfasındaki A/B/C/D/E düğmeleri için sık kullanılan başlangıç talimatlarını (Sistem Komutları) ayarlayın.",
+    "description": "Description for preset prompts."
   },
-  "optionsPresetLabelA": {
-    "message": "Önceden Ayarlanmış Bilgi İstemi A:",
-    "description": "Önceden ayarlanmış bilgi istemi için etiket."
-  },
-  "optionsPresetLabelB": {
-    "message": "Önceden Ayarlanmış Bilgi İstemi B:",
-    "description": "Önceden ayarlanmış bilgi istemi için etiket."
-  },
-  "optionsPresetLabelC": {
-    "message": "Önceden Ayarlanmış Bilgi İstemi C:",
-    "description": "Önceden ayarlanmış bilgi istemi için etiket."
-  },
-  "optionsPresetLabelD": {
-    "message": "Önceden Ayarlanmış Bilgi İstemi D:",
-    "description": "Önceden ayarlanmış bilgi istemi için etiket."
-  },
-  "optionsPresetLabelE": {
-    "message": "Önceden Ayarlanmış Bilgi İstemi E:",
-    "description": "Önceden ayarlanmış bilgi istemi için etiket."
-  },
+  "optionsPresetLabelA": { "message": "Ön Ayar A", "description": "Label for preset A." },
+  "optionsPresetLabelB": { "message": "Ön Ayar B", "description": "Label for preset B." },
+  "optionsPresetLabelC": { "message": "Ön Ayar C", "description": "Label for preset C." },
+  "optionsPresetLabelD": { "message": "Ön Ayar D", "description": "Label for preset D." },
+  "optionsPresetLabelE": { "message": "Ön Ayar E", "description": "Label for preset E." },
   "optionsLogSectionHeader": {
-    "message": "6. (İsteğe bağlı) Bulut Günlük Kaydı Ayarları",
-    "description": "Seçeneklerdeki bölüm başlığı."
+    "message": "(İsteğe Bağlı) Bulut Günlüğü",
+    "description": "Section header for optional logging."
   },
   "optionsLogDesc": {
-    "message": "Araştırma ve analiz için işleme günlüklerini kendi Google Cloud Functions uç noktanıza gönderin.",
-    "description": "Günlük kaydı özelliği için açıklama."
+    "message": "Operasyonel günlükleri (ör. jeton kullanımı) kendi arka uç hizmetinize göndermeniz gerekiyorsa, uç nokta URL'sini ve anahtarını buraya girin. Boş bırakılırsa bu özellik tamamen devre dışı bırakılır.",
+    "description": "Description for optional logging."
   },
   "optionsLogEndpointLabel": {
-    "message": "Cloud Function Uç Nokta URL'si:",
-    "description": "Günlük uç noktası URL'si için etiket."
+    "message": "Günlük Uç Nokta URL'niz",
+    "description": "Label for log endpoint input."
   },
   "optionsLogKeyLabel": {
-    "message": "Kimlik Doğrulama Anahtarı (İsteğe bağlı):",
-    "description": "Günlük anahtarı için etiket."
+    "message": "Günlük API Anahtarınız",
+    "description": "Label for log key input."
   },
   "optionsSaveButton": {
     "message": "Ayarları Kaydet",
-    "description": "Kaydet düğmesi metni."
+    "description": "Save button text."
   },
   "optionsStatusSaved": {
-    "message": "Ayarlar kaydedildi.",
-    "description": "Seçenekler kaydedildiğinde durum mesajı."
+    "message": "Ayarlar kaydedildi!",
+    "description": "Status message when settings are saved."
   },
-  "incognitoTitle": {
-    "message": "Gizli Gemini Sohbeti",
-    "description": "Gizli sohbet sayfası için başlık."
-  },
-  "incognitoDefaultModelHeader": {
-    "message": "Sistem Varsayılan Modeli (Lite)",
-    "description": "Gizli sohbette varsayılan model için başlık."
-  },
-  "incognitoDefaultModelDesc": {
-    "message": "Lite Gemini Modeli: 'Ayarlar' sayfasında ayarladığınız modeli kullanır (varsayılan olarak 2.0 Flash veya 2.5-Flash-Lite), genel çeviri ve hızlı Soru-Cevap için uygundur.",
-    "description": "Gizli sohbette varsayılan model için açıklama."
-  },
-  "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
-    "description": "Gizli sohbette Flash modeli için başlık."
-  },
-  "incognitoFlashModelDesc": {
-    "message": "Daha uzun bağlam anlama veya hızlı özetleme gerektiren görevler için uygun, orta boyutlu bir Gemini modeli.",
-    "description": "Gizli sohbette Flash modeli için açıklama."
-  },
-  "incognitoProModelHeader": {
-    "message": "Gemini 2.5 Pro",
-    "description": "Gizli sohbette Pro modeli için başlık."
-  },
-  "incognitoProModelDesc": {
-    "message": "Şu anda Google'ın en güçlü modeli, son derece karmaşık mantıksal akıl yürütme ve yaratıcı üretim için. <b>Not:</b> Birim maliyeti yüksektir, ayrıntılar için <a href='https://ai.google.dev/pricing' target='_blank'>resmi fiyatlandırmaya</a> bakın.",
-    "description": "Gizli sohbette Pro modeli için açıklama. HTML etiketlerini koruyun."
-  },
-  "incognitoPlaceholder": {
-    "message": "İstemi buraya girin veya bir ekran görüntüsü yapıştırın (Ctrl+V)...",
-    "description": "İstem girişi için yer tutucu."
-  },
-  "incognitoUploadButton": {
-    "message": "🖼️ Yükle",
-    "description": "Yükle düğmesi metni."
-  },
-  "incognitoUploadTitle": {
-    "message": "Resim Yükle (En fazla 4)",
-    "description": "Yükle düğmesi için başlık özelliği."
-  },
-  "incognitoPresetTitleA": { "message": "Ön Ayar A'yı Kullan", "description": "Ön ayar düğmesi A için başlık." },
-  "incognitoPresetTitleB": { "message": "Ön Ayar B'yi Kullan", "description": "Ön ayar düğmesi B için başlık." },
-  "incognitoPresetTitleC": { "message": "Ön Ayar C'yi Kullan", "description": "Ön ayar düğmesi C için başlık." },
-  "incognitoPresetTitleD": { "message": "Ön Ayar D'yi Kullan", "description": "Ön ayar düğmesi D için başlık." },
-  "incognitoPresetTitleE": { "message": "Ön Ayar E'yi Kullan", "description": "Ön ayar düğmesi E için başlık." },
-  "incognitoSendButton": {
-    "message": "Gönder ▶️",
-    "description": "Gönder düğmesi metni."
-  },
-  "incognitoFooter": {
-    "message": "Yazar Hugo Chen, Tayvanlı bir doktordur ve ilk sürümü 2025 yılında bir tayfun gününde tamamlamıştır. İlk sürüm Tayvanca'da 'Hong-Thai' (Tayfun) olarak adlandırılmıştır. Eğer faydalı bulursanız veya fikirleriniz varsa, lütfen Chrome Web Mağazası'nda bir yorum veya öneri bırakın. Dilerseniz, sağdaki bağlantı üzerinden Buy Me a Coffee sayfamı ziyaret ederek bana bir kahve ısmarlayarak destek olabilirsiniz.",
-    "description": "Footer text. Keep HTML tags."
-  },
-  "errorNoActiveTab": {
-    "message": "Etkin sekme bulunamadı.",
-    "description": "background.js'deki hata mesajı."
-  },
-  "errorInvalidText": {
-    "message": "Geçersiz veya boş metin içeriği.",
-    "description": "background.js'deki hata mesajı."
-  },
-  "errorNoImageData": {
-    "message": "Görüntü verisi sağlanmadı.",
-    "description": "background.js'deki hata mesajı."
-  },
-  "errorOcrFailed": {
-    "message": "Yapay zeka yeterli metni tanıyamadı.",
-    "description": "background.js'deki hata mesajı."
-  },
-  "errorNoAudioData": {
-    "message": "Ses verisi sağlanmadı.",
-    "description": "background.js'deki hata mesajı."
-  },
-  "errorSttFailed": {
-    "message": "Yapay zeka herhangi bir konuşmayı tanıyamadı.",
-    "description": "background.js'deki hata mesajı."
-  },
-  "errorDebuggerAttach": {
-    "message": "Hata ayıklayıcı eklenemedi. Lütfen sayfayı yeniden yükleyin veya diğer uzantılarla çakışmaları kontrol edin.",
-    "description": "background.js'deki hata mesajı."
-  },
-  "errorScreenshotFailed": {
-    "message": "Ekran görüntüsü alınamadı.",
-    "description": "background.js'deki hata mesajı."
-  },
-  "errorOcrFailedLong": {
-    "message": "Yapay zeka yeterli metin içeriğini tanıyamadı.",
-    "description": "background.js'deki hata mesajı."
-  },
-  "errorNoApiKey": {
-    "message": "API anahtarı ayarlanmadı.",
-    "description": "background.js ve diğerlerindeki hata mesajı."
-  },
-  "errorApiRequestFailed": {
-    "message": "API isteği başarısız oldu: $details$",
-    "description": "background.js'deki hata mesajı. $details$ bir yer tutucudur.",
-    "placeholders": {
-      "details": {
-        "content": "$1",
-        "example": "Geçersiz API anahtarı."
-      }
-    }
-  },
-  "errorApiRejected": {
-    "message": "İstek yapay zeka tarafından reddedildi, neden: $reason$",
-    "description": "background.js'deki hata mesajı. $reason$ bir yer tutucudur.",
-    "placeholders": {
-      "reason": {
-        "content": "$1",
-        "example": "SAFETY"
-      }
-    }
-  },
-  "errorApiStopped": {
-    "message": "Yapay zeka işlemi erken durdu, neden: $reason$",
-    "description": "background.js'deki hata mesajı. $reason$ bir yer tutucudur.",
-    "placeholders": {
-      "reason": {
-        "content": "$1",
-        "example": "MAX_TOKENS"
-      }
-    }
-  },
-  "errorApiInvalidResponse": {
-    "message": "Geçersiz veya boş API yanıt formatı.",
-    "description": "background.js'deki hata mesajı."
-  },
-  "errorNetwork": {
-    "message": "Ağ hatası, Gemini API'sine bağlanılamıyor.",
-    "description": "background.js'deki hata mesajı."
-  },
-  "alertMaxImages": {
-    "message": "Hata: En fazla 4 resim yükleyebilirsiniz.",
-    "description": "incognito.js'deki uyarı mesajı."
-  },
-  "alertTurnLimit": {
-    "message": "Uyarı: $limit$ turluk konuşma sınırına ulaşıldı. Yeni bir konuşma başlatmak için lütfen sayfayı yenileyin.",
-    "description": "incognito.js'deki uyarı mesajı. $limit$ bir yer tutucudur.",
-    "placeholders": {
-      "limit": {
-        "content": "$1",
-        "example": "12"
-      }
-    }
+  "alertNoApiKey": {
+    "message": "Hata: Gemini API Anahtarı bulunamadı. Lütfen önce ayarlar sayfasında anahtarınızı girin.",
+    "description": "Alert message when API key is missing."
   },
   "alertNoApiKeyOptions": {
-    "message": "Hata: Gemini API anahtarı ayarlanmadı. Lütfen uzantı seçeneklerinde ayarlayın.",
-    "description": "incognito.js'deki uyarı mesajı."
+    "message": "Lütfen Google Gemini API Anahtarınızı aşağıdaki 'API Anahtarı ve Model' bölümüne yapıştırın.",
+    "description": "Alert message shown on the options page if API key is missing."
   },
   "alertInitFailed": {
-    "message": "Sayfa başlatılamadı.",
-    "description": "incognito.js'deki uyarı mesajı."
+    "message": "Başlatma başarısız oldu. Lütfen hata mesajları için konsolu kontrol edin.",
+    "description": "Alert on initialization failure."
   },
-  "stateThinking": {
-    "message": "Düşünüyor...",
-    "description": "Gönder düğmesi için yükleme durumu."
+  "errorNetwork": {
+    "message": "Ağ hatası veya Gemini API'ye bağlanılamıyor. Lütfen internet bağlantınızı ve güvenlik duvarı ayarlarınızı kontrol edin.",
+    "description": "Error message for network issues."
+  },
+  "errorApiInvalidResponse": {
+    "message": "Geçersiz API yanıt formatı. Model geçerli içerik döndürmemiş olabilir.",
+    "description": "Error when API response is malformed."
+  },
+  "errorUnknown": {
+    "message": "Bilinmeyen bir hata oluştu.",
+    "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "Okuyucu Modu",
-    "description": "Okuyucu sayfası için başlık."
-  },
-  "readerLabelTargetLang": {
-    "message": "Hedef Çıktı Dili:",
-    "description": "reader.html'deki ana hedef dil seçici için etiket."
-  },
-  "readerLabelFontSize": {
-    "message": "Yazı Tipi Boyutu:",
-    "description": "Okuyucu araç çubuğundaki etiket."
-  },
-  "readerLabelLineHeight": {
-    "message": "Satır Yüksekliği:",
-    "description": "Okuyucu araç çubuğundaki etiket."
-  },
-  "readerLabelBgColor": {
-    "message": "Arka Plan Rengi:",
-    "description": "Okuyucu araç çubuğundaki etiket."
-  },
-  "readerSaveButton": {
-    "message": "TXT olarak kaydet",
-    "description": "Okuyucu araç çubuğundaki düğme metni."
+    "message": "Okuyucu Modu - Incognito AI Hub",
+    "description": "Title for the reader page."
   },
   "readerLoading": {
-    "message": "İçerik yükleniyor...",
-    "description": "Okuyucudaki yükleme mesajı."
+    "message": "Yapay zeka işliyor, lütfen bekleyin...",
+    "description": "Loading message in reader."
   },
-  "readerErrorNotFound": {
-    "message": "Makale içeriği bulunamadı veya çıkarılan içerik boş. Lütfen orijinal sayfaya dönüp tekrar deneyin.",
-    "description": "Okuyucudaki hata mesajı."
+  "readerLabelTargetLang": {
+    "message": "Şu dile çevir",
+    "description": "Label for target language selector in reader."
   },
-  "readerTranslating": {
-    "message": " (Çevriliyor...)",
-    "description": "Okuyucudaki çeviri durumu."
+  "readerLabelFontSize": {
+    "message": "Yazı Tipi Boyutu",
+    "description": "Label for font size slider."
   },
-  "readerTranslateFailed": {
-    "message": "Çeviri başarısız oldu: $error$",
-    "description": "Okuyucudaki çeviri başarısız mesajı.",
-    "placeholders": { "error": { "content": "$1" } }
+  "readerLabelLineHeight": {
+    "message": "Satır Yüksekliği",
+    "description": "Label for line height slider."
   },
-  "readerVoiceToolHeader": {
-    "message": "Transkripsiyon Sonucu",
-    "description": "Okuyucudaki ses aracı için başlık."
-  },
-  "readerVoiceToolLabel": {
-    "message": "Şuna çevir:",
-    "description": "Okuyucudaki ses aracı için etiket."
-  },
-  "readerVoiceToolButton": {
-    "message": "Çeviriyi Başlat",
-    "description": "Okuyucudaki ses aracı için düğme."
+  "readerSaveButton": {
+    "message": ".txt olarak kaydet",
+    "description": "Save button text in reader."
   },
   "readerSaveOriginal": {
-    "message": "[Orijinal $index$]",
-    "description": "Kaydedilen dosyadaki orijinal metin için etiket.",
+    "message": "[Orijinal Paragraf $index$]",
+    "description": "Label for original text paragraph when saving.",
     "placeholders": { "index": { "content": "$1" } }
   },
   "readerSaveTranslated": {
-    "message": "[Çeviri $index$]",
-    "description": "Kaydedilen dosyadaki çevrilmiş metin için etiket.",
+    "message": "[Çevrilmiş Paragraf $index$]",
+    "description": "Label for translated text paragraph when saving.",
     "placeholders": { "index": { "content": "$1" } }
   },
+  "readerVoiceToolHeader": { "message": "Metin Okuma Aracı (Geliştirme aşamasında)", "description": "Header for the text-to-speech tool in reader." },
+  "readerVoiceToolLabel": { "message": "Konuşma Dili", "description": "Label for TTS language selection." },
+  "readerVoiceToolButton": { "message": "Çeviriyi Sesli Oku", "description": "Button to trigger TTS." },
   "workbenchTitle": {
-    "message": "Akıllı Çeviri Tezgahı",
-    "description": "Tezgah sayfası için başlık."
+    "message": "Akıllı Çeviri Çalışma Alanı",
+    "description": "Title for the workbench page."
   },
   "workbenchTabText": {
     "message": "Metin Yapıştır",
-    "description": "Tezgahtaki sekme etiketi."
+    "description": "Tab label for pasting text."
   },
   "workbenchTabImage": {
-    "message": "Ekran Görüntüsü Yükle",
-    "description": "Tezgahtaki sekme etiketi."
+    "message": "Görüntü Yükle",
+    "description": "Tab label for uploading image."
   },
-  "workbenchTextHeader": {
-    "message": "Mod 2: Metin Yapıştırma Tezgahı",
-    "description": "Tezgahtaki başlık."
-  },
-  "workbenchTextDesc": {
-    "message": "Web sayfalarından, Word'den veya PDF'den seçilebilir metinler için uygundur. En hızlı ve en doğru sonuçlar için metni aşağıya kopyalayıp yapıştırın.",
-    "description": "Tezgahtaki açıklama."
-  },
-  "workbenchImageHeader": {
-    "message": "Mod 3: Masaüstü Ekran Görüntüsü Yükleme",
-    "description": "Tezgahtaki başlık."
-  },
-  "workbenchLabelSourceLang": {
-    "message": "Kaynak Dil",
-    "description": "Dil seçimi için etiket."
-  },
-  "workbenchLabelImageSourceLang": {
-    "message": "Kaynak Dil (resimde)",
-    "description": "Dil seçimi için etiket."
-  },
-  "workbenchLabelTargetLang": {
-    "message": "Hedef Çıktı Dili",
-    "description": "Dil seçimi için etiket."
-  },
-  "workbenchTextPlaceholder": {
-    "message": "Kopyalanan metninizi buraya yapıştırın...",
-    "description": "Metin girişi için yer tutucu."
-  },
-  "workbenchProcessTextButton": {
-    "message": "Metni İşle",
-    "description": "Düğme metni."
-  },
-  "workbenchUploadBox": {
-    "message": "Buraya tıklayın veya dosyayı sürükleyin",
-    "description": "Yükleme kutusundaki metin."
-  },
-  "workbenchUploadBoxDesc": {
-    "message": "(JPG, PNG, BMP'yi destekler)",
-    "description": "Yükleme kutusundaki açıklama."
-  },
-  "workbenchProcessImageButton": {
-    "message": "Tanımayı Başlat",
-    "description": "Düğme metni."
-  },
-  "statusProcessing": {
-    "message": "İşleniyor...",
-    "description": "Durum mesajı."
-  },
-  "statusPleasePaste": {
-    "message": "Lütfen önce metin yapıştırın.",
-    "description": "Durum mesajı."
-  },
-  "statusSuccess": {
-    "message": "Başarılı! Okuyucu modu açılıyor...",
-    "description": "Durum mesajı."
-  },
-  "statusFailed": {
-    "message": "İşlem başarısız oldu: $error$",
-    "description": "Durum mesajı.",
-    "placeholders": { "error": { "content": "$1" } }
-  },
-  "statusUploading": {
-    "message": "Tanıma için yapay zekaya gönderiliyor...",
-    "description": "Durum mesajı."
-  },
-  "statusUploadSuccess": {
-    "message": "Tanıma başarılı! Okuyucu modu açılıyor...",
-    "description": "Durum mesajı."
-  },
-  "errorPleaseUploadImage": {
-    "message": "Hata: Lütfen bir resim dosyası yükleyin.",
-    "description": "Hata mesajı."
-  },
+  "workbenchTextHeader": { "message": "Metin Çevirisi", "description": "Header for text translation section." },
+  "workbenchTextDesc": { "message": "Çeviri için kopyalanan metni aşağıya yapıştırın.", "description": "Description for text translation." },
+  "workbenchImageHeader": { "message": "Görüntü Çevirisi (OCR)", "description": "Header for image translation section." },
+  "workbenchImageDesc": { "message": "Bir ekran görüntüsü yükleyin veya yapıştırın. Yapay zeka, görüntüdeki metni otomatik olarak tanıyacak ve çevirecektir.", "description": "Description for image translation." },
+  "workbenchLabelSourceLang": { "message": "Kaynak Dil", "description": "Label for source language selector." },
+  "workbenchLabelTargetLang": { "message": "Hedef Dil", "description": "Label for target language selector." },
+  "workbenchProcessTextButton": { "message": "Metni Çevir", "description": "Button to process text." },
+  "workbenchProcessImageButton": { "message": "Görüntüyü Tanı ve Çevir", "description": "Button to process image." },
+  "workbenchUploadBox": { "message": "Bir görüntü seçmek için buraya tıklayın veya doğrudan bir ekran görüntüsü yapıştırın (Cmd+V / Ctrl+V)", "description": "Placeholder for image upload box." },
+  "workbenchUploadBoxDesc": { "message": "JPG, PNG, BMP formatlarını destekler", "description": "Subtitle for image upload box." },
+  "workbenchImageResultTitle": { "message": "Görüntü Çeviri Sonucu", "description": "Title for the reader tab showing image OCR result." },
   "voiceTitle": {
-    "message": "Gizli Sesli Notlar",
-    "description": "Sesli notlar sayfası için başlık."
+    "message": "Gizli - Sesli Notlar",
+    "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "Birincil konuşma dilinizi seçin, kaydı başlatmak için tıklayın ve düşüncelerinizi hızla metne dönüştürün.<br>Tarayıcı yükleme boyutu sınırları nedeniyle, bu özellik birkaç dakikalık kısa notlar için önerilir.",
-    "description": "Sesli notlar sayfasındaki açıklama."
+    "message": "'Kaydı Başlat'a basın veya bir ses dosyası yükleyin. Yapay zeka konuşmayı metne dökecek ve farklı konuşmacıları ayırt etmeye çalışacaktır.",
+    "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
-    "message": "Ses Kaynağı:",
-    "description": "Ses kaynağı için etiket."
+    "message": "Ses Kaynağı",
+    "description": "Label for audio source dropdown."
   },
   "voiceLabelSpokenLang": {
-    "message": "Birincil Konuşma Dili:",
-    "description": "Konuşma dili için etiket."
+    "message": "Birincil Konuşma Dili",
+    "description": "Label for spoken language dropdown."
   },
   "voiceButtonStart": {
     "message": "Kaydı Başlat",
-    "description": "Düğme metni."
+    "description": "Start recording button."
   },
   "voiceButtonStop": {
     "message": "Kaydı Durdur",
-    "description": "Düğme metni."
-  },
-  "voiceStatusNoMic": {
-    "message": "Mikrofon cihazı bulunamadı.",
-    "description": "Durum mesajı."
-  },
-  "voiceStatusNoMicPermission": {
-    "message": "Mikrofon izni alınamadı. Lütfen tarayıcı ayarlarınızda bu uzantının mikrofonu kullanmasına izin verin.",
-    "description": "Durum mesajı."
-  },
-  "voiceStatusSelectSource": {
-    "message": "Lütfen bir ses kaynağı seçin.",
-    "description": "Durum mesajı."
+    "description": "Stop recording button."
   },
   "voiceStatusRecording": {
     "message": "Kaydediliyor...",
-    "description": "Durum mesajı."
+    "description": "Status message."
   },
-  "voiceStatusSending": {
-    "message": "Tanıma için yapay zekaya gönderiliyor...",
-    "description": "Durum mesajı."
+  "voiceStatusTranscribing": {
+    "message": "Metne dökülüyor, lütfen bekleyin...",
+    "description": "Status message."
   },
   "voiceStatusSuccess": {
-    "message": "Tanıma tamamlandı, yeni sekme açıldı.",
-    "description": "Durum mesajı."
+    "message": "Metne dökme tamamlandı! Sonuçlar sayfası açılıyor...",
+    "description": "Status message."
   },
-  "voiceStatusCommError": {
-    "message": "İletişim hatası: $error$",
-    "description": "Durum mesajı.",
+  "errorNoMic": {
+    "message": "Hata: Kullanılabilir mikrofon bulunamadı.",
+    "description": "Error message."
+  },
+  "errorMicPermission": {
+    "message": "Hata: Mikrofon izni alınamadı. Lütfen tarayıcı ayarlarını kontrol edin. Ayrıntılar: $error$",
+    "description": "Error message.",
     "placeholders": { "error": { "content": "$1" } }
   },
   "voiceStatusFailed": {
-    "message": "Tanıma başarısız oldu: $error$",
-    "description": "Durum mesajı.",
+    "message": "Metne dökme başarısız: $error$",
+    "description": "Status message.",
     "placeholders": { "error": { "content": "$1" } }
   },
   "langAutoDetect": {
     "message": "Otomatik Algıla",
-    "description": "Otomatik algılama için dil seçeneği."
+    "description": "Language option for auto-detection."
   },
   "langSystemDefault": {
     "message": "Sistem Varsayılanı ($langName$)",
-    "description": "Sistem varsayılanı için dil seçeneği, gerçek dil adı için yer tutucu ile.",
-    "placeholders": { "langName": { "content": "$1", "example": "Türkçe" } }
+    "description": "Language option for system default, with placeholder for the actual language name.",
+    "placeholders": { "langName": { "content": "$1", "example": "English" } }
   },
   "langPrefA": {
-    "message": "Tercih Edilen-A ($langName$)",
-    "description": "Tercih edilen dil A için dil seçeneği.",
+    "message": "Tercih-A ($langName$)",
+    "description": "Language option for preferred language A.",
     "placeholders": { "langName": { "content": "$1", "example": "Français" } }
   },
   "langPrefB": {
-    "message": "Tercih Edilen-B ($langName$)",
-    "description": "Tercih edilen dil B için dil seçeneği.",
+    "message": "Tercih-B ($langName$)",
+    "description": "Language option for preferred language B.",
     "placeholders": { "langName": { "content": "$1", "example": "Español" } }
   },
   "voiceLangZhEn": {
-    "message": "Çince (İngilizce ile)",
-    "description": "Sesli giriş için özel dil seçeneği."
+    "message": "Çince (İngilizce karışık)",
+    "description": "Special language option for voice input."
   },
   "voiceMicLabel": {
     "message": "Mikrofon $index$",
-    "description": "Bir mikrofon için varsayılan etiket.",
-    "placeholders": { "index": { "content": "$1" } }
+    "description": "Default label for a microphone.",
+    "placeholders": { "index": { "content": "$1", "example": "1" } }
   },
-  "voiceErrorStartRecording": {
-    "message": "Kayıt başlatılamadı: $error$",
-    "description": "Kayıt başlatma başarısız olduğunda hata mesajı.",
+  "incognitoFooter": {
+    "message": "Incognito AI Hub: Tayvanlı bir doktor olan Hugo Chen tarafından 2025 yazında bir tayfun gününde oluşturuldu. İlk versiyon Tayvanca'da 'Hong-Thai' olarak adlandırıldı. Eğer faydalı bulursanız, lütfen Chrome Web Mağazası'nda olumlu bir yorum bırakın. Eğer isterseniz, sağdaki Buy Me a Coffee bağlantısı aracılığıyla bana bir içki ısmarlamaktan çekinmeyin.",
+    "description": "Footer text."
+  },
+  "promptWebpageProcessing": {
+    "message": "You are a helpful assistant. The user has provided the HTML content and a screenshot of a webpage. Please analyze both to understand the main content of the page, ignoring ads, navigation bars, and footers. Then, provide a concise summary of the key points in a well-structured, easy-to-read format. Finally, translate the summary into $lang$. Here is the HTML content: ```html\n$pageContent$\n```",
+    "description": "Prompt for webpage processing in background.js.",
+    "placeholders": { "pageContent": { "content": "$1" }, "lang": { "content": "$2" } }
+  },
+  "promptTranslateTo": {
+    "message": "Please translate the text in the image into $lang$.",
+    "description": "Prompt for image translation, asking to translate to a specific language.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "promptSourceLangAuto": {
+    "message": "First, identify the language of the text in the image.",
+    "description": "Part of the prompt for auto-detecting source language."
+  },
+  "promptSourceLangIs": {
+    "message": "The language of the text in the image is $lang$.",
+    "description": "Part of the prompt specifying the source language.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "incognitoTitle": {
+    "message": "Gizli Gemini Sohbeti",
+    "description": "Title for the incognito chat page."
+  },
+  "incognitoDefaultModelHeader": {
+    "message": "Gemini Varsayılan Modeli",
+    "description": "Header for the default model tab."
+  },
+  "incognitoDefaultModelDesc": {
+    "message": "Bu sekmede kullanılan model, '⚙️ Ayarlar'daki seçiminize bağlıdır (varsayılan olarak 2.5 Flash). En küçük model basit çeviri, metin düzenleme ve basit PDF ve görüntüleri işlemek için uygundur.",
+    "description": "Description for the default model tab."
+  },
+  "incognitoSendButton": {
+    "message": "Gönder",
+    "description": "Send button text."
+  },
+  "incognitoUploadTitle": {
+    "message": "Görüntü Yükle (en fazla 4)",
+    "description": "Tooltip for the upload button."
+  },
+  "incognitoUploadPdfTitle": {
+    "message": "PDF belgesi yükle (1)",
+    "description": "Tooltip for the PDF upload button."
+  },
+  "incognitoPresetTitleA": { "message": "Ön Ayar A'yı Kullan", "description": "Tooltip for preset button A." },
+  "incognitoPresetTitleB": { "message": "Ön Ayar B'yi Kullan", "description": "Tooltip for preset button B." },
+  "incognitoPresetTitleC": { "message": "Ön Ayar C'yi Kullan", "description": "Tooltip for preset button C." },
+  "incognitoPresetTitleD": { "message": "Ön Ayar D'yi Kullan", "description": "Tooltip for preset button D." },
+  "incognitoPresetTitleE": { "message": "Ön Ayar E'yi Kullan", "description": "Tooltip for preset button E." },
+  "stateThinking": {
+    "message": "Düşünüyor...",
+    "description": "Thinking indicator text."
+  },
+  "incognitoApiError": {
+    "message": "API isteği başarısız oldu",
+    "description": "Error message prefix for API failures."
+  },
+  "incognitoInitialMessage": {
+    "message": "Merhaba! Bugün size nasıl yardımcı olabilirim?",
+    "description": "Initial greeting message from the assistant."
+  },
+  "incognitoClearConfirm": {
+    "message": "Sohbet geçmişini temizlemek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "description": "Confirmation message before clearing chat history."
+  },
+  "incognitoPlaceholder": {
+    "message": "Mesajınızı buraya girin (resim veya PDF yükleyebilirsiniz)...",
+    "description": "Placeholder for the prompt input area."
+  },
+  "incognitoFlashModelHeader": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Header for the Flash model tab."
+  },
+  "incognitoFlashModelDesc": {
+    "message": "Google'ın standart orta seviye modeli. Hızlı yanıtlar ve yüksek verim gerektiren uygulamalar için orta maliyetle uygundur. Ayrıca görüntü ve PDF girişlerini de destekler.",
+    "description": "Description for the Flash model tab."
+  },
+  "incognitoProModelHeader": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Header for the Pro model tab."
+  },
+  "incognitoProModelDesc": {
+    "message": "Google'ın en güçlü modeli, devasa 1 milyon jetonluk bir bağlam penceresine sahiptir. Karmaşık akıl yürütme, kodlama ve çok modlu anlama konularında üstündür. En yüksek maliyet, karmaşık PDF ve görüntüleri işlemek için idealdir.",
+    "description": "Description for the Pro model tab."
+  },
+  "statusUploading": {
+    "message": "Yükleniyor ve işleniyor...",
+    "description": "Status for file upload."
+  },
+  "statusFailed": {
+    "message": "İşleme başarısız: $error$",
+    "description": "Generic failure status.",
     "placeholders": { "error": { "content": "$1" } }
   },
-  "errorUnknown": {
-    "message": "Bilinmeyen bir hata oluştu.",
-    "description": "Genel bir hata mesajı."
+  "statusUploadSuccess": {
+    "message": "Başarılı! Sonuçlar açılıyor...",
+    "description": "Success status for file upload."
+  },
+  "voiceOrDivider": {
+    "message": "VEYA",
+    "description": "The 'OR' divider between record and upload buttons."
+  },
+  "voiceButtonUpload": {
+    "message": "Ses Dosyası Yükle",
+    "description": "The new button to upload an audio file."
+  },
+  "voiceButtonSubmit": {
+    "message": "Dosyayı Metne Dök",
+    "description": "The text on the record button when a file is ready to be submitted."
+  },
+  "errorInvalidFileType": {
+    "message": "Hata: Geçersiz dosya türü. Lütfen bir ses dosyası seçin.",
+    "description": "Error when a non-audio file is selected."
+  },
+  "errorFileRead": {
+    "message": "Hata: Dosya okunurken bir sorun oluştu.",
+    "description": "Error when the FileReader API fails."
+  },
+  "promptVoiceTranscribeDiarize": {
+    "message": "Please transcribe the following audio. The primary language spoken is $lang$. Pay close attention to pauses and changes in tone or speech patterns to identify and label different speakers (e.g., Speaker 1, Speaker 2). Provide the output as a clear, readable transcript.",
+    "description": "Prompt for voice transcription with speaker diarization.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "voiceResultTitle": {
+    "message": "Sesli Metne Dökme Sonucu",
+    "description": "Title for the reader tab showing voice transcription result."
   }
 }

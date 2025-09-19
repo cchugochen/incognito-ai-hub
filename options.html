@@ -3,27 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>__MSG_optionsTitle__</title>
-    <!-- 載入新的主題與專用版面樣式 -->
     <link rel="stylesheet" href="styles/theme.css">
-    <link rel="stylesheet" href="styles/options.css"> <!-- 使用專用的 options.css -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/options.css"> <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container options-container">
         <h1 class="page-header" data-i18n="optionsHeader"></h1>
         
-        <!-- (1) Display Language -->
         <section class="options-section">
             <h2 class="section-header" data-i18n="optionsDisplayLangSectionHeader"></h2>
             <label for="display-language" class="label" data-i18n="optionsDisplayLangLabel"></label>
             <select id="display-language" class="select-input">
-                <!-- Options will be populated by options.js -->
-            </select>
+                </select>
         </section>
 
         <hr class="divider">
 
-        <!-- [v25.1 New Section] (2) Preferred Translation Languages -->
         <section class="options-section">
             <h2 class="section-header" data-i18n="optionsPrefLangSectionHeader"></h2>
             <p class="description" data-i18n="optionsPrefLangDesc"></p>
@@ -41,7 +36,6 @@
 
         <hr class="divider">
 
-        <!-- (3) Gemini Key Input Area -->
         <section class="options-section">
             <h2 class="section-header" data-i18n="optionsApiKeySectionHeader"></h2>
             <label for="api-key" class="label" data-i18n="optionsApiKeyLabel"></label>
@@ -50,14 +44,22 @@
 
         <hr class="divider">
 
-        <!-- (4) Translation & Recognition Model -->
         <section class="options-section">
             <h2 class="section-header" data-i18n="optionsModelSectionHeader"></h2>
             <p class="description" data-i18n="optionsModelDesc"></p>
             <div class="space-y-4">
-                <!-- Gemini 2.0 Flash -->
                 <div>
-                    <input type="radio" name="model-select" id="gemini-2.0-flash" value="gemini-2.0-flash" class="sr-only" checked>
+                    <input type="radio" name="model-select" id="gemini-2.5-flash-lite" value="gemini-2.5-flash-lite" class="sr-only" checked>
+                    <label for="gemini-2.5-flash-lite" class="model-card">
+                         <div class="model-card-header">
+                            <span class="model-name" data-i18n="optionsModel2Name"></span>
+                        </div>
+                        <p class="model-id">gemini-2.5-flash-lite</p>
+                        <div class="model-desc" data-i18n="optionsModel2Desc"></div>
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name="model-select" id="gemini-2.0-flash" value="gemini-2.0-flash" class="sr-only">
                     <label for="gemini-2.0-flash" class="model-card">
                         <div class="model-card-header">
                             <span class="model-name" data-i18n="optionsModel1Name"></span>
@@ -67,23 +69,11 @@
                         <div class="model-desc" data-i18n="optionsModel1Desc"></div>
                     </label>
                 </div>
-                <!-- Gemini 2.5 Flash Lite -->
-                <div>
-                    <input type="radio" name="model-select" id="gemini-2.5-flash-lite" value="models/gemini-2.5-flash-lite-preview-06-17" class="sr-only">
-                    <label for="gemini-2.5-flash-lite" class="model-card">
-                         <div class="model-card-header">
-                            <span class="model-name" data-i18n="optionsModel2Name"></span>
-                        </div>
-                        <p class="model-id">gemini-2.5-flash-lite-preview-06-17</p>
-                        <div class="model-desc" data-i18n="optionsModel2Desc"></div>
-                    </label>
-                </div>
             </div>
         </section>
 
         <hr class="divider">
 
-        <!-- (5) Preset Prompts -->
         <section class="options-section">
             <h2 class="section-header" data-i18n="optionsPresetSectionHeader"></h2>
             <p class="description" data-i18n="optionsPresetDesc"></p>
@@ -113,7 +103,6 @@
 
         <hr class="divider">
         
-        <!-- (6) Optional Cloud Logging -->
         <section class="options-section">
             <h2 class="section-header" data-i18n="optionsLogSectionHeader"></h2>
             <p class="description" data-i18n="optionsLogDesc"></p>

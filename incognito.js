@@ -1,14 +1,11 @@
-// incognito.js (v25.2 - Bug Fix)
-// - Fixed a syntax error that made control buttons unresponsive.
-// - Increased MAX_ROUNDS to 12.
+// incognito.js (v26.2 - Base64 Inline PDF & UI Refactor)
 document.addEventListener('DOMContentLoaded', () => {
-    // Set document title dynamically
     document.title = chrome.i18n.getMessage('incognitoTitle');
 
     // --- Global State ---
     let geminiApiKey = null;
     let presetPrompts = {};
-    const MAX_ROUNDS = 12; 
+    const MAX_ROUNDS = 12;
 
     // --- Chat Instance Manager ---
     class ChatInstance {
@@ -16,14 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
             this.modelId = modelId;
             this.modelName = modelName;
             this.history = [];
-            this.imageFiles = [];
+            this.attachedFiles = [];
 
             // DOM Elements
             this.chatWindow = document.getElementById(`chat-window-${modelId}`);
             this.promptInput = document.getElementById(`prompt-${modelId}`);
             this.sendBtn = document.getElementById(`send-btn-${modelId}`);
-            this.uploadBtn = document.getElementById(`upload-btn-${modelId}`);
-            this.fileInput = document.getElementById(`file-input-${modelId}`);
+            
+            // [New] Separate buttons and inputs
+            this.uploadPdfBtn = document.getElementById(`upload-pdf-btn-${modelId}`);
+            this.uploadImgBtn = document.getElementById(`upload-img-btn-${modelId}`);
+            this.pdfFileInput = document.getElementById(`pdf-file-input-${modelId}`);
+            this.imageFileInput = document.getElementById(`image-file-input-${modelId}`);
+
             this.previewContainer = document.getElementById(`image-preview-container-${modelId}`);
             this.presetButtons = document.querySelectorAll(`#preset-buttons-container-${modelId} .preset-btn`);
 
@@ -31,17 +33,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         attachEventListeners() {
-            // [v25.2 Fix] Corrected syntax error by adding a semicolon.
             this.sendBtn.addEventListener('click', () => this.sendMessage());
-            this.uploadBtn.addEventListener('click', () => this.fileInput.click());
-            this.fileInput.addEventListener('change', (e) => this.handleFileSelect(e));
             this.promptInput.addEventListener('paste', (e) => this.handlePaste(e));
+            
+            // [New] Event listeners for separate buttons
+            this.uploadPdfBtn.addEventListener('click', () => this.pdfFileInput.click());
+            this.uploadImgBtn.addEventListener('click', () => this.imageFileInput.click());
+            this.pdfFileInput.addEventListener('change', (e) => this.handleFileSelect(e, 'pdf'));
+            this.imageFileInput.addEventListener('change', (e) => this.handleFileSelect(e, 'image'));
 
             this.presetButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const presetKey = `preset_${button.dataset.preset.toLowerCase()}`;
                     const textToInsert = presetPrompts[presetKey];
                     if (textToInsert) {
+                        // Logic to insert preset text... (remains unchanged)
                         const start = this.promptInput.selectionStart;
                         const end = this.promptInput.selectionEnd;
                         const originalText = this.promptInput.value;
@@ -58,73 +64,125 @@ document.addEventListener('DOMContentLoaded', () => {
             for (const item of items) {
                 if (item.kind === 'file' && item.type.startsWith('image/')) {
                     event.preventDefault();
-                    const file = item.getAsFile();
-                    this.processImageFile(file);
+                    this.processImageFile(item.getAsFile());
                     return;
                 }
             }
         }
-
-        handleFileSelect(event) {
+        
+        handleFileSelect(event, fileType) {
             const files = event.target.files;
-            for (const file of files) {
-                this.processImageFile(file);
+            if (fileType === 'image') {
+                for (const file of files) this.processImageFile(file);
+            } else if (fileType === 'pdf') {
+                if (files.length > 0) this.processPdfFile(files[0]);
             }
-            this.fileInput.value = '';
+            event.target.value = ''; // Clear the input
         }
         
         processImageFile(file) {
             if (!file || !file.type.startsWith('image/')) return;
-            if (this.imageFiles.length >= 4) {
+            if (this.attachedFiles.filter(f => f.type === 'image').length >= 4) {
                 alert(chrome.i18n.getMessage("alertMaxImages"));
                 return;
             }
             const reader = new FileReader();
             reader.onload = (e) => {
-                this.imageFiles.push({ base64: e.target.result.split(',')[1], mimeType: file.type });
-                this.renderImagePreviews();
+                this.attachedFiles.push({
+                    type: 'image',
+                    base64: e.target.result.split(',')[1],
+                    mimeType: file.type,
+                    name: file.name
+                });
+                this.renderPreviews();
             };
             reader.readAsDataURL(file);
         }
 
-        renderImagePreviews() {
+        // [New] Base64 PDF processing method
+        processPdfFile(file) {
+            if (!file || file.type !== 'application/pdf') return;
+
+            // Prevent multiple PDF uploads
+            if (this.attachedFiles.some(f => f.type === 'pdf')) {
+                alert("一次只能附加一個 PDF 檔案。"); // TODO: Add to i18n
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                this.attachedFiles.push({
+                    type: 'pdf',
+                    base64: e.target.result.split(',')[1],
+                    mimeType: file.type,
+                    name: file.name
+                });
+                this.renderPreviews();
+            };
+            reader.readAsDataURL(file);
+        }
+
+        renderPreviews() {
             this.previewContainer.innerHTML = '';
-            this.imageFiles.forEach((file, index) => {
+            this.attachedFiles.forEach((file, index) => {
                 const item = document.createElement('div');
-                item.className = 'preview-item';
-                const img = document.createElement('img');
-                img.src = `data:${file.mimeType};base64,${file.base64}`;
+                let contentHTML = '';
+
+                if (file.type === 'image') {
+                    item.className = 'preview-item';
+                    contentHTML = `<img src="data:${file.mimeType};base64,${file.base64}" />`;
+                } else if (file.type === 'pdf') {
+                    item.className = 'pdf-preview-item';
+                    contentHTML = `<span>📄 ${file.name}</span>`;
+                }
+
                 const removeBtn = document.createElement('button');
                 removeBtn.className = 'remove-btn';
                 removeBtn.innerHTML = '&times;';
                 removeBtn.onclick = () => {
-                    this.imageFiles.splice(index, 1);
-                    this.renderImagePreviews();
+                    this.attachedFiles.splice(index, 1);
+                    this.renderPreviews();
                 };
-                item.appendChild(img);
+                
+                item.innerHTML = contentHTML;
                 item.appendChild(removeBtn);
                 this.previewContainer.appendChild(item);
             });
-            this.previewContainer.classList.toggle('active', this.imageFiles.length > 0);
+            this.previewContainer.classList.toggle('active', this.attachedFiles.length > 0);
         }
-
+        
         async sendMessage() {
             const promptText = this.promptInput.value.trim();
-            if (!promptText && this.imageFiles.length === 0) return;
+            if (!promptText && this.attachedFiles.length === 0) return;
 
-            this.displayMessage(promptText, 'user', this.imageFiles);
+            const imageFilesForDisplay = this.attachedFiles.filter(f => f.type === 'image');
+            let displayText = promptText;
+            const pdfFile = this.attachedFiles.find(f => f.type === 'pdf');
+            if (pdfFile) {
+                displayText += `\n(附加檔案: ${pdfFile.name})`;
+            }
+            this.displayMessage(displayText, 'user', imageFilesForDisplay);
 
             const userParts = [];
-            if (promptText) userParts.push({ text: promptText });
-            this.imageFiles.forEach(file => {
-                userParts.push({ inlineData: { mimeType: file.mimeType, data: file.base64 } });
+            if (promptText) {
+                userParts.push({ text: promptText });
+            }
+            
+            // [Modified] Create inlineData parts for all file types
+            this.attachedFiles.forEach(file => {
+                userParts.push({
+                    inlineData: {
+                        mimeType: file.mimeType,
+                        data: file.base64
+                    }
+                });
             });
             
             this.history.push({ role: 'user', parts: userParts });
             
             this.promptInput.value = '';
-            this.imageFiles = [];
-            this.renderImagePreviews();
+            this.attachedFiles = [];
+            this.renderPreviews();
             this.setLoading(true);
           
             try {
@@ -132,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.history.push({ role: 'model', parts: [{ text: responseText }] });
                 this.displayMessage(responseText, 'ai');
             } catch (error) {
-                // 修正：直接顯示從 callApi() 傳來的、已經過 i18n 處理的錯誤訊息
                 this.displayMessage(error.message, 'ai', [], true);
                 this.history.pop();
             } finally {
@@ -142,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         async callApi() {
+            // This function remains largely the same as before
             if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
             
             const apiUrl = this.modelName.startsWith('models/')
@@ -168,6 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         displayMessage(text, role, images = [], isError = false) {
+             // This function remains the same as before
             const msgDiv = document.createElement('div');
             msgDiv.className = `msg ${role}`;
             if (isError) msgDiv.style.color = '#c0392b';
@@ -191,12 +250,14 @@ document.addEventListener('DOMContentLoaded', () => {
         setLoading(isLoading) {
             this.sendBtn.disabled = isLoading;
             this.promptInput.disabled = isLoading;
-            this.uploadBtn.disabled = isLoading;
+            this.uploadPdfBtn.disabled = isLoading; // [New]
+            this.uploadImgBtn.disabled = isLoading; // [New]
             this.presetButtons.forEach(btn => btn.disabled = isLoading);
             this.sendBtn.textContent = isLoading ? chrome.i18n.getMessage("stateThinking") : chrome.i18n.getMessage("incognitoSendButton");
         }
 
         checkTurnLimit() {
+            // This function remains the same as before
             const userMessages = this.history.filter(m => m.role === 'user').length;
             if (userMessages >= MAX_ROUNDS) {
                 this.setLoading(true);
@@ -205,12 +266,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Main Initialization ---
+    // --- Main Initialization --- (Unchanged)
     const init = async () => {
         try {
             const items = await chrome.storage.sync.get({ 
                 geminiApiKey: '',
-                translationModel: 'gemini-2.0-flash',
+                translationModel: 'gemini-2.5-flash-lite', // Defaulting to a capable model
                 preset_a: '', preset_b: '', preset_c: '', preset_d: '', preset_e: ''
             });
             

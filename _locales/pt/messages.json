@@ -1,562 +1,431 @@
 {
   "appName": {
-    "message": "Incognito AI Hub por Gemini",
-    "description": "O nome da extensão."
+    "message": "Incognito AI Hub by Gemini",
+    "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "(1) Uma ferramenta utilitária que integra quatro modos anônimos de IA: Chat Anônimo do Gemini, Leitura de Página da Web, Texto/Captura de Tela e Entrada de Voz.\n(2) Para uso legal, solicite sua própria chave de API do Google Gemini.\n(3) Esta extensão não possui servidor de back-end para armazenamento; usuários que precisam de registro devem configurar seu próprio ponto de extremidade.",
-    "description": "A descrição da extensão no manifesto."
+    "message": "(1) Uma interface de bate-papo anônima simples do Gemini e um kit de ferramentas gratuito para traduzir páginas da web, texto, capturas de tela e usar entrada de IA por voz com o Gemini. (2) Os usuários devem obter sua própria chave de API do Google Gemini.",
+    "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
-    "message": "Traduzir página atual (se o Google Tradutor falhar)",
-    "description": "Texto do botão em popup.html."
+    "message": "Traduzir a página atual (se o Google Tradutor falhar)",
+    "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
     "message": "Abrir Bancada de Tradução Inteligente",
-    "description": "Texto do botão em popup.html. Alterado de 'Bancada de Tradução de Texto/Captura de Tela'."
+    "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
   },
   "popupOpenVoiceNotes": {
-    "message": "Notas de Voz Anônimas",
-    "description": "Texto do botão em popup.html."
+    "message": "Anônimo - Notas de Voz",
+    "description": "Button text in popup.html"
   },
   "popupOpenIncognito": {
-    "message": "Chat Anônimo do Gemini",
-    "description": "Texto do botão em popup.html."
+    "message": "Bate-papo anônimo do Gemini",
+    "description": "Button text in popup.html"
   },
   "popupOpenTutorial": {
-    "message": "Tutorial Fácil para Chave de API do Gemini",
-    "description": "Texto do botão em popup.html."
+    "message": "Tutorial simples para a chave de API do Gemini",
+    "description": "Button text in popup.html"
   },
   "popupShowLicense": {
     "message": "Informações da Licença MIT",
-    "description": "Texto do botão em popup.html."
+    "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "Incognito AI Hub - Configurações",
-    "description": "Título da página de opções."
+    "message": "Configurações do Incognito AI Hub",
+    "description": "Title for the options page."
   },
   "optionsHeader": {
-    "message": "Incognito AI Hub - Configurações",
-    "description": "Cabeçalho da página de opções."
+    "message": "⚙️ Configurações",
+    "description": "Header text on the options page."
   },
   "optionsDisplayLangSectionHeader": {
-    "message": "1. Idioma de Exibição",
-    "description": "Cabeçalho da seção nas opções."
+    "message": "Idioma de exibição",
+    "description": "Section header on options page."
   },
   "optionsDisplayLangLabel": {
-    "message": "Defina o idioma de exibição para a interface da extensão:",
-    "description": "Rótulo para seleção de idioma nas opções."
+    "message": "Idioma da interface da extensão",
+    "description": "Label for language selection on options page."
   },
   "optionsDisplayLangDefault": {
-    "message": "Padrão do Sistema Chrome",
-    "description": "Opção padrão para seleção de idioma."
+    "message": "Padrão (seguir o navegador)",
+    "description": "Default option for language selection."
   },
   "optionsPrefLangSectionHeader": {
-    "message": "2. Idiomas de Tradução Preferidos",
-    "description": "Cabeçalho da seção para idiomas preferidos nas opções."
+    "message": "Idiomas preferidos",
+    "description": "Section header for preferred languages."
   },
   "optionsPrefLangDesc": {
-    "message": "Instruções: A melhor maneira é escrever o idioma que você precisa no campo usando esse idioma. Por exemplo: Français, Español, Русский",
-    "description": "Descrição da seção de idiomas preferidos."
+    "message": "Defina os dois idiomas de destino que você usa com mais frequência. Eles aparecerão nos menus de seleção rápida de várias funcionalidades de tradução.",
+    "description": "Description for preferred languages setting."
   },
   "optionsPrefLangLabelA": {
-    "message": "Idioma Preferido A:",
-    "description": "Rótulo para o idioma preferido A."
+    "message": "Idioma preferido A",
+    "description": "Label for preferred language A."
   },
   "optionsPrefLangLabelB": {
-    "message": "Idioma Preferido B:",
-    "description": "Rótulo para o idioma preferido B."
-  },
-  "optionsPrefLangPlaceholder": {
-    "message": "ex., Français",
-    "description": "Espaço reservado para entrada de idioma preferido."
+    "message": "Idioma preferido B",
+    "description": "Label for preferred language B."
   },
   "optionsApiKeySectionHeader": {
-    "message": "3. Entrada de Chave de API do Gemini",
-    "description": "Cabeçalho da seção nas opções."
+    "message": "Chave de API e Modelo",
+    "description": "Section header for API key settings."
   },
   "optionsApiKeyLabel": {
-    "message": "Sua Chave de API do Google Gemini:",
-    "description": "Rótulo para entrada de chave de API."
+    "message": "Sua chave de API do Google Gemini",
+    "description": "Label for API key input field."
   },
-  "optionsModelSectionHeader": {
-    "message": "4. Modelo de Tradução e Reconhecimento",
-    "description": "Cabeçalho da seção nas opções."
+  "optionsApiKeyPlaceholder": {
+    "message": "Cole sua chave de API aqui",
+    "description": "Placeholder text for API key input."
   },
-  "optionsModelDesc": {
-    "message": "Selecione o modelo padrão para os recursos 'Traduzir Página', 'Bancada de Tradução Inteligente' e 'Notas de Voz'.",
-    "description": "Descrição para seleção de modelo."
+  "optionsModelSelectLabel": {
+    "message": "Modelo padrão para tradução de página da web/imagem",
+    "description": "Label for the model selection radio buttons."
   },
-  "optionsModel1Name": {
-    "message": "Gemini 2.0 Flash",
-    "description": "Nome do modelo."
+  "optionsModelFlashName": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Name of the Flash model."
   },
-  "optionsModel1Tag": {
-    "message": "Padrão",
-    "description": "Tag para modelo recomendado."
+  "optionsModelFlashDesc": {
+    "message": "O mais rápido e econômico, adequado para tarefas de tradução e resumo rápidas e de alto volume.",
+    "description": "Description of the Flash model."
   },
-  "optionsModel1Desc": {
-    "message": "Melhor para: Compreensão multimodal, streaming em tempo real, baixo custo.",
-    "description": "Descrição para um modelo."
+  "optionsModelProName": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Name of the Pro model."
   },
-  "optionsModel2Name": {
-    "message": "Gemini 2.5 Flash Lite (Pré-visualização)",
-    "description": "Nome do modelo."
-  },
-  "optionsModel2Desc": {
-    "message": "Melhor para: Lidar com mais tokens por solicitação, baixa latência, menor custo.",
-    "description": "Descrição para um modelo."
+  "optionsModelProDesc": {
+    "message": "O mais poderoso, com maior precisão para entender contextos e imagens complexas, mas com um custo mais alto.",
+    "description": "Description of the Pro model."
   },
   "optionsPresetSectionHeader": {
-    "message": "5. Chat Anônimo - Memória de Prompt Embutida",
-    "description": "Cabeçalho da seção nas opções."
+    "message": "Bate-papo anônimo - Predefinições de comando",
+    "description": "Section header for preset prompts."
   },
   "optionsPresetDesc": {
-    "message": "Digite comandos ou modelos usados com frequência aqui para acesso rápido no 'Chat Anônimo do Gemini'.",
-    "description": "Descrição para prompts predefinidos."
+    "message": "Defina as instruções iniciais usadas com frequência (Prompts de Sistema) para os botões A/B/C/D/E na página 'Bate-papo anônimo do Gemini'.",
+    "description": "Description for preset prompts."
   },
-  "optionsPresetLabelA": {
-    "message": "Prompt Predefinido A:",
-    "description": "Rótulo para prompt predefinido."
-  },
-  "optionsPresetLabelB": {
-    "message": "Prompt Predefinido B:",
-    "description": "Rótulo para prompt predefinido."
-  },
-  "optionsPresetLabelC": {
-    "message": "Prompt Predefinido C:",
-    "description": "Rótulo para prompt predefinido."
-  },
-  "optionsPresetLabelD": {
-    "message": "Prompt Predefinido D:",
-    "description": "Rótulo para prompt predefinido."
-  },
-  "optionsPresetLabelE": {
-    "message": "Prompt Predefinido E:",
-    "description": "Rótulo para prompt predefinido."
-  },
+  "optionsPresetLabelA": { "message": "Predefinição A", "description": "Label for preset A." },
+  "optionsPresetLabelB": { "message": "Predefinição B", "description": "Label for preset B." },
+  "optionsPresetLabelC": { "message": "Predefinição C", "description": "Label for preset C." },
+  "optionsPresetLabelD": { "message": "Predefinição D", "description": "Label for preset D." },
+  "optionsPresetLabelE": { "message": "Predefinição E", "description": "Label for preset E." },
   "optionsLogSectionHeader": {
-    "message": "6. (Opcional) Configurações de Registro em Nuvem",
-    "description": "Cabeçalho da seção nas opções."
+    "message": "(Opcional) Registro em nuvem",
+    "description": "Section header for optional logging."
   },
   "optionsLogDesc": {
-    "message": "Envie registros de processamento para seu próprio ponto de extremidade do Google Cloud Functions para pesquisa e análise.",
-    "description": "Descrição do recurso de registro."
+    "message": "Se precisar enviar registros operacionais (por exemplo, uso de tokens) para seu próprio serviço de backend, insira o URL do endpoint e a chave aqui. Esse recurso será completamente desativado se deixado em branco.",
+    "description": "Description for optional logging."
   },
   "optionsLogEndpointLabel": {
-    "message": "URL do Ponto de Extremidade da Função na Nuvem:",
-    "description": "Rótulo para URL do ponto de extremidade de registro."
+    "message": "URL do seu endpoint de registro",
+    "description": "Label for log endpoint input."
   },
   "optionsLogKeyLabel": {
-    "message": "Chave de Autenticação (Opcional):",
-    "description": "Rótulo para chave de registro."
+    "message": "Sua chave de API de registro",
+    "description": "Label for log key input."
   },
   "optionsSaveButton": {
-    "message": "Salvar Configurações",
-    "description": "Texto do botão Salvar."
+    "message": "Salvar configurações",
+    "description": "Save button text."
   },
   "optionsStatusSaved": {
-    "message": "Configurações salvas.",
-    "description": "Mensagem de status quando as opções são salvas."
+    "message": "Configurações salvas!",
+    "description": "Status message when settings are saved."
   },
-  "incognitoTitle": {
-    "message": "Chat Anônimo do Gemini",
-    "description": "Título da página de chat anônimo."
-  },
-  "incognitoDefaultModelHeader": {
-    "message": "Modelo Padrão do Sistema (Lite)",
-    "description": "Cabeçalho do modelo padrão no chat anônimo."
-  },
-  "incognitoDefaultModelDesc": {
-    "message": "Modelo Gemini Lite: Usa o modelo que você definiu na página 'Configurações' (padrão 2.0 Flash ou 2.5-Flash-Lite), adequado para tradução geral e perguntas e respostas rápidas.",
-    "description": "Descrição do modelo padrão no chat anônimo."
-  },
-  "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
-    "description": "Cabeçalho do modelo Flash no chat anônimo."
-  },
-  "incognitoFlashModelDesc": {
-    "message": "Um modelo Gemini de tamanho médio, adequado para tarefas que exigem compreensão de contexto mais longo ou resumo rápido.",
-    "description": "Descrição do modelo Flash no chat anônimo."
-  },
-  "incognitoProModelHeader": {
-    "message": "Gemini 2.5 Pro",
-    "description": "Cabeçalho do modelo Pro no chat anônimo."
-  },
-  "incognitoProModelDesc": {
-    "message": "O modelo mais poderoso do Google atualmente, para raciocínio lógico altamente complexo e geração criativa. <b>Observação:</b> O custo unitário é alto, consulte os <a href='https://ai.google.dev/pricing' target='_blank'>preços oficiais</a> para obter detalhes.",
-    "description": "Descrição do modelo Pro no chat anônimo. Mantenha as tags HTML."
-  },
-  "incognitoPlaceholder": {
-    "message": "Digite o prompt aqui ou cole (Ctrl+V) uma captura de tela...",
-    "description": "Espaço reservado para entrada de prompt."
-  },
-  "incognitoUploadButton": {
-    "message": "🖼️ Carregar",
-    "description": "Texto do botão de carregamento."
-  },
-  "incognitoUploadTitle": {
-    "message": "Carregar Imagens (Máx. 4)",
-    "description": "Atributo de título para o botão de carregamento."
-  },
-  "incognitoPresetTitleA": { "message": "Usar Predefinição A", "description": "Título do botão de predefinição A." },
-  "incognitoPresetTitleB": { "message": "Usar Predefinição B", "description": "Título do botão de predefinição B." },
-  "incognitoPresetTitleC": { "message": "Usar Predefinição C", "description": "Título do botão de predefinição C." },
-  "incognitoPresetTitleD": { "message": "Usar Predefinição D", "description": "Título do botão de predefinição D." },
-  "incognitoPresetTitleE": { "message": "Usar Predefinição E", "description": "Título do botão de predefinição E." },
-  "incognitoSendButton": {
-    "message": "Enviar ▶️",
-    "description": "Texto do botão Enviar."
-  },
-  "incognitoFooter": {
-    "message": "O autor, Hugo Chen, é um médico de Taiwan que concluiu a primeira versão durante um dia de tufão em 2025. A versão inicial foi nomeada 'Hong-Thai' (Tufão) em taiwanês. Se você achar útil ou tiver alguma ideia, por favor, deixe uma avaliação ou sugestão na Chrome Web Store. Se desejar, sinta-se à vontade para me pagar um café como um gesto prático de apoio através do link Buy Me a Coffee à direita.",
-    "description": "Footer text. Keep HTML tags."
-  },
-  "errorNoActiveTab": {
-    "message": "Não foi possível encontrar a guia ativa.",
-    "description": "Mensagem de erro em background.js."
-  },
-  "errorInvalidText": {
-    "message": "Conteúdo de texto inválido ou vazio.",
-    "description": "Mensagem de erro em background.js."
-  },
-  "errorNoImageData": {
-    "message": "Nenhum dado de imagem fornecido.",
-    "description": "Mensagem de erro em background.js."
-  },
-  "errorOcrFailed": {
-    "message": "A IA não conseguiu reconhecer texto suficiente.",
-    "description": "Mensagem de erro em background.js."
-  },
-  "errorNoAudioData": {
-    "message": "Nenhum dado de áudio fornecido.",
-    "description": "Mensagem de erro em background.js."
-  },
-  "errorSttFailed": {
-    "message": "A IA não conseguiu reconhecer nenhuma fala.",
-    "description": "Mensagem de erro em background.js."
-  },
-  "errorDebuggerAttach": {
-    "message": "Falha ao anexar o depurador. Recarregue a página ou verifique se há conflitos com outras extensões.",
-    "description": "Mensagem de erro em background.js."
-  },
-  "errorScreenshotFailed": {
-    "message": "Falha ao capturar a tela.",
-    "description": "Mensagem de erro em background.js."
-  },
-  "errorOcrFailedLong": {
-    "message": "A IA não conseguiu reconhecer conteúdo de texto suficiente.",
-    "description": "Mensagem de erro em background.js."
-  },
-  "errorNoApiKey": {
-    "message": "A chave de API não foi definida.",
-    "description": "Mensagem de erro em background.js e outros."
-  },
-  "errorApiRequestFailed": {
-    "message": "Falha na solicitação da API: $details$",
-    "description": "Mensagem de erro em background.js. $details$ é um espaço reservado.",
-    "placeholders": {
-      "details": {
-        "content": "$1",
-        "example": "Chave de API inválida."
-      }
-    }
-  },
-  "errorApiRejected": {
-    "message": "Solicitação rejeitada pela IA, motivo: $reason$",
-    "description": "Mensagem de erro em background.js. $reason$ é um espaço reservado.",
-    "placeholders": {
-      "reason": {
-        "content": "$1",
-        "example": "SAFETY"
-      }
-    }
-  },
-  "errorApiStopped": {
-    "message": "O processamento da IA parou prematuramente, motivo: $reason$",
-    "description": "Mensagem de erro em background.js. $reason$ é um espaço reservado.",
-    "placeholders": {
-      "reason": {
-        "content": "$1",
-        "example": "MAX_TOKENS"
-      }
-    }
-  },
-  "errorApiInvalidResponse": {
-    "message": "Formato de resposta da API inválido ou vazio.",
-    "description": "Mensagem de erro em background.js."
-  },
-  "errorNetwork": {
-    "message": "Erro de rede, não foi possível conectar à API do Gemini.",
-    "description": "Mensagem de erro em background.js."
-  },
-  "alertMaxImages": {
-    "message": "Erro: Você pode carregar no máximo 4 imagens.",
-    "description": "Mensagem de alerta em incognito.js."
-  },
-  "alertTurnLimit": {
-    "message": "Aviso: Limite de conversa de $limit$ turnos atingido. Atualize a página para iniciar uma nova conversa.",
-    "description": "Mensagem de alerta em incognito.js. $limit$ é um espaço reservado.",
-    "placeholders": {
-      "limit": {
-        "content": "$1",
-        "example": "12"
-      }
-    }
+  "alertNoApiKey": {
+    "message": "Erro: Chave de API do Gemini não encontrada. Por favor, insira sua chave na página de configurações primeiro.",
+    "description": "Alert message when API key is missing."
   },
   "alertNoApiKeyOptions": {
-    "message": "Erro: Chave de API do Gemini não definida. Defina-a nas opções da extensão.",
-    "description": "Mensagem de alerta em incognito.js."
+    "message": "Por favor, cole sua chave de API do Google Gemini na seção 'Chave de API e Modelo' abaixo.",
+    "description": "Alert message shown on the options page if API key is missing."
   },
   "alertInitFailed": {
-    "message": "Falha na inicialização da página.",
-    "description": "Mensagem de alerta em incognito.js."
+    "message": "A inicialização falhou. Verifique o console para mensagens de erro.",
+    "description": "Alert on initialization failure."
   },
-  "stateThinking": {
-    "message": "Pensando...",
-    "description": "Estado de carregamento para o botão de envio."
+  "errorNetwork": {
+    "message": "Erro de rede ou impossível conectar à API do Gemini. Verifique sua conexão com a internet e as configurações de firewall.",
+    "description": "Error message for network issues."
+  },
+  "errorApiInvalidResponse": {
+    "message": "Formato de resposta da API inválido. O modelo pode não ter retornado conteúdo válido.",
+    "description": "Error when API response is malformed."
+  },
+  "errorUnknown": {
+    "message": "Ocorreu um erro desconhecido.",
+    "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "Modo de Leitura",
-    "description": "Título da página de leitura."
-  },
-  "readerLabelTargetLang": {
-    "message": "Idioma de Saída de Destino:",
-    "description": "Rótulo do seletor de idioma de destino principal em reader.html."
-  },
-  "readerLabelFontSize": {
-    "message": "Tamanho da Fonte:",
-    "description": "Rótulo na barra de ferramentas do leitor."
-  },
-  "readerLabelLineHeight": {
-    "message": "Altura da Linha:",
-    "description": "Rótulo na barra de ferramentas do leitor."
-  },
-  "readerLabelBgColor": {
-    "message": "Cor de Fundo:",
-    "description": "Rótulo na barra de ferramentas do leitor."
-  },
-  "readerSaveButton": {
-    "message": "Salvar como TXT",
-    "description": "Texto do botão na barra de ferramentas do leitor."
+    "message": "Modo de Leitura - Incognito AI Hub",
+    "description": "Title for the reader page."
   },
   "readerLoading": {
-    "message": "Carregando conteúdo...",
-    "description": "Mensagem de carregamento no leitor."
+    "message": "A IA está processando, por favor, aguarde...",
+    "description": "Loading message in reader."
   },
-  "readerErrorNotFound": {
-    "message": "Conteúdo do artigo não encontrado ou o conteúdo extraído está vazio. Volte para a página original e tente novamente.",
-    "description": "Mensagem de erro no leitor."
+  "readerLabelTargetLang": {
+    "message": "Traduzir para",
+    "description": "Label for target language selector in reader."
   },
-  "readerTranslating": {
-    "message": " (Traduzindo...)",
-    "description": "Status de tradução no leitor."
+  "readerLabelFontSize": {
+    "message": "Tamanho da fonte",
+    "description": "Label for font size slider."
   },
-  "readerTranslateFailed": {
-    "message": "Falha na tradução: $error$",
-    "description": "Mensagem de falha na tradução no leitor.",
-    "placeholders": { "error": { "content": "$1" } }
+  "readerLabelLineHeight": {
+    "message": "Altura da linha",
+    "description": "Label for line height slider."
   },
-  "readerVoiceToolHeader": {
-    "message": "Resultado da Transcrição",
-    "description": "Cabeçalho da ferramenta de voz no leitor."
-  },
-  "readerVoiceToolLabel": {
-    "message": "Traduzir para:",
-    "description": "Rótulo da ferramenta de voz no leitor."
-  },
-  "readerVoiceToolButton": {
-    "message": "Iniciar Tradução",
-    "description": "Botão da ferramenta de voz no leitor."
+  "readerSaveButton": {
+    "message": "Salvar como .txt",
+    "description": "Save button text in reader."
   },
   "readerSaveOriginal": {
-    "message": "[Original $index$]",
-    "description": "Rótulo do texto original no arquivo salvo.",
+    "message": "[Parágrafo original $index$]",
+    "description": "Label for original text paragraph when saving.",
     "placeholders": { "index": { "content": "$1" } }
   },
   "readerSaveTranslated": {
-    "message": "[Tradução $index$]",
-    "description": "Rótulo do texto traduzido no arquivo salvo.",
+    "message": "[Parágrafo traduzido $index$]",
+    "description": "Label for translated text paragraph when saving.",
     "placeholders": { "index": { "content": "$1" } }
   },
+  "readerVoiceToolHeader": { "message": "Ferramenta de Texto para Fala (Em desenvolvimento)", "description": "Header for the text-to-speech tool in reader." },
+  "readerVoiceToolLabel": { "message": "Idioma da fala", "description": "Label for TTS language selection." },
+  "readerVoiceToolButton": { "message": "Ler tradução em voz alta", "description": "Button to trigger TTS." },
   "workbenchTitle": {
     "message": "Bancada de Tradução Inteligente",
-    "description": "Título da página da bancada."
+    "description": "Title for the workbench page."
   },
   "workbenchTabText": {
-    "message": "Colar Texto",
-    "description": "Rótulo da guia na bancada."
+    "message": "Colar texto",
+    "description": "Tab label for pasting text."
   },
   "workbenchTabImage": {
-    "message": "Carregar Captura de Tela",
-    "description": "Rótulo da guia na bancada."
+    "message": "Carregar imagem",
+    "description": "Tab label for uploading image."
   },
-  "workbenchTextHeader": {
-    "message": "Modo 2: Bancada de Colagem de Texto",
-    "description": "Cabeçalho na bancada."
-  },
-  "workbenchTextDesc": {
-    "message": "Adequado para texto selecionável de páginas da web, Word ou PDF. Copie e cole o texto abaixo para obter os resultados mais rápidos e precisos.",
-    "description": "Descrição na bancada."
-  },
-  "workbenchImageHeader": {
-    "message": "Modo 3: Carregamento de Captura de Tela da Área de Trabalho",
-    "description": "Cabeçalho na bancada."
-  },
-  "workbenchLabelSourceLang": {
-    "message": "Idioma de Origem",
-    "description": "Rótulo para seleção de idioma."
-  },
-  "workbenchLabelImageSourceLang": {
-    "message": "Idioma de Origem (na imagem)",
-    "description": "Rótulo para seleção de idioma."
-  },
-  "workbenchLabelTargetLang": {
-    "message": "Idioma de Saída de Destino",
-    "description": "Rótulo para seleção de idioma."
-  },
-  "workbenchTextPlaceholder": {
-    "message": "Cole o texto copiado aqui...",
-    "description": "Espaço reservado para entrada de texto."
-  },
-  "workbenchProcessTextButton": {
-    "message": "Processar Texto",
-    "description": "Texto do botão."
-  },
-  "workbenchUploadBox": {
-    "message": "Clique ou arraste o arquivo aqui",
-    "description": "Texto na caixa de carregamento."
-  },
-  "workbenchUploadBoxDesc": {
-    "message": "(Suporta JPG, PNG, BMP)",
-    "description": "Descrição na caixa de carregamento."
-  },
-  "workbenchProcessImageButton": {
-    "message": "Iniciar Reconhecimento",
-    "description": "Texto do botão."
-  },
-  "statusProcessing": {
-    "message": "Processando...",
-    "description": "Mensagem de status."
-  },
-  "statusPleasePaste": {
-    "message": "Cole o texto primeiro.",
-    "description": "Mensagem de status."
-  },
-  "statusSuccess": {
-    "message": "Sucesso! Abrindo modo de leitura...",
-    "description": "Mensagem de status."
-  },
-  "statusFailed": {
-    "message": "Falha no processamento: $error$",
-    "description": "Mensagem de status.",
-    "placeholders": { "error": { "content": "$1" } }
-  },
-  "statusUploading": {
-    "message": "Enviando para a IA para reconhecimento...",
-    "description": "Mensagem de status."
-  },
-  "statusUploadSuccess": {
-    "message": "Reconhecimento bem-sucedido! Abrindo modo de leitura...",
-    "description": "Mensagem de status."
-  },
-  "errorPleaseUploadImage": {
-    "message": "Erro: Carregue um arquivo de imagem.",
-    "description": "Mensagem de erro."
-  },
+  "workbenchTextHeader": { "message": "Tradução de texto", "description": "Header for text translation section." },
+  "workbenchTextDesc": { "message": "Cole o texto copiado abaixo para tradução.", "description": "Description for text translation." },
+  "workbenchImageHeader": { "message": "Tradução de imagem (OCR)", "description": "Header for image translation section." },
+  "workbenchImageDesc": { "message": "Carregue ou cole uma captura de tela. A IA reconhecerá e traduzirá automaticamente o texto na imagem.", "description": "Description for image translation." },
+  "workbenchLabelSourceLang": { "message": "Idioma de origem", "description": "Label for source language selector." },
+  "workbenchLabelTargetLang": { "message": "Idioma de destino", "description": "Label for target language selector." },
+  "workbenchProcessTextButton": { "message": "Traduzir texto", "description": "Button to process text." },
+  "workbenchProcessImageButton": { "message": "Reconhecer e traduzir imagem", "description": "Button to process image." },
+  "workbenchUploadBox": { "message": "Clique aqui para selecionar uma imagem ou cole uma captura de tela diretamente (Cmd+V / Ctrl+V)", "description": "Placeholder for image upload box." },
+  "workbenchUploadBoxDesc": { "message": "Suporta os formatos JPG, PNG, BMP", "description": "Subtitle for image upload box." },
+  "workbenchImageResultTitle": { "message": "Resultado da tradução da imagem", "description": "Title for the reader tab showing image OCR result." },
   "voiceTitle": {
-    "message": "Notas de Voz Anônimas",
-    "description": "Título da página de notas de voz."
+    "message": "Anônimo - Notas de Voz",
+    "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "Selecione seu idioma falado principal, clique para iniciar a gravação e converta rapidamente seus pensamentos em texto.<br>Devido aos limites de tamanho de upload do navegador, este recurso é recomendado para notas curtas de alguns minutos.",
-    "description": "Descrição na página de notas de voz."
+    "message": "Pressione 'Iniciar Gravação' ou carregue um arquivo de áudio. A IA transcreverá a fala em texto e tentará diferenciar os diferentes oradores.",
+    "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
-    "message": "Fonte de Áudio:",
-    "description": "Rótulo da fonte de áudio."
+    "message": "Fonte de áudio",
+    "description": "Label for audio source dropdown."
   },
   "voiceLabelSpokenLang": {
-    "message": "Idioma Falado Principal:",
-    "description": "Rótulo do idioma falado."
+    "message": "Idioma falado principal",
+    "description": "Label for spoken language dropdown."
   },
   "voiceButtonStart": {
     "message": "Iniciar Gravação",
-    "description": "Texto do botão."
+    "description": "Start recording button."
   },
   "voiceButtonStop": {
     "message": "Parar Gravação",
-    "description": "Texto do botão."
-  },
-  "voiceStatusNoMic": {
-    "message": "Nenhum dispositivo de microfone encontrado.",
-    "description": "Mensagem de status."
-  },
-  "voiceStatusNoMicPermission": {
-    "message": "Não foi possível obter permissão para o microfone. Permita que esta extensão use o microfone nas configurações do seu navegador.",
-    "description": "Mensagem de status."
-  },
-  "voiceStatusSelectSource": {
-    "message": "Selecione uma fonte de áudio.",
-    "description": "Mensagem de status."
+    "description": "Stop recording button."
   },
   "voiceStatusRecording": {
     "message": "Gravando...",
-    "description": "Mensagem de status."
+    "description": "Status message."
   },
-  "voiceStatusSending": {
-    "message": "Enviando para a IA para reconhecimento...",
-    "description": "Mensagem de status."
+  "voiceStatusTranscribing": {
+    "message": "Transcrevendo, por favor, aguarde...",
+    "description": "Status message."
   },
   "voiceStatusSuccess": {
-    "message": "Reconhecimento concluído, nova guia aberta.",
-    "description": "Mensagem de status."
+    "message": "Transcrição concluída! Abrindo a página de resultados...",
+    "description": "Status message."
   },
-  "voiceStatusCommError": {
-    "message": "Erro de comunicação: $error$",
-    "description": "Mensagem de status.",
+  "errorNoMic": {
+    "message": "Erro: Nenhum microfone disponível encontrado.",
+    "description": "Error message."
+  },
+  "errorMicPermission": {
+    "message": "Erro: Não foi possível obter permissão do microfone. Verifique as configurações do navegador. Detalhes: $error$",
+    "description": "Error message.",
     "placeholders": { "error": { "content": "$1" } }
   },
   "voiceStatusFailed": {
-    "message": "Falha no reconhecimento: $error$",
-    "description": "Mensagem de status.",
+    "message": "A transcrição falhou: $error$",
+    "description": "Status message.",
     "placeholders": { "error": { "content": "$1" } }
   },
   "langAutoDetect": {
-    "message": "Detecção Automática",
-    "description": "Opção de idioma para detecção automática."
+    "message": "Detecção automática",
+    "description": "Language option for auto-detection."
   },
   "langSystemDefault": {
-    "message": "Padrão do Sistema ($langName$)",
-    "description": "Opção de idioma para o padrão do sistema, com espaço reservado para o nome real do idioma.",
-    "placeholders": { "langName": { "content": "$1", "example": "Português" } }
+    "message": "Padrão do sistema ($langName$)",
+    "description": "Language option for system default, with placeholder for the actual language name.",
+    "placeholders": { "langName": { "content": "$1", "example": "English" } }
   },
   "langPrefA": {
     "message": "Preferido-A ($langName$)",
-    "description": "Opção de idioma para o idioma preferido A.",
+    "description": "Language option for preferred language A.",
     "placeholders": { "langName": { "content": "$1", "example": "Français" } }
   },
   "langPrefB": {
     "message": "Preferido-B ($langName$)",
-    "description": "Opção de idioma para o idioma preferido B.",
+    "description": "Language option for preferred language B.",
     "placeholders": { "langName": { "content": "$1", "example": "Español" } }
   },
   "voiceLangZhEn": {
-    "message": "Chinês (com inglês)",
-    "description": "Opção de idioma especial para entrada de voz."
+    "message": "Chinês (misto com inglês)",
+    "description": "Special language option for voice input."
   },
   "voiceMicLabel": {
     "message": "Microfone $index$",
-    "description": "Rótulo padrão para um microfone.",
-    "placeholders": { "index": { "content": "$1" } }
+    "description": "Default label for a microphone.",
+    "placeholders": { "index": { "content": "$1", "example": "1" } }
   },
-  "voiceErrorStartRecording": {
-    "message": "Falha ao iniciar a gravação: $error$",
-    "description": "Mensagem de erro quando a gravação falha ao iniciar.",
+  "incognitoFooter": {
+    "message": "Incognito AI Hub: Criado por Hugo Chen, um médico taiwanês, durante um dia de tufão no verão de 2025. A primeira versão foi nomeada 'Hong-Thai' em taiwanês. Se você achar útil, por favor, deixe uma avaliação positiva na Chrome Web Store. Se estiver disposto, sinta-se à vontade para me pagar uma bebida através do link Buy Me a Coffee à direita.",
+    "description": "Footer text."
+  },
+  "promptWebpageProcessing": {
+    "message": "You are a helpful assistant. The user has provided the HTML content and a screenshot of a webpage. Please analyze both to understand the main content of the page, ignoring ads, navigation bars, and footers. Then, provide a concise summary of the key points in a well-structured, easy-to-read format. Finally, translate the summary into $lang$. Here is the HTML content: ```html\n$pageContent$\n```",
+    "description": "Prompt for webpage processing in background.js.",
+    "placeholders": { "pageContent": { "content": "$1" }, "lang": { "content": "$2" } }
+  },
+  "promptTranslateTo": {
+    "message": "Please translate the text in the image into $lang$.",
+    "description": "Prompt for image translation, asking to translate to a specific language.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "promptSourceLangAuto": {
+    "message": "First, identify the language of the text in the image.",
+    "description": "Part of the prompt for auto-detecting source language."
+  },
+  "promptSourceLangIs": {
+    "message": "The language of the text in the image is $lang$.",
+    "description": "Part of the prompt specifying the source language.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "incognitoTitle": {
+    "message": "Bate-papo anônimo do Gemini",
+    "description": "Title for the incognito chat page."
+  },
+  "incognitoDefaultModelHeader": {
+    "message": "Modelo Padrão do Gemini",
+    "description": "Header for the default model tab."
+  },
+  "incognitoDefaultModelDesc": {
+    "message": "O modelo usado nesta guia depende da sua seleção em '⚙️ Configurações' (o padrão é 2.5 Flash). O menor modelo é adequado para tradução simples, organização de texto e manipulação de PDFs e imagens simples.",
+    "description": "Description for the default model tab."
+  },
+  "incognitoSendButton": {
+    "message": "Enviar",
+    "description": "Send button text."
+  },
+  "incognitoUploadTitle": {
+    "message": "Carregar imagens (máx. 4)",
+    "description": "Tooltip for the upload button."
+  },
+  "incognitoUploadPdfTitle": {
+    "message": "Carregar documento PDF (1)",
+    "description": "Tooltip for the PDF upload button."
+  },
+  "incognitoPresetTitleA": { "message": "Usar Predefinição A", "description": "Tooltip for preset button A." },
+  "incognitoPresetTitleB": { "message": "Usar Predefinição B", "description": "Tooltip for preset button B." },
+  "incognitoPresetTitleC": { "message": "Usar Predefinição C", "description": "Tooltip for preset button C." },
+  "incognitoPresetTitleD": { "message": "Usar Predefinição D", "description": "Tooltip for preset button D." },
+  "incognitoPresetTitleE": { "message": "Usar Predefinição E", "description": "Tooltip for preset button E." },
+  "stateThinking": {
+    "message": "Pensando...",
+    "description": "Thinking indicator text."
+  },
+  "incognitoApiError": {
+    "message": "Falha na solicitação da API",
+    "description": "Error message prefix for API failures."
+  },
+  "incognitoInitialMessage": {
+    "message": "Olá! Como posso ajudá-lo hoje?",
+    "description": "Initial greeting message from the assistant."
+  },
+  "incognitoClearConfirm": {
+    "message": "Tem certeza de que deseja limpar o histórico da conversa? Esta ação não pode ser desfeita.",
+    "description": "Confirmation message before clearing chat history."
+  },
+  "incognitoPlaceholder": {
+    "message": "Digite sua mensagem aqui (você pode carregar imagens ou um PDF)...",
+    "description": "Placeholder for the prompt input area."
+  },
+  "incognitoFlashModelHeader": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Header for the Flash model tab."
+  },
+  "incognitoFlashModelDesc": {
+    "message": "Modelo intermediário padrão do Google. Adequado para aplicações que exigem respostas rápidas e alto rendimento a um custo moderado. Também suporta entradas de imagem e PDF.",
+    "description": "Description for the Flash model tab."
+  },
+  "incognitoProModelHeader": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Header for the Pro model tab."
+  },
+  "incognitoProModelDesc": {
+    "message": "O modelo mais poderoso do Google, com uma enorme janela de contexto de 1 milhão de tokens. Ele se destaca em raciocínio complexo, codificação e compreensão multimodal. Custo mais alto, ideal para processar PDFs e imagens complexas.",
+    "description": "Description for the Pro model tab."
+  },
+  "statusUploading": {
+    "message": "Carregando e processando...",
+    "description": "Status for file upload."
+  },
+  "statusFailed": {
+    "message": "O processamento falhou: $error$",
+    "description": "Generic failure status.",
     "placeholders": { "error": { "content": "$1" } }
   },
-  "errorUnknown": {
-    "message": "Ocorreu um erro desconhecido.",
-    "description": "Uma mensagem de erro genérica."
+  "statusUploadSuccess": {
+    "message": "Sucesso! Abrindo resultados...",
+    "description": "Success status for file upload."
+  },
+  "voiceOrDivider": {
+    "message": "OU",
+    "description": "The 'OR' divider between record and upload buttons."
+  },
+  "voiceButtonUpload": {
+    "message": "Carregar arquivo de áudio",
+    "description": "The new button to upload an audio file."
+  },
+  "voiceButtonSubmit": {
+    "message": "Transcrever arquivo",
+    "description": "The text on the record button when a file is ready to be submitted."
+  },
+  "errorInvalidFileType": {
+    "message": "Erro: Tipo de arquivo inválido. Por favor, selecione um arquivo de áudio.",
+    "description": "Error when a non-audio file is selected."
+  },
+  "errorFileRead": {
+    "message": "Erro: Houve um problema ao ler o arquivo.",
+    "description": "Error when the FileReader API fails."
+  },
+  "promptVoiceTranscribeDiarize": {
+    "message": "Please transcribe the following audio. The primary language spoken is $lang$. Pay close attention to pauses and changes in tone or speech patterns to identify and label different speakers (e.g., Speaker 1, Speaker 2). Provide the output as a clear, readable transcript.",
+    "description": "Prompt for voice transcription with speaker diarization.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "voiceResultTitle": {
+    "message": "Resultado da transcrição de voz",
+    "description": "Title for the reader tab showing voice transcription result."
   }
 }

@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     async function callGeminiForTranslation(textToTranslate, targetLanguage) {
         const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
             geminiApiKey: '',
-            translationModel: 'gemini-2.0-flash'
+            translationModel: 'gemini-2.0-flash' // <-- 修改為指定的備用模型
         });
         if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
         
