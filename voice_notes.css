@@ -3,9 +3,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 10px; /* Reduced gap slightly to keep limit text close */
     margin: 30px 0;
 }
+
 #record-btn {
     width: 120px;
     height: 120px;
@@ -20,25 +21,57 @@
     justify-content: center;
     align-items: center;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(52, 199, 89, 0.3);
 }
+
 #record-btn:hover {
     background-color: #30b150;
+    transform: scale(1.05);
 }
+
 #record-btn.recording {
     background-color: #ff3b30;
     animation: pulse 1.5s infinite;
+    box-shadow: 0 4px 10px rgba(255, 59, 48, 0.3);
 }
+
 #record-btn.recording:hover {
     background-color: #e03024;
 }
+
 #timer {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 500;
-    color: #1d1d1f;
+    color: var(--text-primary);
     font-family: 'SF Mono', 'Courier New', Courier, monospace;
+    margin: 5px 0 0 0;
 }
+
+/* 接近時間上限時的警告顏色 */
+#timer.limit-warning {
+    color: #e03024; /* Red */
+    font-weight: bold;
+}
+
+/* 新增：錄音上限提示文字 */
+.limit-hint {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+    opacity: 0.8;
+}
+
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(255, 59, 48, 0); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 59, 48, 0); }
     100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
 }
+
+#status-text {
+    margin-top: 20px;
+    text-align: center;
+    min-height: 24px;
+    font-weight: 500;
+}
+.status-success { color: #34c759; }
+.status-error { color: #ff3b30; }
