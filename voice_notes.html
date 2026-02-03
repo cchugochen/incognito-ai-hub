@@ -5,7 +5,7 @@
     <title>__MSG_voiceTitle__</title>
     <!-- 載入新的共用主題與版面樣式 -->
     <link rel="stylesheet" href="styles/theme.css">
-    <link rel="stylesheet" href="styles/page_layout.css"> <!-- 新的共用版面樣式 -->
+    <link rel="stylesheet" href="styles/page_layout.css">
     <link rel="stylesheet" href="voice_notes.css">
 </head>
 <body>
@@ -27,6 +27,8 @@
         <div class="voice-controls">
             <button id="record-btn" data-i18n="voiceButtonStart"></button>
             <p id="timer">00:00</p>
+            <!-- 新增錄音時間上限提示 -->
+            <p class="limit-hint" data-i18n="voiceLimitHint"></p>
         </div>
 
         <div id="status-text"></div>
@@ -37,7 +39,6 @@
         </footer>
     </div>
     <script src="i18n.js"></script>
-    <!-- 類型改為 module 以使用 import -->
     <script type="module" src="voice_notes.js"></script>
 </body>
 </html>

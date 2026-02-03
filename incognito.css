@@ -1,4 +1,4 @@
-/* --- incognito.css (v26.2 Final) --- */
+/* --- incognito.css (v26.3 Final) --- */
 
 body {
     display: flex;
@@ -68,6 +68,7 @@ h2 {
     color: var(--color-primary);
     border-bottom-color: var(--color-primary);
 }
+/* Updated for new tab IDs */
 .tab-link[data-tab="flash"].active { color: #b45309; border-bottom-color: #b45309; }
 .tab-link[data-tab="pro"].active { color: #334155; border-bottom-color: #334155; }
 
@@ -95,9 +96,7 @@ h2 {
     gap: 12px;
     background-color: var(--bg-main);
 }
-#default .chat-window {
-    border-color: var(--text-secondary);
-}
+/* Removed #default styling as it's no longer used */
 #flash .chat-window { background-color: #fffbeb; }
 #pro .chat-window { background-color: #f1f5f9; }
 

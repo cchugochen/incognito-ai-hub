@@ -1,14 +1,11 @@
 /**
- * language_manager.js (v25.2 - Finalized)
+ * language_manager.js (v26.3)
  * - Manages the list of supported languages for the extension's UI and features.
- * - Provides functions to determine the effective language based on user settings and browser defaults.
- * - Provides a flexible function to populate language <select> elements with various options including preferred languages.
+ * - Removed Hindi (hi) and Arabic (ar).
  */
 
 export const supportedLanguages = [
-    { code: 'ar', name: 'Arabic', nativeName: 'العربية' },
     { code: 'en', name: 'English', nativeName: 'English' },
-    { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी' },
     { code: 'ja', name: 'Japanese', nativeName: '日本語' },
     { code: 'ko', name: 'Korean', nativeName: '한국어' },
     { code: 'pt', name: 'Portuguese', nativeName: 'Português' },
@@ -19,7 +16,6 @@ export const supportedLanguages = [
     { code: 'zh-TW', name: 'Traditional Chinese', nativeName: '台灣-繁體中文' }
 ];
 
-// language_manager.js (After - v26)
 export async function getEffectiveUILanguageCode() {
     try {
         const { displayLanguage } = await chrome.storage.sync.get({ displayLanguage: 'default' });
@@ -35,7 +31,7 @@ export async function getEffectiveUILanguageCode() {
             return 'zh-TW';
         }
 
-        // 規則 (2): 檢查系統語言是否在支援的 11 種語言列表中
+        // 規則 (2): 檢查系統語言是否在支援的列表 (排除已移除的語言)
         const langCode = uiLang.split('-')[0];
         const isSupported = supportedLanguages.some(l => l.code === langCode);
         if (isSupported) {

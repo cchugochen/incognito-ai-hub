@@ -1,14 +1,15 @@
 /**
- * background.js (v26.1 - Model Update)
+ * background.js (v26.3 - 2.5 Flash Default & Cleanup)
  */
 
 const protocolVersion = "1.3";
 let attachedTabs = {};
 
 // --- Language Logic (for Service Worker context) ---
+// Removed Arabic (ar) and Hindi (hi)
 const supportedLanguagesForBg = [
-    { code: 'ar', name: 'Arabic' }, { code: 'en', name: 'English' },
-    { code: 'hi', name: 'Hindi' }, { code: 'ja', name: 'Japanese' },
+    { code: 'en', name: 'English' },
+    { code: 'ja', name: 'Japanese' },
     { code: 'ko', name: 'Korean' }, { code: 'pt', name: 'Portuguese' },
     { code: 'ru', name: 'Russian' }, { code: 'tr', name: 'Turkish' },
     { code: 'uk', name: 'Ukrainian' }, { code: 'vi', name: 'Vietnamese' },
@@ -181,7 +182,7 @@ async function openReader(payload) {
 async function callGeminiVision(base64ImageData, sourceLang = 'auto') {
     const { geminiApiKey, translationModel } = await chrome.storage.sync.get({ 
         geminiApiKey: '', 
-        translationModel: 'gemini-2.5-flash-lite' // UPDATED DEFAULT
+        translationModel: 'gemini-2.5-flash' // UPDATED DEFAULT to 2.5 Flash
     });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
@@ -209,7 +210,7 @@ Here are the key guidelines for your output:
 async function callGeminiSpeechToText(audioData, spokenLang) {
     const { geminiApiKey, translationModel } = await chrome.storage.sync.get({ 
         geminiApiKey: '', 
-        translationModel: 'gemini-2.5-flash-lite' // UPDATED DEFAULT
+        translationModel: 'gemini-2.5-flash' // UPDATED DEFAULT to 2.5 Flash
     });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 

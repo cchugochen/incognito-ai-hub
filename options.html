@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>__MSG_optionsTitle__</title>
     <link rel="stylesheet" href="styles/theme.css">
-    <link rel="stylesheet" href="styles/options.css"> <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/options.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container options-container">
@@ -48,25 +49,15 @@
             <h2 class="section-header" data-i18n="optionsModelSectionHeader"></h2>
             <p class="description" data-i18n="optionsModelDesc"></p>
             <div class="space-y-4">
+                <!-- Updated: Removed Lite models. Added 2.5 Flash as default. -->
                 <div>
-                    <input type="radio" name="model-select" id="gemini-2.5-flash-lite" value="gemini-2.5-flash-lite" class="sr-only" checked>
-                    <label for="gemini-2.5-flash-lite" class="model-card">
+                    <input type="radio" name="model-select" id="gemini-2.5-flash" value="gemini-2.5-flash" class="sr-only" checked>
+                    <label for="gemini-2.5-flash" class="model-card">
                          <div class="model-card-header">
-                            <span class="model-name" data-i18n="optionsModel2Name"></span>
+                            <span class="model-name" data-i18n="optionsModelFlashName"></span>
                         </div>
-                        <p class="model-id">gemini-2.5-flash-lite</p>
-                        <div class="model-desc" data-i18n="optionsModel2Desc"></div>
-                    </label>
-                </div>
-                <div>
-                    <input type="radio" name="model-select" id="gemini-2.0-flash" value="gemini-2.0-flash" class="sr-only">
-                    <label for="gemini-2.0-flash" class="model-card">
-                        <div class="model-card-header">
-                            <span class="model-name" data-i18n="optionsModel1Name"></span>
-                            <span class="model-tag" data-i18n="optionsModel1Tag"></span>
-                        </div>
-                        <p class="model-id">gemini-2.0-flash-001</p>
-                        <div class="model-desc" data-i18n="optionsModel1Desc"></div>
+                        <p class="model-id">gemini-2.5-flash</p>
+                        <div class="model-desc" data-i18n="optionsModelFlashDesc"></div>
                     </label>
                 </div>
             </div>
@@ -97,6 +88,15 @@
                  <div>
                     <label for="preset-prompt-e" class="label" data-i18n="optionsPresetLabelE"></label>
                     <textarea id="preset-prompt-e" rows="2" class="text-input"></textarea>
+                </div>
+                <!-- Added Preset F and G -->
+                 <div>
+                    <label for="preset-prompt-f" class="label" data-i18n="optionsPresetLabelF"></label>
+                    <textarea id="preset-prompt-f" rows="2" class="text-input"></textarea>
+                </div>
+                 <div>
+                    <label for="preset-prompt-g" class="label" data-i18n="optionsPresetLabelG"></label>
+                    <textarea id="preset-prompt-g" rows="2" class="text-input"></textarea>
                 </div>
             </div>
         </section>
