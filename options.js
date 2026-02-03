@@ -1,4 +1,4 @@
-// options.js (v26.3 - Model Update & Presets A-G)
+// options.js (v26.1 - Model Update)
 import { populateLanguageSelector } from './scripts/language_manager.js';
 
 /**
@@ -25,10 +25,7 @@ function save_options() {
         preset_b: document.getElementById('preset-prompt-b').value,
         preset_c: document.getElementById('preset-prompt-c').value,
         preset_d: document.getElementById('preset-prompt-d').value,
-        preset_e: document.getElementById('preset-prompt-e').value,
-        // Added presets F and G
-        preset_f: document.getElementById('preset-prompt-f').value,
-        preset_g: document.getElementById('preset-prompt-g').value
+        preset_e: document.getElementById('preset-prompt-e').value
     }, () => {
         const status = document.getElementById('status');
         status.textContent = chrome.i18n.getMessage('optionsStatusSaved');
@@ -44,7 +41,7 @@ function restore_options() {
     chrome.storage.sync.get({
         displayLanguage: 'default',
         geminiApiKey: '',
-        translationModel: 'gemini-2.5-flash', // UPDATED DEFAULT to 2.5 Flash
+        translationModel: 'gemini-2.5-flash-lite', // UPDATED DEFAULT
         logEndpoint: '',
         logKey: '',
         prefLangA: '',
@@ -53,9 +50,7 @@ function restore_options() {
         preset_b: '',
         preset_c: '',
         preset_d: '',
-        preset_e: '',
-        preset_f: '',
-        preset_g: ''
+        preset_e: ''
     }, (items) => {
         document.getElementById('display-language').value = items.displayLanguage;
         document.getElementById('api-key').value = items.geminiApiKey;
@@ -70,16 +65,13 @@ function restore_options() {
         document.getElementById('preset-prompt-c').value = items.preset_c;
         document.getElementById('preset-prompt-d').value = items.preset_d;
         document.getElementById('preset-prompt-e').value = items.preset_e;
-        document.getElementById('preset-prompt-f').value = items.preset_f;
-        document.getElementById('preset-prompt-g').value = items.preset_g;
 
         const savedModelRadio = document.querySelector(`input[name="model-select"][value="${items.translationModel}"]`);
         if (savedModelRadio) {
             savedModelRadio.checked = true;
         } else {
             // Fallback to the first radio button if saved model is not found
-            const firstRadio = document.querySelector('input[name="model-select"]');
-            if(firstRadio) firstRadio.checked = true;
+            document.querySelector('input[name="model-select"]').checked = true;
         }
     });
 }

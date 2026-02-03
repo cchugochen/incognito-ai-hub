@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "A simple incognito Gemini chat interface and a free toolkit for translating web pages, text, screenshots, and using voice AI input.",
+    "message": "(1) A simple incognito Gemini chat interface and a free toolkit for translating web pages, text, screenshots, and using voice AI input with Gemini. (2) Users must obtain their own Google Gemini API key.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {

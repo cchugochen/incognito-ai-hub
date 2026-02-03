@@ -11,12 +11,46 @@
 <body>
     <div class="container">
         <div class="tabs">
-            <!-- Removed Lite/Default tab. Flash is now default. -->
-            <button class="tab-link active" data-tab="flash">2.5 Flash</button>
+            <button class="tab-link active" data-tab="default">Lite</button>
+            <button class="tab-link" data-tab="flash">2.5 Flash</button>
             <button class="tab-link" data-tab="pro">2.5 Pro</button>
         </div>
 
-        <div id="flash" class="tab-content active">
+        <div id="default" class="tab-content active">
+            <header class="header">
+                <h2 data-i18n="incognitoDefaultModelHeader"></h2>
+                <p class="description" data-i18n="incognitoDefaultModelDesc"></p>
+            </header>
+            <main id="chat-window-default" class="chat-window"></main>
+            <div class="input-area">
+                <div id="image-preview-container-default" class="image-preview-container"></div>
+                <textarea id="prompt-default" class="prompt-input" data-i18n-placeholder="incognitoPlaceholder"></textarea>
+                <div class="controls">
+                    <div class="upload-buttons">
+                        <button id="upload-pdf-btn-default" class="upload-btn pdf-btn" data-i18n-title="incognitoUploadPdfTitle">PDF</button>
+                        <input type="file" id="pdf-file-input-default" accept="application/pdf" hidden>
+
+                        <button id="upload-img-btn-default" class="upload-btn" data-i18n-title="incognitoUploadTitle">IMG</button>
+                        <input type="file" id="image-file-input-default" accept="image/*" multiple hidden>
+                    </div>
+
+                    <div class="preset-controls">
+                        <span class="preset-label">提示語:</span>
+                        <div id="preset-buttons-container-default" class="preset-buttons">
+                            <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
+                            <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
+                            <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
+                            <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
+                            <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
+                        </div>
+                    </div>
+                    
+                    <button id="send-btn-default" class="submit-btn" data-i18n="incognitoSendButton"></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="flash" class="tab-content">
             <header class="header">
                 <h2 data-i18n="incognitoFlashModelHeader"></h2>
                 <p class="description" data-i18n="incognitoFlashModelDesc"></p>
@@ -42,9 +76,6 @@
                             <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
                             <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
                             <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
-                            <!-- Added F, G -->
-                            <button class="preset-btn" data-preset="F" data-i18n-title="incognitoPresetTitleF">F</button>
-                            <button class="preset-btn" data-preset="G" data-i18n-title="incognitoPresetTitleG">G</button>
                         </div>
                     </div>
                     
@@ -79,9 +110,6 @@
                             <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
                             <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
                             <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
-                            <!-- Added F, G -->
-                            <button class="preset-btn" data-preset="F" data-i18n-title="incognitoPresetTitleF">F</button>
-                            <button class="preset-btn" data-preset="G" data-i18n-title="incognitoPresetTitleG">G</button>
                         </div>
                     </div>
                     
