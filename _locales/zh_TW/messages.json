@@ -104,7 +104,7 @@
     "description": "Section header for preset prompts."
   },
   "optionsPresetDesc": {
-    "message": "為「無痕Gemini對話」頁面的 A-G 按鈕設定常用的開頭指令 (System Prompt)。",
+    "message": "為「無痕Gemini對話」頁面的 A/B/C/D/E 按鈕設定常用的開頭指令 (System Prompt)。",
     "description": "Description for preset prompts."
   },
   "optionsPresetLabelA": { "message": "預設指令 A", "description": "Label for preset A." },
@@ -112,8 +112,6 @@
   "optionsPresetLabelC": { "message": "預設指令 C", "description": "Label for preset C." },
   "optionsPresetLabelD": { "message": "預設指令 D", "description": "Label for preset D." },
   "optionsPresetLabelE": { "message": "預設指令 E", "description": "Label for preset E." },
-  "optionsPresetLabelF": { "message": "預設指令 F", "description": "Label for preset F." },
-  "optionsPresetLabelG": { "message": "預設指令 G", "description": "Label for preset G." },
   "optionsLogSectionHeader": {
     "message": "（選用）雲端日誌",
     "description": "Section header for optional logging."
@@ -353,8 +351,6 @@
   "incognitoPresetTitleC": { "message": "使用預設指令 C", "description": "Tooltip for preset button C." },
   "incognitoPresetTitleD": { "message": "使用預設指令 D", "description": "Tooltip for preset button D." },
   "incognitoPresetTitleE": { "message": "使用預設指令 E", "description": "Tooltip for preset button E." },
-  "incognitoPresetTitleF": { "message": "使用預設指令 F", "description": "Tooltip for preset button F." },
-  "incognitoPresetTitleG": { "message": "使用預設指令 G", "description": "Tooltip for preset button G." },
   "stateThinking": {
     "message": "思考中...",
     "description": "Thinking indicator text."

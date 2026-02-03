@@ -1,4 +1,4 @@
-// incognito.js (v26.3 - 2.5 Flash Default & Presets A-G)
+// incognito.js (v26.2 - Base64 Inline PDF & UI Refactor)
 document.addEventListener('DOMContentLoaded', () => {
     document.title = chrome.i18n.getMessage('incognitoTitle');
 
@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const presetKey = `preset_${button.dataset.preset.toLowerCase()}`;
                     const textToInsert = presetPrompts[presetKey];
                     if (textToInsert) {
+                        // Logic to insert preset text... (remains unchanged)
                         const start = this.promptInput.selectionStart;
                         const end = this.promptInput.selectionEnd;
                         const originalText = this.promptInput.value;
@@ -198,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         async callApi() {
+            // This function remains largely the same as before
             if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
             
             const apiUrl = this.modelName.startsWith('models/')
@@ -224,6 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         displayMessage(text, role, images = [], isError = false) {
+             // This function remains the same as before
             const msgDiv = document.createElement('div');
             msgDiv.className = `msg ${role}`;
             if (isError) msgDiv.style.color = '#c0392b';
@@ -247,13 +250,14 @@ document.addEventListener('DOMContentLoaded', () => {
         setLoading(isLoading) {
             this.sendBtn.disabled = isLoading;
             this.promptInput.disabled = isLoading;
-            this.uploadPdfBtn.disabled = isLoading;
-            this.uploadImgBtn.disabled = isLoading;
+            this.uploadPdfBtn.disabled = isLoading; // [New]
+            this.uploadImgBtn.disabled = isLoading; // [New]
             this.presetButtons.forEach(btn => btn.disabled = isLoading);
             this.sendBtn.textContent = isLoading ? chrome.i18n.getMessage("stateThinking") : chrome.i18n.getMessage("incognitoSendButton");
         }
 
         checkTurnLimit() {
+            // This function remains the same as before
             const userMessages = this.history.filter(m => m.role === 'user').length;
             if (userMessages >= MAX_ROUNDS) {
                 this.setLoading(true);
@@ -262,14 +266,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Main Initialization ---
+    // --- Main Initialization --- (Unchanged)
     const init = async () => {
         try {
             const items = await chrome.storage.sync.get({ 
                 geminiApiKey: '',
-                // No translationModel needed here as tabs are hardcoded
-                preset_a: '', preset_b: '', preset_c: '', preset_d: '', preset_e: '',
-                preset_f: '', preset_g: '' // Added F, G
+                translationModel: 'gemini-2.5-flash-lite', // Defaulting to a capable model
+                preset_a: '', preset_b: '', preset_c: '', preset_d: '', preset_e: ''
             });
             
             if (!items.geminiApiKey) {
@@ -281,11 +284,10 @@ document.addEventListener('DOMContentLoaded', () => {
             presetPrompts = {
                 preset_a: items.preset_a, preset_b: items.preset_b,
                 preset_c: items.preset_c, preset_d: items.preset_d,
-                preset_e: items.preset_e, preset_f: items.preset_f, preset_g: items.preset_g
+                preset_e: items.preset_e
             };
 
-            // Initialize Flash (Default) and Pro instances
-            // Removed 'default' instance
+            new ChatInstance('default', items.translationModel);
             new ChatInstance('flash', 'gemini-2.5-flash');
             new ChatInstance('pro', 'gemini-2.5-pro');
             

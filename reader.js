@@ -1,4 +1,4 @@
-// reader.js (v26.3 - 2.5 Flash Default)
+// reader.js (v25.1 - Dynamic Target Language)
 import { populateLanguageSelector, getEffectiveUILanguageCode, supportedLanguages } from './scripts/language_manager.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     async function callGeminiForTranslation(textToTranslate, targetLanguage) {
         const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
             geminiApiKey: '',
-            translationModel: 'gemini-2.5-flash' // UPDATED DEFAULT
+            translationModel: 'gemini-2.0-flash' // <-- 修改為指定的備用模型
         });
         if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
         

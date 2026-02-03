@@ -1,0 +1,431 @@
+{
+  "appName": {
+    "message": "Incognito AI Hub by Gemini",
+    "description": "The name of the extension."
+  },
+  "appDesc": {
+    "message": "(1) एक सरल गुप्त Gemini चैट इंटरफ़ेस और वेब पेजों, टेक्स्ट, स्क्रीनशॉट का अनुवाद करने और Gemini के साथ वॉयस AI इनपुट का उपयोग करने के लिए एक मुफ्त टूलकिट। (2) उपयोगकर्ताओं को अपना Google Gemini API कुंजी स्वयं प्राप्त करना होगा।",
+    "description": "The description of the extension in the manifest."
+  },
+  "popupTranslatePage": {
+    "message": "वर्तमान पृष्ठ का अनुवाद करें (यदि Google अनुवाद विफल रहता है)",
+    "description": "Button text in popup.html"
+  },
+  "popupOpenWorkbench": {
+    "message": "स्मार्ट ट्रांसलेशन वर्कबेंच खोलें",
+    "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
+  },
+  "popupOpenVoiceNotes": {
+    "message": "गुप्त - वॉयस नोट्स",
+    "description": "Button text in popup.html"
+  },
+  "popupOpenIncognito": {
+    "message": "गुप्त Gemini चैट",
+    "description": "Button text in popup.html"
+  },
+  "popupOpenTutorial": {
+    "message": "Gemini API कुंजी के लिए सरल ट्यूटोरियल",
+    "description": "Button text in popup.html"
+  },
+  "popupShowLicense": {
+    "message": "एमआईटी लाइसेंस जानकारी",
+    "description": "Button text in popup.html"
+  },
+  "optionsTitle": {
+    "message": "Incognito AI Hub सेटिंग्स",
+    "description": "Title for the options page."
+  },
+  "optionsHeader": {
+    "message": "⚙️ सेटिंग्स",
+    "description": "Header text on the options page."
+  },
+  "optionsDisplayLangSectionHeader": {
+    "message": "प्रदर्शन भाषा",
+    "description": "Section header on options page."
+  },
+  "optionsDisplayLangLabel": {
+    "message": "एक्सटेंशन इंटरफ़ेस भाषा",
+    "description": "Label for language selection on options page."
+  },
+  "optionsDisplayLangDefault": {
+    "message": "डिफ़ॉल्ट (ब्राउज़र का पालन करें)",
+    "description": "Default option for language selection."
+  },
+  "optionsPrefLangSectionHeader": {
+    "message": "पसंदीदा भाषाएँ",
+    "description": "Section header for preferred languages."
+  },
+  "optionsPrefLangDesc": {
+    "message": "अपनी दो सबसे अधिक उपयोग की जाने वाली लक्ष्य भाषाएँ सेट करें। वे विभिन्न अनुवाद सुविधाओं के त्वरित चयन मेनू में दिखाई देंगी।",
+    "description": "Description for preferred languages setting."
+  },
+  "optionsPrefLangLabelA": {
+    "message": "पसंदीदा भाषा A",
+    "description": "Label for preferred language A."
+  },
+  "optionsPrefLangLabelB": {
+    "message": "पसंदीदा भाषा B",
+    "description": "Label for preferred language B."
+  },
+  "optionsApiKeySectionHeader": {
+    "message": "API कुंजी और मॉडल",
+    "description": "Section header for API key settings."
+  },
+  "optionsApiKeyLabel": {
+    "message": "आपकी Google Gemini API कुंजी",
+    "description": "Label for API key input field."
+  },
+  "optionsApiKeyPlaceholder": {
+    "message": "अपनी API कुंजी यहाँ पेस्ट करें",
+    "description": "Placeholder text for API key input."
+  },
+  "optionsModelSelectLabel": {
+    "message": "वेबपेज/छवि अनुवाद के लिए डिफ़ॉल्ट मॉडल",
+    "description": "Label for the model selection radio buttons."
+  },
+  "optionsModelFlashName": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Name of the Flash model."
+  },
+  "optionsModelFlashDesc": {
+    "message": "सबसे तेज़ और सबसे अधिक लागत प्रभावी, त्वरित, उच्च-मात्रा वाले अनुवाद और सारांश कार्यों के लिए उपयुक्त।",
+    "description": "Description of the Flash model."
+  },
+  "optionsModelProName": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Name of the Pro model."
+  },
+  "optionsModelProDesc": {
+    "message": "सबसे शक्तिशाली, जटिल संदर्भों और छवियों को समझने के लिए उच्च सटीकता के साथ, लेकिन उच्च लागत पर।",
+    "description": "Description of the Pro model."
+  },
+  "optionsPresetSectionHeader": {
+    "message": "गुप्त चैट - प्रॉम्प्ट प्रीसेट",
+    "description": "Section header for preset prompts."
+  },
+  "optionsPresetDesc": {
+    "message": "'गुप्त Gemini चैट' पृष्ठ पर A/B/C/D/E बटनों के लिए अक्सर उपयोग किए जाने वाले शुरुआती निर्देश (सिस्टम प्रॉम्प्ट) सेट करें।",
+    "description": "Description for preset prompts."
+  },
+  "optionsPresetLabelA": { "message": "प्रीसेट A", "description": "Label for preset A." },
+  "optionsPresetLabelB": { "message": "प्रीसेट B", "description": "Label for preset B." },
+  "optionsPresetLabelC": { "message": "प्रीसेट C", "description": "Label for preset C." },
+  "optionsPresetLabelD": { "message": "प्रीसेट D", "description": "Label for preset D." },
+  "optionsPresetLabelE": { "message": "प्रीसेट E", "description": "Label for preset E." },
+  "optionsLogSectionHeader": {
+    "message": "(वैकल्पिक) क्लाउड लॉगिंग",
+    "description": "Section header for optional logging."
+  },
+  "optionsLogDesc": {
+    "message": "यदि आपको अपनी स्वयं की बैकएंड सेवा में परिचालन लॉग (जैसे, टोकन उपयोग) भेजने की आवश्यकता है, तो यहां एंडपॉइंट URL और कुंजी दर्ज करें। यदि खाली छोड़ दिया जाता है तो यह सुविधा पूरी तरह से अक्षम है।",
+    "description": "Description for optional logging."
+  },
+  "optionsLogEndpointLabel": {
+    "message": "आपका लॉग एंडपॉइंट URL",
+    "description": "Label for log endpoint input."
+  },
+  "optionsLogKeyLabel": {
+    "message": "आपकी लॉग API कुंजी",
+    "description": "Label for log key input."
+  },
+  "optionsSaveButton": {
+    "message": "सेटिंग्स सहेजें",
+    "description": "Save button text."
+  },
+  "optionsStatusSaved": {
+    "message": "सेटिंग्स सहेज ली गई हैं!",
+    "description": "Status message when settings are saved."
+  },
+  "alertNoApiKey": {
+    "message": "त्रुटि: Gemini API कुंजी नहीं मिली। कृपया पहले सेटिंग्स पृष्ठ में अपनी कुंजी दर्ज करें।",
+    "description": "Alert message when API key is missing."
+  },
+  "alertNoApiKeyOptions": {
+    "message": "कृपया नीचे 'API कुंजी और मॉडल' अनुभाग में अपनी Google Gemini API कुंजी पेस्ट करें।",
+    "description": "Alert message shown on the options page if API key is missing."
+  },
+  "alertInitFailed": {
+    "message": "प्रारंभ विफल रहा। कृपया त्रुटि संदेशों के लिए कंसोल देखें।",
+    "description": "Alert on initialization failure."
+  },
+  "errorNetwork": {
+    "message": "नेटवर्क त्रुटि या Gemini API से कनेक्ट करने में असमर्थ। कृपया अपने इंटरनेट कनेक्शन और फ़ायरवॉल सेटिंग्स की जाँच करें।",
+    "description": "Error message for network issues."
+  },
+  "errorApiInvalidResponse": {
+    "message": "अमान्य API प्रतिक्रिया प्रारूप। हो सकता है कि मॉडल ने मान्य सामग्री वापस नहीं की हो।",
+    "description": "Error when API response is malformed."
+  },
+  "errorUnknown": {
+    "message": "एक अज्ञात त्रुटि हुई।",
+    "description": "Generic error message."
+  },
+  "readerTitle": {
+    "message": "रीडर मोड - Incognito AI Hub",
+    "description": "Title for the reader page."
+  },
+  "readerLoading": {
+    "message": "AI संसाधित कर रहा है, कृपया प्रतीक्षा करें...",
+    "description": "Loading message in reader."
+  },
+  "readerLabelTargetLang": {
+    "message": "इसमें अनुवाद करें",
+    "description": "Label for target language selector in reader."
+  },
+  "readerLabelFontSize": {
+    "message": "फ़ॉन्ट आकार",
+    "description": "Label for font size slider."
+  },
+  "readerLabelLineHeight": {
+    "message": "पंक्ति की ऊंचाई",
+    "description": "Label for line height slider."
+  },
+  "readerSaveButton": {
+    "message": ".txt के रूप में सहेजें",
+    "description": "Save button text in reader."
+  },
+  "readerSaveOriginal": {
+    "message": "[मूल पैराग्राफ $index$]",
+    "description": "Label for original text paragraph when saving.",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "readerSaveTranslated": {
+    "message": "[अनुवादित पैराग्राफ $index$]",
+    "description": "Label for translated text paragraph when saving.",
+    "placeholders": { "index": { "content": "$1" } }
+  },
+  "readerVoiceToolHeader": { "message": "टेक्स्ट-टू-स्पीच टूल (विकास में)", "description": "Header for the text-to-speech tool in reader." },
+  "readerVoiceToolLabel": { "message": "भाषण भाषा", "description": "Label for TTS language selection." },
+  "readerVoiceToolButton": { "message": "अनुवाद को जोर से पढ़ें", "description": "Button to trigger TTS." },
+  "workbenchTitle": {
+    "message": "स्मार्ट ट्रांसलेशन वर्कबेंच",
+    "description": "Title for the workbench page."
+  },
+  "workbenchTabText": {
+    "message": "टेक्स्ट पेस्ट करें",
+    "description": "Tab label for pasting text."
+  },
+  "workbenchTabImage": {
+    "message": "छवि अपलोड करें",
+    "description": "Tab label for uploading image."
+  },
+  "workbenchTextHeader": { "message": "टेक्स्ट अनुवाद", "description": "Header for text translation section." },
+  "workbenchTextDesc": { "message": "अनुवाद के लिए कॉपी किए गए टेक्स्ट को नीचे पेस्ट करें।", "description": "Description for text translation." },
+  "workbenchImageHeader": { "message": "छवि अनुवाद (ओसीआर)", "description": "Header for image translation section." },
+  "workbenchImageDesc": { "message": "एक स्क्रीनशॉट अपलोड या पेस्ट करें। AI छवि के भीतर टेक्स्ट को स्वचालित रूप से पहचान और अनुवाद करेगा।", "description": "Description for image translation." },
+  "workbenchLabelSourceLang": { "message": "स्रोत भाषा", "description": "Label for source language selector." },
+  "workbenchLabelTargetLang": { "message": "लक्ष्य भाषा", "description": "Label for target language selector." },
+  "workbenchProcessTextButton": { "message": "टेक्स्ट का अनुवाद करें", "description": "Button to process text." },
+  "workbenchProcessImageButton": { "message": "छवि को पहचानें और अनुवाद करें", "description": "Button to process image." },
+  "workbenchUploadBox": { "message": "एक छवि का चयन करने के लिए यहां क्लिक करें, या सीधे एक स्क्रीनशॉट पेस्ट करें (Cmd+V / Ctrl+V)", "description": "Placeholder for image upload box." },
+  "workbenchUploadBoxDesc": { "message": "JPG, PNG, BMP प्रारूपों का समर्थन करता है", "description": "Subtitle for image upload box." },
+  "workbenchImageResultTitle": { "message": "छवि अनुवाद परिणाम", "description": "Title for the reader tab showing image OCR result." },
+  "voiceTitle": {
+    "message": "गुप्त - वॉयस नोट्स",
+    "description": "Title for the voice notes page."
+  },
+  "voiceDesc": {
+    "message": "'रिकॉर्डिंग प्रारंभ करें' दबाएं या एक ऑडियो फ़ाइल अपलोड करें। AI भाषण को टेक्स्ट में लिखेगा और विभिन्न वक्ताओं के बीच अंतर करने का प्रयास करेगा।",
+    "description": "Description on the voice notes page."
+  },
+  "voiceLabelAudioSource": {
+    "message": "ऑडियो स्रोत",
+    "description": "Label for audio source dropdown."
+  },
+  "voiceLabelSpokenLang": {
+    "message": "प्राथमिक बोली जाने वाली भाषा",
+    "description": "Label for spoken language dropdown."
+  },
+  "voiceButtonStart": {
+    "message": "रिकॉर्डिंग प्रारंभ करें",
+    "description": "Start recording button."
+  },
+  "voiceButtonStop": {
+    "message": "रिकॉर्डिंग रोकें",
+    "description": "Stop recording button."
+  },
+  "voiceStatusRecording": {
+    "message": "रिकॉर्डिंग हो रही है...",
+    "description": "Status message."
+  },
+  "voiceStatusTranscribing": {
+    "message": "प्रतिलेखन हो रहा है, कृपया प्रतीक्षा करें...",
+    "description": "Status message."
+  },
+  "voiceStatusSuccess": {
+    "message": "प्रतिलेखन पूरा! परिणाम पृष्ठ खोला जा रहा है...",
+    "description": "Status message."
+  },
+  "errorNoMic": {
+    "message": "त्रुटि: कोई उपलब्ध माइक्रोफ़ोन नहीं मिला।",
+    "description": "Error message."
+  },
+  "errorMicPermission": {
+    "message": "त्रुटि: माइक्रोफ़ोन की अनुमति नहीं मिल सकी। कृपया ब्राउज़र सेटिंग्स की जाँच करें। विवरण: $error$",
+    "description": "Error message.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "voiceStatusFailed": {
+    "message": "प्रतिलेखन विफल: $error$",
+    "description": "Status message.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "langAutoDetect": {
+    "message": "स्वतः पता लगाएं",
+    "description": "Language option for auto-detection."
+  },
+  "langSystemDefault": {
+    "message": "सिस्टम डिफ़ॉल्ट ($langName$)",
+    "description": "Language option for system default, with placeholder for the actual language name.",
+    "placeholders": { "langName": { "content": "$1", "example": "English" } }
+  },
+  "langPrefA": {
+    "message": "पसंदीदा-A ($langName$)",
+    "description": "Language option for preferred language A.",
+    "placeholders": { "langName": { "content": "$1", "example": "Français" } }
+  },
+  "langPrefB": {
+    "message": "पसंदीदा-B ($langName$)",
+    "description": "Language option for preferred language B.",
+    "placeholders": { "langName": { "content": "$1", "example": "Español" } }
+  },
+  "voiceLangZhEn": {
+    "message": "चीनी (अंग्रेजी के साथ मिश्रित)",
+    "description": "Special language option for voice input."
+  },
+  "voiceMicLabel": {
+    "message": "माइक्रोफ़ोन $index$",
+    "description": "Default label for a microphone.",
+    "placeholders": { "index": { "content": "$1", "example": "1" } }
+  },
+  "incognitoFooter": {
+    "message": "Incognito AI Hub: ह्यूगो चेन, एक ताइवानी चिकित्सक द्वारा बनाया गया, 2025 की गर्मियों में एक तूफानी दिन के दौरान। पहले संस्करण का नाम ताइवानी में 'होंग-थाई' रखा गया था। यदि आपको यह उपयोगी लगता है, तो कृपया क्रोम वेब स्टोर पर एक सकारात्मक समीक्षा छोड़ें। यदि आप चाहें, तो दाईं ओर Buy Me a Coffee लिंक के माध्यम से मुझे एक पेय पिलाने के लिए स्वतंत्र महसूस करें।",
+    "description": "Footer text."
+  },
+  "promptWebpageProcessing": {
+    "message": "You are a helpful assistant. The user has provided the HTML content and a screenshot of a webpage. Please analyze both to understand the main content of the page, ignoring ads, navigation bars, and footers. Then, provide a concise summary of the key points in a well-structured, easy-to-read format. Finally, translate the summary into $lang$. Here is the HTML content: ```html\n$pageContent$\n```",
+    "description": "Prompt for webpage processing in background.js.",
+    "placeholders": { "pageContent": { "content": "$1" }, "lang": { "content": "$2" } }
+  },
+  "promptTranslateTo": {
+    "message": "Please translate the text in the image into $lang$.",
+    "description": "Prompt for image translation, asking to translate to a specific language.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "promptSourceLangAuto": {
+    "message": "First, identify the language of the text in the image.",
+    "description": "Part of the prompt for auto-detecting source language."
+  },
+  "promptSourceLangIs": {
+    "message": "The language of the text in the image is $lang$.",
+    "description": "Part of the prompt specifying the source language.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "incognitoTitle": {
+    "message": "गुप्त Gemini चैट",
+    "description": "Title for the incognito chat page."
+  },
+  "incognitoDefaultModelHeader": {
+    "message": "Gemini डिफ़ॉल्ट मॉडल",
+    "description": "Header for the default model tab."
+  },
+  "incognitoDefaultModelDesc": {
+    "message": "इस टैब में उपयोग किया गया मॉडल '⚙️ सेटिंग्स' में आपके चयन पर निर्भर करता है (डिफ़ॉल्ट रूप से 2.5 फ्लैश)। सबसे छोटा मॉडल सरल अनुवाद, टेक्स्ट संगठन और सरल पीडीएफ और छवियों को संभालने के लिए उपयुक्त है।",
+    "description": "Description for the default model tab."
+  },
+  "incognitoSendButton": {
+    "message": "भेजें",
+    "description": "Send button text."
+  },
+  "incognitoUploadTitle": {
+    "message": "छवियां अपलोड करें (अधिकतम 4)",
+    "description": "Tooltip for the upload button."
+  },
+  "incognitoUploadPdfTitle": {
+    "message": "पीडीएफ दस्तावेज़ अपलोड करें (1)",
+    "description": "Tooltip for the PDF upload button."
+  },
+  "incognitoPresetTitleA": { "message": "प्रीसेट A का उपयोग करें", "description": "Tooltip for preset button A." },
+  "incognitoPresetTitleB": { "message": "प्रीसेट B का उपयोग करें", "description": "Tooltip for preset button B." },
+  "incognitoPresetTitleC": { "message": "प्रीसेट C का उपयोग करें", "description": "Tooltip for preset button C." },
+  "incognitoPresetTitleD": { "message": "प्रीसेट D का उपयोग करें", "description": "Tooltip for preset button D." },
+  "incognitoPresetTitleE": { "message": "प्रीसेट E का उपयोग करें", "description": "Tooltip for preset button E." },
+  "stateThinking": {
+    "message": "सोच रहा हूँ...",
+    "description": "Thinking indicator text."
+  },
+  "incognitoApiError": {
+    "message": "API अनुरोध विफल रहा",
+    "description": "Error message prefix for API failures."
+  },
+  "incognitoInitialMessage": {
+    "message": "नमस्ते! मैं आज आपकी कैसे सहायता कर सकता हूँ?",
+    "description": "Initial greeting message from the assistant."
+  },
+  "incognitoClearConfirm": {
+    "message": "क्या आप वाकई बातचीत का इतिहास साफ़ करना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती।",
+    "description": "Confirmation message before clearing chat history."
+  },
+  "incognitoPlaceholder": {
+    "message": "अपना संदेश यहां दर्ज करें (आप चित्र या पीडीएफ अपलोड कर सकते हैं)...",
+    "description": "Placeholder for the prompt input area."
+  },
+  "incognitoFlashModelHeader": {
+    "message": "Gemini 2.5 Flash",
+    "description": "Header for the Flash model tab."
+  },
+  "incognitoFlashModelDesc": {
+    "message": "Google का मानक मध्य-स्तरीय मॉडल। तेज़ प्रतिक्रियाओं और मध्यम लागत पर उच्च थ्रूपुट की आवश्यकता वाले अनुप्रयोगों के लिए उपयुक्त। छवि और पीडीएफ इनपुट का भी समर्थन करता है।",
+    "description": "Description for the Flash model tab."
+  },
+  "incognitoProModelHeader": {
+    "message": "Gemini 2.5 Pro",
+    "description": "Header for the Pro model tab."
+  },
+  "incognitoProModelDesc": {
+    "message": "Google का सबसे शक्तिशाली मॉडल, जिसमें एक विशाल 1 मिलियन टोकन संदर्भ विंडो है। यह जटिल तर्क, कोडिंग और मल्टीमॉडल समझ में उत्कृष्टता प्राप्त करता है। उच्चतम लागत, जटिल पीडीएफ और छवियों को संसाधित करने के लिए आदर्श।",
+    "description": "Description for the Pro model tab."
+  },
+  "statusUploading": {
+    "message": "अपलोड और संसाधित हो रहा है...",
+    "description": "Status for file upload."
+  },
+  "statusFailed": {
+    "message": "प्रसंस्करण विफल: $error$",
+    "description": "Generic failure status.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "statusUploadSuccess": {
+    "message": "सफलता! परिणाम खुल रहे हैं...",
+    "description": "Success status for file upload."
+  },
+  "voiceOrDivider": {
+    "message": "या",
+    "description": "The 'OR' divider between record and upload buttons."
+  },
+  "voiceButtonUpload": {
+    "message": "ऑडियो फ़ाइल अपलोड करें",
+    "description": "The new button to upload an audio file."
+  },
+  "voiceButtonSubmit": {
+    "message": "फ़ाइल का प्रतिलेखन करें",
+    "description": "The text on the record button when a file is ready to be submitted."
+  },
+  "errorInvalidFileType": {
+    "message": "त्रुटि: अमान्य फ़ाइल प्रकार। कृपया एक ऑडियो फ़ाइल चुनें।",
+    "description": "Error when a non-audio file is selected."
+  },
+  "errorFileRead": {
+    "message": "त्रुटि: फ़ाइल पढ़ते समय कोई समस्या हुई।",
+    "description": "Error when the FileReader API fails."
+  },
+  "promptVoiceTranscribeDiarize": {
+    "message": "Please transcribe the following audio. The primary language spoken is $lang$. Pay close attention to pauses and changes in tone or speech patterns to identify and label different speakers (e.g., Speaker 1, Speaker 2). Provide the output as a clear, readable transcript.",
+    "description": "Prompt for voice transcription with speaker diarization.",
+    "placeholders": { "lang": { "content": "$1" } }
+  },
+  "voiceResultTitle": {
+    "message": "ध्वनि प्रतिलेखन परिणाम",
+    "description": "Title for the reader tab showing voice transcription result."
+  }
+}
