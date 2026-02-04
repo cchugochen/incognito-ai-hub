@@ -114,22 +114,7 @@
   "optionsPresetLabelE": { "message": "預設指令 E", "description": "Label for preset E." },
   "optionsPresetLabelF": { "message": "預設指令 F", "description": "Label for preset F." },
   "optionsPresetLabelG": { "message": "預設指令 G", "description": "Label for preset G." },
-  "optionsLogSectionHeader": {
-    "message": "（選用）雲端日誌",
-    "description": "Section header for optional logging."
-  },
-  "optionsLogDesc": {
-    "message": "若您需要將操作紀錄（例如 token 用量）傳送到您自己的後端服務，請在此填入端點網址與金鑰。若留空則此功能完全停用。",
-    "description": "Description for optional logging."
-  },
-  "optionsLogEndpointLabel": {
-    "message": "您的日誌端點 (Endpoint URL)",
-    "description": "Label for log endpoint input."
-  },
-  "optionsLogKeyLabel": {
-    "message": "您的日誌金鑰 (API Key)",
-    "description": "Label for log key input."
-  },
+  
   "optionsSaveButton": {
     "message": "儲存設定",
     "description": "Save button text."

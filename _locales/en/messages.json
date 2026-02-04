@@ -112,22 +112,7 @@
   "optionsPresetLabelC": { "message": "Preset C", "description": "Label for preset C." },
   "optionsPresetLabelD": { "message": "Preset D", "description": "Label for preset D." },
   "optionsPresetLabelE": { "message": "Preset E", "description": "Label for preset E." },
-  "optionsLogSectionHeader": {
-    "message": "(Optional) Cloud Logging",
-    "description": "Section header for optional logging."
-  },
-  "optionsLogDesc": {
-    "message": "If you need to send operational logs (e.g., token usage) to your own backend service, enter the endpoint URL and key here. This feature is completely disabled if left blank.",
-    "description": "Description for optional logging."
-  },
-  "optionsLogEndpointLabel": {
-    "message": "Your Log Endpoint URL",
-    "description": "Label for log endpoint input."
-  },
-  "optionsLogKeyLabel": {
-    "message": "Your Log API Key",
-    "description": "Label for log key input."
-  },
+
   "optionsSaveButton": {
     "message": "Save Settings",
     "description": "Save button text."

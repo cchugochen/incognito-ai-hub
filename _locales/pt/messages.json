@@ -112,22 +112,7 @@
   "optionsPresetLabelC": { "message": "Predefinição C", "description": "Label for preset C." },
   "optionsPresetLabelD": { "message": "Predefinição D", "description": "Label for preset D." },
   "optionsPresetLabelE": { "message": "Predefinição E", "description": "Label for preset E." },
-  "optionsLogSectionHeader": {
-    "message": "(Opcional) Registro em nuvem",
-    "description": "Section header for optional logging."
-  },
-  "optionsLogDesc": {
-    "message": "Se precisar enviar registros operacionais (por exemplo, uso de tokens) para seu próprio serviço de backend, insira o URL do endpoint e a chave aqui. Esse recurso será completamente desativado se deixado em branco.",
-    "description": "Description for optional logging."
-  },
-  "optionsLogEndpointLabel": {
-    "message": "URL do seu endpoint de registro",
-    "description": "Label for log endpoint input."
-  },
-  "optionsLogKeyLabel": {
-    "message": "Sua chave de API de registro",
-    "description": "Label for log key input."
-  },
+
   "optionsSaveButton": {
     "message": "Salvar configurações",
     "description": "Save button text."

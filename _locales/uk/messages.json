@@ -112,22 +112,7 @@
   "optionsPresetLabelC": { "message": "Набір C", "description": "Label for preset C." },
   "optionsPresetLabelD": { "message": "Набір D", "description": "Label for preset D." },
   "optionsPresetLabelE": { "message": "Набір E", "description": "Label for preset E." },
-  "optionsLogSectionHeader": {
-    "message": "(Необов'язково) Хмарне журналювання",
-    "description": "Section header for optional logging."
-  },
-  "optionsLogDesc": {
-    "message": "Якщо вам потрібно надсилати операційні журнали (наприклад, використання токенів) до власної серверної служби, введіть тут URL-адресу кінцевої точки та ключ. Ця функція повністю вимкнена, якщо залишити поле порожнім.",
-    "description": "Description for optional logging."
-  },
-  "optionsLogEndpointLabel": {
-    "message": "URL вашої кінцевої точки журналу",
-    "description": "Label for log endpoint input."
-  },
-  "optionsLogKeyLabel": {
-    "message": "Ваш ключ API журналу",
-    "description": "Label for log key input."
-  },
+  
   "optionsSaveButton": {
     "message": "Зберегти налаштування",
     "description": "Save button text."

@@ -112,22 +112,7 @@
   "optionsPresetLabelC": { "message": "Ön Ayar C", "description": "Label for preset C." },
   "optionsPresetLabelD": { "message": "Ön Ayar D", "description": "Label for preset D." },
   "optionsPresetLabelE": { "message": "Ön Ayar E", "description": "Label for preset E." },
-  "optionsLogSectionHeader": {
-    "message": "(İsteğe Bağlı) Bulut Günlüğü",
-    "description": "Section header for optional logging."
-  },
-  "optionsLogDesc": {
-    "message": "Operasyonel günlükleri (ör. jeton kullanımı) kendi arka uç hizmetinize göndermeniz gerekiyorsa, uç nokta URL'sini ve anahtarını buraya girin. Boş bırakılırsa bu özellik tamamen devre dışı bırakılır.",
-    "description": "Description for optional logging."
-  },
-  "optionsLogEndpointLabel": {
-    "message": "Günlük Uç Nokta URL'niz",
-    "description": "Label for log endpoint input."
-  },
-  "optionsLogKeyLabel": {
-    "message": "Günlük API Anahtarınız",
-    "description": "Label for log key input."
-  },
+  
   "optionsSaveButton": {
     "message": "Ayarları Kaydet",
     "description": "Save button text."

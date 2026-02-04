@@ -112,22 +112,7 @@
   "optionsPresetLabelC": { "message": "Пресет C", "description": "Label for preset C." },
   "optionsPresetLabelD": { "message": "Пресет D", "description": "Label for preset D." },
   "optionsPresetLabelE": { "message": "Пресет E", "description": "Label for preset E." },
-  "optionsLogSectionHeader": {
-    "message": "(Необязательно) Облачное логирование",
-    "description": "Section header for optional logging."
-  },
-  "optionsLogDesc": {
-    "message": "Если вам нужно отправлять операционные журналы (например, использование токенов) в собственную бэкенд-службу, введите здесь URL-адрес конечной точки и ключ. Если оставить поле пустым, эта функция будет полностью отключена.",
-    "description": "Description for optional logging."
-  },
-  "optionsLogEndpointLabel": {
-    "message": "URL-адрес вашей конечной точки журнала",
-    "description": "Label for log endpoint input."
-  },
-  "optionsLogKeyLabel": {
-    "message": "Ваш ключ API журнала",
-    "description": "Label for log key input."
-  },
+  
   "optionsSaveButton": {
     "message": "Сохранить настройки",
     "description": "Save button text."

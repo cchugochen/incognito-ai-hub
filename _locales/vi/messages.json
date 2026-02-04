@@ -112,22 +112,7 @@
   "optionsPresetLabelC": { "message": "Cài đặt sẵn C", "description": "Label for preset C." },
   "optionsPresetLabelD": { "message": "Cài đặt sẵn D", "description": "Label for preset D." },
   "optionsPresetLabelE": { "message": "Cài đặt sẵn E", "description": "Label for preset E." },
-  "optionsLogSectionHeader": {
-    "message": "(Tùy chọn) Ghi nhật ký đám mây",
-    "description": "Section header for optional logging."
-  },
-  "optionsLogDesc": {
-    "message": "Nếu bạn cần gửi nhật ký hoạt động (ví dụ: việc sử dụng token) đến dịch vụ backend của riêng mình, hãy nhập URL điểm cuối và khóa tại đây. Tính năng này sẽ bị vô hiệu hóa hoàn toàn nếu để trống.",
-    "description": "Description for optional logging."
-  },
-  "optionsLogEndpointLabel": {
-    "message": "URL điểm cuối nhật ký của bạn",
-    "description": "Label for log endpoint input."
-  },
-  "optionsLogKeyLabel": {
-    "message": "Khóa API nhật ký của bạn",
-    "description": "Label for log key input."
-  },
+  
   "optionsSaveButton": {
     "message": "Lưu cài đặt",
     "description": "Save button text."

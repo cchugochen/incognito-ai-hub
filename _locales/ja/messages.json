@@ -112,22 +112,7 @@
   "optionsPresetLabelC": { "message": "プリセット C", "description": "Label for preset C." },
   "optionsPresetLabelD": { "message": "プリセット D", "description": "Label for preset D." },
   "optionsPresetLabelE": { "message": "プリセット E", "description": "Label for preset E." },
-  "optionsLogSectionHeader": {
-    "message": "（オプション）クラウドロギング",
-    "description": "Section header for optional logging."
-  },
-  "optionsLogDesc": {
-    "message": "操作ログ（トークン使用量など）を独自のバックエンドサービスに送信する必要がある場合は、ここにエンドポイントURLとキーを入力してください。空欄の場合、この機能は完全に無効になります。",
-    "description": "Description for optional logging."
-  },
-  "optionsLogEndpointLabel": {
-    "message": "ログエンドポイントURL",
-    "description": "Label for log endpoint input."
-  },
-  "optionsLogKeyLabel": {
-    "message": "ログAPIキー",
-    "description": "Label for log key input."
-  },
+  
   "optionsSaveButton": {
     "message": "設定を保存",
     "description": "Save button text."

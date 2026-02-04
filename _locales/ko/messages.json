@@ -112,22 +112,7 @@
   "optionsPresetLabelC": { "message": "프리셋 C", "description": "Label for preset C." },
   "optionsPresetLabelD": { "message": "프리셋 D", "description": "Label for preset D." },
   "optionsPresetLabelE": { "message": "프리셋 E", "description": "Label for preset E." },
-  "optionsLogSectionHeader": {
-    "message": "(선택 사항) 클라우드 로깅",
-    "description": "Section header for optional logging."
-  },
-  "optionsLogDesc": {
-    "message": "작업 기록(예: 토큰 사용량)을 자체 백엔드 서비스로 전송해야 하는 경우, 여기에 엔드포인트 URL과 키를 입력하세요. 비워두면 이 기능은 완전히 비활성화됩니다.",
-    "description": "Description for optional logging."
-  },
-  "optionsLogEndpointLabel": {
-    "message": "로그 엔드포인트 URL",
-    "description": "Label for log endpoint input."
-  },
-  "optionsLogKeyLabel": {
-    "message": "로그 API 키",
-    "description": "Label for log key input."
-  },
+  
   "optionsSaveButton": {
     "message": "설정 저장",
     "description": "Save button text."
