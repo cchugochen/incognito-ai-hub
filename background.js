@@ -76,7 +76,6 @@ async function processPastedText(payload) {
     if (targetLang === 'system-default') {
         targetLang = await getEffectiveUILanguageNameForBg();
     }
-    await logActivity({ type: 'paste', sourceUrl: 'pasted_text', originalText: text });
     await openReader({ text: text, targetLang: targetLang, sourceType: 'text' });
 }
 
@@ -91,7 +90,6 @@ async function processUploadedFile(payload) {
     if (!recognizedText || recognizedText.trim().length < 10) {
         throw new Error(chrome.i18n.getMessage("errorOcrFailed"));
     }
-    await logActivity({ type: 'upload_ocr', sourceUrl: 'uploaded_file', originalText: recognizedText });
     await openReader({ text: recognizedText, targetLang: targetLang, sourceType: 'image' });
 }
 
@@ -107,7 +105,6 @@ async function processVoiceNote(payload) {
     if (!transcribedText || transcribedText.trim().length === 0) {
         throw new Error(chrome.i18n.getMessage("errorSttFailed"));
     }
-    await logActivity({ type: 'voice_note', sourceUrl: 'voice_input', originalText: transcribedText });
     
     const defaultTargetLang = await getEffectiveUILanguageNameForBg();
     await openReader({ text: transcribedText, targetLang: defaultTargetLang, sourceType: 'voice' });
@@ -153,7 +150,6 @@ async function captureAndRecognize(tabId) {
 
         if (recognizedText && recognizedText.trim().length > 50) {
             const tab = await chrome.tabs.get(tabId);
-            await logActivity({ type: 'webpage_ocr', sourceUrl: tab.url, originalText: recognizedText });
             const defaultTargetLang = await getEffectiveUILanguageNameForBg();
             await openReader({ text: recognizedText, targetLang: defaultTargetLang, sourceType: 'webpage' });
             await setActionBadge(tabId, 'OK', '#28A745');
@@ -286,16 +282,5 @@ async function setActionBadge(tabId, text, color) {
     } catch (e) { /* ignore */ }
 }
 
-async function logActivity(data) {
-    const { logEndpoint, logKey } = await chrome.storage.sync.get({ logEndpoint: '', logKey: '' });
-    if (!logEndpoint) return;
-    try {
-        await fetch(logEndpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'x-api-key': logKey || '' },
-            body: JSON.stringify({ timestamp: new Date().toISOString(), ...data })
-        });
-    } catch (error) {
-        console.error('Failed to send log:', error);
-    }
-}
+// Cloud logging has been removed for privacy
+// All operations are now completely local
