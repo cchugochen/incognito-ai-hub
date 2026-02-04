@@ -17,8 +17,6 @@ function save_options() {
         displayLanguage: lang,
         geminiApiKey: document.getElementById('api-key').value,
         translationModel: selectedModel,
-        logEndpoint: document.getElementById('log-endpoint').value,
-        logKey: document.getElementById('log-key').value,
         prefLangA: document.getElementById('pref-lang-a').value.trim(),
         prefLangB: document.getElementById('pref-lang-b').value.trim(),
         preset_a: document.getElementById('preset-prompt-a').value,
@@ -45,8 +43,6 @@ function restore_options() {
         displayLanguage: 'default',
         geminiApiKey: '',
         translationModel: 'gemini-2.5-flash', // UPDATED DEFAULT to 2.5 Flash
-        logEndpoint: '',
-        logKey: '',
         prefLangA: '',
         prefLangB: '',
         preset_a: '',
@@ -59,8 +55,6 @@ function restore_options() {
     }, (items) => {
         document.getElementById('display-language').value = items.displayLanguage;
         document.getElementById('api-key').value = items.geminiApiKey;
-        document.getElementById('log-endpoint').value = items.logEndpoint;
-        document.getElementById('log-key').value = items.logKey;
         
         document.getElementById('pref-lang-a').value = items.prefLangA;
         document.getElementById('pref-lang-b').value = items.prefLangB;
