@@ -7,43 +7,53 @@
 </head>
 <body>
     <h1>Incognito AI Hub 隱私權政策 (Privacy Policy)</h1>
-    <p class="last-updated">最後更新：2025年8月20日 / Last Updated: August 20, 2025</p>
+    <p class="last-updated">最後更新：2025年10月 / Last Updated: October 2025 (v27.x)</p>
 
     <h2>核心原則：您的資料，由您掌控</h2>
     <h2>Our Core Principle: Your Data, Your Control</h2>
-    <p>本擴充功能<strong>完全在您的瀏覽器本機端運作</strong>。我們**沒有**任何後端伺服器，也**不會**收集、儲存或看見任何您處理的內容或個人資訊。</p>
-    <p>This extension operates **entirely locally on your browser**. We do **not** have any backend servers, nor do we collect, store, or see any of the content you process or your personal information.</p>
+    <p>本擴充功能<strong>完全在您的瀏覽器本機端運作</strong>。我們<strong>沒有</strong>任何後端伺服器，也<strong>不會</strong>收集、儲存或看見任何您處理的內容或個人資訊。</p>
+    <p>This extension operates <strong>entirely locally on your browser</strong>. We do <strong>not</strong> have any backend servers, nor do we collect, store, or see any of the content you process or your personal information.</p>
 
     <h2>資料處理說明 / How Your Data Is Handled</h2>
-    
+
     <h3>1. 您的 Google Gemini API 金鑰 (Your API Key)</h3>
     <ul>
-        <li>您的金鑰會透過 Chrome 的標準儲存 API (<code>chrome.storage.sync</code>) **加密儲存在您自己的瀏覽器中**，且只用於向 Google 的官方 API 發送請求。我們絕不會存取您的金鑰。</li>
-        <li>Your key is stored **encrypted within your own browser** using Chrome's standard storage API (<code>chrome.storage.sync</code>). It is only used to send requests to Google's official API. We never access your key.</li>
+        <li>您的金鑰會透過 Chrome 的標準儲存 API (<code>chrome.storage.sync</code>) <strong>加密儲存在您自己的瀏覽器中</strong>，且只用於向 Google 的官方 API 端點發送請求。我們絕不會存取或傳輸您的金鑰。</li>
+        <li>Your key is stored <strong>encrypted within your own browser</strong> using Chrome's standard storage API (<code>chrome.storage.sync</code>). It is only used to send requests directly to Google's official API endpoint. We never access or transmit your key.</li>
     </ul>
 
     <h3>2. 您處理的內容：文字、圖片、語音 (Your Content)</h3>
     <ul>
-        <li><strong>一般功能</strong>：在使用翻譯或辨識功能時，內容資料僅會**暫時**儲存於您本機的 <code>chrome.storage.local</code>，並在功能分頁關閉後清除。</li>
-        <li><strong>General Features</strong>: When using translation or recognition, content is **temporarily** stored in your local <code>chrome.storage.local</code> and is cleared when the feature's tab is closed.</li>
+        <li><strong>一般功能</strong>（翻譯、語音筆記）：內容資料僅會<strong>暫時</strong>儲存於您本機的 <code>chrome.storage.local</code>，並在功能使用完畢後立即清除，不會持久儲存。</li>
+        <li><strong>General Features</strong> (Translation, Voice Notes): Content is <strong>temporarily</strong> stored in your local <code>chrome.storage.local</code> and is cleared immediately after use. Nothing is persisted.</li>
         <br>
-        <li><strong>無痕對話框 (最高隱私)</strong>：所有對話（包含文字與圖片）**僅存於您電腦的記憶體 (RAM) 中**。關閉分頁後，紀錄將**立即永久消失**，無法復原。</li>
-        <li><strong>Incognito Chat (Highest Privacy)</strong>: All conversations (including text and images) are **stored only in your computer's memory (RAM)**. When the tab is closed, this history is **permanently and irretrievably deleted.**</li>
+        <li><strong>無痕對話（最高隱私）</strong>：所有對話（包含文字與圖片）<strong>僅存於您電腦的記憶體 (RAM) 中</strong>。關閉分頁後，紀錄將<strong>立即永久消失</strong>，無法復原，也不會寫入任何儲存空間。</li>
+        <li><strong>Incognito Chat (Highest Privacy)</strong>: All conversations (including text and images) are <strong>stored only in your computer's RAM</strong>. When the tab is closed, this history is <strong>permanently and irretrievably deleted</strong> — nothing is written to any storage.</li>
     </ul>
 
-    <h3>3. （選用）雲端日誌 (Optional Cloud Logging)</h3>
+    <h3>3. （選用）本機 AI 模型 — 完全離線 (Optional: Local AI Model — Fully Offline)</h3>
     <ul>
-        <li>此功能預設為關閉。只有在您明確於設定頁面填入**您自己的**端點網址時，才會將操作紀錄傳送到該網址。</li>
-        <li>This feature is disabled by default. Only when you explicitly provide **your own** endpoint URL in the settings will operational logs be sent there.</li>
+        <li>如果您啟用本機模型功能（Ollama 或 LM Studio），所有 AI 請求將發送至您設定的本機端點（例如 <code>http://localhost:11434/v1</code>），而非任何雲端服務。您的資料<strong>完全不會離開您的本機網路</strong>。</li>
+        <li>If you enable the local model feature (Ollama or LM Studio), all AI requests are sent to the local endpoint you configured (e.g., <code>http://localhost:11434/v1</code>), not to any cloud service. Your data <strong>never leaves your local network</strong>.</li>
     </ul>
 
     <h2>權限使用說明 / Permissions Usage</h2>
     <ul>
-        <li><strong>storage</strong>: 用於在本機安全地儲存您的 API 金鑰與設定。/ Used to securely store your API key and settings locally.</li>
-        <li><strong>debugger</strong>: 僅在您使用「翻譯當前網頁」功能時臨時啟用以擷取完整頁面，擷取後立即分離。/ Temporarily enabled only when using the "Translate Current Page" feature to capture the full page, and it is detached immediately after.</li>
+        <li><strong>activeTab</strong>: 用於存取當前活動分頁的基本資訊（如分頁 ID），以觸發網頁翻譯功能。/ Used to access basic information about the active tab (such as tab ID) in order to trigger the webpage translation feature.</li>
+        <li><strong>storage</strong>: 用於在本機安全地儲存您的 API 金鑰與所有設定（語言偏好、預設提示語等）。/ Used to securely store your API key and all settings (language preferences, preset prompts, etc.) locally.</li>
+        <li><strong>debugger</strong>: 僅在您使用「翻譯當前網頁」功能時臨時啟用，用以擷取完整頁面截圖，擷取後立即分離，不會持續監控頁面。/ Temporarily enabled only when using the "Translate Current Page" feature to capture a full-page screenshot. It is detached immediately after capture and does not continuously monitor the page.</li>
     </ul>
-    
-    <p>若有任何疑問，歡迎透過 [GitHub Issues](https://github.com/cchugochen/hongthai-reader/issues) 與我們聯繫。</p>
-    <p>If you have any questions, please contact us via [GitHub Issues](https://github.com/cchugochen/hongthai-reader/issues).</p>
+
+    <h2>第三方服務 / Third-Party Services</h2>
+    <ul>
+        <li>使用 Gemini 功能時，您的內容（文字、圖片、語音）將依據 <a href="https://policies.google.com/privacy" target="_blank">Google 的隱私權政策</a>傳送至 Google API 進行處理。</li>
+        <li>When using Gemini features, your content (text, images, voice) is sent to Google's API for processing, subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
+        <br>
+        <li>使用本機模型功能時，內容僅發送至您自行設定的本機端點，不涉及任何第三方服務。</li>
+        <li>When using the local model feature, content is only sent to the local endpoint you configured — no third-party services are involved.</li>
+    </ul>
+
+    <p>若有任何疑問，歡迎透過 <a href="https://github.com/cchugochen/hongthai-reader/issues" target="_blank">GitHub Issues</a> 與我們聯繫。</p>
+    <p>If you have any questions, please contact us via <a href="https://github.com/cchugochen/hongthai-reader/issues" target="_blank">GitHub Issues</a>.</p>
 </body>
 </html>

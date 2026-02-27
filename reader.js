@@ -1,5 +1,7 @@
-// reader.js (v26.3 - 2.5 Flash Default)
+// reader.js (v27.1 - Local Model Support)
 import { populateLanguageSelector, getEffectiveUILanguageCode, supportedLanguages } from './scripts/language_manager.js';
+import { buildGeminiUrl, geminiApiCall, getStoredApiConfig } from './scripts/gemini-api.js';
+import { localModelTranslate, getLocalModelConfig } from './scripts/local-api.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     // Set document title dynamically
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // [v25.1] New main target language selector
     const mainTargetLangSelect = document.getElementById('target-lang');
 
+    const clickTranslateHint = document.getElementById('click-translate-hint');
     const voiceTranslateTool = document.getElementById('voice-translate-tool');
     const voiceTargetLangSelect = document.getElementById('voice-target-lang');
     const translateVoiceBtn = document.getElementById('translate-voice-btn');
@@ -57,6 +60,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             if (data.sourceType === 'voice') {
                 voiceTranslateTool.classList.remove('hidden');
+                clickTranslateHint.classList.remove('hidden');
             }
         } else {
             contentArea.innerHTML = `<p>${chrome.i18n.getMessage("readerErrorNotFound")}</p>`;
@@ -105,46 +109,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     async function callGeminiForTranslation(textToTranslate, targetLanguage) {
-        const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
-            geminiApiKey: '',
-            translationModel: 'gemini-2.5-flash' // UPDATED DEFAULT
-        });
+        const localConfig = await getLocalModelConfig();
+        if (localConfig.localModelEnabled && localConfig.localModelEndpoint && localConfig.localModelName) {
+            return localModelTranslate(textToTranslate, targetLanguage,
+                                       localConfig.localModelEndpoint, localConfig.localModelName);
+        }
+
+        const { geminiApiKey, translationModel } = await getStoredApiConfig();
         if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
-        
-        const model = translationModel;
-        const apiUrl = model.startsWith('models/') ?
-            `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${geminiApiKey}` :
-            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiApiKey}`;
-        
+
+        const apiUrl = buildGeminiUrl(translationModel, geminiApiKey);
         const payload = {
             "contents": [{
-                "parts": [{ 
+                "parts": [{
                     "text": `You are an expert translator. Detect the source language of the following text and translate it into fluent, natural ${targetLanguage}. Output only the translated text itself, without any additional comments or explanations.\n\nSource text:\n"${textToTranslate}"`
                 }]
             }]
         };
 
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-
-        if (!response.ok) {
-             const errorResult = await response.json();
-             const errorDetails = errorResult.error?.message || `HTTP error! status: ${response.status}`;
-             throw new Error(errorDetails);
-        }
-        const result = await response.json();
-        if (result.candidates?.[0]?.content?.parts?.[0]?.text) {
-            return result.candidates[0].content.parts[0].text;
-        } else {
-             const finishReason = result.candidates?.[0]?.finishReason;
-             if (finishReason === 'SAFETY') {
-                  throw new Error(chrome.i18n.getMessage("errorApiRejected", "SAFETY"));
-             }
-             throw new Error(chrome.i18n.getMessage("errorApiInvalidResponse"));
-        }
+        return geminiApiCall(apiUrl, payload);
     }
     
     // --- Event Listeners ---

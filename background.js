@@ -1,26 +1,21 @@
 /**
- * background.js (v26.3 - 2.5 Flash Default & Cleanup)
+ * background.js (v27.0 - Modularized)
+ * Service worker for Incognito AI Hub.
+ * Now uses ES6 module imports to eliminate code duplication.
  */
+
+import { buildGeminiUrl, geminiApiCall } from './scripts/gemini-api.js';
+import { supportedLanguages } from './scripts/language_manager.js';
 
 const protocolVersion = "1.3";
 let attachedTabs = {};
 
 // --- Language Logic (for Service Worker context) ---
-// Removed Arabic (ar) and Hindi (hi)
-const supportedLanguagesForBg = [
-    { code: 'en', name: 'English' },
-    { code: 'ja', name: 'Japanese' },
-    { code: 'ko', name: 'Korean' }, { code: 'pt', name: 'Portuguese' },
-    { code: 'ru', name: 'Russian' }, { code: 'tr', name: 'Turkish' },
-    { code: 'uk', name: 'Ukrainian' }, { code: 'vi', name: 'Vietnamese' },
-    { code: 'zh-TW', name: 'Traditional Chinese' }
-];
-
 async function getEffectiveUILanguageNameForBg() {
     try {
         const { displayLanguage } = await chrome.storage.sync.get({ displayLanguage: 'default' });
         if (displayLanguage && displayLanguage !== 'default') {
-            const lang = supportedLanguagesForBg.find(l => l.code === displayLanguage);
+            const lang = supportedLanguages.find(l => l.code === displayLanguage);
             return lang ? lang.name : 'English';
         }
         const uiLang = chrome.i18n.getUILanguage();
@@ -28,7 +23,7 @@ async function getEffectiveUILanguageNameForBg() {
             return 'Traditional Chinese';
         }
         const langCode = uiLang.split('-')[0];
-        const found = supportedLanguagesForBg.find(l => l.code === langCode);
+        const found = supportedLanguages.find(l => l.code === langCode);
         return found ? found.name : 'English';
     } catch (error) {
         console.error("Error getting effective UI language name:", error);
@@ -85,7 +80,7 @@ async function processUploadedFile(payload) {
     if (targetLang === 'system-default') {
         targetLang = await getEffectiveUILanguageNameForBg();
     }
-    
+
     const recognizedText = await callGeminiVision(imageData, sourceLang);
     if (!recognizedText || recognizedText.trim().length < 10) {
         throw new Error(chrome.i18n.getMessage("errorOcrFailed"));
@@ -105,7 +100,7 @@ async function processVoiceNote(payload) {
     if (!transcribedText || transcribedText.trim().length === 0) {
         throw new Error(chrome.i18n.getMessage("errorSttFailed"));
     }
-    
+
     const defaultTargetLang = await getEffectiveUILanguageNameForBg();
     await openReader({ text: transcribedText, targetLang: defaultTargetLang, sourceType: 'voice' });
 }
@@ -114,7 +109,7 @@ async function captureAndRecognize(tabId) {
     if (!tabId) {
         throw new Error("Invalid tab ID.");
     }
-    
+
     await setActionBadge(tabId, '...', '#007BFF');
 
     if (!attachedTabs[tabId]) {
@@ -125,7 +120,7 @@ async function captureAndRecognize(tabId) {
                         return reject(new Error(chrome.runtime.lastError.message));
                     }
                     attachedTabs[tabId] = true;
-                    chrome.debugger.onDetach.addListener((source, detachedTabId) => {
+                    chrome.debugger.onDetach.addListener((source) => {
                         if (source.tabId === tabId) delete attachedTabs[tabId];
                     });
                     resolve();
@@ -140,7 +135,7 @@ async function captureAndRecognize(tabId) {
     try {
         await setActionBadge(tabId, 'OCR', '#FFA500');
         const screenshot = await sendDebuggerCommand(tabId, "Page.captureScreenshot", { format: "jpeg", quality: 90, captureBeyondViewport: true });
-        
+
         if (!screenshot || !screenshot.data) {
             throw new Error(chrome.i18n.getMessage("errorScreenshotFailed"));
         }
@@ -149,7 +144,6 @@ async function captureAndRecognize(tabId) {
         const recognizedText = await callGeminiVision(screenshot.data);
 
         if (recognizedText && recognizedText.trim().length > 50) {
-            const tab = await chrome.tabs.get(tabId);
             const defaultTargetLang = await getEffectiveUILanguageNameForBg();
             await openReader({ text: recognizedText, targetLang: defaultTargetLang, sourceType: 'webpage' });
             await setActionBadge(tabId, 'OK', '#28A745');
@@ -166,7 +160,7 @@ async function captureAndRecognize(tabId) {
 
 async function openReader(payload) {
     const { text, targetLang, sourceType } = payload;
-    await chrome.storage.local.set({ 
+    await chrome.storage.local.set({
         articleText: text.trim(),
         targetLang: targetLang || 'Traditional Chinese',
         sourceType: sourceType || 'webpage'
@@ -176,19 +170,16 @@ async function openReader(payload) {
 }
 
 async function callGeminiVision(base64ImageData, sourceLang = 'auto') {
-    const { geminiApiKey, translationModel } = await chrome.storage.sync.get({ 
-        geminiApiKey: '', 
-        translationModel: 'gemini-2.5-flash' // UPDATED DEFAULT to 2.5 Flash
+    const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
+        geminiApiKey: '',
+        translationModel: 'gemini-2.5-flash'
     });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
-    const model = translationModel;
-    const apiUrl = model.startsWith('models/') ?
-        `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${geminiApiKey}` :
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiApiKey}`;
-    
+    const apiUrl = buildGeminiUrl(translationModel, geminiApiKey);
+
     let langHint = (sourceLang !== 'auto' && sourceLang) ? `The text in the image is primarily in ${sourceLang}.` : "";
-    
+
     const prompt = `You are a highly specialized AI assistant for document analysis. Your primary task is to perform OCR on the provided image and reconstruct the text into a clean, readable format. Please analyze the layout carefully. ${langHint}
 
 Here are the key guidelines for your output:
@@ -199,66 +190,28 @@ Here are the key guidelines for your output:
 5.  **Final Output Format:** The final output should consist of ONLY the reconstructed text, formatted into clean paragraphs. Do not add any of your own comments, summaries, or explanations.`;
 
     const payload = { "contents": [{ "parts": [ { "text": prompt }, { "inline_data": { "mime_type": "image/jpeg", "data": base64ImageData } } ] }] };
-    
+
     return geminiApiCall(apiUrl, payload);
 }
 
 async function callGeminiSpeechToText(audioData, spokenLang) {
-    const { geminiApiKey, translationModel } = await chrome.storage.sync.get({ 
-        geminiApiKey: '', 
-        translationModel: 'gemini-2.5-flash' // UPDATED DEFAULT to 2.5 Flash
+    const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
+        geminiApiKey: '',
+        translationModel: 'gemini-2.5-flash'
     });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
-    const model = translationModel;
-    const apiUrl = model.startsWith('models/') ?
-        `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${geminiApiKey}` :
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiApiKey}`;
-    
+    const apiUrl = buildGeminiUrl(translationModel, geminiApiKey);
+
     let langHint = `The user's primary spoken language is ${spokenLang}.`;
     if (spokenLang === 'auto' || !spokenLang) {
         langHint = "Please transcribe the audio, automatically detecting the language spoken.";
     }
-    
+
     const prompt = `You are a highly accurate transcription service. Transcribe the following audio. ${langHint} Provide a clean and accurate transcript. If you are unsure about a specific word or phrase, transcribe it as best you can and put it inside parentheses. Do not add any other comments.`;
     const payload = { "contents": [{ "parts": [ { "text": prompt }, { "inline_data": { "mime_type": audioData.mimeType, "data": audioData.data } } ] }] };
 
     return geminiApiCall(apiUrl, payload);
-}
-
-async function geminiApiCall(apiUrl, payload) {
-    try {
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-        const result = await response.json();
-
-        if (!response.ok) {
-            const errorDetails = result.error?.message || JSON.stringify(result);
-            throw new Error(chrome.i18n.getMessage("errorApiRequestFailed", errorDetails));
-        }
-
-        if (result.candidates && result.candidates.length > 0 && result.candidates[0].content?.parts?.[0]?.text) {
-            return result.candidates[0].content.parts[0].text;
-        } else {
-            if (result.promptFeedback?.blockReason) {
-                throw new Error(chrome.i18n.getMessage("errorApiRejected", result.promptFeedback.blockReason));
-            }
-            const finishReason = result.candidates?.[0]?.finishReason;
-            if (finishReason && finishReason !== 'STOP') {
-                 throw new Error(chrome.i18n.getMessage("errorApiStopped", finishReason));
-            }
-            console.error("Invalid API response structure:", result);
-            throw new Error(chrome.i18n.getMessage("errorApiInvalidResponse"));
-        }
-    } catch (error) {
-        if (error instanceof TypeError) {
-             throw new Error(chrome.i18n.getMessage("errorNetwork"));
-        }
-        throw error;
-    }
 }
 
 async function sendDebuggerCommand(tabId, method, params = {}) {
@@ -279,8 +232,7 @@ async function setActionBadge(tabId, text, color) {
         if (text) {
             setTimeout(() => chrome.action.setBadgeText({ tabId, text: '' }), 5000);
         }
-    } catch (e) { /* ignore */ }
+    } catch (e) {
+        console.warn('[setActionBadge] Could not update badge:', e.message);
+    }
 }
-
-// Cloud logging has been removed for privacy
-// All operations are now completely local

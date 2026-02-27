@@ -69,6 +69,30 @@ h2 {
     padding: 10px;
 }
 
+/* Notification Banner (used in incognito.html) */
+.notification-banner {
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    flex-shrink: 0;
+}
+.notification-banner.hidden {
+    display: none;
+}
+.notification-banner.error {
+    background-color: #fef2f2;
+    border-left: 4px solid #c0392b;
+    color: #7f1d1d;
+}
+.notification-banner.info {
+    background-color: #f0fdf4;
+    border-left: 4px solid #606C38;
+    color: #166534;
+}
+
 /* Status text */
 #status-text {
     margin-top: 15px;

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_appName__",
-  "version": "26.3",
+  "version": "27.1",
   "description": "__MSG_appDesc__",
   "default_locale": "en",
   "permissions": [
@@ -10,17 +10,21 @@
     "debugger"
   ],
   "host_permissions": [
-    "https://generativelanguage.googleapis.com/"
+    "https://generativelanguage.googleapis.com/",
+    "http://localhost/*",
+    "http://127.0.0.1/*",
+    "http://*/*"
   ],
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://generativelanguage.googleapis.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://cdn.buymeacoffee.com data:;"
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://generativelanguage.googleapis.com http:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://cdn.buymeacoffee.com data:;"
   },
   "action": {
     "default_title": "__MSG_appName__",
     "default_popup": "popup.html"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
   "options_page": "options.html",
   "web_accessible_resources": [
@@ -38,6 +42,8 @@
         "images/*.jpg",
         "images/*.png",
         "scripts/language_manager.js",
+        "scripts/gemini-api.js",
+        "scripts/local-api.js",
         "styles/*.css"
       ],
       "matches": [

@@ -119,6 +119,14 @@
     "message": "儲存設定",
     "description": "Save button text."
   },
+  "optionsResetButton": {
+    "message": "恢復預設值",
+    "description": "Reset button text on options page."
+  },
+  "optionsStatusReset": {
+    "message": "設定已恢復預設值。",
+    "description": "Status message when settings are reset."
+  },
   "optionsStatusSaved": {
     "message": "設定已儲存！",
     "description": "Status message when settings are saved."
@@ -340,6 +348,7 @@
   "incognitoPresetTitleE": { "message": "使用預設指令 E", "description": "Tooltip for preset button E." },
   "incognitoPresetTitleF": { "message": "使用預設指令 F", "description": "Tooltip for preset button F." },
   "incognitoPresetTitleG": { "message": "使用預設指令 G", "description": "Tooltip for preset button G." },
+  "incognitoPresetLabel": { "message": "提示語:", "description": "Label before the preset buttons." },
   "stateThinking": {
     "message": "思考中...",
     "description": "Thinking indicator text."
@@ -419,5 +428,177 @@
   "voiceResultTitle": {
     "message": "語音轉錄結果",
     "description": "Title for the reader tab showing voice transcription result."
+  },
+
+  "errorNoApiKey": {
+    "message": "錯誤：找不到 Gemini API 金鑰，請先在設定頁面填入您的金鑰。",
+    "description": "Error thrown when API key is missing from storage."
+  },
+  "errorApiRequestFailed": {
+    "message": "API 請求失敗：$details$",
+    "description": "Error when API returns a non-OK HTTP status.",
+    "placeholders": { "details": { "content": "$1" } }
+  },
+  "errorApiRejected": {
+    "message": "API 請求被封鎖。原因：$reason$",
+    "description": "Error when API blocks the request due to safety filters.",
+    "placeholders": { "reason": { "content": "$1" } }
+  },
+  "errorApiStopped": {
+    "message": "API 回應意外中止。原因：$reason$",
+    "description": "Error when API finishes with a non-STOP reason.",
+    "placeholders": { "reason": { "content": "$1" } }
+  },
+  "errorNoActiveTab": {
+    "message": "錯誤：找不到活動中的分頁，請重試。",
+    "description": "Error when no active browser tab is found."
+  },
+  "errorInvalidText": {
+    "message": "錯誤：文字內容無效或為空。",
+    "description": "Error when submitted text is empty or invalid."
+  },
+  "errorNoImageData": {
+    "message": "錯誤：找不到圖片資料，請上傳圖片。",
+    "description": "Error when image data is missing from the payload."
+  },
+  "errorNoAudioData": {
+    "message": "錯誤：找不到音訊資料，請錄音或上傳音訊檔。",
+    "description": "Error when audio data is missing from the payload."
+  },
+  "errorOcrFailed": {
+    "message": "錯誤：OCR 失敗，AI 無法從圖片中辨識足夠的文字，請嘗試更清晰的圖片。",
+    "description": "Error when OCR produces too little text."
+  },
+  "errorOcrFailedLong": {
+    "message": "錯誤：OCR 辨識結果不足，網頁截圖可能是空白或無法讀取。",
+    "description": "Error when webpage screenshot OCR produces too little text."
+  },
+  "errorScreenshotFailed": {
+    "message": "錯誤：截圖失敗。",
+    "description": "Error when the debugger screenshot command fails."
+  },
+  "errorDebuggerAttach": {
+    "message": "錯誤：無法附加至此頁面。部分頁面（例如 Chrome 設定頁面）不允許此操作。",
+    "description": "Error when the Chrome debugger cannot attach to a tab."
+  },
+  "errorSttFailed": {
+    "message": "錯誤：語音轉文字失敗，音訊可能太短或不清晰。",
+    "description": "Error when transcription produces no text."
+  },
+  "readerTranslating": {
+    "message": "翻譯中...",
+    "description": "Status shown in the voice translation output while translating."
+  },
+  "readerTranslateFailed": {
+    "message": "翻譯失敗：$error$",
+    "description": "Error shown in the reader when a paragraph translation fails.",
+    "placeholders": { "error": { "content": "$1" } }
+  },
+  "readerErrorNotFound": {
+    "message": "錯誤：找不到要顯示的內容，請返回上一頁重試。",
+    "description": "Error shown in reader when no article text is in storage."
+  },
+  "voiceStatusLimitReached": {
+    "message": "已達錄音上限（15分鐘），正在處理...",
+    "description": "Status shown when the max recording time is reached."
+  },
+  "statusProcessing": {
+    "message": "處理中...",
+    "description": "Generic processing status message."
+  },
+  "statusPleasePaste": {
+    "message": "請先貼上文字。",
+    "description": "Status shown when user clicks process without entering text."
+  },
+  "statusSuccess": {
+    "message": "成功！正在開啟結果頁面...",
+    "description": "Success status after text processing."
+  },
+  "errorPleaseUploadImage": {
+    "message": "錯誤：請上傳圖片檔（JPG、PNG、BMP）。",
+    "description": "Error when a non-image file is dropped on the upload box."
+  },
+  "alertMaxImages": {
+    "message": "一次最多只能附加 4 張圖片。",
+    "description": "Alert when user tries to attach more than 4 images."
+  },
+  "alertTurnLimit": {
+    "message": "本次對話已達到 $limit$ 輪的上限，請重新整理頁面以開始新的對話。",
+    "description": "Alert shown when the conversation reaches the maximum number of turns.",
+    "placeholders": { "limit": { "content": "$1" } }
+  },
+  "alertOnePdfOnly": {
+    "message": "一次只能附加一個 PDF 檔案。",
+    "description": "Alert when user tries to attach more than one PDF."
+  },
+  "incognitoAttachedFile": {
+    "message": "附加檔案：$filename$",
+    "description": "Text shown in the chat message when a file is attached.",
+    "placeholders": { "filename": { "content": "$1" } }
+  },
+
+  "localModelSectionHeader": {
+    "message": "本機 AI 模型（Ollama / LM Studio）",
+    "description": "Section header for local model settings on the options page."
+  },
+  "localModelDesc": {
+    "message": "透過 OpenAI 相容 API 使用本機 AI 模型。使用前請先啟動 Ollama 或 LM Studio。啟用後，閱讀器的點擊翻譯及對話功能將改走本機模型。",
+    "description": "Description for local model settings."
+  },
+  "localModelEnabledLabel": {
+    "message": "啟用本機模型",
+    "description": "Label for the enable local model checkbox."
+  },
+  "localModelEndpointLabel": {
+    "message": "API 端點 URL",
+    "description": "Label for the local model endpoint URL input."
+  },
+  "localModelEndpointPlaceholder": {
+    "message": "http://localhost:11434/v1",
+    "description": "Placeholder for the local model endpoint URL input."
+  },
+  "localModelNameLabel": {
+    "message": "模型名稱",
+    "description": "Label for the local model name input."
+  },
+  "localModelNamePlaceholder": {
+    "message": "llama3.2",
+    "description": "Placeholder for the local model name input."
+  },
+  "localModelTabName": {
+    "message": "本機模型",
+    "description": "Tab button label for the local model chat tab."
+  },
+  "localModelHeader": {
+    "message": "本機 AI 模型對話",
+    "description": "Header for the local model chat tab."
+  },
+  "localModelChatDesc": {
+    "message": "使用本機 Ollama 或 LM Studio 模型進行對話。僅支援文字輸入，不支援圖片與 PDF。",
+    "description": "Description text in the local model chat tab."
+  },
+  "localModelNotEnabledMsg": {
+    "message": "本機模型尚未啟用。請前往設定頁（⚙️）設定 API 端點與模型名稱。",
+    "description": "Message shown in the local tab when local model is not enabled."
+  },
+  "errorLocalModelFailed": {
+    "message": "本機模型回傳了空白或無效的回應。",
+    "description": "Error when local model response has no content."
+  },
+  "errorLocalModelConnect": {
+    "message": "無法連線至本機模型，請確認 Ollama 或 LM Studio 已啟動。",
+    "description": "Error when the fetch to local model endpoint fails."
+  },
+  "readerClickHint": {
+    "message": "💡 點選任意段落即可立即翻譯。",
+    "description": "Hint shown in reader page for voice transcription results."
+  },
+  "optionsLicenseLink": {
+    "message": "MIT 授權條款",
+    "description": "Link to the MIT license file on the options page."
+  },
+  "optionsPrivacyLink": {
+    "message": "隱私權政策",
+    "description": "Link to the privacy policy on the options page."
   }
 }

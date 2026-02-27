@@ -24,8 +24,3 @@ document.getElementById('open-tutorial').addEventListener('click', () => {
   chrome.tabs.create({ url: 'tutorial.html' });
   window.close();
 });
-
-document.getElementById('show-license').addEventListener('click', () => {
-  chrome.tabs.create({ url: 'LICENSE' });
-  window.close();
-});

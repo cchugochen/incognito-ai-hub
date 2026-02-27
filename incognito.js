@@ -1,4 +1,8 @@
-// incognito.js (v26.3 - 2.5 Flash Default & Presets A-G)
+// incognito.js (v27.2 - Response Language)
+import { buildGeminiUrl } from './scripts/gemini-api.js';
+import { localModelCall, getLocalModelConfig } from './scripts/local-api.js';
+import { getEffectiveUILanguageCode, supportedLanguages } from './scripts/language_manager.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     document.title = chrome.i18n.getMessage('incognitoTitle');
 
@@ -7,11 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
     let presetPrompts = {};
     const MAX_ROUNDS = 12;
 
-    // --- Chat Instance Manager ---
+    // --- Notification Banner ---
+    const notificationBanner = document.getElementById('notification-banner');
+
+    function showNotification(msg, isError = false) {
+        if (!notificationBanner) return;
+        notificationBanner.textContent = msg;
+        notificationBanner.className = `notification-banner ${isError ? 'error' : 'info'}`;
+        notificationBanner.classList.remove('hidden');
+        if (!isError) {
+            setTimeout(() => notificationBanner.classList.add('hidden'), 4000);
+        }
+    }
+
+    // --- Chat Instance Manager (Gemini) ---
     class ChatInstance {
-        constructor(modelId, modelName) {
+        constructor(modelId, modelName, responseLang) {
             this.modelId = modelId;
             this.modelName = modelName;
+            this.responseLang = responseLang;
             this.history = [];
             this.attachedFiles = [];
 
@@ -19,8 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.chatWindow = document.getElementById(`chat-window-${modelId}`);
             this.promptInput = document.getElementById(`prompt-${modelId}`);
             this.sendBtn = document.getElementById(`send-btn-${modelId}`);
-            
-            // [New] Separate buttons and inputs
+
             this.uploadPdfBtn = document.getElementById(`upload-pdf-btn-${modelId}`);
             this.uploadImgBtn = document.getElementById(`upload-img-btn-${modelId}`);
             this.pdfFileInput = document.getElementById(`pdf-file-input-${modelId}`);
@@ -35,8 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         attachEventListeners() {
             this.sendBtn.addEventListener('click', () => this.sendMessage());
             this.promptInput.addEventListener('paste', (e) => this.handlePaste(e));
-            
-            // [New] Event listeners for separate buttons
+
             this.uploadPdfBtn.addEventListener('click', () => this.pdfFileInput.click());
             this.uploadImgBtn.addEventListener('click', () => this.imageFileInput.click());
             this.pdfFileInput.addEventListener('change', (e) => this.handleFileSelect(e, 'pdf'));
@@ -57,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         }
-        
+
         handlePaste(event) {
             const items = (event.clipboardData || event.originalEvent.clipboardData).items;
             for (const item of items) {
@@ -68,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        
+
         handleFileSelect(event, fileType) {
             const files = event.target.files;
             if (fileType === 'image') {
@@ -78,11 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             event.target.value = ''; // Clear the input
         }
-        
+
         processImageFile(file) {
             if (!file || !file.type.startsWith('image/')) return;
             if (this.attachedFiles.filter(f => f.type === 'image').length >= 4) {
-                alert(chrome.i18n.getMessage("alertMaxImages"));
+                showNotification(chrome.i18n.getMessage("alertMaxImages"), true);
                 return;
             }
             const reader = new FileReader();
@@ -98,13 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
             reader.readAsDataURL(file);
         }
 
-        // [New] Base64 PDF processing method
         processPdfFile(file) {
             if (!file || file.type !== 'application/pdf') return;
 
-            // Prevent multiple PDF uploads
             if (this.attachedFiles.some(f => f.type === 'pdf')) {
-                alert("一次只能附加一個 PDF 檔案。"); // TODO: Add to i18n
+                showNotification(chrome.i18n.getMessage("alertOnePdfOnly"), true);
                 return;
             }
 
@@ -142,14 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.attachedFiles.splice(index, 1);
                     this.renderPreviews();
                 };
-                
+
                 item.innerHTML = contentHTML;
                 item.appendChild(removeBtn);
                 this.previewContainer.appendChild(item);
             });
             this.previewContainer.classList.toggle('active', this.attachedFiles.length > 0);
         }
-        
+
         async sendMessage() {
             const promptText = this.promptInput.value.trim();
             if (!promptText && this.attachedFiles.length === 0) return;
@@ -158,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let displayText = promptText;
             const pdfFile = this.attachedFiles.find(f => f.type === 'pdf');
             if (pdfFile) {
-                displayText += `\n(附加檔案: ${pdfFile.name})`;
+                displayText += `\n(${chrome.i18n.getMessage("incognitoAttachedFile", pdfFile.name)})`;
             }
             this.displayMessage(displayText, 'user', imageFilesForDisplay);
 
@@ -166,8 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (promptText) {
                 userParts.push({ text: promptText });
             }
-            
-            // [Modified] Create inlineData parts for all file types
+
             this.attachedFiles.forEach(file => {
                 userParts.push({
                     inlineData: {
@@ -176,14 +189,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             });
-            
+
             this.history.push({ role: 'user', parts: userParts });
-            
+
             this.promptInput.value = '';
             this.attachedFiles = [];
             this.renderPreviews();
             this.setLoading(true);
-          
+
             try {
                 const responseText = await this.callApi();
                 this.history.push({ role: 'model', parts: [{ text: responseText }] });
@@ -199,12 +212,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         async callApi() {
             if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
-            
-            const apiUrl = this.modelName.startsWith('models/')
-                ? `https://generativelanguage.googleapis.com/v1beta/${this.modelName}:generateContent?key=${geminiApiKey}`
-                : `https://generativelanguage.googleapis.com/v1beta/models/${this.modelName}:generateContent?key=${geminiApiKey}`;
 
+            const apiUrl = buildGeminiUrl(this.modelName, geminiApiKey);
             const payload = { contents: this.history.slice(-MAX_ROUNDS * 2) };
+            if (this.responseLang) {
+                payload.system_instruction = {
+                    parts: [{ text: `Please respond in ${this.responseLang} unless the user explicitly asks you to use a different language.` }]
+                };
+            }
+
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -213,20 +229,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
             if (!response.ok) throw new Error(result.error?.message || `HTTP Error ${response.status}`);
             if (result.candidates?.[0]?.content?.parts?.[0]?.text) return result.candidates[0].content.parts[0].text;
-            
+
             const blockReason = result.promptFeedback?.blockReason;
             if (blockReason) throw new Error(chrome.i18n.getMessage("errorApiRejected", blockReason));
-            
+
             const finishReason = result.candidates?.[0]?.finishReason;
-            if(finishReason && finishReason !== 'STOP') throw new Error(chrome.i18n.getMessage("errorApiStopped", finishReason));
+            if (finishReason && finishReason !== 'STOP') throw new Error(chrome.i18n.getMessage("errorApiStopped", finishReason));
 
             throw new Error(chrome.i18n.getMessage("errorApiInvalidResponse"));
         }
 
         displayMessage(text, role, images = [], isError = false) {
             const msgDiv = document.createElement('div');
-            msgDiv.className = `msg ${role}`;
-            if (isError) msgDiv.style.color = '#c0392b';
+            msgDiv.className = `msg ${role}${isError ? ' error' : ''}`;
             if (images.length > 0) {
                 const container = document.createElement('div');
                 container.className = 'image-container';
@@ -262,47 +277,151 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- Local Model Chat Instance (OpenAI-compatible format) ---
+    class LocalChatInstance {
+        constructor(modelName, endpoint, responseLang) {
+            this.modelName = modelName;
+            this.endpoint = endpoint;
+            this.responseLang = responseLang;
+            this.history = []; // OpenAI format: [{role: 'user'/'assistant', content: '...'}]
+
+            this.chatWindow = document.getElementById('chat-window-local');
+            this.promptInput = document.getElementById('prompt-local');
+            this.sendBtn = document.getElementById('send-btn-local');
+            this.presetButtons = document.querySelectorAll('#preset-buttons-container-local .preset-btn');
+
+            this.attachEventListeners();
+        }
+
+        attachEventListeners() {
+            this.sendBtn.addEventListener('click', () => this.sendMessage());
+            this.presetButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const presetKey = `preset_${button.dataset.preset.toLowerCase()}`;
+                    const textToInsert = presetPrompts[presetKey];
+                    if (textToInsert) {
+                        const start = this.promptInput.selectionStart;
+                        const end = this.promptInput.selectionEnd;
+                        const originalText = this.promptInput.value;
+                        this.promptInput.value = originalText.substring(0, start) + textToInsert + originalText.substring(end);
+                        this.promptInput.focus();
+                        this.promptInput.selectionStart = this.promptInput.selectionEnd = start + textToInsert.length;
+                    }
+                });
+            });
+        }
+
+        async sendMessage() {
+            const promptText = this.promptInput.value.trim();
+            if (!promptText) return;
+
+            this.displayMessage(promptText, 'user');
+            this.history.push({ role: 'user', content: promptText });
+
+            this.promptInput.value = '';
+            this.setLoading(true);
+
+            try {
+                const messages = this.history.slice(-MAX_ROUNDS * 2);
+                if (this.responseLang) {
+                    messages.unshift({ role: 'system', content: `Please respond in ${this.responseLang} unless the user explicitly asks you to use a different language.` });
+                }
+                const responseText = await localModelCall(
+                    this.endpoint, this.modelName,
+                    messages
+                );
+                this.history.push({ role: 'assistant', content: responseText });
+                this.displayMessage(responseText, 'ai');
+            } catch (error) {
+                this.displayMessage(error.message, 'ai', true);
+                this.history.pop();
+            } finally {
+                this.setLoading(false);
+            }
+        }
+
+        displayMessage(text, role, isError = false) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `msg ${role}${isError ? ' error' : ''}`;
+            const textPre = document.createElement('pre');
+            textPre.textContent = text;
+            msgDiv.appendChild(textPre);
+            this.chatWindow.appendChild(msgDiv);
+            this.chatWindow.scrollTop = this.chatWindow.scrollHeight;
+        }
+
+        setLoading(isLoading) {
+            this.sendBtn.disabled = isLoading;
+            this.promptInput.disabled = isLoading;
+            this.presetButtons.forEach(btn => btn.disabled = isLoading);
+            this.sendBtn.textContent = isLoading ? chrome.i18n.getMessage("stateThinking") : chrome.i18n.getMessage("incognitoSendButton");
+        }
+    }
+
+    // --- Tab Logic ---
+    function initTabs() {
+        const tabs = document.querySelectorAll('.tab-link');
+        const contents = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(item => item.classList.remove('active'));
+                contents.forEach(item => item.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    }
+
     // --- Main Initialization ---
     const init = async () => {
         try {
-            const items = await chrome.storage.sync.get({ 
+            const items = await chrome.storage.sync.get({
                 geminiApiKey: '',
-                // No translationModel needed here as tabs are hardcoded
                 preset_a: '', preset_b: '', preset_c: '', preset_d: '', preset_e: '',
-                preset_f: '', preset_g: '' // Added F, G
+                preset_f: '', preset_g: ''
             });
-            
-            if (!items.geminiApiKey) {
-                alert(chrome.i18n.getMessage("alertNoApiKeyOptions"));
-                document.querySelectorAll('.submit-btn, .upload-btn, .preset-btn').forEach(btn => btn.disabled = true);
-                return;
-            }
-            geminiApiKey = items.geminiApiKey;
+
+            // Preset prompts are shared across all tabs (Gemini and local)
             presetPrompts = {
                 preset_a: items.preset_a, preset_b: items.preset_b,
                 preset_c: items.preset_c, preset_d: items.preset_d,
                 preset_e: items.preset_e, preset_f: items.preset_f, preset_g: items.preset_g
             };
 
-            // Initialize Flash (Default) and Pro instances
-            // Removed 'default' instance
-            new ChatInstance('flash', 'gemini-2.5-flash');
-            new ChatInstance('pro', 'gemini-2.5-pro');
-            
-            const tabs = document.querySelectorAll('.tab-link');
-            const contents = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    tabs.forEach(item => item.classList.remove('active'));
-                    contents.forEach(item => item.classList.remove('active'));
-                    tab.classList.add('active');
-                    document.getElementById(tab.dataset.tab).classList.add('active');
-                });
-            });
+            // Resolve the user's preferred response language (settings → browser UI lang → English)
+            const langCode = await getEffectiveUILanguageCode();
+            const responseLang = supportedLanguages.find(l => l.code === langCode)?.name || 'English';
+
+            if (!items.geminiApiKey) {
+                showNotification(chrome.i18n.getMessage("alertNoApiKeyOptions"), true);
+                // Disable Gemini tabs only (upload + submit buttons in flash/pro tabs)
+                document.querySelectorAll('#flash .submit-btn, #flash .upload-btn, #pro .submit-btn, #pro .upload-btn').forEach(btn => btn.disabled = true);
+            } else {
+                geminiApiKey = items.geminiApiKey;
+                new ChatInstance('flash', 'gemini-2.5-flash', responseLang);
+                new ChatInstance('pro', 'gemini-2.5-pro', responseLang);
+            }
+
+            // Initialize local model tab (independent of Gemini API key)
+            const localConfig = await getLocalModelConfig();
+            if (localConfig.localModelEnabled && localConfig.localModelEndpoint && localConfig.localModelName) {
+                new LocalChatInstance(localConfig.localModelName, localConfig.localModelEndpoint, responseLang);
+            } else {
+                const banner = document.getElementById('local-disabled-banner');
+                if (banner) {
+                    banner.textContent = chrome.i18n.getMessage('localModelNotEnabledMsg');
+                    banner.classList.remove('hidden');
+                }
+                document.getElementById('send-btn-local').disabled = true;
+                document.getElementById('prompt-local').disabled = true;
+                document.querySelectorAll('#preset-buttons-container-local .preset-btn').forEach(b => b.disabled = true);
+            }
+
+            initTabs();
 
         } catch (error) {
             console.error('Initialization failed:', error);
-            alert(chrome.i18n.getMessage("alertInitFailed"));
+            showNotification(chrome.i18n.getMessage("alertInitFailed"), true);
         }
     };
 

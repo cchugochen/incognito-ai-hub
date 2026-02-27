@@ -10,10 +10,12 @@
 </head>
 <body>
     <div class="container">
+        <div id="notification-banner" class="notification-banner hidden"></div>
         <div class="tabs">
             <!-- Removed Lite/Default tab. Flash is now default. -->
             <button class="tab-link active" data-tab="flash">2.5 Flash</button>
             <button class="tab-link" data-tab="pro">2.5 Pro</button>
+            <button class="tab-link" data-tab="local" data-i18n="localModelTabName"></button>
         </div>
 
         <div id="flash" class="tab-content active">
@@ -35,7 +37,7 @@
                     </div>
 
                     <div class="preset-controls">
-                        <span class="preset-label">提示語:</span>
+                        <span class="preset-label" data-i18n="incognitoPresetLabel"></span>
                         <div id="preset-buttons-container-flash" class="preset-buttons">
                             <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
                             <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
@@ -72,7 +74,7 @@
                     </div>
 
                     <div class="preset-controls">
-                        <span class="preset-label">提示語:</span>
+                        <span class="preset-label" data-i18n="incognitoPresetLabel"></span>
                         <div id="preset-buttons-container-pro" class="preset-buttons">
                             <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
                             <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
@@ -90,6 +92,34 @@
             </div>
         </div>
 
+        <div id="local" class="tab-content">
+            <div id="local-disabled-banner" class="notification-banner info hidden"></div>
+            <header class="header">
+                <h2 data-i18n="localModelHeader"></h2>
+                <p class="description" data-i18n="localModelChatDesc"></p>
+            </header>
+            <main id="chat-window-local" class="chat-window"></main>
+            <div class="input-area">
+                <textarea id="prompt-local" class="prompt-input"
+                          data-i18n-placeholder="incognitoPlaceholder"></textarea>
+                <div class="controls">
+                    <div class="preset-controls">
+                        <span class="preset-label" data-i18n="incognitoPresetLabel"></span>
+                        <div id="preset-buttons-container-local" class="preset-buttons">
+                            <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
+                            <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
+                            <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
+                            <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
+                            <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
+                            <button class="preset-btn" data-preset="F" data-i18n-title="incognitoPresetTitleF">F</button>
+                            <button class="preset-btn" data-preset="G" data-i18n-title="incognitoPresetTitleG">G</button>
+                        </div>
+                    </div>
+                    <button id="send-btn-local" class="submit-btn" data-i18n="incognitoSendButton"></button>
+                </div>
+            </div>
+        </div>
+
         <hr class="controls-divider">
 
         <footer class="page-footer">
@@ -98,6 +128,6 @@
         </footer>
     </div>
     <script src="i18n.js"></script>
-    <script src="incognito.js"></script>
+    <script type="module" src="incognito.js"></script>
 </body>
 </html>

@@ -47,6 +47,18 @@ input[type="range"] { cursor: pointer; }
     font-size: 14px;
 }
 #save-text:hover, #translate-voice-btn:hover { background-color: #138496; }
+.click-hint {
+    margin-top: 16px;
+    padding: 10px 14px;
+    background-color: #eff6ff;
+    border-left: 3px solid #3b82f6;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: #1d4ed8;
+}
+.click-hint.hidden { display: none; }
+body.bg-dark .click-hint { background-color: #1e3a5f; border-left-color: #60a5fa; color: #93c5fd; }
+
 #content-area { margin-top: 20px; }
 #content-area p { margin-bottom: 1.5em; cursor: pointer; transition: background-color 0.2s; padding: 8px; border-radius: 6px; }
 #content-area p:hover { background-color: rgba(0, 123, 255, 0.05); }

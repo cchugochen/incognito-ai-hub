@@ -1,109 +1,153 @@
-Incognito AI Hub by Gemini / 無痕AI風颱工作台
-A simple, privacy-first Chrome extension designed for those who value privacy, integrating multimodal AI tools to solve digital reading and translation challenges in daily work and academic research. The core concept is to create a completely incognito, non-tracking AI-assisted tool that does not store user conversations and is dedicated to improving privacy. The project is named "Hong-Thai" (颱風, Typhoon) to honor all professionals who work tirelessly at their posts.
+# Incognito AI Hub (v27.1) / 無痕AI工作台
 
-「無痕風颱工作台」是一款為重視隱私的人所設計的簡單Chrome擴充功能，整合了多模態 AI 工具，旨在解決日常工作與學術研究中遇到的數位閱讀和翻譯。核心理念，便是打造一個完全無痕、不追蹤、不儲存使用者對話、致力於改善隱私的 AI 輔助工具。原始專案以「颱風天」命名，獻給所有在崗位上努力不懈的專業人士。
+A privacy-first Chrome extension integrating multimodal AI tools for reading, translation, and conversation. All AI requests go directly between your browser and the AI provider — no backend server, no data collection.
 
-Core Features / 核心功能
-1. Incognito Gemini Chat (Added in v23, Updated in v24.2)
-Directly calls the Gemini 2.5 Pro model, providing top-tier analysis and multimodal conversation capabilities.
+「無痕AI工作台」是一款以隱私為核心的 Chrome 擴充功能，整合了多模態 AI 工具，用於閱讀、翻譯與對話。所有 AI 請求直接在瀏覽器與 AI 服務商之間完成，無後台伺服器，不收集任何資料。
 
-Completely Incognito: All conversation history is stored only in the current page's memory and is completely erased when the tab is closed.
+---
 
-Supports uploading up to 4 images to be sent along with text prompts for analysis.
+## Core Features / 核心功能
 
-v24.2 Update: Added shortcut keys for pasting images and five preset prompt slots.
+### 1. Incognito Gemini Chat (3 Tabs) / 無痕 Gemini 對話（3個分頁）
 
-1. 無痕 Gemini 對話框 (v23新增, v24.2更新)
-直接呼叫 Gemini 2.5 Pro 模型，提供頂尖的分析與多模態對話能力。
+Three independent chat interfaces in one page:
 
-完全無痕：所有對話紀錄僅存於當前頁面的記憶體中，關閉分頁即完全清除。
+- **Gemini 2.5 Flash** — Fast, cost-effective model. Supports images (up to 4) and PDF uploads.
+- **Gemini 2.5 Pro** — Most powerful model, 1M token context. Best for complex documents and multimodal tasks.
+- **Local Model** — Chat with your local Ollama or LM Studio model via OpenAI-compatible API. Text only; no API key required.
 
-支援最多 4 張圖片的上傳，可與文字提示一併發送進行分析。
+Completely incognito: all history is stored in page memory only and erased when the tab is closed. Supports 7 preset prompt slots (A–G) for quick reuse.
 
-v24.2更新：Gemini無痕對話增加快捷鍵貼圖、新增五組預設提示語。
+三個獨立對話介面：
+- **Gemini 2.5 Flash** — 快速、性價比高。支援最多 4 張圖片及 PDF 上傳。
+- **Gemini 2.5 Pro** — 最強大的模型，百萬 Token 上下文。適合複雜文件與多模態任務。
+- **本機模型** — 透過 OpenAI 相容 API 與本機 Ollama 或 LM Studio 模型對話，僅支援文字，無需 API 金鑰。
 
-2. Multimodal Translation & Recognition Tools
-Full-page Web Translation: One-click capture and recognition of the current webpage, overcoming limitations of traditional translation tools.
+完全無痕：所有對話紀錄僅存於頁面記憶體，關閉分頁即清除。支援 7 組預設提示語（A–G）快速重複使用。
 
-Text/Screenshot Workbench: Directly paste text or upload screenshots for OCR recognition and translation.
+---
 
-Incognito Voice Notes: (New in v22) Supports mixed Chinese/English voice input to quickly convert your thoughts into text. Recommended for short notes. Can also be translated into other languages instantly.
+### 2. Smart Translation Workbench / 智慧翻譯工作台
 
-2. 多模式翻譯與辨識工具
-網頁全文翻譯：一鍵擷取並辨識當前網頁畫面，克服傳統翻譯工具無法處理的頁面限制。
+- **Paste Text**: Paste any text for translation using the AI model.
+- **Upload Image (OCR)**: Upload or paste a screenshot; the AI extracts and translates the text.
 
-文字/截圖工作台：直接貼上文字，或上傳螢幕截圖進行 OCR 辨識與翻譯。
+貼上文字或上傳截圖，AI 自動辨識並翻譯。
 
-無痕-語音輸入筆記：(v22新增) 支援中英夾雜的語音輸入，快速將您的想法轉為文字。建議用於數分鐘內的快速筆記。還可以立刻翻譯成其他語言。
+---
 
-3. Privacy & Security First / 隱私與安全優先
+### 3. Full-Page Web Translation / 網頁全文翻譯
 
-Our core principle is to give you full control over your data. This extension is designed with the following commitments to protect your privacy:
+One-click capture of the current webpage using the Chrome Debugger API, then OCR and translation by Gemini. Overcomes the limitations of traditional translation tools that can't handle canvas-rendered or dynamically-loaded content.
 
-我們的核心原則是讓您完全掌控自己的資料。本擴充功能的設計基於以下隱私承諾：
+一鍵擷取當前網頁截圖，透過 Gemini 進行 OCR 辨識與翻譯。能處理傳統翻譯工具難以應對的動態渲染頁面。
 
-* **Bring Your Own Key (BYOK) / 自備金鑰**: All AI requests are made directly between your browser and Google's servers using your own API key. We never see or handle your key.
-    * 所有 AI 請求都使用您自己的 API 金鑰，在您的瀏覽器與 Google 伺服器之間直接完成。我們絕不會經手或看到您的金鑰。
-* **No Backend Server / 無後台伺服器**: The extension operates entirely on your local machine. We do not have any servers to store or process your data.
-    * 本擴充功能完全在您的本機電腦上運作，我們沒有任何用來儲存或處理您資料的後台伺服器。
-* **No User Data Collection / 不收集使用者資料**: We do not collect, log, or store any content you process (text, images, or voice). In Incognito Chat, conversations are deleted the moment you close the tab.
-    * 我們不收集、記錄或儲存您處理的任何內容（文字、圖片或語音）。在「無痕對話」中，所有對話紀錄在您關閉分頁時立即銷毀。
+---
 
-For a detailed explanation of our data handling practices, please see the full **[Privacy Policy](privacy.html)**.
+### 4. Incognito Voice Notes / 無痕語音輸入筆記
 
-想了解更詳細的資料處理作法，請參閱完整的 **[隱私權政策](privacy.html)**。
+Record voice (up to 15 minutes) or upload an audio file. Gemini transcribes the speech with speaker diarization. The result opens in the Reader page where you can click any paragraph to translate it instantly.
 
-Installation & Usage / 安裝與使用
-Installation / 安裝方式
-Recommended: Install from the Chrome Web Store.
+錄音（最長15分鐘）或上傳音訊檔，Gemini 進行語音轉錄並區分說話者。結果在閱讀器頁面開啟，點選任意段落即可立即翻譯。
 
-Manual Installation:
+---
 
-Download the project's ZIP file and unzip it.
+### 5. Reader Page / 閱讀器頁面
 
-In Chrome, navigate to chrome://extensions and enable "Developer mode".
+Displays transcribed or extracted text with:
+- Click-to-translate for any paragraph (routes to local model if enabled, otherwise Gemini)
+- Adjustable font size, line height, and background color (White / Sepia / Dark)
+- Voice translation tool for bulk translation of transcribed text
+- Save content as `.txt` file
 
-Click "Load unpacked" and select the unzipped folder.
+顯示轉錄或擷取的文字，支援：
+- 點選段落立即翻譯（優先使用本機模型，否則使用 Gemini）
+- 可調整字體大小、行距、背景顏色（白色／米色／深色）
+- 語音翻譯工具（對語音轉錄內容進行整體翻譯）
+- 儲存為 `.txt` 檔案
 
-推薦：至 Chrome 線上應用程式商店 安裝。
+---
 
-手動安裝：
+### 6. Local AI Model Support (v27.1) / 本機 AI 模型支援
 
-下載本專案的 ZIP 檔並解壓縮。
+Connect to **Ollama** or **LM Studio** (or any OpenAI-compatible server) for privacy-first, offline AI:
 
-在 Chrome 網址列輸入 chrome://extensions 並開啟「開發人員模式」。
+- Configure the API endpoint URL and model name in Options
+- Supports any HTTP endpoint, including LAN IPs (e.g., `http://192.168.1.x:1234/v1`)
+- When enabled, text translation in Reader and Incognito Chat routes to the local model
 
-點擊「載入未封裝的擴充功能」，並選擇解壓縮後的資料夾。
+在「選項」頁面設定 API 端點 URL 與模型名稱，即可使用本機 AI 模型：
+- 支援任何 HTTP 端點，包含區域網路 IP
+- 啟用後，閱讀器的點擊翻譯與無痕對話的本機分頁將改走本機模型
 
-First-time Setup / 首次使用
-Right-click on the extension icon and select "Options".
+---
 
-On the settings page, paste your own Google Gemini API key.
+## Privacy & Security / 隱私與安全
 
-You can refer to the included "Easy Tutorial for Gemini API Key" to get a free key.
+- **Bring Your Own Key (BYOK)**: All Gemini requests use your own API key directly between your browser and Google's servers.
+- **No Backend Server**: The extension runs entirely on your local machine.
+- **No Data Collection**: We do not collect, log, or store any content you process (text, images, or voice).
+- **Local Model Option**: Use Ollama/LM Studio for fully offline AI — your data never leaves your network.
 
-在擴充功能圖示上按右鍵，選擇「選項」。
+See the full [Privacy Policy](privacy.html) for details.
 
-在設定頁面中，貼上您自己的 Google Gemini API 金鑰。
+---
 
-您可以參考內附的「新手申請Gemini金鑰簡易教學」來獲取免費金鑰。
+## Installation / 安裝
 
-Tech Stack / 技術堆疊
-HTML, CSS, JavaScript (ES6)
+**Recommended**: Install from the [Chrome Web Store](https://chrome.google.com/webstore).
 
-Chrome Extension Manifest V3
+**Manual Installation**:
+1. Download the ZIP file and unzip it.
+2. In Chrome, go to `chrome://extensions` and enable **Developer mode**.
+3. Click **Load unpacked** and select the unzipped folder.
 
-Google Gemini API (gemini-2.5-pro & gemini-2.0-flash)
+---
 
-Contribution & Support / 貢獻與支持
-Contributions of any kind are welcome, including reporting issues via GitHub Issues, suggesting features, or sending Pull Requests.
+## First-Time Setup / 首次設定
 
-If this tool has been helpful for your work or research, consider buying me a coffee to support its continued development and maintenance!
+1. Right-click the extension icon → **Options**.
+2. Paste your **Google Gemini API key** into the API Key field and click **Save Settings**.
+3. *(Optional)* In the **Local AI Model** section, enter your Ollama or LM Studio endpoint and model name to use a local model.
 
-歡迎任何形式的貢獻，包含透過 GitHub Issues 回報問題、提出功能建議或發送合併請求 (Pull Requests)。
+Refer to the built-in **[Tutorial (📖)](tutorial.html)** (accessible from the popup) for a step-by-step guide to getting a free Gemini API key.
 
-如果這個工具對您的工作或研究有所幫助，歡迎到 Buy Me a Coffee 請我喝杯飲料，支持我持續開發與維護！
+---
 
-License / 版權
+## Popup Menu Order / 快捷選單順序
+
+| Button | Function |
+|--------|----------|
+| 🎙️ Voice Notes | Open voice recording / transcription |
+| 💬 Incognito Gemini Chat | Open 3-tab AI chat |
+| 🔧 Smart Translation Workbench | Open text/image translation |
+| 🌐 Translate Current Page | Capture & translate active tab |
+| 📖 Tutorial | How to get a Gemini API key |
+
+---
+
+## Tech Stack / 技術堆疊
+
+- HTML, CSS, JavaScript (ES6 Modules)
+- Chrome Extension Manifest V3
+- Google Gemini API (`gemini-2.5-flash`, `gemini-2.5-pro`)
+- OpenAI-compatible API format (`/v1/chat/completions`) for local models
+- Module architecture: `scripts/gemini-api.js`, `scripts/local-api.js`, `scripts/language_manager.js`
+- i18n support: 9 locales (en, zh_TW, ja, ko, pt, ru, tr, uk, vi)
+
+---
+
+## Contribution & Support / 貢獻與支持
+
+Contributions of any kind are welcome — bug reports via GitHub Issues, feature suggestions, or Pull Requests.
+
+If this tool has been helpful, consider [buying me a coffee](https://www.buymeacoffee.com/hugocc0825) to support continued development!
+
+歡迎任何形式的貢獻。如果本工具對您有所幫助，歡迎請我喝杯飲料以支持持續開發！
+
+---
+
+## License / 版權
+
 Copyright (c) 2025 Dr. Cheng-Che Chen. All Rights Reserved.
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

@@ -103,9 +103,39 @@
 
         <hr class="divider">
 
+        <section class="options-section">
+            <h2 class="section-header" data-i18n="localModelSectionHeader"></h2>
+            <p class="description" data-i18n="localModelDesc"></p>
+            <div class="toggle-row">
+                <label class="label" for="local-model-enabled" data-i18n="localModelEnabledLabel"></label>
+                <input type="checkbox" id="local-model-enabled">
+            </div>
+            <div id="local-model-settings" class="space-y-4" style="margin-top:1rem;">
+                <div>
+                    <label for="local-model-endpoint" class="label" data-i18n="localModelEndpointLabel"></label>
+                    <input type="text" id="local-model-endpoint" class="text-input"
+                           data-i18n-placeholder="localModelEndpointPlaceholder">
+                </div>
+                <div>
+                    <label for="local-model-name" class="label" data-i18n="localModelNameLabel"></label>
+                    <input type="text" id="local-model-name" class="text-input"
+                           data-i18n-placeholder="localModelNamePlaceholder">
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
         <div class="save-area">
             <button id="save" class="submit-btn" data-i18n="optionsSaveButton"></button>
+            <button id="reset" class="reset-btn" data-i18n="optionsResetButton"></button>
             <div id="status" class="status-text"></div>
+        </div>
+
+        <div class="options-footer">
+            <a href="LICENSE" target="_blank" data-i18n="optionsLicenseLink"></a>
+            &nbsp;|&nbsp;
+            <a href="privacy.html" target="_blank" data-i18n="optionsPrivacyLink"></a>
         </div>
     </div>
     <script src="i18n.js"></script>
