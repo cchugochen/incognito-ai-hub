@@ -859,5 +859,9 @@
   "errorLocalModeNoMultimodal": {
     "message": "此功能需要 Google Gemini，在「僅使用本機 AI」模式下無法使用。請在設定中切換為 Gemini 或混合模式。",
     "description": "Error when a multimodal feature is used in local-only mode."
+  },
+  "localModelConfigHint": {
+    "message": "選填。支援 Ollama、LM Studio 或任何相容 OpenAI API 的本機服務。（Ollama 預設：http://localhost:11434/v1 · LM Studio 預設：http://127.0.0.1:1234/v1）",
+    "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   }
 }
