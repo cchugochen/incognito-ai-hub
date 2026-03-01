@@ -50,15 +50,15 @@ function updatePrefLangArrows() {
 
 // --- AI Mode Panel Show/Hide ---
 
-/** Update visibility of gemini-config, local-config, local-mode-warning based on selected mode. */
+/** Update visibility of gemini-config and local-mode-warning based on selected mode.
+ * local-config (endpoint + model name) is always visible so users can always configure it. */
 function updateAiModePanels(mode) {
     const geminiConfig = document.getElementById('gemini-config');
-    const localConfig = document.getElementById('local-config');
     const localWarning = document.getElementById('local-mode-warning');
 
-    // gemini: show gemini panel; hybrid: show both; local: show local panel + warning
+    // Hide Gemini API key + model selector in local-only mode (not needed)
     geminiConfig.classList.toggle('hidden', mode === 'local');
-    localConfig.classList.toggle('hidden', mode === 'gemini');
+    // Show amber warning only in local-only mode
     localWarning.classList.toggle('hidden', mode !== 'local');
 }
 
