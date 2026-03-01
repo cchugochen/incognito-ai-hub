@@ -13,7 +13,9 @@
  * @throws {Error} With a localized error message on failure
  */
 export async function localModelCall(baseUrl, modelName, messages) {
-    const url = `${baseUrl.replace(/\/$/, '')}/chat/completions`;
+    // Normalize: support both "http://host:port" and "http://host:port/v1"
+    const base = baseUrl.replace(/\/$/, '');
+    const url = /\/v\d+$/.test(base) ? `${base}/chat/completions` : `${base}/v1/chat/completions`;
     let response;
     try {
         response = await fetch(url, {

@@ -1,85 +1,85 @@
 {
   "appName": {
-    "message": "無痕AI工作台 Incognito AI Hub by Gemini",
+    "message": "Incognito AI Hub by Gemini",
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "簡單的無痕 AI 對話框，應用 Gemini 與 Local LLM 工具完成翻譯網頁、文字、截圖、以及語音輸入的免費小工具",
+    "message": "دردشة ذكاء اصطناعي مجهولة بسيطة مع Gemini وLLM محلي. أداة مجانية لترجمة صفحات الويب والنصوص ولقطات الشاشة والصوت.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
-    "message": "翻譯當前網頁 (若Google翻譯無法使用)",
+    "message": "ترجمة الصفحة الحالية (إذا كان Google Translate غير متاح)",
     "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
-    "message": "開啟智慧翻譯工作台",
-    "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
+    "message": "فتح ورشة الترجمة الذكية",
+    "description": "Button text in popup.html"
   },
   "popupOpenVoiceNotes": {
-    "message": "無痕-語音輸入筆記",
+    "message": "متخفي - ملاحظات صوتية",
     "description": "Button text in popup.html"
   },
   "popupOpenIncognito": {
-    "message": "無痕Gemini對話",
+    "message": "محادثة Gemini المتخفية",
     "description": "Button text in popup.html"
   },
   "popupOpenTutorial": {
-    "message": "新手申請Gemini金鑰簡易教學",
+    "message": "شرح مفتاح Gemini API",
     "description": "Button text in popup.html"
   },
   "popupShowLicense": {
-    "message": "MIT版權說明",
+    "message": "معلومات رخصة MIT",
     "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "Incognito AI Hub 設定",
+    "message": "إعدادات Incognito AI Hub",
     "description": "Title for the options page."
   },
   "optionsHeader": {
-    "message": "⚙️ 設定",
+    "message": "⚙️ الإعدادات",
     "description": "Header text on the options page."
   },
   "optionsDisplayLangSectionHeader": {
-    "message": "顯示語言",
+    "message": "لغة العرض",
     "description": "Section header on options page."
   },
   "optionsDisplayLangLabel": {
-    "message": "擴充功能介面語言",
+    "message": "لغة واجهة الإضافة",
     "description": "Label for language selection on options page."
   },
   "optionsDisplayLangDefault": {
-    "message": "預設 (跟隨瀏覽器)",
+    "message": "الافتراضي (تابع المتصفح)",
     "description": "Default option for language selection."
   },
   "optionsPrefLangSectionHeader": {
-    "message": "常用語言",
+    "message": "اللغات المفضلة",
     "description": "Section header for preferred languages."
   },
   "optionsPrefLangDesc": {
-    "message": "最多設定 3 個常用翻譯目標語言，顯示於翻譯選單頂部。使用 ↑↓ 按鈕調整顯示順序。"
+    "message": "اضبط ما يصل إلى 3 لغات هدف مفضلة. ستظهر في أعلى قوائم الترجمة. استخدم أزرار ↑↓ لتحديد أولوية العرض."
   },
   "optionsPrefLangLabelA": {
-    "message": "偏好語言 A",
+    "message": "اللغة المفضلة أ",
     "description": "Label for preferred language A."
   },
   "optionsPrefLangLabelB": {
-    "message": "偏好語言 B",
+    "message": "اللغة المفضلة ب",
     "description": "Label for preferred language B."
   },
   "optionsApiKeySectionHeader": {
-    "message": "API 金鑰與模型",
+    "message": "مفتاح API والنموذج",
     "description": "Section header for API key settings."
   },
   "optionsApiKeyLabel": {
-    "message": "您的 Google Gemini API 金鑰",
+    "message": "مفتاح Google Gemini API الخاص بك",
     "description": "Label for API key input field."
   },
   "optionsApiKeyPlaceholder": {
-    "message": "請在此貼上您的 API 金鑰",
+    "message": "الصق مفتاح API هنا",
     "description": "Placeholder text for API key input."
   },
   "optionsModelSelectLabel": {
-    "message": "預設的網頁/圖片翻譯模型",
+    "message": "النموذج الافتراضي لترجمة صفحات الويب/الصور",
     "description": "Label for the model selection radio buttons."
   },
   "optionsModelFlashName": {
@@ -87,7 +87,7 @@
     "description": "Name of the Flash model."
   },
   "optionsModelFlashDesc": {
-    "message": "速度最快，經濟實惠，適合快速、大量的翻譯與摘要任務。",
+    "message": "الأسرع والأكثر فعالية من حيث التكلفة، مناسب للترجمات السريعة وذات الحجم الكبير.",
     "description": "Description of the Flash model."
   },
   "optionsModelProName": {
@@ -95,111 +95,115 @@
     "description": "Name of the Pro model."
   },
   "optionsModelProDesc": {
-    "message": "能力最強，理解複雜情境與圖片的準確度更高，但成本較高。",
+    "message": "الأكثر قوة، بدقة أعلى للسياقات المعقدة والصور، ولكن بتكلفة أعلى.",
     "description": "Description of the Pro model."
   },
   "optionsPresetSectionHeader": {
-    "message": "無痕對話-指令預設集",
+    "message": "المحادثة المتخفية - قوالب الأوامر",
     "description": "Section header for preset prompts."
   },
   "optionsPresetDesc": {
-    "message": "為「無痕 Gemini 對話」設定最多 7 組系統提示詞預設集（A–G）。按下對應按鈕時，該預設集將作為初始指令載入對話中。",
+    "message": "أعدّ ما يصل إلى 7 قوالب لأوامر النظام (A–G) لصفحة الدردشة المجهولة. كل قالب هو مجموعة من التعليمات الأولية تُحمَّل إلى المحادثة عند النقر على الزر المقابل.",
     "description": "Description for preset prompts."
   },
   "optionsPresetLabelA": {
-    "message": "預設指令 A",
+    "message": "قالب A",
     "description": "Label for preset A."
   },
   "optionsPresetLabelB": {
-    "message": "預設指令 B",
+    "message": "قالب B",
     "description": "Label for preset B."
   },
   "optionsPresetLabelC": {
-    "message": "預設指令 C",
+    "message": "قالب C",
     "description": "Label for preset C."
   },
   "optionsPresetLabelD": {
-    "message": "預設指令 D",
+    "message": "قالب D",
     "description": "Label for preset D."
   },
   "optionsPresetLabelE": {
-    "message": "預設指令 E",
+    "message": "قالب E",
     "description": "Label for preset E."
   },
   "optionsPresetLabelF": {
-    "message": "預設指令 F",
+    "message": "قالب F",
     "description": "Label for preset F."
   },
   "optionsPresetLabelG": {
-    "message": "預設指令 G",
+    "message": "قالب G",
     "description": "Label for preset G."
   },
   "optionsSaveButton": {
-    "message": "儲存設定",
+    "message": "حفظ الإعدادات",
     "description": "Save button text."
   },
   "optionsResetButton": {
-    "message": "恢復預設值",
+    "message": "إعادة الضبط للافتراضي",
     "description": "Reset button text on options page."
   },
   "optionsStatusReset": {
-    "message": "設定已恢復預設值。",
+    "message": "تمت إعادة الإعدادات للافتراضي.",
     "description": "Status message when settings are reset."
   },
   "optionsStatusSaved": {
-    "message": "設定已儲存！",
+    "message": "تم حفظ الإعدادات!",
     "description": "Status message when settings are saved."
   },
   "alertNoApiKey": {
-    "message": "錯誤：找不到 Gemini API 金鑰。請先在設定頁面中填入您的金鑰。",
+    "message": "خطأ: لم يُعثر على مفتاح Gemini API. الرجاء إدخال مفتاحك في صفحة الإعدادات أولاً.",
     "description": "Alert message when API key is missing."
   },
   "alertNoApiKeyOptions": {
-    "message": "請先在「選項設定頁」中輸入您的 Google Gemini API 金鑰。",
+    "message": "الرجاء إدخال مفتاح Google Gemini API في صفحة الإعدادات أولاً.",
     "description": "Alert message shown when API key is missing, directing user to options page."
   },
   "alertInitFailed": {
-    "message": "初始化失敗，請檢查主控台錯誤訊息。",
+    "message": "فشل التهيئة. الرجاء التحقق من وحدة التحكم لرسائل الخطأ.",
     "description": "Alert on initialization failure."
   },
   "errorNetwork": {
-    "message": "網路錯誤或無法連線至 Gemini API。請檢查您的網路連線與防火牆設定。",
+    "message": "خطأ في الشبكة أو تعذر الاتصال بـ Gemini API. الرجاء التحقق من اتصالك بالإنترنت وإعدادات جدار الحماية.",
     "description": "Error message for network issues."
   },
   "errorApiInvalidResponse": {
-    "message": "API 回應格式錯誤，模型可能沒有回傳有效的內容。",
+    "message": "تنسيق استجابة API غير صالح. قد لا يكون النموذج قد أعاد محتوى صالحًا.",
     "description": "Error when API response is malformed."
   },
   "errorUnknown": {
-    "message": "發生未知錯誤。",
+    "message": "حدث خطأ غير معروف.",
     "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "閱讀模式 - 無痕AI工作台",
+    "message": "وضع القارئ - Incognito AI Hub",
     "description": "Title for the reader page."
   },
   "readerLoading": {
-    "message": "AI 處理中，請稍候...",
+    "message": "يعالج الذكاء الاصطناعي، الرجاء الانتظار...",
     "description": "Loading message in reader."
   },
   "readerLabelTargetLang": {
-    "message": "翻譯為",
+    "message": "ترجمة إلى",
     "description": "Label for target language selector in reader."
   },
   "readerLabelFontSize": {
-    "message": "字體大小",
+    "message": "حجم الخط",
     "description": "Label for font size slider."
   },
   "readerLabelLineHeight": {
-    "message": "行高",
+    "message": "تباعد الأسطر",
     "description": "Label for line height slider."
   },
+  "readerLabelBgColor": {
+    "message": "الخلفية",
+    "description": "Label for background color buttons."
+  },
   "readerSaveButton": {
-    "message": "儲存為 .txt",
+    "message": "حفظ كـ .txt",
     "description": "Save button text in reader."
   },
   "readerSaveOriginal": {
-    "message": "【原文段落 $index$】",
+    "message": "[الفقرة الأصلية $index$]",
     "description": "Label for original text paragraph when saving.",
     "placeholders": {
       "index": {
@@ -208,7 +212,7 @@
     }
   },
   "readerSaveTranslated": {
-    "message": "【翻譯段落 $index$】",
+    "message": "[الفقرة المترجمة $index$]",
     "description": "Label for translated text paragraph when saving.",
     "placeholders": {
       "index": {
@@ -217,115 +221,123 @@
     }
   },
   "readerVoiceToolHeader": {
-    "message": "語音朗讀工具",
+    "message": "تحويل النص إلى كلام",
     "description": "Header for the text-to-speech tool in reader."
   },
   "readerVoiceToolLabel": {
-    "message": "朗讀語言",
+    "message": "لغة الكلام",
     "description": "Label for TTS language selection."
   },
   "readerVoiceToolButton": {
-    "message": "翻譯",
-    "description": "Button to trigger TTS."
+    "message": "ترجمة",
+    "description": "Button to trigger translation."
   },
   "workbenchTitle": {
-    "message": "智慧翻譯工作台",
+    "message": "ورشة الترجمة الذكية",
     "description": "Title for the workbench page."
   },
   "workbenchTabText": {
-    "message": "貼上文字",
+    "message": "لصق النص",
     "description": "Tab label for pasting text."
   },
   "workbenchTabImage": {
-    "message": "上傳圖片",
+    "message": "رفع صورة",
     "description": "Tab label for uploading image."
   },
   "workbenchTextHeader": {
-    "message": "文字翻譯",
+    "message": "ترجمة النص",
     "description": "Header for text translation section."
   },
   "workbenchTextDesc": {
-    "message": "將複製的文字貼到下方進行翻譯。",
+    "message": "الصق النص المنسوخ أدناه للترجمة.",
     "description": "Description for text translation."
   },
   "workbenchImageHeader": {
-    "message": "圖片翻譯 (OCR)",
+    "message": "ترجمة الصورة (OCR)",
     "description": "Header for image translation section."
   },
   "workbenchImageDesc": {
-    "message": "上傳或貼上螢幕截圖，AI 將自動辨識並翻譯圖中的文字。",
+    "message": "ارفع أو الصق لقطة شاشة. سيتعرف الذكاء الاصطناعي تلقائيًا على النص في الصورة ويترجمه.",
     "description": "Description for image translation."
   },
   "workbenchLabelSourceLang": {
-    "message": "來源語言",
+    "message": "لغة المصدر",
     "description": "Label for source language selector."
   },
   "workbenchLabelTargetLang": {
-    "message": "目標語言",
+    "message": "لغة الهدف",
     "description": "Label for target language selector."
   },
+  "workbenchLabelImageSourceLang": {
+    "message": "لغة مصدر الصورة",
+    "description": "Label for image source language selector."
+  },
   "workbenchProcessTextButton": {
-    "message": "翻譯文字",
+    "message": "ترجمة النص",
     "description": "Button to process text."
   },
   "workbenchProcessImageButton": {
-    "message": "辨識與翻譯圖片",
+    "message": "التعرف على الصورة وترجمتها",
     "description": "Button to process image."
   },
   "workbenchUploadBox": {
-    "message": "點擊此處選擇圖片，或直接將截圖貼上 (Cmd+V / Ctrl+V)",
+    "message": "انقر هنا لتحديد صورة، أو الصق لقطة شاشة مباشرةً (Cmd+V / Ctrl+V)",
     "description": "Placeholder for image upload box."
   },
   "workbenchUploadBoxDesc": {
-    "message": "支援 JPG, PNG, BMP 格式",
+    "message": "يدعم صيغ JPG و PNG و BMP",
     "description": "Subtitle for image upload box."
   },
   "workbenchImageResultTitle": {
-    "message": "圖片翻譯結果",
+    "message": "نتيجة ترجمة الصورة",
     "description": "Title for the reader tab showing image OCR result."
   },
+  "workbenchTextPlaceholder": {
+    "message": "الصق النص هنا...",
+    "description": "Placeholder for the text input area in workbench."
+  },
   "voiceTitle": {
-    "message": "無痕-語音輸入筆記",
+    "message": "متخفي - ملاحظات صوتية",
     "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "按下開始錄音，或上傳音訊檔。AI 將把語音轉為逐字稿，並嘗試區分不同發言者。",
+    "message": "اضغط 'بدء التسجيل' أو ارفع ملف صوتي. سيقوم الذكاء الاصطناعي بنسخ الكلام ومحاولة التمييز بين المتحدثين.",
     "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
-    "message": "音訊來源",
+    "message": "مصدر الصوت",
     "description": "Label for audio source dropdown."
   },
   "voiceLabelSpokenLang": {
-    "message": "主要口語語言",
+    "message": "اللغة المنطوقة الرئيسية",
     "description": "Label for spoken language dropdown."
   },
   "voiceButtonStart": {
-    "message": "開始錄音",
+    "message": "بدء التسجيل",
     "description": "Start recording button."
   },
   "voiceButtonStop": {
-    "message": "停止錄音",
+    "message": "إيقاف التسجيل",
     "description": "Stop recording button."
   },
   "voiceStatusRecording": {
-    "message": "錄音中...",
+    "message": "جارٍ التسجيل...",
     "description": "Status message."
   },
   "voiceStatusTranscribing": {
-    "message": "轉錄中，請稍候...",
+    "message": "جارٍ النسخ، الرجاء الانتظار...",
     "description": "Status message."
   },
   "voiceStatusSuccess": {
-    "message": "辨識完成！正在開啟結果頁面...",
+    "message": "اكتمل النسخ! جارٍ فتح صفحة النتائج...",
     "description": "Status message."
   },
   "errorNoMic": {
-    "message": "錯誤：找不到可用的麥克風。",
+    "message": "خطأ: لم يُعثر على ميكروفون متاح.",
     "description": "Error message."
   },
   "errorMicPermission": {
-    "message": "錯誤：無法取得麥克風權限。請檢查瀏覽器設定。詳細資訊: $error$",
+    "message": "خطأ: تعذر الحصول على إذن الميكروفون. الرجاء التحقق من إعدادات المتصفح. التفاصيل: $error$",
     "description": "Error message.",
     "placeholders": {
       "error": {
@@ -334,7 +346,7 @@
     }
   },
   "voiceStatusFailed": {
-    "message": "辨識失敗: $error$",
+    "message": "فشل النسخ: $error$",
     "description": "Status message.",
     "placeholders": {
       "error": {
@@ -343,45 +355,45 @@
     }
   },
   "langAutoDetect": {
-    "message": "自動偵測",
+    "message": "اكتشاف تلقائي",
     "description": "Language option for auto-detection."
   },
   "langSystemDefault": {
-    "message": "系統預設語言 ($langName$)",
-    "description": "Language option for system default, with placeholder for the actual language name.",
+    "message": "افتراضي النظام ($langName$)",
+    "description": "Language option for system default.",
     "placeholders": {
       "langName": {
         "content": "$1",
-        "example": "Traditional Chinese"
+        "example": "العربية"
       }
     }
   },
   "langPrefA": {
-    "message": "偏好語言-A ($langName$)",
+    "message": "مفضل-أ ($langName$)",
     "description": "Language option for preferred language A.",
     "placeholders": {
       "langName": {
         "content": "$1",
-        "example": "Français"
+        "example": "العربية"
       }
     }
   },
   "langPrefB": {
-    "message": "偏好語言-B ($langName$)",
+    "message": "مفضل-ب ($langName$)",
     "description": "Language option for preferred language B.",
     "placeholders": {
       "langName": {
         "content": "$1",
-        "example": "Español"
+        "example": "العربية"
       }
     }
   },
   "voiceLangZhEn": {
-    "message": "中文 (夾雜英文)",
+    "message": "الصينية (مع الإنجليزية)",
     "description": "Special language option for voice input."
   },
   "voiceMicLabel": {
-    "message": "麥克風 $index$",
+    "message": "ميكروفون $index$",
     "description": "Default label for a microphone.",
     "placeholders": {
       "index": {
@@ -391,12 +403,12 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito AI Hub: 作者Hugo Chen是一位台灣醫師，在2025夏季某個颱風天完成初版，初版以台語命名為「風颱」(Hong-Thai)。如果您覺得好用，請在Chrome網頁商店給好評。如果願意，歡迎到右邊連結本人的Buy Me a Coffee網頁，用實際行動請我喝一杯飲料。",
+    "message": "Incognito AI Hub: أنشأه Hugo Chen، طبيب تايواني، في يوم إعصار صيف 2025. إذا وجدته مفيدًا، يُرجى ترك تقييم إيجابي على متجر Chrome. وإن أردت، يمكنك مكافأتي عبر رابط Buy Me a Coffee.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {
-    "message": "You are a helpful assistant. The user has provided the HTML content and a screenshot of a webpage. Please analyze both to understand the main content of the page, ignoring ads, navigation bars, and footers. Then, provide a concise summary of the key points in a well-structured, easy-to-read format. Finally, translate the summary into traditional chinese. Here is the HTML content: ```html\n$pageContent$\n```",
-    "description": "Prompt for webpage processing in background.js.",
+    "message": "أنت مساعد مفيد. قدّم المستخدم محتوى HTML لصفحة ويب. حلّل المحتوى الرئيسي متجاهلاً الإعلانات وأشرطة التنقل، وقدّم ملخصًا موجزًا باللغة $lang$. محتوى HTML: ```html\n$pageContent$\n```",
+    "description": "Prompt for webpage processing.",
     "placeholders": {
       "pageContent": {
         "content": "$1"
@@ -407,8 +419,8 @@
     }
   },
   "promptTranslateTo": {
-    "message": "Please translate the text in the image into $lang$.",
-    "description": "Prompt for image translation, asking to translate to a specific language.",
+    "message": "الرجاء ترجمة النص في الصورة إلى $lang$.",
+    "description": "Prompt for image translation.",
     "placeholders": {
       "lang": {
         "content": "$1"
@@ -416,11 +428,11 @@
     }
   },
   "promptSourceLangAuto": {
-    "message": "First, identify the language of the text in the image.",
+    "message": "أولاً، حدد لغة النص في الصورة.",
     "description": "Part of the prompt for auto-detecting source language."
   },
   "promptSourceLangIs": {
-    "message": "The language of the text in the image is $lang$.",
+    "message": "لغة النص في الصورة هي $lang$.",
     "description": "Part of the prompt specifying the source language.",
     "placeholders": {
       "lang": {
@@ -429,79 +441,79 @@
     }
   },
   "incognitoTitle": {
-    "message": "無痕Gemini對話",
+    "message": "محادثة Gemini المتخفية",
     "description": "Title for the incognito chat page."
   },
   "incognitoDefaultModelHeader": {
-    "message": "Gemini 預設模型",
+    "message": "نموذج Gemini الافتراضي",
     "description": "Header for the default model tab."
   },
   "incognitoDefaultModelDesc": {
-    "message": "此分頁使用的模型將根據您在「⚙️ 設定」中的選擇而定 (預設為 2.5 Flash Lite)。最小的模型適合簡單翻譯與文字整理，處理簡單的PDF與圖片。",
+    "message": "يعتمد النموذج المستخدم في هذا التبويب على اختيارك في '⚙️ الإعدادات' (الافتراضي: 2.5 Flash). النموذج الأصغر مناسب للترجمات البسيطة ومعالجة ملفات PDF والصور الأساسية.",
     "description": "Description for the default model tab."
   },
   "incognitoSendButton": {
-    "message": "傳送",
+    "message": "إرسال",
     "description": "Send button text."
   },
   "incognitoUploadTitle": {
-    "message": "上傳圖片 (最多4張)",
+    "message": "رفع صور (بحد أقصى 4)",
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "上傳PDF文件 (1個)",
+    "message": "رفع مستند PDF (1)",
     "description": "Tooltip for the PDF upload button."
   },
   "incognitoPresetTitleA": {
-    "message": "使用預設指令 A",
+    "message": "استخدام قالب A",
     "description": "Tooltip for preset button A."
   },
   "incognitoPresetTitleB": {
-    "message": "使用預設指令 B",
+    "message": "استخدام قالب B",
     "description": "Tooltip for preset button B."
   },
   "incognitoPresetTitleC": {
-    "message": "使用預設指令 C",
+    "message": "استخدام قالب C",
     "description": "Tooltip for preset button C."
   },
   "incognitoPresetTitleD": {
-    "message": "使用預設指令 D",
+    "message": "استخدام قالب D",
     "description": "Tooltip for preset button D."
   },
   "incognitoPresetTitleE": {
-    "message": "使用預設指令 E",
+    "message": "استخدام قالب E",
     "description": "Tooltip for preset button E."
   },
   "incognitoPresetTitleF": {
-    "message": "使用預設指令 F",
+    "message": "استخدام قالب F",
     "description": "Tooltip for preset button F."
   },
   "incognitoPresetTitleG": {
-    "message": "使用預設指令 G",
+    "message": "استخدام قالب G",
     "description": "Tooltip for preset button G."
   },
   "incognitoPresetLabel": {
-    "message": "提示語:",
+    "message": "القوالب:",
     "description": "Label before the preset buttons."
   },
   "stateThinking": {
-    "message": "思考中...",
+    "message": "جارٍ التفكير...",
     "description": "Thinking indicator text."
   },
   "incognitoApiError": {
-    "message": "API 請求失敗",
+    "message": "فشل طلب API",
     "description": "Error message prefix for API failures."
   },
   "incognitoInitialMessage": {
-    "message": "您好！請問有什麼需要我協助的嗎？",
+    "message": "مرحبًا! كيف يمكنني مساعدتك اليوم؟",
     "description": "Initial greeting message from the assistant."
   },
   "incognitoClearConfirm": {
-    "message": "您確定要清除這次的對話紀錄嗎？這個操作無法復原。",
+    "message": "هل أنت متأكد من رغبتك في مسح سجل المحادثة؟ لا يمكن التراجع عن هذا الإجراء.",
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "請在這裡輸入訊息 (可上傳圖片或PDF)...",
+    "message": "أدخل رسالتك هنا (يمكنك رفع صور أو ملف PDF)...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -509,7 +521,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Google的標準中級模型。適合需要快速回應、高吞吐量的應用情境，成本中等，同樣支援圖片與PDF輸入。",
+    "message": "النموذج المتوسط القياسي من Google. مناسب للتطبيقات التي تتطلب استجابات سريعة وإنتاجية عالية بتكلفة معتدلة. يدعم أيضًا مدخلات الصور وملفات PDF.",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -517,15 +529,15 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Google最強大的模型，擁有巨大的 100 萬 Token 上下文視窗，在複雜推理、程式碼和多模態理解方面表現卓越。費用最高，適合處理複雜的PDF與圖片。",
+    "message": "أقوى نماذج Google مع نافذة سياق ضخمة تبلغ مليون رمز. متميز في التفكير المعقد والبرمجة والفهم متعدد الوسائط.",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
-    "message": "上傳與處理中...",
+    "message": "جارٍ الرفع والمعالجة...",
     "description": "Status for file upload."
   },
   "statusFailed": {
-    "message": "處理失敗: $error$",
+    "message": "فشلت المعالجة: $error$",
     "description": "Generic failure status.",
     "placeholders": {
       "error": {
@@ -534,31 +546,31 @@
     }
   },
   "statusUploadSuccess": {
-    "message": "成功！正在開啟結果...",
+    "message": "نجاح! جارٍ فتح النتائج...",
     "description": "Success status for file upload."
   },
   "voiceOrDivider": {
-    "message": "或",
+    "message": "أو",
     "description": "The 'OR' divider between record and upload buttons."
   },
   "voiceButtonUpload": {
-    "message": "上傳音訊檔",
-    "description": "The new button to upload an audio file."
+    "message": "رفع ملف صوتي",
+    "description": "The button to upload an audio file."
   },
   "voiceButtonSubmit": {
-    "message": "辨識檔案",
+    "message": "نسخ الملف",
     "description": "The text on the record button when a file is ready to be submitted."
   },
   "errorInvalidFileType": {
-    "message": "錯誤：檔案類型無效，請選擇一個音訊檔。",
+    "message": "خطأ: نوع ملف غير صالح. الرجاء تحديد ملف صوتي.",
     "description": "Error when a non-audio file is selected."
   },
   "errorFileRead": {
-    "message": "錯誤：讀取檔案時發生問題。",
+    "message": "خطأ: حدثت مشكلة أثناء قراءة الملف.",
     "description": "Error when the FileReader API fails."
   },
   "promptVoiceTranscribeDiarize": {
-    "message": "Please transcribe the following audio. The primary language spoken is $lang$. Pay close attention to pauses and changes in tone or speech patterns to identify and label different speakers (e.g., Speaker 1, Speaker 2). Provide the output as a clear, readable transcript.",
+    "message": "الرجاء نسخ الصوت التالي. اللغة المنطوقة الرئيسية هي $lang$. انتبه إلى التوقفات وتغييرات النبرة لتحديد المتحدثين المختلفين وتسميتهم. قدّم نسخًا واضحًا وقابلًا للقراءة.",
     "description": "Prompt for voice transcription with speaker diarization.",
     "placeholders": {
       "lang": {
@@ -567,15 +579,15 @@
     }
   },
   "voiceResultTitle": {
-    "message": "語音轉錄結果",
+    "message": "نتيجة نسخ الصوت",
     "description": "Title for the reader tab showing voice transcription result."
   },
   "errorNoApiKey": {
-    "message": "錯誤：找不到 Gemini API 金鑰，請先在設定頁面填入您的金鑰。",
+    "message": "خطأ: لم يُعثر على مفتاح Gemini API. الرجاء إدخال مفتاحك في صفحة الإعدادات أولاً.",
     "description": "Error thrown when API key is missing from storage."
   },
   "errorApiRequestFailed": {
-    "message": "API 請求失敗：$details$",
+    "message": "فشل طلب API: $details$",
     "description": "Error when API returns a non-OK HTTP status.",
     "placeholders": {
       "details": {
@@ -584,7 +596,7 @@
     }
   },
   "errorApiRejected": {
-    "message": "API 請求被封鎖。原因：$reason$",
+    "message": "تم حظر طلب API. السبب: $reason$",
     "description": "Error when API blocks the request due to safety filters.",
     "placeholders": {
       "reason": {
@@ -593,7 +605,7 @@
     }
   },
   "errorApiStopped": {
-    "message": "API 回應意外中止。原因：$reason$",
+    "message": "توقفت استجابة API بشكل غير متوقع. السبب: $reason$",
     "description": "Error when API finishes with a non-STOP reason.",
     "placeholders": {
       "reason": {
@@ -602,47 +614,47 @@
     }
   },
   "errorNoActiveTab": {
-    "message": "錯誤：找不到活動中的分頁，請重試。",
+    "message": "خطأ: لم يُعثر على تبويب نشط. الرجاء المحاولة مرة أخرى.",
     "description": "Error when no active browser tab is found."
   },
   "errorInvalidText": {
-    "message": "錯誤：文字內容無效或為空。",
+    "message": "خطأ: نص غير صالح أو فارغ.",
     "description": "Error when submitted text is empty or invalid."
   },
   "errorNoImageData": {
-    "message": "錯誤：找不到圖片資料，請上傳圖片。",
+    "message": "خطأ: لم يُعثر على بيانات صورة. الرجاء رفع صورة.",
     "description": "Error when image data is missing from the payload."
   },
   "errorNoAudioData": {
-    "message": "錯誤：找不到音訊資料，請錄音或上傳音訊檔。",
+    "message": "خطأ: لم يُعثر على بيانات صوتية. الرجاء التسجيل أو رفع ملف صوتي.",
     "description": "Error when audio data is missing from the payload."
   },
   "errorOcrFailed": {
-    "message": "錯誤：OCR 失敗，AI 無法從圖片中辨識足夠的文字，請嘗試更清晰的圖片。",
+    "message": "خطأ: فشل OCR. لم يتمكن الذكاء الاصطناعي من التعرف على نص كافٍ من الصورة. الرجاء تجربة صورة أوضح.",
     "description": "Error when OCR produces too little text."
   },
   "errorOcrFailedLong": {
-    "message": "錯誤：OCR 辨識結果不足，網頁截圖可能是空白或無法讀取。",
+    "message": "خطأ: أعاد OCR محتوى غير كافٍ. قد تكون لقطة الشاشة فارغة أو غير قابلة للقراءة.",
     "description": "Error when webpage screenshot OCR produces too little text."
   },
   "errorScreenshotFailed": {
-    "message": "錯誤：截圖失敗。",
+    "message": "خطأ: فشل التقاط لقطة الشاشة.",
     "description": "Error when the debugger screenshot command fails."
   },
   "errorDebuggerAttach": {
-    "message": "錯誤：無法附加至此頁面。部分頁面（例如 Chrome 設定頁面）不允許此操作。",
+    "message": "خطأ: تعذر الإرفاق بالصفحة. قد يكون هذا مقيدًا في بعض الصفحات (مثل صفحات إعدادات Chrome).",
     "description": "Error when the Chrome debugger cannot attach to a tab."
   },
   "errorSttFailed": {
-    "message": "錯誤：語音轉文字失敗，音訊可能太短或不清晰。",
+    "message": "خطأ: فشل نسخ الكلام إلى نص. قد يكون الصوت قصيرًا جدًا أو غير واضح.",
     "description": "Error when transcription produces no text."
   },
   "readerTranslating": {
-    "message": "翻譯中...",
+    "message": "جارٍ الترجمة...",
     "description": "Status shown in the voice translation output while translating."
   },
   "readerTranslateFailed": {
-    "message": "翻譯失敗：$error$",
+    "message": "فشلت الترجمة: $error$",
     "description": "Error shown in the reader when a paragraph translation fails.",
     "placeholders": {
       "error": {
@@ -651,35 +663,35 @@
     }
   },
   "readerErrorNotFound": {
-    "message": "錯誤：找不到要顯示的內容，請返回上一頁重試。",
+    "message": "خطأ: لم يُعثر على محتوى لعرضه. الرجاء العودة والمحاولة مرة أخرى.",
     "description": "Error shown in reader when no article text is in storage."
   },
   "voiceStatusLimitReached": {
-    "message": "已達錄音上限（15分鐘），正在處理...",
+    "message": "تم الوصول لحد التسجيل (15 دقيقة). جارٍ المعالجة...",
     "description": "Status shown when the max recording time is reached."
   },
   "statusProcessing": {
-    "message": "處理中...",
+    "message": "جارٍ المعالجة...",
     "description": "Generic processing status message."
   },
   "statusPleasePaste": {
-    "message": "請先貼上文字。",
+    "message": "الرجاء لصق نص أولاً.",
     "description": "Status shown when user clicks process without entering text."
   },
   "statusSuccess": {
-    "message": "成功！正在開啟結果頁面...",
+    "message": "نجاح! جارٍ فتح صفحة النتائج...",
     "description": "Success status after text processing."
   },
   "errorPleaseUploadImage": {
-    "message": "錯誤：請上傳圖片檔（JPG、PNG、BMP）。",
+    "message": "خطأ: الرجاء رفع ملف صورة (JPG، PNG، BMP).",
     "description": "Error when a non-image file is dropped on the upload box."
   },
   "alertMaxImages": {
-    "message": "一次最多只能附加 4 張圖片。",
+    "message": "يمكنك إرفاق 4 صور كحد أقصى في المرة الواحدة.",
     "description": "Alert when user tries to attach more than 4 images."
   },
   "alertTurnLimit": {
-    "message": "本次對話已達到 $limit$ 輪的上限，請重新整理頁面以開始新的對話。",
+    "message": "لقد وصلت إلى حد $limit$ جولة لهذه المحادثة. الرجاء تحديث الصفحة لبدء محادثة جديدة.",
     "description": "Alert shown when the conversation reaches the maximum number of turns.",
     "placeholders": {
       "limit": {
@@ -688,11 +700,11 @@
     }
   },
   "alertOnePdfOnly": {
-    "message": "一次只能附加一個 PDF 檔案。",
+    "message": "يمكن إرفاق ملف PDF واحد فقط في المرة الواحدة.",
     "description": "Alert when user tries to attach more than one PDF."
   },
   "incognitoAttachedFile": {
-    "message": "附加檔案：$filename$",
+    "message": "مرفق: $filename$",
     "description": "Text shown in the chat message when a file is attached.",
     "placeholders": {
       "filename": {
@@ -701,27 +713,27 @@
     }
   },
   "localModelSectionHeader": {
-    "message": "本機 AI 模型（Ollama / LM Studio）",
+    "message": "نموذج الذكاء الاصطناعي المحلي (Ollama / LM Studio)",
     "description": "Section header for local model settings on the options page."
   },
   "localModelDesc": {
-    "message": "透過 OpenAI 相容 API 使用本機 AI 模型（Ollama / LM Studio）。啟用後，無痕對話、閱讀器的翻譯功能將改走本機模型。",
+    "message": "استخدم نموذج ذكاء اصطناعي محلي عبر واجهة API متوافقة مع OpenAI (Ollama / LM Studio). بمجرد التفعيل، ستستخدم محادثة التخفي وترجمة القارئ النموذج المحلي.",
     "description": "Description for local model settings."
   },
   "localModelEnabledLabel": {
-    "message": "啟用本機模型",
+    "message": "تفعيل النموذج المحلي",
     "description": "Label for the enable local model checkbox."
   },
   "localModelEndpointLabel": {
-    "message": "API 端點 URL",
+    "message": "رابط نقطة نهاية API",
     "description": "Label for the local model endpoint URL input."
   },
   "localModelEndpointPlaceholder": {
-    "message": "http://localhost:11434/v1 或 http://127.0.0.1:1234",
+    "message": "http://localhost:11434/v1 أو http://127.0.0.1:1234",
     "description": "Placeholder for the local model endpoint URL input."
   },
   "localModelNameLabel": {
-    "message": "模型名稱",
+    "message": "اسم النموذج",
     "description": "Label for the local model name input."
   },
   "localModelNamePlaceholder": {
@@ -729,76 +741,63 @@
     "description": "Placeholder for the local model name input."
   },
   "localModelTabName": {
-    "message": "本機模型",
+    "message": "النموذج المحلي",
     "description": "Tab button label for the local model chat tab."
   },
   "localModelHeader": {
-    "message": "本機 AI 模型對話",
+    "message": "محادثة مع نموذج الذكاء الاصطناعي المحلي",
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "使用本機 Ollama 或 LM Studio 模型進行對話。僅支援文字輸入，不支援圖片與 PDF。",
+    "message": "تحدث مع نموذج Ollama أو LM Studio المحلي. نص فقط — الصور وملفات PDF غير مدعومة.",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
-    "message": "本機模型尚未啟用。請前往設定頁（⚙️）設定 API 端點與模型名稱。",
+    "message": "النموذج المحلي غير مفعّل. الرجاء الانتقال إلى الخيارات (⚙️) لتهيئة نقطة النهاية واسم النموذج.",
     "description": "Message shown in the local tab when local model is not enabled."
   },
   "errorLocalModelFailed": {
-    "message": "本機模型回傳了空白或無效的回應。",
+    "message": "أعاد النموذج المحلي استجابة فارغة أو غير صالحة.",
     "description": "Error when local model response has no content."
   },
   "errorLocalModelConnect": {
-    "message": "無法連線至本機模型，請確認 Ollama 或 LM Studio 已啟動。",
+    "message": "تعذر الاتصال بالنموذج المحلي. الرجاء التأكد من تشغيل Ollama أو LM Studio.",
     "description": "Error when the fetch to local model endpoint fails."
   },
   "readerClickHint": {
-    "message": "💡 點選任意段落即可立即翻譯。",
+    "message": "💡 انقر على أي فقرة لترجمتها فورًا.",
     "description": "Hint shown in reader page for voice transcription results."
   },
   "optionsLicenseLink": {
-    "message": "MIT 授權條款",
+    "message": "رخصة MIT",
     "description": "Link to the MIT license file on the options page."
   },
   "optionsPrivacyLink": {
-    "message": "隱私權政策",
+    "message": "سياسة الخصوصية",
     "description": "Link to the privacy policy on the options page."
   },
   "readerTtsSpeakBtn": {
-    "message": "🔊 朗讀",
+    "message": "🔊 نطق",
     "description": "TTS feature: readerTtsSpeakBtn"
   },
   "readerTtsStopBtn": {
-    "message": "⏹ 停止朗讀",
+    "message": "⏹ إيقاف",
     "description": "TTS feature: readerTtsStopBtn"
   },
   "readerTtsLangLabel": {
-    "message": "朗讀語言",
+    "message": "اللغة",
     "description": "TTS feature: readerTtsLangLabel"
   },
   "errorApiRecitation": {
-    "message": "此內容似乎包含受版權保護的資料（例如 Kindle 電子書），AI 拒絕處理。",
+    "message": "يبدو أن هذا المحتوى يحتوي على مواد محمية بحقوق الطبع والنشر (مثل كتاب Kindle) ولا يمكن معالجته بواسطة الذكاء الاصطناعي.",
     "description": "Error when Gemini refuses content due to RECITATION (copyright detection)."
   },
   "hintScreenshotMode": {
-    "message": "📌 截圖翻譯模式 — 目前僅翻譯了畫面中可見的部分。建議先縮小字體後重新處理，可獲得更完整的翻譯結果。",
+    "message": "📌 وضع ترجمة لقطة الشاشة — تمت ترجمة الجزء المرئي فقط من الشاشة. للحصول على نتائج أكثر اكتمالاً، حاول تقليل حجم الخط ثم أعد المعالجة.",
     "description": "Hint shown at the top of reader when screenshot translation fallback is used."
-  },
-  "readerLabelBgColor": {
-    "message": "背景",
-    "description": "Label for background color buttons."
-  },
-  "workbenchLabelImageSourceLang": {
-    "message": "圖片來源語言",
-    "description": "Label for image source language selector."
-  },
-  "workbenchTextPlaceholder": {
-    "message": "將文字貼到此處...",
-    "description": "Placeholder for the text input area in workbench."
   },
   "langPref": {
     "message": "⭐ $langName$",
-    "description": "Label for a preferred language.",
     "placeholders": {
       "langName": {
         "content": "$1"
@@ -806,18 +805,18 @@
     }
   },
   "optionsPrefLangNotSet": {
-    "message": "（未設定）"
+    "message": "(غير محدد)"
   },
   "optionsPrefLangCustomLabel": {
-    "message": "自訂"
+    "message": "مخصص"
   },
   "optionsPrefLangCustomPlaceholder": {
-    "message": "如：文言文、台語閩南語…"
+    "message": "مثال: العربية الكلاسيكية، الدارجة..."
   },
   "optionsPresetTip": {
-    "message": "💡 提示語撒寫建議：①<b>AI 身份</b> — 例如「你是一位專業醫療翻譯」②<b>對象</b> — 例如「使用者是醫療從業人員」③<b>回應格式</b> — 例如「以繁體中文、條列方式回覆」④<b>輸入處理</b> — 例如「先摘要輸入內容，再提供完整翻譯」"
+    "message": "💡 نصائح كتابة الأوامر: ①<b>دور الذكاء الاصطناعي</b> — مثال: «أنت مترجم طبي محترف.» ②<b>الجمهور المستهدف</b> — مثال: «المستخدم متخصص في الرعاية الصحية.» ③<b>تنسيق الرد</b> — مثال: «أجب بالعربية في شكل نقاط.» ④<b>معالجة المدخلات</b> — مثال: «لخّص المحتوى أولاً، ثم قدّم الترجمة الكاملة.»"
   },
   "optionsPresetPlaceholder": {
-    "message": "例如：你是一位專業的醫療翻譯。請用繁體中文、正式語氣回應。先摘要使用者輸入，再提供完整翻譯。"
+    "message": "مثال: أنت مترجم محترف. أجب باللغة العربية فقط بأسلوب رسمي. لخّص مدخلات المستخدم أولاً، ثم قدّم الترجمة الكاملة."
   }
 }

@@ -49,6 +49,11 @@ export async function geminiApiCall(apiUrl, payload) {
         }
 
         const finishReason = result.candidates?.[0]?.finishReason;
+        if (finishReason === 'RECITATION') {
+            const err = new Error(chrome.i18n.getMessage('errorApiRecitation'));
+            err.code = 'RECITATION';
+            throw err;
+        }
         if (finishReason && finishReason !== 'STOP') {
             throw new Error(chrome.i18n.getMessage('errorApiStopped', finishReason));
         }

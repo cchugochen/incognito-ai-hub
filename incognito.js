@@ -1,4 +1,4 @@
-// incognito.js (v27.2 - Response Language)
+// incognito.js (v27.3 - Preset Tooltips & API Key Prompt Fix)
 import { buildGeminiUrl } from './scripts/gemini-api.js';
 import { localModelCall, getLocalModelConfig } from './scripts/local-api.js';
 import { getEffectiveUILanguageCode, supportedLanguages } from './scripts/language_manager.js';
@@ -387,6 +387,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 preset_c: items.preset_c, preset_d: items.preset_d,
                 preset_e: items.preset_e, preset_f: items.preset_f, preset_g: items.preset_g
             };
+
+            // Update preset button tooltips with actual preset content (if set)
+            document.querySelectorAll('.preset-btn').forEach(button => {
+                const content = presetPrompts[`preset_${button.dataset.preset.toLowerCase()}`];
+                if (content) {
+                    const tip = content.length > 100 ? content.substring(0, 100) + '…' : content;
+                    button.setAttribute('data-tooltip', tip);
+                }
+            });
 
             // Resolve the user's preferred response language (settings → browser UI lang → English)
             const langCode = await getEffectiveUILanguageCode();

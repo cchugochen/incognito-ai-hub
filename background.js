@@ -1,11 +1,84 @@
 /**
- * background.js (v27.0 - Modularized)
+ * background.js (v27.3 - DOM-first webpage extraction + academic OCR)
  * Service worker for Incognito AI Hub.
- * Now uses ES6 module imports to eliminate code duplication.
  */
 
 import { buildGeminiUrl, geminiApiCall } from './scripts/gemini-api.js';
 import { supportedLanguages } from './scripts/language_manager.js';
+
+/**
+ * Standalone DOM extraction function injected into the active tab.
+ * Must be self-contained (no closures / external references).
+ * Returns structured text with Markdown section markers (##, ###, ####).
+ */
+function extractDomContent() {
+    const SKIP_TAGS = new Set([
+        'script','style','noscript','svg','iframe',
+        'nav','header','footer','aside','button','form','input','select','textarea'
+    ]);
+    const SKIP_ROLES = new Set([
+        'navigation','banner','contentinfo','complementary','search','dialog'
+    ]);
+    const SKIP_PATTERNS = [
+        'nav','menu','sidebar','advertisement','cookie','popup',
+        'modal','share','social','comments','related','recommended','widget'
+    ];
+
+    function shouldSkip(el) {
+        if (SKIP_TAGS.has(el.tagName.toLowerCase())) return true;
+        const role = el.getAttribute?.('role') || '';
+        if (SKIP_ROLES.has(role)) return true;
+        const cls = (el.className || '').toString().toLowerCase();
+        const id  = (el.id || '').toLowerCase();
+        return SKIP_PATTERNS.some(p => cls.includes(p) || id.includes(p));
+    }
+
+    function getNodes(el, lines) {
+        for (const child of el.childNodes) {
+            if (child.nodeType !== 1) continue;
+            if (shouldSkip(child)) continue;
+            const tag  = child.tagName.toLowerCase();
+            const text = child.textContent.trim();
+            if (!text) continue;
+            if      (tag === 'h1') { lines.push('', `# ${text}`, ''); }
+            else if (tag === 'h2') { lines.push('', `## ${text}`, ''); }
+            else if (tag === 'h3') { lines.push('', `### ${text}`, ''); }
+            else if (/^h[4-6]$/.test(tag)) { lines.push('', `#### ${text}`, ''); }
+            else if (tag === 'p')  { if (text.length > 1) lines.push(text); }
+            else if (tag === 'li') { lines.push(`• ${text}`); }
+            else if (tag === 'blockquote') { lines.push(`> ${text}`); }
+            else if (tag === 'table') {
+                child.querySelectorAll('tr').forEach(row => {
+                    const cells = Array.from(row.querySelectorAll('th,td')).map(c => c.textContent.trim());
+                    if (cells.some(c => c)) lines.push('| ' + cells.join(' | ') + ' |');
+                });
+            } else {
+                getNodes(child, lines);
+            }
+        }
+    }
+
+    const SELECTORS = [
+        'article','main','[role="main"]',
+        '.ltx_page_content','#bodyContent',
+        '.article-body','.paper-body',
+        '#content','#main-content'
+    ];
+    let root = null;
+    for (const sel of SELECTORS) {
+        const el = document.querySelector(sel);
+        if (el && el.textContent.trim().length > 200) { root = el; break; }
+    }
+    if (!root) root = document.body;
+
+    const lines = [];
+    getNodes(root, lines);
+    return lines
+        .map(l => l.trim())
+        .join('\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+}
 
 const protocolVersion = "1.3";
 let attachedTabs = {};
@@ -106,12 +179,27 @@ async function processVoiceNote(payload) {
 }
 
 async function captureAndRecognize(tabId) {
-    if (!tabId) {
-        throw new Error("Invalid tab ID.");
-    }
-
+    if (!tabId) throw new Error("Invalid tab ID.");
     await setActionBadge(tabId, '...', '#007BFF');
 
+    // --- Phase 1-A: Try DOM extraction first (fast, no screenshot needed) ---
+    try {
+        const results = await chrome.scripting.executeScript({
+            target: { tabId },
+            func: extractDomContent,
+        });
+        const domText = results?.[0]?.result?.trim() || '';
+        if (domText.length > 200) {
+            const defaultTargetLang = await getEffectiveUILanguageNameForBg();
+            await openReader({ text: domText, targetLang: defaultTargetLang, sourceType: 'webpage' });
+            await setActionBadge(tabId, 'OK', '#28A745');
+            return;
+        }
+    } catch (e) {
+        console.warn('[captureAndRecognize] DOM extraction failed, falling back to screenshot:', e.message);
+    }
+
+    // --- Fallback: Screenshot OCR via Gemini Vision ---
     if (!attachedTabs[tabId]) {
         try {
             await new Promise((resolve, reject) => {
@@ -134,17 +222,31 @@ async function captureAndRecognize(tabId) {
 
     try {
         await setActionBadge(tabId, 'OCR', '#FFA500');
-        const screenshot = await sendDebuggerCommand(tabId, "Page.captureScreenshot", { format: "jpeg", quality: 90, captureBeyondViewport: true });
-
+        const screenshot = await sendDebuggerCommand(tabId, "Page.captureScreenshot", {
+            format: "jpeg", quality: 90, captureBeyondViewport: true
+        });
         if (!screenshot || !screenshot.data) {
             throw new Error(chrome.i18n.getMessage("errorScreenshotFailed"));
         }
-
         await setActionBadge(tabId, 'AI', '#17A2B8');
-        const recognizedText = await callGeminiVision(screenshot.data);
+        const defaultTargetLang = await getEffectiveUILanguageNameForBg();
+
+        let recognizedText;
+        try {
+            recognizedText = await callGeminiVision(screenshot.data);
+        } catch (ocrErr) {
+            if (ocrErr.code === 'RECITATION') {
+                // Copyrighted content blocks verbatim OCR — retry with direct translation prompt
+                console.warn('[captureAndRecognize] OCR blocked (RECITATION), retrying with translate mode.');
+                const translated = await callGeminiVisionTranslate(screenshot.data, defaultTargetLang);
+                const hint = chrome.i18n.getMessage('hintScreenshotMode');
+                recognizedText = `> ${hint}\n\n${translated}`;
+            } else {
+                throw ocrErr;
+            }
+        }
 
         if (recognizedText && recognizedText.trim().length > 50) {
-            const defaultTargetLang = await getEffectiveUILanguageNameForBg();
             await openReader({ text: recognizedText, targetLang: defaultTargetLang, sourceType: 'webpage' });
             await setActionBadge(tabId, 'OK', '#28A745');
         } else {
@@ -178,16 +280,39 @@ async function callGeminiVision(base64ImageData, sourceLang = 'auto') {
 
     const apiUrl = buildGeminiUrl(translationModel, geminiApiKey);
 
-    let langHint = (sourceLang !== 'auto' && sourceLang) ? `The text in the image is primarily in ${sourceLang}.` : "";
+    const langHint = (sourceLang !== 'auto' && sourceLang) ? `The text is primarily in ${sourceLang}.` : "";
 
-    const prompt = `You are a highly specialized AI assistant for document analysis. Your primary task is to perform OCR on the provided image and reconstruct the text into a clean, readable format. Please analyze the layout carefully. ${langHint}
+    const prompt = `You are a highly specialized AI assistant for document OCR and reconstruction. Accurately extract all text from the provided image and structure it with Markdown section markers. ${langHint}
 
-Here are the key guidelines for your output:
-1.  **Reconstruct Semantic Paragraphs:** Your main priority is to create paragraphs that are grammatically and semantically coherent. Combine lines that belong together into a single paragraph. Start a new paragraph only when there's a clear semantic break, such as an indentation or significant vertical space.
-2.  **Analyze Layout:** For multi-column layouts, it is crucial to process the text of the first column completely from top to bottom before moving to the next column.
-3.  **Join Hyphenated Words:** Please correctly join words that are hyphenated across lines (e.g., 'experi-' and 'ment' should become 'experiment').
-4.  **Exclude Extraneous Elements:** Please ignore page headers, footers, and page numbers.
-5.  **Final Output Format:** The final output should consist of ONLY the reconstructed text, formatted into clean paragraphs. Do not add any of your own comments, summaries, or explanations.`;
+Follow these guidelines:
+1. **Section Headings:** Mark major headings (e.g., Abstract, Introduction, Methods, Results, Discussion, Conclusion, References, Appendix) with "## " prefix. Mark sub-section headings with "### " prefix. Place each heading on its own line with a blank line before it.
+2. **Semantic Paragraphs:** Combine lines that form a single paragraph into one continuous paragraph. Start a new paragraph only at clear semantic breaks (indentation, significant vertical spacing).
+3. **Multi-Column Layout:** Process the first column completely top-to-bottom before moving to the next column.
+4. **Hyphenation:** Join words broken across lines (e.g., "experi-" + "ment" → "experiment").
+5. **Exclude UI Chrome Only:** Ignore browser navigation bars, cookie banners, and advertisements. Do NOT exclude the document's own References section, footnotes, figure captions, author affiliations, or abstract.
+6. **Output:** Return ONLY the reconstructed text with Markdown markers. No summaries, explanations, or added commentary.`;
+
+    const payload = { "contents": [{ "parts": [ { "text": prompt }, { "inline_data": { "mime_type": "image/jpeg", "data": base64ImageData } } ] }] };
+
+    return geminiApiCall(apiUrl, payload);
+}
+
+async function callGeminiVisionTranslate(base64ImageData, targetLang) {
+    const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
+        geminiApiKey: '',
+        translationModel: 'gemini-2.5-flash'
+    });
+    if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
+
+    const apiUrl = buildGeminiUrl(translationModel, geminiApiKey);
+
+    const prompt = `You are a translation assistant. Examine this screenshot and translate all main text content directly into fluent, natural ${targetLang}.
+
+Follow these guidelines:
+1. Focus on the main reading content. Ignore navigation bars, headers, footers, and UI chrome elements.
+2. Translate paragraph by paragraph, preserving the reading flow and structure.
+3. Use "## " prefix for chapter/section headings and "### " for subsections.
+4. Output only the translated text in structured Markdown. Do not include the original text or any commentary.`;
 
     const payload = { "contents": [{ "parts": [ { "text": prompt }, { "inline_data": { "mime_type": "image/jpeg", "data": base64ImageData } } ] }] };
 

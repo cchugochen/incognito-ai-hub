@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "A simple incognito Gemini chat interface and a free toolkit for translating web pages, text, screenshots, and using voice AI input.",
+    "message": "Simple incognito AI chat powered by Gemini & Local LLM. Free toolkit for translating web pages, text, screenshots, and voice input.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -56,7 +56,7 @@
     "description": "Section header for preferred languages."
   },
   "optionsPrefLangDesc": {
-    "message": "Set your two most frequently used target languages. They will appear in the quick selection menus of various translation features.",
+    "message": "Set up to 3 preferred target languages. They will appear at the top of translation menus. Use the ↑↓ buttons to set display priority.",
     "description": "Description for preferred languages setting."
   },
   "optionsPrefLangLabelA": {
@@ -104,17 +104,37 @@
     "description": "Section header for preset prompts."
   },
   "optionsPresetDesc": {
-    "message": "Set frequently used starting instructions (System Prompts) for the A/B/C/D/E buttons on the 'Incognito Gemini Chat' page.",
+    "message": "Set up to 7 System Prompt presets (A–G) for the Incognito Chat page. Each preset is a set of starting instructions that defines how the AI behaves when you tap the corresponding button.",
     "description": "Description for preset prompts."
   },
-  "optionsPresetLabelA": { "message": "Preset A", "description": "Label for preset A." },
-  "optionsPresetLabelB": { "message": "Preset B", "description": "Label for preset B." },
-  "optionsPresetLabelC": { "message": "Preset C", "description": "Label for preset C." },
-  "optionsPresetLabelD": { "message": "Preset D", "description": "Label for preset D." },
-  "optionsPresetLabelE": { "message": "Preset E", "description": "Label for preset E." },
-  "optionsPresetLabelF": { "message": "Preset F", "description": "Label for preset F." },
-  "optionsPresetLabelG": { "message": "Preset G", "description": "Label for preset G." },
-
+  "optionsPresetLabelA": {
+    "message": "Preset A",
+    "description": "Label for preset A."
+  },
+  "optionsPresetLabelB": {
+    "message": "Preset B",
+    "description": "Label for preset B."
+  },
+  "optionsPresetLabelC": {
+    "message": "Preset C",
+    "description": "Label for preset C."
+  },
+  "optionsPresetLabelD": {
+    "message": "Preset D",
+    "description": "Label for preset D."
+  },
+  "optionsPresetLabelE": {
+    "message": "Preset E",
+    "description": "Label for preset E."
+  },
+  "optionsPresetLabelF": {
+    "message": "Preset F",
+    "description": "Label for preset F."
+  },
+  "optionsPresetLabelG": {
+    "message": "Preset G",
+    "description": "Label for preset G."
+  },
   "optionsSaveButton": {
     "message": "Save Settings",
     "description": "Save button text."
@@ -136,8 +156,8 @@
     "description": "Alert message when API key is missing."
   },
   "alertNoApiKeyOptions": {
-    "message": "Please paste your Google Gemini API Key in the 'API Key & Model' section below.",
-    "description": "Alert message shown on the options page if API key is missing."
+    "message": "Please enter your Google Gemini API Key in the Settings page first.",
+    "description": "Alert message shown when API key is missing, directing user to options page."
   },
   "alertInitFailed": {
     "message": "Initialization failed. Please check the console for error messages.",
@@ -182,16 +202,33 @@
   "readerSaveOriginal": {
     "message": "[Original Paragraph $index$]",
     "description": "Label for original text paragraph when saving.",
-    "placeholders": { "index": { "content": "$1" } }
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
   },
   "readerSaveTranslated": {
     "message": "[Translated Paragraph $index$]",
     "description": "Label for translated text paragraph when saving.",
-    "placeholders": { "index": { "content": "$1" } }
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
   },
-  "readerVoiceToolHeader": { "message": "Text-to-Speech Tool (In Development)", "description": "Header for the text-to-speech tool in reader." },
-  "readerVoiceToolLabel": { "message": "Speech Language", "description": "Label for TTS language selection." },
-  "readerVoiceToolButton": { "message": "Read Translation Aloud", "description": "Button to trigger TTS." },
+  "readerVoiceToolHeader": {
+    "message": "Text-to-Speech",
+    "description": "Header for the text-to-speech tool in reader."
+  },
+  "readerVoiceToolLabel": {
+    "message": "Speech Language",
+    "description": "Label for TTS language selection."
+  },
+  "readerVoiceToolButton": {
+    "message": "Translate",
+    "description": "Button to trigger TTS."
+  },
   "workbenchTitle": {
     "message": "Smart Translation Workbench",
     "description": "Title for the workbench page."
@@ -204,17 +241,50 @@
     "message": "Upload Image",
     "description": "Tab label for uploading image."
   },
-  "workbenchTextHeader": { "message": "Text Translation", "description": "Header for text translation section." },
-  "workbenchTextDesc": { "message": "Paste copied text below for translation.", "description": "Description for text translation." },
-  "workbenchImageHeader": { "message": "Image Translation (OCR)", "description": "Header for image translation section." },
-  "workbenchImageDesc": { "message": "Upload or paste a screenshot. The AI will automatically recognize and translate the text within the image.", "description": "Description for image translation." },
-  "workbenchLabelSourceLang": { "message": "Source Language", "description": "Label for source language selector." },
-  "workbenchLabelTargetLang": { "message": "Target Language", "description": "Label for target language selector." },
-  "workbenchProcessTextButton": { "message": "Translate Text", "description": "Button to process text." },
-  "workbenchProcessImageButton": { "message": "Recognize and Translate Image", "description": "Button to process image." },
-  "workbenchUploadBox": { "message": "Click here to select an image, or paste a screenshot directly (Cmd+V / Ctrl+V)", "description": "Placeholder for image upload box." },
-  "workbenchUploadBoxDesc": { "message": "Supports JPG, PNG, BMP formats", "description": "Subtitle for image upload box." },
-  "workbenchImageResultTitle": { "message": "Image Translation Result", "description": "Title for the reader tab showing image OCR result." },
+  "workbenchTextHeader": {
+    "message": "Text Translation",
+    "description": "Header for text translation section."
+  },
+  "workbenchTextDesc": {
+    "message": "Paste copied text below for translation.",
+    "description": "Description for text translation."
+  },
+  "workbenchImageHeader": {
+    "message": "Image Translation (OCR)",
+    "description": "Header for image translation section."
+  },
+  "workbenchImageDesc": {
+    "message": "Upload or paste a screenshot. The AI will automatically recognize and translate the text within the image.",
+    "description": "Description for image translation."
+  },
+  "workbenchLabelSourceLang": {
+    "message": "Source Language",
+    "description": "Label for source language selector."
+  },
+  "workbenchLabelTargetLang": {
+    "message": "Target Language",
+    "description": "Label for target language selector."
+  },
+  "workbenchProcessTextButton": {
+    "message": "Translate Text",
+    "description": "Button to process text."
+  },
+  "workbenchProcessImageButton": {
+    "message": "Recognize and Translate Image",
+    "description": "Button to process image."
+  },
+  "workbenchUploadBox": {
+    "message": "Click here to select an image, or paste a screenshot directly (Cmd+V / Ctrl+V)",
+    "description": "Placeholder for image upload box."
+  },
+  "workbenchUploadBoxDesc": {
+    "message": "Supports JPG, PNG, BMP formats",
+    "description": "Subtitle for image upload box."
+  },
+  "workbenchImageResultTitle": {
+    "message": "Image Translation Result",
+    "description": "Title for the reader tab showing image OCR result."
+  },
   "voiceTitle": {
     "message": "Incognito - Voice Notes",
     "description": "Title for the voice notes page."
@@ -258,12 +328,20 @@
   "errorMicPermission": {
     "message": "Error: Could not get microphone permission. Please check browser settings. Details: $error$",
     "description": "Error message.",
-    "placeholders": { "error": { "content": "$1" } }
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
   },
   "voiceStatusFailed": {
     "message": "Transcription failed: $error$",
     "description": "Status message.",
-    "placeholders": { "error": { "content": "$1" } }
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
   },
   "langAutoDetect": {
     "message": "Auto-Detect",
@@ -272,17 +350,32 @@
   "langSystemDefault": {
     "message": "System Default ($langName$)",
     "description": "Language option for system default, with placeholder for the actual language name.",
-    "placeholders": { "langName": { "content": "$1", "example": "English" } }
+    "placeholders": {
+      "langName": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "langPrefA": {
     "message": "Preferred-A ($langName$)",
     "description": "Language option for preferred language A.",
-    "placeholders": { "langName": { "content": "$1", "example": "Français" } }
+    "placeholders": {
+      "langName": {
+        "content": "$1",
+        "example": "Français"
+      }
+    }
   },
   "langPrefB": {
     "message": "Preferred-B ($langName$)",
     "description": "Language option for preferred language B.",
-    "placeholders": { "langName": { "content": "$1", "example": "Español" } }
+    "placeholders": {
+      "langName": {
+        "content": "$1",
+        "example": "Español"
+      }
+    }
   },
   "voiceLangZhEn": {
     "message": "Chinese (mixed with English)",
@@ -291,7 +384,12 @@
   "voiceMicLabel": {
     "message": "Microphone $index$",
     "description": "Default label for a microphone.",
-    "placeholders": { "index": { "content": "$1", "example": "1" } }
+    "placeholders": {
+      "index": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
   },
   "incognitoFooter": {
     "message": "Incognito AI Hub: Created by Hugo Chen, a Taiwanese physician, during a typhoon day in the summer of 2025. The first version was named 'Hong-Thai' in Taiwanese. If you find it useful, please leave a positive review on the Chrome Web Store. If you're willing, feel free to treat me to a drink via the Buy Me a Coffee link on the right.",
@@ -300,12 +398,23 @@
   "promptWebpageProcessing": {
     "message": "You are a helpful assistant. The user has provided the HTML content and a screenshot of a webpage. Please analyze both to understand the main content of the page, ignoring ads, navigation bars, and footers. Then, provide a concise summary of the key points in a well-structured, easy-to-read format. Finally, translate the summary into $lang$. Here is the HTML content: ```html\n$pageContent$\n```",
     "description": "Prompt for webpage processing in background.js.",
-    "placeholders": { "pageContent": { "content": "$1" }, "lang": { "content": "$2" } }
+    "placeholders": {
+      "pageContent": {
+        "content": "$1"
+      },
+      "lang": {
+        "content": "$2"
+      }
+    }
   },
   "promptTranslateTo": {
     "message": "Please translate the text in the image into $lang$.",
     "description": "Prompt for image translation, asking to translate to a specific language.",
-    "placeholders": { "lang": { "content": "$1" } }
+    "placeholders": {
+      "lang": {
+        "content": "$1"
+      }
+    }
   },
   "promptSourceLangAuto": {
     "message": "First, identify the language of the text in the image.",
@@ -314,7 +423,11 @@
   "promptSourceLangIs": {
     "message": "The language of the text in the image is $lang$.",
     "description": "Part of the prompt specifying the source language.",
-    "placeholders": { "lang": { "content": "$1" } }
+    "placeholders": {
+      "lang": {
+        "content": "$1"
+      }
+    }
   },
   "incognitoTitle": {
     "message": "Incognito Gemini Chat",
@@ -340,14 +453,38 @@
     "message": "Upload PDF document (1)",
     "description": "Tooltip for the PDF upload button."
   },
-  "incognitoPresetTitleA": { "message": "Use Preset A", "description": "Tooltip for preset button A." },
-  "incognitoPresetTitleB": { "message": "Use Preset B", "description": "Tooltip for preset button B." },
-  "incognitoPresetTitleC": { "message": "Use Preset C", "description": "Tooltip for preset button C." },
-  "incognitoPresetTitleD": { "message": "Use Preset D", "description": "Tooltip for preset button D." },
-  "incognitoPresetTitleE": { "message": "Use Preset E", "description": "Tooltip for preset button E." },
-  "incognitoPresetTitleF": { "message": "Use Preset F", "description": "Tooltip for preset button F." },
-  "incognitoPresetTitleG": { "message": "Use Preset G", "description": "Tooltip for preset button G." },
-  "incognitoPresetLabel": { "message": "Prompts:", "description": "Label before the preset buttons." },
+  "incognitoPresetTitleA": {
+    "message": "Use Preset A",
+    "description": "Tooltip for preset button A."
+  },
+  "incognitoPresetTitleB": {
+    "message": "Use Preset B",
+    "description": "Tooltip for preset button B."
+  },
+  "incognitoPresetTitleC": {
+    "message": "Use Preset C",
+    "description": "Tooltip for preset button C."
+  },
+  "incognitoPresetTitleD": {
+    "message": "Use Preset D",
+    "description": "Tooltip for preset button D."
+  },
+  "incognitoPresetTitleE": {
+    "message": "Use Preset E",
+    "description": "Tooltip for preset button E."
+  },
+  "incognitoPresetTitleF": {
+    "message": "Use Preset F",
+    "description": "Tooltip for preset button F."
+  },
+  "incognitoPresetTitleG": {
+    "message": "Use Preset G",
+    "description": "Tooltip for preset button G."
+  },
+  "incognitoPresetLabel": {
+    "message": "Prompts:",
+    "description": "Label before the preset buttons."
+  },
   "stateThinking": {
     "message": "Thinking...",
     "description": "Thinking indicator text."
@@ -391,7 +528,11 @@
   "statusFailed": {
     "message": "Processing failed: $error$",
     "description": "Generic failure status.",
-    "placeholders": { "error": { "content": "$1" } }
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
   },
   "statusUploadSuccess": {
     "message": "Success! Opening results...",
@@ -420,13 +561,16 @@
   "promptVoiceTranscribeDiarize": {
     "message": "Please transcribe the following audio. The primary language spoken is $lang$. Pay close attention to pauses and changes in tone or speech patterns to identify and label different speakers (e.g., Speaker 1, Speaker 2). Provide the output as a clear, readable transcript.",
     "description": "Prompt for voice transcription with speaker diarization.",
-    "placeholders": { "lang": { "content": "$1" } }
+    "placeholders": {
+      "lang": {
+        "content": "$1"
+      }
+    }
   },
   "voiceResultTitle": {
     "message": "Voice Transcription Result",
     "description": "Title for the reader tab showing voice transcription result."
   },
-
   "errorNoApiKey": {
     "message": "Error: Gemini API Key not found. Please enter your key in the Settings page first.",
     "description": "Error thrown when API key is missing from storage."
@@ -434,17 +578,29 @@
   "errorApiRequestFailed": {
     "message": "API request failed: $details$",
     "description": "Error when API returns a non-OK HTTP status.",
-    "placeholders": { "details": { "content": "$1" } }
+    "placeholders": {
+      "details": {
+        "content": "$1"
+      }
+    }
   },
   "errorApiRejected": {
     "message": "API request was blocked. Reason: $reason$",
     "description": "Error when API blocks the request due to safety filters.",
-    "placeholders": { "reason": { "content": "$1" } }
+    "placeholders": {
+      "reason": {
+        "content": "$1"
+      }
+    }
   },
   "errorApiStopped": {
     "message": "API response stopped unexpectedly. Reason: $reason$",
     "description": "Error when API finishes with a non-STOP reason.",
-    "placeholders": { "reason": { "content": "$1" } }
+    "placeholders": {
+      "reason": {
+        "content": "$1"
+      }
+    }
   },
   "errorNoActiveTab": {
     "message": "Error: No active tab found. Please try again.",
@@ -489,7 +645,11 @@
   "readerTranslateFailed": {
     "message": "Translation failed: $error$",
     "description": "Error shown in the reader when a paragraph translation fails.",
-    "placeholders": { "error": { "content": "$1" } }
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
   },
   "readerErrorNotFound": {
     "message": "Error: No content was found to display. Please go back and try again.",
@@ -522,7 +682,11 @@
   "alertTurnLimit": {
     "message": "You have reached the $limit$-round limit for this conversation. Please refresh the page to start a new chat.",
     "description": "Alert shown when the conversation reaches the maximum number of turns.",
-    "placeholders": { "limit": { "content": "$1" } }
+    "placeholders": {
+      "limit": {
+        "content": "$1"
+      }
+    }
   },
   "alertOnePdfOnly": {
     "message": "Only one PDF file can be attached at a time.",
@@ -531,15 +695,18 @@
   "incognitoAttachedFile": {
     "message": "Attached: $filename$",
     "description": "Text shown in the chat message when a file is attached.",
-    "placeholders": { "filename": { "content": "$1" } }
+    "placeholders": {
+      "filename": {
+        "content": "$1"
+      }
+    }
   },
-
   "localModelSectionHeader": {
     "message": "Local AI Model (Ollama / LM Studio)",
     "description": "Section header for local model settings on the options page."
   },
   "localModelDesc": {
-    "message": "Use a local AI model via an OpenAI-compatible API. Start Ollama or LM Studio before use. When enabled, text translation in Reader and Chat will route to the local model instead of Gemini.",
+    "message": "Use a local AI model via OpenAI-compatible API (Ollama / LM Studio). Once enabled, the incognito chat and reader translation will use the local model.",
     "description": "Description for local model settings."
   },
   "localModelEnabledLabel": {
@@ -551,7 +718,7 @@
     "description": "Label for the local model endpoint URL input."
   },
   "localModelEndpointPlaceholder": {
-    "message": "http://localhost:11434/v1",
+    "message": "http://localhost:11434/v1 or http://127.0.0.1:1234",
     "description": "Placeholder for the local model endpoint URL input."
   },
   "localModelNameLabel": {
@@ -597,5 +764,65 @@
   "optionsPrivacyLink": {
     "message": "Privacy Policy",
     "description": "Link to the privacy policy on the options page."
+  },
+  "readerTtsSpeakBtn": {
+    "message": "🔊 Speak",
+    "description": "TTS feature: readerTtsSpeakBtn"
+  },
+  "readerTtsStopBtn": {
+    "message": "⏹ Stop",
+    "description": "TTS feature: readerTtsStopBtn"
+  },
+  "readerTtsLangLabel": {
+    "message": "Language",
+    "description": "TTS feature: readerTtsLangLabel"
+  },
+  "errorApiRecitation": {
+    "message": "This content appears to contain copyrighted material (e.g., a Kindle book) and cannot be processed by the AI.",
+    "description": "Error when Gemini refuses content due to RECITATION (copyright detection)."
+  },
+  "hintScreenshotMode": {
+    "message": "📌 Screenshot Translation Mode — Only the visible portion of the screen has been translated. For more complete results, try reducing the font size first, then reprocess.",
+    "description": "Hint shown at the top of reader when screenshot translation fallback is used."
+  },
+  "readerLabelBgColor": {
+    "message": "Background",
+    "description": "Label for background color buttons."
+  },
+  "workbenchLabelImageSourceLang": {
+    "message": "Image Source Language",
+    "description": "Label for image source language selector."
+  },
+  "workbenchTextPlaceholder": {
+    "message": "Paste text here...",
+    "description": "Placeholder for the text input area in workbench."
+  },
+  "langPref": {
+    "message": "⭐ $langName$",
+    "description": "Label for a preferred language option in translation dropdown.",
+    "placeholders": {
+      "langName": {
+        "content": "$1",
+        "example": "Traditional Chinese"
+      }
+    }
+  },
+  "optionsPrefLangNotSet": {
+    "message": "(Not set)",
+    "description": "Placeholder option when no preferred language is selected."
+  },
+  "optionsPrefLangCustomLabel": {
+    "message": "Custom",
+    "description": "Label tag for the custom language text input row."
+  },
+  "optionsPrefLangCustomPlaceholder": {
+    "message": "e.g. Classical Chinese, Hokkien...",
+    "description": "Placeholder for custom language text input."
+  },
+  "optionsPresetTip": {
+    "message": "💡 Prompt writing tips: ①<b>AI role</b> — e.g. “You are a professional medical translator.” ②<b>Audience</b> — e.g. “The user is a medical professional.” ③<b>Response format</b> — e.g. “Reply in bullet points, in Traditional Chinese.” ④<b>Input handling</b> — e.g. “First summarize the input, then provide a full translation.”"
+  },
+  "optionsPresetPlaceholder": {
+    "message": "e.g. You are a professional translator. Reply only in Traditional Chinese using formal tone. First summarize the user’s input, then translate it in full."
   }
 }

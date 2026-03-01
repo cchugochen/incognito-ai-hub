@@ -23,14 +23,37 @@
         <section class="options-section">
             <h2 class="section-header" data-i18n="optionsPrefLangSectionHeader"></h2>
             <p class="description" data-i18n="optionsPrefLangDesc"></p>
-            <div class="space-y-4">
-                <div>
-                    <label for="pref-lang-a" class="label" data-i18n="optionsPrefLangLabelA"></label>
-                    <input type="text" id="pref-lang-a" class="text-input" data-i18n-placeholder="optionsPrefLangPlaceholder">
+            <div id="pref-lang-list">
+                <!-- Row 0: Standard language select -->
+                <div class="pref-lang-row" data-slot="0" data-type="select">
+                    <div class="pref-lang-arrows">
+                        <button class="pref-arrow" data-dir="up" disabled>↑</button>
+                        <button class="pref-arrow" data-dir="down">↓</button>
+                    </div>
+                    <span class="pref-slot-num">1.</span>
+                    <select class="pref-lang-value select-input"></select>
                 </div>
-                 <div>
-                    <label for="pref-lang-b" class="label" data-i18n="optionsPrefLangLabelB"></label>
-                    <input type="text" id="pref-lang-b" class="text-input" data-i18n-placeholder="optionsPrefLangPlaceholder">
+                <!-- Row 1: Standard language select -->
+                <div class="pref-lang-row" data-slot="1" data-type="select">
+                    <div class="pref-lang-arrows">
+                        <button class="pref-arrow" data-dir="up">↑</button>
+                        <button class="pref-arrow" data-dir="down">↓</button>
+                    </div>
+                    <span class="pref-slot-num">2.</span>
+                    <select class="pref-lang-value select-input"></select>
+                </div>
+                <!-- Row 2: Custom free-text language -->
+                <div class="pref-lang-row" data-slot="2" data-type="custom">
+                    <div class="pref-lang-arrows">
+                        <button class="pref-arrow" data-dir="up">↑</button>
+                        <button class="pref-arrow" data-dir="down" disabled>↓</button>
+                    </div>
+                    <span class="pref-slot-num">3.</span>
+                    <div class="pref-custom-wrap">
+                        <span class="pref-custom-tag" data-i18n="optionsPrefLangCustomLabel"></span>
+                        <input type="text" class="pref-lang-value text-input"
+                               data-i18n-placeholder="optionsPrefLangCustomPlaceholder">
+                    </div>
                 </div>
             </div>
         </section>
@@ -68,35 +91,35 @@
         <section class="options-section">
             <h2 class="section-header" data-i18n="optionsPresetSectionHeader"></h2>
             <p class="description" data-i18n="optionsPresetDesc"></p>
+            <p class="preset-tip" data-i18n="optionsPresetTip"></p>
             <div class="space-y-4">
                 <div>
                     <label for="preset-prompt-a" class="label" data-i18n="optionsPresetLabelA"></label>
-                    <textarea id="preset-prompt-a" rows="2" class="text-input"></textarea>
+                    <textarea id="preset-prompt-a" rows="2" class="text-input" data-i18n-placeholder="optionsPresetPlaceholder"></textarea>
                 </div>
                  <div>
                     <label for="preset-prompt-b" class="label" data-i18n="optionsPresetLabelB"></label>
-                    <textarea id="preset-prompt-b" rows="2" class="text-input"></textarea>
+                    <textarea id="preset-prompt-b" rows="2" class="text-input" data-i18n-placeholder="optionsPresetPlaceholder"></textarea>
                 </div>
                  <div>
                     <label for="preset-prompt-c" class="label" data-i18n="optionsPresetLabelC"></label>
-                    <textarea id="preset-prompt-c" rows="2" class="text-input"></textarea>
+                    <textarea id="preset-prompt-c" rows="2" class="text-input" data-i18n-placeholder="optionsPresetPlaceholder"></textarea>
                 </div>
                  <div>
                     <label for="preset-prompt-d" class="label" data-i18n="optionsPresetLabelD"></label>
-                    <textarea id="preset-prompt-d" rows="2" class="text-input"></textarea>
+                    <textarea id="preset-prompt-d" rows="2" class="text-input" data-i18n-placeholder="optionsPresetPlaceholder"></textarea>
                 </div>
                  <div>
                     <label for="preset-prompt-e" class="label" data-i18n="optionsPresetLabelE"></label>
-                    <textarea id="preset-prompt-e" rows="2" class="text-input"></textarea>
+                    <textarea id="preset-prompt-e" rows="2" class="text-input" data-i18n-placeholder="optionsPresetPlaceholder"></textarea>
                 </div>
-                <!-- Added Preset F and G -->
                  <div>
                     <label for="preset-prompt-f" class="label" data-i18n="optionsPresetLabelF"></label>
-                    <textarea id="preset-prompt-f" rows="2" class="text-input"></textarea>
+                    <textarea id="preset-prompt-f" rows="2" class="text-input" data-i18n-placeholder="optionsPresetPlaceholder"></textarea>
                 </div>
                  <div>
                     <label for="preset-prompt-g" class="label" data-i18n="optionsPresetLabelG"></label>
-                    <textarea id="preset-prompt-g" rows="2" class="text-input"></textarea>
+                    <textarea id="preset-prompt-g" rows="2" class="text-input" data-i18n-placeholder="optionsPresetPlaceholder"></textarea>
                 </div>
             </div>
         </section>
@@ -110,7 +133,7 @@
                 <label class="label" for="local-model-enabled" data-i18n="localModelEnabledLabel"></label>
                 <input type="checkbox" id="local-model-enabled">
             </div>
-            <div id="local-model-settings" class="space-y-4" style="margin-top:1rem;">
+            <div id="local-model-settings" class="space-y-4">
                 <div>
                     <label for="local-model-endpoint" class="label" data-i18n="localModelEndpointLabel"></label>
                     <input type="text" id="local-model-endpoint" class="text-input"

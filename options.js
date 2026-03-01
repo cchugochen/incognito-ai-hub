@@ -1,20 +1,69 @@
-// options.js (v27.1 - Local Model Support)
-import { populateLanguageSelector } from './scripts/language_manager.js';
+// options.js (v27.2 - Sortable preferred languages)
+import { populateLanguageSelector, supportedLanguages } from './scripts/language_manager.js';
 
-/**
- * Saves options to chrome.storage.sync.
- */
+// --- Preferred Language List Helpers ---
+
+/** Populate the two <select> dropdowns with supported languages. */
+function populatePrefLangSelects() {
+    const notSetLabel = chrome.i18n.getMessage('optionsPrefLangNotSet');
+    document.querySelectorAll('.pref-lang-row[data-type="select"] .pref-lang-value').forEach(select => {
+        select.innerHTML = '';
+        const notSetOpt = new Option(notSetLabel, '');
+        select.add(notSetOpt);
+        supportedLanguages.forEach(lang => {
+            select.add(new Option(`${lang.nativeName} / ${lang.name}`, lang.name));
+        });
+    });
+}
+
+/** Read current pref lang values from the DOM rows in display order. */
+function getPrefLangValues() {
+    return Array.from(document.querySelectorAll('#pref-lang-list .pref-lang-row'))
+        .map(row => row.querySelector('.pref-lang-value').value.trim());
+}
+
+/** Apply saved values to DOM rows (index 0→row0, 1→row1, 2→row2 in current DOM order). */
+function setPrefLangValues(values) {
+    const rows = document.querySelectorAll('#pref-lang-list .pref-lang-row');
+    rows.forEach((row, i) => {
+        const input = row.querySelector('.pref-lang-value');
+        if (input) input.value = values[i] ?? '';
+    });
+}
+
+/** Update the 1./2./3. position labels after any reorder. */
+function updatePrefLangNumbers() {
+    document.querySelectorAll('#pref-lang-list .pref-lang-row').forEach((row, i) => {
+        const numEl = row.querySelector('.pref-slot-num');
+        if (numEl) numEl.textContent = `${i + 1}.`;
+    });
+}
+
+/** Enable/disable ↑↓ buttons based on current row position. */
+function updatePrefLangArrows() {
+    const rows = document.querySelectorAll('#pref-lang-list .pref-lang-row');
+    rows.forEach((row, i) => {
+        row.querySelector('[data-dir="up"]').disabled = (i === 0);
+        row.querySelector('[data-dir="down"]').disabled = (i === rows.length - 1);
+    });
+}
+
+// --- Core Options Logic ---
+
 function save_options() {
     const selectedModelEl = document.querySelector('input[name="model-select"]:checked');
     const selectedModel = selectedModelEl ? selectedModelEl.value : 'gemini-2.5-flash';
     const lang = document.getElementById('display-language').value;
+    const prefLangs = getPrefLangValues();
 
     chrome.storage.sync.set({
         displayLanguage: lang,
         geminiApiKey: document.getElementById('api-key').value,
         translationModel: selectedModel,
-        prefLangA: document.getElementById('pref-lang-a').value.trim(),
-        prefLangB: document.getElementById('pref-lang-b').value.trim(),
+        prefLangs: prefLangs,
+        // Clear old individual keys so migration path is clean
+        prefLangA: '',
+        prefLangB: '',
         preset_a: document.getElementById('preset-prompt-a').value,
         preset_b: document.getElementById('preset-prompt-b').value,
         preset_c: document.getElementById('preset-prompt-c').value,
@@ -28,19 +77,17 @@ function save_options() {
     }, () => {
         const status = document.getElementById('status');
         status.textContent = chrome.i18n.getMessage('optionsStatusSaved');
-        status.style.color = 'green';
-        setTimeout(() => { status.textContent = ''; }, 2000);
+        status.className = 'status-success';
+        setTimeout(() => { status.textContent = ''; status.className = ''; }, 2000);
     });
 }
 
-/**
- * Restores options from chrome.storage.sync.
- */
 function restore_options() {
     chrome.storage.sync.get({
         displayLanguage: 'default',
         geminiApiKey: '',
         translationModel: 'gemini-2.5-flash',
+        prefLangs: null,
         prefLangA: '',
         prefLangB: '',
         preset_a: '',
@@ -57,8 +104,9 @@ function restore_options() {
         document.getElementById('display-language').value = items.displayLanguage;
         document.getElementById('api-key').value = items.geminiApiKey;
 
-        document.getElementById('pref-lang-a').value = items.prefLangA;
-        document.getElementById('pref-lang-b').value = items.prefLangB;
+        // Migration: if prefLangs not saved yet, seed from old A/B keys
+        const prefLangs = items.prefLangs ?? [items.prefLangA, items.prefLangB, ''];
+        setPrefLangValues(prefLangs);
 
         document.getElementById('preset-prompt-a').value = items.preset_a;
         document.getElementById('preset-prompt-b').value = items.preset_b;
@@ -73,28 +121,24 @@ function restore_options() {
             savedModelRadio.checked = true;
         } else {
             const firstRadio = document.querySelector('input[name="model-select"]');
-            if(firstRadio) firstRadio.checked = true;
+            if (firstRadio) firstRadio.checked = true;
         }
 
         const localEnabledCheckbox = document.getElementById('local-model-enabled');
         localEnabledCheckbox.checked = items.localModelEnabled;
         document.getElementById('local-model-endpoint').value = items.localModelEndpoint;
         document.getElementById('local-model-name').value = items.localModelName;
-        document.getElementById('local-model-settings').style.display = items.localModelEnabled ? '' : 'none';
+        document.getElementById('local-model-settings').classList.toggle('hidden', !items.localModelEnabled);
     });
 }
 
-/**
- * Resets presets and API key to defaults. Preserves display language.
- */
 function reset_options() {
     const presetIds = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
     presetIds.forEach(id => {
         document.getElementById(`preset-prompt-${id}`).value = '';
     });
     document.getElementById('api-key').value = '';
-    document.getElementById('pref-lang-a').value = '';
-    document.getElementById('pref-lang-b').value = '';
+    setPrefLangValues(['', '', '']);
 
     const firstRadio = document.querySelector('input[name="model-select"]');
     if (firstRadio) firstRadio.checked = true;
@@ -102,11 +146,12 @@ function reset_options() {
     document.getElementById('local-model-enabled').checked = false;
     document.getElementById('local-model-endpoint').value = 'http://localhost:11434/v1';
     document.getElementById('local-model-name').value = 'llama3.2';
-    document.getElementById('local-model-settings').style.display = 'none';
+    document.getElementById('local-model-settings').classList.add('hidden');
 
     chrome.storage.sync.set({
         geminiApiKey: '',
         translationModel: 'gemini-2.5-flash',
+        prefLangs: ['', '', ''],
         prefLangA: '', prefLangB: '',
         preset_a: '', preset_b: '', preset_c: '', preset_d: '',
         preset_e: '', preset_f: '', preset_g: '',
@@ -116,8 +161,8 @@ function reset_options() {
     }, () => {
         const status = document.getElementById('status');
         status.textContent = chrome.i18n.getMessage('optionsStatusReset');
-        status.style.color = '#606C38';
-        setTimeout(() => { status.textContent = ''; }, 2500);
+        status.className = 'status-success';
+        setTimeout(() => { status.textContent = ''; status.className = ''; }, 2500);
     });
 }
 
@@ -125,27 +170,48 @@ function reset_options() {
 document.addEventListener('DOMContentLoaded', async () => {
     document.title = chrome.i18n.getMessage('optionsTitle');
 
+    // Populate display language selector
     const displayLangSelect = document.getElementById('display-language');
     const defaultOption = new Option(chrome.i18n.getMessage('optionsDisplayLangDefault'), 'default');
     displayLangSelect.add(defaultOption);
     await populateLanguageSelector(displayLangSelect, { isDisplayLangSelector: true });
 
+    // Populate the two supported-language selects in the pref-lang list
+    populatePrefLangSelects();
+
+    // Restore saved values
     restore_options();
+
+    // Reorder buttons: swap the clicked row with its neighbor
+    document.getElementById('pref-lang-list').addEventListener('click', (e) => {
+        const btn = e.target.closest('.pref-arrow');
+        if (!btn) return;
+        const row = btn.closest('.pref-lang-row');
+        const list = document.getElementById('pref-lang-list');
+        const rows = Array.from(list.querySelectorAll('.pref-lang-row'));
+        const idx = rows.indexOf(row);
+
+        if (btn.dataset.dir === 'up' && idx > 0) {
+            list.insertBefore(row, rows[idx - 1]);
+        } else if (btn.dataset.dir === 'down' && idx < rows.length - 1) {
+            list.insertBefore(rows[idx + 1], row);
+        }
+        updatePrefLangNumbers();
+        updatePrefLangArrows();
+    });
 
     document.getElementById('save').addEventListener('click', save_options);
     document.getElementById('reset').addEventListener('click', reset_options);
 
     document.getElementById('local-model-enabled').addEventListener('change', (e) => {
-        document.getElementById('local-model-settings').style.display = e.target.checked ? '' : 'none';
+        document.getElementById('local-model-settings').classList.toggle('hidden', !e.target.checked);
     });
 
     document.querySelectorAll('.model-card').forEach(card => {
         card.addEventListener('click', () => {
             const radioId = card.getAttribute('for');
             const radio = document.getElementById(radioId);
-            if (radio) {
-                radio.checked = true;
-            }
+            if (radio) radio.checked = true;
         });
     });
 });

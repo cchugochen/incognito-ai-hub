@@ -1,11 +1,15 @@
 /**
- * language_manager.js (v26.3)
+ * language_manager.js (v27.3)
  * - Manages the list of supported languages for the extension's UI and features.
- * - Removed Hindi (hi) and Arabic (ar).
+ * - Added Arabic (ar), German (de), Spanish (es).
+ * - Improved language detection: extended Chinese-family mapping, cleaner region-variant handling.
  */
 
 export const supportedLanguages = [
+    { code: 'ar', name: 'Arabic', nativeName: 'العربية' },
+    { code: 'de', name: 'German', nativeName: 'Deutsch' },
     { code: 'en', name: 'English', nativeName: 'English' },
+    { code: 'es', name: 'Spanish', nativeName: 'Español' },
     { code: 'ja', name: 'Japanese', nativeName: '日本語' },
     { code: 'ko', name: 'Korean', nativeName: '한국어' },
     { code: 'pt', name: 'Portuguese', nativeName: 'Português' },
@@ -25,20 +29,30 @@ export async function getEffectiveUILanguageCode() {
         }
 
         const uiLang = chrome.i18n.getUILanguage().toLowerCase();
-        
-        // 規則 (1): 如果系統是任何中文語系，預設為繁體中文
-        if (uiLang.startsWith('zh')) {
+        const langCode = uiLang.split('-')[0];
+
+        // Rule (1): Chinese language family → Traditional Chinese (zh-TW)
+        // Covers all regional variants and related languages:
+        //   zh-TW (Taiwan), zh-HK (Hong Kong), zh-CN (Mainland China),
+        //   zh-SG (Singapore), zh-MO (Macau) — all map to Traditional Chinese
+        //   yue (Cantonese / 廣東話, spoken in HK & Guangdong)
+        //   wuu (Wu / 吳語, Shanghainese)
+        //   nan (Min Nan / 閩南語, Hokkien / Taiwanese)
+        //   hak (Hakka / 客家話)
+        const CHINESE_FAMILY_CODES = new Set(['zh', 'yue', 'wuu', 'nan', 'hak']);
+        if (CHINESE_FAMILY_CODES.has(langCode)) {
             return 'zh-TW';
         }
 
-        // 規則 (2): 檢查系統語言是否在支援的列表 (排除已移除的語言)
-        const langCode = uiLang.split('-')[0];
+        // Rule (2): Match base language code against supported list.
+        // Regional variants are automatically collapsed (de-AT→de, es-MX→es,
+        // pt-BR→pt, ar-SA→ar, etc.). Languages with no match fall through.
         const isSupported = supportedLanguages.some(l => l.code === langCode);
         if (isSupported) {
             return langCode;
         }
 
-        // 規則 (3): 若以上皆非，則預設為英文
+        // Rule (3): No supported language found → default to English.
         return 'en';
     } catch (error) {
         console.error("Error getting effective UI language code:", error);
@@ -51,7 +65,10 @@ export async function populateLanguageSelector(selectElement, options = {}) {
     
     selectElement.innerHTML = '';
 
-    const storedPrefs = await chrome.storage.sync.get({ prefLangA: '', prefLangB: '' });
+    // Read new ordered array; fall back to old A/B keys for migration compatibility
+    const storedPrefs = await chrome.storage.sync.get({ prefLangs: null, prefLangA: '', prefLangB: '' });
+    const prefLangs = storedPrefs.prefLangs
+        ?? [storedPrefs.prefLangA, storedPrefs.prefLangB].filter(Boolean);
 
     if (options.includeSystemDefault) {
         const code = await getEffectiveUILanguageCode();
@@ -66,14 +83,10 @@ export async function populateLanguageSelector(selectElement, options = {}) {
     }
 
     if (options.includePrefLangs) {
-        if (storedPrefs.prefLangA) {
-            const opt = new Option(chrome.i18n.getMessage('langPrefA', storedPrefs.prefLangA), storedPrefs.prefLangA);
+        prefLangs.filter(lang => lang).forEach(lang => {
+            const opt = new Option(chrome.i18n.getMessage('langPref', lang), lang);
             selectElement.add(opt);
-        }
-        if (storedPrefs.prefLangB) {
-            const opt = new Option(chrome.i18n.getMessage('langPrefB', storedPrefs.prefLangB), storedPrefs.prefLangB);
-            selectElement.add(opt);
-        }
+        });
     }
 
     if (selectElement.options.length > 0 && !options.isDisplayLangSelector) {

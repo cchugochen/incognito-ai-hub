@@ -33,6 +33,7 @@ img { display: block; max-width: 100%; height: auto; }
 .ml-4 { margin-left: 1rem; }
 .my-6 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
 .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem; }
+#local-model-settings { margin-top: 1rem; }
 
 /* Typography */
 .text-sm { font-size: 0.875rem; }

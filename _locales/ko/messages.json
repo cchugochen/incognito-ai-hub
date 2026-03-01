@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "(1) 간단한 시크릿 Gemini 채팅 인터페이스 및 웹페이지, 텍스트, 스크린샷 번역, 음성 AI 입력을 위한 무료 도구 모음. (2) 사용자는 자신의 Google Gemini API 키를 직접 발급받아야 합니다.",
+    "message": "Gemini · 로컈 LLM 기반의 간단한 시크릿 AI 채팅. 웹 페이지·텍스트·스크린샷·음성 입력 번역을 위한 무료 소형 도구 모음.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -56,8 +56,7 @@
     "description": "Section header for preferred languages."
   },
   "optionsPrefLangDesc": {
-    "message": "가장 자주 사용하는 두 가지 대상 언어를 설정하세요. 이 언어들은 다양한 번역 기능의 빠른 선택 메뉴에 표시됩니다.",
-    "description": "Description for preferred languages setting."
+    "message": "선호하는 번역 대상 언어를 최대 3개 설정합니다. 번역 메뉴 상단에 표시됩니다. ↑↓ 버튼으로 표시 순서를 변경하세요."
   },
   "optionsPrefLangLabelA": {
     "message": "선호 언어 A",
@@ -104,15 +103,29 @@
     "description": "Section header for preset prompts."
   },
   "optionsPresetDesc": {
-    "message": "'시크릿 Gemini 채팅' 페이지의 A/B/C/D/E 버튼에 자주 사용하는 시작 지침(시스템 프롬프트)을 설정하세요.",
+    "message": "“시크릿 Gemini 치팅” 페이지에서 최대 7개의 시스템 프롬프트 프리셋(A–G)을 설정합니다. 해당 버튼을 탭하면 그 프리셋이 초기 지침으로 로드됩니다.",
     "description": "Description for preset prompts."
   },
-  "optionsPresetLabelA": { "message": "프리셋 A", "description": "Label for preset A." },
-  "optionsPresetLabelB": { "message": "프리셋 B", "description": "Label for preset B." },
-  "optionsPresetLabelC": { "message": "프리셋 C", "description": "Label for preset C." },
-  "optionsPresetLabelD": { "message": "프리셋 D", "description": "Label for preset D." },
-  "optionsPresetLabelE": { "message": "프리셋 E", "description": "Label for preset E." },
-  
+  "optionsPresetLabelA": {
+    "message": "프리셋 A",
+    "description": "Label for preset A."
+  },
+  "optionsPresetLabelB": {
+    "message": "프리셋 B",
+    "description": "Label for preset B."
+  },
+  "optionsPresetLabelC": {
+    "message": "프리셋 C",
+    "description": "Label for preset C."
+  },
+  "optionsPresetLabelD": {
+    "message": "프리셋 D",
+    "description": "Label for preset D."
+  },
+  "optionsPresetLabelE": {
+    "message": "프리셋 E",
+    "description": "Label for preset E."
+  },
   "optionsSaveButton": {
     "message": "설정 저장",
     "description": "Save button text."
@@ -126,8 +139,8 @@
     "description": "Alert message when API key is missing."
   },
   "alertNoApiKeyOptions": {
-    "message": "아래 'API 키 및 모델' 섹션에 Google Gemini API 키를 붙여넣으십시오.",
-    "description": "Alert message shown on the options page if API key is missing."
+    "message": "먼저 설정 페이지에서 Google Gemini API 키를 입력해 주세요.",
+    "description": "Alert message shown when API key is missing, directing user to options page."
   },
   "alertInitFailed": {
     "message": "초기화에 실패했습니다. 콘솔에서 오류 메시지를 확인하세요.",
@@ -172,16 +185,33 @@
   "readerSaveOriginal": {
     "message": "[원본 단락 $index$]",
     "description": "Label for original text paragraph when saving.",
-    "placeholders": { "index": { "content": "$1" } }
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
   },
   "readerSaveTranslated": {
     "message": "[번역 단락 $index$]",
     "description": "Label for translated text paragraph when saving.",
-    "placeholders": { "index": { "content": "$1" } }
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
   },
-  "readerVoiceToolHeader": { "message": "음성 읽어주기 도구 (개발 중)", "description": "Header for the text-to-speech tool in reader." },
-  "readerVoiceToolLabel": { "message": "읽기 언어", "description": "Label for TTS language selection." },
-  "readerVoiceToolButton": { "message": "번역문 읽어주기", "description": "Button to trigger TTS." },
+  "readerVoiceToolHeader": {
+    "message": "음성 읽기 도구",
+    "description": "Header for the text-to-speech tool in reader."
+  },
+  "readerVoiceToolLabel": {
+    "message": "읽기 언어",
+    "description": "Label for TTS language selection."
+  },
+  "readerVoiceToolButton": {
+    "message": "번역",
+    "description": "Button to trigger TTS."
+  },
   "workbenchTitle": {
     "message": "스마트 번역 워크벤치",
     "description": "Title for the workbench page."
@@ -194,17 +224,50 @@
     "message": "이미지 업로드",
     "description": "Tab label for uploading image."
   },
-  "workbenchTextHeader": { "message": "텍스트 번역", "description": "Header for text translation section." },
-  "workbenchTextDesc": { "message": "복사한 텍스트를 아래에 붙여넣어 번역하세요.", "description": "Description for text translation." },
-  "workbenchImageHeader": { "message": "이미지 번역 (OCR)", "description": "Header for image translation section." },
-  "workbenchImageDesc": { "message": "스크린샷을 업로드하거나 붙여넣으면 AI가 이미지 속 텍스트를 자동으로 인식하고 번역합니다.", "description": "Description for image translation." },
-  "workbenchLabelSourceLang": { "message": "원본 언어", "description": "Label for source language selector." },
-  "workbenchLabelTargetLang": { "message": "대상 언어", "description": "Label for target language selector." },
-  "workbenchProcessTextButton": { "message": "텍스트 번역", "description": "Button to process text." },
-  "workbenchProcessImageButton": { "message": "이미지 인식 및 번역", "description": "Button to process image." },
-  "workbenchUploadBox": { "message": "여기를 클릭하여 이미지를 선택하거나 스크린샷을 직접 붙여넣으세요 (Cmd+V / Ctrl+V)", "description": "Placeholder for image upload box." },
-  "workbenchUploadBoxDesc": { "message": "JPG, PNG, BMP 형식 지원", "description": "Subtitle for image upload box." },
-  "workbenchImageResultTitle": { "message": "이미지 번역 결과", "description": "Title for the reader tab showing image OCR result." },
+  "workbenchTextHeader": {
+    "message": "텍스트 번역",
+    "description": "Header for text translation section."
+  },
+  "workbenchTextDesc": {
+    "message": "복사한 텍스트를 아래에 붙여넣어 번역하세요.",
+    "description": "Description for text translation."
+  },
+  "workbenchImageHeader": {
+    "message": "이미지 번역 (OCR)",
+    "description": "Header for image translation section."
+  },
+  "workbenchImageDesc": {
+    "message": "스크린샷을 업로드하거나 붙여넣으면 AI가 이미지 속 텍스트를 자동으로 인식하고 번역합니다.",
+    "description": "Description for image translation."
+  },
+  "workbenchLabelSourceLang": {
+    "message": "원본 언어",
+    "description": "Label for source language selector."
+  },
+  "workbenchLabelTargetLang": {
+    "message": "대상 언어",
+    "description": "Label for target language selector."
+  },
+  "workbenchProcessTextButton": {
+    "message": "텍스트 번역",
+    "description": "Button to process text."
+  },
+  "workbenchProcessImageButton": {
+    "message": "이미지 인식 및 번역",
+    "description": "Button to process image."
+  },
+  "workbenchUploadBox": {
+    "message": "여기를 클릭하여 이미지를 선택하거나 스크린샷을 직접 붙여넣으세요 (Cmd+V / Ctrl+V)",
+    "description": "Placeholder for image upload box."
+  },
+  "workbenchUploadBoxDesc": {
+    "message": "JPG, PNG, BMP 형식 지원",
+    "description": "Subtitle for image upload box."
+  },
+  "workbenchImageResultTitle": {
+    "message": "이미지 번역 결과",
+    "description": "Title for the reader tab showing image OCR result."
+  },
   "voiceTitle": {
     "message": "시크릿 - 음성 메모",
     "description": "Title for the voice notes page."
@@ -248,12 +311,20 @@
   "errorMicPermission": {
     "message": "오류: 마이크 권한을 얻을 수 없습니다. 브라우저 설정을 확인하세요. 세부 정보: $error$",
     "description": "Error message.",
-    "placeholders": { "error": { "content": "$1" } }
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
   },
   "voiceStatusFailed": {
     "message": "변환 실패: $error$",
     "description": "Status message.",
-    "placeholders": { "error": { "content": "$1" } }
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
   },
   "langAutoDetect": {
     "message": "자동 감지",
@@ -262,17 +333,32 @@
   "langSystemDefault": {
     "message": "시스템 기본값 ($langName$)",
     "description": "Language option for system default, with placeholder for the actual language name.",
-    "placeholders": { "langName": { "content": "$1", "example": "English" } }
+    "placeholders": {
+      "langName": {
+        "content": "$1",
+        "example": "English"
+      }
+    }
   },
   "langPrefA": {
     "message": "선호-A ($langName$)",
     "description": "Language option for preferred language A.",
-    "placeholders": { "langName": { "content": "$1", "example": "Français" } }
+    "placeholders": {
+      "langName": {
+        "content": "$1",
+        "example": "Français"
+      }
+    }
   },
   "langPrefB": {
     "message": "선호-B ($langName$)",
     "description": "Language option for preferred language B.",
-    "placeholders": { "langName": { "content": "$1", "example": "Español" } }
+    "placeholders": {
+      "langName": {
+        "content": "$1",
+        "example": "Español"
+      }
+    }
   },
   "voiceLangZhEn": {
     "message": "중국어 (영어 혼용)",
@@ -281,7 +367,12 @@
   "voiceMicLabel": {
     "message": "마이크 $index$",
     "description": "Default label for a microphone.",
-    "placeholders": { "index": { "content": "$1", "example": "1" } }
+    "placeholders": {
+      "index": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
   },
   "incognitoFooter": {
     "message": "Incognito AI Hub: 대만 의사 Hugo Chen이 2025년 여름 어느 태풍 오는 날 첫 버전을 완성했습니다. 첫 버전은 대만어로 'Hong-Thai'라고 이름 붙였습니다. 유용하게 사용하셨다면 Chrome 웹 스토어에 긍정적인 리뷰를 남겨주세요. 괜찮으시다면 오른쪽 Buy Me a Coffee 링크를 통해 음료 한 잔 사주시면 감사하겠습니다.",
@@ -290,12 +381,23 @@
   "promptWebpageProcessing": {
     "message": "You are a helpful assistant. The user has provided the HTML content and a screenshot of a webpage. Please analyze both to understand the main content of the page, ignoring ads, navigation bars, and footers. Then, provide a concise summary of the key points in a well-structured, easy-to-read format. Finally, translate the summary into $lang$. Here is the HTML content: ```html\n$pageContent$\n```",
     "description": "Prompt for webpage processing in background.js.",
-    "placeholders": { "pageContent": { "content": "$1" }, "lang": { "content": "$2" } }
+    "placeholders": {
+      "pageContent": {
+        "content": "$1"
+      },
+      "lang": {
+        "content": "$2"
+      }
+    }
   },
   "promptTranslateTo": {
     "message": "Please translate the text in the image into $lang$.",
     "description": "Prompt for image translation, asking to translate to a specific language.",
-    "placeholders": { "lang": { "content": "$1" } }
+    "placeholders": {
+      "lang": {
+        "content": "$1"
+      }
+    }
   },
   "promptSourceLangAuto": {
     "message": "First, identify the language of the text in the image.",
@@ -304,7 +406,11 @@
   "promptSourceLangIs": {
     "message": "The language of the text in the image is $lang$.",
     "description": "Part of the prompt specifying the source language.",
-    "placeholders": { "lang": { "content": "$1" } }
+    "placeholders": {
+      "lang": {
+        "content": "$1"
+      }
+    }
   },
   "incognitoTitle": {
     "message": "시크릿 Gemini 채팅",
@@ -330,11 +436,26 @@
     "message": "PDF 문서 업로드 (1개)",
     "description": "Tooltip for the PDF upload button."
   },
-  "incognitoPresetTitleA": { "message": "프리셋 A 사용", "description": "Tooltip for preset button A." },
-  "incognitoPresetTitleB": { "message": "프리셋 B 사용", "description": "Tooltip for preset button B." },
-  "incognitoPresetTitleC": { "message": "프리셋 C 사용", "description": "Tooltip for preset button C." },
-  "incognitoPresetTitleD": { "message": "프리셋 D 사용", "description": "Tooltip for preset button D." },
-  "incognitoPresetTitleE": { "message": "프리셋 E 사용", "description": "Tooltip for preset button E." },
+  "incognitoPresetTitleA": {
+    "message": "프리셋 A 사용",
+    "description": "Tooltip for preset button A."
+  },
+  "incognitoPresetTitleB": {
+    "message": "프리셋 B 사용",
+    "description": "Tooltip for preset button B."
+  },
+  "incognitoPresetTitleC": {
+    "message": "프리셋 C 사용",
+    "description": "Tooltip for preset button C."
+  },
+  "incognitoPresetTitleD": {
+    "message": "프리셋 D 사용",
+    "description": "Tooltip for preset button D."
+  },
+  "incognitoPresetTitleE": {
+    "message": "프리셋 E 사용",
+    "description": "Tooltip for preset button E."
+  },
   "stateThinking": {
     "message": "생각 중...",
     "description": "Thinking indicator text."
@@ -378,7 +499,11 @@
   "statusFailed": {
     "message": "처리 실패: $error$",
     "description": "Generic failure status.",
-    "placeholders": { "error": { "content": "$1" } }
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
   },
   "statusUploadSuccess": {
     "message": "성공! 결과를 여는 중...",
@@ -407,56 +532,291 @@
   "promptVoiceTranscribeDiarize": {
     "message": "Please transcribe the following audio. The primary language spoken is $lang$. Pay close attention to pauses and changes in tone or speech patterns to identify and label different speakers (e.g., Speaker 1, Speaker 2). Provide the output as a clear, readable transcript.",
     "description": "Prompt for voice transcription with speaker diarization.",
-    "placeholders": { "lang": { "content": "$1" } }
+    "placeholders": {
+      "lang": {
+        "content": "$1"
+      }
+    }
   },
   "voiceResultTitle": {
     "message": "음성 변환 결과",
     "description": "Title for the reader tab showing voice transcription result."
   },
-  "optionsPresetLabelF": { "message": "Preset F", "description": "Label for preset F." },
-  "optionsPresetLabelG": { "message": "Preset G", "description": "Label for preset G." },
-  "optionsResetButton": { "message": "Reset to Default", "description": "Reset button text on options page." },
-  "optionsStatusReset": { "message": "Settings reset to default.", "description": "Status message when settings are reset." },
-  "incognitoPresetTitleF": { "message": "Use Preset F", "description": "Tooltip for preset button F." },
-  "incognitoPresetTitleG": { "message": "Use Preset G", "description": "Tooltip for preset button G." },
-  "incognitoPresetLabel": { "message": "Prompts:", "description": "Label before the preset buttons." },
-  "errorNoApiKey": { "message": "Error: Gemini API Key not found. Please enter your key in the Settings page first.", "description": "Error thrown when API key is missing from storage." },
-  "errorApiRequestFailed": { "message": "API request failed: $details$", "description": "Error when API returns a non-OK HTTP status.", "placeholders": { "details": { "content": "$1" } } },
-  "errorApiRejected": { "message": "API request was blocked. Reason: $reason$", "description": "Error when API blocks the request due to safety filters.", "placeholders": { "reason": { "content": "$1" } } },
-  "errorApiStopped": { "message": "API response stopped unexpectedly. Reason: $reason$", "description": "Error when API finishes with a non-STOP reason.", "placeholders": { "reason": { "content": "$1" } } },
-  "errorNoActiveTab": { "message": "Error: No active tab found. Please try again.", "description": "Error when no active browser tab is found." },
-  "errorInvalidText": { "message": "Error: Invalid or empty text provided.", "description": "Error when submitted text is empty or invalid." },
-  "errorNoImageData": { "message": "Error: No image data found. Please upload an image.", "description": "Error when image data is missing from the payload." },
-  "errorNoAudioData": { "message": "Error: No audio data found. Please record or upload an audio file.", "description": "Error when audio data is missing from the payload." },
-  "errorOcrFailed": { "message": "Error: OCR failed. The AI could not recognize enough text from the image.", "description": "Error when OCR produces too little text." },
-  "errorOcrFailedLong": { "message": "Error: OCR returned insufficient content. The webpage screenshot may be blank or unreadable.", "description": "Error when webpage screenshot OCR produces too little text." },
-  "errorScreenshotFailed": { "message": "Error: Failed to capture the screenshot.", "description": "Error when the debugger screenshot command fails." },
-  "errorDebuggerAttach": { "message": "Error: Could not attach to the page. This may be restricted on some pages.", "description": "Error when the Chrome debugger cannot attach to a tab." },
-  "errorSttFailed": { "message": "Error: Speech-to-text transcription failed. The audio may be too short or unclear.", "description": "Error when transcription produces no text." },
-  "readerTranslating": { "message": "Translating...", "description": "Status shown in the voice translation output while translating." },
-  "readerTranslateFailed": { "message": "Translation failed: $error$", "description": "Error shown in the reader when a paragraph translation fails.", "placeholders": { "error": { "content": "$1" } } },
-  "readerErrorNotFound": { "message": "Error: No content was found to display. Please go back and try again.", "description": "Error shown in reader when no article text is in storage." },
-  "voiceStatusLimitReached": { "message": "Recording limit reached (15 min). Processing...", "description": "Status shown when the max recording time is reached." },
-  "statusProcessing": { "message": "Processing...", "description": "Generic processing status message." },
-  "statusPleasePaste": { "message": "Please paste some text first.", "description": "Status shown when user clicks process without entering text." },
-  "statusSuccess": { "message": "Success! Opening results page...", "description": "Success status after text processing." },
-  "errorPleaseUploadImage": { "message": "Error: Please upload an image file (JPG, PNG, BMP).", "description": "Error when a non-image file is dropped on the upload box." },
-  "alertMaxImages": { "message": "You can attach a maximum of 4 images at a time.", "description": "Alert when user tries to attach more than 4 images." },
-  "alertTurnLimit": { "message": "You have reached the $limit$-round limit for this conversation. Please refresh the page to start a new chat.", "description": "Alert shown when the conversation reaches the maximum number of turns.", "placeholders": { "limit": { "content": "$1" } } },
-  "alertOnePdfOnly": { "message": "Only one PDF file can be attached at a time.", "description": "Alert when user tries to attach more than one PDF." },
-  "incognitoAttachedFile": { "message": "Attached: $filename$", "description": "Text shown in the chat message when a file is attached.", "placeholders": { "filename": { "content": "$1" } } },
-
-  "localModelSectionHeader": { "message": "Local AI Model (Ollama / LM Studio)", "description": "Section header for local model settings on the options page." },
-  "localModelDesc": { "message": "Use a local AI model via an OpenAI-compatible API. Start Ollama or LM Studio before use.", "description": "Description for local model settings." },
-  "localModelEnabledLabel": { "message": "Enable local model", "description": "Label for the enable local model checkbox." },
-  "localModelEndpointLabel": { "message": "API Endpoint URL", "description": "Label for the local model endpoint URL input." },
-  "localModelEndpointPlaceholder": { "message": "http://localhost:11434/v1", "description": "Placeholder for the local model endpoint URL input." },
-  "localModelNameLabel": { "message": "Model Name", "description": "Label for the local model name input." },
-  "localModelNamePlaceholder": { "message": "llama3.2", "description": "Placeholder for the local model name input." },
-  "localModelTabName": { "message": "Local Model", "description": "Tab button label for the local model chat tab." },
-  "localModelHeader": { "message": "Local AI Model Chat", "description": "Header for the local model chat tab." },
-  "localModelChatDesc": { "message": "Chat with your local Ollama or LM Studio model. Text only — images and PDFs are not supported.", "description": "Description text in the local model chat tab." },
-  "localModelNotEnabledMsg": { "message": "Local model is not enabled. Please go to Options (⚙️) to configure the endpoint and model name.", "description": "Message shown in the local tab when local model is not enabled." },
-  "errorLocalModelFailed": { "message": "Local model returned an empty or invalid response.", "description": "Error when local model response has no content." },
-  "errorLocalModelConnect": { "message": "Could not connect to local model. Please ensure Ollama or LM Studio is running.", "description": "Error when the fetch to local model endpoint fails." }
+  "optionsPresetLabelF": {
+    "message": "Preset F",
+    "description": "Label for preset F."
+  },
+  "optionsPresetLabelG": {
+    "message": "Preset G",
+    "description": "Label for preset G."
+  },
+  "optionsResetButton": {
+    "message": "Reset to Default",
+    "description": "Reset button text on options page."
+  },
+  "optionsStatusReset": {
+    "message": "Settings reset to default.",
+    "description": "Status message when settings are reset."
+  },
+  "incognitoPresetTitleF": {
+    "message": "Use Preset F",
+    "description": "Tooltip for preset button F."
+  },
+  "incognitoPresetTitleG": {
+    "message": "Use Preset G",
+    "description": "Tooltip for preset button G."
+  },
+  "incognitoPresetLabel": {
+    "message": "Prompts:",
+    "description": "Label before the preset buttons."
+  },
+  "errorNoApiKey": {
+    "message": "Error: Gemini API Key not found. Please enter your key in the Settings page first.",
+    "description": "Error thrown when API key is missing from storage."
+  },
+  "errorApiRequestFailed": {
+    "message": "API request failed: $details$",
+    "description": "Error when API returns a non-OK HTTP status.",
+    "placeholders": {
+      "details": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorApiRejected": {
+    "message": "API request was blocked. Reason: $reason$",
+    "description": "Error when API blocks the request due to safety filters.",
+    "placeholders": {
+      "reason": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorApiStopped": {
+    "message": "API response stopped unexpectedly. Reason: $reason$",
+    "description": "Error when API finishes with a non-STOP reason.",
+    "placeholders": {
+      "reason": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorNoActiveTab": {
+    "message": "Error: No active tab found. Please try again.",
+    "description": "Error when no active browser tab is found."
+  },
+  "errorInvalidText": {
+    "message": "Error: Invalid or empty text provided.",
+    "description": "Error when submitted text is empty or invalid."
+  },
+  "errorNoImageData": {
+    "message": "Error: No image data found. Please upload an image.",
+    "description": "Error when image data is missing from the payload."
+  },
+  "errorNoAudioData": {
+    "message": "Error: No audio data found. Please record or upload an audio file.",
+    "description": "Error when audio data is missing from the payload."
+  },
+  "errorOcrFailed": {
+    "message": "Error: OCR failed. The AI could not recognize enough text from the image.",
+    "description": "Error when OCR produces too little text."
+  },
+  "errorOcrFailedLong": {
+    "message": "Error: OCR returned insufficient content. The webpage screenshot may be blank or unreadable.",
+    "description": "Error when webpage screenshot OCR produces too little text."
+  },
+  "errorScreenshotFailed": {
+    "message": "Error: Failed to capture the screenshot.",
+    "description": "Error when the debugger screenshot command fails."
+  },
+  "errorDebuggerAttach": {
+    "message": "Error: Could not attach to the page. This may be restricted on some pages.",
+    "description": "Error when the Chrome debugger cannot attach to a tab."
+  },
+  "errorSttFailed": {
+    "message": "Error: Speech-to-text transcription failed. The audio may be too short or unclear.",
+    "description": "Error when transcription produces no text."
+  },
+  "readerTranslating": {
+    "message": "Translating...",
+    "description": "Status shown in the voice translation output while translating."
+  },
+  "readerTranslateFailed": {
+    "message": "Translation failed: $error$",
+    "description": "Error shown in the reader when a paragraph translation fails.",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "readerErrorNotFound": {
+    "message": "Error: No content was found to display. Please go back and try again.",
+    "description": "Error shown in reader when no article text is in storage."
+  },
+  "voiceStatusLimitReached": {
+    "message": "Recording limit reached (15 min). Processing...",
+    "description": "Status shown when the max recording time is reached."
+  },
+  "statusProcessing": {
+    "message": "Processing...",
+    "description": "Generic processing status message."
+  },
+  "statusPleasePaste": {
+    "message": "Please paste some text first.",
+    "description": "Status shown when user clicks process without entering text."
+  },
+  "statusSuccess": {
+    "message": "Success! Opening results page...",
+    "description": "Success status after text processing."
+  },
+  "errorPleaseUploadImage": {
+    "message": "Error: Please upload an image file (JPG, PNG, BMP).",
+    "description": "Error when a non-image file is dropped on the upload box."
+  },
+  "alertMaxImages": {
+    "message": "You can attach a maximum of 4 images at a time.",
+    "description": "Alert when user tries to attach more than 4 images."
+  },
+  "alertTurnLimit": {
+    "message": "You have reached the $limit$-round limit for this conversation. Please refresh the page to start a new chat.",
+    "description": "Alert shown when the conversation reaches the maximum number of turns.",
+    "placeholders": {
+      "limit": {
+        "content": "$1"
+      }
+    }
+  },
+  "alertOnePdfOnly": {
+    "message": "Only one PDF file can be attached at a time.",
+    "description": "Alert when user tries to attach more than one PDF."
+  },
+  "incognitoAttachedFile": {
+    "message": "Attached: $filename$",
+    "description": "Text shown in the chat message when a file is attached.",
+    "placeholders": {
+      "filename": {
+        "content": "$1"
+      }
+    }
+  },
+  "localModelSectionHeader": {
+    "message": "Local AI Model (Ollama / LM Studio)",
+    "description": "Section header for local model settings on the options page."
+  },
+  "localModelDesc": {
+    "message": "Use a local AI model via an OpenAI-compatible API. Start Ollama or LM Studio before use.",
+    "description": "Description for local model settings."
+  },
+  "localModelEnabledLabel": {
+    "message": "Enable local model",
+    "description": "Label for the enable local model checkbox."
+  },
+  "localModelEndpointLabel": {
+    "message": "API Endpoint URL",
+    "description": "Label for the local model endpoint URL input."
+  },
+  "localModelEndpointPlaceholder": {
+    "message": "http://localhost:11434/v1",
+    "description": "Placeholder for the local model endpoint URL input."
+  },
+  "localModelNameLabel": {
+    "message": "Model Name",
+    "description": "Label for the local model name input."
+  },
+  "localModelNamePlaceholder": {
+    "message": "llama3.2",
+    "description": "Placeholder for the local model name input."
+  },
+  "localModelTabName": {
+    "message": "Local Model",
+    "description": "Tab button label for the local model chat tab."
+  },
+  "localModelHeader": {
+    "message": "Local AI Model Chat",
+    "description": "Header for the local model chat tab."
+  },
+  "localModelChatDesc": {
+    "message": "Chat with your local Ollama or LM Studio model. Text only — images and PDFs are not supported.",
+    "description": "Description text in the local model chat tab."
+  },
+  "localModelNotEnabledMsg": {
+    "message": "Local model is not enabled. Please go to Options (⚙️) to configure the endpoint and model name.",
+    "description": "Message shown in the local tab when local model is not enabled."
+  },
+  "errorLocalModelFailed": {
+    "message": "Local model returned an empty or invalid response.",
+    "description": "Error when local model response has no content."
+  },
+  "errorLocalModelConnect": {
+    "message": "Could not connect to local model. Please ensure Ollama or LM Studio is running.",
+    "description": "Error when the fetch to local model endpoint fails."
+  },
+  "readerTtsSpeakBtn": {
+    "message": "🔊 읽기",
+    "description": "TTS feature: readerTtsSpeakBtn"
+  },
+  "readerTtsStopBtn": {
+    "message": "⏹ 중지",
+    "description": "TTS feature: readerTtsStopBtn"
+  },
+  "readerTtsLangLabel": {
+    "message": "언어",
+    "description": "TTS feature: readerTtsLangLabel"
+  },
+  "errorApiRecitation": {
+    "message": "이 콘텐츠는 저작권으로 보호된 자료(예: Kindle 책)를 포함하는 것으로 보여 AI가 처리를 거부했습니다.",
+    "description": "Error when Gemini refuses content due to RECITATION (copyright detection)."
+  },
+  "hintScreenshotMode": {
+    "message": "📌 스크린샷 번역 모드 — 현재 화면에 표시된 부분만 번역되었습니다. 더 완전한 결과를 위해 글꼴 크기를 줄인 후 다시 처리해 보세요.",
+    "description": "Hint shown at the top of reader when screenshot translation fallback is used."
+  },
+  "readerLabelBgColor": {
+    "message": "배경",
+    "description": "Label for background color buttons."
+  },
+  "workbenchLabelImageSourceLang": {
+    "message": "이미지 소스 언어",
+    "description": "Label for image source language selector."
+  },
+  "workbenchTextPlaceholder": {
+    "message": "여기에 텍스트를 붙여넣으세요...",
+    "description": "Placeholder for the text input area in workbench."
+  },
+  "optionsLicenseLink": {
+    "message": "MIT 라이선스",
+    "description": "Link to the MIT license file on the options page."
+  },
+  "optionsPrivacyLink": {
+    "message": "개인정보 처리방침",
+    "description": "Link to the privacy policy on the options page."
+  },
+  "readerClickHint": {
+    "message": "💡 아무 단락이나 클릭하면 즉시 번역됩니다.",
+    "description": "Hint shown in reader page for voice transcription results."
+  },
+  "langPref": {
+    "message": "⭐ $langName$",
+    "placeholders": {
+      "langName": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsPrefLangNotSet": {
+    "message": "(설정 안 됨)"
+  },
+  "optionsPrefLangCustomLabel": {
+    "message": "사용자 지정"
+  },
+  "optionsPrefLangCustomPlaceholder": {
+    "message": "예: 문어체, 제주어 등"
+  },
+  "optionsPresetTip": {
+    "message": "💡 프롬프트 작성 팁: ①<b>AI 역할</b> — 예: “당신은 전문 의료 번역가입니다.” ②<b>대상</b> — 예: “사용자는 의료 전문가입니다.” ③<b>응답 형식</b> — 예: “한국어로 글머리 기호를 사용해 답변하세요.” ④<b>입력 처리</b> — 예: “먼저 입력 내용을 요약한 후 전체 번역을 제공하세요.”"
+  },
+  "optionsPresetPlaceholder": {
+    "message": "예: 당신은 전문 번역가입니다. 한국어로만 격식체로 답변하세요. 먼저 사용자의 입력을 요약하고 전체 번역을 제공하세요."
+  }
 }
