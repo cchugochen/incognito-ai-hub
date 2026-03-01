@@ -1,4 +1,4 @@
-# Incognito AI Hub (v27.2) / 無痕AI工作台
+# Incognito AI Hub (v27.2.3) / 無痕AI工作台
 
 A privacy-first Chrome extension integrating multimodal AI tools for reading, translation, and conversation. All AI requests go directly between your browser and the AI provider — no backend server, no data collection.
 
@@ -7,6 +7,44 @@ A privacy-first Chrome extension integrating multimodal AI tools for reading, tr
 ---
 
 ## Changelog / 更新紀錄
+
+### v27.2.3 — 3-Mode AI Service Selector / 三模式 AI 服務選擇器
+
+#### AI Service Mode / AI 服務模式
+
+The Settings page now replaces the old "enable local model" checkbox with a clear **3-mode selector** that non-technical users can understand at a glance:
+
+| Mode | Who it's for | What uses Gemini | What uses Local AI |
+|------|-------------|------------------|--------------------|
+| **Google Gemini Only** | All features, no local setup needed | Everything | — |
+| **Hybrid** | Mix of cloud + local | Images, audio, PDF | Text translation, chat |
+| **Local AI Only** | Maximum privacy, no Google API key needed | — (unavailable) | Text translation, chat |
+
+**Important**: Image/audio/PDF processing always requires Google Gemini regardless of mode. In Local AI Only mode, these features are automatically blocked with a clear error message directing users to switch modes.
+
+設定頁面將舊版「啟用本機模型」核取方塊改為直覺的**三模式選擇器**，非技術使用者也能一目了然：
+
+| 模式 | 適合誰 | 使用 Gemini | 使用本機 AI |
+|------|--------|------------|------------|
+| **僅使用 Google Gemini** | 需要完整功能 | 所有功能 | — |
+| **混合模式** | 兼顧雲端與本機 | 圖片、音訊、PDF | 純文字翻譯、對話 |
+| **僅使用本機 AI** | 追求最大隱私，不需 Google API | — （功能停用）| 純文字翻譯、對話 |
+
+**注意**：圖片/音訊/PDF 處理無論何種模式均需要 Google Gemini。選擇「僅使用本機 AI」模式時，這些功能會顯示清楚的錯誤訊息，引導使用者切換模式。
+
+#### Other v27.2.3 Changes / 其他變更
+
+- **Long-text warning**: When a local model is active, translating an entire article shows an amber warning that the full text is sent in one request and may exceed the model's context window.
+- **Cleaner options UI**: API key + model selector and local endpoint config are now sub-panels inside the AI Service Mode section — only visible when relevant.
+- **Backward migration**: Existing users who had "local model enabled" will automatically migrate to Hybrid mode on first open.
+- **12 locale updates**: All 12 UI languages updated with new keys (190 total).
+
+- **長文本警告**：使用本機模型時，翻譯整篇文章前會顯示琥珀色提示，說明全文以單次請求傳送，可能超過模型的 context window。
+- **選項介面更清晰**：API 金鑰、模型選擇與本機端點設定現作為子面板整合至 AI 服務模式區段中，僅在相關模式下顯示。
+- **舊版設定自動遷移**：原先已啟用「本機模型」的使用者，首次開啟設定頁時將自動轉換為混合模式。
+- **12 個語系更新**：所有 12 個介面語系新增對應翻譯（共 190 個訊息鍵）。
+
+---
 
 ### v27.2 — Reader, TTS & Language Expansion
 

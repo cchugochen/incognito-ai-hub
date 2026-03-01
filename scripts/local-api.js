@@ -1,5 +1,5 @@
 /**
- * scripts/local-api.js (v27.1)
+ * scripts/local-api.js (v27.2.3)
  * OpenAI-compatible API utility for local model support (Ollama, LM Studio).
  * Provides shared helpers for incognito.js, reader.js, and background.js.
  */
@@ -38,14 +38,25 @@ export async function localModelCall(baseUrl, modelName, messages) {
 
 /**
  * Reads local model configuration from chrome.storage.sync.
- * @returns {Promise<{localModelEnabled: boolean, localModelEndpoint: string, localModelName: string}>}
+ * Derives localModelEnabled from the new aiMode field, with fallback to the
+ * legacy localModelEnabled boolean for backward compatibility.
+ * @returns {Promise<{localModelEnabled: boolean, localModelEndpoint: string, localModelName: string, aiMode: string}>}
  */
 export async function getLocalModelConfig() {
-    return chrome.storage.sync.get({
+    const items = await chrome.storage.sync.get({
+        aiMode: null,
         localModelEnabled: false,
         localModelEndpoint: 'http://localhost:11434/v1',
         localModelName: 'llama3.2'
     });
+    // Derive localModelEnabled: use aiMode if set, otherwise fall back to legacy boolean
+    const aiMode = items.aiMode ?? (items.localModelEnabled ? 'hybrid' : 'gemini');
+    return {
+        aiMode,
+        localModelEnabled: aiMode === 'hybrid' || aiMode === 'local',
+        localModelEndpoint: items.localModelEndpoint,
+        localModelName: items.localModelName
+    };
 }
 
 /**

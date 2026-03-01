@@ -1,4 +1,4 @@
-// options.js (v27.2 - Sortable preferred languages)
+// options.js (v27.2.3 - 3-mode AI service selector)
 import { populateLanguageSelector, supportedLanguages } from './scripts/language_manager.js';
 
 // --- Preferred Language List Helpers ---
@@ -48,6 +48,20 @@ function updatePrefLangArrows() {
     });
 }
 
+// --- AI Mode Panel Show/Hide ---
+
+/** Update visibility of gemini-config, local-config, local-mode-warning based on selected mode. */
+function updateAiModePanels(mode) {
+    const geminiConfig = document.getElementById('gemini-config');
+    const localConfig = document.getElementById('local-config');
+    const localWarning = document.getElementById('local-mode-warning');
+
+    // gemini: show gemini panel; hybrid: show both; local: show local panel + warning
+    geminiConfig.classList.toggle('hidden', mode === 'local');
+    localConfig.classList.toggle('hidden', mode === 'gemini');
+    localWarning.classList.toggle('hidden', mode !== 'local');
+}
+
 // --- Core Options Logic ---
 
 function save_options() {
@@ -55,6 +69,8 @@ function save_options() {
     const selectedModel = selectedModelEl ? selectedModelEl.value : 'gemini-2.5-flash';
     const lang = document.getElementById('display-language').value;
     const prefLangs = getPrefLangValues();
+    const aiModeEl = document.querySelector('input[name="ai-mode"]:checked');
+    const aiMode = aiModeEl ? aiModeEl.value : 'gemini';
 
     chrome.storage.sync.set({
         displayLanguage: lang,
@@ -71,7 +87,7 @@ function save_options() {
         preset_e: document.getElementById('preset-prompt-e').value,
         preset_f: document.getElementById('preset-prompt-f').value,
         preset_g: document.getElementById('preset-prompt-g').value,
-        localModelEnabled: document.getElementById('local-model-enabled').checked,
+        aiMode: aiMode,
         localModelEndpoint: document.getElementById('local-model-endpoint').value.trim(),
         localModelName: document.getElementById('local-model-name').value.trim()
     }, () => {
@@ -97,6 +113,7 @@ function restore_options() {
         preset_e: '',
         preset_f: '',
         preset_g: '',
+        aiMode: null,
         localModelEnabled: false,
         localModelEndpoint: 'http://localhost:11434/v1',
         localModelName: 'llama3.2'
@@ -124,11 +141,17 @@ function restore_options() {
             if (firstRadio) firstRadio.checked = true;
         }
 
-        const localEnabledCheckbox = document.getElementById('local-model-enabled');
-        localEnabledCheckbox.checked = items.localModelEnabled;
+        // Migrate from old localModelEnabled boolean → aiMode
+        let aiMode = items.aiMode;
+        if (aiMode === null) {
+            aiMode = items.localModelEnabled ? 'hybrid' : 'gemini';
+        }
+        const aiModeRadio = document.querySelector(`input[name="ai-mode"][value="${aiMode}"]`);
+        if (aiModeRadio) aiModeRadio.checked = true;
+
         document.getElementById('local-model-endpoint').value = items.localModelEndpoint;
         document.getElementById('local-model-name').value = items.localModelName;
-        document.getElementById('local-model-settings').classList.toggle('hidden', !items.localModelEnabled);
+        updateAiModePanels(aiMode);
     });
 }
 
@@ -143,10 +166,11 @@ function reset_options() {
     const firstRadio = document.querySelector('input[name="model-select"]');
     if (firstRadio) firstRadio.checked = true;
 
-    document.getElementById('local-model-enabled').checked = false;
+    const geminiModeRadio = document.getElementById('ai-mode-gemini');
+    if (geminiModeRadio) geminiModeRadio.checked = true;
     document.getElementById('local-model-endpoint').value = 'http://localhost:11434/v1';
     document.getElementById('local-model-name').value = 'llama3.2';
-    document.getElementById('local-model-settings').classList.add('hidden');
+    updateAiModePanels('gemini');
 
     chrome.storage.sync.set({
         geminiApiKey: '',
@@ -155,7 +179,7 @@ function reset_options() {
         prefLangA: '', prefLangB: '',
         preset_a: '', preset_b: '', preset_c: '', preset_d: '',
         preset_e: '', preset_f: '', preset_g: '',
-        localModelEnabled: false,
+        aiMode: 'gemini',
         localModelEndpoint: 'http://localhost:11434/v1',
         localModelName: 'llama3.2'
     }, () => {
@@ -203,8 +227,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('save').addEventListener('click', save_options);
     document.getElementById('reset').addEventListener('click', reset_options);
 
-    document.getElementById('local-model-enabled').addEventListener('change', (e) => {
-        document.getElementById('local-model-settings').classList.toggle('hidden', !e.target.checked);
+    // AI mode radio change → update panel visibility
+    document.querySelectorAll('input[name="ai-mode"]').forEach(radio => {
+        radio.addEventListener('change', () => updateAiModePanels(radio.value));
     });
 
     document.querySelectorAll('.model-card').forEach(card => {

@@ -819,5 +819,45 @@
   },
   "optionsPresetPlaceholder": {
     "message": "例如：你是一位專業的醫療翻譯。請用繁體中文、正式語氣回應。先摘要使用者輸入，再提供完整翻譯。"
+  },
+  "aiModeSectionHeader": {
+    "message": "AI 服務模式",
+    "description": "Section header for AI service mode selection."
+  },
+  "aiModeGeminiLabel": {
+    "message": "僅使用 Google Gemini",
+    "description": "Radio label for Gemini-only mode."
+  },
+  "aiModeGeminiDesc": {
+    "message": "所有功能（文字翻譯、對話、圖片/音訊/PDF 處理）均使用 Google Gemini。需要 Gemini API 金鑰。",
+    "description": "Description for Gemini-only mode."
+  },
+  "aiModeHybridLabel": {
+    "message": "混合模式（Gemini + 本機 AI）",
+    "description": "Radio label for hybrid mode."
+  },
+  "aiModeHybridDesc": {
+    "message": "純文字翻譯與對話使用本機 AI 模型，圖片、音訊及 PDF 處理仍使用 Google Gemini。",
+    "description": "Description for hybrid mode."
+  },
+  "aiModeLocalLabel": {
+    "message": "僅使用本機 AI",
+    "description": "Radio label for local-only mode."
+  },
+  "aiModeLocalDesc": {
+    "message": "所有文字操作均使用本機 AI 模型，不需要 Google API 金鑰。",
+    "description": "Description for local-only mode."
+  },
+  "aiModeLocalWarning": {
+    "message": "⚠️ 僅使用本機 AI 模式下，需要 Google 服務的功能無法使用：網頁翻譯、截圖 OCR、語音轉文字、圖片翻譯及 PDF 處理。",
+    "description": "Warning shown when local-only mode is selected."
+  },
+  "translateAllLongTextWarn": {
+    "message": "⚠️ 注意：長篇文章會以單次請求傳送。若文字超過本機模型的處理上限（context window），可能影響翻譯輸出品質。",
+    "description": "Warning shown in reader when translating all paragraphs with local model."
+  },
+  "errorLocalModeNoMultimodal": {
+    "message": "此功能需要 Google Gemini，在「僅使用本機 AI」模式下無法使用。請在設定中切換為 Gemini 或混合模式。",
+    "description": "Error when a multimodal feature is used in local-only mode."
   }
 }

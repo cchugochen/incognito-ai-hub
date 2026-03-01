@@ -125,6 +125,17 @@ body.bg-dark #content-area blockquote { border-left-color: #666; }
     overflow: hidden;
 }
 #voice-translate-tool.hidden { display: none; }
+.local-warn {
+    margin: 0.5rem 1rem 0;
+    padding: 0.5rem 0.75rem;
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.82rem;
+    color: #92400e;
+    line-height: 1.5;
+}
+.local-warn.hidden { display: none; }
 #voice-translate-tool h3 {
     margin: 0;
     padding: 14px 20px;

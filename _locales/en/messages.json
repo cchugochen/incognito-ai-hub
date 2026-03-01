@@ -824,5 +824,45 @@
   },
   "optionsPresetPlaceholder": {
     "message": "e.g. You are a professional translator. Reply only in Traditional Chinese using formal tone. First summarize the user’s input, then translate it in full."
+  },
+  "aiModeSectionHeader": {
+    "message": "AI Service Mode",
+    "description": "Section header for AI service mode selection on options page."
+  },
+  "aiModeGeminiLabel": {
+    "message": "Google Gemini Only",
+    "description": "Radio label for Gemini-only mode."
+  },
+  "aiModeGeminiDesc": {
+    "message": "Use Google Gemini for all features: text translation, chat, image/audio/PDF processing. Requires a Gemini API Key.",
+    "description": "Description for Gemini-only mode."
+  },
+  "aiModeHybridLabel": {
+    "message": "Hybrid Mode (Gemini + Local AI)",
+    "description": "Radio label for hybrid mode."
+  },
+  "aiModeHybridDesc": {
+    "message": "Pure-text translation and chat use your local AI model. Image, audio, and PDF processing continue to use Google Gemini.",
+    "description": "Description for hybrid mode."
+  },
+  "aiModeLocalLabel": {
+    "message": "Local AI Only",
+    "description": "Radio label for local-only mode."
+  },
+  "aiModeLocalDesc": {
+    "message": "All text operations use your local AI model. Does not require a Google API key.",
+    "description": "Description for local-only mode."
+  },
+  "aiModeLocalWarning": {
+    "message": "⚠️ In Local AI Only mode, features that require Google services are unavailable: webpage translation, screenshot OCR, voice transcription, image translation, and PDF processing.",
+    "description": "Warning shown when local-only mode is selected."
+  },
+  "translateAllLongTextWarn": {
+    "message": "⚠️ Note: Long articles are sent as a single request. If the text exceeds your local model’s context window, translation quality may be affected.",
+    "description": "Warning shown in reader when translating all paragraphs with local model."
+  },
+  "errorLocalModeNoMultimodal": {
+    "message": "This feature requires Google Gemini and is not available in Local AI Only mode. Please switch to Gemini or Hybrid mode in Settings.",
+    "description": "Error when a multimodal feature is used in local-only mode."
   }
 }

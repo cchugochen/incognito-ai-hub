@@ -818,5 +818,45 @@
   },
   "optionsPresetPlaceholder": {
     "message": "مثال: أنت مترجم محترف. أجب باللغة العربية فقط بأسلوب رسمي. لخّص مدخلات المستخدم أولاً، ثم قدّم الترجمة الكاملة."
+  },
+  "aiModeSectionHeader": {
+    "message": "وضع خدمة الذكاء الاصطناعي",
+    "description": "Section header for AI service mode selection."
+  },
+  "aiModeGeminiLabel": {
+    "message": "Google Gemini فقط",
+    "description": "Radio label for Gemini-only mode."
+  },
+  "aiModeGeminiDesc": {
+    "message": "يستخدم Google Gemini لجميع الميزات: ترجمة النصوص والمحادثة ومعالجة الصور/الصوت/PDF. يتطلب مفتاح Gemini API.",
+    "description": "Description for Gemini-only mode."
+  },
+  "aiModeHybridLabel": {
+    "message": "الوضع الهجين (Gemini + ذكاء اصطناعي محلي)",
+    "description": "Radio label for hybrid mode."
+  },
+  "aiModeHybridDesc": {
+    "message": "ترجمة النصوص والمحادثة تستخدمان النموذج المحلي، بينما معالجة الصور والصوت وPDF تستمر باستخدام Google Gemini.",
+    "description": "Description for hybrid mode."
+  },
+  "aiModeLocalLabel": {
+    "message": "ذكاء اصطناعي محلي فقط",
+    "description": "Radio label for local-only mode."
+  },
+  "aiModeLocalDesc": {
+    "message": "جميع عمليات النصوص تستخدم النموذج المحلي. لا يتطلب مفتاح Google API.",
+    "description": "Description for local-only mode."
+  },
+  "aiModeLocalWarning": {
+    "message": "⚠️ في وضع الذكاء الاصطناعي المحلي فقط، الميزات التي تتطلب خدمات Google غير متاحة: ترجمة صفحات الويب، OCR لقطات الشاشة، النسخ الصوتي، ترجمة الصور، ومعالجة PDF.",
+    "description": "Warning shown when local-only mode is selected."
+  },
+  "translateAllLongTextWarn": {
+    "message": "⚠️ ملاحظة: يُرسَل المقال الطويل كطلب واحد. إذا تجاوز النص نافذة سياق النموذج المحلي، قد تتأثر جودة الترجمة.",
+    "description": "Warning shown in reader when translating all paragraphs with local model."
+  },
+  "errorLocalModeNoMultimodal": {
+    "message": "تتطلب هذه الميزة Google Gemini وهي غير متاحة في وضع 'ذكاء اصطناعي محلي فقط'. الرجاء التبديل إلى وضع Gemini أو الهجين في الإعدادات.",
+    "description": "Error when a multimodal feature is used in local-only mode."
   }
 }

@@ -818,5 +818,45 @@
   },
   "optionsPresetPlaceholder": {
     "message": "Напр.: Ви — професійний перекладач. Відповідайте лише українською, офіційним тоном. Спочатку стисло викладіть введені дані, потім надайте повний переклад."
+  },
+  "aiModeSectionHeader": {
+    "message": "Режим сервісу ШІ",
+    "description": "Section header for AI service mode selection."
+  },
+  "aiModeGeminiLabel": {
+    "message": "Лише Google Gemini",
+    "description": "Radio label for Gemini-only mode."
+  },
+  "aiModeGeminiDesc": {
+    "message": "Використовує Google Gemini для всіх функцій: переклад тексту, чат та обробка зображень/аудіо/PDF. Потрібен ключ Gemini API.",
+    "description": "Description for Gemini-only mode."
+  },
+  "aiModeHybridLabel": {
+    "message": "Гібридний режим (Gemini + локальний ШІ)",
+    "description": "Radio label for hybrid mode."
+  },
+  "aiModeHybridDesc": {
+    "message": "Переклад чистого тексту та чат використовують локальну модель ШІ; обробка зображень, аудіо та PDF продовжує використовувати Google Gemini.",
+    "description": "Description for hybrid mode."
+  },
+  "aiModeLocalLabel": {
+    "message": "Лише локальний ШІ",
+    "description": "Radio label for local-only mode."
+  },
+  "aiModeLocalDesc": {
+    "message": "Усі текстові операції використовують локальну модель ШІ. Ключ Google API не потрібен.",
+    "description": "Description for local-only mode."
+  },
+  "aiModeLocalWarning": {
+    "message": "⚠️ У режимі «Лише локальний ШІ» функції, що потребують сервісів Google, недоступні: переклад веб-сторінок, OCR знімків екрана, транскрипція голосу, переклад зображень та обробка PDF.",
+    "description": "Warning shown when local-only mode is selected."
+  },
+  "translateAllLongTextWarn": {
+    "message": "⚠️ Увага: довгі статті надсилаються одним запитом. Якщо текст перевищує контекстне вікно локальної моделі, якість перекладу може погіршитись.",
+    "description": "Warning shown in reader when translating all paragraphs with local model."
+  },
+  "errorLocalModeNoMultimodal": {
+    "message": "Ця функція потребує Google Gemini і недоступна в режимі «Лише локальний ШІ». Перейдіть на режим Gemini або Гібридний у Налаштуваннях.",
+    "description": "Error when a multimodal feature is used in local-only mode."
   }
 }

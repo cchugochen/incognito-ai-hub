@@ -60,30 +60,72 @@
 
         <hr class="divider">
 
+        <!-- ===== AI SERVICE MODE ===== -->
         <section class="options-section">
-            <h2 class="section-header" data-i18n="optionsApiKeySectionHeader"></h2>
-            <label for="api-key" class="label" data-i18n="optionsApiKeyLabel"></label>
-            <input type="password" id="api-key" class="text-input">
-        </section>
-
-        <hr class="divider">
-
-        <section class="options-section">
-            <h2 class="section-header" data-i18n="optionsModelSectionHeader"></h2>
-            <p class="description" data-i18n="optionsModelDesc"></p>
+            <h2 class="section-header" data-i18n="aiModeSectionHeader"></h2>
             <div class="space-y-4">
-                <!-- Updated: Removed Lite models. Added 2.5 Flash as default. -->
+                <!-- Mode 1: Gemini Only -->
                 <div>
-                    <input type="radio" name="model-select" id="gemini-2.5-flash" value="gemini-2.5-flash" class="sr-only" checked>
-                    <label for="gemini-2.5-flash" class="model-card">
-                         <div class="model-card-header">
-                            <span class="model-name" data-i18n="optionsModelFlashName"></span>
+                    <input type="radio" name="ai-mode" id="ai-mode-gemini" value="gemini" class="sr-only" checked>
+                    <label for="ai-mode-gemini" class="model-card">
+                        <div class="model-card-header">
+                            <span class="model-name" data-i18n="aiModeGeminiLabel"></span>
                         </div>
-                        <p class="model-id">gemini-2.5-flash</p>
-                        <div class="model-desc" data-i18n="optionsModelFlashDesc"></div>
+                        <p class="model-desc" data-i18n="aiModeGeminiDesc"></p>
+                    </label>
+                </div>
+                <!-- Mode 2: Hybrid -->
+                <div>
+                    <input type="radio" name="ai-mode" id="ai-mode-hybrid" value="hybrid" class="sr-only">
+                    <label for="ai-mode-hybrid" class="model-card">
+                        <div class="model-card-header">
+                            <span class="model-name" data-i18n="aiModeHybridLabel"></span>
+                        </div>
+                        <p class="model-desc" data-i18n="aiModeHybridDesc"></p>
+                    </label>
+                </div>
+                <!-- Mode 3: Local Only -->
+                <div>
+                    <input type="radio" name="ai-mode" id="ai-mode-local" value="local" class="sr-only">
+                    <label for="ai-mode-local" class="model-card">
+                        <div class="model-card-header">
+                            <span class="model-name" data-i18n="aiModeLocalLabel"></span>
+                        </div>
+                        <p class="model-desc" data-i18n="aiModeLocalDesc"></p>
                     </label>
                 </div>
             </div>
+
+            <!-- Gemini config panel (hidden in local-only mode) -->
+            <div id="gemini-config" class="ai-config-panel">
+                <label for="api-key" class="label" data-i18n="optionsApiKeyLabel"></label>
+                <input type="password" id="api-key" class="text-input">
+                <div class="space-y-4" style="margin-top:1rem">
+                    <div>
+                        <input type="radio" name="model-select" id="gemini-2.5-flash" value="gemini-2.5-flash" class="sr-only" checked>
+                        <label for="gemini-2.5-flash" class="model-card">
+                            <div class="model-card-header">
+                                <span class="model-name" data-i18n="optionsModelFlashName"></span>
+                            </div>
+                            <p class="model-id">gemini-2.5-flash</p>
+                            <div class="model-desc" data-i18n="optionsModelFlashDesc"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Local model config panel (hidden in gemini-only mode) -->
+            <div id="local-config" class="ai-config-panel hidden">
+                <label for="local-model-endpoint" class="label" data-i18n="localModelEndpointLabel"></label>
+                <input type="text" id="local-model-endpoint" class="text-input"
+                       data-i18n-placeholder="localModelEndpointPlaceholder">
+                <label for="local-model-name" class="label" style="margin-top:0.75rem" data-i18n="localModelNameLabel"></label>
+                <input type="text" id="local-model-name" class="text-input"
+                       data-i18n-placeholder="localModelNamePlaceholder">
+            </div>
+
+            <!-- Local-only warning (shown only in local mode) -->
+            <div id="local-mode-warning" class="mode-warning hidden" data-i18n="aiModeLocalWarning"></div>
         </section>
 
         <hr class="divider">
@@ -120,29 +162,6 @@
                  <div>
                     <label for="preset-prompt-g" class="label" data-i18n="optionsPresetLabelG"></label>
                     <textarea id="preset-prompt-g" rows="2" class="text-input" data-i18n-placeholder="optionsPresetPlaceholder"></textarea>
-                </div>
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        <section class="options-section">
-            <h2 class="section-header" data-i18n="localModelSectionHeader"></h2>
-            <p class="description" data-i18n="localModelDesc"></p>
-            <div class="toggle-row">
-                <label class="label" for="local-model-enabled" data-i18n="localModelEnabledLabel"></label>
-                <input type="checkbox" id="local-model-enabled">
-            </div>
-            <div id="local-model-settings" class="space-y-4">
-                <div>
-                    <label for="local-model-endpoint" class="label" data-i18n="localModelEndpointLabel"></label>
-                    <input type="text" id="local-model-endpoint" class="text-input"
-                           data-i18n-placeholder="localModelEndpointPlaceholder">
-                </div>
-                <div>
-                    <label for="local-model-name" class="label" data-i18n="localModelNameLabel"></label>
-                    <input type="text" id="local-model-name" class="text-input"
-                           data-i18n-placeholder="localModelNamePlaceholder">
                 </div>
             </div>
         </section>

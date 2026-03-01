@@ -1,10 +1,11 @@
 /**
- * background.js (v27.3 - DOM-first webpage extraction + academic OCR)
+ * background.js (v27.2.3 - 3-mode AI service, local-mode guards for multimodal)
  * Service worker for Incognito AI Hub.
  */
 
 import { buildGeminiUrl, geminiApiCall } from './scripts/gemini-api.js';
 import { supportedLanguages } from './scripts/language_manager.js';
+import { getLocalModelConfig } from './scripts/local-api.js';
 
 /**
  * Standalone DOM extraction function injected into the active tab.
@@ -272,6 +273,9 @@ async function openReader(payload) {
 }
 
 async function callGeminiVision(base64ImageData, sourceLang = 'auto') {
+    const localCfg = await getLocalModelConfig();
+    if (localCfg.aiMode === 'local') throw new Error(chrome.i18n.getMessage("errorLocalModeNoMultimodal"));
+
     const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
         geminiApiKey: '',
         translationModel: 'gemini-2.5-flash'
@@ -298,6 +302,9 @@ Follow these guidelines:
 }
 
 async function callGeminiVisionTranslate(base64ImageData, targetLang) {
+    const localCfg = await getLocalModelConfig();
+    if (localCfg.aiMode === 'local') throw new Error(chrome.i18n.getMessage("errorLocalModeNoMultimodal"));
+
     const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
         geminiApiKey: '',
         translationModel: 'gemini-2.5-flash'
@@ -320,6 +327,9 @@ Follow these guidelines:
 }
 
 async function callGeminiSpeechToText(audioData, spokenLang) {
+    const localCfg = await getLocalModelConfig();
+    if (localCfg.aiMode === 'local') throw new Error(chrome.i18n.getMessage("errorLocalModeNoMultimodal"));
+
     const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
         geminiApiKey: '',
         translationModel: 'gemini-2.5-flash'

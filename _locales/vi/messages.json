@@ -818,5 +818,45 @@
   },
   "optionsPresetPlaceholder": {
     "message": "ví dụ: Bạn là dịch giả chuyên nghiệp. Chỉ trả lời bằng tiếng Việt với giọng văn trang trọng. Trước tiên tóm tắt đầu vào của người dùng, sau đó cung cấp bản dịch đầy đủ."
+  },
+  "aiModeSectionHeader": {
+    "message": "Chế độ dịch vụ AI",
+    "description": "Section header for AI service mode selection."
+  },
+  "aiModeGeminiLabel": {
+    "message": "Chỉ dùng Google Gemini",
+    "description": "Radio label for Gemini-only mode."
+  },
+  "aiModeGeminiDesc": {
+    "message": "Dùng Google Gemini cho tất cả tính năng: dịch văn bản, trò chuyện và xử lý ảnh/âm thanh/PDF. Yêu cầu Gemini API Key.",
+    "description": "Description for Gemini-only mode."
+  },
+  "aiModeHybridLabel": {
+    "message": "Chế độ kết hợp (Gemini + AI cục bộ)",
+    "description": "Radio label for hybrid mode."
+  },
+  "aiModeHybridDesc": {
+    "message": "Dịch văn bản thuần và trò chuyện sử dụng mô hình AI cục bộ; xử lý ảnh, âm thanh và PDF tiếp tục dùng Google Gemini.",
+    "description": "Description for hybrid mode."
+  },
+  "aiModeLocalLabel": {
+    "message": "Chỉ dùng AI cục bộ",
+    "description": "Radio label for local-only mode."
+  },
+  "aiModeLocalDesc": {
+    "message": "Tất cả thao tác văn bản dùng mô hình AI cục bộ. Không cần Google API Key.",
+    "description": "Description for local-only mode."
+  },
+  "aiModeLocalWarning": {
+    "message": "⚠️ Ở chế độ Chỉ AI cục bộ, các tính năng yêu cầu dịch vụ Google không khả dụng: dịch trang web, OCR ảnh chụp màn hình, chép lời thoại, dịch ảnh và xử lý PDF.",
+    "description": "Warning shown when local-only mode is selected."
+  },
+  "translateAllLongTextWarn": {
+    "message": "⚠️ Lưu ý: Bài viết dài được gửi trong một yêu cầu duy nhất. Nếu văn bản vượt quá cửa sổ ngữ cảnh của mô hình cục bộ, chất lượng dịch có thể bị ảnh hưởng.",
+    "description": "Warning shown in reader when translating all paragraphs with local model."
+  },
+  "errorLocalModeNoMultimodal": {
+    "message": "Tính năng này yêu cầu Google Gemini và không khả dụng ở chế độ 'Chỉ AI cục bộ'. Vui lòng chuyển sang chế độ Gemini hoặc Kết hợp trong Cài đặt.",
+    "description": "Error when a multimodal feature is used in local-only mode."
   }
 }

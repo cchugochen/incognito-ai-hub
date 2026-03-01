@@ -818,5 +818,45 @@
   },
   "optionsPresetPlaceholder": {
     "message": "Напр.: Вы профессиональный переводчик. Отвечайте только на русском, официальным тоном. Сначала кратко изложите ввод пользователя, затем дайте полный перевод."
+  },
+  "aiModeSectionHeader": {
+    "message": "Режим сервиса ИИ",
+    "description": "Section header for AI service mode selection."
+  },
+  "aiModeGeminiLabel": {
+    "message": "Только Google Gemini",
+    "description": "Radio label for Gemini-only mode."
+  },
+  "aiModeGeminiDesc": {
+    "message": "Использует Google Gemini для всех функций: перевод текста, чат и обработка изображений/аудио/PDF. Требуется ключ Gemini API.",
+    "description": "Description for Gemini-only mode."
+  },
+  "aiModeHybridLabel": {
+    "message": "Гибридный режим (Gemini + локальный ИИ)",
+    "description": "Radio label for hybrid mode."
+  },
+  "aiModeHybridDesc": {
+    "message": "Перевод чистого текста и чат используют локальную модель ИИ; обработка изображений, аудио и PDF продолжает использовать Google Gemini.",
+    "description": "Description for hybrid mode."
+  },
+  "aiModeLocalLabel": {
+    "message": "Только локальный ИИ",
+    "description": "Radio label for local-only mode."
+  },
+  "aiModeLocalDesc": {
+    "message": "Все текстовые операции используют локальную модель ИИ. Ключ Google API не требуется.",
+    "description": "Description for local-only mode."
+  },
+  "aiModeLocalWarning": {
+    "message": "⚠️ В режиме «Только локальный ИИ» функции, требующие сервисов Google, недоступны: перевод веб-страниц, OCR снимков экрана, транскрипция голоса, перевод изображений и обработка PDF.",
+    "description": "Warning shown when local-only mode is selected."
+  },
+  "translateAllLongTextWarn": {
+    "message": "⚠️ Внимание: длинные статьи отправляются одним запросом. Если текст превышает контекстное окно локальной модели, качество перевода может ухудшиться.",
+    "description": "Warning shown in reader when translating all paragraphs with local model."
+  },
+  "errorLocalModeNoMultimodal": {
+    "message": "Эта функция требует Google Gemini и недоступна в режиме «Только локальный ИИ». Переключитесь на режим Gemini или Гибридный в Настройках.",
+    "description": "Error when a multimodal feature is used in local-only mode."
   }
 }

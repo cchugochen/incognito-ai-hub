@@ -818,5 +818,45 @@
   },
   "optionsPresetPlaceholder": {
     "message": "ej.: Eres un traductor profesional. Responde solo en español con tono formal. Primero resume la entrada del usuario, luego proporciona la traducción completa."
+  },
+  "aiModeSectionHeader": {
+    "message": "Modo de servicio de IA",
+    "description": "Section header for AI service mode selection."
+  },
+  "aiModeGeminiLabel": {
+    "message": "Solo Google Gemini",
+    "description": "Radio label for Gemini-only mode."
+  },
+  "aiModeGeminiDesc": {
+    "message": "Utiliza Google Gemini para todas las funciones: traducción de texto, chat y procesamiento de imágenes, audio y PDF. Requiere clave de API de Gemini.",
+    "description": "Description for Gemini-only mode."
+  },
+  "aiModeHybridLabel": {
+    "message": "Modo híbrido (Gemini + IA local)",
+    "description": "Radio label for hybrid mode."
+  },
+  "aiModeHybridDesc": {
+    "message": "La traducción de texto puro y el chat usan el modelo de IA local; el procesamiento de imágenes, audio y PDF continúa usando Google Gemini.",
+    "description": "Description for hybrid mode."
+  },
+  "aiModeLocalLabel": {
+    "message": "Solo IA local",
+    "description": "Radio label for local-only mode."
+  },
+  "aiModeLocalDesc": {
+    "message": "Todas las operaciones de texto usan el modelo de IA local. No requiere clave de API de Google.",
+    "description": "Description for local-only mode."
+  },
+  "aiModeLocalWarning": {
+    "message": "⚠️ En el modo Solo IA local, las funciones que requieren servicios de Google no están disponibles: traducción de páginas web, OCR de capturas de pantalla, transcripción de voz, traducción de imágenes y procesamiento de PDF.",
+    "description": "Warning shown when local-only mode is selected."
+  },
+  "translateAllLongTextWarn": {
+    "message": "⚠️ Nota: Los artículos largos se envían como una sola solicitud. Si el texto supera la ventana de contexto del modelo local, la calidad de la traducción puede verse afectada.",
+    "description": "Warning shown in reader when translating all paragraphs with local model."
+  },
+  "errorLocalModeNoMultimodal": {
+    "message": "Esta función requiere Google Gemini y no está disponible en el modo 'Solo IA local'. Cambia al modo Gemini o Híbrido en la Configuración.",
+    "description": "Error when a multimodal feature is used in local-only mode."
   }
 }

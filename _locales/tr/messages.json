@@ -818,5 +818,45 @@
   },
   "optionsPresetPlaceholder": {
     "message": "ör.: Sen profesyonel bir çevirmenisin. Yalnızca Türkçe, resmi bir tonla yanıtla. Önce kullanıcının girdisini özetle, ardından tam çeviriyi sun."
+  },
+  "aiModeSectionHeader": {
+    "message": "Yapay Zeka Hizmet Modu",
+    "description": "Section header for AI service mode selection."
+  },
+  "aiModeGeminiLabel": {
+    "message": "Yalnızca Google Gemini",
+    "description": "Radio label for Gemini-only mode."
+  },
+  "aiModeGeminiDesc": {
+    "message": "Tüm özellikler için Google Gemini kullanır: metin çevirisi, sohbet ve görüntü/ses/PDF işleme. Gemini API anahtarı gerektirir.",
+    "description": "Description for Gemini-only mode."
+  },
+  "aiModeHybridLabel": {
+    "message": "Karma Mod (Gemini + Yerel YZ)",
+    "description": "Radio label for hybrid mode."
+  },
+  "aiModeHybridDesc": {
+    "message": "Yalnızca metin çevirisi ve sohbet yerel YZ modelini kullanır; görüntü, ses ve PDF işleme Google Gemini ile devam eder.",
+    "description": "Description for hybrid mode."
+  },
+  "aiModeLocalLabel": {
+    "message": "Yalnızca Yerel YZ",
+    "description": "Radio label for local-only mode."
+  },
+  "aiModeLocalDesc": {
+    "message": "Tüm metin işlemleri yerel YZ modelini kullanır. Google API anahtarı gerekmez.",
+    "description": "Description for local-only mode."
+  },
+  "aiModeLocalWarning": {
+    "message": "⚠️ Yalnızca Yerel YZ modunda Google hizmetleri gerektiren özellikler kullanılamaz: web sayfası çevirisi, ekran görüntüsü OCR, ses dökümü, görüntü çevirisi ve PDF işleme.",
+    "description": "Warning shown when local-only mode is selected."
+  },
+  "translateAllLongTextWarn": {
+    "message": "⚠️ Not: Uzun makaleler tek bir istek olarak gönderilir. Metin yerel modelin bağlam penceresini aşarsa çeviri kalitesi etkilenebilir.",
+    "description": "Warning shown in reader when translating all paragraphs with local model."
+  },
+  "errorLocalModeNoMultimodal": {
+    "message": "Bu özellik Google Gemini gerektirir ve 'Yalnızca Yerel YZ' modunda kullanılamaz. Lütfen Ayarlar'da Gemini veya Karma moda geçin.",
+    "description": "Error when a multimodal feature is used in local-only mode."
   }
 }

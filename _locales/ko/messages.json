@@ -818,5 +818,45 @@
   },
   "optionsPresetPlaceholder": {
     "message": "예: 당신은 전문 번역가입니다. 한국어로만 격식체로 답변하세요. 먼저 사용자의 입력을 요약하고 전체 번역을 제공하세요."
+  },
+  "aiModeSectionHeader": {
+    "message": "AI 서비스 모드",
+    "description": "Section header for AI service mode selection."
+  },
+  "aiModeGeminiLabel": {
+    "message": "Google Gemini만 사용",
+    "description": "Radio label for Gemini-only mode."
+  },
+  "aiModeGeminiDesc": {
+    "message": "텍스트 번역, 채팅, 이미지/오디오/PDF 처리 등 모든 기능에 Google Gemini를 사용합니다. Gemini API 키가 필요합니다.",
+    "description": "Description for Gemini-only mode."
+  },
+  "aiModeHybridLabel": {
+    "message": "하이브리드 모드 (Gemini + 로컈 AI)",
+    "description": "Radio label for hybrid mode."
+  },
+  "aiModeHybridDesc": {
+    "message": "순수 텍스트 번역과 채팅은 로컈 AI 모델을 사용하고, 이미지·오디오·PDF 처리는 Google Gemini를 계속 사용합니다.",
+    "description": "Description for hybrid mode."
+  },
+  "aiModeLocalLabel": {
+    "message": "로컈 AI만 사용",
+    "description": "Radio label for local-only mode."
+  },
+  "aiModeLocalDesc": {
+    "message": "모든 텍스트 작업에 로컈 AI 모델을 사용합니다. Google API 키가 필요하지 않습니다.",
+    "description": "Description for local-only mode."
+  },
+  "aiModeLocalWarning": {
+    "message": "⚠️ 로컈 AI만 사용 모드에서는 Google 서비스가 필요한 기능을 사용할 수 없습니다: 웹페이지 번역, 스크린샷 OCR, 음성 다시쓰기, 이미지 번역, PDF 처리.",
+    "description": "Warning shown when local-only mode is selected."
+  },
+  "translateAllLongTextWarn": {
+    "message": "⚠️ 주의: 긴 글은 한 번의 요청으로 전송됩니다. 텍스트가 로컈 모델의 컨텍스트 창을 초과하면 번역 품질에 영향을 줄 수 있습니다.",
+    "description": "Warning shown in reader when translating all paragraphs with local model."
+  },
+  "errorLocalModeNoMultimodal": {
+    "message": "이 기능은 Google Gemini가 필요하며 '로컈 AI만 사용' 모드에서는 사용할 수 없습니다. 설정에서 Gemini 또는 하이브리드 모드로 전환해 주세요.",
+    "description": "Error when a multimodal feature is used in local-only mode."
   }
 }

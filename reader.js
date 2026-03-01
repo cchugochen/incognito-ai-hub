@@ -1,4 +1,4 @@
-// reader.js (v27.3 - TTS via Web Speech API)
+// reader.js (v27.2.3 - 3-mode AI service, renamed callTranslation)
 import { populateLanguageSelector, getEffectiveUILanguageCode, supportedLanguages } from './scripts/language_manager.js';
 import { buildGeminiUrl, geminiApiCall, getStoredApiConfig } from './scripts/gemini-api.js';
 import { localModelTranslate, getLocalModelConfig } from './scripts/local-api.js';
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const translateVoiceBtn = document.getElementById('translate-voice-btn');
     const voiceTranslationOutput = document.getElementById('voice-translation-output');
     const ttsSpeakBtn = document.getElementById('tts-speak-btn');
+    const translateLocalWarn = document.getElementById('translate-local-warn');
 
     // --- State ---
     let globalTargetLang = 'Traditional Chinese'; // Default fallback
@@ -62,6 +63,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Show translate-all + TTS tool and click-translate hint for all source types
             clickTranslateHint.classList.remove('hidden');
             voiceTranslateTool.classList.remove('hidden');
+
+            // Show long-text warning when local model is active
+            const localConfig = await getLocalModelConfig();
+            if (translateLocalWarn && localConfig.localModelEnabled) {
+                translateLocalWarn.classList.remove('hidden');
+            }
         } else {
             contentArea.innerHTML = `<p>${chrome.i18n.getMessage("readerErrorNotFound")}</p>`;
         }
@@ -141,7 +148,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         p.classList.add('translating');
         try {
             // [v25.1] The globalTargetLang is now updated by the new dropdown
-            const translatedText = await callGeminiForTranslation(p.textContent, globalTargetLang);
+            const translatedText = await callTranslation(p.textContent, globalTargetLang);
             const translationDiv = document.createElement('div');
             translationDiv.className = 'translation';
             translationDiv.textContent = translatedText;
@@ -156,7 +163,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    async function callGeminiForTranslation(textToTranslate, targetLanguage) {
+    async function callTranslation(textToTranslate, targetLanguage) {
         const localConfig = await getLocalModelConfig();
         if (localConfig.localModelEnabled && localConfig.localModelEndpoint && localConfig.localModelName) {
             return localModelTranslate(textToTranslate, targetLanguage,
@@ -209,7 +216,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.speechSynthesis.cancel();
 
         try {
-            const translatedText = await callGeminiForTranslation(fullText, targetLang);
+            const translatedText = await callTranslation(fullText, targetLang);
             voiceTranslationOutput.innerHTML = '';
             translatedText.split('\n').filter(l => l.trim()).forEach(line => {
                 const p = document.createElement('p');

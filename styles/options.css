@@ -285,6 +285,26 @@ input.sr-only:checked + .model-card::after {
     line-height: 1.6;
 }
 
+/* --- AI Config Panel (sub-panel within AI mode section) --- */
+.ai-config-panel {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- Mode Warning Box (amber, for local-only warning) --- */
+.mode-warning {
+    margin-top: 1rem;
+    padding: 0.625rem 0.875rem;
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-left: 3px solid #f59e0b;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.85rem;
+    color: #92400e;
+    line-height: 1.55;
+}
+
 .options-footer {
     margin-top: 1.5rem;
     padding-top: 1rem;
