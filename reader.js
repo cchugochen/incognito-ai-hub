@@ -166,8 +166,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     async function callTranslation(textToTranslate, targetLanguage) {
         const localConfig = await getLocalModelConfig();
         if (localConfig.localModelEnabled && localConfig.localModelEndpoint && localConfig.localModelName) {
-            return localModelTranslate(textToTranslate, targetLanguage,
-                                       localConfig.localModelEndpoint, localConfig.localModelName);
+            try {
+                return await localModelTranslate(textToTranslate, targetLanguage,
+                                                 localConfig.localModelEndpoint, localConfig.localModelName);
+            } catch (e) {
+                if (e.message === chrome.i18n.getMessage('errorLocalModelConnect')) {
+                    throw new Error(chrome.i18n.getMessage('errorLocalModelOffline'));
+                }
+                throw e;
+            }
         }
 
         const { geminiApiKey, translationModel } = await getStoredApiConfig();
@@ -255,7 +262,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // --- TTS: Speak translated text using Web Speech API ---
-    ttsSpeakBtn.addEventListener('click', () => {
+    ttsSpeakBtn.addEventListener('click', async () => {
         if (window.speechSynthesis.speaking) {
             window.speechSynthesis.cancel();
             ttsSpeakBtn.textContent = chrome.i18n.getMessage('readerTtsSpeakBtn');
@@ -268,12 +275,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             : voiceTranslationOutput.textContent.trim();
         if (!text) return;
 
-        // Map selected language name to BCP-47 code for speech synthesis
+        // Map selected language name to BCP-47 code — use shared helper for system-default
         const selectedValue = voiceTargetLangSelect.value;
-        const langEntry = selectedValue === 'system-default'
-            ? supportedLanguages.find(l => l.code === (chrome.i18n.getUILanguage().startsWith('zh') ? 'zh-TW' : chrome.i18n.getUILanguage().split('-')[0]))
-            : supportedLanguages.find(l => l.name === selectedValue);
-        const langCode = langEntry?.code || 'en';
+        let langCode;
+        if (selectedValue === 'system-default') {
+            langCode = await getEffectiveUILanguageCode();
+        } else {
+            const langEntry = supportedLanguages.find(l => l.name === selectedValue);
+            langCode = langEntry?.code || 'en';
+        }
 
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = langCode;

@@ -1,4 +1,4 @@
-// incognito.js (v27.3 - Preset Tooltips & API Key Prompt Fix)
+// incognito.js (v28.0.2 - rebrand to PrivoAI)
 import { buildGeminiUrl } from './scripts/gemini-api.js';
 import { localModelCall, getLocalModelConfig } from './scripts/local-api.js';
 import { getEffectiveUILanguageCode, supportedLanguages } from './scripts/language_manager.js';
@@ -221,6 +221,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
             }
 
+            // Thinking mode: add thinkingConfig if checkbox is checked for this tab
+            const thinkingCheckbox = document.getElementById(`thinking-${this.modelId}`);
+            if (thinkingCheckbox?.checked) {
+                payload.generationConfig = {
+                    thinkingConfig: { thinkingBudget: -1 }  // dynamic budget (model decides)
+                };
+            }
+
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -228,7 +236,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             const result = await response.json();
             if (!response.ok) throw new Error(result.error?.message || `HTTP Error ${response.status}`);
-            if (result.candidates?.[0]?.content?.parts?.[0]?.text) return result.candidates[0].content.parts[0].text;
+
+            // Extract text from response (thinking models may have multiple parts; find the text part)
+            const parts = result.candidates?.[0]?.content?.parts;
+            if (parts) {
+                const textPart = parts.find(p => p.text !== undefined && !p.thought);
+                if (textPart) return textPart.text;
+            }
 
             const blockReason = result.promptFeedback?.blockReason;
             if (blockReason) throw new Error(chrome.i18n.getMessage("errorApiRejected", blockReason));
@@ -403,16 +417,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!items.geminiApiKey) {
                 showNotification(chrome.i18n.getMessage("alertNoApiKeyOptions"), true);
-                // Disable Gemini tabs only (upload + submit buttons in flash/pro tabs)
-                document.querySelectorAll('#flash .submit-btn, #flash .upload-btn, #pro .submit-btn, #pro .upload-btn').forEach(btn => btn.disabled = true);
+                // Disable Gemini tabs only (upload + submit buttons in lite/flash/pro tabs)
+                document.querySelectorAll('#lite .submit-btn, #lite .upload-btn, #flash .submit-btn, #flash .upload-btn, #pro .submit-btn, #pro .upload-btn').forEach(btn => btn.disabled = true);
             } else {
                 geminiApiKey = items.geminiApiKey;
-                new ChatInstance('flash', 'gemini-2.5-flash', responseLang);
-                new ChatInstance('pro', 'gemini-2.5-pro', responseLang);
+                new ChatInstance('lite',  'gemini-3.1-flash-lite-preview', responseLang);
+                new ChatInstance('flash', 'gemini-2.5-flash',               responseLang);
+                new ChatInstance('pro',   'gemini-3.1-pro-preview',          responseLang);
             }
 
             // Initialize local model tab (independent of Gemini API key)
             const localConfig = await getLocalModelConfig();
+
+            // Show info banner in Lite/Flash/Pro tabs when Local Only mode is active
+            if (localConfig.aiMode === 'local') {
+                const bannerMsg = chrome.i18n.getMessage('incognitoLocalModeBanner');
+                ['lite', 'flash', 'pro'].forEach(tabId => {
+                    const banner = document.getElementById(`local-mode-banner-${tabId}`);
+                    if (banner) { banner.textContent = bannerMsg; banner.classList.remove('hidden'); }
+                });
+            }
+
             if (localConfig.localModelEnabled && localConfig.localModelEndpoint && localConfig.localModelName) {
                 new LocalChatInstance(localConfig.localModelName, localConfig.localModelEndpoint, responseLang);
             } else {

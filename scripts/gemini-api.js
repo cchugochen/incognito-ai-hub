@@ -77,7 +77,7 @@ export async function geminiApiCall(apiUrl, payload) {
 export async function getStoredApiConfig(defaults = {}) {
     return chrome.storage.sync.get({
         geminiApiKey: '',
-        translationModel: 'gemini-2.5-flash',
+        translationModel: 'gemini-3.1-flash-lite-preview',
         ...defaults
     });
 }

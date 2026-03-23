@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "Incognito AI Hub by Gemini",
+    "message": "Incognito PrivoAI",
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Простий інкогніто-чат зі ШІ (Gemini + локальна LLM). Переклад сторінок, тексту, знімків екрана та голосу.",
+    "message": "Безкоштовно, без бекенду · дані в браузері. Голос у текст, AI-чат, переклад, AI-озвучення. Ваш ключ Gemini API — повна приватність.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -12,16 +12,14 @@
     "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
-    "message": "Відкрити Робочий стіл розумного перекладу",
+    "message": "Робочий стіл розумного перекладу",
     "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
   },
   "popupOpenVoiceNotes": {
-    "message": "Анонімно - Голосові нотатки",
-    "description": "Button text in popup.html"
+    "message": "Анонімні голосові нотатки"
   },
   "popupOpenIncognito": {
-    "message": "Анонімний чат Gemini",
-    "description": "Button text in popup.html"
+    "message": "Анонімний чат Gemini AI"
   },
   "popupOpenTutorial": {
     "message": "Проста інструкція для отримання ключа Gemini API",
@@ -32,7 +30,7 @@
     "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "Налаштування Incognito AI Hub",
+    "message": "Налаштування Incognito PrivoAI",
     "description": "Title for the options page."
   },
   "optionsHeader": {
@@ -159,7 +157,7 @@
     "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "Режим читання - Incognito AI Hub",
+    "message": "Режим читання - Incognito PrivoAI",
     "description": "Title for the reader page."
   },
   "readerLoading": {
@@ -273,7 +271,7 @@
     "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "Натисніть 'Почати запис' або завантажте аудіофайл. AI розшифрує мовлення в текст і спробує розрізнити різних дикторів.",
+    "message": "Запишіть голосову нотатку або завантажте аудіофайл. ШІ перетворює мову на текст і позначає різних мовців. Торкніться будь-якого абзацу у результаті для миттєвого перекладу.",
     "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
@@ -375,7 +373,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito AI Hub: Створено Х'юго Ченом, тайванським лікарем, під час тайфуну влітку 2025 року. Перша версія була названа 'Хонг-Тай' тайванською мовою. Якщо ви вважаєте це корисним, будь ласка, залиште позитивний відгук у веб-магазині Chrome. Якщо бажаєте, не соромтеся пригостити мене напоєм за посиланням Buy Me a Coffee праворуч.",
+    "message": "Incognito PrivoAI: Створено Х'юго Ченом, тайванським лікарем, під час тайфуну влітку 2025 року. Перша версія була названа 'Хонг-Тай' тайванською мовою. Якщо ви вважаєте це корисним, будь ласка, залиште позитивний відгук у веб-магазині Chrome. Якщо бажаєте, не соромтеся пригостити мене напоєм за посиланням Buy Me a Coffee праворуч.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {
@@ -481,15 +479,15 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Стандартна модель середнього рівня від Google. Підходить для додатків, що вимагають швидких відповідей та високої пропускної здатності за помірну ціну. Також підтримує введення зображень та PDF.",
+    "message": "Баланс швидкості та якості — для складних запитів, аналізу документів і детального перекладу. Підтримує зображення та PDF.",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
-    "message": "Gemini 2.5 Pro",
+    "message": "Gemini 3.1 Pro",
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Найпотужніша модель Google з величезним контекстним вікном у 1 мільйон токенів. Вона відмінно справляється зі складними міркуваннями, кодуванням та мультимодальним розумінням. Найвища вартість, ідеально підходить для обробки складних PDF-файлів та зображень.",
+    "message": "Найпотужніша модель ШІ для глибокого аналізу довгих документів і складних тем. Найкращий вибір для детального аналізу звітів і розгорнутих відповідей. Підтримує зображення та PDF.",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -862,5 +860,164 @@
   "localModelConfigHint": {
     "message": "Необов’язково. Підтримує Ollama, LM Studio або будь-який локальний сервер з інтерфейсом OpenAI. (Ollama: http://localhost:11434/v1 · LM Studio: http://127.0.0.1:1234/v1)",
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
+  },
+  "localModelTabTextOnlyNotice": {
+    "message": "💬 Чат із локальною моделлю підтримує лише звичайний текст — аналіз зображень і PDF недоступний. Для мультимодальних функцій перейдіть на вкладку Gemini Flash або Pro.",
+    "description": "Info notice shown at the top of the Local model chat tab."
+  },
+  "incognitoLocalModeBanner": {
+    "message": "ℹ️ Режим локального ШІ активний. Завдання перекладу тепер використовують вашу локальну модель. Чат Gemini на цій вкладці залишається доступним.",
+    "description": "Banner shown in Flash/Pro tabs when aiMode is local-only."
+  },
+  "optionsModelGemini3FlashName": {
+    "message": "Gemini 3 Flash",
+    "description": "Model name for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsModelGemini3FlashDesc": {
+    "message": "Модель наступного покоління від Google. Ще не оголошена офіційно — ця опція буде розблокована після запуску.",
+    "description": "Description for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsComingSoonBadge": {
+    "message": "Незабаром",
+    "description": "Badge text for coming-soon model cards."
+  },
+  "errorLocalModelOffline": {
+    "message": "Не вдається підключитися до локального сервісу ШІ. Переконайтеся, що Ollama або LM Studio запущені, та перевірте URL кінцевої точки в налаштуваннях.",
+    "description": "Actionable error shown when local model connection fails during translation."
+  },
+  "popupLocalModeWebpageNote": {
+    "message": "⚠️ У режимі локального ШІ переклад веб-сторінок працює лише за умови вилучення DOM-вмісту. Резервний OCR знімків екрана недоступний у цьому режимі.",
+    "description": "Note shown below the translate-page button in popup when aiMode is local-only."
+  },
+  "popupOpenVoiceSummary": {
+    "message": "Голосове читання ШІ [Бета]"
+  },
+  "vsSummaryTitle": {
+    "message": "AI朗讀podcast"
+  },
+  "vsSummaryDesc": {
+    "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
+  },
+  "vsTabWebpage": {
+    "message": "Webpage"
+  },
+  "vsTabAudio": {
+    "message": "Audio File"
+  },
+  "vsTabText": {
+    "message": "Paste Text"
+  },
+  "vsTabMic": {
+    "message": "Microphone"
+  },
+  "vsYoutubeUrlLabel": {
+    "message": "YouTube URL"
+  },
+  "vsYoutubeUrlPlaceholder": {
+    "message": "https://www.youtube.com/watch?v=..."
+  },
+  "vsYoutubeHint": {
+    "message": "Works with videos that have captions/subtitles enabled."
+  },
+  "vsYoutubeNoCaption": {
+    "message": "No captions found for this video. Try a different video or download its audio and use the Audio File tab."
+  },
+  "vsWebpageLabel": {
+    "message": "Page URL"
+  },
+  "vsWebpagePlaceholder": {
+    "message": "https://example.com/article"
+  },
+  "vsUseCurrentTab": {
+    "message": "Use Current Tab"
+  },
+  "vsAudioUploadPrompt": {
+    "message": "Click or drag an audio file here"
+  },
+  "vsAudioFormats": {
+    "message": "MP3 · WAV · M4A · WebM · OGG"
+  },
+  "vsPdfUploadPrompt": {
+    "message": "Click or drag a PDF or TXT file here"
+  },
+  "vsPdfFormats": {
+    "message": "PDF · TXT"
+  },
+  "vsTextPlaceholder": {
+    "message": "Paste article, transcript, or any text here..."
+  },
+  "vsRecordHint": {
+    "message": "Record up to 15 minutes. Press Generate Voice after stopping."
+  },
+  "vsSummaryLanguageLabel": {
+    "message": "Output Language"
+  },
+  "vsProcessButton": {
+    "message": "Generate Voice"
+  },
+  "vsStatusFetching": {
+    "message": "Fetching content..."
+  },
+  "vsStatusTranscribing": {
+    "message": "Transcribing audio..."
+  },
+  "vsStatusSummarizing": {
+    "message": "Generating summary..."
+  },
+  "vsTtsPlayBtn": {
+    "message": "Play TTS"
+  },
+  "vsTtsStopBtn": {
+    "message": "Stop TTS"
+  },
+  "vsDownloadMd": {
+    "message": "Save Summary (.md)"
+  },
+  "errorYoutubeExtract": {
+    "message": "Could not extract captions from this YouTube video. The video may require sign-in, have no captions, or use an unsupported format."
+  },
+  "errorWebpageExtract": {
+    "message": "Could not extract readable text from this page. Try pasting the content in the Paste Text tab instead."
+  },
+  "vsDownloadAudio": {
+    "message": "Download Audio (.wav)",
+    "description": "Button to generate and download TTS audio via Gemini."
+  },
+  "vsStatusGeneratingAudio": {
+    "message": "Generating audio via Gemini TTS...",
+    "description": "Status while calling Gemini TTS API."
+  },
+  "optionsModelLiteName": {
+    "message": "Gemini 3.1 Flash Lite (Default)",
+    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+  },
+  "optionsModelLiteDesc": {
+    "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
+    "description": "Model card description for gemini-3.1-flash-lite-preview."
+  },
+  "incognitoLiteModelHeader": {
+    "message": "Gemini 3.1 Flash Lite",
+    "description": "Header for Lite model tab in incognito page."
+  },
+  "incognitoLiteModelDesc": {
+    "message": "Найшвидший повсякденний ШІ-асистент. Ідеальний для швидких запитів, тексту та перекладу. Підтримує зображення та PDF.",
+    "description": "Description for Lite model tab."
+  },
+  "incognitoThinkingLabel": {
+    "message": "Thinking",
+    "description": "Label for the thinking mode checkbox in incognito chat."
+  },
+  "vsTtsPromptLabel": {
+    "message": "Reading Instruction (optional)"
+  },
+  "vsTtsPromptPlaceholder": {
+    "message": "e.g. Summarize in key bullet points / Read the content sentence by sentence"
+  },
+  "popupBetaLabel": {
+    "message": "Бета-функції"
+  },
+  "voiceLimitHint": {
+    "message": "Максимальний запис: 15 хвилин.",
+    "description": "Hint text showing maximum recording duration under the record button."
   }
 }

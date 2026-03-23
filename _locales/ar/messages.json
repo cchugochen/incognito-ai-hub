@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "Incognito AI Hub by Gemini",
+    "message": "Incognito PrivoAI",
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "دردشة ذكاء اصطناعي مجهولة بسيطة مع Gemini وLLM محلي. أداة مجانية لترجمة صفحات الويب والنصوص ولقطات الشاشة والصوت.",
+    "message": "مجاني، بدون خادم · البيانات في متصفحك. صوت لنص، دردشة AI، ترجمة ويب، قراءة صوتية. مفتاح Gemini API الخاص، خصوصية تامة.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -12,16 +12,14 @@
     "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
-    "message": "فتح ورشة الترجمة الذكية",
+    "message": "ورشة الترجمة الذكية",
     "description": "Button text in popup.html"
   },
   "popupOpenVoiceNotes": {
-    "message": "متخفي - ملاحظات صوتية",
-    "description": "Button text in popup.html"
+    "message": "ملاحظات صوتية خاصة"
   },
   "popupOpenIncognito": {
-    "message": "محادثة Gemini المتخفية",
-    "description": "Button text in popup.html"
+    "message": "محادثة Gemini AI الخاصة"
   },
   "popupOpenTutorial": {
     "message": "شرح مفتاح Gemini API",
@@ -32,7 +30,7 @@
     "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "إعدادات Incognito AI Hub",
+    "message": "إعدادات Incognito PrivoAI",
     "description": "Title for the options page."
   },
   "optionsHeader": {
@@ -175,7 +173,7 @@
     "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "وضع القارئ - Incognito AI Hub",
+    "message": "وضع القارئ - Incognito PrivoAI",
     "description": "Title for the reader page."
   },
   "readerLoading": {
@@ -301,7 +299,7 @@
     "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "اضغط 'بدء التسجيل' أو ارفع ملف صوتي. سيقوم الذكاء الاصطناعي بنسخ الكلام ومحاولة التمييز بين المتحدثين.",
+    "message": "سجّل مذكرة صوتية أو ارفع ملف صوتي. يحوّل الذكاء الاصطناعي الكلام إلى نص ويميّز المتحدثين المختلفين. اضغط على أي فقرة في النتيجة للترجمة الفورية.",
     "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
@@ -403,7 +401,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito AI Hub: أنشأه Hugo Chen، طبيب تايواني، في يوم إعصار صيف 2025. إذا وجدته مفيدًا، يُرجى ترك تقييم إيجابي على متجر Chrome. وإن أردت، يمكنك مكافأتي عبر رابط Buy Me a Coffee.",
+    "message": "Incognito PrivoAI: أنشأه Hugo Chen، طبيب تايواني، في يوم إعصار صيف 2025. إذا وجدته مفيدًا، يُرجى ترك تقييم إيجابي على متجر Chrome. وإن أردت، يمكنك مكافأتي عبر رابط Buy Me a Coffee.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {
@@ -521,15 +519,15 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "النموذج المتوسط القياسي من Google. مناسب للتطبيقات التي تتطلب استجابات سريعة وإنتاجية عالية بتكلفة معتدلة. يدعم أيضًا مدخلات الصور وملفات PDF.",
+    "message": "توازن بين السرعة والجودة — مثالي للأسئلة المعقدة وتحليل المستندات والترجمة التفصيلية. يدعم الصور وملفات PDF.",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
-    "message": "Gemini 2.5 Pro",
+    "message": "Gemini 3.1 Pro",
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "أقوى نماذج Google مع نافذة سياق ضخمة تبلغ مليون رمز. متميز في التفكير المعقد والبرمجة والفهم متعدد الوسائط.",
+    "message": "نموذج الذكاء الاصطناعي الأكثر قدرةً لتحليل المستندات الطويلة والمواضيع المعقدة بعمق. الأفضل للتقارير التفصيلية والإجابات الشاملة. يدعم الصور وملفات PDF.",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -862,5 +860,164 @@
   "localModelConfigHint": {
     "message": "اختياري. يدعم Ollama وLM Studio وأي خادم متوافق مع OpenAI API. (Ollama: http://localhost:11434/v1 · LM Studio: http://127.0.0.1:1234/v1)",
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
+  },
+  "localModelTabTextOnlyNotice": {
+    "message": "💬 دردشة النموذج المحلي تدعم النص فقط — تحليل الصور وملفات PDF غير متاح. انتقل إلى علامة تبويب Gemini Flash أو Pro للحصول على الميزات متعددة الوسائط.",
+    "description": "Info notice shown at the top of the Local model chat tab."
+  },
+  "incognitoLocalModeBanner": {
+    "message": "ℹ️ وضع الذكاء الاصطناعي المحلي نشط. تستخدم مهام الترجمة الآن نموذجك المحلي. لا تزال دردشة Gemini في هذه العلامة متاحة.",
+    "description": "Banner shown in Flash/Pro tabs when aiMode is local-only."
+  },
+  "optionsModelGemini3FlashName": {
+    "message": "Gemini 3 Flash",
+    "description": "Model name for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsModelGemini3FlashDesc": {
+    "message": "نموذج الجيل القادم من Google. لم يُعلَن عنه رسمياً بعد — سيتم إتاحة هذا الخيار عند الإطلاق.",
+    "description": "Description for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsComingSoonBadge": {
+    "message": "قريباً",
+    "description": "Badge text for coming-soon model cards."
+  },
+  "errorLocalModelOffline": {
+    "message": "تعذّر الاتصال بخدمة الذكاء الاصطناعي المحلية. تأكد من تشغيل Ollama أو LM Studio، وتحقق من عنوان URL للنقطة الطرفية في الإعدادات.",
+    "description": "Actionable error shown when local model connection fails during translation."
+  },
+  "popupLocalModeWebpageNote": {
+    "message": "⚠️ في وضع الذكاء الاصطناعي المحلي، يعمل ترجمة صفحات الويب فقط عند إمكانية استخراج محتوى DOM. الاحتياط OCR للقطة الشاشة غير متاح في هذا الوضع.",
+    "description": "Note shown below the translate-page button in popup when aiMode is local-only."
+  },
+  "popupOpenVoiceSummary": {
+    "message": "قراءة صوتية بالذكاء الاصطناعي [تجريبي]"
+  },
+  "vsSummaryTitle": {
+    "message": "AI朗讀podcast"
+  },
+  "vsSummaryDesc": {
+    "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
+  },
+  "vsTabWebpage": {
+    "message": "Webpage"
+  },
+  "vsTabAudio": {
+    "message": "Audio File"
+  },
+  "vsTabText": {
+    "message": "Paste Text"
+  },
+  "vsTabMic": {
+    "message": "Microphone"
+  },
+  "vsYoutubeUrlLabel": {
+    "message": "YouTube URL"
+  },
+  "vsYoutubeUrlPlaceholder": {
+    "message": "https://www.youtube.com/watch?v=..."
+  },
+  "vsYoutubeHint": {
+    "message": "Works with videos that have captions/subtitles enabled."
+  },
+  "vsYoutubeNoCaption": {
+    "message": "No captions found for this video. Try a different video or download its audio and use the Audio File tab."
+  },
+  "vsWebpageLabel": {
+    "message": "Page URL"
+  },
+  "vsWebpagePlaceholder": {
+    "message": "https://example.com/article"
+  },
+  "vsUseCurrentTab": {
+    "message": "Use Current Tab"
+  },
+  "vsAudioUploadPrompt": {
+    "message": "Click or drag an audio file here"
+  },
+  "vsAudioFormats": {
+    "message": "MP3 · WAV · M4A · WebM · OGG"
+  },
+  "vsPdfUploadPrompt": {
+    "message": "Click or drag a PDF or TXT file here"
+  },
+  "vsPdfFormats": {
+    "message": "PDF · TXT"
+  },
+  "vsTextPlaceholder": {
+    "message": "Paste article, transcript, or any text here..."
+  },
+  "vsRecordHint": {
+    "message": "Record up to 15 minutes. Press Generate Voice after stopping."
+  },
+  "vsSummaryLanguageLabel": {
+    "message": "Output Language"
+  },
+  "vsProcessButton": {
+    "message": "Generate Voice"
+  },
+  "vsStatusFetching": {
+    "message": "Fetching content..."
+  },
+  "vsStatusTranscribing": {
+    "message": "Transcribing audio..."
+  },
+  "vsStatusSummarizing": {
+    "message": "Generating summary..."
+  },
+  "vsTtsPlayBtn": {
+    "message": "Play TTS"
+  },
+  "vsTtsStopBtn": {
+    "message": "Stop TTS"
+  },
+  "vsDownloadMd": {
+    "message": "Save Summary (.md)"
+  },
+  "errorYoutubeExtract": {
+    "message": "Could not extract captions from this YouTube video. The video may require sign-in, have no captions, or use an unsupported format."
+  },
+  "errorWebpageExtract": {
+    "message": "Could not extract readable text from this page. Try pasting the content in the Paste Text tab instead."
+  },
+  "vsDownloadAudio": {
+    "message": "Download Audio (.wav)",
+    "description": "Button to generate and download TTS audio via Gemini."
+  },
+  "vsStatusGeneratingAudio": {
+    "message": "Generating audio via Gemini TTS...",
+    "description": "Status while calling Gemini TTS API."
+  },
+  "optionsModelLiteName": {
+    "message": "Gemini 3.1 Flash Lite (Default)",
+    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+  },
+  "optionsModelLiteDesc": {
+    "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
+    "description": "Model card description for gemini-3.1-flash-lite-preview."
+  },
+  "incognitoLiteModelHeader": {
+    "message": "Gemini 3.1 Flash Lite",
+    "description": "Header for Lite model tab in incognito page."
+  },
+  "incognitoLiteModelDesc": {
+    "message": "المساعد الذكي اليومي الأسرع — مثالي للأسئلة السريعة والكتابة والترجمة. يدعم الصور وملفات PDF.",
+    "description": "Description for Lite model tab."
+  },
+  "incognitoThinkingLabel": {
+    "message": "Thinking",
+    "description": "Label for the thinking mode checkbox in incognito chat."
+  },
+  "vsTtsPromptLabel": {
+    "message": "Reading Instruction (optional)"
+  },
+  "vsTtsPromptPlaceholder": {
+    "message": "e.g. Summarize in key bullet points / Read the content sentence by sentence"
+  },
+  "popupBetaLabel": {
+    "message": "ميزات تجريبية"
+  },
+  "voiceLimitHint": {
+    "message": "الحد الأقصى للتسجيل: 15 دقيقة.",
+    "description": "Hint text showing maximum recording duration under the record button."
   }
 }

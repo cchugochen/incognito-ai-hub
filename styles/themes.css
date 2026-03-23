@@ -1,18 +1,40 @@
-/* styles/theme.css */
-/* Kyushu Earthy Theme for Incognito AI Hub */
+/* styles/themes.css — v28.0.1 Gradio-Inspired Kyushu Earthy Theme */
 
 :root {
-    --bg-main: #F5F5F4; /* Light Stone */
-    --bg-content: #FFFFFF; /* White - for better readability on main content */
-    --text-primary: #292524; /* Dark Stone */
-    --text-secondary: #57534E; /* Medium Stone */
-    --color-primary: #606C38; /* Moss Green */
-    --color-accent: #E57C23; /* Warm Orange */
-    --color-accent-hover: #D97706; /* Amber 600 */
-    --border-color: #E7E5E4; /* Stone 200 */
-    --button-text-light: #FFFFFF;
+    /* ── Backgrounds ── */
+    --bg-main:    #F7F4F0;   /* warm beige body */
+    --bg-content: #FFFFFF;   /* card / surface white */
+    --bg-input:   #F9F7F4;   /* input field background */
+    --bg-hover:   #EFECEA;   /* subtle hover overlay */
 
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* ── Text ── */
+    --text-primary:   #1C1917;  /* dark warm stone */
+    --text-secondary: #6B6360;  /* medium warm stone */
+    --text-muted:     #A09890;  /* muted / placeholder */
+
+    /* ── Brand ── */
+    --color-primary:      #606C38;  /* moss green */
+    --color-accent:       #E57C23;  /* warm orange */
+    --color-accent-hover: #D06D1A;
+    --button-text-light:  #FFFFFF;
+
+    /* ── Borders ── */
+    --border-color: #E8E3DC;
+
+    /* ── Elevation ── */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 14px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+    /* ── Radius ── */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* ── Font ── */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+                 "Noto Sans JP", "Noto Sans KR", "Noto Sans Arabic",
+                 Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "SF Mono", "Cascadia Code", Consolas, "Courier New", monospace;
 }
 
 body {
@@ -21,40 +43,53 @@ body {
     font-family: var(--font-sans);
 }
 
-/* --- Buttons --- */
+/* ── Primary Action Button ── */
 .submit-btn, button#save {
     background-color: var(--color-accent) !important;
     color: var(--button-text-light) !important;
-    font-weight: bold;
+    font-weight: 600;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    font-size: 14px;
+    transition: background-color 0.2s;
 }
 .submit-btn:hover, button#save:hover {
     background-color: var(--color-accent-hover) !important;
 }
 .submit-btn:disabled {
-    background-color: #9CA3AF !important; /* Gray 400 */
+    background-color: #B0A89E !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* ── Secondary / Outline Button ── */
+.secondary-btn {
+    background-color: var(--bg-content) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-md);
+    padding: 9px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+.secondary-btn:hover {
+    background-color: var(--bg-hover) !important;
+    border-color: var(--text-secondary) !important;
+}
+.secondary-btn:disabled {
+    opacity: 0.5;
     cursor: not-allowed;
 }
-.pro-btn {
-    background-color: #FEF3C7 !important; /* Amber 100 */
-    border-color: #FCD34D !important; /* Amber 300 */
-    color: #B45309 !important; /* Amber 700 */
-    font-weight: 500;
-}
-.pro-btn:hover {
-     background-color: #FDE68A !important; /* Amber 200 */
-}
 
-
-/* --- Containers & Cards --- */
+/* ── Containers & Cards ── */
 .container, .max-w-2xl {
     background-color: var(--bg-content);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
 }
 .model-card {
     border-color: var(--border-color);
@@ -64,10 +99,11 @@ input:checked + .model-card {
     box-shadow: 0 0 0 2px var(--color-primary);
 }
 
-/* --- Tabs --- */
+/* ── Tabs ── */
 .tab-link {
     color: var(--text-secondary);
     border-bottom: 3px solid transparent;
+    transition: color 0.15s, border-color 0.15s, background-color 0.15s;
 }
 .tab-link.active {
     color: var(--color-primary);
@@ -75,42 +111,61 @@ input:checked + .model-card {
     font-weight: 600;
 }
 
-/* --- Forms & Inputs --- */
-input[type="password"], input[type="url"], textarea, select {
+/* ── Forms & Inputs ── */
+input[type="password"],
+input[type="text"],
+input[type="url"],
+textarea,
+select {
     border: 1px solid var(--border-color) !important;
-    border-radius: 8px !important;
-    background-color: var(--bg-main) !important;
+    border-radius: var(--radius-md) !important;
+    background-color: var(--bg-input) !important;
     color: var(--text-primary) !important;
+    font-family: var(--font-sans) !important;
 }
-input[type="password"]:focus, input[type="url"]:focus, textarea:focus, select:focus {
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
     border-color: var(--color-accent) !important;
-    box-shadow: 0 0 0 1px var(--color-accent) !important;
+    box-shadow: 0 0 0 2px rgba(229, 124, 35, 0.16) !important;
     outline: none;
 }
+
 #upload-box {
-    border-color: #9CA3AF;
+    border-color: var(--border-color);
 }
 #upload-box.dragover {
     border-color: var(--color-accent);
-    background-color: #FEF3C7;
+    background-color: rgba(229, 124, 35, 0.04);
 }
 
-/* --- Incognito Chat Specific --- */
-#incognito\.html .msg.user {
-    background-color: var(--color-primary);
-    color: var(--button-text-light);
-}
-#incognito\.html .msg.ai {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
+/* ── Dark mode (all pages) ── */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-main:    #1A1714;
+        --bg-content: #242019;
+        --bg-input:   #2D2824;
+        --bg-hover:   #302C28;
+
+        --text-primary:   #EDE9E3;
+        --text-secondary: #A09890;
+        --text-muted:     #6B6360;
+
+        --border-color: #38322C;
+        --color-primary: #8BAD52;
+
+        --shadow-md: 0 4px 14px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.2);
+    }
 }
 
-/* --- Reader Specific --- */
+/* ── Reader Specific (class-based user theming) ── */
 #reader\.html .toolbar {
-    background: rgba(245, 245, 244, 0.8); /* Light Stone with blur */
+    background: rgba(247, 244, 240, 0.88);
     backdrop-filter: blur(10px);
 }
 #reader\.html .translation {
-    background-color: #F5F5F4; /* Light Stone */
+    background-color: var(--bg-main);
     border-left: 3px solid var(--color-primary);
 }

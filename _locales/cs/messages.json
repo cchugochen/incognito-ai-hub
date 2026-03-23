@@ -1,0 +1,849 @@
+{
+  "appName": {
+    "message": "Incognito PrivoAI",
+    "description": "The name of the extension."
+  },
+  "appDesc": {
+    "message": "Zdarma, bez serveru · data ve vašem prohlížeči. Hlas na text, AI chat, překlad webu, AI čtení. Váš klíč Gemini API — soukromí.",
+    "description": "The description of the extension in the manifest."
+  },
+  "popupTranslatePage": {
+    "message": "Přeložit aktuální stránku (pokud Google Translate není dostupný)"
+  },
+  "popupOpenWorkbench": {
+    "message": "Překladatelská pracovní plocha"
+  },
+  "popupOpenVoiceNotes": {
+    "message": "Soukromé hlasové poznámky"
+  },
+  "popupOpenIncognito": {
+    "message": "Soukromý chat s Gemini AI"
+  },
+  "popupOpenTutorial": {
+    "message": "Jednoduchý návod pro API klíč Gemini"
+  },
+  "popupShowLicense": {
+    "message": "Informace o licenci MIT"
+  },
+  "optionsTitle": {
+    "message": "Nastavení Incognito PrivoAI"
+  },
+  "optionsHeader": {
+    "message": "⚙️ Nastavení"
+  },
+  "optionsDisplayLangSectionHeader": {
+    "message": "Jazyk zobrazení"
+  },
+  "optionsDisplayLangLabel": {
+    "message": "Jazyk rozhraní rozšíření"
+  },
+  "optionsDisplayLangDefault": {
+    "message": "Výchozí (dle prohlížeče)"
+  },
+  "optionsPrefLangSectionHeader": {
+    "message": "Preferované jazyky"
+  },
+  "optionsPrefLangDesc": {
+    "message": "Nastavte až 3 preferované cílové jazyky. Zobrazí se v horní části nabídky překladu. Pomocí tlačítek ↑↓ nastavte pořadí zobrazení."
+  },
+  "optionsPrefLangLabelA": {
+    "message": "Preferovaný jazyk A"
+  },
+  "optionsPrefLangLabelB": {
+    "message": "Preferovaný jazyk B"
+  },
+  "optionsApiKeySectionHeader": {
+    "message": "API klíč a model"
+  },
+  "optionsApiKeyLabel": {
+    "message": "Váš API klíč Google Gemini"
+  },
+  "optionsApiKeyPlaceholder": {
+    "message": "Vložte sem svůj API klíč"
+  },
+  "optionsModelSelectLabel": {
+    "message": "Výchozí model pro překlad webových stránek/obrázků"
+  },
+  "optionsModelFlashName": {
+    "message": "Gemini 2.5 Flash"
+  },
+  "optionsModelFlashDesc": {
+    "message": "Nejrychlejší a nejefektivnější, vhodný pro rychlé a objemné úlohy překladu a shrnutí."
+  },
+  "optionsModelProName": {
+    "message": "Gemini 2.5 Pro"
+  },
+  "optionsModelProDesc": {
+    "message": "Nejvýkonnější, s vyšší přesností pro porozumění složitým kontextům a obrázkům, ale za vyšší cenu."
+  },
+  "optionsPresetSectionHeader": {
+    "message": "Soukromý chat – přednastavené výzvy"
+  },
+  "optionsPresetDesc": {
+    "message": "Nastavte až 7 přednastavených systémových výzev (A–G) pro stránku soukromého chatu. Každé přednastavení jsou počáteční instrukce, které definují chování AI po stisknutí příslušného tlačítka."
+  },
+  "optionsPresetLabelA": {
+    "message": "Přednastavení A"
+  },
+  "optionsPresetLabelB": {
+    "message": "Přednastavení B"
+  },
+  "optionsPresetLabelC": {
+    "message": "Přednastavení C"
+  },
+  "optionsPresetLabelD": {
+    "message": "Přednastavení D"
+  },
+  "optionsPresetLabelE": {
+    "message": "Přednastavení E"
+  },
+  "optionsPresetLabelF": {
+    "message": "Přednastavení F"
+  },
+  "optionsPresetLabelG": {
+    "message": "Přednastavení G"
+  },
+  "optionsSaveButton": {
+    "message": "Uložit nastavení"
+  },
+  "optionsResetButton": {
+    "message": "Obnovit výchozí"
+  },
+  "optionsStatusReset": {
+    "message": "Nastavení obnoveno na výchozí."
+  },
+  "optionsStatusSaved": {
+    "message": "Nastavení uloženo!"
+  },
+  "alertNoApiKey": {
+    "message": "Chyba: API klíč Gemini nebyl nalezen. Nejprve zadejte svůj klíč na stránce nastavení."
+  },
+  "alertNoApiKeyOptions": {
+    "message": "Nejprve zadejte svůj API klíč Google Gemini na stránce Nastavení."
+  },
+  "alertInitFailed": {
+    "message": "Inicializace selhala. Zkontrolujte konzoli ohledně chybových zpráv."
+  },
+  "errorNetwork": {
+    "message": "Chyba sítě nebo nelze se připojit k Gemini API. Zkontrolujte připojení k internetu a nastavení brány firewall."
+  },
+  "errorApiInvalidResponse": {
+    "message": "Neplatný formát odpovědi API. Model mohl vrátit neplatný obsah."
+  },
+  "errorUnknown": {
+    "message": "Došlo k neznámé chybě."
+  },
+  "readerTitle": {
+    "message": "Režim čtení – Incognito PrivoAI"
+  },
+  "readerLoading": {
+    "message": "AI zpracovává, čekejte prosím..."
+  },
+  "readerLabelTargetLang": {
+    "message": "Přeložit do"
+  },
+  "readerLabelFontSize": {
+    "message": "Velikost písma"
+  },
+  "readerLabelLineHeight": {
+    "message": "Výška řádku"
+  },
+  "readerSaveButton": {
+    "message": "Uložit jako .txt"
+  },
+  "readerSaveOriginal": {
+    "message": "[Původní odstavec $index$]",
+    "description": "Label for original text paragraph when saving.",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
+  },
+  "readerSaveTranslated": {
+    "message": "[Přeložený odstavec $index$]",
+    "description": "Label for translated text paragraph when saving.",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      }
+    }
+  },
+  "readerVoiceToolHeader": {
+    "message": "Převod textu na řeč"
+  },
+  "readerVoiceToolLabel": {
+    "message": "Jazyk řeči"
+  },
+  "readerVoiceToolButton": {
+    "message": "Přeložit"
+  },
+  "workbenchTitle": {
+    "message": "Překladatelská pracovní plocha"
+  },
+  "workbenchTabText": {
+    "message": "Vložit text"
+  },
+  "workbenchTabImage": {
+    "message": "Nahrát obrázek"
+  },
+  "workbenchTextHeader": {
+    "message": "Překlad textu"
+  },
+  "workbenchTextDesc": {
+    "message": "Vložte zkopírovaný text níže pro překlad."
+  },
+  "workbenchImageHeader": {
+    "message": "Překlad obrázku (OCR)"
+  },
+  "workbenchImageDesc": {
+    "message": "Nahrajte nebo vložte snímek obrazovky. AI automaticky rozpozná a přeloží text v obrázku."
+  },
+  "workbenchLabelSourceLang": {
+    "message": "Zdrojový jazyk"
+  },
+  "workbenchLabelTargetLang": {
+    "message": "Cílový jazyk"
+  },
+  "workbenchProcessTextButton": {
+    "message": "Přeložit text"
+  },
+  "workbenchProcessImageButton": {
+    "message": "Rozpoznat a přeložit obrázek"
+  },
+  "workbenchUploadBox": {
+    "message": "Klikněte zde pro výběr obrázku nebo vložte snímek obrazovky přímo (Cmd+V / Ctrl+V)"
+  },
+  "workbenchUploadBoxDesc": {
+    "message": "Podporuje formáty JPG, PNG, BMP"
+  },
+  "workbenchImageResultTitle": {
+    "message": "Výsledek překladu obrázku"
+  },
+  "voiceTitle": {
+    "message": "Soukromé – Hlasové poznámky"
+  },
+  "voiceDesc": {
+    "message": "Nahrajte hlasový záznam nebo nahrajte zvukový soubor. AI převede řeč na text a označí různé mluvčí. Klepnutím na libovolný odstavec ho okamžitě přeložíte."
+  },
+  "voiceLabelAudioSource": {
+    "message": "Zdroj zvuku"
+  },
+  "voiceLabelSpokenLang": {
+    "message": "Primární mluvený jazyk"
+  },
+  "voiceButtonStart": {
+    "message": "Spustit nahrávání"
+  },
+  "voiceButtonStop": {
+    "message": "Zastavit nahrávání"
+  },
+  "voiceStatusRecording": {
+    "message": "Nahrávám..."
+  },
+  "voiceStatusTranscribing": {
+    "message": "Přepisuji, čekejte prosím..."
+  },
+  "voiceStatusSuccess": {
+    "message": "Přepis dokončen! Otevírám stránku s výsledky..."
+  },
+  "errorNoMic": {
+    "message": "Chyba: Nebyl nalezen žádný dostupný mikrofon."
+  },
+  "errorMicPermission": {
+    "message": "Chyba: Nelze získat oprávnění k mikrofonu. Zkontrolujte nastavení prohlížeče. Podrobnosti: $error$",
+    "description": "Error message.",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "voiceStatusFailed": {
+    "message": "Přepis selhal: $error$",
+    "description": "Status message.",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "langAutoDetect": {
+    "message": "Automatická detekce"
+  },
+  "langSystemDefault": {
+    "message": "Výchozí systém ($langName$)",
+    "description": "Language option for system default.",
+    "placeholders": {
+      "langName": {
+        "content": "$1",
+        "example": "Czech"
+      }
+    }
+  },
+  "langPrefA": {
+    "message": "Přednostní-A ($langName$)",
+    "description": "Language option for preferred language A.",
+    "placeholders": {
+      "langName": {
+        "content": "$1",
+        "example": "Français"
+      }
+    }
+  },
+  "langPrefB": {
+    "message": "Přednostní-B ($langName$)",
+    "description": "Language option for preferred language B.",
+    "placeholders": {
+      "langName": {
+        "content": "$1",
+        "example": "Español"
+      }
+    }
+  },
+  "voiceLangZhEn": {
+    "message": "Čínština (smíchána s angličtinou)"
+  },
+  "voiceMicLabel": {
+    "message": "Mikrofon $index$",
+    "description": "Default label for a microphone.",
+    "placeholders": {
+      "index": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "incognitoFooter": {
+    "message": "Incognito PrivoAI: Vytvořil Hugo Chen, tchajwanský lékař, během tajfunového dne v létě 2025. První verze byla pojmenována Hong-Thai. Pokud vám aplikace přijde užitečná, zanechte prosím pozitivní hodnocení na Chrome Web Store. Pokud chcete, klidně mi dopřejte kávu přes odkaz Buy Me a Coffee vpravo."
+  },
+  "promptWebpageProcessing": {
+    "message": "You are a helpful assistant. The user has provided the HTML content and a screenshot of a webpage. Please analyze both to understand the main content of the page, ignoring ads, navigation bars, and footers. Then, provide a concise summary of the key points in a well-structured, easy-to-read format. Finally, translate the summary into $lang$. Here is the HTML content: ```html\n$pageContent$\n```",
+    "description": "Prompt for webpage processing.",
+    "placeholders": {
+      "pageContent": {
+        "content": "$1"
+      },
+      "lang": {
+        "content": "$2"
+      }
+    }
+  },
+  "promptTranslateTo": {
+    "message": "Please translate the text in the image into $lang$.",
+    "description": "Prompt for image translation.",
+    "placeholders": {
+      "lang": {
+        "content": "$1"
+      }
+    }
+  },
+  "promptSourceLangAuto": {
+    "message": "First, identify the language of the text in the image."
+  },
+  "promptSourceLangIs": {
+    "message": "The language of the text in the image is $lang$.",
+    "description": "Part of the prompt specifying the source language.",
+    "placeholders": {
+      "lang": {
+        "content": "$1"
+      }
+    }
+  },
+  "incognitoTitle": {
+    "message": "Soukromý chat Gemini"
+  },
+  "incognitoDefaultModelHeader": {
+    "message": "Výchozí model Gemini"
+  },
+  "incognitoDefaultModelDesc": {
+    "message": "Model použitý v této kartě závisí na vašem výběru v '⚙️ Nastavení' (výchozí je 2.5 Flash). Nejmenší model je vhodný pro jednoduchý překlad, organizaci textu a zpracování jednoduchých PDF a obrázků."
+  },
+  "incognitoSendButton": {
+    "message": "Odeslat"
+  },
+  "incognitoUploadTitle": {
+    "message": "Nahrát obrázky (max. 4)"
+  },
+  "incognitoUploadPdfTitle": {
+    "message": "Nahrát dokument PDF (1)"
+  },
+  "incognitoPresetTitleA": {
+    "message": "Použít přednastavení A"
+  },
+  "incognitoPresetTitleB": {
+    "message": "Použít přednastavení B"
+  },
+  "incognitoPresetTitleC": {
+    "message": "Použít přednastavení C"
+  },
+  "incognitoPresetTitleD": {
+    "message": "Použít přednastavení D"
+  },
+  "incognitoPresetTitleE": {
+    "message": "Použít přednastavení E"
+  },
+  "incognitoPresetTitleF": {
+    "message": "Použít přednastavení F"
+  },
+  "incognitoPresetTitleG": {
+    "message": "Použít přednastavení G"
+  },
+  "incognitoPresetLabel": {
+    "message": "Výzvy:"
+  },
+  "stateThinking": {
+    "message": "Přemýšlím..."
+  },
+  "incognitoApiError": {
+    "message": "Požadavek API selhal"
+  },
+  "incognitoInitialMessage": {
+    "message": "Dobrý den! Jak vám mohu dnes pomoci?"
+  },
+  "incognitoClearConfirm": {
+    "message": "Opravdu chcete vymazat historii konverzace? Tuto akci nelze vrátit zpět."
+  },
+  "incognitoPlaceholder": {
+    "message": "Zadejte svou zprávu zde (můžete nahrát obrázky nebo PDF)..."
+  },
+  "incognitoFlashModelHeader": {
+    "message": "Gemini 2.5 Flash"
+  },
+  "incognitoFlashModelDesc": {
+    "message": "Vyvážená rychlost a kvalita — zvládá složité otázky, analýzu dokumentů a podrobný překlad. Podporuje obrázky a PDF."
+  },
+  "incognitoProModelHeader": {
+    "message": "Gemini 3.1 Pro"
+  },
+  "incognitoProModelDesc": {
+    "message": "Nejschopnější AI model pro hloubkovou analýzu dlouhých dokumentů a složitých témat. Nejlepší pro důkladné, podrobné odpovědi nebo analýzu celého výzkumného článku či zprávy. Podporuje obrázky a PDF."
+  },
+  "statusUploading": {
+    "message": "Nahrávám a zpracovávám..."
+  },
+  "statusFailed": {
+    "message": "Zpracování selhalo: $error$",
+    "description": "Generic failure status.",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "statusUploadSuccess": {
+    "message": "Úspěch! Otevírám výsledky..."
+  },
+  "voiceOrDivider": {
+    "message": "NEBO"
+  },
+  "voiceButtonUpload": {
+    "message": "Nahrát zvukový soubor"
+  },
+  "voiceButtonSubmit": {
+    "message": "Přepsat soubor"
+  },
+  "errorInvalidFileType": {
+    "message": "Chyba: Neplatný typ souboru. Vyberte prosím zvukový soubor."
+  },
+  "errorFileRead": {
+    "message": "Chyba: Při čtení souboru došlo k problému."
+  },
+  "promptVoiceTranscribeDiarize": {
+    "message": "Please transcribe the following audio. The primary language spoken is $lang$. Pay close attention to pauses and changes in tone or speech patterns to identify and label different speakers (e.g., Speaker 1, Speaker 2). Provide the output as a clear, readable transcript.",
+    "description": "Prompt for voice transcription.",
+    "placeholders": {
+      "lang": {
+        "content": "$1"
+      }
+    }
+  },
+  "voiceResultTitle": {
+    "message": "Výsledek přepisu hlasu"
+  },
+  "errorNoApiKey": {
+    "message": "Chyba: API klíč Gemini nebyl nalezen. Nejprve zadejte svůj klíč na stránce Nastavení."
+  },
+  "errorApiRequestFailed": {
+    "message": "Požadavek API selhal: $details$",
+    "description": "Error when API returns a non-OK HTTP status.",
+    "placeholders": {
+      "details": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorApiRejected": {
+    "message": "Požadavek API byl zablokován. Důvod: $reason$",
+    "description": "Error when API blocks the request.",
+    "placeholders": {
+      "reason": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorApiStopped": {
+    "message": "Odpověď API se neočekávaně zastavila. Důvod: $reason$",
+    "description": "Error when API finishes with a non-STOP reason.",
+    "placeholders": {
+      "reason": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorNoActiveTab": {
+    "message": "Chyba: Nebyla nalezena žádná aktivní karta. Zkuste to prosím znovu."
+  },
+  "errorInvalidText": {
+    "message": "Chyba: Byl poskytnut neplatný nebo prázdný text."
+  },
+  "errorNoImageData": {
+    "message": "Chyba: Nebyla nalezena žádná data obrázku. Nahrajte prosím obrázek."
+  },
+  "errorNoAudioData": {
+    "message": "Chyba: Nebyla nalezena žádná zvuková data. Nahrajte nebo nahrajte zvukový soubor."
+  },
+  "errorOcrFailed": {
+    "message": "Chyba: OCR selhalo. AI nerozpoznalo dostatek textu z obrázku. Zkuste prosím jasnější obrázek."
+  },
+  "errorOcrFailedLong": {
+    "message": "Chyba: OCR vrátilo nedostatečný obsah. Snímek obrazovky webové stránky může být prázdný nebo nečitelný."
+  },
+  "errorScreenshotFailed": {
+    "message": "Chyba: Nepodařilo se zachytit snímek obrazovky."
+  },
+  "errorDebuggerAttach": {
+    "message": "Chyba: Nelze se připojit ke stránce. To může být omezeno na některých stránkách (např. stránky nastavení Chrome)."
+  },
+  "errorSttFailed": {
+    "message": "Chyba: Přepis řeči na text selhal. Zvuk může být příliš krátký nebo nejasný."
+  },
+  "readerTranslating": {
+    "message": "Překládám..."
+  },
+  "readerTranslateFailed": {
+    "message": "Překlad selhal: $error$",
+    "description": "Error shown in the reader when a paragraph translation fails.",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "readerErrorNotFound": {
+    "message": "Chyba: Nebyl nalezen žádný obsah k zobrazení. Vraťte se prosím a zkuste to znovu."
+  },
+  "voiceStatusLimitReached": {
+    "message": "Dosažen limit nahrávání (15 min). Zpracovávám..."
+  },
+  "statusProcessing": {
+    "message": "Zpracovávám..."
+  },
+  "statusPleasePaste": {
+    "message": "Nejprve vložte nějaký text."
+  },
+  "statusSuccess": {
+    "message": "Úspěch! Otevírám stránku s výsledky..."
+  },
+  "errorPleaseUploadImage": {
+    "message": "Chyba: Nahrajte prosím soubor obrázku (JPG, PNG, BMP)."
+  },
+  "alertMaxImages": {
+    "message": "Najednou lze připojit maximálně 4 obrázky."
+  },
+  "alertTurnLimit": {
+    "message": "Dosáhli jste limitu $limit$ kol pro tuto konverzaci. Obnovte stránku pro zahájení nového chatu.",
+    "description": "Alert shown when the conversation reaches the maximum number of turns.",
+    "placeholders": {
+      "limit": {
+        "content": "$1"
+      }
+    }
+  },
+  "alertOnePdfOnly": {
+    "message": "Najednou lze připojit pouze jeden soubor PDF."
+  },
+  "incognitoAttachedFile": {
+    "message": "Přiloženo: $filename$",
+    "description": "Text shown in the chat message when a file is attached.",
+    "placeholders": {
+      "filename": {
+        "content": "$1"
+      }
+    }
+  },
+  "localModelSectionHeader": {
+    "message": "Lokální AI model (Ollama / LM Studio)"
+  },
+  "localModelDesc": {
+    "message": "Použijte lokální AI model přes API kompatibilní s OpenAI (Ollama / LM Studio). Po aktivaci budou soukromý chat a překlad v čtečce používat lokální model."
+  },
+  "localModelEnabledLabel": {
+    "message": "Aktivovat lokální model"
+  },
+  "localModelEndpointLabel": {
+    "message": "URL koncového bodu API"
+  },
+  "localModelEndpointPlaceholder": {
+    "message": "http://localhost:11434/v1 nebo http://127.0.0.1:1234"
+  },
+  "localModelNameLabel": {
+    "message": "Název modelu"
+  },
+  "localModelNamePlaceholder": {
+    "message": "llama3.2"
+  },
+  "localModelTabName": {
+    "message": "Lokální model"
+  },
+  "localModelHeader": {
+    "message": "Chat s lokálním AI modelem"
+  },
+  "localModelChatDesc": {
+    "message": "Chatujte se svým lokálním modelem Ollama nebo LM Studio. Pouze text — obrázky a PDF nejsou podporovány."
+  },
+  "localModelNotEnabledMsg": {
+    "message": "Lokální model není aktivován. Přejděte do Možností (⚙️) a nastavte koncový bod a název modelu."
+  },
+  "errorLocalModelFailed": {
+    "message": "Lokální model vrátil prázdnou nebo neplatnou odpověď."
+  },
+  "errorLocalModelConnect": {
+    "message": "Nelze se připojit k lokálnímu modelu. Ujistěte se, že Ollama nebo LM Studio běží."
+  },
+  "readerClickHint": {
+    "message": "💡 Klikněte na libovolný odstavec pro okamžitý překlad."
+  },
+  "optionsLicenseLink": {
+    "message": "Licence MIT"
+  },
+  "optionsPrivacyLink": {
+    "message": "Zásady ochrany soukromí"
+  },
+  "readerTtsSpeakBtn": {
+    "message": "🔊 Mluvit"
+  },
+  "readerTtsStopBtn": {
+    "message": "⏹ Zastavit"
+  },
+  "readerTtsLangLabel": {
+    "message": "Jazyk"
+  },
+  "errorApiRecitation": {
+    "message": "Zdá se, že tento obsah obsahuje materiál chráněný autorskými právy (např. kniha Kindle) a AI ho nemůže zpracovat."
+  },
+  "hintScreenshotMode": {
+    "message": "📌 Režim překladu snímku obrazovky — Byl přeložen pouze viditelná část obrazovky. Pro úplnější výsledky zkuste nejprve zmenšit velikost písma a poté znovu zpracovat."
+  },
+  "readerLabelBgColor": {
+    "message": "Pozadí"
+  },
+  "workbenchLabelImageSourceLang": {
+    "message": "Zdrojový jazyk obrázku"
+  },
+  "workbenchTextPlaceholder": {
+    "message": "Vložte text zde..."
+  },
+  "langPref": {
+    "message": "⭐ $langName$",
+    "description": "Label for a preferred language option.",
+    "placeholders": {
+      "langName": {
+        "content": "$1",
+        "example": "Traditional Chinese"
+      }
+    }
+  },
+  "optionsPrefLangNotSet": {
+    "message": "(Nenastaveno)"
+  },
+  "optionsPrefLangCustomLabel": {
+    "message": "Vlastní"
+  },
+  "optionsPrefLangCustomPlaceholder": {
+    "message": "např. Klasická čínština, Esperanto..."
+  },
+  "optionsPresetTip": {
+    "message": "💡 Tipy pro psaní výzev: ①<b>Role AI</b> — např. Jste profesionální lékařský překladatel. ②<b>Cílová skupina</b> — např. Uživatel je zdravotnický pracovník. ③<b>Formát odpovědi</b> — např. Odpovídejte v bodech, v češtině. ④<b>Zpracování vstupu</b> — např. Nejprve shrňte vstup, poté poskytněte úplný překlad."
+  },
+  "optionsPresetPlaceholder": {
+    "message": "např. Jste profesionální překladatel. Odpovídejte pouze v češtině formálním tónem. Nejprve shrňte vstup uživatele, poté ho celý přeložte."
+  },
+  "aiModeSectionHeader": {
+    "message": "Režim AI služby"
+  },
+  "aiModeGeminiLabel": {
+    "message": "Pouze Google Gemini"
+  },
+  "aiModeGeminiDesc": {
+    "message": "Používejte Google Gemini pro všechny funkce: překlad textu, chat, zpracování obrázků/zvuku/PDF. Vyžaduje API klíč Gemini."
+  },
+  "aiModeHybridLabel": {
+    "message": "Hybridní režim (Gemini + lokální AI)"
+  },
+  "aiModeHybridDesc": {
+    "message": "Překlad čistého textu a chat používají váš lokální AI model. Zpracování obrázků, zvuku a PDF nadále používá Google Gemini."
+  },
+  "aiModeLocalLabel": {
+    "message": "Pouze lokální AI"
+  },
+  "aiModeLocalDesc": {
+    "message": "Všechny textové operace používají váš lokální AI model. Nevyžaduje API klíč Google."
+  },
+  "aiModeLocalWarning": {
+    "message": "⚠️ V režimu Pouze lokální AI nejsou dostupné funkce vyžadující služby Google: překlad webových stránek, OCR snímků obrazovky, přepis hlasu, překlad obrázků a zpracování PDF."
+  },
+  "translateAllLongTextWarn": {
+    "message": "⚠️ Poznámka: Dlouhé články jsou odesílány jako jeden požadavek. Pokud text překročí kontextové okno vašeho lokálního modelu, kvalita překladu může být ovlivněna."
+  },
+  "errorLocalModeNoMultimodal": {
+    "message": "Tato funkce vyžaduje Google Gemini a není dostupná v režimu Pouze lokální AI. Přepněte do režimu Gemini nebo Hybridního v Nastavení."
+  },
+  "localModelConfigHint": {
+    "message": "Volitelné. Podporuje Ollama a LM Studio nebo jakýkoli server kompatibilní s OpenAI. (Ollama výchozí: http://localhost:11434/v1 · LM Studio výchozí: http://127.0.0.1:1234/v1)"
+  },
+  "localModelTabTextOnlyNotice": {
+    "message": "💬 Chat s lokálním modelem podporuje pouze text — analýza obrázků a PDF není dostupná. Pro multimodální funkce přepněte na kartu Gemini Flash nebo Pro."
+  },
+  "incognitoLocalModeBanner": {
+    "message": "ℹ️ Režim lokální AI je aktivní. Překladatelské úlohy nyní používají váš lokální model. Gemini chat v této kartě je stále dostupný."
+  },
+  "optionsModelGemini3FlashName": {
+    "message": "Gemini 3 Flash"
+  },
+  "optionsModelGemini3FlashDesc": {
+    "message": "Nová generace rychlostního modelu Google. Zatím oficiálně neoznámena — tato možnost bude odemčena po spuštění."
+  },
+  "optionsComingSoonBadge": {
+    "message": "Připravujeme"
+  },
+  "errorLocalModelOffline": {
+    "message": "Nelze se připojit k lokální AI službě. Ujistěte se, že Ollama nebo LM Studio běží, a ověřte URL koncového bodu v Nastavení."
+  },
+  "popupLocalModeWebpageNote": {
+    "message": "⚠️ V režimu lokální AI funguje překlad webových stránek pouze při extrakci obsahu DOM. Záložní OCR snímků obrazovky není v tomto režimu dostupné."
+  },
+  "popupOpenVoiceSummary": {
+    "message": "AI čtení hlasem [Beta]"
+  },
+  "vsSummaryTitle": {
+    "message": "AI hlasové čtení [Beta]"
+  },
+  "vsSummaryDesc": {
+    "message": "Tato funkce převádí YouTube videa, podcasty, webové stránky a další soubory do zvukového formátu. Ve vývoji."
+  },
+  "vsTabWebpage": {
+    "message": "Webová stránka"
+  },
+  "vsTabAudio": {
+    "message": "Zvukový soubor"
+  },
+  "vsTabText": {
+    "message": "Vložit text"
+  },
+  "vsTabMic": {
+    "message": "Mikrofon"
+  },
+  "vsYoutubeUrlLabel": {
+    "message": "URL YouTube"
+  },
+  "vsYoutubeUrlPlaceholder": {
+    "message": "https://www.youtube.com/watch?v=..."
+  },
+  "vsYoutubeHint": {
+    "message": "Funguje s videi, která mají povoleny titulky/podtitulky."
+  },
+  "vsYoutubeNoCaption": {
+    "message": "Pro toto video nebyly nalezeny žádné titulky. Zkuste jiné video nebo stáhněte jeho zvuk a použijte kartu Zvukový soubor."
+  },
+  "vsWebpageLabel": {
+    "message": "URL stránky"
+  },
+  "vsWebpagePlaceholder": {
+    "message": "https://example.com/clanek"
+  },
+  "vsUseCurrentTab": {
+    "message": "Použít aktuální kartu"
+  },
+  "vsAudioUploadPrompt": {
+    "message": "Klikněte nebo přetáhněte zvukový soubor sem"
+  },
+  "vsAudioFormats": {
+    "message": "MP3 · WAV · M4A · WebM · OGG"
+  },
+  "vsPdfUploadPrompt": {
+    "message": "Klikněte nebo přetáhněte PDF nebo TXT soubor sem"
+  },
+  "vsPdfFormats": {
+    "message": "PDF · TXT"
+  },
+  "vsTextPlaceholder": {
+    "message": "Vložte článek, přepis nebo jakýkoli text sem..."
+  },
+  "vsRecordHint": {
+    "message": "Nahrávejte až 15 minut. Po zastavení stiskněte Generovat hlas."
+  },
+  "vsTtsPromptLabel": {
+    "message": "Instrukce pro čtení (volitelné)"
+  },
+  "vsTtsPromptPlaceholder": {
+    "message": "např. Shrňte do klíčových bodů / Čtěte obsah větu po větě"
+  },
+  "vsSummaryLanguageLabel": {
+    "message": "Výstupní jazyk"
+  },
+  "vsProcessButton": {
+    "message": "Generovat hlas"
+  },
+  "vsStatusFetching": {
+    "message": "Načítám obsah..."
+  },
+  "vsStatusTranscribing": {
+    "message": "Přepisuji zvuk..."
+  },
+  "vsStatusSummarizing": {
+    "message": "Generuji shrnutí..."
+  },
+  "vsTtsPlayBtn": {
+    "message": "Přehrát TTS"
+  },
+  "vsTtsStopBtn": {
+    "message": "Zastavit TTS"
+  },
+  "vsDownloadMd": {
+    "message": "Uložit shrnutí (.md)"
+  },
+  "errorYoutubeExtract": {
+    "message": "Nepodařilo se extrahovat titulky z tohoto YouTube videa. Video může vyžadovat přihlášení, nemá titulky nebo používá nepodporovaný formát."
+  },
+  "errorWebpageExtract": {
+    "message": "Nepodařilo se extrahovat čitelný text z této stránky. Zkuste obsah vložit na kartě Vložit text."
+  },
+  "vsDownloadAudio": {
+    "message": "Stáhnout zvuk (.wav)"
+  },
+  "vsStatusGeneratingAudio": {
+    "message": "Generuji zvuk přes Gemini TTS..."
+  },
+  "optionsModelLiteName": {
+    "message": "Gemini 3.1 Flash Lite (Výchozí)"
+  },
+  "optionsModelLiteDesc": {
+    "message": "Nejrychlejší a nejefektivnější. Nejlepší pro každodenní úkoly, shrnutí a rychlé odpovědi."
+  },
+  "incognitoLiteModelHeader": {
+    "message": "Gemini 3.1 Flash Lite"
+  },
+  "incognitoLiteModelDesc": {
+    "message": "Nejrychlejší každodenní AI asistent — skvělý pro rychlé otázky, pomoc s psaním a překlad. Podporuje obrázky a PDF."
+  },
+  "incognitoThinkingLabel": {
+    "message": "Přemýšlení"
+  },
+  "popupBetaLabel": {
+    "message": "Beta funkce"
+  },
+  "voiceLimitHint": {
+    "message": "Maximální délka nahrávání: 15 minut."
+  }
+}

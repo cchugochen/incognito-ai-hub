@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "無痕AI工作台 Incognito AI Hub by Gemini",
+    "message": "PrivoAI 無痕AI工作台",
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "簡單的無痕 AI 對話框，應用 Gemini 與 Local LLM 工具完成翻譯網頁、文字、截圖、以及語音輸入的免費小工具",
+    "message": "免費、無後台伺服器・資料不離開瀏覽器。語音轉文字、AI私密對話、網頁翻譯、AI語音朗讀。使用您自己申請的Gemini API金鑰，完全隱私。",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -12,16 +12,14 @@
     "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
-    "message": "開啟智慧翻譯工作台",
+    "message": "智慧翻譯工作台",
     "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
   },
   "popupOpenVoiceNotes": {
-    "message": "無痕-語音輸入筆記",
-    "description": "Button text in popup.html"
+    "message": "無痕語音輸入筆記"
   },
   "popupOpenIncognito": {
-    "message": "無痕Gemini對話",
-    "description": "Button text in popup.html"
+    "message": "無痕 Gemini AI 對話"
   },
   "popupOpenTutorial": {
     "message": "新手申請Gemini金鑰簡易教學",
@@ -32,7 +30,7 @@
     "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "Incognito AI Hub 設定",
+    "message": "PrivoAI 設定",
     "description": "Title for the options page."
   },
   "optionsHeader": {
@@ -175,7 +173,7 @@
     "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "閱讀模式 - 無痕AI工作台",
+    "message": "閱讀模式 - PrivoAI",
     "description": "Title for the reader page."
   },
   "readerLoading": {
@@ -289,7 +287,7 @@
     "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "按下開始錄音，或上傳音訊檔。AI 將把語音轉為逐字稿，並嘗試區分不同發言者。",
+    "message": "錄製語音備忘錄或上傳音訊檔，AI 自動將語音轉為文字並區分說話者。完成後，點選任一段落即可即時翻譯。",
     "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
@@ -391,7 +389,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito AI Hub: 作者Hugo Chen是一位台灣醫師，在2025夏季某個颱風天完成初版，初版以台語命名為「風颱」(Hong-Thai)。如果您覺得好用，請在Chrome網頁商店給好評。如果願意，歡迎到右邊連結本人的Buy Me a Coffee網頁，用實際行動請我喝一杯飲料。",
+    "message": "PrivoAI: 作者Hugo Chen是一位台灣醫師，在2025夏季某個颱風天完成初版，初版以台語命名為「風颱」(Hong-Thai)。如果您覺得好用，請在Chrome網頁商店給好評。如果願意，歡迎到右邊連結本人的Buy Me a Coffee網頁，用實際行動請我喝一杯飲料。",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {
@@ -509,15 +507,15 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Google的標準中級模型。適合需要快速回應、高吞吐量的應用情境，成本中等，同樣支援圖片與PDF輸入。",
+    "message": "速度與品質兼顧，適合較複雜的問答、文件分析與深度翻譯。支援圖片與 PDF。",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
-    "message": "Gemini 2.5 Pro",
+    "message": "Gemini 3.1 Pro",
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Google最強大的模型，擁有巨大的 100 萬 Token 上下文視窗，在複雜推理、程式碼和多模態理解方面表現卓越。費用最高，適合處理複雜的PDF與圖片。",
+    "message": "最強大的 AI 模型，能深度理解長篇文件與複雜議題。需要詳細分析研究報告或深度問答時的最佳選擇。支援圖片與 PDF。",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -863,5 +861,164 @@
   "localModelConfigHint": {
     "message": "選填。支援 Ollama、LM Studio 或任何相容 OpenAI API 的本機服務。（Ollama 預設：http://localhost:11434/v1 · LM Studio 預設：http://127.0.0.1:1234/v1）",
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
+  },
+  "localModelTabTextOnlyNotice": {
+    "message": "💬 本機模型對話只支援純文字，無法處理圖片與 PDF。如需圖片或 PDF 分析，請切換至 Gemini Flash 或 Pro 分頁。",
+    "description": "Info notice shown at the top of the Local model chat tab."
+  },
+  "incognitoLocalModeBanner": {
+    "message": "ℹ️ 目前設定為「本機 AI」模式，翻譯任務已改用本機模型。此 Gemini 分頁的對話功能不受影響，仍可正常使用。",
+    "description": "Banner shown in Flash/Pro tabs when aiMode is local-only."
+  },
+  "optionsModelGemini3FlashName": {
+    "message": "Gemini 3 Flash",
+    "description": "Model name for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsModelGemini3FlashDesc": {
+    "message": "Google 次世代高速模型，尚未正式公佈，敬請期待。屆時將更新解鎖此選項。",
+    "description": "Description for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsComingSoonBadge": {
+    "message": "即將推出",
+    "description": "Badge text for coming-soon model cards."
+  },
+  "errorLocalModelOffline": {
+    "message": "無法連線本機 AI 服務，請確認 Ollama 或 LM Studio 正在執行，並檢查設定中的端點 URL 是否正確。",
+    "description": "Actionable error shown when local model connection fails during translation."
+  },
+  "popupLocalModeWebpageNote": {
+    "message": "⚠️ 本機 AI 模式下，「翻譯當前網頁」僅在網頁 DOM 可擷取時有效。若 DOM 擷取失敗（如 SPA 頁面），截圖 OCR 備援在此模式下不可用。",
+    "description": "Note shown below the translate-page button in popup when aiMode is local-only."
+  },
+  "popupOpenVoiceSummary": {
+    "message": "AI 語音朗讀 [測試版]"
+  },
+  "vsSummaryTitle": {
+    "message": "AI朗讀podcast [測試版]"
+  },
+  "vsSummaryDesc": {
+    "message": "此功能開發目標是把YouTube、Podcast、網頁或其他檔案轉換成MP3音訊，但目前還在開發中。"
+  },
+  "vsTabWebpage": {
+    "message": "Webpage"
+  },
+  "vsTabAudio": {
+    "message": "Audio File"
+  },
+  "vsTabText": {
+    "message": "Paste Text"
+  },
+  "vsTabMic": {
+    "message": "Microphone"
+  },
+  "vsYoutubeUrlLabel": {
+    "message": "YouTube URL"
+  },
+  "vsYoutubeUrlPlaceholder": {
+    "message": "https://www.youtube.com/watch?v=..."
+  },
+  "vsYoutubeHint": {
+    "message": "Works with videos that have captions/subtitles enabled."
+  },
+  "vsYoutubeNoCaption": {
+    "message": "No captions found for this video. Try a different video or download its audio and use the Audio File tab."
+  },
+  "vsWebpageLabel": {
+    "message": "Page URL"
+  },
+  "vsWebpagePlaceholder": {
+    "message": "https://example.com/article"
+  },
+  "vsUseCurrentTab": {
+    "message": "Use Current Tab"
+  },
+  "vsAudioUploadPrompt": {
+    "message": "Click or drag an audio file here"
+  },
+  "vsAudioFormats": {
+    "message": "MP3 · WAV · M4A · WebM · OGG"
+  },
+  "vsPdfUploadPrompt": {
+    "message": "Click or drag a PDF or TXT file here"
+  },
+  "vsPdfFormats": {
+    "message": "PDF · TXT"
+  },
+  "vsTextPlaceholder": {
+    "message": "Paste article, transcript, or any text here..."
+  },
+  "vsRecordHint": {
+    "message": "最長錄音 15 分鐘。停止後按「生成朗讀語音」。"
+  },
+  "vsTtsPromptLabel": {
+    "message": "朗讀指示（選填）"
+  },
+  "vsTtsPromptPlaceholder": {
+    "message": "例如：請用重點摘要方式朗讀 / 請逐句朗讀原文"
+  },
+  "vsSummaryLanguageLabel": {
+    "message": "輸出語言"
+  },
+  "vsProcessButton": {
+    "message": "生成朗讀語音"
+  },
+  "vsStatusFetching": {
+    "message": "Fetching content..."
+  },
+  "vsStatusTranscribing": {
+    "message": "Transcribing audio..."
+  },
+  "vsStatusSummarizing": {
+    "message": "Generating summary..."
+  },
+  "vsTtsPlayBtn": {
+    "message": "Play TTS"
+  },
+  "vsTtsStopBtn": {
+    "message": "Stop TTS"
+  },
+  "vsDownloadMd": {
+    "message": "Save Summary (.md)"
+  },
+  "errorYoutubeExtract": {
+    "message": "Could not extract captions from this YouTube video. The video may require sign-in, have no captions, or use an unsupported format."
+  },
+  "errorWebpageExtract": {
+    "message": "Could not extract readable text from this page. Try pasting the content in the Paste Text tab instead."
+  },
+  "vsDownloadAudio": {
+    "message": "下載音訊 (.wav)",
+    "description": "Button to generate and download TTS audio via Gemini."
+  },
+  "vsStatusGeneratingAudio": {
+    "message": "正在使用 Gemini TTS 生成音訊...",
+    "description": "Status while calling Gemini TTS API."
+  },
+  "optionsModelLiteName": {
+    "message": "Gemini 3.1 Flash Lite（預設）",
+    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+  },
+  "optionsModelLiteDesc": {
+    "message": "速度最快、最省費用。適合日常任務、摘要與快速回應。",
+    "description": "Model card description for gemini-3.1-flash-lite-preview."
+  },
+  "incognitoLiteModelHeader": {
+    "message": "Gemini 3.1 Flash Lite",
+    "description": "Header for Lite model tab in incognito page."
+  },
+  "incognitoLiteModelDesc": {
+    "message": "最快速的日常 AI 助理，適合快速問答、文字整理與翻譯。支援圖片與 PDF。",
+    "description": "Description for Lite model tab."
+  },
+  "incognitoThinkingLabel": {
+    "message": "推論思考",
+    "description": "Label for the thinking mode checkbox in incognito chat."
+  },
+  "popupBetaLabel": {
+    "message": "測試版功能"
+  },
+  "voiceLimitHint": {
+    "message": "最長錄音：15 分鐘。",
+    "description": "Hint text showing maximum recording duration under the record button."
   }
 }

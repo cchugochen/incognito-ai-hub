@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>__MSG_optionsTitle__</title>
-    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/themes.css">
     <link rel="stylesheet" href="styles/options.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -20,7 +20,7 @@
                     </select>
             </section>
 
-            <hr class="divider" style="margin: 1rem 0">
+            <hr class="divider divider-sm">
 
             <section class="options-section">
                 <h2 class="section-header" data-i18n="optionsPrefLangSectionHeader"></h2>
@@ -102,9 +102,19 @@
                 <div id="gemini-config" class="ai-config-panel">
                     <label for="api-key" class="label" data-i18n="optionsApiKeyLabel"></label>
                     <input type="password" id="api-key" class="text-input">
-                    <div class="space-y-4" style="margin-top:1rem">
+                    <div class="space-y-4 mt-1rem">
                         <div>
-                            <input type="radio" name="model-select" id="gemini-2.5-flash" value="gemini-2.5-flash" class="sr-only" checked>
+                            <input type="radio" name="model-select" id="gemini-3.1-flash-lite-preview" value="gemini-3.1-flash-lite-preview" class="sr-only" checked>
+                            <label for="gemini-3.1-flash-lite-preview" class="model-card">
+                                <div class="model-card-header">
+                                    <span class="model-name" data-i18n="optionsModelLiteName"></span>
+                                </div>
+                                <p class="model-id">gemini-3.1-flash-lite-preview</p>
+                                <div class="model-desc" data-i18n="optionsModelLiteDesc"></div>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="model-select" id="gemini-2.5-flash" value="gemini-2.5-flash" class="sr-only">
                             <label for="gemini-2.5-flash" class="model-card">
                                 <div class="model-card-header">
                                     <span class="model-name" data-i18n="optionsModelFlashName"></span>
@@ -123,7 +133,7 @@
                     <label for="local-model-endpoint" class="label" data-i18n="localModelEndpointLabel"></label>
                     <input type="text" id="local-model-endpoint" class="text-input"
                            data-i18n-placeholder="localModelEndpointPlaceholder">
-                    <label for="local-model-name" class="label" style="margin-top:0.75rem" data-i18n="localModelNameLabel"></label>
+                    <label for="local-model-name" class="label mt-075rem" data-i18n="localModelNameLabel"></label>
                     <input type="text" id="local-model-name" class="text-input"
                            data-i18n-placeholder="localModelNamePlaceholder">
                 </div>

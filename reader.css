@@ -1,7 +1,7 @@
-/* reader.css (v24.1) - CSP Compliant */
+/* reader.css (v28.0.1) - CSP Compliant */
 body {
     margin: 0;
-    font-family: "Helvetica Neue", "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+    font-family: var(--font-sans, "Helvetica Neue", "PingFang TC", "Heiti TC", sans-serif);
     transition: background-color 0.3s, color 0.3s;
 }
 .container {
@@ -13,8 +13,9 @@ body {
     position: sticky;
     top: 0;
     backdrop-filter: blur(10px);
+    background: rgba(247, 244, 240, 0.88); /* warm beige default */
     padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color, #e8e3dc);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -38,15 +39,17 @@ input[type="range"] { cursor: pointer; }
 .color-btn[data-color="bg-dark"] { background-color: #1E1E1E; }
 
 #save-text {
-    padding: 6px 12px;
-    background-color: #17a2b8;
-    color: white;
+    padding: 6px 14px;
+    background-color: var(--color-accent, #E57C23);
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: var(--radius-md, 8px);
     cursor: pointer;
-    font-size: 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    transition: background-color 0.2s;
 }
-#save-text:hover { background-color: #138496; }
+#save-text:hover { background-color: var(--color-accent-hover, #D06D1A); }
 .click-hint {
     margin-top: 16px;
     padding: 10px 14px;

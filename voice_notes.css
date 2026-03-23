@@ -72,6 +72,7 @@
     text-align: center;
     min-height: 24px;
     font-weight: 500;
+    font-size: 14px;
 }
-.status-success { color: #34c759; }
-.status-error { color: #ff3b30; }
+.status-success { color: var(--color-primary); }
+.status-error   { color: #dc2626; }

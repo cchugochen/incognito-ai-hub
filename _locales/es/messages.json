@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "Incognito AI Hub by Gemini",
+    "message": "Incognito PrivoAI",
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Chat de IA incógnito con Gemini y LLM local. Kit gratuito para traducir páginas web, textos, capturas de pantalla y voz.",
+    "message": "Gratis, sin backend · datos en tu navegador. Voz a texto, chat IA, traducción web, lectura IA. Clave API Gemini — privacidad total.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -12,16 +12,14 @@
     "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
-    "message": "Abrir Banco de Traducción Inteligente",
+    "message": "Banco de Traducción Inteligente",
     "description": "Button text in popup.html"
   },
   "popupOpenVoiceNotes": {
-    "message": "Incógnito - Notas de Voz",
-    "description": "Button text in popup.html"
+    "message": "Notas de Voz Incógnito"
   },
   "popupOpenIncognito": {
-    "message": "Chat Gemini Incógnito",
-    "description": "Button text in popup.html"
+    "message": "Chat Gemini AI Incógnito"
   },
   "popupOpenTutorial": {
     "message": "Tutorial para obtener clave API de Gemini",
@@ -32,7 +30,7 @@
     "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "Configuración de Incognito AI Hub",
+    "message": "Configuración de Incognito PrivoAI",
     "description": "Title for the options page."
   },
   "optionsHeader": {
@@ -175,7 +173,7 @@
     "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "Modo Lector - Incognito AI Hub",
+    "message": "Modo Lector - Incognito PrivoAI",
     "description": "Title for the reader page."
   },
   "readerLoading": {
@@ -301,7 +299,7 @@
     "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "Presiona 'Iniciar grabación' o sube un archivo de audio. La IA transcribirá el discurso e intentará diferenciar entre hablantes.",
+    "message": "Graba una nota de voz o sube un archivo de audio. La IA convierte el habla en texto e identifica a los hablantes. Toca cualquier párrafo del resultado para traducirlo al instante.",
     "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
@@ -403,7 +401,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito AI Hub: Creado por Hugo Chen, médico taiwanés, durante un día de tifón en el verano de 2025. Si lo encuentras útil, deja una reseña positiva en la Chrome Web Store. Si lo deseas, puedes invitarme a tomar algo a través del enlace Buy Me a Coffee.",
+    "message": "Incognito PrivoAI: Creado por Hugo Chen, médico taiwanés, durante un día de tifón en el verano de 2025. Si lo encuentras útil, deja una reseña positiva en la Chrome Web Store. Si lo deseas, puedes invitarme a tomar algo a través del enlace Buy Me a Coffee.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {
@@ -521,15 +519,15 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Modelo intermedio estándar de Google. Adecuado para aplicaciones que requieren respuestas rápidas y alto rendimiento a un costo moderado. También admite entradas de imágenes y PDF.",
+    "message": "Equilibrio entre velocidad y calidad — ideal para preguntas complejas, análisis de documentos y traducción detallada. Compatible con imágenes y PDF.",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
-    "message": "Gemini 2.5 Pro",
+    "message": "Gemini 3.1 Pro",
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "El modelo más potente de Google con una ventana de contexto de 1 millón de tokens. Excelente para razonamiento complejo, codificación y comprensión multimodal.",
+    "message": "El modelo de IA más potente para el análisis profundo de documentos largos y temas complejos. Ideal para informes detallados y respuestas exhaustivas. Compatible con imágenes y PDF.",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -862,5 +860,164 @@
   "localModelConfigHint": {
     "message": "Opcional. Compatible con Ollama, LM Studio o cualquier servidor local compatible con OpenAI. (Ollama por defecto: http://localhost:11434/v1 · LM Studio por defecto: http://127.0.0.1:1234/v1)",
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
+  },
+  "localModelTabTextOnlyNotice": {
+    "message": "💬 El chat con modelo local solo admite texto puro — el análisis de imágenes y PDF no está disponible. Cambia a la pestaña Gemini Flash o Pro para funciones multimodales.",
+    "description": "Info notice shown at the top of the Local model chat tab."
+  },
+  "incognitoLocalModeBanner": {
+    "message": "ℹ️ El modo de IA local está activo. Las tareas de traducción ahora usan tu modelo local. El chat de Gemini en esta pestaña sigue disponible.",
+    "description": "Banner shown in Flash/Pro tabs when aiMode is local-only."
+  },
+  "optionsModelGemini3FlashName": {
+    "message": "Gemini 3 Flash",
+    "description": "Model name for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsModelGemini3FlashDesc": {
+    "message": "El modelo de próxima generación de Google. Aún no anunciado oficialmente — esta opción se desbloqueará cuando se lance.",
+    "description": "Description for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsComingSoonBadge": {
+    "message": "Próximamente",
+    "description": "Badge text for coming-soon model cards."
+  },
+  "errorLocalModelOffline": {
+    "message": "No se puede conectar al servicio de IA local. Asegúrate de que Ollama o LM Studio esté en ejecución y verifica la URL del endpoint en Configuración.",
+    "description": "Actionable error shown when local model connection fails during translation."
+  },
+  "popupLocalModeWebpageNote": {
+    "message": "⚠️ En modo IA local, la traducción de páginas web solo funciona cuando se puede extraer el contenido DOM. El respaldo OCR de pantalla no está disponible en este modo.",
+    "description": "Note shown below the translate-page button in popup when aiMode is local-only."
+  },
+  "popupOpenVoiceSummary": {
+    "message": "Lectura de Voz IA [Beta]"
+  },
+  "vsSummaryTitle": {
+    "message": "AI朗讀podcast"
+  },
+  "vsSummaryDesc": {
+    "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
+  },
+  "vsTabWebpage": {
+    "message": "Webpage"
+  },
+  "vsTabAudio": {
+    "message": "Audio File"
+  },
+  "vsTabText": {
+    "message": "Paste Text"
+  },
+  "vsTabMic": {
+    "message": "Microphone"
+  },
+  "vsYoutubeUrlLabel": {
+    "message": "YouTube URL"
+  },
+  "vsYoutubeUrlPlaceholder": {
+    "message": "https://www.youtube.com/watch?v=..."
+  },
+  "vsYoutubeHint": {
+    "message": "Works with videos that have captions/subtitles enabled."
+  },
+  "vsYoutubeNoCaption": {
+    "message": "No captions found for this video. Try a different video or download its audio and use the Audio File tab."
+  },
+  "vsWebpageLabel": {
+    "message": "Page URL"
+  },
+  "vsWebpagePlaceholder": {
+    "message": "https://example.com/article"
+  },
+  "vsUseCurrentTab": {
+    "message": "Use Current Tab"
+  },
+  "vsAudioUploadPrompt": {
+    "message": "Click or drag an audio file here"
+  },
+  "vsAudioFormats": {
+    "message": "MP3 · WAV · M4A · WebM · OGG"
+  },
+  "vsPdfUploadPrompt": {
+    "message": "Click or drag a PDF or TXT file here"
+  },
+  "vsPdfFormats": {
+    "message": "PDF · TXT"
+  },
+  "vsTextPlaceholder": {
+    "message": "Paste article, transcript, or any text here..."
+  },
+  "vsRecordHint": {
+    "message": "Record up to 15 minutes. Press Generate Voice after stopping."
+  },
+  "vsSummaryLanguageLabel": {
+    "message": "Output Language"
+  },
+  "vsProcessButton": {
+    "message": "Generate Voice"
+  },
+  "vsStatusFetching": {
+    "message": "Fetching content..."
+  },
+  "vsStatusTranscribing": {
+    "message": "Transcribing audio..."
+  },
+  "vsStatusSummarizing": {
+    "message": "Generating summary..."
+  },
+  "vsTtsPlayBtn": {
+    "message": "Play TTS"
+  },
+  "vsTtsStopBtn": {
+    "message": "Stop TTS"
+  },
+  "vsDownloadMd": {
+    "message": "Save Summary (.md)"
+  },
+  "errorYoutubeExtract": {
+    "message": "Could not extract captions from this YouTube video. The video may require sign-in, have no captions, or use an unsupported format."
+  },
+  "errorWebpageExtract": {
+    "message": "Could not extract readable text from this page. Try pasting the content in the Paste Text tab instead."
+  },
+  "vsDownloadAudio": {
+    "message": "Download Audio (.wav)",
+    "description": "Button to generate and download TTS audio via Gemini."
+  },
+  "vsStatusGeneratingAudio": {
+    "message": "Generating audio via Gemini TTS...",
+    "description": "Status while calling Gemini TTS API."
+  },
+  "optionsModelLiteName": {
+    "message": "Gemini 3.1 Flash Lite (Default)",
+    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+  },
+  "optionsModelLiteDesc": {
+    "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
+    "description": "Model card description for gemini-3.1-flash-lite-preview."
+  },
+  "incognitoLiteModelHeader": {
+    "message": "Gemini 3.1 Flash Lite",
+    "description": "Header for Lite model tab in incognito page."
+  },
+  "incognitoLiteModelDesc": {
+    "message": "Asistente de IA cotidiano más rápido, ideal para preguntas rápidas, ayuda con textos y traducción. Compatible con imágenes y PDF.",
+    "description": "Description for Lite model tab."
+  },
+  "incognitoThinkingLabel": {
+    "message": "Thinking",
+    "description": "Label for the thinking mode checkbox in incognito chat."
+  },
+  "vsTtsPromptLabel": {
+    "message": "Reading Instruction (optional)"
+  },
+  "vsTtsPromptPlaceholder": {
+    "message": "e.g. Summarize in key bullet points / Read the content sentence by sentence"
+  },
+  "popupBetaLabel": {
+    "message": "Funciones Beta"
+  },
+  "voiceLimitHint": {
+    "message": "Grabación máxima: 15 minutos.",
+    "description": "Hint text showing maximum recording duration under the record button."
   }
 }

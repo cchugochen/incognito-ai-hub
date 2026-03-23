@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "Incognito AI Hub by Gemini",
+    "message": "Incognito PrivoAI",
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Gemini ve Yerel LLM ile gizli AI sohbeti. Web sayfası, metin, ekran görüntüsü ve ses çevirisi için ücretsiz araç.",
+    "message": "Ücretsiz, backend yok · veriler tarayıcıda. Sesten metne, AI sohbet, web çevirisi, AI okuma. Gemini API anahtarınız — tam gizlilik.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -12,16 +12,14 @@
     "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
-    "message": "Akıllı Çeviri Çalışma Alanını Aç",
+    "message": "Akıllı Çeviri Çalışma Alanı",
     "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
   },
   "popupOpenVoiceNotes": {
-    "message": "Gizli - Sesli Notlar",
-    "description": "Button text in popup.html"
+    "message": "Gizli Sesli Notlar"
   },
   "popupOpenIncognito": {
-    "message": "Gizli Gemini Sohbeti",
-    "description": "Button text in popup.html"
+    "message": "Gizli Gemini AI Sohbeti"
   },
   "popupOpenTutorial": {
     "message": "Gemini API Anahtarı için Basit Eğitim",
@@ -32,7 +30,7 @@
     "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "Incognito AI Hub Ayarları",
+    "message": "Incognito PrivoAI Ayarları",
     "description": "Title for the options page."
   },
   "optionsHeader": {
@@ -159,7 +157,7 @@
     "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "Okuyucu Modu - Incognito AI Hub",
+    "message": "Okuyucu Modu - Incognito PrivoAI",
     "description": "Title for the reader page."
   },
   "readerLoading": {
@@ -273,7 +271,7 @@
     "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "'Kaydı Başlat'a basın veya bir ses dosyası yükleyin. Yapay zeka konuşmayı metne dökecek ve farklı konuşmacıları ayırt etmeye çalışacaktır.",
+    "message": "Sesli not kaydedin veya bir ses dosyası yükleyin. AI, konuşmayı metne dönüştürür ve farklı konuşmacıları etiketler. Sonuçtaki herhangi bir paragrafa dokunarak anında çevirin.",
     "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
@@ -375,7 +373,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito AI Hub: Tayvanlı bir doktor olan Hugo Chen tarafından 2025 yazında bir tayfun gününde oluşturuldu. İlk versiyon Tayvanca'da 'Hong-Thai' olarak adlandırıldı. Eğer faydalı bulursanız, lütfen Chrome Web Mağazası'nda olumlu bir yorum bırakın. Eğer isterseniz, sağdaki Buy Me a Coffee bağlantısı aracılığıyla bana bir içki ısmarlamaktan çekinmeyin.",
+    "message": "Incognito PrivoAI: Tayvanlı bir doktor olan Hugo Chen tarafından 2025 yazında bir tayfun gününde oluşturuldu. İlk versiyon Tayvanca'da 'Hong-Thai' olarak adlandırıldı. Eğer faydalı bulursanız, lütfen Chrome Web Mağazası'nda olumlu bir yorum bırakın. Eğer isterseniz, sağdaki Buy Me a Coffee bağlantısı aracılığıyla bana bir içki ısmarlamaktan çekinmeyin.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {
@@ -481,15 +479,15 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Google'ın standart orta seviye modeli. Hızlı yanıtlar ve yüksek verim gerektiren uygulamalar için orta maliyetle uygundur. Ayrıca görüntü ve PDF girişlerini de destekler.",
+    "message": "Hız ve kalite dengesi — karmaşık sorular, belge analizi ve ayrıntılı çeviri için ideal. Görsel ve PDF desteği.",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
-    "message": "Gemini 2.5 Pro",
+    "message": "Gemini 3.1 Pro",
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Google'ın en güçlü modeli, devasa 1 milyon jetonluk bir bağlam penceresine sahiptir. Karmaşık akıl yürütme, kodlama ve çok modlu anlama konularında üstündür. En yüksek maliyet, karmaşık PDF ve görüntüleri işlemek için idealdir.",
+    "message": "Uzun belgelerin ve karmaşık konuların derinlemesine analizi için en güçlü AI modeli. Ayrıntılı raporlar ve kapsamlı yanıtlar için ideal. Görsel ve PDF desteği.",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -862,5 +860,164 @@
   "localModelConfigHint": {
     "message": "İsteğe bağlı. Ollama, LM Studio veya herhangi bir OpenAI uyumlu yerel sunucuyu destekler. (Ollama varsayılan: http://localhost:11434/v1 · LM Studio varsayılan: http://127.0.0.1:1234/v1)",
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
+  },
+  "localModelTabTextOnlyNotice": {
+    "message": "💬 Yerel model sohbeti yalnızca düz metni destekler — resim ve PDF analizi mevcut değil. Çok modlu özellikler için Gemini Flash veya Pro sekmesine geçin.",
+    "description": "Info notice shown at the top of the Local model chat tab."
+  },
+  "incognitoLocalModeBanner": {
+    "message": "ℹ️ Yerel AI modu etkin. Çeviri görevleri artık yerel modelinizi kullanıyor. Bu sekmedeki Gemini sohbeti hâlâ kullanılabilir.",
+    "description": "Banner shown in Flash/Pro tabs when aiMode is local-only."
+  },
+  "optionsModelGemini3FlashName": {
+    "message": "Gemini 3 Flash",
+    "description": "Model name for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsModelGemini3FlashDesc": {
+    "message": "Google'ın yeni nesil hız modeli. Henüz resmî olarak duyurulmadı — bu seçenek lansmanda açılacak.",
+    "description": "Description for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsComingSoonBadge": {
+    "message": "Yakında",
+    "description": "Badge text for coming-soon model cards."
+  },
+  "errorLocalModelOffline": {
+    "message": "Yerel AI hizmetine bağlanılamıyor. Ollama veya LM Studio'nun çalıştığından emin olun ve Ayarlar'daki uç nokta URL'sini doğrulayın.",
+    "description": "Actionable error shown when local model connection fails during translation."
+  },
+  "popupLocalModeWebpageNote": {
+    "message": "⚠️ Yerel AI modunda web sayfası çevirisi yalnızca DOM içeriği çıkarılabildiğinde çalışır. Bu modda ekran görüntüsü OCR yedek desteği kullanılamaz.",
+    "description": "Note shown below the translate-page button in popup when aiMode is local-only."
+  },
+  "popupOpenVoiceSummary": {
+    "message": "Yapay Zeka Sesli Okuma [Beta]"
+  },
+  "vsSummaryTitle": {
+    "message": "AI朗讀podcast"
+  },
+  "vsSummaryDesc": {
+    "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
+  },
+  "vsTabWebpage": {
+    "message": "Webpage"
+  },
+  "vsTabAudio": {
+    "message": "Audio File"
+  },
+  "vsTabText": {
+    "message": "Paste Text"
+  },
+  "vsTabMic": {
+    "message": "Microphone"
+  },
+  "vsYoutubeUrlLabel": {
+    "message": "YouTube URL"
+  },
+  "vsYoutubeUrlPlaceholder": {
+    "message": "https://www.youtube.com/watch?v=..."
+  },
+  "vsYoutubeHint": {
+    "message": "Works with videos that have captions/subtitles enabled."
+  },
+  "vsYoutubeNoCaption": {
+    "message": "No captions found for this video. Try a different video or download its audio and use the Audio File tab."
+  },
+  "vsWebpageLabel": {
+    "message": "Page URL"
+  },
+  "vsWebpagePlaceholder": {
+    "message": "https://example.com/article"
+  },
+  "vsUseCurrentTab": {
+    "message": "Use Current Tab"
+  },
+  "vsAudioUploadPrompt": {
+    "message": "Click or drag an audio file here"
+  },
+  "vsAudioFormats": {
+    "message": "MP3 · WAV · M4A · WebM · OGG"
+  },
+  "vsPdfUploadPrompt": {
+    "message": "Click or drag a PDF or TXT file here"
+  },
+  "vsPdfFormats": {
+    "message": "PDF · TXT"
+  },
+  "vsTextPlaceholder": {
+    "message": "Paste article, transcript, or any text here..."
+  },
+  "vsRecordHint": {
+    "message": "Record up to 15 minutes. Press Generate Voice after stopping."
+  },
+  "vsSummaryLanguageLabel": {
+    "message": "Output Language"
+  },
+  "vsProcessButton": {
+    "message": "Generate Voice"
+  },
+  "vsStatusFetching": {
+    "message": "Fetching content..."
+  },
+  "vsStatusTranscribing": {
+    "message": "Transcribing audio..."
+  },
+  "vsStatusSummarizing": {
+    "message": "Generating summary..."
+  },
+  "vsTtsPlayBtn": {
+    "message": "Play TTS"
+  },
+  "vsTtsStopBtn": {
+    "message": "Stop TTS"
+  },
+  "vsDownloadMd": {
+    "message": "Save Summary (.md)"
+  },
+  "errorYoutubeExtract": {
+    "message": "Could not extract captions from this YouTube video. The video may require sign-in, have no captions, or use an unsupported format."
+  },
+  "errorWebpageExtract": {
+    "message": "Could not extract readable text from this page. Try pasting the content in the Paste Text tab instead."
+  },
+  "vsDownloadAudio": {
+    "message": "Download Audio (.wav)",
+    "description": "Button to generate and download TTS audio via Gemini."
+  },
+  "vsStatusGeneratingAudio": {
+    "message": "Generating audio via Gemini TTS...",
+    "description": "Status while calling Gemini TTS API."
+  },
+  "optionsModelLiteName": {
+    "message": "Gemini 3.1 Flash Lite (Default)",
+    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+  },
+  "optionsModelLiteDesc": {
+    "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
+    "description": "Model card description for gemini-3.1-flash-lite-preview."
+  },
+  "incognitoLiteModelHeader": {
+    "message": "Gemini 3.1 Flash Lite",
+    "description": "Header for Lite model tab in incognito page."
+  },
+  "incognitoLiteModelDesc": {
+    "message": "En hızlı günlük AI asistanı — hızlı sorular, yazı yardımı ve çeviri için ideal. Görsel ve PDF desteği.",
+    "description": "Description for Lite model tab."
+  },
+  "incognitoThinkingLabel": {
+    "message": "Thinking",
+    "description": "Label for the thinking mode checkbox in incognito chat."
+  },
+  "vsTtsPromptLabel": {
+    "message": "Reading Instruction (optional)"
+  },
+  "vsTtsPromptPlaceholder": {
+    "message": "e.g. Summarize in key bullet points / Read the content sentence by sentence"
+  },
+  "popupBetaLabel": {
+    "message": "Beta Özellikler"
+  },
+  "voiceLimitHint": {
+    "message": "Maksimum kayıt süresi: 15 dakika.",
+    "description": "Hint text showing maximum recording duration under the record button."
   }
 }

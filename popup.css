@@ -1,40 +1,123 @@
-/* popup.css - v25.0 Theming */
+/* popup.css - v28.0.1 */
+
 :root {
-    /* Override theme for popup */
-    --bg-main: #FFFFFF;
+    /* Popup: white surface on warm beige body */
+    --bg-main:    #FFFFFF;
+    --bg-content: #FFFFFF;
+    --bg-input:   #F9F7F4;
 }
 
 body {
-    width: 280px;
+    width: 300px;
     margin: 0;
     padding: 10px;
     background-color: var(--bg-main);
 }
+
 button {
     display: block;
     width: 100%;
-    padding: 12px;
+    padding: 11px 14px;
     margin-bottom: 8px;
-    /* --- 修正：恢復並加深邊框顏色以增加區隔 --- */
-    border: 1px solid #57534E; /* --text-secondary from theme */
+    border: 1px solid #57534E;
     border-radius: 6px;
     background-color: var(--bg-content);
     color: var(--text-primary);
-    font-size: 14px;
+    font-size: 13.5px;
+    line-height: 1.4;
+    word-break: break-word;
     cursor: pointer;
     text-align: left;
     transition: background-color 0.2s;
     font-family: var(--font-sans);
 }
+
 button:hover {
-    background-color: #f5f5f4; /* Light Stone */
+    background-color: #f5f5f4;
 }
+
+button:last-child {
+    margin-bottom: 0;
+}
+
 hr {
     border: none;
     border-top: 1px solid var(--border-color);
     margin: 8px 0;
 }
-/* pro-btn and other specific buttons are styled in theme.css */
-button:last-child {
-    margin-bottom: 0;
+
+/* Beta section label */
+.section-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    margin: 2px 0 4px;
+    padding: 0 2px;
+}
+
+/* Local-only mode warning */
+.local-note {
+    font-size: 11px;
+    color: #92400e;
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    border-radius: 0 4px 4px 0;
+    padding: 6px 10px;
+    margin: -4px 0 6px 0;
+    line-height: 1.5;
+}
+.local-note.hidden { display: none; }
+
+/* pro-btn: uniform style in popup — same as all other buttons */
+.pro-btn {
+    background-color: var(--bg-content) !important;
+    border-color: #57534E !important;
+    color: var(--text-primary) !important;
+    font-weight: inherit !important;
+}
+.pro-btn:hover {
+    background-color: #f5f5f4 !important;
+}
+
+/* ── RTL (Arabic) ── */
+body[dir="rtl"] button {
+    text-align: right;
+}
+body[dir="rtl"] .local-note {
+    border-left: none;
+    border-right: 3px solid #f59e0b;
+    border-radius: 4px 0 0 4px;
+}
+
+/* ── Dark mode ── */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-main: #1c1917;
+        --bg-content: #292524;
+        --text-primary: #e7e5e4;
+        --text-secondary: #a8a29e;
+        --border-color: #44403c;
+    }
+    button {
+        background-color: var(--bg-content);
+        color: var(--text-primary);
+        border-color: #57534e;
+    }
+    button:hover {
+        background-color: #3c3735;
+    }
+    /* pro-btn stays uniform in dark mode too */
+    .pro-btn {
+        background-color: var(--bg-content) !important;
+        border-color: #57534e !important;
+        color: var(--text-primary) !important;
+    }
+    .pro-btn:hover {
+        background-color: #3c3735 !important;
+    }
+    .local-note {
+        background: #2d1f00;
+        color: #fcd34d;
+    }
 }

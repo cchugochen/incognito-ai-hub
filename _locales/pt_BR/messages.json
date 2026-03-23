@@ -4,80 +4,80 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Kostenlos · kein Backend · Daten im Browser. Sprache-zu-Text, KI-Chat, Webübersetzung, Vorlesen. Gemini-API-Schlüssel, Privatsphäre.",
+    "message": "Grátis, sem backend · dados no navegador. Voz para texto, chat IA, tradução web, leitura IA. Chave API Gemini — privacidade total.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
-    "message": "Aktuelle Seite übersetzen (wenn Google Translate nicht verfügbar ist)",
+    "message": "Traduzir a página atual (se o Google Tradutor falhar)",
     "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
-    "message": "Intelligente Übersetzungswerkbank",
-    "description": "Button text in popup.html"
+    "message": "Bancada de Tradução Inteligente",
+    "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
   },
   "popupOpenVoiceNotes": {
-    "message": "Inkognito-Sprachnotizen"
+    "message": "Notas de Voz Anônimas"
   },
   "popupOpenIncognito": {
-    "message": "Inkognito Gemini AI-Chat"
+    "message": "Chat Gemini AI Anônimo"
   },
   "popupOpenTutorial": {
-    "message": "Tutorial zum Gemini API-Schlüssel",
+    "message": "Tutorial simples para a chave de API do Gemini",
     "description": "Button text in popup.html"
   },
   "popupShowLicense": {
-    "message": "MIT-Lizenzinformationen",
+    "message": "Informações da Licença MIT",
     "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "Incognito PrivoAI Einstellungen",
+    "message": "Configurações do Incognito PrivoAI",
     "description": "Title for the options page."
   },
   "optionsHeader": {
-    "message": "⚙️ Einstellungen",
+    "message": "⚙️ Configurações",
     "description": "Header text on the options page."
   },
   "optionsDisplayLangSectionHeader": {
-    "message": "Anzeigesprache",
+    "message": "Idioma de exibição",
     "description": "Section header on options page."
   },
   "optionsDisplayLangLabel": {
-    "message": "Sprache der Erweiterungsoberfläche",
+    "message": "Idioma da interface da extensão",
     "description": "Label for language selection on options page."
   },
   "optionsDisplayLangDefault": {
-    "message": "Standard (Browser folgen)",
+    "message": "Padrão (seguir o navegador)",
     "description": "Default option for language selection."
   },
   "optionsPrefLangSectionHeader": {
-    "message": "Bevorzugte Sprachen",
+    "message": "Idiomas preferidos",
     "description": "Section header for preferred languages."
   },
   "optionsPrefLangDesc": {
-    "message": "Legen Sie bis zu 3 bevorzugte Zielsprachen fest. Sie erscheinen oben in den Übersetzungsmenüs. Verwenden Sie ↑↓ zum Festlegen der Anzeigepriorität."
+    "message": "Defina até 3 idiomas de destino preferidos. Aparecerão no topo dos menus de tradução. Use os botões ↑↓ para definir a prioridade."
   },
   "optionsPrefLangLabelA": {
-    "message": "Bevorzugte Sprache A",
+    "message": "Idioma preferido A",
     "description": "Label for preferred language A."
   },
   "optionsPrefLangLabelB": {
-    "message": "Bevorzugte Sprache B",
+    "message": "Idioma preferido B",
     "description": "Label for preferred language B."
   },
   "optionsApiKeySectionHeader": {
-    "message": "API-Schlüssel & Modell",
+    "message": "Chave de API e Modelo",
     "description": "Section header for API key settings."
   },
   "optionsApiKeyLabel": {
-    "message": "Ihr Google Gemini API-Schlüssel",
+    "message": "Sua chave de API do Google Gemini",
     "description": "Label for API key input field."
   },
   "optionsApiKeyPlaceholder": {
-    "message": "API-Schlüssel hier einfügen",
+    "message": "Cole sua chave de API aqui",
     "description": "Placeholder text for API key input."
   },
   "optionsModelSelectLabel": {
-    "message": "Standardmodell für Webseiten-/Bildübersetzung",
+    "message": "Modelo padrão para tradução de página da web/imagem",
     "description": "Label for the model selection radio buttons."
   },
   "optionsModelFlashName": {
@@ -85,7 +85,7 @@
     "description": "Name of the Flash model."
   },
   "optionsModelFlashDesc": {
-    "message": "Am schnellsten und kosteneffizientesten, geeignet für schnelle Übersetzungen und hohe Volumina.",
+    "message": "O mais rápido e econômico, adequado para tarefas de tradução e resumo rápidas e de alto volume.",
     "description": "Description of the Flash model."
   },
   "optionsModelProName": {
@@ -93,115 +93,95 @@
     "description": "Name of the Pro model."
   },
   "optionsModelProDesc": {
-    "message": "Am leistungsstärksten, mit höherer Genauigkeit für komplexe Kontexte und Bilder, aber zu höheren Kosten.",
+    "message": "O mais poderoso, com maior precisão para entender contextos e imagens complexas, mas com um custo mais alto.",
     "description": "Description of the Pro model."
   },
   "optionsPresetSectionHeader": {
-    "message": "Inkognito Chat - Prompt-Vorlagen",
+    "message": "Bate-papo anônimo - Predefinições de comando",
     "description": "Section header for preset prompts."
   },
   "optionsPresetDesc": {
-    "message": "Richten Sie bis zu 7 Systemanweisungs-Presets (A–G) für die Inkognito-Chat-Seite ein. Jedes Preset ist ein Satz von Startanweisungen, die beim Klicken auf die entsprechende Schaltfläche geladen werden.",
+    "message": "Configure até 7 predefinições de System Prompt (A–G) para a página de Chat Incógnito. Cada predefinição é um conjunto de instruções iniciais carregadas na conversa ao clicar no botão correspondente.",
     "description": "Description for preset prompts."
   },
   "optionsPresetLabelA": {
-    "message": "Vorlage A",
+    "message": "Predefinição A",
     "description": "Label for preset A."
   },
   "optionsPresetLabelB": {
-    "message": "Vorlage B",
+    "message": "Predefinição B",
     "description": "Label for preset B."
   },
   "optionsPresetLabelC": {
-    "message": "Vorlage C",
+    "message": "Predefinição C",
     "description": "Label for preset C."
   },
   "optionsPresetLabelD": {
-    "message": "Vorlage D",
+    "message": "Predefinição D",
     "description": "Label for preset D."
   },
   "optionsPresetLabelE": {
-    "message": "Vorlage E",
+    "message": "Predefinição E",
     "description": "Label for preset E."
   },
-  "optionsPresetLabelF": {
-    "message": "Vorlage F",
-    "description": "Label for preset F."
-  },
-  "optionsPresetLabelG": {
-    "message": "Vorlage G",
-    "description": "Label for preset G."
-  },
   "optionsSaveButton": {
-    "message": "Einstellungen speichern",
+    "message": "Salvar configurações",
     "description": "Save button text."
   },
-  "optionsResetButton": {
-    "message": "Auf Standard zurücksetzen",
-    "description": "Reset button text on options page."
-  },
-  "optionsStatusReset": {
-    "message": "Einstellungen zurückgesetzt.",
-    "description": "Status message when settings are reset."
-  },
   "optionsStatusSaved": {
-    "message": "Einstellungen gespeichert!",
+    "message": "Configurações salvas!",
     "description": "Status message when settings are saved."
   },
   "alertNoApiKey": {
-    "message": "Fehler: Gemini API-Schlüssel nicht gefunden. Bitte geben Sie zuerst Ihren Schlüssel auf der Einstellungsseite ein.",
+    "message": "Erro: Chave de API do Gemini não encontrada. Por favor, insira sua chave na página de configurações primeiro.",
     "description": "Alert message when API key is missing."
   },
   "alertNoApiKeyOptions": {
-    "message": "Bitte geben Sie zuerst Ihren Google Gemini API-Schlüssel auf der Einstellungsseite ein.",
+    "message": "Por favor, insira sua chave de API do Google Gemini na página de configurações primeiro.",
     "description": "Alert message shown when API key is missing, directing user to options page."
   },
   "alertInitFailed": {
-    "message": "Initialisierung fehlgeschlagen. Bitte überprüfen Sie die Konsole auf Fehlermeldungen.",
+    "message": "A inicialização falhou. Verifique o console para mensagens de erro.",
     "description": "Alert on initialization failure."
   },
   "errorNetwork": {
-    "message": "Netzwerkfehler oder Verbindung zur Gemini API nicht möglich. Bitte überprüfen Sie Ihre Internetverbindung und Firewall-Einstellungen.",
+    "message": "Erro de rede ou impossível conectar à API do Gemini. Verifique sua conexão com a internet e as configurações de firewall.",
     "description": "Error message for network issues."
   },
   "errorApiInvalidResponse": {
-    "message": "Ungültiges API-Antwortformat. Das Modell hat möglicherweise keinen gültigen Inhalt zurückgegeben.",
+    "message": "Formato de resposta da API inválido. O modelo pode não ter retornado conteúdo válido.",
     "description": "Error when API response is malformed."
   },
   "errorUnknown": {
-    "message": "Ein unbekannter Fehler ist aufgetreten.",
+    "message": "Ocorreu um erro desconhecido.",
     "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "Lesemodus - Incognito PrivoAI",
+    "message": "Modo de Leitura - Incognito PrivoAI",
     "description": "Title for the reader page."
   },
   "readerLoading": {
-    "message": "Die KI verarbeitet gerade, bitte warten...",
+    "message": "A IA está processando, por favor, aguarde...",
     "description": "Loading message in reader."
   },
   "readerLabelTargetLang": {
-    "message": "Übersetzen nach",
+    "message": "Traduzir para",
     "description": "Label for target language selector in reader."
   },
   "readerLabelFontSize": {
-    "message": "Schriftgröße",
+    "message": "Tamanho da fonte",
     "description": "Label for font size slider."
   },
   "readerLabelLineHeight": {
-    "message": "Zeilenabstand",
+    "message": "Altura da linha",
     "description": "Label for line height slider."
   },
-  "readerLabelBgColor": {
-    "message": "Hintergrund",
-    "description": "Label for background color buttons."
-  },
   "readerSaveButton": {
-    "message": "Als .txt speichern",
+    "message": "Salvar como .txt",
     "description": "Save button text in reader."
   },
   "readerSaveOriginal": {
-    "message": "[Originalabsatz $index$]",
+    "message": "[Parágrafo original $index$]",
     "description": "Label for original text paragraph when saving.",
     "placeholders": {
       "index": {
@@ -210,7 +190,7 @@
     }
   },
   "readerSaveTranslated": {
-    "message": "[Übersetzter Absatz $index$]",
+    "message": "[Parágrafo traduzido $index$]",
     "description": "Label for translated text paragraph when saving.",
     "placeholders": {
       "index": {
@@ -219,123 +199,115 @@
     }
   },
   "readerVoiceToolHeader": {
-    "message": "Text-zu-Sprache",
+    "message": "Leitura em voz alta",
     "description": "Header for the text-to-speech tool in reader."
   },
   "readerVoiceToolLabel": {
-    "message": "Sprachausgabe-Sprache",
+    "message": "Idioma da fala",
     "description": "Label for TTS language selection."
   },
   "readerVoiceToolButton": {
-    "message": "Übersetzen",
-    "description": "Button to trigger translation."
+    "message": "Traduzir",
+    "description": "Button to trigger TTS."
   },
   "workbenchTitle": {
-    "message": "Intelligente Übersetzungswerkbank",
+    "message": "Bancada de Tradução Inteligente",
     "description": "Title for the workbench page."
   },
   "workbenchTabText": {
-    "message": "Text einfügen",
+    "message": "Colar texto",
     "description": "Tab label for pasting text."
   },
   "workbenchTabImage": {
-    "message": "Bild hochladen",
+    "message": "Carregar imagem",
     "description": "Tab label for uploading image."
   },
   "workbenchTextHeader": {
-    "message": "Textübersetzung",
+    "message": "Tradução de texto",
     "description": "Header for text translation section."
   },
   "workbenchTextDesc": {
-    "message": "Fügen Sie kopierten Text unten zum Übersetzen ein.",
+    "message": "Cole o texto copiado abaixo para tradução.",
     "description": "Description for text translation."
   },
   "workbenchImageHeader": {
-    "message": "Bildübersetzung (OCR)",
+    "message": "Tradução de imagem (OCR)",
     "description": "Header for image translation section."
   },
   "workbenchImageDesc": {
-    "message": "Laden Sie einen Screenshot hoch oder fügen Sie ihn ein. Die KI erkennt und übersetzt automatisch den Text im Bild.",
+    "message": "Carregue ou cole uma captura de tela. A IA reconhecerá e traduzirá automaticamente o texto na imagem.",
     "description": "Description for image translation."
   },
   "workbenchLabelSourceLang": {
-    "message": "Quellsprache",
+    "message": "Idioma de origem",
     "description": "Label for source language selector."
   },
   "workbenchLabelTargetLang": {
-    "message": "Zielsprache",
+    "message": "Idioma de destino",
     "description": "Label for target language selector."
   },
-  "workbenchLabelImageSourceLang": {
-    "message": "Bildquellsprache",
-    "description": "Label for image source language selector."
-  },
   "workbenchProcessTextButton": {
-    "message": "Text übersetzen",
+    "message": "Traduzir texto",
     "description": "Button to process text."
   },
   "workbenchProcessImageButton": {
-    "message": "Bild erkennen und übersetzen",
+    "message": "Reconhecer e traduzir imagem",
     "description": "Button to process image."
   },
   "workbenchUploadBox": {
-    "message": "Hier klicken, um ein Bild auszuwählen, oder Screenshot direkt einfügen (Cmd+V / Ctrl+V)",
+    "message": "Clique aqui para selecionar uma imagem ou cole uma captura de tela diretamente (Cmd+V / Ctrl+V)",
     "description": "Placeholder for image upload box."
   },
   "workbenchUploadBoxDesc": {
-    "message": "Unterstützt JPG, PNG, BMP",
+    "message": "Suporta os formatos JPG, PNG, BMP",
     "description": "Subtitle for image upload box."
   },
   "workbenchImageResultTitle": {
-    "message": "Bildübersetzungsergebnis",
+    "message": "Resultado da tradução da imagem",
     "description": "Title for the reader tab showing image OCR result."
   },
-  "workbenchTextPlaceholder": {
-    "message": "Text hier einfügen...",
-    "description": "Placeholder for the text input area in workbench."
-  },
   "voiceTitle": {
-    "message": "Inkognito - Sprachnotizen",
+    "message": "Anônimo - Notas de Voz",
     "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "Nimm ein Sprachmemo auf oder lade eine Audiodatei hoch. Die KI wandelt Sprache in Text um und kennzeichnet verschiedene Sprecher. Tippe auf einen Absatz in den Ergebnissen, um ihn sofort zu übersetzen.",
+    "message": "Grave uma nota de voz ou faça upload de um arquivo de áudio. A IA converte a fala em texto e identifica diferentes falantes. Toque em qualquer parágrafo do resultado para traduzi-lo instantaneamente.",
     "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
-    "message": "Audioquelle",
+    "message": "Fonte de áudio",
     "description": "Label for audio source dropdown."
   },
   "voiceLabelSpokenLang": {
-    "message": "Primäre Gesprächssprache",
+    "message": "Idioma falado principal",
     "description": "Label for spoken language dropdown."
   },
   "voiceButtonStart": {
-    "message": "Aufnahme starten",
+    "message": "Iniciar Gravação",
     "description": "Start recording button."
   },
   "voiceButtonStop": {
-    "message": "Aufnahme stoppen",
+    "message": "Parar Gravação",
     "description": "Stop recording button."
   },
   "voiceStatusRecording": {
-    "message": "Aufnahme läuft...",
+    "message": "Gravando...",
     "description": "Status message."
   },
   "voiceStatusTranscribing": {
-    "message": "Transkription läuft, bitte warten...",
+    "message": "Transcrevendo, por favor, aguarde...",
     "description": "Status message."
   },
   "voiceStatusSuccess": {
-    "message": "Transkription abgeschlossen! Ergebnisseite wird geöffnet...",
+    "message": "Transcrição concluída! Abrindo a página de resultados...",
     "description": "Status message."
   },
   "errorNoMic": {
-    "message": "Fehler: Kein verfügbares Mikrofon gefunden.",
+    "message": "Erro: Nenhum microfone disponível encontrado.",
     "description": "Error message."
   },
   "errorMicPermission": {
-    "message": "Fehler: Mikrofonberechtigung konnte nicht erteilt werden. Bitte prüfen Sie die Browsereinstellungen. Details: $error$",
+    "message": "Erro: Não foi possível obter permissão do microfone. Verifique as configurações do navegador. Detalhes: $error$",
     "description": "Error message.",
     "placeholders": {
       "error": {
@@ -344,7 +316,7 @@
     }
   },
   "voiceStatusFailed": {
-    "message": "Transkription fehlgeschlagen: $error$",
+    "message": "A transcrição falhou: $error$",
     "description": "Status message.",
     "placeholders": {
       "error": {
@@ -353,45 +325,45 @@
     }
   },
   "langAutoDetect": {
-    "message": "Automatisch erkennen",
+    "message": "Detecção automática",
     "description": "Language option for auto-detection."
   },
   "langSystemDefault": {
-    "message": "Systemstandard ($langName$)",
-    "description": "Language option for system default.",
+    "message": "Padrão do sistema ($langName$)",
+    "description": "Language option for system default, with placeholder for the actual language name.",
     "placeholders": {
       "langName": {
         "content": "$1",
-        "example": "Deutsch"
+        "example": "English"
       }
     }
   },
   "langPrefA": {
-    "message": "Bevorzugt-A ($langName$)",
+    "message": "Preferido-A ($langName$)",
     "description": "Language option for preferred language A.",
     "placeholders": {
       "langName": {
         "content": "$1",
-        "example": "Deutsch"
+        "example": "Français"
       }
     }
   },
   "langPrefB": {
-    "message": "Bevorzugt-B ($langName$)",
+    "message": "Preferido-B ($langName$)",
     "description": "Language option for preferred language B.",
     "placeholders": {
       "langName": {
         "content": "$1",
-        "example": "Deutsch"
+        "example": "Español"
       }
     }
   },
   "voiceLangZhEn": {
-    "message": "Chinesisch (gemischt mit Englisch)",
+    "message": "Chinês (misto com inglês)",
     "description": "Special language option for voice input."
   },
   "voiceMicLabel": {
-    "message": "Mikrofon $index$",
+    "message": "Microfone $index$",
     "description": "Default label for a microphone.",
     "placeholders": {
       "index": {
@@ -401,12 +373,12 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito PrivoAI: Erstellt von Hugo Chen, einem taiwanesischen Arzt, an einem Taifuntag im Sommer 2025. Wenn Sie es nützlich finden, hinterlassen Sie bitte eine positive Bewertung im Chrome Web Store. Gerne können Sie mir auch über den Buy Me a Coffee Link etwas spendieren.",
+    "message": "Incognito PrivoAI: Criado por Hugo Chen, um médico taiwanês, durante um dia de tufão no verão de 2025. A primeira versão foi nomeada 'Hong-Thai' em taiwanês. Se você achar útil, por favor, deixe uma avaliação positiva na Chrome Web Store. Se estiver disposto, sinta-se à vontade para me pagar uma bebida através do link Buy Me a Coffee à direita.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {
-    "message": "Sie sind ein hilfreicher Assistent. Der Benutzer hat HTML-Inhalt einer Webseite bereitgestellt. Analysieren Sie den Hauptinhalt, ignorieren Sie Anzeigen und Navigationsleisten, und geben Sie eine prägnante Zusammenfassung auf $lang$ aus. HTML-Inhalt: ```html\n$pageContent$\n```",
-    "description": "Prompt for webpage processing.",
+    "message": "You are a helpful assistant. The user has provided the HTML content and a screenshot of a webpage. Please analyze both to understand the main content of the page, ignoring ads, navigation bars, and footers. Then, provide a concise summary of the key points in a well-structured, easy-to-read format. Finally, translate the summary into $lang$. Here is the HTML content: ```html\n$pageContent$\n```",
+    "description": "Prompt for webpage processing in background.js.",
     "placeholders": {
       "pageContent": {
         "content": "$1"
@@ -417,8 +389,8 @@
     }
   },
   "promptTranslateTo": {
-    "message": "Bitte übersetzen Sie den Text im Bild nach $lang$.",
-    "description": "Prompt for image translation.",
+    "message": "Please translate the text in the image into $lang$.",
+    "description": "Prompt for image translation, asking to translate to a specific language.",
     "placeholders": {
       "lang": {
         "content": "$1"
@@ -426,11 +398,11 @@
     }
   },
   "promptSourceLangAuto": {
-    "message": "Identifizieren Sie zunächst die Sprache des Textes im Bild.",
+    "message": "First, identify the language of the text in the image.",
     "description": "Part of the prompt for auto-detecting source language."
   },
   "promptSourceLangIs": {
-    "message": "Die Sprache des Textes im Bild ist $lang$.",
+    "message": "The language of the text in the image is $lang$.",
     "description": "Part of the prompt specifying the source language.",
     "placeholders": {
       "lang": {
@@ -439,79 +411,67 @@
     }
   },
   "incognitoTitle": {
-    "message": "Inkognito Gemini Chat",
+    "message": "Bate-papo anônimo do Gemini",
     "description": "Title for the incognito chat page."
   },
   "incognitoDefaultModelHeader": {
-    "message": "Gemini Standardmodell",
+    "message": "Modelo Padrão do Gemini",
     "description": "Header for the default model tab."
   },
   "incognitoDefaultModelDesc": {
-    "message": "Das in dieser Registerkarte verwendete Modell hängt von Ihrer Auswahl in '⚙️ Einstellungen' ab (Standard: 2.5 Flash). Das kleinste Modell eignet sich für einfache Übersetzungen und die Verarbeitung einfacher PDFs und Bilder.",
+    "message": "O modelo usado nesta guia depende da sua seleção em '⚙️ Configurações' (o padrão é 2.5 Flash). O menor modelo é adequado para tradução simples, organização de texto e manipulação de PDFs e imagens simples.",
     "description": "Description for the default model tab."
   },
   "incognitoSendButton": {
-    "message": "Senden",
+    "message": "Enviar",
     "description": "Send button text."
   },
   "incognitoUploadTitle": {
-    "message": "Bilder hochladen (max. 4)",
+    "message": "Carregar imagens (máx. 4)",
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "PDF-Dokument hochladen (1)",
+    "message": "Carregar documento PDF (1)",
     "description": "Tooltip for the PDF upload button."
   },
   "incognitoPresetTitleA": {
-    "message": "Vorlage A verwenden",
+    "message": "Usar Predefinição A",
     "description": "Tooltip for preset button A."
   },
   "incognitoPresetTitleB": {
-    "message": "Vorlage B verwenden",
+    "message": "Usar Predefinição B",
     "description": "Tooltip for preset button B."
   },
   "incognitoPresetTitleC": {
-    "message": "Vorlage C verwenden",
+    "message": "Usar Predefinição C",
     "description": "Tooltip for preset button C."
   },
   "incognitoPresetTitleD": {
-    "message": "Vorlage D verwenden",
+    "message": "Usar Predefinição D",
     "description": "Tooltip for preset button D."
   },
   "incognitoPresetTitleE": {
-    "message": "Vorlage E verwenden",
+    "message": "Usar Predefinição E",
     "description": "Tooltip for preset button E."
   },
-  "incognitoPresetTitleF": {
-    "message": "Vorlage F verwenden",
-    "description": "Tooltip for preset button F."
-  },
-  "incognitoPresetTitleG": {
-    "message": "Vorlage G verwenden",
-    "description": "Tooltip for preset button G."
-  },
-  "incognitoPresetLabel": {
-    "message": "Vorlagen:",
-    "description": "Label before the preset buttons."
-  },
   "stateThinking": {
-    "message": "Denke nach...",
+    "message": "Pensando...",
     "description": "Thinking indicator text."
   },
   "incognitoApiError": {
-    "message": "API-Anfrage fehlgeschlagen",
+    "message": "Falha na solicitação da API",
     "description": "Error message prefix for API failures."
   },
   "incognitoInitialMessage": {
-    "message": "Hallo! Wie kann ich Ihnen heute helfen?",
+    "message": "Olá! Como posso ajudá-lo hoje?",
     "description": "Initial greeting message from the assistant."
   },
   "incognitoClearConfirm": {
-    "message": "Sind Sie sicher, dass Sie den Gesprächsverlauf löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "message": "Tem certeza de que deseja limpar o histórico da conversa? Esta ação não pode ser desfeita.",
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "Ihre Nachricht hier eingeben (Sie können Bilder oder ein PDF hochladen)...",
+    "message": "Digite sua mensagem aqui (você pode carregar imagens ou um PDF)...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -519,7 +479,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Ausgewogenes Verhältnis von Geschwindigkeit und Qualität — für komplexe Fragen, Dokumentenanalyse und ausführliche Übersetzungen. Unterstützt Bilder und PDFs.",
+    "message": "Equilíbrio entre velocidade e qualidade — ideal para perguntas complexas, análise de documentos e tradução detalhada. Suporta imagens e PDFs.",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -527,15 +487,15 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Leistungsfähigstes KI-Modell für die eingehende Analyse langer Dokumente und komplexer Themen. Ideal für ausführliche Berichte und detaillierte Antworten. Unterstützt Bilder und PDFs.",
+    "message": "Modelo de IA mais poderoso para análise aprofundada de documentos longos e temas complexos. Ideal para relatórios detalhados e respostas abrangentes. Suporta imagens e PDFs.",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
-    "message": "Wird hochgeladen und verarbeitet...",
+    "message": "Carregando e processando...",
     "description": "Status for file upload."
   },
   "statusFailed": {
-    "message": "Verarbeitung fehlgeschlagen: $error$",
+    "message": "O processamento falhou: $error$",
     "description": "Generic failure status.",
     "placeholders": {
       "error": {
@@ -544,31 +504,31 @@
     }
   },
   "statusUploadSuccess": {
-    "message": "Erfolg! Ergebnisse werden geöffnet...",
+    "message": "Sucesso! Abrindo resultados...",
     "description": "Success status for file upload."
   },
   "voiceOrDivider": {
-    "message": "ODER",
+    "message": "OU",
     "description": "The 'OR' divider between record and upload buttons."
   },
   "voiceButtonUpload": {
-    "message": "Audiodatei hochladen",
-    "description": "The button to upload an audio file."
+    "message": "Carregar arquivo de áudio",
+    "description": "The new button to upload an audio file."
   },
   "voiceButtonSubmit": {
-    "message": "Datei transkribieren",
+    "message": "Transcrever arquivo",
     "description": "The text on the record button when a file is ready to be submitted."
   },
   "errorInvalidFileType": {
-    "message": "Fehler: Ungültiger Dateityp. Bitte wählen Sie eine Audiodatei aus.",
+    "message": "Erro: Tipo de arquivo inválido. Por favor, selecione um arquivo de áudio.",
     "description": "Error when a non-audio file is selected."
   },
   "errorFileRead": {
-    "message": "Fehler: Beim Lesen der Datei ist ein Problem aufgetreten.",
+    "message": "Erro: Houve um problema ao ler o arquivo.",
     "description": "Error when the FileReader API fails."
   },
   "promptVoiceTranscribeDiarize": {
-    "message": "Bitte transkribieren Sie das folgende Audio. Die hauptsächlich gesprochene Sprache ist $lang$. Achten Sie auf Pausen und Stimmwechsel, um verschiedene Sprecher zu identifizieren und zu kennzeichnen. Geben Sie eine klare, lesbare Transkription aus.",
+    "message": "Please transcribe the following audio. The primary language spoken is $lang$. Pay close attention to pauses and changes in tone or speech patterns to identify and label different speakers (e.g., Speaker 1, Speaker 2). Provide the output as a clear, readable transcript.",
     "description": "Prompt for voice transcription with speaker diarization.",
     "placeholders": {
       "lang": {
@@ -577,15 +537,43 @@
     }
   },
   "voiceResultTitle": {
-    "message": "Sprach-Transkriptionsergebnis",
+    "message": "Resultado da transcrição de voz",
     "description": "Title for the reader tab showing voice transcription result."
   },
+  "optionsPresetLabelF": {
+    "message": "Preset F",
+    "description": "Label for preset F."
+  },
+  "optionsPresetLabelG": {
+    "message": "Preset G",
+    "description": "Label for preset G."
+  },
+  "optionsResetButton": {
+    "message": "Reset to Default",
+    "description": "Reset button text on options page."
+  },
+  "optionsStatusReset": {
+    "message": "Settings reset to default.",
+    "description": "Status message when settings are reset."
+  },
+  "incognitoPresetTitleF": {
+    "message": "Use Preset F",
+    "description": "Tooltip for preset button F."
+  },
+  "incognitoPresetTitleG": {
+    "message": "Use Preset G",
+    "description": "Tooltip for preset button G."
+  },
+  "incognitoPresetLabel": {
+    "message": "Prompts:",
+    "description": "Label before the preset buttons."
+  },
   "errorNoApiKey": {
-    "message": "Fehler: Gemini API-Schlüssel nicht gefunden. Bitte geben Sie zuerst Ihren Schlüssel auf der Einstellungsseite ein.",
+    "message": "Error: Gemini API Key not found. Please enter your key in the Settings page first.",
     "description": "Error thrown when API key is missing from storage."
   },
   "errorApiRequestFailed": {
-    "message": "API-Anfrage fehlgeschlagen: $details$",
+    "message": "API request failed: $details$",
     "description": "Error when API returns a non-OK HTTP status.",
     "placeholders": {
       "details": {
@@ -594,7 +582,7 @@
     }
   },
   "errorApiRejected": {
-    "message": "API-Anfrage blockiert. Grund: $reason$",
+    "message": "API request was blocked. Reason: $reason$",
     "description": "Error when API blocks the request due to safety filters.",
     "placeholders": {
       "reason": {
@@ -603,7 +591,7 @@
     }
   },
   "errorApiStopped": {
-    "message": "API-Antwort unerwartet gestoppt. Grund: $reason$",
+    "message": "API response stopped unexpectedly. Reason: $reason$",
     "description": "Error when API finishes with a non-STOP reason.",
     "placeholders": {
       "reason": {
@@ -612,47 +600,47 @@
     }
   },
   "errorNoActiveTab": {
-    "message": "Fehler: Kein aktiver Tab gefunden. Bitte versuchen Sie es erneut.",
+    "message": "Error: No active tab found. Please try again.",
     "description": "Error when no active browser tab is found."
   },
   "errorInvalidText": {
-    "message": "Fehler: Ungültiger oder leerer Text angegeben.",
+    "message": "Error: Invalid or empty text provided.",
     "description": "Error when submitted text is empty or invalid."
   },
   "errorNoImageData": {
-    "message": "Fehler: Keine Bilddaten gefunden. Bitte laden Sie ein Bild hoch.",
+    "message": "Error: No image data found. Please upload an image.",
     "description": "Error when image data is missing from the payload."
   },
   "errorNoAudioData": {
-    "message": "Fehler: Keine Audiodaten gefunden. Bitte nehmen Sie auf oder laden Sie eine Audiodatei hoch.",
+    "message": "Error: No audio data found. Please record or upload an audio file.",
     "description": "Error when audio data is missing from the payload."
   },
   "errorOcrFailed": {
-    "message": "Fehler: OCR fehlgeschlagen. Die KI konnte nicht genug Text aus dem Bild erkennen. Bitte versuchen Sie es mit einem klareren Bild.",
+    "message": "Error: OCR failed. The AI could not recognize enough text from the image.",
     "description": "Error when OCR produces too little text."
   },
   "errorOcrFailedLong": {
-    "message": "Fehler: OCR hat unzureichenden Inhalt zurückgegeben. Der Webseiten-Screenshot ist möglicherweise leer oder unlesbar.",
+    "message": "Error: OCR returned insufficient content. The webpage screenshot may be blank or unreadable.",
     "description": "Error when webpage screenshot OCR produces too little text."
   },
   "errorScreenshotFailed": {
-    "message": "Fehler: Screenshot konnte nicht aufgenommen werden.",
+    "message": "Error: Failed to capture the screenshot.",
     "description": "Error when the debugger screenshot command fails."
   },
   "errorDebuggerAttach": {
-    "message": "Fehler: Die Seite konnte nicht angehängt werden. Dies kann auf einigen Seiten eingeschränkt sein (z.B. Chrome-Einstellungsseiten).",
+    "message": "Error: Could not attach to the page. This may be restricted on some pages.",
     "description": "Error when the Chrome debugger cannot attach to a tab."
   },
   "errorSttFailed": {
-    "message": "Fehler: Spracherkennungs-Transkription fehlgeschlagen. Das Audio ist möglicherweise zu kurz oder unklar.",
+    "message": "Error: Speech-to-text transcription failed. The audio may be too short or unclear.",
     "description": "Error when transcription produces no text."
   },
   "readerTranslating": {
-    "message": "Übersetze...",
+    "message": "Translating...",
     "description": "Status shown in the voice translation output while translating."
   },
   "readerTranslateFailed": {
-    "message": "Übersetzung fehlgeschlagen: $error$",
+    "message": "Translation failed: $error$",
     "description": "Error shown in the reader when a paragraph translation fails.",
     "placeholders": {
       "error": {
@@ -661,35 +649,35 @@
     }
   },
   "readerErrorNotFound": {
-    "message": "Fehler: Kein anzuzeigender Inhalt gefunden. Bitte gehen Sie zurück und versuchen Sie es erneut.",
+    "message": "Error: No content was found to display. Please go back and try again.",
     "description": "Error shown in reader when no article text is in storage."
   },
   "voiceStatusLimitReached": {
-    "message": "Aufnahmelimit erreicht (15 Min.). Verarbeitung läuft...",
+    "message": "Recording limit reached (15 min). Processing...",
     "description": "Status shown when the max recording time is reached."
   },
   "statusProcessing": {
-    "message": "Verarbeitung läuft...",
+    "message": "Processing...",
     "description": "Generic processing status message."
   },
   "statusPleasePaste": {
-    "message": "Bitte fügen Sie zuerst einen Text ein.",
+    "message": "Please paste some text first.",
     "description": "Status shown when user clicks process without entering text."
   },
   "statusSuccess": {
-    "message": "Erfolg! Ergebnisseite wird geöffnet...",
+    "message": "Success! Opening results page...",
     "description": "Success status after text processing."
   },
   "errorPleaseUploadImage": {
-    "message": "Fehler: Bitte laden Sie eine Bilddatei hoch (JPG, PNG, BMP).",
+    "message": "Error: Please upload an image file (JPG, PNG, BMP).",
     "description": "Error when a non-image file is dropped on the upload box."
   },
   "alertMaxImages": {
-    "message": "Sie können maximal 4 Bilder gleichzeitig anhängen.",
+    "message": "You can attach a maximum of 4 images at a time.",
     "description": "Alert when user tries to attach more than 4 images."
   },
   "alertTurnLimit": {
-    "message": "Sie haben das $limit$-Runden-Limit für dieses Gespräch erreicht. Bitte laden Sie die Seite neu, um einen neuen Chat zu starten.",
+    "message": "You have reached the $limit$-round limit for this conversation. Please refresh the page to start a new chat.",
     "description": "Alert shown when the conversation reaches the maximum number of turns.",
     "placeholders": {
       "limit": {
@@ -698,11 +686,11 @@
     }
   },
   "alertOnePdfOnly": {
-    "message": "Es kann nur eine PDF-Datei gleichzeitig angehängt werden.",
+    "message": "Only one PDF file can be attached at a time.",
     "description": "Alert when user tries to attach more than one PDF."
   },
   "incognitoAttachedFile": {
-    "message": "Angehängt: $filename$",
+    "message": "Attached: $filename$",
     "description": "Text shown in the chat message when a file is attached.",
     "placeholders": {
       "filename": {
@@ -711,27 +699,27 @@
     }
   },
   "localModelSectionHeader": {
-    "message": "Lokales KI-Modell (Ollama / LM Studio)",
+    "message": "Local AI Model (Ollama / LM Studio)",
     "description": "Section header for local model settings on the options page."
   },
   "localModelDesc": {
-    "message": "Verwenden Sie ein lokales KI-Modell über eine OpenAI-kompatible API (Ollama / LM Studio). Einmal aktiviert, nutzen der Inkognito-Chat und die Reader-Übersetzung das lokale Modell.",
+    "message": "Use a local AI model via an OpenAI-compatible API. Start Ollama or LM Studio before use.",
     "description": "Description for local model settings."
   },
   "localModelEnabledLabel": {
-    "message": "Lokales Modell aktivieren",
+    "message": "Enable local model",
     "description": "Label for the enable local model checkbox."
   },
   "localModelEndpointLabel": {
-    "message": "API-Endpunkt-URL",
+    "message": "API Endpoint URL",
     "description": "Label for the local model endpoint URL input."
   },
   "localModelEndpointPlaceholder": {
-    "message": "http://localhost:11434/v1 oder http://127.0.0.1:1234",
+    "message": "http://localhost:11434/v1",
     "description": "Placeholder for the local model endpoint URL input."
   },
   "localModelNameLabel": {
-    "message": "Modellname",
+    "message": "Model Name",
     "description": "Label for the local model name input."
   },
   "localModelNamePlaceholder": {
@@ -739,60 +727,72 @@
     "description": "Placeholder for the local model name input."
   },
   "localModelTabName": {
-    "message": "Lokales Modell",
+    "message": "Local Model",
     "description": "Tab button label for the local model chat tab."
   },
   "localModelHeader": {
-    "message": "Chat mit lokalem KI-Modell",
+    "message": "Local AI Model Chat",
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "Chatten Sie mit Ihrem lokalen Ollama- oder LM Studio-Modell. Nur Text — Bilder und PDFs werden nicht unterstützt.",
+    "message": "Chat with your local Ollama or LM Studio model. Text only — images and PDFs are not supported.",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
-    "message": "Lokales Modell ist nicht aktiviert. Bitte gehen Sie zu Optionen (⚙️), um den Endpunkt und den Modellnamen zu konfigurieren.",
+    "message": "Local model is not enabled. Please go to Options (⚙️) to configure the endpoint and model name.",
     "description": "Message shown in the local tab when local model is not enabled."
   },
   "errorLocalModelFailed": {
-    "message": "Das lokale Modell hat eine leere oder ungültige Antwort zurückgegeben.",
+    "message": "Local model returned an empty or invalid response.",
     "description": "Error when local model response has no content."
   },
   "errorLocalModelConnect": {
-    "message": "Verbindung zum lokalen Modell nicht möglich. Bitte stellen Sie sicher, dass Ollama oder LM Studio läuft.",
+    "message": "Could not connect to local model. Please ensure Ollama or LM Studio is running.",
     "description": "Error when the fetch to local model endpoint fails."
   },
-  "readerClickHint": {
-    "message": "💡 Klicken Sie auf einen beliebigen Absatz, um ihn sofort zu übersetzen.",
-    "description": "Hint shown in reader page for voice transcription results."
-  },
-  "optionsLicenseLink": {
-    "message": "MIT-Lizenz",
-    "description": "Link to the MIT license file on the options page."
-  },
-  "optionsPrivacyLink": {
-    "message": "Datenschutzerklärung",
-    "description": "Link to the privacy policy on the options page."
-  },
   "readerTtsSpeakBtn": {
-    "message": "🔊 Vorlesen",
+    "message": "🔊 Falar",
     "description": "TTS feature: readerTtsSpeakBtn"
   },
   "readerTtsStopBtn": {
-    "message": "⏹ Stopp",
+    "message": "⏹ Parar",
     "description": "TTS feature: readerTtsStopBtn"
   },
   "readerTtsLangLabel": {
-    "message": "Sprache",
+    "message": "Idioma",
     "description": "TTS feature: readerTtsLangLabel"
   },
   "errorApiRecitation": {
-    "message": "Dieser Inhalt scheint urheberrechtlich geschütztes Material zu enthalten (z.B. ein Kindle-Buch) und kann von der KI nicht verarbeitet werden.",
+    "message": "Este conteúdo parece conter material com direitos autorais (ex: livros Kindle) e não pode ser processado pela IA.",
     "description": "Error when Gemini refuses content due to RECITATION (copyright detection)."
   },
   "hintScreenshotMode": {
-    "message": "📌 Screenshot-Übersetzungsmodus — Nur der sichtbare Teil des Bildschirms wurde übersetzt. Für vollständigere Ergebnisse versuchen Sie, die Schriftgröße zu verringern und dann erneut zu verarbeiten.",
+    "message": "📌 Modo de Tradução por Captura de Tela — Apenas a parte visível da tela foi traduzida. Para resultados mais completos, tente reduzir o tamanho da fonte e reprocessar.",
     "description": "Hint shown at the top of reader when screenshot translation fallback is used."
+  },
+  "readerLabelBgColor": {
+    "message": "Fundo",
+    "description": "Label for background color buttons."
+  },
+  "workbenchLabelImageSourceLang": {
+    "message": "Idioma de origem da imagem",
+    "description": "Label for image source language selector."
+  },
+  "workbenchTextPlaceholder": {
+    "message": "Cole o texto aqui...",
+    "description": "Placeholder for the text input area in workbench."
+  },
+  "optionsLicenseLink": {
+    "message": "Licença MIT",
+    "description": "Link to the MIT license file on the options page."
+  },
+  "optionsPrivacyLink": {
+    "message": "Política de Privacidade",
+    "description": "Link to the privacy policy on the options page."
+  },
+  "readerClickHint": {
+    "message": "💡 Clique em qualquer parágrafo para traduzi-lo instantaneamente.",
+    "description": "Hint shown in reader page for voice transcription results."
   },
   "langPref": {
     "message": "⭐ $langName$",
@@ -803,70 +803,70 @@
     }
   },
   "optionsPrefLangNotSet": {
-    "message": "(Nicht festgelegt)"
+    "message": "(Não definido)"
   },
   "optionsPrefLangCustomLabel": {
-    "message": "Benutzerdefiniert"
+    "message": "Personalizado"
   },
   "optionsPrefLangCustomPlaceholder": {
-    "message": "z.B. Bairisch, Plattdeutsch..."
+    "message": "ex: Latim, Galego..."
   },
   "optionsPresetTip": {
-    "message": "💡 Tipps zum Schreiben von Prompts: ①<b>KI-Rolle</b> — z. B.: „Du bist ein professioneller medizinischer Übersetzer.“ ②<b>Zielgruppe</b> — z. B.: „Der Benutzer ist ein medizinischer Fachmann.“ ③<b>Antwortformat</b> — z. B.: „Antworte auf Deutsch in Stichpunkten.“ ④<b>Eingabeverarbeitung</b> — z. B.: „Fasse zuerst die Eingabe zusammen, dann liefere die vollständige Übersetzung.“"
+    "message": "💡 Dicas para escrever prompts: ①<b>Papel da IA</b> — ex: “Você é um tradutor médico profissional.” ②<b>Público-alvo</b> — ex: “O usuário é um profissional de saúde.” ③<b>Formato de resposta</b> — ex: “Responda em tópicos, em português.” ④<b>Processamento de entrada</b> — ex: “Primeiro resuma a entrada, depois forneça a tradução completa.”"
   },
   "optionsPresetPlaceholder": {
-    "message": "z. B.: Du bist ein professioneller Übersetzer. Antworte nur auf Deutsch in einem formellen Ton. Fasse zuerst die Eingabe des Benutzers zusammen, dann liefere die vollständige Übersetzung."
+    "message": "ex: Você é um tradutor profissional. Responda apenas em português com tom formal. Primeiro resuma a entrada do usuário, depois forneça a tradução completa."
   },
   "aiModeSectionHeader": {
-    "message": "KI-Dienstmodus",
+    "message": "Modo de serviço de IA",
     "description": "Section header for AI service mode selection."
   },
   "aiModeGeminiLabel": {
-    "message": "Nur Google Gemini",
+    "message": "Apenas Google Gemini",
     "description": "Radio label for Gemini-only mode."
   },
   "aiModeGeminiDesc": {
-    "message": "Nutzt Google Gemini für alle Funktionen: Textübersetzung, Chat sowie Bild-, Audio- und PDF-Verarbeitung. Erfordert einen Gemini API-Schlüssel.",
+    "message": "Usa o Google Gemini para todas as funcionalidades: tradução de texto, chat e processamento de imagens, áudio e PDF. Requer uma chave de API do Gemini.",
     "description": "Description for Gemini-only mode."
   },
   "aiModeHybridLabel": {
-    "message": "Hybridmodus (Gemini + Lokale KI)",
+    "message": "Modo híbrido (Gemini + IA local)",
     "description": "Radio label for hybrid mode."
   },
   "aiModeHybridDesc": {
-    "message": "Reine Textübersetzungen und Chats verwenden das lokale KI-Modell; Bild-, Audio- und PDF-Verarbeitung erfolgt weiterhin über Google Gemini.",
+    "message": "A tradução de texto puro e o chat usam o modelo de IA local; o processamento de imagens, áudio e PDF continua a usar o Google Gemini.",
     "description": "Description for hybrid mode."
   },
   "aiModeLocalLabel": {
-    "message": "Nur lokale KI",
+    "message": "Apenas IA local",
     "description": "Radio label for local-only mode."
   },
   "aiModeLocalDesc": {
-    "message": "Alle Textoperationen nutzen das lokale KI-Modell. Kein Google API-Schlüssel erforderlich.",
+    "message": "Todas as operações de texto usam o modelo de IA local. Não requer chave de API do Google.",
     "description": "Description for local-only mode."
   },
   "aiModeLocalWarning": {
-    "message": "⚠️ Im Modus „Nur lokale KI“ sind Funktionen, die Google-Dienste erfordern, nicht verfügbar: Webseitenübersetzung, Screenshot-OCR, Sprachtranskription, Bildübersetzung und PDF-Verarbeitung.",
+    "message": "⚠️ No modo Apenas IA local, as funcionalidades que requerem serviços Google estão indisponíveis: tradução de páginas web, OCR de capturas de ecrã, transcrição de voz, tradução de imagens e processamento de PDF.",
     "description": "Warning shown when local-only mode is selected."
   },
   "translateAllLongTextWarn": {
-    "message": "⚠️ Hinweis: Lange Texte werden als eine einzige Anfrage gesendet. Überschreitet der Text das Kontextfenster des lokalen Modells, kann die Übersetzungsqualität beeinträchtigt werden.",
+    "message": "⚠️ Nota: artigos longos são enviados como um único pedido. Se o texto exceder a janela de contexto do modelo local, a qualidade da tradução pode ser afetada.",
     "description": "Warning shown in reader when translating all paragraphs with local model."
   },
   "errorLocalModeNoMultimodal": {
-    "message": "Diese Funktion erfordert Google Gemini und ist im Modus „Nur lokale KI“ nicht verfügbar. Wechsle in den Einstellungen zum Gemini- oder Hybridmodus.",
+    "message": "Esta funcionalidade requer o Google Gemini e não está disponível no modo 'Apenas IA local'. Por favor, mude para o modo Gemini ou Híbrido nas Definições.",
     "description": "Error when a multimodal feature is used in local-only mode."
   },
   "localModelConfigHint": {
-    "message": "Optional. Unterstützt Ollama, LM Studio oder jeden OpenAI-kompatiblen lokalen Server. (Ollama-Standard: http://localhost:11434/v1 · LM Studio-Standard: http://127.0.0.1:1234/v1)",
+    "message": "Opcional. Suporta Ollama, LM Studio ou qualquer servidor local compatível com OpenAI. (Ollama padrão: http://localhost:11434/v1 · LM Studio padrão: http://127.0.0.1:1234/v1)",
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 Der lokale Modell-Chat unterstützt nur reinen Text – Bild- und PDF-Analyse sind nicht verfügbar. Wechsle für multimodale Funktionen zum Gemini Flash- oder Pro-Tab.",
+    "message": "💬 O chat com modelo local suporta apenas texto puro — análise de imagens e PDF não está disponível. Mude para a guia Gemini Flash ou Pro para recursos multimodais.",
     "description": "Info notice shown at the top of the Local model chat tab."
   },
   "incognitoLocalModeBanner": {
-    "message": "ℹ️ Lokaler KI-Modus ist aktiv. Übersetzungsaufgaben verwenden jetzt dein lokales Modell. Gemini-Chat in diesem Tab ist weiterhin verfügbar.",
+    "message": "ℹ️ O modo de IA local está ativo. As tarefas de tradução agora usam seu modelo local. O chat Gemini nesta guia ainda está disponível.",
     "description": "Banner shown in Flash/Pro tabs when aiMode is local-only."
   },
   "optionsModelGemini3FlashName": {
@@ -874,23 +874,23 @@
     "description": "Model name for Gemini 3 Flash placeholder card in options."
   },
   "optionsModelGemini3FlashDesc": {
-    "message": "Googles Modell der nächsten Generation. Noch nicht offiziell angekündigt – diese Option wird beim Launch freigeschaltet.",
+    "message": "O modelo de próxima geração do Google. Ainda não anunciado oficialmente — esta opção será desbloqueada no lançamento.",
     "description": "Description for Gemini 3 Flash placeholder card in options."
   },
   "optionsComingSoonBadge": {
-    "message": "Demnächst",
+    "message": "Em breve",
     "description": "Badge text for coming-soon model cards."
   },
   "errorLocalModelOffline": {
-    "message": "Verbindung zum lokalen KI-Dienst nicht möglich. Bitte stelle sicher, dass Ollama oder LM Studio läuft, und überprüfe die Endpunkt-URL in den Einstellungen.",
+    "message": "Não é possível conectar ao serviço de IA local. Certifique-se de que o Ollama ou LM Studio está em execução e verifique a URL do endpoint nas Configurações.",
     "description": "Actionable error shown when local model connection fails during translation."
   },
   "popupLocalModeWebpageNote": {
-    "message": "⚠️ Im lokalen KI-Modus funktioniert die Webseitenübersetzung nur, wenn DOM-Inhalte extrahiert werden können. Screenshot-OCR-Fallback ist in diesem Modus nicht verfügbar.",
+    "message": "⚠️ No modo de IA local, a tradução de páginas web só funciona quando o conteúdo DOM pode ser extraído. O fallback OCR de screenshot não está disponível neste modo.",
     "description": "Note shown below the translate-page button in popup when aiMode is local-only."
   },
   "popupOpenVoiceSummary": {
-    "message": "KI-Vorlesefunktion [Beta]"
+    "message": "Leitura em Voz IA [Beta]"
   },
   "vsSummaryTitle": {
     "message": "AI朗讀podcast"
@@ -1000,7 +1000,7 @@
     "description": "Header for Lite model tab in incognito page."
   },
   "incognitoLiteModelDesc": {
-    "message": "Schnellster Alltags-KI-Assistent für schnelle Fragen, Texthilfe und Übersetzungen. Unterstützt Bilder und PDFs.",
+    "message": "Assistente de IA cotidiano mais rápido, ótimo para perguntas rápidas, texto e tradução. Suporta imagens e PDFs.",
     "description": "Description for Lite model tab."
   },
   "incognitoThinkingLabel": {
@@ -1014,10 +1014,10 @@
     "message": "e.g. Summarize in key bullet points / Read the content sentence by sentence"
   },
   "popupBetaLabel": {
-    "message": "Beta-Funktionen"
+    "message": "Funções Beta"
   },
   "voiceLimitHint": {
-    "message": "Maximale Aufnahmedauer: 15 Minuten.",
+    "message": "Gravação máxima: 15 minutos.",
     "description": "Hint text showing maximum recording duration under the record button."
   }
 }

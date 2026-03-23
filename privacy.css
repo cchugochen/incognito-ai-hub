@@ -1,23 +1,48 @@
-/* Styles for privacy.html */
+/* privacy.css — v28.0 */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-sans);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.7;
     margin: 0 auto;
     max-width: 800px;
-    padding: 20px;
-    color: #333;
+    padding: 32px 20px;
+    box-sizing: border-box;
 }
-h1, h2, h3 {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 12px;
+    margin-bottom: 8px;
 }
+h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin: 1.8em 0 0.6em;
+}
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.2em 0 0.4em;
+    color: var(--color-primary);
+}
+p { margin: 0.5em 0 1em; }
+ul { padding-left: 1.25rem; margin: 0.5em 0 1em; }
+li { margin-bottom: 0.5em; }
+a { color: var(--color-primary); }
+a:hover { text-decoration: underline; }
 code {
-    background-color: #f4f4f4;
-    padding: 2px 4px;
+    background-color: var(--bg-input);
+    padding: 2px 5px;
     border-radius: 4px;
-    font-family: monospace;
+    font-family: var(--font-mono);
+    font-size: 0.875em;
 }
 .last-updated {
-    color: #888;
-    font-size: 0.9em;
+    color: var(--text-secondary);
+    font-size: 0.875em;
+    margin-bottom: 1.5em;
 }

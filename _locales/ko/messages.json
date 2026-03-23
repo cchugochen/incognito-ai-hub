@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "Incognito AI Hub by Gemini",
+    "message": "Incognito PrivoAI",
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Gemini · 로컈 LLM 기반의 간단한 시크릿 AI 채팅. 웹 페이지·텍스트·스크린샷·음성 입력 번역을 위한 무료 소형 도구 모음.",
+    "message": "무료, 백엔드 서버 없음 · 데이터가 브라우저를 떠나지 않습니다. 음성→텍스트, 비공개 AI 채팅, 웹 번역, AI 음성 읽기. 직접 발급한 Gemini API 키, 완전한 프라이버시.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -12,16 +12,14 @@
     "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
-    "message": "스마트 번역 워크벤치 열기",
+    "message": "스마트 번역 워크벤치",
     "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
   },
   "popupOpenVoiceNotes": {
-    "message": "시크릿 - 음성 메모",
-    "description": "Button text in popup.html"
+    "message": "시크릿 음성 메모"
   },
   "popupOpenIncognito": {
-    "message": "시크릿 Gemini 채팅",
-    "description": "Button text in popup.html"
+    "message": "시크릿 Gemini AI 채팅"
   },
   "popupOpenTutorial": {
     "message": "Gemini API 키 신청 간편 가이드",
@@ -32,7 +30,7 @@
     "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "Incognito AI Hub 설정",
+    "message": "Incognito PrivoAI 설정",
     "description": "Title for the options page."
   },
   "optionsHeader": {
@@ -159,7 +157,7 @@
     "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "읽기 모드 - Incognito AI Hub",
+    "message": "읽기 모드 - Incognito PrivoAI",
     "description": "Title for the reader page."
   },
   "readerLoading": {
@@ -273,7 +271,7 @@
     "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "'녹음 시작'을 누르거나 오디오 파일을 업로드하세요. AI가 음성을 텍스트로 변환하고 다른 화자를 구별하려고 시도합니다.",
+    "message": "음성 메모를 녹음하거나 오디오 파일을 업로드하세요. AI가 음성을 텍스트로 변환하고 화자를 구분합니다. 결과에서 단락을 탭하면 즉시 번역됩니다.",
     "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
@@ -375,7 +373,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito AI Hub: 대만 의사 Hugo Chen이 2025년 여름 어느 태풍 오는 날 첫 버전을 완성했습니다. 첫 버전은 대만어로 'Hong-Thai'라고 이름 붙였습니다. 유용하게 사용하셨다면 Chrome 웹 스토어에 긍정적인 리뷰를 남겨주세요. 괜찮으시다면 오른쪽 Buy Me a Coffee 링크를 통해 음료 한 잔 사주시면 감사하겠습니다.",
+    "message": "Incognito PrivoAI: 대만 의사 Hugo Chen이 2025년 여름 어느 태풍 오는 날 첫 버전을 완성했습니다. 첫 버전은 대만어로 'Hong-Thai'라고 이름 붙였습니다. 유용하게 사용하셨다면 Chrome 웹 스토어에 긍정적인 리뷰를 남겨주세요. 괜찮으시다면 오른쪽 Buy Me a Coffee 링크를 통해 음료 한 잔 사주시면 감사하겠습니다.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {
@@ -481,15 +479,15 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Google의 표준 중급 모델. 빠른 응답과 높은 처리량이 필요한 애플리케이션에 적합하며 비용이 적당합니다. 이미지 및 PDF 입력도 지원합니다.",
+    "message": "속도와 품질 균형 — 복잡한 질문, 문서 분석, 상세 번역에 적합. 이미지·PDF 지원.",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
-    "message": "Gemini 2.5 Pro",
+    "message": "Gemini 3.1 Pro",
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Google의 가장 강력한 모델로, 거대한 100만 토큰 컨텍스트 창을 특징으로 합니다. 복잡한 추론, 코딩 및 다중 모드 이해에서 뛰어납니다. 비용이 가장 높으며 복잡한 PDF 및 이미지 처리에 이상적입니다.",
+    "message": "긴 문서와 복잡한 주제를 깊이 분석하는 가장 강력한 AI 모델. 연구 논문이나 보고서 분석, 심층 질문에 최적. 이미지·PDF 지원.",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -862,5 +860,164 @@
   "localModelConfigHint": {
     "message": "선택 사항. Ollama, LM Studio 또는 OpenAI 호환 로컈 서버를 지원합니다. (Ollama 기본값: http://localhost:11434/v1 · LM Studio 기본값: http://127.0.0.1:1234/v1)",
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
+  },
+  "localModelTabTextOnlyNotice": {
+    "message": "💬 로컬 모델 채팅은 순수 텍스트만 지원합니다 — 이미지 및 PDF 분석은 지원되지 않습니다. 멀티모달 기능은 Gemini Flash 또는 Pro 탭을 이용하세요.",
+    "description": "Info notice shown at the top of the Local model chat tab."
+  },
+  "incognitoLocalModeBanner": {
+    "message": "ℹ️ 로컬 AI 모드가 활성화되어 있습니다. 번역 작업은 이제 로컬 모델을 사용합니다. 이 탭의 Gemini 채팅은 계속 이용 가능합니다.",
+    "description": "Banner shown in Flash/Pro tabs when aiMode is local-only."
+  },
+  "optionsModelGemini3FlashName": {
+    "message": "Gemini 3 Flash",
+    "description": "Model name for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsModelGemini3FlashDesc": {
+    "message": "Google의 차세대 고속 모델입니다. 아직 공식 발표되지 않았습니다 — 출시 시 이 옵션이 활성화됩니다.",
+    "description": "Description for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsComingSoonBadge": {
+    "message": "출시 예정",
+    "description": "Badge text for coming-soon model cards."
+  },
+  "errorLocalModelOffline": {
+    "message": "로컬 AI 서비스에 연결할 수 없습니다. Ollama 또는 LM Studio가 실행 중인지 확인하고, 설정에서 엔드포인트 URL을 확인하세요.",
+    "description": "Actionable error shown when local model connection fails during translation."
+  },
+  "popupLocalModeWebpageNote": {
+    "message": "⚠️ 로컬 AI 모드에서는 DOM 콘텐츠를 추출할 수 있을 때만 웹 페이지 번역이 작동합니다. 이 모드에서는 스크린샷 OCR 대체 기능을 사용할 수 없습니다.",
+    "description": "Note shown below the translate-page button in popup when aiMode is local-only."
+  },
+  "popupOpenVoiceSummary": {
+    "message": "AI 음성 읽기 [베타]"
+  },
+  "vsSummaryTitle": {
+    "message": "AI朗讀podcast"
+  },
+  "vsSummaryDesc": {
+    "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
+  },
+  "vsTabWebpage": {
+    "message": "Webpage"
+  },
+  "vsTabAudio": {
+    "message": "Audio File"
+  },
+  "vsTabText": {
+    "message": "Paste Text"
+  },
+  "vsTabMic": {
+    "message": "Microphone"
+  },
+  "vsYoutubeUrlLabel": {
+    "message": "YouTube URL"
+  },
+  "vsYoutubeUrlPlaceholder": {
+    "message": "https://www.youtube.com/watch?v=..."
+  },
+  "vsYoutubeHint": {
+    "message": "Works with videos that have captions/subtitles enabled."
+  },
+  "vsYoutubeNoCaption": {
+    "message": "No captions found for this video. Try a different video or download its audio and use the Audio File tab."
+  },
+  "vsWebpageLabel": {
+    "message": "Page URL"
+  },
+  "vsWebpagePlaceholder": {
+    "message": "https://example.com/article"
+  },
+  "vsUseCurrentTab": {
+    "message": "Use Current Tab"
+  },
+  "vsAudioUploadPrompt": {
+    "message": "Click or drag an audio file here"
+  },
+  "vsAudioFormats": {
+    "message": "MP3 · WAV · M4A · WebM · OGG"
+  },
+  "vsPdfUploadPrompt": {
+    "message": "Click or drag a PDF or TXT file here"
+  },
+  "vsPdfFormats": {
+    "message": "PDF · TXT"
+  },
+  "vsTextPlaceholder": {
+    "message": "Paste article, transcript, or any text here..."
+  },
+  "vsRecordHint": {
+    "message": "Record up to 15 minutes. Press Generate Voice after stopping."
+  },
+  "vsSummaryLanguageLabel": {
+    "message": "Output Language"
+  },
+  "vsProcessButton": {
+    "message": "Generate Voice"
+  },
+  "vsStatusFetching": {
+    "message": "Fetching content..."
+  },
+  "vsStatusTranscribing": {
+    "message": "Transcribing audio..."
+  },
+  "vsStatusSummarizing": {
+    "message": "Generating summary..."
+  },
+  "vsTtsPlayBtn": {
+    "message": "Play TTS"
+  },
+  "vsTtsStopBtn": {
+    "message": "Stop TTS"
+  },
+  "vsDownloadMd": {
+    "message": "Save Summary (.md)"
+  },
+  "errorYoutubeExtract": {
+    "message": "Could not extract captions from this YouTube video. The video may require sign-in, have no captions, or use an unsupported format."
+  },
+  "errorWebpageExtract": {
+    "message": "Could not extract readable text from this page. Try pasting the content in the Paste Text tab instead."
+  },
+  "vsDownloadAudio": {
+    "message": "Download Audio (.wav)",
+    "description": "Button to generate and download TTS audio via Gemini."
+  },
+  "vsStatusGeneratingAudio": {
+    "message": "Generating audio via Gemini TTS...",
+    "description": "Status while calling Gemini TTS API."
+  },
+  "optionsModelLiteName": {
+    "message": "Gemini 3.1 Flash Lite (Default)",
+    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+  },
+  "optionsModelLiteDesc": {
+    "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
+    "description": "Model card description for gemini-3.1-flash-lite-preview."
+  },
+  "incognitoLiteModelHeader": {
+    "message": "Gemini 3.1 Flash Lite",
+    "description": "Header for Lite model tab in incognito page."
+  },
+  "incognitoLiteModelDesc": {
+    "message": "가장 빠른 일상 AI 어시스턴트. 빠른 질문, 글쓰기, 번역에 적합. 이미지·PDF 지원.",
+    "description": "Description for Lite model tab."
+  },
+  "incognitoThinkingLabel": {
+    "message": "Thinking",
+    "description": "Label for the thinking mode checkbox in incognito chat."
+  },
+  "vsTtsPromptLabel": {
+    "message": "Reading Instruction (optional)"
+  },
+  "vsTtsPromptPlaceholder": {
+    "message": "e.g. Summarize in key bullet points / Read the content sentence by sentence"
+  },
+  "popupBetaLabel": {
+    "message": "베타 기능"
+  },
+  "voiceLimitHint": {
+    "message": "최대 녹음 시간: 15분.",
+    "description": "Hint text showing maximum recording duration under the record button."
   }
 }

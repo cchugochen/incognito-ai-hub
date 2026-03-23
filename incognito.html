@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>__MSG_incognitoTitle__</title>
-    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/themes.css">
     <link rel="stylesheet" href="styles/page_layout.css">
     <link rel="stylesheet" href="incognito.css">
 </head>
@@ -12,13 +12,52 @@
     <div class="container">
         <div id="notification-banner" class="notification-banner hidden"></div>
         <div class="tabs">
-            <!-- Removed Lite/Default tab. Flash is now default. -->
-            <button class="tab-link active" data-tab="flash">2.5 Flash</button>
-            <button class="tab-link" data-tab="pro">2.5 Pro</button>
+            <button class="tab-link active" data-tab="lite">3.1 Lite ✦</button>
+            <button class="tab-link" data-tab="flash">2.5 Flash</button>
+            <button class="tab-link" data-tab="pro">3.1 Pro</button>
             <button class="tab-link" data-tab="local" data-i18n="localModelTabName"></button>
         </div>
 
-        <div id="flash" class="tab-content active">
+        <div id="lite" class="tab-content active">
+            <div id="local-mode-banner-lite" class="notification-banner info hidden"></div>
+            <header class="header">
+                <h2 data-i18n="incognitoLiteModelHeader"></h2>
+                <p class="description" data-i18n="incognitoLiteModelDesc"></p>
+            </header>
+            <main id="chat-window-lite" class="chat-window"></main>
+            <div class="input-area">
+                <div id="image-preview-container-lite" class="image-preview-container"></div>
+                <textarea id="prompt-lite" class="prompt-input" data-i18n-placeholder="incognitoPlaceholder"></textarea>
+                <div class="controls">
+                    <div class="upload-buttons">
+                        <button id="upload-pdf-btn-lite" class="upload-btn pdf-btn" data-i18n-title="incognitoUploadPdfTitle">PDF</button>
+                        <input type="file" id="pdf-file-input-lite" accept="application/pdf" hidden>
+                        <button id="upload-img-btn-lite" class="upload-btn" data-i18n-title="incognitoUploadTitle">IMG</button>
+                        <input type="file" id="image-file-input-lite" accept="image/*" multiple hidden>
+                    </div>
+                    <div class="preset-controls">
+                        <span class="preset-label" data-i18n="incognitoPresetLabel"></span>
+                        <div id="preset-buttons-container-lite" class="preset-buttons">
+                            <button class="preset-btn" data-preset="A" data-i18n-title="incognitoPresetTitleA">A</button>
+                            <button class="preset-btn" data-preset="B" data-i18n-title="incognitoPresetTitleB">B</button>
+                            <button class="preset-btn" data-preset="C" data-i18n-title="incognitoPresetTitleC">C</button>
+                            <button class="preset-btn" data-preset="D" data-i18n-title="incognitoPresetTitleD">D</button>
+                            <button class="preset-btn" data-preset="E" data-i18n-title="incognitoPresetTitleE">E</button>
+                            <button class="preset-btn" data-preset="F" data-i18n-title="incognitoPresetTitleF">F</button>
+                            <button class="preset-btn" data-preset="G" data-i18n-title="incognitoPresetTitleG">G</button>
+                        </div>
+                    </div>
+                    <label class="thinking-toggle" title="Enable extended internal reasoning before responding">
+                        <input type="checkbox" id="thinking-lite" class="thinking-checkbox">
+                        <span data-i18n="incognitoThinkingLabel"></span>
+                    </label>
+                    <button id="send-btn-lite" class="submit-btn" data-i18n="incognitoSendButton"></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="flash" class="tab-content">
+            <div id="local-mode-banner-flash" class="notification-banner info hidden"></div>
             <header class="header">
                 <h2 data-i18n="incognitoFlashModelHeader"></h2>
                 <p class="description" data-i18n="incognitoFlashModelDesc"></p>
@@ -50,12 +89,17 @@
                         </div>
                     </div>
                     
+                    <label class="thinking-toggle" title="Enable extended internal reasoning before responding">
+                        <input type="checkbox" id="thinking-flash" class="thinking-checkbox">
+                        <span data-i18n="incognitoThinkingLabel"></span>
+                    </label>
                     <button id="send-btn-flash" class="submit-btn" data-i18n="incognitoSendButton"></button>
                 </div>
             </div>
         </div>
 
         <div id="pro" class="tab-content">
+            <div id="local-mode-banner-pro" class="notification-banner info hidden"></div>
             <header class="header">
                 <h2 data-i18n="incognitoProModelHeader"></h2>
                 <p class="description" data-i18n="incognitoProModelDesc"></p>
@@ -87,6 +131,10 @@
                         </div>
                     </div>
                     
+                    <label class="thinking-toggle" title="Enable extended internal reasoning before responding">
+                        <input type="checkbox" id="thinking-pro" class="thinking-checkbox">
+                        <span data-i18n="incognitoThinkingLabel"></span>
+                    </label>
                     <button id="send-btn-pro" class="submit-btn" data-i18n="incognitoSendButton"></button>
                 </div>
             </div>
@@ -94,6 +142,7 @@
 
         <div id="local" class="tab-content">
             <div id="local-disabled-banner" class="notification-banner info hidden"></div>
+            <div class="notification-banner info" data-i18n="localModelTabTextOnlyNotice"></div>
             <header class="header">
                 <h2 data-i18n="localModelHeader"></h2>
                 <p class="description" data-i18n="localModelChatDesc"></p>

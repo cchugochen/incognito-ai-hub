@@ -1,6 +1,6 @@
 /**
- * background.js (v27.2.3 - 3-mode AI service, local-mode guards for multimodal)
- * Service worker for Incognito AI Hub.
+ * background.js (v28.0.2 - rebrand to PrivoAI)
+ * Service worker for Incognito PrivoAI.
  */
 
 import { buildGeminiUrl, geminiApiCall } from './scripts/gemini-api.js';
@@ -107,7 +107,7 @@ async function getEffectiveUILanguageNameForBg() {
 
 
 // --- Main Message Router ---
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
     const handler = {
         'PROCESS_WEBPAGE': async () => {
             const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -120,15 +120,20 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         'PROCESS_UPLOADED_FILE': () => processUploadedFile(request.payload),
         'PROCESS_PASTED_TEXT': () => processPastedText(request.payload),
         'PROCESS_VOICE_NOTE': () => processVoiceNote(request.payload),
+        // --- v28.0: AI朗讀podcast handlers ---
+        'FETCH_EXTERNAL_URL': () => fetchExternalUrl(request.payload),
+        'TRANSCRIBE_AUDIO_FOR_SUMMARY': () => transcribeAudioForSummary(request.payload),
+        'SUMMARIZE_TEXT': () => summarizeText(request.payload),
+        'GENERATE_TTS': () => generateTts(request.payload),
     }[request.type];
 
     if (handler) {
         (async () => {
             try {
-                await handler();
-                sendResponse({ success: true });
+                const result = await handler();
+                sendResponse({ success: true, ...(result || {}) });
             } catch (error) {
-                console.error(`[Incognito AI Hub] Error processing '${request.type}':`, error);
+                console.error(`[Incognito PrivoAI] Error processing '${request.type}':`, error);
                 sendResponse({ success: false, error: error.message });
             }
         })();
@@ -278,7 +283,7 @@ async function callGeminiVision(base64ImageData, sourceLang = 'auto') {
 
     const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
         geminiApiKey: '',
-        translationModel: 'gemini-2.5-flash'
+        translationModel: 'gemini-3.1-flash-lite-preview'
     });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
@@ -307,7 +312,7 @@ async function callGeminiVisionTranslate(base64ImageData, targetLang) {
 
     const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
         geminiApiKey: '',
-        translationModel: 'gemini-2.5-flash'
+        translationModel: 'gemini-3.1-flash-lite-preview'
     });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
@@ -332,7 +337,7 @@ async function callGeminiSpeechToText(audioData, spokenLang) {
 
     const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
         geminiApiKey: '',
-        translationModel: 'gemini-2.5-flash'
+        translationModel: 'gemini-3.1-flash-lite-preview'
     });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
@@ -370,4 +375,141 @@ async function setActionBadge(tabId, text, color) {
     } catch (e) {
         console.warn('[setActionBadge] Could not update badge:', e.message);
     }
+}
+
+// --- v28.0: AI朗讀podcast Functions ---
+
+/**
+ * Fetch an external URL (bypasses extension page CSP connect-src restrictions).
+ * Used by voice_summary.js to fetch YouTube pages and arbitrary webpages.
+ */
+async function fetchExternalUrl({ url }) {
+    if (!url || typeof url !== 'string') throw new Error('Invalid URL');
+    const resp = await fetch(url, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; Chrome Extension)' }
+    });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status} fetching ${url}`);
+    const text = await resp.text();
+    return { text };
+}
+
+/**
+ * Transcribe audio for the voice_summary feature.
+ * Reuses callGeminiSpeechToText() but returns transcript directly (no reader tab).
+ */
+async function transcribeAudioForSummary({ audioData, spokenLang }) {
+    if (!audioData || !audioData.data) throw new Error(chrome.i18n.getMessage("errorNoAudioData"));
+    const lang = (!spokenLang || spokenLang === 'system-default')
+        ? await getEffectiveUILanguageNameForBg()
+        : spokenLang;
+    const transcript = await callGeminiSpeechToText(audioData, lang);
+    if (!transcript || transcript.trim().length === 0) {
+        throw new Error(chrome.i18n.getMessage("errorSttFailed"));
+    }
+    return { transcript };
+}
+
+/**
+ * Build the summary/reading prompt from a user-supplied TTS instruction.
+ * Falls back to a sensible default if no instruction is given.
+ */
+function buildSummaryPrompt(text, ttsPrompt, language) {
+    const instruction = ttsPrompt && ttsPrompt.trim()
+        ? ttsPrompt.trim()
+        : 'According to the context of the podcast or article, provide a point-wise and comprehensive summary with a proper title.';
+    const content = text ? `\n\nContent:\n\n${text}` : '';
+    return `${instruction}\n\nOutput the result in ${language}.${content}`;
+}
+
+/**
+ * Generate AI summary for text or PDF file data.
+ * Supports Gemini (default) and local model (text only).
+ */
+async function summarizeText({ text, fileData, ttsPrompt, language }) {
+    if (!language) throw new Error('language is required');
+
+    const localCfg = await getLocalModelConfig();
+
+    // Build prompt (for text) or instruction (for PDF multimodal)
+    const prompt = buildSummaryPrompt(text || '', ttsPrompt, language);
+
+    if (localCfg.aiMode !== 'local') {
+        // --- Gemini path ---
+        const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
+            geminiApiKey: '',
+            translationModel: 'gemini-3.1-flash-lite-preview'
+        });
+        if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
+        const apiUrl = buildGeminiUrl(translationModel, geminiApiKey);
+
+        let parts;
+        if (fileData) {
+            // PDF: send file + instruction as multimodal
+            parts = [
+                { text: buildSummaryPrompt('', ttsPrompt, language) },
+                { inline_data: { mime_type: fileData.mimeType, data: fileData.base64 } }
+            ];
+        } else {
+            parts = [{ text: prompt }];
+        }
+
+        const payload = { contents: [{ parts }] };
+        const summary = await geminiApiCall(apiUrl, payload);
+        return { summary };
+    } else {
+        // --- Local model path (text only) ---
+        if (fileData) throw new Error(chrome.i18n.getMessage("errorLocalModeNoMultimodal"));
+        const { localModelCall } = await import('./scripts/local-api.js');
+        const { localModelEndpoint, localModelName } = localCfg;
+        const summary = await localModelCall(localModelEndpoint, localModelName, [
+            { role: 'user', content: prompt }
+        ]);
+        return { summary };
+    }
+}
+
+/**
+ * Generate TTS audio via Gemini TTS API.
+ * Returns base64 PCM audio data (audio/L16; rate=24000) for WAV conversion in the page.
+ * Uses gemini-2.5-flash-preview-tts model (works with existing Gemini API key).
+ */
+async function generateTts({ text, voiceName = 'Aoede' }) {
+    if (!text || typeof text !== 'string' || text.trim().length === 0) {
+        throw new Error('Text is required for TTS');
+    }
+    const localCfg = await getLocalModelConfig();
+    if (localCfg.aiMode === 'local') throw new Error(chrome.i18n.getMessage("errorLocalModeNoMultimodal"));
+
+    const { geminiApiKey } = await chrome.storage.sync.get({ geminiApiKey: '' });
+    if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
+
+    const TTS_MODEL = 'gemini-2.5-flash-preview-tts';
+    const apiUrl = buildGeminiUrl(TTS_MODEL, geminiApiKey);
+
+    const payload = {
+        contents: [{ parts: [{ text: text.slice(0, 5000) }] }], // TTS has input limit
+        generationConfig: {
+            response_modalities: ['AUDIO'],
+            speech_config: {
+                voice_config: {
+                    prebuilt_voice_config: { voice_name: voiceName }
+                }
+            }
+        }
+    };
+
+    const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    });
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.error?.message || `TTS API error ${response.status}`);
+    }
+
+    const inlineData = result.candidates?.[0]?.content?.parts?.[0]?.inlineData;
+    if (!inlineData?.data) throw new Error('No audio data returned from TTS API');
+
+    return { audioBase64: inlineData.data, mimeType: inlineData.mimeType || 'audio/L16' };
 }

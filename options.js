@@ -66,7 +66,7 @@ function updateAiModePanels(mode) {
 
 function save_options() {
     const selectedModelEl = document.querySelector('input[name="model-select"]:checked');
-    const selectedModel = selectedModelEl ? selectedModelEl.value : 'gemini-2.5-flash';
+    const selectedModel = selectedModelEl ? selectedModelEl.value : 'gemini-3.1-flash-lite-preview';
     const lang = document.getElementById('display-language').value;
     const prefLangs = getPrefLangValues();
     const aiModeEl = document.querySelector('input[name="ai-mode"]:checked');
@@ -102,7 +102,7 @@ function restore_options() {
     chrome.storage.sync.get({
         displayLanguage: 'default',
         geminiApiKey: '',
-        translationModel: 'gemini-2.5-flash',
+        translationModel: 'gemini-3.1-flash-lite-preview',
         prefLangs: null,
         prefLangA: '',
         prefLangB: '',
@@ -174,7 +174,7 @@ function reset_options() {
 
     chrome.storage.sync.set({
         geminiApiKey: '',
-        translationModel: 'gemini-2.5-flash',
+        translationModel: 'gemini-3.1-flash-lite-preview',
         prefLangs: ['', '', ''],
         prefLangA: '', prefLangB: '',
         preset_a: '', preset_b: '', preset_c: '', preset_d: '',

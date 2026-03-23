@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "Incognito AI Hub by Gemini",
+    "message": "Incognito PrivoAI",
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Chat AI ẩn danh đơn giản với Gemini & LLM cục bộ. Bộ công cụ miễn phí dịch trang web, văn bản, ảnh chụp màn hình và giọng nói.",
+    "message": "Miễn phí, không backend · dữ liệu trong trình duyệt. Giọng nói→văn bản, chat AI, dịch web, đọc AI. Khóa Gemini API — riêng tư.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -12,16 +12,14 @@
     "description": "Button text in popup.html"
   },
   "popupOpenWorkbench": {
-    "message": "Mở Bàn làm việc Dịch thuật Thông minh",
+    "message": "Bàn làm việc Dịch thuật Thông minh",
     "description": "Button text in popup.html. Changed from '文字/截圖翻譯工作台'"
   },
   "popupOpenVoiceNotes": {
-    "message": "Ẩn danh - Ghi chú bằng giọng nói",
-    "description": "Button text in popup.html"
+    "message": "Ghi chú giọng nói ẩn danh"
   },
   "popupOpenIncognito": {
-    "message": "Trò chuyện Gemini ẩn danh",
-    "description": "Button text in popup.html"
+    "message": "Chat Gemini AI ẩn danh"
   },
   "popupOpenTutorial": {
     "message": "Hướng dẫn đơn giản để lấy khóa API Gemini",
@@ -32,7 +30,7 @@
     "description": "Button text in popup.html"
   },
   "optionsTitle": {
-    "message": "Cài đặt Incognito AI Hub",
+    "message": "Cài đặt Incognito PrivoAI",
     "description": "Title for the options page."
   },
   "optionsHeader": {
@@ -159,7 +157,7 @@
     "description": "Generic error message."
   },
   "readerTitle": {
-    "message": "Chế độ đọc - Incognito AI Hub",
+    "message": "Chế độ đọc - Incognito PrivoAI",
     "description": "Title for the reader page."
   },
   "readerLoading": {
@@ -273,7 +271,7 @@
     "description": "Title for the voice notes page."
   },
   "voiceDesc": {
-    "message": "Nhấn 'Bắt đầu ghi' hoặc tải lên một tệp âm thanh. AI sẽ chuyển lời nói thành văn bản và cố gắng phân biệt giữa những người nói khác nhau.",
+    "message": "Ghi âm ghi chú giọng nói hoặc tải lên tệp âm thanh. AI chuyển đổi giọng nói thành văn bản và gắn nhãn các người nói khác nhau. Nhấn vào bất kỳ đoạn nào trong kết quả để dịch ngay lập tức.",
     "description": "Description on the voice notes page."
   },
   "voiceLabelAudioSource": {
@@ -375,7 +373,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito AI Hub: Được tạo bởi Hugo Chen, một bác sĩ người Đài Loan, trong một ngày bão vào mùa hè năm 2025. Phiên bản đầu tiên được đặt tên là 'Hong-Thai' trong tiếng Đài Loan. Nếu bạn thấy nó hữu ích, vui lòng để lại đánh giá tích cực trên Cửa hàng Chrome trực tuyến. Nếu bạn sẵn lòng, hãy mời tôi một ly nước qua liên kết Buy Me a Coffee ở bên phải.",
+    "message": "Incognito PrivoAI: Được tạo bởi Hugo Chen, một bác sĩ người Đài Loan, trong một ngày bão vào mùa hè năm 2025. Phiên bản đầu tiên được đặt tên là 'Hong-Thai' trong tiếng Đài Loan. Nếu bạn thấy nó hữu ích, vui lòng để lại đánh giá tích cực trên Cửa hàng Chrome trực tuyến. Nếu bạn sẵn lòng, hãy mời tôi một ly nước qua liên kết Buy Me a Coffee ở bên phải.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {
@@ -481,15 +479,15 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Mô hình tầm trung tiêu chuẩn của Google. Phù hợp cho các ứng dụng yêu cầu phản hồi nhanh, thông lượng cao với chi phí vừa phải. Cũng hỗ trợ đầu vào hình ảnh và PDF.",
+    "message": "Cân bằng tốc độ và chất lượng — phù hợp cho câu hỏi phức tạp, phân tích tài liệu và dịch chi tiết. Hỗ trợ ảnh và PDF.",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
-    "message": "Gemini 2.5 Pro",
+    "message": "Gemini 3.1 Pro",
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Mô hình mạnh mẽ nhất của Google, có cửa sổ ngữ cảnh 1 triệu token khổng lồ. Nó vượt trội trong việc suy luận phức tạp, viết mã và hiểu đa phương thức. Chi phí cao nhất, lý tưởng để xử lý các tệp PDF và hình ảnh phức tạp.",
+    "message": "Mô hình AI mạnh nhất để phân tích chuyên sâu tài liệu dài và chủ đề phức tạp. Tốt nhất khi bạn cần câu trả lời chi tiết hoặc phân tích báo cáo đầy đủ. Hỗ trợ ảnh và PDF.",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -862,5 +860,164 @@
   "localModelConfigHint": {
     "message": "Tùy chọn. Hỗ trợ Ollama, LM Studio hoặc bất kỳ máy chủ cục bộ tương thích OpenAI. (Ollama mặc định: http://localhost:11434/v1 · LM Studio mặc định: http://127.0.0.1:1234/v1)",
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
+  },
+  "localModelTabTextOnlyNotice": {
+    "message": "💬 Chat mô hình cục bộ chỉ hỗ trợ văn bản thuần túy — phân tích hình ảnh và PDF không khả dụng. Chuyển sang tab Gemini Flash hoặc Pro để sử dụng tính năng đa phương thức.",
+    "description": "Info notice shown at the top of the Local model chat tab."
+  },
+  "incognitoLocalModeBanner": {
+    "message": "ℹ️ Chế độ AI cục bộ đang hoạt động. Các tác vụ dịch thuật hiện sử dụng mô hình cục bộ của bạn. Chat Gemini trong tab này vẫn khả dụng.",
+    "description": "Banner shown in Flash/Pro tabs when aiMode is local-only."
+  },
+  "optionsModelGemini3FlashName": {
+    "message": "Gemini 3 Flash",
+    "description": "Model name for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsModelGemini3FlashDesc": {
+    "message": "Mô hình tốc độ thế hệ tiếp theo của Google. Chưa được công bố chính thức — tùy chọn này sẽ được mở khóa khi ra mắt.",
+    "description": "Description for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsComingSoonBadge": {
+    "message": "Sắp ra mắt",
+    "description": "Badge text for coming-soon model cards."
+  },
+  "errorLocalModelOffline": {
+    "message": "Không thể kết nối với dịch vụ AI cục bộ. Hãy đảm bảo Ollama hoặc LM Studio đang chạy và xác minh URL điểm cuối trong Cài đặt.",
+    "description": "Actionable error shown when local model connection fails during translation."
+  },
+  "popupLocalModeWebpageNote": {
+    "message": "⚠️ Ở chế độ AI cục bộ, dịch trang web chỉ hoạt động khi có thể trích xuất nội dung DOM. Dự phòng OCR ảnh chụp màn hình không khả dụng trong chế độ này.",
+    "description": "Note shown below the translate-page button in popup when aiMode is local-only."
+  },
+  "popupOpenVoiceSummary": {
+    "message": "Đọc giọng nói AI [Beta]"
+  },
+  "vsSummaryTitle": {
+    "message": "AI朗讀podcast"
+  },
+  "vsSummaryDesc": {
+    "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
+  },
+  "vsTabWebpage": {
+    "message": "Webpage"
+  },
+  "vsTabAudio": {
+    "message": "Audio File"
+  },
+  "vsTabText": {
+    "message": "Paste Text"
+  },
+  "vsTabMic": {
+    "message": "Microphone"
+  },
+  "vsYoutubeUrlLabel": {
+    "message": "YouTube URL"
+  },
+  "vsYoutubeUrlPlaceholder": {
+    "message": "https://www.youtube.com/watch?v=..."
+  },
+  "vsYoutubeHint": {
+    "message": "Works with videos that have captions/subtitles enabled."
+  },
+  "vsYoutubeNoCaption": {
+    "message": "No captions found for this video. Try a different video or download its audio and use the Audio File tab."
+  },
+  "vsWebpageLabel": {
+    "message": "Page URL"
+  },
+  "vsWebpagePlaceholder": {
+    "message": "https://example.com/article"
+  },
+  "vsUseCurrentTab": {
+    "message": "Use Current Tab"
+  },
+  "vsAudioUploadPrompt": {
+    "message": "Click or drag an audio file here"
+  },
+  "vsAudioFormats": {
+    "message": "MP3 · WAV · M4A · WebM · OGG"
+  },
+  "vsPdfUploadPrompt": {
+    "message": "Click or drag a PDF or TXT file here"
+  },
+  "vsPdfFormats": {
+    "message": "PDF · TXT"
+  },
+  "vsTextPlaceholder": {
+    "message": "Paste article, transcript, or any text here..."
+  },
+  "vsRecordHint": {
+    "message": "Record up to 15 minutes. Press Generate Voice after stopping."
+  },
+  "vsSummaryLanguageLabel": {
+    "message": "Output Language"
+  },
+  "vsProcessButton": {
+    "message": "Generate Voice"
+  },
+  "vsStatusFetching": {
+    "message": "Fetching content..."
+  },
+  "vsStatusTranscribing": {
+    "message": "Transcribing audio..."
+  },
+  "vsStatusSummarizing": {
+    "message": "Generating summary..."
+  },
+  "vsTtsPlayBtn": {
+    "message": "Play TTS"
+  },
+  "vsTtsStopBtn": {
+    "message": "Stop TTS"
+  },
+  "vsDownloadMd": {
+    "message": "Save Summary (.md)"
+  },
+  "errorYoutubeExtract": {
+    "message": "Could not extract captions from this YouTube video. The video may require sign-in, have no captions, or use an unsupported format."
+  },
+  "errorWebpageExtract": {
+    "message": "Could not extract readable text from this page. Try pasting the content in the Paste Text tab instead."
+  },
+  "vsDownloadAudio": {
+    "message": "Download Audio (.wav)",
+    "description": "Button to generate and download TTS audio via Gemini."
+  },
+  "vsStatusGeneratingAudio": {
+    "message": "Generating audio via Gemini TTS...",
+    "description": "Status while calling Gemini TTS API."
+  },
+  "optionsModelLiteName": {
+    "message": "Gemini 3.1 Flash Lite (Default)",
+    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+  },
+  "optionsModelLiteDesc": {
+    "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
+    "description": "Model card description for gemini-3.1-flash-lite-preview."
+  },
+  "incognitoLiteModelHeader": {
+    "message": "Gemini 3.1 Flash Lite",
+    "description": "Header for Lite model tab in incognito page."
+  },
+  "incognitoLiteModelDesc": {
+    "message": "Trợ lý AI hàng ngày nhanh nhất — phù hợp cho câu hỏi nhanh, viết lách và dịch thuật. Hỗ trợ ảnh và PDF.",
+    "description": "Description for Lite model tab."
+  },
+  "incognitoThinkingLabel": {
+    "message": "Thinking",
+    "description": "Label for the thinking mode checkbox in incognito chat."
+  },
+  "vsTtsPromptLabel": {
+    "message": "Reading Instruction (optional)"
+  },
+  "vsTtsPromptPlaceholder": {
+    "message": "e.g. Summarize in key bullet points / Read the content sentence by sentence"
+  },
+  "popupBetaLabel": {
+    "message": "Tính năng Beta"
+  },
+  "voiceLimitHint": {
+    "message": "Thời gian ghi âm tối đa: 15 phút.",
+    "description": "Hint text showing maximum recording duration under the record button."
   }
 }

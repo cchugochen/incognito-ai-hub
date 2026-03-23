@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI朗讀podcast</title>
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/page_layout.css">
+    <link rel="stylesheet" href="voice_summary.css">
+</head>
+<body>
+    <div class="page-container">
+
+        <!-- Header -->
+        <div class="page-header">
+            <h1 data-i18n="vsSummaryTitle"></h1>
+            <p class="page-desc" data-i18n="vsSummaryDesc"></p>
+        </div>
+
+        <!-- Input Source Tabs -->
+        <div class="tabs" id="source-tabs">
+            <button class="tab-link active" data-tab="vs-youtube">▶ YouTube</button>
+            <button class="tab-link" data-tab="vs-webpage">🌐 <span data-i18n="vsTabWebpage"></span></button>
+            <button class="tab-link" data-tab="vs-audio">🎵 <span data-i18n="vsTabAudio"></span></button>
+            <button class="tab-link" data-tab="vs-pdf">📄 PDF/TXT</button>
+            <button class="tab-link" data-tab="vs-text">✏️ <span data-i18n="vsTabText"></span></button>
+            <button class="tab-link" data-tab="vs-mic">🎙️ <span data-i18n="vsTabMic"></span></button>
+        </div>
+
+        <!-- Tab 1: YouTube -->
+        <div id="vs-youtube" class="tab-content active">
+            <div class="form-group">
+                <label data-i18n="vsYoutubeUrlLabel"></label>
+                <input type="url" id="yt-url" data-i18n-placeholder="vsYoutubeUrlPlaceholder" autocomplete="off">
+            </div>
+            <p class="hint-text" data-i18n="vsYoutubeHint"></p>
+        </div>
+
+        <!-- Tab 2: Webpage -->
+        <div id="vs-webpage" class="tab-content">
+            <div class="form-group">
+                <label data-i18n="vsWebpageLabel"></label>
+                <div class="url-row">
+                    <input type="url" id="webpage-url" data-i18n-placeholder="vsWebpagePlaceholder" autocomplete="off">
+                    <button id="use-current-tab-btn" class="secondary-btn" data-i18n="vsUseCurrentTab"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Audio File -->
+        <div id="vs-audio" class="tab-content">
+            <div id="audio-upload-box" class="upload-box">
+                <input type="file" id="audio-file-input" accept="audio/mpeg,audio/mp3,audio/wav,audio/x-m4a,audio/m4a,audio/webm,audio/ogg" hidden>
+                <div class="upload-icon">🎵</div>
+                <p data-i18n="vsAudioUploadPrompt"></p>
+                <span class="upload-formats" data-i18n="vsAudioFormats"></span>
+            </div>
+            <p id="audio-file-name" class="file-name-display hidden"></p>
+        </div>
+
+        <!-- Tab 4: PDF / TXT -->
+        <div id="vs-pdf" class="tab-content">
+            <div id="pdf-upload-box" class="upload-box">
+                <input type="file" id="pdf-file-input" accept="application/pdf,text/plain" hidden>
+                <div class="upload-icon">📄</div>
+                <p data-i18n="vsPdfUploadPrompt"></p>
+                <span class="upload-formats" data-i18n="vsPdfFormats"></span>
+            </div>
+            <p id="pdf-file-name" class="file-name-display hidden"></p>
+        </div>
+
+        <!-- Tab 5: Paste Text -->
+        <div id="vs-text" class="tab-content">
+            <textarea id="vs-text-input" rows="8" data-i18n-placeholder="vsTextPlaceholder"></textarea>
+        </div>
+
+        <!-- Tab 6: Microphone -->
+        <div id="vs-mic" class="tab-content">
+            <div class="mic-controls">
+                <button id="vs-record-btn" class="record-btn" data-i18n="voiceButtonStart"></button>
+                <p id="vs-timer" class="timer-display">00:00</p>
+                <p class="hint-text" data-i18n="vsRecordHint"></p>
+            </div>
+        </div>
+
+        <!-- Processing Controls -->
+        <div class="controls-bar">
+            <div class="control-row control-row-prompt">
+                <label for="vs-tts-prompt" data-i18n="vsTtsPromptLabel"></label>
+                <textarea id="vs-tts-prompt" rows="3" data-i18n-placeholder="vsTtsPromptPlaceholder"></textarea>
+            </div>
+            <div class="control-row">
+                <label for="summary-language" data-i18n="vsSummaryLanguageLabel"></label>
+                <select id="summary-language"></select>
+            </div>
+            <button id="vs-process-btn" class="submit-btn" data-i18n="vsProcessButton"></button>
+        </div>
+
+        <!-- Status -->
+        <p id="vs-status" class="status-text hidden"></p>
+
+        <!-- Output Section -->
+        <div id="vs-output-section" class="hidden">
+            <hr class="section-divider">
+            <div class="output-actions">
+                <button id="vs-tts-btn" class="submit-btn" data-i18n="vsTtsPlayBtn"></button>
+                <button id="vs-download-btn" class="secondary-btn" data-i18n="vsDownloadAudio"></button>
+            </div>
+            <div id="vs-summary-output" class="summary-output"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <span data-i18n="incognitoFooter"></span>
+            <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank" rel="noopener noreferrer">
+                <img class="buymeacoffee-img"
+                     src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png"
+                     alt="Buy Me A Coffee" width="120">
+            </a>
+        </footer>
+
+    </div>
+
+    <script src="i18n.js"></script>
+    <script type="module" src="voice_summary.js"></script>
+</body>
+</html>

@@ -6,17 +6,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.title = chrome.i18n.getMessage('workbenchTitle');
 
     // --- Language Selector Initialization ---
-    const textSourceLang = document.getElementById('text-source-lang');
     const textTargetLang = document.getElementById('text-target-lang');
     const imgSourceLang = document.getElementById('img-source-lang');
     const imgTargetLang = document.getElementById('img-target-lang');
-    
-    // Populate selectors according to the v25.1 plan
-    await populateLanguageSelector(textSourceLang, { 
-        includeAutoDetect: true, 
-        includePrefLangs: true, 
-        defaultValue: 'auto' 
-    });
+
+    // Text target lang only — source language is auto-detected by AI
     await populateLanguageSelector(textTargetLang, { 
         includeSystemDefault: true, 
         includePrefLangs: true, 
@@ -70,8 +64,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         const payload = {
             text: text,
-            targetLang: textTargetLang.value, // Pass the selected value directly
-            sourceLang: textSourceLang.value 
+            targetLang: textTargetLang.value
         };
 
         chrome.runtime.sendMessage({ type: 'PROCESS_PASTED_TEXT', payload: payload }, (response) => {

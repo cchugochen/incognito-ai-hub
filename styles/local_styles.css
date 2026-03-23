@@ -1,8 +1,15 @@
 /* Pre-compiled TailwindCSS utilities for options.html and tutorial.html */
 
+/* ── Theme integration ── */
+html { font-family: var(--font-sans); }
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+}
+
 /* Basic Reset/Preflight */
 *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; }
-html { line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; font-family: 'Noto Sans TC', sans-serif; }
+html { line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; }
 body { margin: 0; line-height: inherit; }
 h1, h2, p, ul { margin: 0; padding: 0; }
 li { list-style: none; }
@@ -138,4 +145,46 @@ input:checked + .model-card {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     width: 100%;
     height: auto;
+}
+
+/* ── Tutorial step components ── */
+.step-card {
+    background-color: var(--bg-content);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+.step-number {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Dark mode overrides for tutorial utility classes ── */
+@media (prefers-color-scheme: dark) {
+    .text-gray-700 { color: var(--text-secondary); }
+    .text-gray-800 { color: var(--text-primary); }
+    .text-gray-900 { color: var(--text-primary); }
+    .text-gray-500, .text-gray-600 { color: var(--text-secondary); }
+    .bg-indigo-50 { background-color: #1e2a4a; }
+    .text-indigo-800 { color: #a5b4fc; }
+    .border-indigo-500 { border-color: #6366f1; }
+    .bg-yellow-50 { background-color: #2d1f00; }
+    .text-yellow-800 { color: #fcd34d; }
+    .border-yellow-400 { border-color: #f59e0b; }
+    .bg-green-50 { background-color: #0d2018; }
+    .text-green-800 { color: #6ee7b7; }
+    .border-green-500 { border-color: #10b981; }
+    .text-green-600 { color: #34d399; }
+    code { background-color: var(--bg-input); color: var(--text-primary); }
+    .screenshot { border-color: var(--border-color); }
 }
