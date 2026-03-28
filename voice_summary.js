@@ -213,7 +213,10 @@ function startTimer() {
 }
 
 function stopTimer() {
-    clearInterval(timerInterval);
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
 }
 
 // --- Webpage: Use Current Tab ---

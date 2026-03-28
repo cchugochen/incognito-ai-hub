@@ -1,8 +1,8 @@
-/* styles/options.css (v25.5 - Visual Fix) */
+/* styles/options.css (v28.1 - Polished Layout) */
 /* Layout and component styles specific to the options page. */
 
 body {
-    padding: 2rem;
+    padding: 2rem 1rem;
     background-color: var(--bg-main);
 }
 
@@ -10,17 +10,18 @@ body {
     max-width: 42rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 1.5rem;
+    padding: 2rem 2rem 1.75rem;
     background-color: var(--bg-content);
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
 }
 
 .page-header {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
     text-align: center;
+    letter-spacing: -0.01em;
 }
 
 .options-section {
@@ -28,9 +29,10 @@ body {
 }
 
 .section-header {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
 }
 
 .label {
@@ -88,6 +90,7 @@ textarea.text-input {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    padding-top: 0.5rem;
 }
 
 .reset-btn {
@@ -102,8 +105,8 @@ textarea.text-input {
     transition: background-color 0.2s;
 }
 .reset-btn:hover {
-    background-color: #fef2f2;
-    border-color: #fca5a5;
+    background-color: rgba(192, 57, 43, 0.06);
+    border-color: rgba(192, 57, 43, 0.4);
     color: #c0392b;
 }
 
@@ -142,30 +145,35 @@ textarea.text-input {
 /* --- Custom Model Card --- */
 .model-card {
     display: block;
-    padding: 1rem;
+    padding: 1rem 1.125rem;
     border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
+    border-radius: var(--radius-md);
     cursor: pointer;
     transition: all 0.2s;
-    position: relative; /* Needed for the checkmark */
+    position: relative;
+}
+.model-card:hover {
+    border-color: var(--text-muted);
+    background-color: var(--bg-hover);
 }
 
-/* [v25.5 Fix] Make selection much more prominent */
 input.sr-only:checked + .model-card {
-    border-color: #3B82F6; /* Blue-500 */
-    background-color: #EFF6FF; /* Blue-50 */
-    box-shadow: 0 0 0 2px #BFDBFE; /* Blue-200 */
+    border-color: var(--color-primary);
+    background-color: rgba(96, 108, 56, 0.06);
+    box-shadow: 0 0 0 2px var(--color-primary);
+}
+input.sr-only:checked + .model-card:hover {
+    background-color: rgba(96, 108, 56, 0.1);
 }
 
-/* [v25.5 Fix] Add a checkmark for clear visual feedback */
 input.sr-only:checked + .model-card::after {
-    content: '✓';
+    content: '\2713';
     position: absolute;
     top: 0.5rem;
     right: 0.75rem;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #2563EB; /* Blue-600 */
+    color: var(--color-primary);
 }
 
 .model-card-header {
@@ -268,8 +276,8 @@ input.sr-only:checked + .model-card::after {
     font-size: 0.7rem;
     font-weight: 600;
     white-space: nowrap;
-    background: #fef3c7;
-    color: #b45309;
+    background: rgba(229, 124, 35, 0.12);
+    color: var(--color-accent);
     border-radius: 4px;
     padding: 2px 6px;
     flex-shrink: 0;
@@ -295,24 +303,26 @@ input.sr-only:checked + .model-card::after {
 
 /* --- Section Group Color Blocks --- */
 .section-group {
-    padding: 1.25rem;
-    border-radius: 10px;
-    margin-bottom: 1.25rem;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-top-width: 3px;
 }
 .section-group .options-section {
     margin-bottom: 0;
 }
 .section-group-lang {
-    background: rgba(59, 130, 246, 0.06);
-    border-top: 3px solid rgba(59, 130, 246, 0.35);
+    background: rgba(59, 130, 246, 0.04);
+    border-top-color: rgba(59, 130, 246, 0.4);
 }
 .section-group-ai {
-    background: rgba(16, 185, 129, 0.06);
-    border-top: 3px solid rgba(16, 185, 129, 0.35);
+    background: rgba(96, 108, 56, 0.04);
+    border-top-color: var(--color-primary);
 }
 .section-group-preset {
-    background: rgba(245, 158, 11, 0.06);
-    border-top: 3px solid rgba(245, 158, 11, 0.35);
+    background: rgba(229, 124, 35, 0.04);
+    border-top-color: var(--color-accent);
 }
 
 /* --- Sub-section Header (inside config panels) --- */
@@ -325,21 +335,21 @@ input.sr-only:checked + .model-card::after {
 
 /* --- AI Config Panel (sub-panel within AI mode section) --- */
 .ai-config-panel {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed var(--border-color);
 }
 
 /* --- Mode Warning Box (amber, for local-only warning) --- */
 .mode-warning {
     margin-top: 1rem;
     padding: 0.625rem 0.875rem;
-    background: #fffbeb;
-    border: 1px solid #fcd34d;
-    border-left: 3px solid #f59e0b;
+    background: rgba(229, 124, 35, 0.06);
+    border: 1px solid rgba(229, 124, 35, 0.3);
+    border-left: 3px solid var(--color-accent);
     border-radius: 0 6px 6px 0;
     font-size: 0.85rem;
-    color: #92400e;
+    color: var(--color-accent);
     line-height: 1.55;
 }
 
@@ -353,8 +363,8 @@ input.sr-only:checked + .model-card::after {
     display: inline-block;
     font-size: 0.7rem;
     font-weight: 600;
-    background: #e0e7ff;
-    color: #3730a3;
+    background: rgba(96, 108, 56, 0.1);
+    color: var(--color-primary);
     border-radius: 4px;
     padding: 2px 7px;
     margin-left: 8px;

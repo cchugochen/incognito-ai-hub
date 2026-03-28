@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>__MSG_optionsTitle__</title>
     <link rel="stylesheet" href="styles/themes.css">
     <link rel="stylesheet" href="styles/options.css">
@@ -64,8 +65,8 @@
         <!-- ===== GROUP 2: AI SERVICE MODE (teal/green) ===== -->
         <div class="section-group section-group-ai">
             <section class="options-section">
-                <h2 class="section-header" data-i18n="aiModeSectionHeader"></h2>
-                <div class="space-y-4">
+                <h2 id="ai-mode-header" class="section-header" data-i18n="aiModeSectionHeader"></h2>
+                <div class="space-y-4" role="radiogroup" aria-labelledby="ai-mode-header">
                     <!-- Mode 1: Gemini Only -->
                     <div>
                         <input type="radio" name="ai-mode" id="ai-mode-gemini" value="gemini" class="sr-only" checked>
@@ -102,7 +103,7 @@
                 <div id="gemini-config" class="ai-config-panel">
                     <label for="api-key" class="label" data-i18n="optionsApiKeyLabel"></label>
                     <input type="password" id="api-key" class="text-input">
-                    <div class="space-y-4 mt-1rem">
+                    <div class="space-y-4 mt-1rem" role="radiogroup" aria-label="Gemini model">
                         <div>
                             <input type="radio" name="model-select" id="gemini-3.1-flash-lite-preview" value="gemini-3.1-flash-lite-preview" class="sr-only" checked>
                             <label for="gemini-3.1-flash-lite-preview" class="model-card">
@@ -181,8 +182,6 @@
                 </div>
             </section>
         </div>
-
-        <hr class="divider">
 
         <div class="save-area">
             <button id="save" class="submit-btn" data-i18n="optionsSaveButton"></button>

@@ -1,12 +1,46 @@
-# Incognito AI Hub (v27.2.3) / 無痕AI工作台
+# PrivoAI 無痕AI工作台 (v28.1)
 
-A privacy-first Chrome extension integrating multimodal AI tools for reading, translation, and conversation. All AI requests go directly between your browser and the AI provider — no backend server, no data collection.
+A privacy-first Chrome extension integrating multimodal AI tools for reading, translation, conversation, and mindfulness. All AI requests go directly between your browser and the AI provider — no backend server, no data collection.
 
-「無痕AI工作台」是一款以隱私為核心的 Chrome 擴充功能，整合了多模態 AI 工具，用於閱讀、翻譯與對話。所有 AI 請求直接在瀏覽器與 AI 服務商之間完成，無後台伺服器，不收集任何資料。
+「無痕AI工作台」是一款以隱私為核心的 Chrome 擴充功能，整合了多模態 AI 工具，用於閱讀、翻譯、對話與心靈正念。所有 AI 請求直接在瀏覽器與 AI 服務商之間完成，無後台伺服器，不收集任何資料。
 
 ---
 
 ## Changelog / 更新紀錄
+
+### v28.1 — Three Dharma Teachers & UI Fixes / 三位禪師 · 心靈正念 & 介面修正
+
+#### New Feature: Three Dharma Teachers / 新功能：三位禪師 · 心靈正念
+
+A new mindfulness chat page (`dharma.html`) offering three Buddhist dialogue styles, powered by Gemini with dedicated system prompts:
+
+- 🙏 **Dalai (達賴)** — Tibetan Buddhist Gelug tradition. Warm, compassionate guidance rooted in bodhicitta and emptiness.
+- ⛰️ **Dharma Drum (法鼓)** — Master Sheng Yen's Chan/Zen style. Direct, penetrating — "Face it, accept it, deal with it, let it go."
+- 🪷 **Humanistic (人間)** — Master Hsing Yun's Fo Guang Shan approach. Grounded in daily life, action-oriented compassion.
+
+Includes a **side-by-side comparison mode** that sends the same question to all three traditions simultaneously, and individual single-conversation tabs for each style.
+
+新增心靈正念對話頁面（`dharma.html`），提供三種佛教對話風格，使用 Gemini 搭配專屬系統提示：
+
+- 🙏 **達賴** — 藏傳佛教格魯派，溫暖慈悲，菩提心與空性智慧引導。
+- ⛰️ **法鼓** — 聖嚴法師禪宗風格，直指核心——「面對它、接受它、處理它、放下它。」
+- 🪷 **人間** — 星雲大師佛光山人間佛教，貼近生活，積極行動的慈悲。
+
+包含**同題比較模式**（同一問題同時送出三種傳統並排顯示），以及各風格的獨立對話分頁。
+
+#### Other v28.1 Changes / 其他變更
+
+- **Incognito Chat responsive fix**: Controls row now wraps properly on narrower screens — the send button is always visible regardless of window width.
+- **Voice Summary renamed**: Feature renamed to "AI摘要朗讀podcast" across popup and page title for clearer description.
+- **Model updates**: Gemini model catalog updated to 3.1 Flash Lite, 2.5 Flash, and 3.1 Pro.
+- **14 UI locales**: Added Czech (`cs`) and Portuguese (`pt`) — now 14 locales total.
+
+- **無痕對話響應式修正**：控制列在較窄螢幕上正確換行，送出按鈕在任何視窗寬度下皆可見。
+- **語音摘要改名**：功能更名為「AI摘要朗讀podcast」，popup 按鈕與頁面標題同步更新。
+- **模型更新**：Gemini 模型目錄更新至 3.1 Flash Lite、2.5 Flash、3.1 Pro。
+- **14 個介面語系**：新增捷克語（`cs`）與葡萄牙語（`pt`），共 14 個語系。
+
+---
 
 ### v27.2.3 — 3-Mode AI Service Selector / 三模式 AI 服務選擇器
 
@@ -128,19 +162,21 @@ The Settings page now replaces the old "enable local model" checkbox with a clea
 
 ## Core Features / 核心功能
 
-### 1. Incognito Gemini Chat (3 Tabs) / 無痕 Gemini 對話（3個分頁）
+### 1. Incognito Gemini Chat (4 Tabs) / 無痕 Gemini 對話（4個分頁）
 
-Three independent chat interfaces in one page:
+Four independent chat interfaces in one page:
 
-- **Gemini 2.5 Flash** — Fast, cost-effective model. Supports images (up to 4) and PDF uploads.
-- **Gemini 2.5 Pro** — Most powerful model, 1M token context. Best for complex documents and multimodal tasks.
+- **Gemini 3.1 Flash Lite** — Lightweight, fastest responses.
+- **Gemini 2.5 Flash** — Balanced speed and capability. Supports images (up to 4) and PDF uploads.
+- **Gemini 3.1 Pro** — Most powerful model, 1M token context. Best for complex documents and multimodal tasks.
 - **Local Model** — Chat with your local Ollama or LM Studio model via OpenAI-compatible API. Text only; no API key required.
 
 Completely incognito: all history is stored in page memory only and erased when the tab is closed. Supports 7 preset prompt slots (A–G) with hover preview tooltips.
 
-三個獨立對話介面：
-- **Gemini 2.5 Flash** — 快速、性價比高。支援最多 4 張圖片及 PDF 上傳。
-- **Gemini 2.5 Pro** — 最強大的模型，百萬 Token 上下文。適合複雜文件與多模態任務。
+四個獨立對話介面：
+- **Gemini 3.1 Flash Lite** — 輕量版，回應速度最快。
+- **Gemini 2.5 Flash** — 速度與能力兼具。支援最多 4 張圖片及 PDF 上傳。
+- **Gemini 3.1 Pro** — 最強大的模型，百萬 Token 上下文。適合複雜文件與多模態任務。
 - **本機模型** — 透過 OpenAI 相容 API 與本機 Ollama 或 LM Studio 模型對話，僅支援文字，無需 API 金鑰。
 
 完全無痕：所有對話紀錄僅存於頁面記憶體，關閉分頁即清除。支援 7 組預設提示語（A–G），游標移至按鈕可預覽內容。
@@ -213,6 +249,26 @@ Connect to **Ollama** or **LM Studio** (or any OpenAI-compatible server) for pri
 
 ---
 
+### 7. Three Dharma Teachers / 三位禪師 · 心靈正念 [Beta]
+
+A mindfulness chat page with three Buddhist dialogue styles powered by Gemini:
+
+- 🙏 **Dalai** — Tibetan Gelug compassion and bodhicitta guidance
+- ⛰️ **Dharma Drum** — Chan/Zen directness inspired by Master Sheng Yen
+- 🪷 **Humanistic** — Fo Guang Shan's action-oriented daily Buddhism
+
+Features side-by-side comparison mode and individual conversation tabs. Uses the same Gemini API key as other features — no additional setup required.
+
+以三種佛教對話風格提供心靈正念對話：
+
+- 🙏 **達賴** — 藏傳格魯派慈悲與菩提心引導
+- ⛰️ **法鼓** — 聖嚴法師禪宗直指風格
+- 🪷 **人間** — 佛光山人間佛教，貼近日常的行動佛法
+
+支援同題比較模式與各風格獨立對話分頁。使用既有的 Gemini API Key，無需額外設定。
+
+---
+
 ## Privacy & Security / 隱私與安全
 
 - **Bring Your Own Key (BYOK)**: All Gemini requests use your own API key directly between your browser and Google's servers.
@@ -250,9 +306,12 @@ Refer to the built-in **[Tutorial (📖)](tutorial.html)** (accessible from the 
 | Button | Function |
 |--------|----------|
 | 🎙️ Voice Notes | Open voice recording / transcription |
-| 💬 Incognito Gemini Chat | Open 3-tab AI chat |
+| 💬 Incognito Gemini Chat | Open 4-tab AI chat |
 | 🔧 Smart Translation Workbench | Open text/image translation |
 | 🌐 Translate Current Page | Capture & translate active tab |
+| **Beta** | |
+| 🔊 AI摘要朗讀podcast | Summarize & read aloud content |
+| 🪷 三位禪師 · 心靈正念 | Three Dharma Teachers mindfulness chat |
 | 📖 Tutorial | How to get a Gemini API key |
 
 ---
@@ -261,11 +320,11 @@ Refer to the built-in **[Tutorial (📖)](tutorial.html)** (accessible from the 
 
 - HTML, CSS, JavaScript (ES6 Modules)
 - Chrome Extension Manifest V3
-- Google Gemini API (`gemini-2.5-flash`, `gemini-2.5-pro`)
+- Google Gemini API (`gemini-3.1-flash-lite`, `gemini-2.5-flash`, `gemini-3.1-pro`)
 - Web Speech API (`SpeechSynthesisUtterance`) for Text-to-Speech
 - OpenAI-compatible API format (`/v1/chat/completions`) for local models
 - Module architecture: `scripts/gemini-api.js`, `scripts/local-api.js`, `scripts/language_manager.js`
-- i18n support: 12 locales (en, zh_TW, ja, ko, pt, ru, tr, uk, vi, es, de, ar)
+- i18n support: 14 locales (en, zh_TW, ja, ko, pt, pt_BR, ru, tr, uk, vi, es, de, ar, cs)
 
 ---
 

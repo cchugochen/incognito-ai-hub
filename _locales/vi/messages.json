@@ -431,8 +431,8 @@
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "Tải lên tài liệu PDF (1)",
-    "description": "Tooltip for the PDF upload button."
+    "message": "Tải lên tài liệu — PDF, TXT, MD, CSV, HTML, XML (1)",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "Sử dụng Cài đặt sẵn A",
@@ -471,7 +471,7 @@
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "Nhập tin nhắn của bạn ở đây (bạn có thể tải lên hình ảnh hoặc PDF)...",
+    "message": "Nhập tin nhắn của bạn ở đây (bạn có thể tải lên hình ảnh hoặc tài liệu)...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -479,7 +479,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Cân bằng tốc độ và chất lượng — phù hợp cho câu hỏi phức tạp, phân tích tài liệu và dịch chi tiết. Hỗ trợ ảnh và PDF.",
+    "message": "Cân bằng tốc độ và chất lượng — phù hợp cho câu hỏi phức tạp, phân tích tài liệu và dịch chi tiết. Hỗ trợ ảnh và tài liệu (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -487,7 +487,7 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Mô hình AI mạnh nhất để phân tích chuyên sâu tài liệu dài và chủ đề phức tạp. Tốt nhất khi bạn cần câu trả lời chi tiết hoặc phân tích báo cáo đầy đủ. Hỗ trợ ảnh và PDF.",
+    "message": "Mô hình AI mạnh nhất để phân tích chuyên sâu tài liệu dài và chủ đề phức tạp. Tốt nhất cho câu trả lời chi tiết và phân tích báo cáo đầy đủ. Hỗ trợ ảnh và tài liệu (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -735,7 +735,7 @@
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "Chat with your local Ollama or LM Studio model. Text only — images and PDFs are not supported.",
+    "message": "Trò chuyện với mô hình Ollama hoặc LM Studio cục bộ. Chỉ hỗ trợ văn bản — không hỗ trợ tải lên hình ảnh và tài liệu.",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
@@ -862,7 +862,7 @@
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 Chat mô hình cục bộ chỉ hỗ trợ văn bản thuần túy — phân tích hình ảnh và PDF không khả dụng. Chuyển sang tab Gemini Flash hoặc Pro để sử dụng tính năng đa phương thức.",
+    "message": "💬 Chat mô hình cục bộ chỉ hỗ trợ văn bản — không thể tải lên hình ảnh và tài liệu. Chuyển sang tab Gemini để sử dụng tính năng đa phương thức.",
     "description": "Info notice shown at the top of the Local model chat tab."
   },
   "incognitoLocalModeBanner": {
@@ -890,10 +890,10 @@
     "description": "Note shown below the translate-page button in popup when aiMode is local-only."
   },
   "popupOpenVoiceSummary": {
-    "message": "Đọc giọng nói AI [Beta]"
+    "message": "AI Tóm tắt & Đọc podcast [Beta]"
   },
   "vsSummaryTitle": {
-    "message": "AI朗讀podcast"
+    "message": "AI Tóm tắt & Đọc podcast [Beta]"
   },
   "vsSummaryDesc": {
     "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
@@ -1000,7 +1000,7 @@
     "description": "Header for Lite model tab in incognito page."
   },
   "incognitoLiteModelDesc": {
-    "message": "Trợ lý AI hàng ngày nhanh nhất — phù hợp cho câu hỏi nhanh, viết lách và dịch thuật. Hỗ trợ ảnh và PDF.",
+    "message": "Trợ lý AI hàng ngày nhanh nhất — với hạn mức miễn phí hàng tháng hào phóng. Phù hợp cho câu hỏi nhanh, viết lách và dịch thuật. Hỗ trợ ảnh và tài liệu (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for Lite model tab."
   },
   "incognitoThinkingLabel": {

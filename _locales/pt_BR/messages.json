@@ -431,8 +431,8 @@
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "Carregar documento PDF (1)",
-    "description": "Tooltip for the PDF upload button."
+    "message": "Carregar documento — PDF, TXT, MD, CSV, HTML, XML (1)",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "Usar Predefinição A",
@@ -471,7 +471,7 @@
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "Digite sua mensagem aqui (você pode carregar imagens ou um PDF)...",
+    "message": "Digite sua mensagem aqui (você pode carregar imagens ou documentos)...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -479,7 +479,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Equilíbrio entre velocidade e qualidade — ideal para perguntas complexas, análise de documentos e tradução detalhada. Suporta imagens e PDFs.",
+    "message": "Equilíbrio entre velocidade e qualidade — ideal para perguntas complexas, análise de documentos e tradução detalhada. Suporta imagens e documentos (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -487,7 +487,7 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Modelo de IA mais poderoso para análise aprofundada de documentos longos e temas complexos. Ideal para relatórios detalhados e respostas abrangentes. Suporta imagens e PDFs.",
+    "message": "Modelo de IA mais poderoso para análise aprofundada de documentos longos e temas complexos. Ideal para relatórios detalhados e respostas abrangentes. Suporta imagens e documentos (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -735,7 +735,7 @@
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "Chat with your local Ollama or LM Studio model. Text only — images and PDFs are not supported.",
+    "message": "Converse com o seu modelo local Ollama ou LM Studio. Apenas texto — imagens e upload de documentos não são suportados.",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
@@ -862,7 +862,7 @@
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 O chat com modelo local suporta apenas texto puro — análise de imagens e PDF não está disponível. Mude para a guia Gemini Flash ou Pro para recursos multimodais.",
+    "message": "💬 O chat com modelo local suporta apenas texto — upload de imagens e documentos não está disponível. Mude para uma aba Gemini para recursos multimodais.",
     "description": "Info notice shown at the top of the Local model chat tab."
   },
   "incognitoLocalModeBanner": {
@@ -890,10 +890,10 @@
     "description": "Note shown below the translate-page button in popup when aiMode is local-only."
   },
   "popupOpenVoiceSummary": {
-    "message": "Leitura em Voz IA [Beta]"
+    "message": "AI Resumo e Leitura podcast [Beta]"
   },
   "vsSummaryTitle": {
-    "message": "AI朗讀podcast"
+    "message": "AI Resumo e Leitura podcast [Beta]"
   },
   "vsSummaryDesc": {
     "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
@@ -1000,7 +1000,7 @@
     "description": "Header for Lite model tab in incognito page."
   },
   "incognitoLiteModelDesc": {
-    "message": "Assistente de IA cotidiano mais rápido, ótimo para perguntas rápidas, texto e tradução. Suporta imagens e PDFs.",
+    "message": "Assistente de IA cotidiano mais rápido — com generosa cota mensal gratuita. Ótimo para perguntas rápidas, texto e tradução. Suporta imagens e documentos (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for Lite model tab."
   },
   "incognitoThinkingLabel": {

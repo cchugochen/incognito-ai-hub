@@ -431,8 +431,8 @@
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "PDF belgesi yükle (1)",
-    "description": "Tooltip for the PDF upload button."
+    "message": "Belge yükle — PDF, TXT, MD, CSV, HTML, XML (1)",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "Ön Ayar A'yı Kullan",
@@ -471,7 +471,7 @@
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "Mesajınızı buraya girin (resim veya PDF yükleyebilirsiniz)...",
+    "message": "Mesajınızı buraya girin (görsel veya belge yükleyebilirsiniz)...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -479,7 +479,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Hız ve kalite dengesi — karmaşık sorular, belge analizi ve ayrıntılı çeviri için ideal. Görsel ve PDF desteği.",
+    "message": "Hız ve kalite dengesi — karmaşık sorular, belge analizi ve ayrıntılı çeviri için ideal. Görsel ve belge desteği (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -487,7 +487,7 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Uzun belgelerin ve karmaşık konuların derinlemesine analizi için en güçlü AI modeli. Ayrıntılı raporlar ve kapsamlı yanıtlar için ideal. Görsel ve PDF desteği.",
+    "message": "Uzun belgelerin ve karmaşık konuların derinlemesine analizi için en güçlü AI modeli. Ayrıntılı raporlar ve kapsamlı yanıtlar için ideal. Görsel ve belge desteği (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -735,7 +735,7 @@
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "Chat with your local Ollama or LM Studio model. Text only — images and PDFs are not supported.",
+    "message": "Yerel Ollama veya LM Studio modelinizle sohbet edin. Yalnızca metin — görsel ve belge yükleme desteklenmez.",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
@@ -862,7 +862,7 @@
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 Yerel model sohbeti yalnızca düz metni destekler — resim ve PDF analizi mevcut değil. Çok modlu özellikler için Gemini Flash veya Pro sekmesine geçin.",
+    "message": "💬 Yerel model sohbeti yalnızca metni destekler — görsel ve belge yükleme mevcut değil. Çok modlu özellikler için Gemini sekmesine geçin.",
     "description": "Info notice shown at the top of the Local model chat tab."
   },
   "incognitoLocalModeBanner": {
@@ -890,10 +890,10 @@
     "description": "Note shown below the translate-page button in popup when aiMode is local-only."
   },
   "popupOpenVoiceSummary": {
-    "message": "Yapay Zeka Sesli Okuma [Beta]"
+    "message": "AI Özet ve Sesli Okuma podcast [Beta]"
   },
   "vsSummaryTitle": {
-    "message": "AI朗讀podcast"
+    "message": "AI Özet ve Sesli Okuma podcast [Beta]"
   },
   "vsSummaryDesc": {
     "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
@@ -1000,7 +1000,7 @@
     "description": "Header for Lite model tab in incognito page."
   },
   "incognitoLiteModelDesc": {
-    "message": "En hızlı günlük AI asistanı — hızlı sorular, yazı yardımı ve çeviri için ideal. Görsel ve PDF desteği.",
+    "message": "En hızlı günlük AI asistanı — cömert aylık ücretsiz kota ile. Hızlı sorular, yazı yardımı ve çeviri için ideal. Görsel ve belge desteği (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for Lite model tab."
   },
   "incognitoThinkingLabel": {

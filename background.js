@@ -83,6 +83,9 @@ function extractDomContent() {
 
 const protocolVersion = "1.3";
 let attachedTabs = {};
+chrome.debugger.onDetach.addListener((source) => {
+    delete attachedTabs[source.tabId];
+});
 
 // --- Language Logic (for Service Worker context) ---
 async function getEffectiveUILanguageNameForBg() {
@@ -107,7 +110,10 @@ async function getEffectiveUILanguageNameForBg() {
 
 
 // --- Main Message Router ---
-chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    // Only accept messages from this extension's own pages
+    if (sender.id !== chrome.runtime.id) return;
+
     const handler = {
         'PROCESS_WEBPAGE': async () => {
             const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -214,9 +220,6 @@ async function captureAndRecognize(tabId) {
                         return reject(new Error(chrome.runtime.lastError.message));
                     }
                     attachedTabs[tabId] = true;
-                    chrome.debugger.onDetach.addListener((source) => {
-                        if (source.tabId === tabId) delete attachedTabs[tabId];
-                    });
                     resolve();
                 });
             });
@@ -385,10 +388,23 @@ async function setActionBadge(tabId, text, color) {
  */
 async function fetchExternalUrl({ url }) {
     if (!url || typeof url !== 'string') throw new Error('Invalid URL');
+    // Validate URL protocol — only allow http(s) to prevent file://, javascript:, data: etc.
+    let parsed;
+    try { parsed = new URL(url); } catch { throw new Error('Invalid URL format'); }
+    if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') {
+        throw new Error('Only HTTP/HTTPS URLs are allowed');
+    }
+    // Block private/internal network ranges
+    const host = parsed.hostname;
+    if (host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0' ||
+        host.startsWith('192.168.') || host.startsWith('10.') || host.startsWith('172.') ||
+        host === '::1' || host === '[::1]') {
+        throw new Error('Internal network URLs are not allowed');
+    }
     const resp = await fetch(url, {
         headers: { 'User-Agent': 'Mozilla/5.0 (compatible; Chrome Extension)' }
     });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status} fetching ${url}`);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const text = await resp.text();
     return { text };
 }

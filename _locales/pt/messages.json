@@ -24,8 +24,7 @@
     "description": "Button text in popup.html"
   },
   "popupOpenTutorial": {
-    "message": "Tutorial simples para a chave de API do Gemini",
-    "description": "Button text in popup.html"
+    "message": "Tutorial"
   },
   "popupShowLicense": {
     "message": "Informações da Licença MIT",
@@ -126,9 +125,25 @@
     "message": "Predefinição E",
     "description": "Label for preset E."
   },
+  "optionsPresetLabelF": {
+    "message": "Preset F",
+    "description": "Label for preset F."
+  },
+  "optionsPresetLabelG": {
+    "message": "Preset G",
+    "description": "Label for preset G."
+  },
   "optionsSaveButton": {
     "message": "Salvar configurações",
     "description": "Save button text."
+  },
+  "optionsResetButton": {
+    "message": "Reset to Default",
+    "description": "Reset button text on options page."
+  },
+  "optionsStatusReset": {
+    "message": "Settings reset to default.",
+    "description": "Status message when settings are reset."
   },
   "optionsStatusSaved": {
     "message": "Configurações salvas!",
@@ -433,8 +448,8 @@
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "Carregar documento PDF (1)",
-    "description": "Tooltip for the PDF upload button."
+    "message": "Carregar documento — PDF, TXT, MD, CSV, HTML, XML (1)",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "Usar Predefinição A",
@@ -456,6 +471,18 @@
     "message": "Usar Predefinição E",
     "description": "Tooltip for preset button E."
   },
+  "incognitoPresetTitleF": {
+    "message": "Use Preset F",
+    "description": "Tooltip for preset button F."
+  },
+  "incognitoPresetTitleG": {
+    "message": "Use Preset G",
+    "description": "Tooltip for preset button G."
+  },
+  "incognitoPresetLabel": {
+    "message": "Prompts:",
+    "description": "Label before the preset buttons."
+  },
   "stateThinking": {
     "message": "Pensando...",
     "description": "Thinking indicator text."
@@ -473,7 +500,7 @@
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "Digite sua mensagem aqui (você pode carregar imagens ou um PDF)...",
+    "message": "Digite sua mensagem aqui (você pode carregar imagens ou documentos)...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -481,7 +508,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Modelo intermediário padrão do Google. Adequado para aplicações que exigem respostas rápidas e alto rendimento a um custo moderado. Também suporta entradas de imagem e PDF.",
+    "message": "Equilíbrio entre velocidade e qualidade — ideal para perguntas complexas, análise de documentos e tradução detalhada. Suporta imagens e documentos (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -489,7 +516,7 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "O modelo mais poderoso do Google, com uma enorme janela de contexto de 1 milhão de tokens. Ele se destaca em raciocínio complexo, codificação e compreensão multimodal. Custo mais alto, ideal para processar PDFs e imagens complexas.",
+    "message": "Modelo de IA mais poderoso para análise aprofundada de documentos longos e temas complexos. Ideal para relatórios detalhados e respostas abrangentes. Suporta imagens e documentos (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -541,34 +568,6 @@
   "voiceResultTitle": {
     "message": "Resultado da transcrição de voz",
     "description": "Title for the reader tab showing voice transcription result."
-  },
-  "optionsPresetLabelF": {
-    "message": "Preset F",
-    "description": "Label for preset F."
-  },
-  "optionsPresetLabelG": {
-    "message": "Preset G",
-    "description": "Label for preset G."
-  },
-  "optionsResetButton": {
-    "message": "Reset to Default",
-    "description": "Reset button text on options page."
-  },
-  "optionsStatusReset": {
-    "message": "Settings reset to default.",
-    "description": "Status message when settings are reset."
-  },
-  "incognitoPresetTitleF": {
-    "message": "Use Preset F",
-    "description": "Tooltip for preset button F."
-  },
-  "incognitoPresetTitleG": {
-    "message": "Use Preset G",
-    "description": "Tooltip for preset button G."
-  },
-  "incognitoPresetLabel": {
-    "message": "Prompts:",
-    "description": "Label before the preset buttons."
   },
   "errorNoApiKey": {
     "message": "Error: Gemini API Key not found. Please enter your key in the Settings page first.",
@@ -737,7 +736,7 @@
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "Chat with your local Ollama or LM Studio model. Text only — images and PDFs are not supported.",
+    "message": "Converse com o seu modelo local Ollama ou LM Studio. Apenas texto — imagens e upload de documentos não são suportados.",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
@@ -751,6 +750,18 @@
   "errorLocalModelConnect": {
     "message": "Could not connect to local model. Please ensure Ollama or LM Studio is running.",
     "description": "Error when the fetch to local model endpoint fails."
+  },
+  "readerClickHint": {
+    "message": "💡 Clique em qualquer parágrafo para traduzi-lo instantaneamente.",
+    "description": "Hint shown in reader page for voice transcription results."
+  },
+  "optionsLicenseLink": {
+    "message": "Licença MIT",
+    "description": "Link to the MIT license file on the options page."
+  },
+  "optionsPrivacyLink": {
+    "message": "Política de Privacidade",
+    "description": "Link to the privacy policy on the options page."
   },
   "readerTtsSpeakBtn": {
     "message": "🔊 Falar",
@@ -783,18 +794,6 @@
   "workbenchTextPlaceholder": {
     "message": "Cole o texto aqui...",
     "description": "Placeholder for the text input area in workbench."
-  },
-  "optionsLicenseLink": {
-    "message": "Licença MIT",
-    "description": "Link to the MIT license file on the options page."
-  },
-  "optionsPrivacyLink": {
-    "message": "Política de Privacidade",
-    "description": "Link to the privacy policy on the options page."
-  },
-  "readerClickHint": {
-    "message": "💡 Clique em qualquer parágrafo para traduzi-lo instantaneamente.",
-    "description": "Hint shown in reader page for voice transcription results."
   },
   "langPref": {
     "message": "⭐ $langName$",
@@ -862,5 +861,192 @@
   "localModelConfigHint": {
     "message": "Opcional. Suporta Ollama, LM Studio ou qualquer servidor local compatível com OpenAI. (Ollama padrão: http://localhost:11434/v1 · LM Studio padrão: http://127.0.0.1:1234/v1)",
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
+  },
+  "localModelTabTextOnlyNotice": {
+    "message": "💬 O chat com modelo local suporta apenas texto — upload de imagens e documentos não está disponível. Mude para um separador Gemini para funcionalidades multimodais.",
+    "description": "Info notice shown at the top of the Local model chat tab."
+  },
+  "incognitoLocalModeBanner": {
+    "message": "ℹ️ O modo de IA local está ativo. As tarefas de tradução agora usam o seu modelo local. O chat Gemini neste separador continua disponível.",
+    "description": "Banner shown in Flash/Pro tabs when aiMode is local-only."
+  },
+  "optionsModelGemini3FlashName": {
+    "message": "Gemini 3 Flash",
+    "description": "Model name for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsModelGemini3FlashDesc": {
+    "message": "O modelo de velocidade de próxima geração do Google. Ainda não anunciado oficialmente — esta opção será desbloqueada no lançamento.",
+    "description": "Description for Gemini 3 Flash placeholder card in options."
+  },
+  "optionsComingSoonBadge": {
+    "message": "Em breve",
+    "description": "Badge text for coming-soon model cards."
+  },
+  "errorLocalModelOffline": {
+    "message": "Não é possível conectar ao serviço de IA local. Certifique-se de que o Ollama ou LM Studio está em execução e verifique a URL do endpoint nas Configurações.",
+    "description": "Actionable error shown when local model connection fails during translation."
+  },
+  "popupLocalModeWebpageNote": {
+    "message": "⚠️ No modo IA local, a tradução de páginas web só funciona quando o conteúdo DOM pode ser extraído. O fallback OCR por captura de ecrã não está disponível neste modo."
+  },
+  "popupOpenVoiceSummary": {
+    "message": "AI Resumo e Leitura podcast [Beta]"
+  },
+  "vsSummaryTitle": {
+    "message": "AI Resumo e Leitura podcast [Beta]"
+  },
+  "vsSummaryDesc": {
+    "message": "Esta funcionalidade converte vídeos do YouTube, podcasts, páginas web e outros ficheiros em resumo áudio. Em desenvolvimento."
+  },
+  "vsTabWebpage": {
+    "message": "Página web",
+    "description": "Tab label for webpage URL input."
+  },
+  "vsTabAudio": {
+    "message": "Ficheiro de áudio",
+    "description": "Tab label for audio file upload."
+  },
+  "vsTabText": {
+    "message": "Colar texto",
+    "description": "Tab label for direct text input."
+  },
+  "vsTabMic": {
+    "message": "Microfone",
+    "description": "Tab label for microphone recording."
+  },
+  "vsYoutubeUrlLabel": {
+    "message": "URL do YouTube",
+    "description": "Label for the YouTube URL input field."
+  },
+  "vsYoutubeUrlPlaceholder": {
+    "message": "https://www.youtube.com/watch?v=...",
+    "description": "Placeholder for the YouTube URL input."
+  },
+  "vsYoutubeHint": {
+    "message": "Funciona com vídeos que tenham legendas/subtítulos ativados.",
+    "description": "Hint text below the YouTube URL input."
+  },
+  "vsYoutubeNoCaption": {
+    "message": "Não foram encontradas legendas para este vídeo. Experimente um vídeo diferente ou descarregue o áudio e use o separador Ficheiro de áudio.",
+    "description": "Error when a YouTube video has no captions."
+  },
+  "vsWebpageLabel": {
+    "message": "URL da página",
+    "description": "Label for the webpage URL input."
+  },
+  "vsWebpagePlaceholder": {
+    "message": "https://example.com/article",
+    "description": "Placeholder for the webpage URL input."
+  },
+  "vsUseCurrentTab": {
+    "message": "Usar o separador atual",
+    "description": "Button to fill in the URL of the active browser tab."
+  },
+  "vsAudioUploadPrompt": {
+    "message": "Clique ou arraste um ficheiro de áudio para aqui",
+    "description": "Prompt inside the audio upload drop zone."
+  },
+  "vsAudioFormats": {
+    "message": "MP3 · WAV · M4A · WebM · OGG",
+    "description": "Supported audio formats label."
+  },
+  "vsPdfUploadPrompt": {
+    "message": "Clique ou arraste um ficheiro PDF ou TXT para aqui",
+    "description": "Prompt inside the PDF/TXT upload drop zone."
+  },
+  "vsPdfFormats": {
+    "message": "PDF · TXT",
+    "description": "Supported document formats label."
+  },
+  "vsTextPlaceholder": {
+    "message": "Cole aqui o artigo, transcrição ou qualquer texto...",
+    "description": "Placeholder for the paste-text textarea."
+  },
+  "vsRecordHint": {
+    "message": "Grave até 15 minutos. Prima Gerar Voz após parar.",
+    "description": "Hint text below the mic recording button."
+  },
+  "vsTtsPromptLabel": {
+    "message": "Instrução de leitura (opcional)",
+    "description": "Label for the custom TTS instruction textarea."
+  },
+  "vsTtsPromptPlaceholder": {
+    "message": "ex: Resuma em pontos-chave / Leia o conteúdo frase a frase",
+    "description": "Placeholder for the custom TTS instruction textarea."
+  },
+  "vsSummaryLanguageLabel": {
+    "message": "Idioma de saída",
+    "description": "Label for the output language selector."
+  },
+  "vsProcessButton": {
+    "message": "Gerar Voz",
+    "description": "Main action button on voice_summary page."
+  },
+  "vsStatusFetching": {
+    "message": "A obter conteúdo...",
+    "description": "Status while fetching source content."
+  },
+  "vsStatusTranscribing": {
+    "message": "A transcrever áudio...",
+    "description": "Status while transcribing audio via Gemini STT."
+  },
+  "vsStatusSummarizing": {
+    "message": "A gerar resumo...",
+    "description": "Status while calling Gemini for summarization."
+  },
+  "vsTtsPlayBtn": {
+    "message": "Reproduzir TTS",
+    "description": "Button to start TTS playback of the summary."
+  },
+  "vsTtsStopBtn": {
+    "message": "Parar TTS",
+    "description": "Button to stop TTS playback."
+  },
+  "vsDownloadMd": {
+    "message": "Guardar resumo (.md)",
+    "description": "Button to download the summary as a Markdown file."
+  },
+  "errorYoutubeExtract": {
+    "message": "Não foi possível extrair legendas deste vídeo do YouTube. O vídeo pode necessitar de início de sessão, não ter legendas ou usar um formato não suportado.",
+    "description": "Error when YouTube caption extraction fails."
+  },
+  "errorWebpageExtract": {
+    "message": "Não foi possível extrair texto legível desta página. Tente colar o conteúdo no separador Colar texto.",
+    "description": "Error when Readability.js fails to extract article text."
+  },
+  "vsDownloadAudio": {
+    "message": "Descarregar áudio (.wav)",
+    "description": "Button to generate and download TTS audio via Gemini."
+  },
+  "vsStatusGeneratingAudio": {
+    "message": "A gerar áudio via Gemini TTS...",
+    "description": "Status while calling Gemini TTS API."
+  },
+  "optionsModelLiteName": {
+    "message": "Gemini 3.1 Flash Lite (Padrão)",
+    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+  },
+  "optionsModelLiteDesc": {
+    "message": "O mais rápido e económico. Ideal para tarefas do dia a dia, resumos e respostas rápidas.",
+    "description": "Model card description for gemini-3.1-flash-lite-preview."
+  },
+  "incognitoLiteModelHeader": {
+    "message": "Gemini 3.1 Flash Lite",
+    "description": "Header for Lite model tab in incognito page."
+  },
+  "incognitoLiteModelDesc": {
+    "message": "O assistente de IA mais rápido para o dia a dia — com uma generosa cota mensal gratuita. Ideal para perguntas rápidas, escrita e tradução. Suporta imagens e documentos (PDF, TXT, MD, CSV, HTML, XML).",
+    "description": "Description for Lite model tab."
+  },
+  "incognitoThinkingLabel": {
+    "message": "Raciocínio",
+    "description": "Label for the thinking mode checkbox in incognito chat."
+  },
+  "popupBetaLabel": {
+    "message": "BETA"
+  },
+  "voiceLimitHint": {
+    "message": "Gravação máxima: 15 minutos.",
+    "description": "Hint text showing maximum recording duration under the record button."
   }
 }

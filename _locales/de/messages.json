@@ -459,8 +459,8 @@
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "PDF-Dokument hochladen (1)",
-    "description": "Tooltip for the PDF upload button."
+    "message": "Dokument hochladen — PDF, TXT, MD, CSV, HTML, XML (1)",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "Vorlage A verwenden",
@@ -511,7 +511,7 @@
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "Ihre Nachricht hier eingeben (Sie können Bilder oder ein PDF hochladen)...",
+    "message": "Ihre Nachricht hier eingeben (Sie können Bilder oder Dokumente hochladen)...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -519,7 +519,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Ausgewogenes Verhältnis von Geschwindigkeit und Qualität — für komplexe Fragen, Dokumentenanalyse und ausführliche Übersetzungen. Unterstützt Bilder und PDFs.",
+    "message": "Ausgewogenes Verhältnis von Geschwindigkeit und Qualität — für komplexe Fragen, Dokumentenanalyse und ausführliche Übersetzungen. Unterstützt Bilder und Dokumente (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -527,7 +527,7 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Leistungsfähigstes KI-Modell für die eingehende Analyse langer Dokumente und komplexer Themen. Ideal für ausführliche Berichte und detaillierte Antworten. Unterstützt Bilder und PDFs.",
+    "message": "Leistungsfähigstes KI-Modell für die eingehende Analyse langer Dokumente und komplexer Themen. Ideal für ausführliche Berichte und detaillierte Antworten. Unterstützt Bilder und Dokumente (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -747,7 +747,7 @@
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "Chatten Sie mit Ihrem lokalen Ollama- oder LM Studio-Modell. Nur Text — Bilder und PDFs werden nicht unterstützt.",
+    "message": "Chatten Sie mit Ihrem lokalen Ollama- oder LM Studio-Modell. Nur Text — Bilder und Dokument-Uploads werden nicht unterstützt.",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
@@ -862,7 +862,7 @@
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 Der lokale Modell-Chat unterstützt nur reinen Text – Bild- und PDF-Analyse sind nicht verfügbar. Wechsle für multimodale Funktionen zum Gemini Flash- oder Pro-Tab.",
+    "message": "💬 Der lokale Modell-Chat unterstützt nur Text — Bild- und Dokument-Uploads sind nicht verfügbar. Wechsle für multimodale Funktionen zum Gemini-Tab.",
     "description": "Info notice shown at the top of the Local model chat tab."
   },
   "incognitoLocalModeBanner": {
@@ -890,10 +890,10 @@
     "description": "Note shown below the translate-page button in popup when aiMode is local-only."
   },
   "popupOpenVoiceSummary": {
-    "message": "KI-Vorlesefunktion [Beta]"
+    "message": "KI-Zusammenfassung & Vorlesen podcast [Beta]"
   },
   "vsSummaryTitle": {
-    "message": "AI朗讀podcast"
+    "message": "KI-Zusammenfassung & Vorlesen podcast [Beta]"
   },
   "vsSummaryDesc": {
     "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
@@ -1000,7 +1000,7 @@
     "description": "Header for Lite model tab in incognito page."
   },
   "incognitoLiteModelDesc": {
-    "message": "Schnellster Alltags-KI-Assistent für schnelle Fragen, Texthilfe und Übersetzungen. Unterstützt Bilder und PDFs.",
+    "message": "Schnellster Alltags-KI-Assistent — mit großzügigem monatlichem Gratis-Kontingent. Ideal für schnelle Fragen, Texthilfe und Übersetzungen. Unterstützt Bilder und Dokumente (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for Lite model tab."
   },
   "incognitoThinkingLabel": {

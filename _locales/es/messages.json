@@ -459,8 +459,8 @@
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "Subir documento PDF (1)",
-    "description": "Tooltip for the PDF upload button."
+    "message": "Subir documento — PDF, TXT, MD, CSV, HTML, XML (1)",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "Usar Preset A",
@@ -511,7 +511,7 @@
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "Escribe tu mensaje aquí (puedes subir imágenes o un PDF)...",
+    "message": "Escribe tu mensaje aquí (puedes subir imágenes o documentos)...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -519,7 +519,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Equilibrio entre velocidad y calidad — ideal para preguntas complejas, análisis de documentos y traducción detallada. Compatible con imágenes y PDF.",
+    "message": "Equilibrio entre velocidad y calidad — ideal para preguntas complejas, análisis de documentos y traducción detallada. Compatible con imágenes y documentos (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -527,7 +527,7 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "El modelo de IA más potente para el análisis profundo de documentos largos y temas complejos. Ideal para informes detallados y respuestas exhaustivas. Compatible con imágenes y PDF.",
+    "message": "El modelo de IA más potente para el análisis profundo de documentos largos y temas complejos. Ideal para informes detallados y respuestas exhaustivas. Compatible con imágenes y documentos (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -747,7 +747,7 @@
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "Chatea con tu modelo local de Ollama o LM Studio. Solo texto — las imágenes y PDF no son compatibles.",
+    "message": "Chatea con tu modelo local de Ollama o LM Studio. Solo texto — las imágenes y la carga de documentos no son compatibles.",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
@@ -862,7 +862,7 @@
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 El chat con modelo local solo admite texto puro — el análisis de imágenes y PDF no está disponible. Cambia a la pestaña Gemini Flash o Pro para funciones multimodales.",
+    "message": "💬 El chat con modelo local solo admite texto — la carga de imágenes y documentos no está disponible. Cambia a una pestaña Gemini para funciones multimodales.",
     "description": "Info notice shown at the top of the Local model chat tab."
   },
   "incognitoLocalModeBanner": {
@@ -890,10 +890,10 @@
     "description": "Note shown below the translate-page button in popup when aiMode is local-only."
   },
   "popupOpenVoiceSummary": {
-    "message": "Lectura de Voz IA [Beta]"
+    "message": "AI Resumen y Lectura podcast [Beta]"
   },
   "vsSummaryTitle": {
-    "message": "AI朗讀podcast"
+    "message": "AI Resumen y Lectura podcast [Beta]"
   },
   "vsSummaryDesc": {
     "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
@@ -1000,7 +1000,7 @@
     "description": "Header for Lite model tab in incognito page."
   },
   "incognitoLiteModelDesc": {
-    "message": "Asistente de IA cotidiano más rápido, ideal para preguntas rápidas, ayuda con textos y traducción. Compatible con imágenes y PDF.",
+    "message": "Asistente de IA cotidiano más rápido — con generosa cuota mensual gratuita. Ideal para preguntas rápidas, ayuda con textos y traducción. Compatible con imágenes y documentos (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for Lite model tab."
   },
   "incognitoThinkingLabel": {

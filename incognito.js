@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (fileType === 'image') {
                 for (const file of files) this.processImageFile(file);
             } else if (fileType === 'pdf') {
-                if (files.length > 0) this.processPdfFile(files[0]);
+                if (files.length > 0) this.processDocFile(files[0]);
             }
             event.target.value = ''; // Clear the input
         }
@@ -114,20 +114,32 @@ document.addEventListener('DOMContentLoaded', () => {
             reader.readAsDataURL(file);
         }
 
-        processPdfFile(file) {
-            if (!file || file.type !== 'application/pdf') return;
+        processDocFile(file) {
+            if (!file) return;
+            const allowedTypes = [
+                'application/pdf',
+                'text/plain', 'text/html', 'text/xml', 'text/csv', 'text/markdown'
+            ];
+            const allowedExts = ['.pdf', '.txt', '.md', '.csv', '.html', '.xml'];
+            const ext = '.' + file.name.split('.').pop().toLowerCase();
+            if (!allowedTypes.includes(file.type) && !allowedExts.includes(ext)) return;
 
-            if (this.attachedFiles.some(f => f.type === 'pdf')) {
+            if (this.attachedFiles.some(f => f.type === 'doc')) {
                 showNotification(chrome.i18n.getMessage("alertOnePdfOnly"), true);
                 return;
             }
 
             const reader = new FileReader();
             reader.onload = (e) => {
+                // For text-based files, use text/plain if browser didn't set a recognized MIME
+                let mimeType = file.type || 'text/plain';
+                if (ext === '.md') mimeType = 'text/markdown';
+                if (ext === '.csv') mimeType = 'text/csv';
+
                 this.attachedFiles.push({
-                    type: 'pdf',
+                    type: 'doc',
                     base64: e.target.result.split(',')[1],
-                    mimeType: file.type,
+                    mimeType: mimeType,
                     name: file.name
                 });
                 this.renderPreviews();
@@ -139,25 +151,27 @@ document.addEventListener('DOMContentLoaded', () => {
             this.previewContainer.innerHTML = '';
             this.attachedFiles.forEach((file, index) => {
                 const item = document.createElement('div');
-                let contentHTML = '';
 
                 if (file.type === 'image') {
                     item.className = 'preview-item';
-                    contentHTML = `<img src="data:${file.mimeType};base64,${file.base64}" />`;
-                } else if (file.type === 'pdf') {
+                    const img = document.createElement('img');
+                    img.src = `data:${file.mimeType};base64,${file.base64}`;
+                    item.appendChild(img);
+                } else if (file.type === 'doc') {
                     item.className = 'pdf-preview-item';
-                    contentHTML = `<span>📄 ${file.name}</span>`;
+                    const span = document.createElement('span');
+                    span.textContent = '\u{1F4C4} ' + file.name;
+                    item.appendChild(span);
                 }
 
                 const removeBtn = document.createElement('button');
                 removeBtn.className = 'remove-btn';
-                removeBtn.innerHTML = '&times;';
+                removeBtn.textContent = '\u00D7';
                 removeBtn.onclick = () => {
                     this.attachedFiles.splice(index, 1);
                     this.renderPreviews();
                 };
 
-                item.innerHTML = contentHTML;
                 item.appendChild(removeBtn);
                 this.previewContainer.appendChild(item);
             });
@@ -170,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const imageFilesForDisplay = this.attachedFiles.filter(f => f.type === 'image');
             let displayText = promptText;
-            const pdfFile = this.attachedFiles.find(f => f.type === 'pdf');
+            const pdfFile = this.attachedFiles.find(f => f.type === 'doc');
             if (pdfFile) {
                 displayText += `\n(${chrome.i18n.getMessage("incognitoAttachedFile", pdfFile.name)})`;
             }
@@ -407,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const content = presetPrompts[`preset_${button.dataset.preset.toLowerCase()}`];
                 if (content) {
                     const tip = content.length > 100 ? content.substring(0, 100) + '…' : content;
-                    button.setAttribute('data-tooltip', tip);
+                    button.title = tip;
                 }
             });
 

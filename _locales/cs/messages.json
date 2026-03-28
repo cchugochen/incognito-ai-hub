@@ -366,7 +366,8 @@
     "message": "Nahrát obrázky (max. 4)"
   },
   "incognitoUploadPdfTitle": {
-    "message": "Nahrát dokument PDF (1)"
+    "message": "Nahrát dokument — PDF, TXT, MD, CSV, HTML, XML (1)",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "Použít přednastavení A"
@@ -405,19 +406,19 @@
     "message": "Opravdu chcete vymazat historii konverzace? Tuto akci nelze vrátit zpět."
   },
   "incognitoPlaceholder": {
-    "message": "Zadejte svou zprávu zde (můžete nahrát obrázky nebo PDF)..."
+    "message": "Zadejte svou zprávu zde (můžete nahrát obrázky nebo dokumenty)..."
   },
   "incognitoFlashModelHeader": {
     "message": "Gemini 2.5 Flash"
   },
   "incognitoFlashModelDesc": {
-    "message": "Vyvážená rychlost a kvalita — zvládá složité otázky, analýzu dokumentů a podrobný překlad. Podporuje obrázky a PDF."
+    "message": "Vyvážená rychlost a kvalita — zvládá složité otázky, analýzu dokumentů a podrobný překlad. Podporuje obrázky a dokumenty (PDF, TXT, MD, CSV, HTML, XML)."
   },
   "incognitoProModelHeader": {
     "message": "Gemini 3.1 Pro"
   },
   "incognitoProModelDesc": {
-    "message": "Nejschopnější AI model pro hloubkovou analýzu dlouhých dokumentů a složitých témat. Nejlepší pro důkladné, podrobné odpovědi nebo analýzu celého výzkumného článku či zprávy. Podporuje obrázky a PDF."
+    "message": "Nejschopnější AI model pro hloubkovou analýzu dlouhých dokumentů a složitých témat. Nejlepší pro důkladné, podrobné odpovědi a analýzu celých výzkumných článků. Podporuje obrázky a dokumenty (PDF, TXT, MD, CSV, HTML, XML)."
   },
   "statusUploading": {
     "message": "Nahrávám a zpracovávám..."
@@ -600,7 +601,7 @@
     "message": "Chat s lokálním AI modelem"
   },
   "localModelChatDesc": {
-    "message": "Chatujte se svým lokálním modelem Ollama nebo LM Studio. Pouze text — obrázky a PDF nejsou podporovány."
+    "message": "Chatujte se svým lokálním modelem Ollama nebo LM Studio. Pouze text — obrázky a nahrávání dokumentů nejsou podporovány."
   },
   "localModelNotEnabledMsg": {
     "message": "Lokální model není aktivován. Přejděte do Možností (⚙️) a nastavte koncový bod a název modelu."
@@ -703,7 +704,7 @@
     "message": "Volitelné. Podporuje Ollama a LM Studio nebo jakýkoli server kompatibilní s OpenAI. (Ollama výchozí: http://localhost:11434/v1 · LM Studio výchozí: http://127.0.0.1:1234/v1)"
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 Chat s lokálním modelem podporuje pouze text — analýza obrázků a PDF není dostupná. Pro multimodální funkce přepněte na kartu Gemini Flash nebo Pro."
+    "message": "💬 Chat s lokálním modelem podporuje pouze text — nahrávání obrázků a dokumentů není dostupné. Pro multimodální funkce přepněte na kartu Gemini."
   },
   "incognitoLocalModeBanner": {
     "message": "ℹ️ Režim lokální AI je aktivní. Překladatelské úlohy nyní používají váš lokální model. Gemini chat v této kartě je stále dostupný."
@@ -724,10 +725,10 @@
     "message": "⚠️ V režimu lokální AI funguje překlad webových stránek pouze při extrakci obsahu DOM. Záložní OCR snímků obrazovky není v tomto režimu dostupné."
   },
   "popupOpenVoiceSummary": {
-    "message": "AI čtení hlasem [Beta]"
+    "message": "AI Shrnutí a čtení podcast [Beta]"
   },
   "vsSummaryTitle": {
-    "message": "AI hlasové čtení [Beta]"
+    "message": "AI Shrnutí a čtení podcast [Beta]"
   },
   "vsSummaryDesc": {
     "message": "Tato funkce převádí YouTube videa, podcasty, webové stránky a další soubory do zvukového formátu. Ve vývoji."
@@ -835,7 +836,7 @@
     "message": "Gemini 3.1 Flash Lite"
   },
   "incognitoLiteModelDesc": {
-    "message": "Nejrychlejší každodenní AI asistent — skvělý pro rychlé otázky, pomoc s psaním a překlad. Podporuje obrázky a PDF."
+    "message": "Nejrychlejší každodenní AI asistent — se štědrým měsíčním bezplatným limitem. Skvělý pro rychlé otázky, pomoc s psaním a překlad. Podporuje obrázky a dokumenty (PDF, TXT, MD, CSV, HTML, XML)."
   },
   "incognitoThinkingLabel": {
     "message": "Přemýšlení"

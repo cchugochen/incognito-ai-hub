@@ -431,8 +431,8 @@
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "Загрузить документ PDF (1)",
-    "description": "Tooltip for the PDF upload button."
+    "message": "Загрузить документ — PDF, TXT, MD, CSV, HTML, XML (1)",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "Использовать пресет A",
@@ -471,7 +471,7 @@
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "Введите ваше сообщение здесь (можно загрузить изображения или PDF)...",
+    "message": "Введите ваше сообщение здесь (можно загрузить изображения или документы)...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -479,7 +479,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Баланс скорости и качества — для сложных вопросов, анализа документов и подробного перевода. Поддерживает изображения и PDF.",
+    "message": "Баланс скорости и качества — для сложных вопросов, анализа документов и подробного перевода. Поддерживает изображения и документы (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -487,7 +487,7 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Самая мощная модель ИИ для глубокого анализа длинных документов и сложных тем. Лучший выбор для детального анализа отчётов и развёрнутых ответов. Поддерживает изображения и PDF.",
+    "message": "Самая мощная модель ИИ для глубокого анализа длинных документов и сложных тем. Лучший выбор для детального анализа отчётов и развёрнутых ответов. Поддерживает изображения и документы (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -735,7 +735,7 @@
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "Chat with your local Ollama or LM Studio model. Text only — images and PDFs are not supported.",
+    "message": "Общайтесь с локальной моделью Ollama или LM Studio. Только текст — загрузка изображений и документов не поддерживается.",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
@@ -862,7 +862,7 @@
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 Чат с локальной моделью поддерживает только текст — анализ изображений и PDF недоступен. Для мультимодальных функций переключитесь на вкладку Gemini Flash или Pro.",
+    "message": "💬 Чат с локальной моделью поддерживает только текст — загрузка изображений и документов недоступна. Для мультимодальных функций переключитесь на вкладку Gemini.",
     "description": "Info notice shown at the top of the Local model chat tab."
   },
   "incognitoLocalModeBanner": {
@@ -890,10 +890,10 @@
     "description": "Note shown below the translate-page button in popup when aiMode is local-only."
   },
   "popupOpenVoiceSummary": {
-    "message": "Голосовое чтение ИИ [Бета]"
+    "message": "AI Краткое изложение и озвучка podcast [Бета]"
   },
   "vsSummaryTitle": {
-    "message": "AI朗讀podcast"
+    "message": "AI Краткое изложение и озвучка podcast [Бета]"
   },
   "vsSummaryDesc": {
     "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
@@ -1000,7 +1000,7 @@
     "description": "Header for Lite model tab in incognito page."
   },
   "incognitoLiteModelDesc": {
-    "message": "Самый быстрый повседневный ИИ-ассистент. Подходит для быстрых вопросов, написания текстов и перевода. Поддерживает изображения и PDF.",
+    "message": "Самый быстрый повседневный ИИ-ассистент — с щедрым бесплатным месячным лимитом. Подходит для быстрых вопросов, написания текстов и перевода. Поддерживает изображения и документы (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for Lite model tab."
   },
   "incognitoThinkingLabel": {

@@ -459,8 +459,8 @@
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "رفع مستند PDF (1)",
-    "description": "Tooltip for the PDF upload button."
+    "message": "رفع مستند — PDF، TXT، MD، CSV، HTML، XML (1)",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "استخدام قالب A",
@@ -511,7 +511,7 @@
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "أدخل رسالتك هنا (يمكنك رفع صور أو ملف PDF)...",
+    "message": "أدخل رسالتك هنا (يمكنك رفع صور أو مستندات)...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -519,7 +519,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "توازن بين السرعة والجودة — مثالي للأسئلة المعقدة وتحليل المستندات والترجمة التفصيلية. يدعم الصور وملفات PDF.",
+    "message": "توازن بين السرعة والجودة — مثالي للأسئلة المعقدة وتحليل المستندات والترجمة التفصيلية. يدعم الصور والمستندات (PDF، TXT، MD، CSV، HTML، XML).",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -527,7 +527,7 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "نموذج الذكاء الاصطناعي الأكثر قدرةً لتحليل المستندات الطويلة والمواضيع المعقدة بعمق. الأفضل للتقارير التفصيلية والإجابات الشاملة. يدعم الصور وملفات PDF.",
+    "message": "نموذج الذكاء الاصطناعي الأكثر قدرةً لتحليل المستندات الطويلة والمواضيع المعقدة بعمق. الأفضل للتقارير التفصيلية والإجابات الشاملة. يدعم الصور والمستندات (PDF، TXT، MD، CSV، HTML، XML).",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -747,7 +747,7 @@
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "تحدث مع نموذج Ollama أو LM Studio المحلي. نص فقط — الصور وملفات PDF غير مدعومة.",
+    "message": "تحدث مع نموذج Ollama أو LM Studio المحلي. نص فقط — الصور ورفع المستندات غير مدعومة.",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
@@ -862,7 +862,7 @@
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 دردشة النموذج المحلي تدعم النص فقط — تحليل الصور وملفات PDF غير متاح. انتقل إلى علامة تبويب Gemini Flash أو Pro للحصول على الميزات متعددة الوسائط.",
+    "message": "💬 دردشة النموذج المحلي تدعم النص فقط — رفع الصور والمستندات غير متاح. انتقل إلى علامة تبويب Gemini للحصول على الميزات متعددة الوسائط.",
     "description": "Info notice shown at the top of the Local model chat tab."
   },
   "incognitoLocalModeBanner": {
@@ -890,10 +890,10 @@
     "description": "Note shown below the translate-page button in popup when aiMode is local-only."
   },
   "popupOpenVoiceSummary": {
-    "message": "قراءة صوتية بالذكاء الاصطناعي [تجريبي]"
+    "message": "ملخص وقراءة صوتية AI podcast [تجريبي]"
   },
   "vsSummaryTitle": {
-    "message": "AI朗讀podcast"
+    "message": "ملخص وقراءة صوتية AI podcast [تجريبي]"
   },
   "vsSummaryDesc": {
     "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
@@ -1000,7 +1000,7 @@
     "description": "Header for Lite model tab in incognito page."
   },
   "incognitoLiteModelDesc": {
-    "message": "المساعد الذكي اليومي الأسرع — مثالي للأسئلة السريعة والكتابة والترجمة. يدعم الصور وملفات PDF.",
+    "message": "أسرع مساعد ذكاء اصطناعي يومي — مع حصة شهرية مجانية سخية. مثالي للأسئلة السريعة والكتابة والترجمة. يدعم الصور والمستندات (PDF، TXT، MD، CSV، HTML، XML).",
     "description": "Description for Lite model tab."
   },
   "incognitoThinkingLabel": {

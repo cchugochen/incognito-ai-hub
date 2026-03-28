@@ -38,6 +38,11 @@ document.getElementById('open-voice-summary').addEventListener('click', () => {
   window.close();
 });
 
+document.getElementById('open-dharma').addEventListener('click', () => {
+  chrome.tabs.create({ url: 'dharma.html' });
+  window.close();
+});
+
 document.getElementById('open-tutorial').addEventListener('click', () => {
   chrome.tabs.create({ url: 'tutorial.html' });
   window.close();

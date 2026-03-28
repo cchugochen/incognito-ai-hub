@@ -447,8 +447,8 @@
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "上傳PDF文件 (1個)",
-    "description": "Tooltip for the PDF upload button."
+    "message": "上傳文件 — PDF、TXT、MD、CSV、HTML、XML（1個）",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "使用預設指令 A",
@@ -499,7 +499,7 @@
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "請在這裡輸入訊息 (可上傳圖片或PDF)...",
+    "message": "請在這裡輸入訊息（可上傳圖片或文件）...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -507,7 +507,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "速度與品質兼顧，適合較複雜的問答、文件分析與深度翻譯。支援圖片與 PDF。",
+    "message": "速度與品質兼顧，適合較複雜的問答、文件分析與深度翻譯。支援圖片與文件上傳（PDF、TXT、MD、CSV、HTML、XML）。",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -515,7 +515,7 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "最強大的 AI 模型，能深度理解長篇文件與複雜議題。需要詳細分析研究報告或深度問答時的最佳選擇。支援圖片與 PDF。",
+    "message": "最強大的 AI 模型，能深度理解長篇文件與複雜議題。適合詳細分析研究報告或深度問答。支援圖片與文件上傳（PDF、TXT、MD、CSV、HTML、XML）。",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -686,8 +686,8 @@
     }
   },
   "alertOnePdfOnly": {
-    "message": "一次只能附加一個 PDF 檔案。",
-    "description": "Alert when user tries to attach more than one PDF."
+    "message": "一次只能附加一個文件檔案。",
+    "description": "Alert when user tries to attach more than one document."
   },
   "incognitoAttachedFile": {
     "message": "附加檔案：$filename$",
@@ -735,7 +735,7 @@
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "使用本機 Ollama 或 LM Studio 模型進行對話。僅支援文字輸入，不支援圖片與 PDF。",
+    "message": "使用本機 Ollama 或 LM Studio 模型進行對話。僅支援文字，不支援圖片與文件上傳。",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
@@ -863,7 +863,7 @@
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 本機模型對話只支援純文字，無法處理圖片與 PDF。如需圖片或 PDF 分析，請切換至 Gemini Flash 或 Pro 分頁。",
+    "message": "💬 本機模型對話僅支援純文字，無法處理圖片與文件上傳。如需多模態功能，請切換至 Gemini 分頁。",
     "description": "Info notice shown at the top of the Local model chat tab."
   },
   "incognitoLocalModeBanner": {
@@ -891,10 +891,10 @@
     "description": "Note shown below the translate-page button in popup when aiMode is local-only."
   },
   "popupOpenVoiceSummary": {
-    "message": "AI 語音朗讀 [測試版]"
+    "message": "AI 摘要朗讀 podcast [測試版]"
   },
   "vsSummaryTitle": {
-    "message": "AI朗讀podcast [測試版]"
+    "message": "AI摘要朗讀podcast [測試版]"
   },
   "vsSummaryDesc": {
     "message": "此功能開發目標是把YouTube、Podcast、網頁或其他檔案轉換成MP3音訊，但目前還在開發中。"
@@ -1007,7 +1007,7 @@
     "description": "Header for Lite model tab in incognito page."
   },
   "incognitoLiteModelDesc": {
-    "message": "最快速的日常 AI 助理，適合快速問答、文字整理與翻譯。支援圖片與 PDF。",
+    "message": "最快速的日常 AI 助理，每月有充裕免費額度。適合快速問答、文字整理與翻譯。支援圖片與文件上傳（PDF、TXT、MD、CSV、HTML、XML）。",
     "description": "Description for Lite model tab."
   },
   "incognitoThinkingLabel": {

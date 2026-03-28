@@ -15,9 +15,9 @@ body {
     max-width: 960px;
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 40px);
-    min-height: 900px; 
-    overflow-y: auto;
+    height: calc(100vh - 40px);
+    min-height: 600px;
+    overflow: hidden;
 }
 
 .header { 
@@ -85,8 +85,8 @@ h2 {
 
 /* --- Chat Window Styling --- */
 .chat-window {
-    flex: 1 1 auto;
-    min-height: 400px;
+    flex: 1 1 0;
+    min-height: 200px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 15px;
@@ -136,11 +136,12 @@ h2 {
 
 /* --- [v26.2 Final UI] Controls Layout & Preset Label Styling --- */
 
-.controls { 
+.controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .upload-buttons {
@@ -156,6 +157,8 @@ h2 {
     gap: 10px;
     flex-grow: 1;
     justify-content: flex-start;
+    min-width: 0;
+    overflow-x: auto;
 }
 
 .preset-label {
@@ -178,14 +181,14 @@ h2 {
     padding: 0 16px;
 }
 
-.upload-btn { 
-    background-color: #f0f0f0; 
-    border: 1px solid #dcdcdc; 
-    color: #333;
-    white-space: nowrap; 
+.upload-btn {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    white-space: nowrap;
 }
-.upload-btn:hover { 
-    background-color: #e0e0e0;
+.upload-btn:hover {
+    background-color: var(--bg-hover);
 }
 
 .preset-buttons { 
@@ -209,36 +212,11 @@ h2 {
     color: var(--button-text-light);
     transform: translateY(-2px);
 }
-.preset-btn[data-tooltip]:hover::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(30, 30, 30, 0.92);
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 12px;
-    white-space: pre-wrap;
-    max-width: 260px;
-    min-width: 100px;
-    width: max-content;
-    z-index: 200;
-    text-align: left;
-    line-height: 1.5;
-    pointer-events: none;
-    word-break: break-word;
-}
+/* Preset button tooltips use native title attribute for reliability */
 
 .submit-btn {
-    background-color: #444 !important;
-    color: #fff !important;
-    border: none;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-.submit-btn:hover {
-    background-color: #333 !important;
+    flex-shrink: 0;
+    margin-left: auto;
 }
 
 .controls-divider {
@@ -253,24 +231,36 @@ h2 {
     flex-shrink: 0;
 }
 
-/* --- PDF Preview & Button Styling --- */
+/* --- Doc Preview & Button Styling --- */
 .pdf-preview-item {
     display: inline-flex;
     align-items: center;
-    background-color: #f1f5f9;
-    border: 1px solid #cbd5e1;
+    position: relative;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 4px 10px;
+    padding: 6px 28px 6px 12px;
     font-size: 14px;
-    color: #334155;
-    gap: 8px;
+    color: var(--text-primary);
+    gap: 6px;
 }
 
 .pdf-preview-item span {
-    max-width: 200px;
+    max-width: 260px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.pdf-preview-item .remove-btn {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 18px;
 }
 /* --- v28.0.1: Dark Mode Overrides --- */
 @media (prefers-color-scheme: dark) {
@@ -304,19 +294,9 @@ h2 {
     .tab-link[data-tab="pro"].active   { color: #94a3b8; border-bottom-color: #94a3b8; }
     .tab-link[data-tab="local"].active { color: #4ade80; border-bottom-color: #4ade80; }
 
-    /* Upload / action buttons */
-    .upload-btn {
-        background-color: #3c3735 !important;
-        color: var(--text-primary) !important;
-        border-color: var(--border-color) !important;
-    }
-    .upload-btn:hover {
-        background-color: #57534e !important;
-    }
-
-    /* PDF chip */
+    /* Doc chip */
     .pdf-preview-item {
-        background-color: #1e2d3d;
+        background-color: var(--bg-input);
         border-color: var(--border-color);
         color: var(--text-primary);
     }

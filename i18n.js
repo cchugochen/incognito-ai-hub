@@ -25,5 +25,12 @@ function localizeHtmlPage() {
     });
 }
 
+// Set document direction for RTL locales.
+const RTL_LOCALES = ['ar', 'he', 'fa', 'ur'];
+const uiLang = chrome.i18n.getUILanguage().split('-')[0];
+if (RTL_LOCALES.includes(uiLang)) {
+    document.documentElement.setAttribute('dir', 'rtl');
+}
+
 // Run the localization function when the page content is loaded.
 document.addEventListener('DOMContentLoaded', localizeHtmlPage);

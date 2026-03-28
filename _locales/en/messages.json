@@ -448,8 +448,8 @@
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "Upload PDF document (1)",
-    "description": "Tooltip for the PDF upload button."
+    "message": "Upload document — PDF, TXT, MD, CSV, HTML, XML (1)",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "Use Preset A",
@@ -500,7 +500,7 @@
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "Enter your message here (you can upload images or a PDF)...",
+    "message": "Enter your message here (you can upload images or documents)...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -508,7 +508,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "Balanced speed and quality — handles complex questions, document analysis, and detailed translation. Supports images and PDFs.",
+    "message": "Balanced speed and quality — handles complex questions, document analysis, and detailed translation. Supports images and documents (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -516,7 +516,7 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "Most capable AI model for in-depth analysis of long documents and complex topics. Best when you need thorough, detailed answers or want to analyze a full research paper or report. Supports images and PDFs.",
+    "message": "Most capable AI model for in-depth analysis of long documents and complex topics. Best for thorough, detailed answers and full research papers. Supports images and documents (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -687,8 +687,8 @@
     }
   },
   "alertOnePdfOnly": {
-    "message": "Only one PDF file can be attached at a time.",
-    "description": "Alert when user tries to attach more than one PDF."
+    "message": "Only one document file can be attached at a time.",
+    "description": "Alert when user tries to attach more than one document."
   },
   "incognitoAttachedFile": {
     "message": "Attached: $filename$",
@@ -736,7 +736,7 @@
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "Chat with your local Ollama or LM Studio model. Text only — images and PDFs are not supported.",
+    "message": "Chat with your local Ollama or LM Studio model. Text only — images and document uploads are not supported.",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
@@ -868,7 +868,7 @@
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 Local model chat supports text only — image and PDF analysis are not available. Switch to the Gemini Flash or Pro tab for multimodal features.",
+    "message": "💬 Local model chat supports text only — image and document uploads are not available. Switch to a Gemini tab for multimodal features.",
     "description": "Info notice shown at the top of the Local model chat tab."
   },
   "incognitoLocalModeBanner": {
@@ -896,10 +896,10 @@
     "description": "Note shown below the translate-page button in popup when aiMode is local-only."
   },
   "popupOpenVoiceSummary": {
-    "message": "AI Voice Reading [Beta]"
+    "message": "AI Summary Reading podcast [Beta]"
   },
   "vsSummaryTitle": {
-    "message": "AI朗讀podcast [Beta]",
+    "message": "AI Summary Reading podcast [Beta]",
     "description": "Title for the voice_summary page."
   },
   "vsSummaryDesc": {
@@ -1043,7 +1043,7 @@
     "description": "Header for Lite model tab in incognito page."
   },
   "incognitoLiteModelDesc": {
-    "message": "Fastest everyday AI assistant — great for quick questions, writing help, and translation. Supports images and PDFs.",
+    "message": "Fastest everyday AI — with a generous free monthly quota. Great for quick questions, writing help, and translation. Supports images and documents (PDF, TXT, MD, CSV, HTML, XML).",
     "description": "Description for Lite model tab."
   },
   "incognitoThinkingLabel": {

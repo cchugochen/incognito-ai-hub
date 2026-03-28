@@ -431,8 +431,8 @@
     "description": "Tooltip for the upload button."
   },
   "incognitoUploadPdfTitle": {
-    "message": "PDFドキュメントをアップロード (1つ)",
-    "description": "Tooltip for the PDF upload button."
+    "message": "ドキュメントをアップロード — PDF, TXT, MD, CSV, HTML, XML（1つ）",
+    "description": "Tooltip for the document upload button."
   },
   "incognitoPresetTitleA": {
     "message": "プリセット A を使用",
@@ -471,7 +471,7 @@
     "description": "Confirmation message before clearing chat history."
   },
   "incognitoPlaceholder": {
-    "message": "ここにメッセージを入力してください (画像やPDFをアップロードできます)...",
+    "message": "ここにメッセージを入力してください（画像やドキュメントをアップロードできます）...",
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
@@ -479,7 +479,7 @@
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
-    "message": "速度と品質のバランスが良く、複雑な質問・文書分析・詳細な翻訳に最適。画像・PDF対応。",
+    "message": "速度と品質のバランスが良く、複雑な質問・文書分析・詳細な翻訳に最適。画像とドキュメント（PDF、TXT、MD、CSV、HTML、XML）に対応。",
     "description": "Description for the Flash model tab."
   },
   "incognitoProModelHeader": {
@@ -487,7 +487,7 @@
     "description": "Header for the Pro model tab."
   },
   "incognitoProModelDesc": {
-    "message": "長い文書や複雑なテーマを深く分析できる最強のAIモデル。論文・報告書の詳細な分析や深い問答に最適。画像・PDF対応。",
+    "message": "長い文書や複雑なテーマを深く分析できる最強のAIモデル。論文・報告書の詳細な分析や深い問答に最適。画像とドキュメント（PDF、TXT、MD、CSV、HTML、XML）に対応。",
     "description": "Description for the Pro model tab."
   },
   "statusUploading": {
@@ -735,7 +735,7 @@
     "description": "Header for the local model chat tab."
   },
   "localModelChatDesc": {
-    "message": "Chat with your local Ollama or LM Studio model. Text only — images and PDFs are not supported.",
+    "message": "ローカルのOllamaまたはLM Studioモデルとチャット。テキストのみ — 画像やドキュメントのアップロードには対応していません。",
     "description": "Description text in the local model chat tab."
   },
   "localModelNotEnabledMsg": {
@@ -862,7 +862,7 @@
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {
-    "message": "💬 ローカルモデルのチャットはテキストのみ対応です — 画像・PDF解析はご利用いただけません。マルチモーダル機能はGemini FlashまたはProタブをご利用ください。",
+    "message": "💬 ローカルモデルのチャットはテキストのみ対応です — 画像やドキュメントのアップロードはご利用いただけません。マルチモーダル機能はGeminiタブをご利用ください。",
     "description": "Info notice shown at the top of the Local model chat tab."
   },
   "incognitoLocalModeBanner": {
@@ -890,10 +890,10 @@
     "description": "Note shown below the translate-page button in popup when aiMode is local-only."
   },
   "popupOpenVoiceSummary": {
-    "message": "AI 音声朗読 [ベータ]"
+    "message": "AI 要約朗読 podcast [ベータ]"
   },
   "vsSummaryTitle": {
-    "message": "AI朗讀podcast"
+    "message": "AI 要約朗読 podcast [ベータ]"
   },
   "vsSummaryDesc": {
     "message": "Convert YouTube videos, webpages, audio files, PDFs, or your own text into an AI-generated voice summary."
@@ -1000,7 +1000,7 @@
     "description": "Header for Lite model tab in incognito page."
   },
   "incognitoLiteModelDesc": {
-    "message": "最速の日常AIアシスタント。素早い質問・文章整理・翻訳に最適。画像・PDF対応。",
+    "message": "最速の日常AIアシスタント — 毎月の無料枠が充実。素早い質問・文章整理・翻訳に最適。画像とドキュメント（PDF、TXT、MD、CSV、HTML、XML）に対応。",
     "description": "Description for Lite model tab."
   },
   "incognitoThinkingLabel": {

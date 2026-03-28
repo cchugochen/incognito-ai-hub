@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>心靈與正念 — 三宗風格</title>
+<link rel="stylesheet" href="styles/themes.css">
+<link rel="stylesheet" href="dharma.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- No API key banner (hidden by default, shown by JS) -->
+<div class="no-key-banner hidden" id="noKeyBanner">
+  尚未設定 Gemini API Key，請先至 <a href="options.html" id="openOptionsLink">設定頁面</a> 輸入 API Key。
+</div>
+
+<!-- Header -->
+<div class="header">
+  <div>
+    <div class="header-title">心靈與正念 — 三宗風格</div>
+    <div class="header-sub">不論你現在的狀態，都可以在這裡說說看的</div>
+  </div>
+  <button class="info-toggle" id="infoBtn">關於</button>
+</div>
+
+<!-- Intro panel -->
+<div class="intro-panel" id="introPanel">
+  <div class="intro-body">
+    <p>這裡的三種對話風格，來自二十世紀最具影響力的三位佛教思想家。他們各自在不同的土地上，用不同的方式，回應同一個問題：人在苦難中，能怎麼辦？</p>
+
+    <div class="intro-traditions">
+      <div class="itrad-detail">
+        <div class="itrad-header">🙏 <strong>達賴喇嘛</strong>（Tenzin Gyatso）</div>
+        <p>藏傳佛教的精神領袖，1935年生於西藏安多，三歲時被認證為前世達賴喇嘛的轉世。1959年流亡印度，此後數十年，他把一個民族的苦難轉化成對全人類的關懷，以非暴力精神著稱，並於1989年獲諾貝爾和平獎。</p>
+        <p>他的教法核心是慈悲與菩提心——願意為所有眾生承擔苦難的心。他常說：「每天早晨我提醒自己，我只是地球上幾十億人中的一個，我們都一樣，每個人都希望離苦得樂。」遇到什麼困境，他習慣先讓你感到不孤單，再帶你看見更廣闊的視野。</p>
+      </div>
+
+      <div class="itrad-detail">
+        <div class="itrad-header">⛩️ <strong>聖嚴法師</strong>（Master Sheng Yen）</div>
+        <p>禪宗曹洞宗第五十代傳人、臨濟宗第五十七代傳人，法鼓山創辦人，1975年於日本立正大學取得博士學位，是漢傳佛教第一位赴日攻讀博士的出家僧人。曾獲台灣《天下》雜誌選為「四百年來台灣最具影響力的五十位人士」之一，著有中英日文著作百餘種。</p>
+        <p>他最廣為人知的一句話是「面對它、接受它、處理它、放下它」——十二個字，說的是禪的態度：不逃避，不糾纏，回到當下這一刻。說話簡短，直指核心，像一把輕輕剪斷麻繩的刀。</p>
+      </div>
+
+      <div class="itrad-detail">
+        <div class="itrad-header">🪷 <strong>星雲大師</strong>（Master Hsing Yun）</div>
+        <p>佛光山開山宗長，1927年生於江蘇，12歲出家，致力實踐「人間佛教」理念，是將佛教現代化、國際化的關鍵人物，2023年圓寂，享壽97歲。他相信佛法不屬於寺廟，而屬於生活，在海內外興建逾三百所道場，創辦大學、美術館、日報、電視台。</p>
+        <p>他的哲學是「給」：給人信心、給人歡喜、給人希望、給人方便。遇到困難，他不會讓你只坐著觀想，他會說：去做一件好事，心境就不一樣了。</p>
+      </div>
+    </div>
+
+    <p class="intro-closing">三種風格，三條路。你不需要選邊站，也不需要有任何信仰。只是，當你心裡有什麼，可以來問問他們。</p>
+  </div>
+</div>
+
+<!-- Tabs -->
+<div class="tab-bar">
+  <button class="tab act-cmp" data-v="compare">⚖️ 同題比較</button>
+  <button class="tab" data-v="tib">🙏 達賴</button>
+  <button class="tab" data-v="zen">⛰️ 法鼓</button>
+  <button class="tab" data-v="hum">🪷 人間</button>
+</div>
+
+<!-- COMPARE VIEW -->
+<div class="view active" id="view-compare">
+  <div class="compare-cols">
+    <div class="col tib-col">
+      <div class="col-hdr tib">🙏 達賴<span class="trad-tag">藏傳 · 慈悲</span></div>
+      <div class="messages" id="cmp-tib"><div class="welcome"><div class="wi">🙏</div><div class="wn">藏傳佛教 · 格魯派</div><div class="wd">慈悲承接苦難<br>菩提心 · 空性 · 慈悲</div><div class="ws">菩提心 · 空性 · 慈悲</div></div></div>
+    </div>
+    <div class="col zen-col">
+      <div class="col-hdr zen">⛰️ 法鼓<span class="trad-tag">禪宗 · 覺照</span></div>
+      <div class="messages" id="cmp-zen"><div class="welcome"><div class="wi">⛰️</div><div class="wn">法鼓山 · 聖嚴法師</div><div class="wd">直指覺照根本<br>回到當下覺照</div><div class="ws">無我 · 覺照 · 心靈環保</div></div></div>
+    </div>
+    <div class="col hum-col">
+      <div class="col-hdr hum">🪷 人間<span class="trad-tag">人間佛教 · 行動</span></div>
+      <div class="messages" id="cmp-hum"><div class="welcome"><div class="wi">🪷</div><div class="wn">佛光山 · 人間佛教</div><div class="wd">佛法落實日常<br>溫暖與積極</div><div class="ws">緣起 · 利他 · 人間淨土</div></div></div>
+    </div>
+  </div>
+  <div class="inp-row ci">
+    <textarea id="cmp-input" placeholder="輸入同一個問題，同時比較三種傳統的回應……" rows="1"></textarea>
+    <span class="clbl">三宗回答</span>
+    <button class="sbtn c" id="cmp-send">→</button>
+  </div>
+  <div class="cmp-chips-bar"><div class="chips" id="cmp-chips"></div></div>
+</div>
+
+<!-- TIBETAN VIEW -->
+<div class="view tib-view" id="view-tib">
+  <div class="single-layout">
+    <div class="messages" id="single-tib"><div class="welcome"><div class="wi">🙏</div><div class="wn">達賴喇嘛風格 · 藏傳慈悲</div><div class="wd">菩提心引導<br>詮釋逆次第 · 苦諦諦行論</div><div class="ws">格魯派 · 慈悲 · 空性</div><div class="chips" id="tib-chips"></div></div></div>
+    <div class="inp-row ti"><textarea id="tib-input" placeholder="說說你的困擾……" rows="1"></textarea><button class="sbtn t" id="tib-send">→</button></div>
+  </div>
+</div>
+
+<!-- ZEN VIEW -->
+<div class="view zen-view" id="view-zen">
+  <div class="single-layout">
+    <div class="messages" id="single-zen"><div class="welcome"><div class="wi">⛰️</div><div class="wn">聖嚴法師風格 · 法鼓禪宗</div><div class="wd">面對它接受它處理它放下它<br>心靈環保 · 覺照當下</div><div class="ws">聖嚴宗 · 曹洞宗 · 無我</div><div class="chips" id="zen-chips"></div></div></div>
+    <div class="inp-row zi"><textarea id="zen-input" placeholder="現在發生什麼事？" rows="1"></textarea><button class="sbtn z" id="zen-send">→</button></div>
+  </div>
+</div>
+
+<!-- HUMANISTIC VIEW -->
+<div class="view hum-view" id="view-hum">
+  <div class="single-layout">
+    <div class="messages" id="single-hum"><div class="welcome"><div class="wi">🪷</div><div class="wn">星雲大師風格 · 人間佛教</div><div class="wd">佛光山 · 佛法生活化<br>阿含經 · 法華經 · 華嚴經</div><div class="ws">人間淨土 · 緣起 · 諦諦行</div><div class="chips" id="hum-chips"></div></div></div>
+    <div class="inp-row hi"><textarea id="hum-input" placeholder="有什麼想聊的？" rows="1"></textarea><button class="sbtn h" id="hum-send">→</button></div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="app-footer">
+  <div>
+    <div class="footer-title">使用聲明</div>
+    <div class="footer-note">內容為AI協作生成，供自我探索與心理支持參考，不能取代禪師、心理師或其他專業人士的診斷與治療。若你正面臨急迫危險、自傷或傷人風險，請立即聯繫當地緊急資源或就醫。如果您覺得好用，歡迎小額贊助連結本人的 Buy Me a Coffee 網頁，用實際行動贊助。</div>
+  </div>
+  <a href="https://www.buymeacoffee.com/hugocc0825" target="_blank" rel="noopener noreferrer">
+    <img class="buymeacoffee-img" src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee">
+  </a>
+</div>
+
+<script type="module" src="dharma.js"></script>
+</body>
+</html>

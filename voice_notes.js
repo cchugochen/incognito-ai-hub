@@ -115,8 +115,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             updateUIRecording(true);
             setStatus(chrome.i18n.getMessage('voiceStatusRecording'));
         } catch (err) {
+            // Ensure stream is cleaned up on failure
+            if (typeof stream !== 'undefined' && stream) {
+                stream.getTracks().forEach(track => track.stop());
+            }
             console.error('Error starting recording:', err);
-            setStatus(chrome.i18n.getMessage('errorMicPermission', err.message), true);
+            if (err.name === 'NotAllowedError') {
+                setStatus(chrome.i18n.getMessage('errorMicPermission', 'Permission denied'), true);
+            } else if (err.name === 'NotFoundError') {
+                setStatus(chrome.i18n.getMessage('errorNoMic'), true);
+            } else {
+                setStatus(chrome.i18n.getMessage('errorMicPermission', err.message), true);
+            }
         }
     }
 
@@ -197,13 +207,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function stopTimer() {
-        clearInterval(timerInterval);
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        }
     }
-
-    // --- File Upload Handling (New Feature Support) ---
-    // If you plan to add file upload for voice notes in the future, 
-    // the logic would go here similar to the incognito page.
-    // For now, keeping it focused on recording as per request.
 
     initializeAudio();
 });
