@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "صوت إلى نص، دردشة AI خاصة، ترجمة ويب، قراءة صوتية AI. مفتاح Gemini API الخاص بك — بدون خادم، البيانات تبقى في المتصفح.",
+    "message": "صوت→نص، دردشة AI خاصة، ترجمة ويب، قراءة صوتية، يقظة ذهنية. مفتاح Gemini API أو AI محلي — بدون خادم، البيانات في المتصفح.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {

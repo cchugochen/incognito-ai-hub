@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Giọng nói→văn bản, chat AI riêng tư, dịch web, đọc AI. Khóa Gemini API của bạn — không server, dữ liệu ở trong trình duyệt.",
+    "message": "Giọng nói→văn bản, chat AI, dịch web, đọc AI, chánh niệm. Khóa Gemini API hoặc AI cục bộ — không server, dữ liệu ở trình duyệt.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {

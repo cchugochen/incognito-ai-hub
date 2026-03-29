@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "음성→텍스트, AI 비공개 채팅, 웹 번역, AI 음성 읽기. 직접 발급한 Gemini API 키 — 백엔드 없음, 데이터는 브라우저에만.",
+    "message": "음성→텍스트, AI 채팅, 웹 번역, AI 음성 읽기, 마음챙김. Gemini API 키 또는 로컬 AI — 서버 없음, 데이터는 브라우저에만.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {

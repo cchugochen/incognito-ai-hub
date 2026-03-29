@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Voz a texto, chat IA privado, traducción web, lectura IA. Tu propia clave API Gemini — sin servidor, datos en tu navegador.",
+    "message": "Voz→texto, chat IA, traducción web, lectura IA, mindfulness. Gemini API o IA local — sin servidor, datos en tu navegador.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {

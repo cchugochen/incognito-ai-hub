@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "語音轉文字、AI無痕對話、網頁翻譯、AI語音朗讀。使用您自己申請的Gemini API金鑰，確保隱私，無後台伺服器・資料不離開瀏覽器。",
+    "message": "語音轉文字、AI無痕對話、網頁翻譯、AI語音朗讀、心靈正念。使用您自己的Gemini API金鑰或本機AI模型，確保隱私—無後台伺服器，資料不離開瀏覽器。",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {

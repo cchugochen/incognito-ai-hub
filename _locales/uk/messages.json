@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Голос у текст, приватний AI-чат, переклад сторінок, AI-озвучення. Ваш ключ Gemini API — без сервера, дані залишаються в браузері.",
+    "message": "Голос→текст, AI-чат, переклад, AI-озвучення, усвідомленість. Gemini API або локальний AI — без сервера, дані в браузері.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {

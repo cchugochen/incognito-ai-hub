@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Sprache→Text, KI-Chat, Webübersetzung, KI-Vorlesen. Eigener Gemini-API-Schlüssel — kein Backend, Daten bleiben im Browser.",
+    "message": "Sprache→Text, KI-Chat, Webübersetzung, Vorlesen, Achtsamkeit. Gemini-API oder lokale KI — kein Backend, Daten im Browser.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {

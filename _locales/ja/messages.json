@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "音声文字起こし・AIプライベートチャット・ウェブ翻訳・AI音声読み上げ。自分のGemini APIキーで完全プライバシー、サーバー不要・データはブラウザ内。",
+    "message": "音声文字起こし・AIチャット・ウェブ翻訳・AI音声読み上げ・マインドフルネス。Gemini APIキーまたはローカルAI—サーバー不要、データはブラウザ内。",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {

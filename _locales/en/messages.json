@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Voice-to-text, AI private chat, web translation & AI voice reading. Your own Gemini API key — no backend, data stays in browser.",
+    "message": "Voice-to-text, AI chat, web translation, AI reading & mindfulness. Gemini API key or local AI — no backend, data stays in browser.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {

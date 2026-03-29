@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Hlas na text, AI soukromý chat, překlad webu, AI čtení. Váš Gemini API klíč — bez serveru, data zůstávají v prohlížeči.",
+    "message": "Hlas→text, AI chat, překlad webu, AI čtení, mindfulness. Gemini API klíč nebo lokální AI — bez serveru, data v prohlížeči.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {

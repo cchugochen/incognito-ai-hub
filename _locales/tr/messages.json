@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Ses→metin, özel AI sohbet, web çevirisi, AI sesli okuma. Kendi Gemini API anahtarınız — sunucu yok, veriler tarayıcıda kalır.",
+    "message": "Ses→metin, AI sohbet, web çevirisi, AI okuma, farkındalık. Gemini API anahtarı veya yerel AI — sunucu yok, veriler tarayıcıda.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
