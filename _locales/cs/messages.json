@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Zdarma, bez serveru · data ve vašem prohlížeči. Hlas na text, AI chat, překlad webu, AI čtení. Váš klíč Gemini API — soukromí.",
+    "message": "Hlas na text, AI soukromý chat, překlad webu, AI čtení. Váš Gemini API klíč — bez serveru, data zůstávají v prohlížeči.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -315,7 +315,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito PrivoAI: Vytvořil Hugo Chen, tchajwanský lékař, během tajfunového dne v létě 2025. První verze byla pojmenována Hong-Thai. Pokud vám aplikace přijde užitečná, zanechte prosím pozitivní hodnocení na Chrome Web Store. Pokud chcete, klidně mi dopřejte kávu přes odkaz Buy Me a Coffee vpravo."
+    "message": "PrivoAI: Autorem je Hugo Chen, lékař z Tchaj-wanu, který vytvořil první verzi během jednoho tajfunového dne v roce 2025. První verze dostala tchajwanské jméno „Hong-Thai“ a její ikona zobrazovala satelitní snímek tajfunu nad Tchaj-wanem. Pokud vám aplikace přijde užitečná, zanechte prosím pozitivní hodnocení na Chrome Web Store. Pokud budete chtít, můžete mi přes odkaz Buy Me a Coffee vpravo koupit něco k pití."
   },
   "promptWebpageProcessing": {
     "message": "You are a helpful assistant. The user has provided the HTML content and a screenshot of a webpage. Please analyze both to understand the main content of the page, ignoring ads, navigation bars, and footers. Then, provide a concise summary of the key points in a well-structured, easy-to-read format. Finally, translate the summary into $lang$. Here is the HTML content: ```html\n$pageContent$\n```",

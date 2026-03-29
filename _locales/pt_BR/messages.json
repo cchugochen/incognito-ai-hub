@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Grátis, sem backend · dados no navegador. Voz para texto, chat IA, tradução web, leitura IA. Chave API Gemini — privacidade total.",
+    "message": "Voz para texto, chat IA privado, tradução web, leitura IA. Sua chave API Gemini — sem servidor, dados ficam no navegador.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -373,7 +373,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito PrivoAI: Criado por Hugo Chen, um médico taiwanês, durante um dia de tufão no verão de 2025. A primeira versão foi nomeada 'Hong-Thai' em taiwanês. Se você achar útil, por favor, deixe uma avaliação positiva na Chrome Web Store. Se estiver disposto, sinta-se à vontade para me pagar uma bebida através do link Buy Me a Coffee à direita.",
+    "message": "PrivoAI: O autor Hugo Chen é um médico de Taiwan e criou a primeira versão em um dia de tufão em 2025. A primeira versão recebeu o nome taiwanês 'Hong-Thai', e o ícone mostrava uma imagem de satélite do tufão passando por Taiwan naquele momento. Se achar útil, por favor deixe uma avaliação positiva na Chrome Web Store. Se quiser, fique à vontade para me pagar uma bebida pelo link Buy Me a Coffee à direita.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {

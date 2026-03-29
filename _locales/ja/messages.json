@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "無料・バックエンドなし・データはブラウザ内に留まります。音声文字起こし、AIプライベートチャット、ウェブ翻訳、AI音声読み上げ。Gemini APIキーを使用、完全プライバシー。",
+    "message": "音声文字起こし・AIプライベートチャット・ウェブ翻訳・AI音声読み上げ。自分のGemini APIキーで完全プライバシー、サーバー不要・データはブラウザ内。",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -373,7 +373,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito PrivoAI: 作者Hugo Chenは台湾の医師で、2025年夏のある台風の日に初版を完成させました。初版は台湾語で「風颱」(Hong-Thai)と名付けられました。もし便利だと感じたら、Chromeウェブストアで高評価をお願いします。もしよろしければ、右のBuy Me a Coffeeのリンクから、私に一杯ご馳走してください。",
+    "message": "PrivoAI: 作者Hugo Chenは台湾出身の医師で、2025年のある台風の日に初版を立ち上げました。初版は台湾語で「風颱」(Hong-Thai)と名付けられ、アイコンには当時台湾を通過した台風の衛星画像が使われています。もし便利だと感じたら、Chromeウェブストアで高評価をお願いします。よろしければ、右側のBuy Me a Coffeeリンクから一杯ご馳走ください。",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {

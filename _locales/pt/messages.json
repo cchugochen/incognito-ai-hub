@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Chat de IA incógnito com Gemini & LLM local. Kit gratuito para traduzir páginas, textos, capturas de tela e entrada de voz.",
+    "message": "Voz para texto, chat IA privado, tradução web, leitura IA. A sua chave API Gemini — sem servidor, dados ficam no navegador.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -390,7 +390,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito AI Hub: Criado por Hugo Chen, um médico taiwanês, durante um dia de tufão no verão de 2025. A primeira versão foi nomeada 'Hong-Thai' em taiwanês. Se você achar útil, por favor, deixe uma avaliação positiva na Chrome Web Store. Se estiver disposto, sinta-se à vontade para me pagar uma bebida através do link Buy Me a Coffee à direita.",
+    "message": "PrivoAI: O autor Hugo Chen é um médico de Taiwan e criou a primeira versão num dia de tufão em 2025. A primeira versão recebeu o nome taiwanês 'Hong-Thai', e o ícone mostrava uma imagem de satélite do tufão passando por Taiwan naquele momento. Se achar útil, por favor deixe uma avaliação positiva na Chrome Web Store. Se quiser, pode pagar-me uma bebida através do link Buy Me a Coffee à direita.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {

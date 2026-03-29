@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "무료, 백엔드 서버 없음 · 데이터가 브라우저를 떠나지 않습니다. 음성→텍스트, 비공개 AI 채팅, 웹 번역, AI 음성 읽기. 직접 발급한 Gemini API 키, 완전한 프라이버시.",
+    "message": "음성→텍스트, AI 비공개 채팅, 웹 번역, AI 음성 읽기. 직접 발급한 Gemini API 키 — 백엔드 없음, 데이터는 브라우저에만.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -373,7 +373,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito PrivoAI: 대만 의사 Hugo Chen이 2025년 여름 어느 태풍 오는 날 첫 버전을 완성했습니다. 첫 버전은 대만어로 'Hong-Thai'라고 이름 붙였습니다. 유용하게 사용하셨다면 Chrome 웹 스토어에 긍정적인 리뷰를 남겨주세요. 괜찮으시다면 오른쪽 Buy Me a Coffee 링크를 통해 음료 한 잔 사주시면 감사하겠습니다.",
+    "message": "PrivoAI: 작성자 Hugo Chen은 대만 출신 의사이며, 2025년 어느 태풍이 오던 날 첫 버전을 만들었습니다. 첫 버전은 대만어로 'Hong-Thai'라고 이름 붙였고, 아이콘은 당시 태풍이 대만을 지나가던 위성 사진을 담았습니다. 유용하게 사용하셨다면 Chrome 웹 스토어에 좋은 평가를 남겨 주세요. 괜찮으시다면 오른쪽 Buy Me a Coffee 링크를 통해 음료 한 잔 사주시면 감사하겠습니다.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {

@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "免費、無後台伺服器・資料不離開瀏覽器。語音轉文字、AI私密對話、網頁翻譯、AI語音朗讀。使用您自己申請的Gemini API金鑰，完全隱私。",
+    "message": "語音轉文字、AI無痕對話、網頁翻譯、AI語音朗讀。使用您自己申請的Gemini API金鑰，確保隱私，無後台伺服器・資料不離開瀏覽器。",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -389,7 +389,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "PrivoAI: 作者Hugo Chen是一位台灣醫師，在2025夏季某個颱風天完成初版，初版以台語命名為「風颱」(Hong-Thai)。如果您覺得好用，請在Chrome網頁商店給好評。如果願意，歡迎到右邊連結本人的Buy Me a Coffee網頁，用實際行動請我喝一杯飲料。",
+    "message": "PrivoAI: 作者Hugo Chen是來自台灣的醫師，在2025的某個颱風天建立初版，初版以台語命名為「風颱」(Hong-Thai)，圖示呈現當時颱風經過台灣的衛星圖。如果您覺得好用，請在Chrome網頁商店給好評。如果願意，歡迎到右邊連結本人的Buy Me a Coffee網頁，用實際行動請我喝一杯飲料。",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {

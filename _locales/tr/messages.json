@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Ücretsiz, backend yok · veriler tarayıcıda. Sesten metne, AI sohbet, web çevirisi, AI okuma. Gemini API anahtarınız — tam gizlilik.",
+    "message": "Ses→metin, özel AI sohbet, web çevirisi, AI sesli okuma. Kendi Gemini API anahtarınız — sunucu yok, veriler tarayıcıda kalır.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -373,7 +373,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito PrivoAI: Tayvanlı bir doktor olan Hugo Chen tarafından 2025 yazında bir tayfun gününde oluşturuldu. İlk versiyon Tayvanca'da 'Hong-Thai' olarak adlandırıldı. Eğer faydalı bulursanız, lütfen Chrome Web Mağazası'nda olumlu bir yorum bırakın. Eğer isterseniz, sağdaki Buy Me a Coffee bağlantısı aracılığıyla bana bir içki ısmarlamaktan çekinmeyin.",
+    "message": "PrivoAI: Yazarı Hugo Chen, Tayvanlı bir doktordur ve ilk sürümü 2025 yılındaki tayfunlu bir günde oluşturdu. İlk sürüm Tayvanca'da 'Hong-Thai' olarak adlandırıldı ve simgesinde tayfunun Tayvan üzerinden geçişini gösteren bir uydu görüntüsü yer aldı. Faydalı bulursanız lütfen Chrome Web Mağazası'nda olumlu bir değerlendirme bırakın. İsterseniz sağdaki Buy Me a Coffee bağlantısı üzerinden bana bir içecek ısmarlayabilirsiniz.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {

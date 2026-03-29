@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "مجاني، بدون خادم · البيانات في متصفحك. صوت لنص، دردشة AI، ترجمة ويب، قراءة صوتية. مفتاح Gemini API الخاص، خصوصية تامة.",
+    "message": "صوت إلى نص، دردشة AI خاصة، ترجمة ويب، قراءة صوتية AI. مفتاح Gemini API الخاص بك — بدون خادم، البيانات تبقى في المتصفح.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -401,7 +401,7 @@
     }
   },
   "incognitoFooter": {
-    "message": "Incognito PrivoAI: أنشأه Hugo Chen، طبيب تايواني، في يوم إعصار صيف 2025. إذا وجدته مفيدًا، يُرجى ترك تقييم إيجابي على متجر Chrome. وإن أردت، يمكنك مكافأتي عبر رابط Buy Me a Coffee.",
+    "message": "PrivoAI: مؤلفه Hugo Chen طبيب من تايوان، وقد أنشأ النسخة الأولى في أحد أيام الإعصار عام 2025. سُمّيت النسخة الأولى باسم «Hong-Thai» باللغة التايوانية، وكان الرمز يُظهر صورة أقمار صناعية للإعصار أثناء مروره فوق تايوان. إذا وجدته مفيدًا، فيرجى ترك تقييم إيجابي على متجر Chrome. وإذا رغبت، فيمكنك دعوتي إلى مشروب عبر رابط Buy Me a Coffee الموجود على اليمين.",
     "description": "Footer text."
   },
   "promptWebpageProcessing": {
