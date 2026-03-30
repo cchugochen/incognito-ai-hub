@@ -8,6 +8,16 @@ A privacy-first Chrome extension integrating multimodal AI tools for reading, tr
 
 ## Changelog / 更新紀錄
 
+### v28.1.2 — Dark Mode Auto-Detection & Footer Layout / 深色模式自動偵測 & Footer 捲動佈局
+
+- **Reader dark-mode auto-detect**: `reader.html` now applies `bg-dark` automatically on first load when OS is in dark mode (`prefers-color-scheme: dark`). Manual theme buttons still override. Preference saved to `localStorage` (`reader-bg` key).
+- **Reader CSS flash fix**: Added `@media (prefers-color-scheme: dark)` on `body:not([class])` so the toolbar renders dark before JS runs — eliminates flash of light beige toolbar.
+- **themes.css**: Patched hardcoded `rgba(247,244,240,0.88)` in `#reader.html .toolbar` to switch dark in dark mode.
+- **Incognito footer below fold**: Moved `<footer>` and `<hr>` outside `.container` into document flow — visible only by scrolling down, freeing full viewport for chat.
+- **Dharma viewport fix**: Wrapped all views in `.main-content` (`height: 100vh; overflow: hidden`); footer lives below in normal flow. Added `min-height: 300px` to `.messages`. Added `@media (max-height: 800px)` padding compression.
+
+---
+
 ### v28.1 — Three Dharma Teachers & UI Fixes / 三位禪師 · 心靈正念 & 介面修正
 
 #### New Feature: Three Dharma Teachers / 新功能：三位禪師 · 心靈正念
