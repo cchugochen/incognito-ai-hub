@@ -182,6 +182,12 @@ select:focus {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
+@media (prefers-color-scheme: dark) {
+    #reader\.html .toolbar {
+        background: rgba(40, 40, 40, 0.88);
+        border-bottom-color: #38322C;
+    }
+}
 #reader\.html .translation {
     background-color: var(--bg-main);
     border-left: 3px solid var(--color-primary);

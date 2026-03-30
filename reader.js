@@ -301,7 +301,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         lineHeightSlider.value = '1.6';
         updateFontSize('20');
         updateLineHeight('1.6');
-        updateBgColor('bg-white');
+        const saved = localStorage.getItem('reader-bg');
+        if (saved) {
+            document.body.className = saved;
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.className = 'bg-dark';
+        } else {
+            document.body.className = 'bg-white';
+        }
     }
 
     function updateFontSize(size) {
@@ -317,6 +324,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function updateBgColor(colorClass) {
         document.body.className = colorClass;
+        localStorage.setItem('reader-bg', colorClass);
     }
 
     function saveContentAsTxt() {

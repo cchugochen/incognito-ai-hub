@@ -213,6 +213,18 @@ body.bg-dark #content-area blockquote { border-left-color: #666; }
 #voice-translation-output p { margin: 0 0 1em 0; }
 #voice-translation-output p:last-child { margin-bottom: 0; }
 
+/* Default dark-mode before JS applies a bg-* class (eliminates flash of light toolbar) */
+@media (prefers-color-scheme: dark) {
+    body:not([class]) .toolbar {
+        background: rgba(40, 40, 40, 0.9);
+        border-bottom-color: #555;
+    }
+    body:not([class]) {
+        background-color: #1E1E1E;
+        color: #E0E0E0;
+    }
+}
+
 body.bg-white { background-color: #FFFFFF; color: #333333; }
 body.bg-sepia { background-color: #FDF6E3; color: #5B4636; }
 body.bg-dark { background-color: #1E1E1E; color: #E0E0E0; }

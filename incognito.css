@@ -2,7 +2,8 @@
 
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     padding: 20px;
     min-height: 100vh;
@@ -222,13 +223,15 @@ h2 {
 .controls-divider {
     border: none;
     border-top: 1px solid var(--border-color);
-    margin-top: 15px;
-    margin-bottom: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 960px;
 }
 
 .page-footer {
-    margin-top: 15px;
-    flex-shrink: 0;
+    width: 100%;
+    max-width: 960px;
+    padding: 15px 0 20px;
 }
 
 /* --- Doc Preview & Button Styling --- */
@@ -326,4 +329,20 @@ h2 {
 .thinking-checkbox:checked + span {
     color: var(--color-primary);
     font-weight: 600;
+}
+
+/* --- Compact layout: tight viewport (≤800px tall) --- */
+@media (max-height: 800px) {
+    .container {
+        padding: 12px 30px 16px;
+    }
+    .header {
+        margin-bottom: 4px;
+    }
+    .tabs {
+        margin-bottom: 8px;
+    }
+    .prompt-input {
+        height: 4rem;
+    }
 }
