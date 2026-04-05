@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_appName__",
-  "version": "28.1.2",
+  "version": "28.1.3",
   "description": "__MSG_appDesc__",
   "default_locale": "en",
   "permissions": [
@@ -17,10 +17,11 @@
     "https://*.googlevideo.com/*",
     "https://*/*",
     "http://localhost/*",
-    "http://127.0.0.1/*"
+    "http://127.0.0.1/*",
+    "http://*/*"
   ],
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://generativelanguage.googleapis.com http://localhost:* http://127.0.0.1:*; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://cdn.buymeacoffee.com data:;"
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://generativelanguage.googleapis.com http://localhost:* http://127.0.0.1:* http://*:*; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://cdn.buymeacoffee.com data:;"
   },
   "action": {
     "default_title": "__MSG_appName__",

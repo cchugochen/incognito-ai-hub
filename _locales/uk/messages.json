@@ -715,7 +715,7 @@
     "description": "Label for the local model endpoint URL input."
   },
   "localModelEndpointPlaceholder": {
-    "message": "http://localhost:11434/v1",
+    "message": "http://localhost:11434/v1 або http://192.168.1.5:1234",
     "description": "Placeholder for the local model endpoint URL input."
   },
   "localModelNameLabel": {
@@ -858,7 +858,7 @@
     "description": "Error when a multimodal feature is used in local-only mode."
   },
   "localModelConfigHint": {
-    "message": "Необов’язково. Підтримує Ollama, LM Studio або будь-який локальний сервер з інтерфейсом OpenAI. (Ollama: http://localhost:11434/v1 · LM Studio: http://127.0.0.1:1234/v1)",
+    "message": "Необов’язково. Підтримує Ollama, LM Studio або будь-який локальний сервер з інтерфейсом OpenAI, включно з адресами у локальній мережі (наприклад, http://192.168.1.5:1234/v1). (Ollama: http://localhost:11434/v1 · LM Studio: http://127.0.0.1:1234/v1)",
     "description": "Hint text below the local model config panel, describing optional usage and supported endpoints."
   },
   "localModelTabTextOnlyNotice": {

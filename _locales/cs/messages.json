@@ -586,7 +586,7 @@
     "message": "URL koncového bodu API"
   },
   "localModelEndpointPlaceholder": {
-    "message": "http://localhost:11434/v1 nebo http://127.0.0.1:1234"
+    "message": "http://localhost:11434/v1 nebo http://192.168.1.5:1234"
   },
   "localModelNameLabel": {
     "message": "Název modelu"
@@ -701,7 +701,7 @@
     "message": "Tato funkce vyžaduje Google Gemini a není dostupná v režimu Pouze lokální AI. Přepněte do režimu Gemini nebo Hybridního v Nastavení."
   },
   "localModelConfigHint": {
-    "message": "Volitelné. Podporuje Ollama a LM Studio nebo jakýkoli server kompatibilní s OpenAI. (Ollama výchozí: http://localhost:11434/v1 · LM Studio výchozí: http://127.0.0.1:1234/v1)"
+    "message": "Volitelné. Podporuje Ollama a LM Studio nebo jakýkoli server kompatibilní s OpenAI, včetně serverů v lokální síti (např. http://192.168.1.5:1234/v1). (Ollama výchozí: http://localhost:11434/v1 · LM Studio výchozí: http://127.0.0.1:1234/v1)"
   },
   "localModelTabTextOnlyNotice": {
     "message": "💬 Chat s lokálním modelem podporuje pouze text — nahrávání obrázků a dokumentů není dostupné. Pro multimodální funkce přepněte na kartu Gemini."
