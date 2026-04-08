@@ -1,18 +1,28 @@
 // dharma.js — Three Dharma Teachers chat (Gemini API)
 import { buildGeminiUrl } from './scripts/gemini-api.js';
 
+// ── i18n helpers ──
+const t = (key, subs) => chrome.i18n.getMessage(key, subs);
+
+// Resolve response language from UI locale
+const LANG = (() => {
+  const code = chrome.i18n.getUILanguage().split('-')[0];
+  const map = { zh: '繁體中文', en: 'English', ja: '日本語', ko: '한국어', de: 'Deutsch', es: 'Español', pt: 'Português', ar: 'العربية', ru: 'Русский', tr: 'Türkçe', cs: 'Čeština', vi: 'Tiếng Việt', uk: 'Українська' };
+  return map[code] || 'English';
+})();
+
 // ── Constants ──
 const AV = { tib: '🙏', zen: '⛰️', hum: '🪷' };
 const AVC = { tib: 'ai-tib', zen: 'ai-zen', hum: 'ai-hum' };
 const TRAD = { tib: 'dalai', zen: 'ddm', hum: 'fgs' };
 const CMP_COL = { dalai: 'tib', ddm: 'zen', fgs: 'hum' };
 const SUGG = [
-  '我最近很煩惱，不知道未來怎樣',
-  '我和家人吵架了，心裡很難過',
-  '我覺得自己做什麼都沒有意義',
-  '睡不著，腦子一直轉不下來',
-  '我覺得很失落',
-  '工作壓力很大，不知道撐不撐得住'
+  t('dharmaSugg1'),
+  t('dharmaSugg2'),
+  t('dharmaSugg3'),
+  t('dharmaSugg4'),
+  t('dharmaSugg5'),
+  t('dharmaSugg6')
 ];
 
 // ── System prompts ──
@@ -25,7 +35,7 @@ const SYSTEM_PROMPTS = {
 你習慣說：「我想先讓你知道，這種感受非常正常……」
 「全世界有幾十億人，此刻很可能有許多人也有類似的感受……」
 逆境觀：困難的時刻正在給你力量，苦痛無常，是生命的常數。
-語氣：溫暖包容，像充滿慈悲的長者。長度150-250字。繁體中文。`,
+語氣：溫暖包容，像充滿慈悲的長者。長度150-250字。以${LANG}回應。`,
 
   ddm: `你是一位融合法鼓山聖嚴法師風格的禪宗導師。
 理論基礎：金剛經、六祖壇經、維摩詰經。
@@ -35,7 +45,7 @@ const SYSTEM_PROMPTS = {
 強調：過去不悔恨，未來不憂慮，只有當下是真實的。
 你習慣說：「飢來吃飯，睏來眠。」「心隨境轉是凡夫，境隨心轉是聖賢。」
 「需要的不多，想要的太多。」「忙沒關係，不煩就好。」
-語氣：簡潔直接，有時帶鋒利反問。長度80-150字。繁體中文。`,
+語氣：簡潔直接，有時帶鋒利反問。長度80-150字。以${LANG}回應。`,
 
   fgs: `你是一位人間佛教導師，融合佛光山星雲大師風格對話。
 理論基礎：阿含經（四聖諦）、法華經（人人可成佛）、華嚴經（緣起）。
@@ -45,7 +55,7 @@ const SYSTEM_PROMPTS = {
 你習慣說：「有苦有樂的人生是充實的，有成有敗的人生是合理的。」
 「聰明的人凡事往好處想，以歡喜的心想歡喜的事。」
 「給人歡喜，就是給自己歡喜。」
-語氣：溫暖積極，像慈祥實際的長輩。長度150-220字。繁體中文。`
+語氣：溫暖積極，像慈祥實際的長輩。長度150-220字。以${LANG}回應。`
 };
 
 const MAX_ROUNDS = 10;
@@ -82,7 +92,7 @@ document.getElementById('openOptionsLink').addEventListener('click', (e) => {
 
 // ── Gemini API call ──
 async function callGemini(tradition, messages) {
-  if (!geminiApiKey) throw new Error('請先至設定頁面輸入 Gemini API Key');
+  if (!geminiApiKey) throw new Error(t('dharmaApiKeyMissing'));
 
   const apiUrl = buildGeminiUrl(geminiModel, geminiApiKey);
 
@@ -118,10 +128,10 @@ async function callGemini(tradition, messages) {
   }
 
   if (result.promptFeedback?.blockReason) {
-    throw new Error('API 拒絕回應：' + result.promptFeedback.blockReason);
+    throw new Error(t('dharmaApiBlocked') + result.promptFeedback.blockReason);
   }
 
-  throw new Error('無法取得回應');
+  throw new Error(t('dharmaNoResponse'));
 }
 
 // ── UI: Intro toggle ──
@@ -129,7 +139,7 @@ document.getElementById('infoBtn').addEventListener('click', () => {
   const panel = document.getElementById('introPanel');
   const btn = document.getElementById('infoBtn');
   const open = panel.classList.toggle('open');
-  btn.textContent = open ? '收起' : '關於';
+  btn.textContent = open ? t('dharmaAboutCloseBtn') : t('dharmaAboutBtn');
   btn.classList.toggle('open', open);
 });
 
@@ -200,7 +210,7 @@ function addMsg(cid, role, text, t) {
   if (w) w.remove();
   const d = document.createElement('div');
   d.className = `msg ${role}`;
-  d.innerHTML = `<div class="av ${role === 'ai' ? AVC[t] : 'uav'}">${role === 'ai' ? AV[t] : '你'}</div><div class="bbl">${escapeHtml(text).replace(/\n/g, '<br>')}</div>`;
+  d.innerHTML = `<div class="av ${role === 'ai' ? AVC[t] : 'uav'}">${role === 'ai' ? AV[t] : chrome.i18n.getMessage('dharmaUserLabel')}</div><div class="bbl">${escapeHtml(text).replace(/\n/g, '<br>')}</div>`;
   el.appendChild(d);
   el.scrollTop = el.scrollHeight;
 }
@@ -239,7 +249,7 @@ async function sendS(t) {
   } catch (e) {
     rmThink('single-' + t);
     hist[t].pop();
-    addMsg('single-' + t, 'ai', '（錯誤：' + e.message + '）', t);
+    addMsg('single-' + t, 'ai', chrome.i18n.getMessage('dharmaErrorMsg', [e.message]), t);
   }
   busy[t] = false;
   document.getElementById(t + '-send').disabled = false;
@@ -272,7 +282,7 @@ async function sendCmp() {
       addMsg('cmp-' + col, 'ai', reply, col);
     } else {
       compareHistories[tradition].pop();
-      addMsg('cmp-' + col, 'ai', '（錯誤：' + results[i].reason.message + '）', col);
+      addMsg('cmp-' + col, 'ai', chrome.i18n.getMessage('dharmaErrorMsg', [results[i].reason.message]), col);
     }
   });
 

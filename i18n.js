@@ -28,6 +28,7 @@ function localizeHtmlPage() {
 // Set document direction for RTL locales.
 const RTL_LOCALES = ['ar', 'he', 'fa', 'ur'];
 const uiLang = chrome.i18n.getUILanguage().split('-')[0];
+document.documentElement.lang = chrome.i18n.getUILanguage();
 if (RTL_LOCALES.includes(uiLang)) {
     document.documentElement.setAttribute('dir', 'rtl');
 }

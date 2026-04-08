@@ -134,9 +134,20 @@
                     <label for="local-model-endpoint" class="label" data-i18n="localModelEndpointLabel"></label>
                     <input type="text" id="local-model-endpoint" class="text-input"
                            data-i18n-placeholder="localModelEndpointPlaceholder">
+                    <div class="local-tools-row">
+                        <button type="button" id="test-local-connection" class="secondary-btn">Test Connection</button>
+                        <button type="button" id="refresh-local-models" class="secondary-btn">Refresh Models</button>
+                    </div>
+                    <div id="local-model-status" class="field-status" aria-live="polite"></div>
+                    <label for="local-model-select" id="local-model-select-label" class="label mt-075rem">Detected Models</label>
+                    <select id="local-model-select" class="select-input" disabled>
+                        <option value="">No models detected yet</option>
+                    </select>
+                    <p id="local-model-hint" class="field-help">If auto-detection fails, you can still enter the model name manually below.</p>
                     <label for="local-model-name" class="label mt-075rem" data-i18n="localModelNameLabel"></label>
                     <input type="text" id="local-model-name" class="text-input"
                            data-i18n-placeholder="localModelNamePlaceholder">
+                    <p id="local-model-manual-hint" class="field-help">Manual input is always available as a fallback.</p>
                 </div>
 
                 <!-- Local-only warning (shown only in local mode) -->

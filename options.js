@@ -1,5 +1,9 @@
 // options.js (v27.2.3 - 3-mode AI service selector)
 import { populateLanguageSelector, supportedLanguages } from './scripts/language_manager.js';
+import { fetchLocalModelCatalog, normalizeLocalApiBaseUrl } from './scripts/local-api.js';
+
+const t = (key, fallback = '', substitutions) => chrome.i18n.getMessage(key, substitutions) || fallback;
+let localModelFetchSeq = 0;
 
 // --- Preferred Language List Helpers ---
 
@@ -62,6 +66,188 @@ function updateAiModePanels(mode) {
     localWarning.classList.toggle('hidden', mode !== 'local');
 }
 
+function showOptionsStatus(message, kind = 'success') {
+    const status = document.getElementById('status');
+    status.textContent = message;
+    status.className = `status-text ${kind ? `status-${kind}` : ''}`.trim();
+}
+
+function setLocalModelStatus(message, kind = '') {
+    const status = document.getElementById('local-model-status');
+    status.textContent = message;
+    status.className = `field-status ${kind ? `status-${kind}` : ''}`.trim();
+}
+
+function setLocalModelButtonsBusy(isBusy) {
+    document.getElementById('test-local-connection').disabled = isBusy;
+    document.getElementById('refresh-local-models').disabled = isBusy;
+}
+
+function resetLocalModelSelect(message = t('localModelSelectEmpty', 'No models detected yet')) {
+    const select = document.getElementById('local-model-select');
+    select.innerHTML = '';
+    select.add(new Option(message, ''));
+    select.disabled = true;
+}
+
+function syncManualModelWithSelect() {
+    const select = document.getElementById('local-model-select');
+    const manualInput = document.getElementById('local-model-name');
+    const selected = select.value.trim();
+    if (selected) {
+        manualInput.value = selected;
+    }
+}
+
+function syncSelectWithManualModel() {
+    const select = document.getElementById('local-model-select');
+    if (select.disabled) return;
+    const manualValue = document.getElementById('local-model-name').value.trim();
+    const hasMatch = Array.from(select.options).some(opt => opt.value && opt.value === manualValue);
+    select.value = hasMatch ? manualValue : '';
+}
+
+function getLocalModelSourceLabel(source) {
+    return source === 'ollama'
+        ? t('localModelSourceOllama', 'Ollama /api/tags')
+        : t('localModelSourceOpenAI', '/v1/models');
+}
+
+function renderDetectedLocalModels(models, source) {
+    const select = document.getElementById('local-model-select');
+    const manualInput = document.getElementById('local-model-name');
+    const hint = document.getElementById('local-model-hint');
+    const manualValue = manualInput.value.trim();
+    const sourceLabel = getLocalModelSourceLabel(source);
+
+    select.innerHTML = '';
+
+    if (!models.length) {
+        resetLocalModelSelect();
+        hint.textContent = t(
+            'localModelManualHint',
+            'If auto-detection fails, you can still enter the model name manually below.'
+        );
+        return;
+    }
+
+    select.add(new Option(t('localModelSelectPlaceholder', 'Choose a detected model...'), ''));
+    models.forEach(modelName => select.add(new Option(modelName, modelName)));
+    select.disabled = false;
+
+    if (manualValue && models.includes(manualValue)) {
+        select.value = manualValue;
+    } else if (!manualValue && models.length === 1) {
+        select.value = models[0];
+        manualInput.value = models[0];
+    }
+
+    hint.textContent = t(
+        'localModelDetectedHint',
+        `Detected via ${sourceLabel}. Selecting a model will fill the field below.`,
+        [sourceLabel]
+    );
+}
+
+async function probeLocalModelCatalog({ interactive = true, reason = 'refresh' } = {}) {
+    const endpointInput = document.getElementById('local-model-endpoint');
+    const endpoint = normalizeLocalApiBaseUrl(endpointInput.value);
+    const requestId = ++localModelFetchSeq;
+
+    endpointInput.value = endpoint;
+
+    if (!endpoint) {
+        resetLocalModelSelect();
+        document.getElementById('local-model-hint').textContent = t(
+            'localModelManualHint',
+            'If auto-detection fails, you can still enter the model name manually below.'
+        );
+        if (interactive) {
+            setLocalModelStatus(
+                t('localModelStatusNeedEndpoint', 'Enter an endpoint URL first.'),
+                'error'
+            );
+        } else {
+            setLocalModelStatus('');
+        }
+        return null;
+    }
+
+    setLocalModelButtonsBusy(true);
+    if (interactive) {
+        setLocalModelStatus(
+            reason === 'test'
+                ? t('localModelStatusTesting', 'Testing endpoint and fetching model list...')
+                : t('localModelStatusLoading', 'Fetching model list...'),
+            'info'
+        );
+    }
+
+    try {
+        const result = await fetchLocalModelCatalog(endpoint);
+        if (requestId !== localModelFetchSeq) return null;
+
+        renderDetectedLocalModels(result.models, result.source);
+        const sourceLabel = getLocalModelSourceLabel(result.source);
+
+        if (interactive) {
+            if (result.models.length) {
+                setLocalModelStatus(
+                    t(
+                        'localModelStatusSuccess',
+                        `Connected. Found ${result.models.length} models via ${sourceLabel}.`,
+                        [`${result.models.length}`, sourceLabel]
+                    ),
+                    'success'
+                );
+            } else {
+                setLocalModelStatus(
+                    t(
+                        'localModelStatusNoModels',
+                        `Connected, but no installed models were reported via ${sourceLabel}.`,
+                        [sourceLabel]
+                    ),
+                    'info'
+                );
+            }
+        }
+        return result;
+    } catch (error) {
+        if (requestId !== localModelFetchSeq) return null;
+
+        resetLocalModelSelect();
+        document.getElementById('local-model-hint').textContent = t(
+            'localModelManualHint',
+            'If auto-detection fails, you can still enter the model name manually below.'
+        );
+
+        if (interactive) {
+            setLocalModelStatus(
+                error.message || t('localModelStatusError', 'Could not reach the server or retrieve a model list.'),
+                'error'
+            );
+        } else {
+            setLocalModelStatus('');
+        }
+        return null;
+    } finally {
+        if (requestId === localModelFetchSeq) {
+            setLocalModelButtonsBusy(false);
+        }
+    }
+}
+
+function initLocalModelUiText() {
+    document.getElementById('test-local-connection').textContent = t('localModelTestButton', 'Test Connection');
+    document.getElementById('refresh-local-models').textContent = t('localModelRefreshButton', 'Refresh Models');
+    document.getElementById('local-model-select-label').textContent = t('localModelSelectLabel', 'Detected Models');
+    document.getElementById('local-model-manual-hint').textContent = t(
+        'localModelManualHint',
+        'If auto-detection fails, you can still enter the model name manually below.'
+    );
+    resetLocalModelSelect();
+}
+
 // --- Core Options Logic ---
 
 function save_options() {
@@ -71,6 +257,10 @@ function save_options() {
     const prefLangs = getPrefLangValues();
     const aiModeEl = document.querySelector('input[name="ai-mode"]:checked');
     const aiMode = aiModeEl ? aiModeEl.value : 'gemini';
+    const normalizedEndpoint = normalizeLocalApiBaseUrl(document.getElementById('local-model-endpoint').value);
+    document.getElementById('local-model-endpoint').value = normalizedEndpoint;
+    const resolvedLocalModelName = document.getElementById('local-model-name').value.trim() ||
+        document.getElementById('local-model-select').value.trim();
 
     chrome.storage.sync.set({
         displayLanguage: lang,
@@ -88,18 +278,16 @@ function save_options() {
         preset_f: document.getElementById('preset-prompt-f').value,
         preset_g: document.getElementById('preset-prompt-g').value,
         aiMode: aiMode,
-        localModelEndpoint: document.getElementById('local-model-endpoint').value.trim(),
-        localModelName: document.getElementById('local-model-name').value.trim()
+        localModelEndpoint: normalizedEndpoint,
+        localModelName: resolvedLocalModelName
     }, () => {
-        const status = document.getElementById('status');
-        status.textContent = chrome.i18n.getMessage('optionsStatusSaved');
-        status.className = 'status-success';
-        setTimeout(() => { status.textContent = ''; status.className = ''; }, 2000);
+        showOptionsStatus(chrome.i18n.getMessage('optionsStatusSaved'), 'success');
+        setTimeout(() => showOptionsStatus('', ''), 2000);
     });
 }
 
-function restore_options() {
-    chrome.storage.sync.get({
+async function restore_options() {
+    const items = await chrome.storage.sync.get({
         displayLanguage: 'default',
         geminiApiKey: '',
         translationModel: 'gemini-3.1-flash-lite-preview',
@@ -117,42 +305,41 @@ function restore_options() {
         localModelEnabled: false,
         localModelEndpoint: 'http://localhost:11434/v1',
         localModelName: 'llama3.2'
-    }, (items) => {
-        document.getElementById('display-language').value = items.displayLanguage;
-        document.getElementById('api-key').value = items.geminiApiKey;
-
-        // Migration: if prefLangs not saved yet, seed from old A/B keys
-        const prefLangs = items.prefLangs ?? [items.prefLangA, items.prefLangB, ''];
-        setPrefLangValues(prefLangs);
-
-        document.getElementById('preset-prompt-a').value = items.preset_a;
-        document.getElementById('preset-prompt-b').value = items.preset_b;
-        document.getElementById('preset-prompt-c').value = items.preset_c;
-        document.getElementById('preset-prompt-d').value = items.preset_d;
-        document.getElementById('preset-prompt-e').value = items.preset_e;
-        document.getElementById('preset-prompt-f').value = items.preset_f;
-        document.getElementById('preset-prompt-g').value = items.preset_g;
-
-        const savedModelRadio = document.querySelector(`input[name="model-select"][value="${items.translationModel}"]`);
-        if (savedModelRadio) {
-            savedModelRadio.checked = true;
-        } else {
-            const firstRadio = document.querySelector('input[name="model-select"]');
-            if (firstRadio) firstRadio.checked = true;
-        }
-
-        // Migrate from old localModelEnabled boolean → aiMode
-        let aiMode = items.aiMode;
-        if (aiMode === null) {
-            aiMode = items.localModelEnabled ? 'hybrid' : 'gemini';
-        }
-        const aiModeRadio = document.querySelector(`input[name="ai-mode"][value="${aiMode}"]`);
-        if (aiModeRadio) aiModeRadio.checked = true;
-
-        document.getElementById('local-model-endpoint').value = items.localModelEndpoint;
-        document.getElementById('local-model-name').value = items.localModelName;
-        updateAiModePanels(aiMode);
     });
+    document.getElementById('display-language').value = items.displayLanguage;
+    document.getElementById('api-key').value = items.geminiApiKey;
+
+    // Migration: if prefLangs not saved yet, seed from old A/B keys
+    const prefLangs = items.prefLangs ?? [items.prefLangA, items.prefLangB, ''];
+    setPrefLangValues(prefLangs);
+
+    document.getElementById('preset-prompt-a').value = items.preset_a;
+    document.getElementById('preset-prompt-b').value = items.preset_b;
+    document.getElementById('preset-prompt-c').value = items.preset_c;
+    document.getElementById('preset-prompt-d').value = items.preset_d;
+    document.getElementById('preset-prompt-e').value = items.preset_e;
+    document.getElementById('preset-prompt-f').value = items.preset_f;
+    document.getElementById('preset-prompt-g').value = items.preset_g;
+
+    const savedModelRadio = document.querySelector(`input[name="model-select"][value="${items.translationModel}"]`);
+    if (savedModelRadio) {
+        savedModelRadio.checked = true;
+    } else {
+        const firstRadio = document.querySelector('input[name="model-select"]');
+        if (firstRadio) firstRadio.checked = true;
+    }
+
+    // Migrate from old localModelEnabled boolean → aiMode
+    let aiMode = items.aiMode;
+    if (aiMode === null) {
+        aiMode = items.localModelEnabled ? 'hybrid' : 'gemini';
+    }
+    const aiModeRadio = document.querySelector(`input[name="ai-mode"][value="${aiMode}"]`);
+    if (aiModeRadio) aiModeRadio.checked = true;
+
+    document.getElementById('local-model-endpoint').value = items.localModelEndpoint;
+    document.getElementById('local-model-name').value = items.localModelName;
+    updateAiModePanels(aiMode);
 }
 
 function reset_options() {
@@ -170,6 +357,12 @@ function reset_options() {
     if (geminiModeRadio) geminiModeRadio.checked = true;
     document.getElementById('local-model-endpoint').value = 'http://localhost:11434/v1';
     document.getElementById('local-model-name').value = 'llama3.2';
+    resetLocalModelSelect();
+    document.getElementById('local-model-hint').textContent = t(
+        'localModelManualHint',
+        'If auto-detection fails, you can still enter the model name manually below.'
+    );
+    setLocalModelStatus('');
     updateAiModePanels('gemini');
 
     chrome.storage.sync.set({
@@ -183,16 +376,15 @@ function reset_options() {
         localModelEndpoint: 'http://localhost:11434/v1',
         localModelName: 'llama3.2'
     }, () => {
-        const status = document.getElementById('status');
-        status.textContent = chrome.i18n.getMessage('optionsStatusReset');
-        status.className = 'status-success';
-        setTimeout(() => { status.textContent = ''; status.className = ''; }, 2500);
+        showOptionsStatus(chrome.i18n.getMessage('optionsStatusReset'), 'success');
+        setTimeout(() => showOptionsStatus('', ''), 2500);
     });
 }
 
 // --- Main Execution ---
 document.addEventListener('DOMContentLoaded', async () => {
     document.title = chrome.i18n.getMessage('optionsTitle');
+    initLocalModelUiText();
 
     // Populate display language selector
     const displayLangSelect = document.getElementById('display-language');
@@ -203,8 +395,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Populate the two supported-language selects in the pref-lang list
     populatePrefLangSelects();
 
+    document.getElementById('test-local-connection').addEventListener('click', () => {
+        probeLocalModelCatalog({ interactive: true, reason: 'test' });
+    });
+    document.getElementById('refresh-local-models').addEventListener('click', () => {
+        probeLocalModelCatalog({ interactive: true, reason: 'refresh' });
+    });
+    document.getElementById('local-model-endpoint').addEventListener('change', () => {
+        probeLocalModelCatalog({ interactive: true, reason: 'refresh' });
+    });
+    document.getElementById('local-model-select').addEventListener('change', syncManualModelWithSelect);
+    document.getElementById('local-model-name').addEventListener('input', syncSelectWithManualModel);
+
     // Restore saved values
-    restore_options();
+    await restore_options();
+    await probeLocalModelCatalog({ interactive: false, reason: 'refresh' });
 
     // Reorder buttons: swap the clicked row with its neighbor
     document.getElementById('pref-lang-list').addEventListener('click', (e) => {

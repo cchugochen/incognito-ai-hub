@@ -5,6 +5,122 @@
  */
 
 /**
+ * Normalizes a local-model endpoint by trimming whitespace and removing
+ * trailing slashes.
+ * @param {string} baseUrl
+ * @returns {string}
+ */
+export function normalizeLocalApiBaseUrl(baseUrl) {
+    return (baseUrl || '').trim().replace(/\/+$/, '');
+}
+
+/**
+ * Builds an OpenAI-compatible endpoint URL. Supports both bare host URLs
+ * (http://host:port) and versioned roots (http://host:port/v1).
+ * @param {string} baseUrl
+ * @param {string} path
+ * @returns {string}
+ */
+export function buildOpenAICompatibleUrl(baseUrl, path) {
+    const base = normalizeLocalApiBaseUrl(baseUrl);
+    if (!base) return '';
+    return /\/v\d+$/.test(base) ? `${base}${path}` : `${base}/v1${path}`;
+}
+
+/**
+ * Builds an Ollama native endpoint URL from either a bare root or a /v1 root.
+ * @param {string} baseUrl
+ * @param {string} path
+ * @returns {string}
+ */
+export function buildOllamaNativeUrl(baseUrl, path) {
+    const base = normalizeLocalApiBaseUrl(baseUrl).replace(/\/v\d+$/, '');
+    return base ? `${base}${path}` : '';
+}
+
+async function fetchJson(url) {
+    let response;
+    try {
+        response = await fetch(url, {
+            method: 'GET',
+            headers: { 'Accept': 'application/json' }
+        });
+    } catch (e) {
+        throw new Error(chrome.i18n.getMessage('errorLocalModelConnect'));
+    }
+
+    if (!response.ok) {
+        const err = await response.json().catch(() => ({}));
+        throw new Error(err.error?.message || err.message || `HTTP ${response.status}`);
+    }
+    return response.json().catch(() => ({}));
+}
+
+function uniqueModelNames(names) {
+    return Array.from(new Set(
+        names
+            .map(name => (typeof name === 'string' ? name.trim() : ''))
+            .filter(Boolean)
+    ));
+}
+
+function extractOpenAIModelNames(payload) {
+    if (!Array.isArray(payload?.data)) return null;
+    return uniqueModelNames(payload.data.map(model => model?.id || model?.name || model?.model));
+}
+
+function extractOllamaModelNames(payload) {
+    if (!Array.isArray(payload?.models)) return null;
+    return uniqueModelNames(payload.models.map(model => model?.name || model?.model));
+}
+
+/**
+ * Fetches the model catalog from a local AI endpoint.
+ * Tries the OpenAI-compatible /v1/models endpoint first, then falls back to
+ * Ollama's native /api/tags endpoint.
+ * @param {string} baseUrl
+ * @returns {Promise<{models: string[], source: 'openai'|'ollama', url: string}>}
+ */
+export async function fetchLocalModelCatalog(baseUrl) {
+    const openAiUrl = buildOpenAICompatibleUrl(baseUrl, '/models');
+    if (!openAiUrl) throw new Error(chrome.i18n.getMessage('errorLocalModelConnect'));
+    const ollamaUrl = buildOllamaNativeUrl(baseUrl, '/api/tags');
+    let openAiModels = null;
+
+    try {
+        const payload = await fetchJson(openAiUrl);
+        openAiModels = extractOpenAIModelNames(payload);
+        if (openAiModels && openAiModels.length > 0) {
+            return { models: openAiModels, source: 'openai', url: openAiUrl };
+        }
+    } catch (openAiError) {
+        try {
+            const payload = await fetchJson(ollamaUrl);
+            const models = extractOllamaModelNames(payload);
+            if (models !== null) {
+                return { models, source: 'ollama', url: ollamaUrl };
+            }
+        } catch (ollamaError) {
+            throw new Error(ollamaError.message || openAiError.message || chrome.i18n.getMessage('errorLocalModelConnect'));
+        }
+        throw new Error(openAiError.message || chrome.i18n.getMessage('errorLocalModelConnect'));
+    }
+
+    const payload = await fetchJson(ollamaUrl);
+    const models = extractOllamaModelNames(payload);
+    if (models && models.length > 0) {
+        return { models, source: 'ollama', url: ollamaUrl };
+    }
+    if (openAiModels !== null) {
+        return { models: openAiModels, source: 'openai', url: openAiUrl };
+    }
+    if (models !== null) {
+        return { models, source: 'ollama', url: ollamaUrl };
+    }
+    return { models: [], source: 'openai', url: openAiUrl };
+}
+
+/**
  * Sends a chat completion request to an OpenAI-compatible local model endpoint.
  * @param {string} baseUrl - The base URL of the local server (e.g., "http://localhost:11434/v1")
  * @param {string} modelName - The model name to use (e.g., "llama3.2")
@@ -13,9 +129,7 @@
  * @throws {Error} With a localized error message on failure
  */
 export async function localModelCall(baseUrl, modelName, messages) {
-    // Normalize: support both "http://host:port" and "http://host:port/v1"
-    const base = baseUrl.replace(/\/$/, '');
-    const url = /\/v\d+$/.test(base) ? `${base}/chat/completions` : `${base}/v1/chat/completions`;
+    const url = buildOpenAICompatibleUrl(baseUrl, '/chat/completions');
     let response;
     try {
         response = await fetch(url, {

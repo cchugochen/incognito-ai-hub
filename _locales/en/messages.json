@@ -727,6 +727,84 @@
     "message": "llama3.2",
     "description": "Placeholder for the local model name input."
   },
+  "localModelTestButton": {
+    "message": "Test Connection",
+    "description": "Button to test the local model endpoint connection."
+  },
+  "localModelRefreshButton": {
+    "message": "Refresh Models",
+    "description": "Button to fetch the latest model list from the local server."
+  },
+  "localModelSelectLabel": {
+    "message": "Detected Models",
+    "description": "Label for the detected local model dropdown."
+  },
+  "localModelSelectPlaceholder": {
+    "message": "Choose a detected model...",
+    "description": "Placeholder option for the detected local model dropdown."
+  },
+  "localModelSelectEmpty": {
+    "message": "No models detected yet",
+    "description": "Placeholder shown before any local models are detected."
+  },
+  "localModelManualHint": {
+    "message": "If auto-detection fails, you can still enter the model name manually below.",
+    "description": "Hint shown below the detected model dropdown."
+  },
+  "localModelDetectedHint": {
+    "message": "Detected via $SOURCE$. Selecting a model will fill the field below.",
+    "description": "Hint shown after auto-detecting local models.",
+    "placeholders": {
+      "source": {
+        "content": "$1"
+      }
+    }
+  },
+  "localModelStatusNeedEndpoint": {
+    "message": "Enter an endpoint URL first.",
+    "description": "Status shown when the user tries to test local connection without an endpoint."
+  },
+  "localModelStatusTesting": {
+    "message": "Testing endpoint and fetching model list...",
+    "description": "Status shown while testing the local server connection."
+  },
+  "localModelStatusLoading": {
+    "message": "Fetching model list...",
+    "description": "Status shown while refreshing the local model list."
+  },
+  "localModelStatusSuccess": {
+    "message": "Connected. Found $COUNT$ models via $SOURCE$.",
+    "description": "Status shown after successfully fetching local models.",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "source": {
+        "content": "$2"
+      }
+    }
+  },
+  "localModelStatusNoModels": {
+    "message": "Connected, but no installed models were reported via $SOURCE$.",
+    "description": "Status shown when the local server responds but returns no models.",
+    "placeholders": {
+      "source": {
+        "content": "$1"
+      }
+    }
+  },
+  "localModelStatusError": {
+    "message": "Could not reach the server or retrieve a model list.",
+    "description": "Fallback status when local model discovery fails."
+  },
+  "localModelSourceOpenAI": {
+    "message": "/v1/models",
+    "description": "Label for the OpenAI-compatible model-list endpoint."
+  },
+  "localModelSourceOllama": {
+    "message": "Ollama /api/tags",
+    "description": "Label for the Ollama native model-list endpoint."
+  },
   "localModelTabName": {
     "message": "Local Model",
     "description": "Tab button label for the local model chat tab."
@@ -1056,5 +1134,75 @@
   "voiceLimitHint": {
     "message": "Maximum recording: 15 minutes.",
     "description": "Hint text showing maximum recording duration under the record button."
-  }
+  },
+  "popupOpenDharma": {
+    "message": "Dharma Masters · Mindfulness",
+    "description": "Popup button to open the dharma chat page."
+  },
+  "dharmaTitle": { "message": "Mindfulness & Dharma — Three Traditions", "description": "Dharma page title." },
+  "dharmaHeaderTitle": { "message": "Mindfulness & Dharma — Three Traditions", "description": "Dharma page header title." },
+  "dharmaHeaderSub": { "message": "Whatever state you're in, you can talk about it here", "description": "Dharma header subtitle." },
+  "dharmaAboutBtn": { "message": "About", "description": "About toggle button." },
+  "dharmaAboutCloseBtn": { "message": "Close", "description": "Close/collapse about panel button." },
+  "dharmaNoApiKeyBefore": { "message": "Gemini API Key not set. Please go to", "description": "Text before settings link in API key banner." },
+  "dharmaNoApiKeyLink": { "message": "Settings", "description": "Settings link text in API key banner." },
+  "dharmaNoApiKeyAfter": { "message": "to enter your API Key.", "description": "Text after settings link in API key banner." },
+  "dharmaTabCompare": { "message": "⚖️ Compare", "description": "Compare all three traditions tab." },
+  "dharmaTabTib": { "message": "🙏 Dalai", "description": "Tibetan/Dalai Lama tab." },
+  "dharmaTabZen": { "message": "⛰️ DDM", "description": "Dharma Drum Mountain tab." },
+  "dharmaTabHum": { "message": "🪷 FGS", "description": "Fo Guang Shan tab." },
+  "dharmaCmpColTibLabel": { "message": "🙏 Dalai", "description": "Tibetan column label in compare view." },
+  "dharmaCmpColTibTag": { "message": "Tibetan · Compassion", "description": "Tibetan tradition tag." },
+  "dharmaCmpColZenLabel": { "message": "⛰️ DDM", "description": "DDM column label in compare view." },
+  "dharmaCmpColZenTag": { "message": "Chan · Awareness", "description": "Chan tradition tag." },
+  "dharmaCmpColHumLabel": { "message": "🪷 FGS", "description": "FGS column label in compare view." },
+  "dharmaCmpColHumTag": { "message": "Humanistic · Action", "description": "Humanistic tradition tag." },
+  "dharmaCmpTibWelcomeName": { "message": "Tibetan Buddhism · Gelug" },
+  "dharmaCmpTibWelcomeDesc": { "message": "Embracing suffering with compassion<br>Bodhicitta · Emptiness · Compassion" },
+  "dharmaCmpTibWelcomeSub": { "message": "Bodhicitta · Emptiness · Compassion" },
+  "dharmaCmpZenWelcomeName": { "message": "Dharma Drum Mountain · Master Sheng Yen" },
+  "dharmaCmpZenWelcomeDesc": { "message": "Direct pointing to awareness<br>Returning to the present moment" },
+  "dharmaCmpZenWelcomeSub": { "message": "No-self · Mindfulness · Spiritual ecology" },
+  "dharmaCmpHumWelcomeName": { "message": "Fo Guang Shan · Humanistic Buddhism" },
+  "dharmaCmpHumWelcomeDesc": { "message": "Dharma in everyday life<br>Warmth and positive action" },
+  "dharmaCmpHumWelcomeSub": { "message": "Dependent origination · Altruism · Pure Land on Earth" },
+  "dharmaCmpInputPlaceholder": { "message": "Enter a question to compare all three traditions' responses…" },
+  "dharmaCmpLabel": { "message": "3 Traditions" },
+  "dharmaTibWelcomeName": { "message": "Dalai Lama Style · Tibetan Compassion" },
+  "dharmaTibWelcomeDesc": { "message": "Guided by bodhicitta<br>Lam Rim · Four Noble Truths · Bodhisattvacaryāvatāra" },
+  "dharmaTibWelcomeSub": { "message": "Gelug · Compassion · Emptiness" },
+  "dharmaZenWelcomeName": { "message": "Master Sheng Yen Style · DDM Chan" },
+  "dharmaZenWelcomeDesc": { "message": "Face it · Accept it · Deal with it · Let it go<br>Spiritual ecology · Present awareness" },
+  "dharmaZenWelcomeSub": { "message": "Caodong · Linji · No-self" },
+  "dharmaHumWelcomeName": { "message": "Master Hsing Yun Style · Humanistic Buddhism" },
+  "dharmaHumWelcomeDesc": { "message": "Fo Guang Shan · Dharma in daily life<br>Āgama · Lotus Sūtra · Avataṃsaka" },
+  "dharmaHumWelcomeSub": { "message": "Pure Land · Dependent Origination · Practice" },
+  "dharmaTibInputPlaceholder": { "message": "Share what's troubling you…" },
+  "dharmaZenInputPlaceholder": { "message": "What's happening right now?" },
+  "dharmaHumInputPlaceholder": { "message": "What would you like to talk about?" },
+  "dharmaFooterTitle": { "message": "Disclaimer" },
+  "dharmaFooterNote": { "message": "Content is AI-generated using large language models for personal self-exploration and reading reference. It cannot replace diagnosis or treatment by medical or mental health professionals. If you are in immediate danger or at risk of self-harm or harming others, please contact local emergency services or seek medical attention immediately. If you find this helpful, feel free to support via the Buy Me a Coffee link." },
+  "dharmaSugg1": { "message": "I've been worried lately and don't know what the future holds" },
+  "dharmaSugg2": { "message": "I had an argument with my family and I feel very sad" },
+  "dharmaSugg3": { "message": "I feel like nothing I do has any meaning" },
+  "dharmaSugg4": { "message": "I can't sleep — my mind keeps racing" },
+  "dharmaSugg5": { "message": "I feel very lost" },
+  "dharmaSugg6": { "message": "Work stress is overwhelming — I don't know how long I can hold on" },
+  "dharmaUserLabel": { "message": "You" },
+  "dharmaApiKeyMissing": { "message": "Please enter your Gemini API Key in Settings first" },
+  "dharmaErrorMsg": { "message": "(Error: $ERROR$)", "placeholders": { "error": { "content": "$1" } } },
+  "dharmaApiBlocked": { "message": "API rejected response: " },
+  "dharmaNoResponse": { "message": "Unable to get a response" },
+  "dharmaIntroP1": { "message": "Before the age of psychotherapy or psychiatry, many people in Taiwan facing life difficulties would seek guidance from temple caretakers or monks. In East Asia, the wisdom of certain Buddhist sages has been passed down through generations. This is an extended version of the private chat — whatever state you're in, you can talk about it here." },
+  "dharmaIntroP2": { "message": "The three conversation styles here come from three of the most influential Buddhist thinkers of the twentieth century. Each worked in a different land, in a different way, responding to the same question: when people suffer, what can they do?" },
+  "dharmaTibIntroHdr": { "message": "🙏 <strong>The Dalai Lama</strong> (Tenzin Gyatso)" },
+  "dharmaTibIntroP1": { "message": "The spiritual leader of Tibetan Buddhism, born in 1935 in Amdo, Tibet, and recognized at age three as the reincarnation of the previous Dalai Lama. After fleeing to India in 1959, he spent decades transforming one people's suffering into compassion for all humanity. He is renowned for his commitment to nonviolence and was awarded the Nobel Peace Prize in 1989." },
+  "dharmaTibIntroP2": { "message": "At the core of his teaching is compassion and bodhicitta — the aspiration to bear the suffering of all beings. He often says: \"Each morning I remind myself that I am just one of billions of people on this earth. We are all the same — each of us wishes to be free from suffering.\" When you face difficulty, he first helps you feel less alone, then guides you to see a broader perspective." },
+  "dharmaZenIntroHdr": { "message": "⛩️ <strong>Master Sheng Yen</strong> (聖嚴法師)" },
+  "dharmaZenIntroP1": { "message": "The 50th-generation heir of the Caodong lineage and 57th of the Linji lineage of Chan Buddhism, and founder of Dharma Drum Mountain. He earned his doctorate from Rissho University in Japan in 1975 — the first ordained Chinese Buddhist monk to do so. Named by CommonWealth magazine as one of the 50 most influential people in Taiwan over four centuries, he authored over a hundred works in Chinese, English, and Japanese." },
+  "dharmaZenIntroP2": { "message": "His most celebrated teaching is: \"Face it, accept it, deal with it, let it go\" — expressing the Chan attitude of neither avoiding nor clinging, returning to this very moment. His words are brief and direct, cutting to the core like a blade that gently severs a tangled rope." },
+  "dharmaHumIntroHdr": { "message": "🪷 <strong>Master Hsing Yun</strong> (星雲大師)" },
+  "dharmaHumIntroP1": { "message": "Founding abbot of Fo Guang Shan, born in Jiangsu in 1927 and ordained at age 12. A pivotal figure in modernizing and internationalizing Buddhism, he passed away in 2023 at age 97. He believed that the Dharma belongs not to temples but to life itself, and built over three hundred monasteries worldwide, alongside universities, art museums, newspapers, and television stations." },
+  "dharmaHumIntroP2": { "message": "His philosophy centered on giving: give people confidence, give people joy, give people hope, give people convenience. When facing difficulties, he wouldn't just ask you to sit and meditate — he would say: go do one good deed, and your state of mind will be different." },
+  "dharmaIntroClosing": { "message": "Three styles, three paths. You don't need to choose sides, and you don't need any beliefs. Simply, when something is in your heart, you can come and ask them." }
 }

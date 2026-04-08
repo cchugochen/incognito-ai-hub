@@ -1,4 +1,4 @@
-# PrivoAI 無痕AI工作台 (v28.1)
+# PrivoAI 無痕AI工作台 (v28.1.5)
 
 A privacy-first Chrome extension integrating multimodal AI tools for reading, translation, conversation, and mindfulness. All AI requests go directly between your browser and the AI provider — no backend server, no data collection.
 
@@ -8,13 +8,46 @@ A privacy-first Chrome extension integrating multimodal AI tools for reading, tr
 
 ## Changelog / 更新紀錄
 
-### v28.1.2 — Dark Mode Auto-Detection & Footer Layout / 深色模式自動偵測 & Footer 捲動佈局
+### v28.1.5 — Local Model Discovery & Connection Testing / 本機模型自動偵測與連線測試
+
+- **Connection test button**: The Options page now includes a dedicated test button for local AI endpoints, making it easier to verify that Ollama, LM Studio, or another local server is reachable before saving settings.
+- **Automatic model discovery**: The extension now fetches the server's available models automatically and populates a detected-model dropdown.
+- **OpenAI + Ollama fallback**: Model discovery tries the OpenAI-compatible `/v1/models` endpoint first, then falls back to Ollama's native `/api/tags` endpoint when needed.
+- **Manual model-name fallback preserved**: Users can still type a model name manually even if auto-detection fails or they prefer an exact override.
+- **Locale coverage updated**: All 14 locales now include the new local-model discovery and connection-test UI strings.
+
+---
+
+### v28.1.4 — Dharma i18n & Locale-Aware Replies / 心靈正念頁面多語系化與回應語言同步
+
+- **Dharma page fully i18n-enabled**: `dharma.html` now uses `data-i18n` / `data-i18n-placeholder` for title, header, intro, tabs, welcome cards, footer, API-key banner, and input placeholders.
+- **Popup entry localized**: The Dharma button in `popup.html` now reads from locale messages instead of hardcoded Traditional Chinese.
+- **Locale-aware chat responses**: `dharma.js` now maps the UI locale to a response language and injects it into each system prompt, so replies follow the browser UI language instead of always using Traditional Chinese.
+- **Localized suggestions & errors**: Suggestion chips, API-key errors, blocked-response messages, empty-response messages, and user labels now come from `_locales/*/messages.json`.
+
+---
+
+### v28.1.3 — LAN Server Support for Local Model / 本機模型支援區網伺服器
+
+- **LAN endpoint access**: Added `http://*/*` to `host_permissions` and `http://*:*` to extension-page `connect-src`, allowing local-model servers on LAN IPs such as `192.168.x.x`.
+- **Setup guidance updated**: All 14 locales now include LAN examples for remote LM Studio / local OpenAI-compatible servers on the same network.
+
+---
+
+### v28.1.2 — Changelog Sync / 更新紀錄同步
+
+- **README changelog added**: Added changelog section to document the v28.1 series changes in one place.
+
+---
+
+### v28.1.1 — Dark Mode Auto-Detection & Footer Layout / 深色模式自動偵測與 Footer 捲動佈局
 
 - **Reader dark-mode auto-detect**: `reader.html` now applies `bg-dark` automatically on first load when OS is in dark mode (`prefers-color-scheme: dark`). Manual theme buttons still override. Preference saved to `localStorage` (`reader-bg` key).
 - **Reader CSS flash fix**: Added `@media (prefers-color-scheme: dark)` on `body:not([class])` so the toolbar renders dark before JS runs — eliminates flash of light beige toolbar.
 - **themes.css**: Patched hardcoded `rgba(247,244,240,0.88)` in `#reader.html .toolbar` to switch dark in dark mode.
 - **Incognito footer below fold**: Moved `<footer>` and `<hr>` outside `.container` into document flow — visible only by scrolling down, freeing full viewport for chat.
 - **Dharma viewport fix**: Wrapped all views in `.main-content` (`height: 100vh; overflow: hidden`); footer lives below in normal flow. Added `min-height: 300px` to `.messages`. Added `@media (max-height: 800px)` padding compression.
+- **Store description refresh**: Updated `appDesc` across all 14 locales to mention mindfulness and local AI support, while staying within Chrome Web Store length limits.
 
 ---
 

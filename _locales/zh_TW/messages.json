@@ -726,6 +726,84 @@
     "message": "llama3.2",
     "description": "Placeholder for the local model name input."
   },
+  "localModelTestButton": {
+    "message": "測試連線",
+    "description": "Button to test the local model endpoint connection."
+  },
+  "localModelRefreshButton": {
+    "message": "重新抓取模型",
+    "description": "Button to fetch the latest model list from the local server."
+  },
+  "localModelSelectLabel": {
+    "message": "偵測到的模型",
+    "description": "Label for the detected local model dropdown."
+  },
+  "localModelSelectPlaceholder": {
+    "message": "請選擇偵測到的模型…",
+    "description": "Placeholder option for the detected local model dropdown."
+  },
+  "localModelSelectEmpty": {
+    "message": "尚未偵測到模型",
+    "description": "Placeholder shown before any local models are detected."
+  },
+  "localModelManualHint": {
+    "message": "若自動偵測失敗，仍可於下方手動輸入模型名稱。",
+    "description": "Hint shown below the detected model dropdown."
+  },
+  "localModelDetectedHint": {
+    "message": "已透過 $SOURCE$ 偵測到模型。選取後會自動帶入下方欄位。",
+    "description": "Hint shown after auto-detecting local models.",
+    "placeholders": {
+      "source": {
+        "content": "$1"
+      }
+    }
+  },
+  "localModelStatusNeedEndpoint": {
+    "message": "請先輸入端點 URL。",
+    "description": "Status shown when the user tries to test local connection without an endpoint."
+  },
+  "localModelStatusTesting": {
+    "message": "正在測試連線並抓取模型清單…",
+    "description": "Status shown while testing the local server connection."
+  },
+  "localModelStatusLoading": {
+    "message": "正在抓取模型清單…",
+    "description": "Status shown while refreshing the local model list."
+  },
+  "localModelStatusSuccess": {
+    "message": "連線成功。已透過 $SOURCE$ 找到 $COUNT$ 個模型。",
+    "description": "Status shown after successfully fetching local models.",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "source": {
+        "content": "$2"
+      }
+    }
+  },
+  "localModelStatusNoModels": {
+    "message": "連線成功，但透過 $SOURCE$ 沒有回報任何已安裝模型。",
+    "description": "Status shown when the local server responds but returns no models.",
+    "placeholders": {
+      "source": {
+        "content": "$1"
+      }
+    }
+  },
+  "localModelStatusError": {
+    "message": "無法連線到伺服器或取得模型清單。",
+    "description": "Fallback status when local model discovery fails."
+  },
+  "localModelSourceOpenAI": {
+    "message": "/v1/models",
+    "description": "Label for the OpenAI-compatible model-list endpoint."
+  },
+  "localModelSourceOllama": {
+    "message": "Ollama /api/tags",
+    "description": "Label for the Ollama native model-list endpoint."
+  },
   "localModelTabName": {
     "message": "本機模型",
     "description": "Tab button label for the local model chat tab."
@@ -1020,5 +1098,74 @@
   "voiceLimitHint": {
     "message": "最長錄音：15 分鐘。",
     "description": "Hint text showing maximum recording duration under the record button."
-  }
+  },
+  "popupOpenDharma": {
+    "message": "三位禪師 · 心靈正念"
+  },
+  "dharmaTitle": { "message": "心靈與正念 — 三宗風格" },
+  "dharmaHeaderTitle": { "message": "心靈與正念 — 三宗風格" },
+  "dharmaHeaderSub": { "message": "不論你現在的狀態，都可以在這裡說說看的" },
+  "dharmaAboutBtn": { "message": "關於" },
+  "dharmaAboutCloseBtn": { "message": "收起" },
+  "dharmaNoApiKeyBefore": { "message": "尚未設定 Gemini API Key，請先至" },
+  "dharmaNoApiKeyLink": { "message": "設定頁面" },
+  "dharmaNoApiKeyAfter": { "message": "輸入 API Key。" },
+  "dharmaTabCompare": { "message": "⚖️ 同題比較" },
+  "dharmaTabTib": { "message": "🙏 達賴" },
+  "dharmaTabZen": { "message": "⛰️ 法鼓" },
+  "dharmaTabHum": { "message": "🪷 人間" },
+  "dharmaCmpColTibLabel": { "message": "🙏 達賴" },
+  "dharmaCmpColTibTag": { "message": "藏傳 · 慈悲" },
+  "dharmaCmpColZenLabel": { "message": "⛰️ 法鼓" },
+  "dharmaCmpColZenTag": { "message": "禪宗 · 覺照" },
+  "dharmaCmpColHumLabel": { "message": "🪷 人間" },
+  "dharmaCmpColHumTag": { "message": "人間佛教 · 行動" },
+  "dharmaCmpTibWelcomeName": { "message": "藏傳佛教 · 格魯派" },
+  "dharmaCmpTibWelcomeDesc": { "message": "慈悲承接苦難<br>菩提心 · 空性 · 慈悲" },
+  "dharmaCmpTibWelcomeSub": { "message": "菩提心 · 空性 · 慈悲" },
+  "dharmaCmpZenWelcomeName": { "message": "法鼓山 · 聖嚴法師" },
+  "dharmaCmpZenWelcomeDesc": { "message": "直指覺照根本<br>回到當下覺照" },
+  "dharmaCmpZenWelcomeSub": { "message": "無我 · 覺照 · 心靈環保" },
+  "dharmaCmpHumWelcomeName": { "message": "佛光山 · 人間佛教" },
+  "dharmaCmpHumWelcomeDesc": { "message": "佛法落實日常<br>溫暖與積極" },
+  "dharmaCmpHumWelcomeSub": { "message": "緣起 · 利他 · 人間淨土" },
+  "dharmaCmpInputPlaceholder": { "message": "輸入同一個問題，同時比較三種傳統的回應……" },
+  "dharmaCmpLabel": { "message": "三宗回答" },
+  "dharmaTibWelcomeName": { "message": "達賴喇嘛風格 · 藏傳慈悲" },
+  "dharmaTibWelcomeDesc": { "message": "菩提心引導<br>詮釋逆次第 · 苦諦諦行論" },
+  "dharmaTibWelcomeSub": { "message": "格魯派 · 慈悲 · 空性" },
+  "dharmaZenWelcomeName": { "message": "聖嚴法師風格 · 法鼓禪宗" },
+  "dharmaZenWelcomeDesc": { "message": "面對它接受它處理它放下它<br>心靈環保 · 覺照當下" },
+  "dharmaZenWelcomeSub": { "message": "聖嚴宗 · 曹洞宗 · 無我" },
+  "dharmaHumWelcomeName": { "message": "星雲大師風格 · 人間佛教" },
+  "dharmaHumWelcomeDesc": { "message": "佛光山 · 佛法生活化<br>阿含經 · 法華經 · 華嚴經" },
+  "dharmaHumWelcomeSub": { "message": "人間淨土 · 緣起 · 諦諦行" },
+  "dharmaTibInputPlaceholder": { "message": "說說你的困擾……" },
+  "dharmaZenInputPlaceholder": { "message": "現在發生什麼事？" },
+  "dharmaHumInputPlaceholder": { "message": "有什麼想聊的？" },
+  "dharmaFooterTitle": { "message": "使用聲明" },
+  "dharmaFooterNote": { "message": "內容為AI應用LLM生成，供生活自我探索與閱讀參考，不能取代醫療或心理專業人士的診斷與治療。若你正面臨急迫危險、自傷或傷人風險，請立即聯繫當地緊急資源或就醫。如果您覺得好用，歡迎小額贊助連結本人的 Buy Me a Coffee 網頁，用實際行動贊助。" },
+  "dharmaSugg1": { "message": "我最近很煩惱，不知道未來怎樣" },
+  "dharmaSugg2": { "message": "我和家人吵架了，心裡很難過" },
+  "dharmaSugg3": { "message": "我覺得自己做什麼都沒有意義" },
+  "dharmaSugg4": { "message": "睡不著，腦子一直轉不下來" },
+  "dharmaSugg5": { "message": "我覺得很失落" },
+  "dharmaSugg6": { "message": "工作壓力很大，不知道撐不撐得住" },
+  "dharmaUserLabel": { "message": "你" },
+  "dharmaApiKeyMissing": { "message": "請先至設定頁面輸入 Gemini API Key" },
+  "dharmaErrorMsg": { "message": "（錯誤：$ERROR$）", "placeholders": { "error": { "content": "$1" } } },
+  "dharmaApiBlocked": { "message": "API 拒絕回應：" },
+  "dharmaNoResponse": { "message": "無法取得回應" },
+  "dharmaIntroP1": { "message": "在還沒有心理治療或精神醫學的年代，許多台灣人遇到生活困擾，可能會去找廟裡面的廟公或寺廟的師父。在東亞地區，有些佛教智者的智慧語錄流傳深遠。這是無痕對話的延伸版本，不論你現在的狀態，都可以在這裡說說看的。" },
+  "dharmaIntroP2": { "message": "這裡的三種對話風格，來自二十世紀最具影響力的三位佛教思想家。他們各自在不同的土地上，用不同的方式，回應同一個問題：人在苦難中，能怎麼辦？" },
+  "dharmaTibIntroHdr": { "message": "🙏 <strong>達賴喇嘛</strong>（Tenzin Gyatso）" },
+  "dharmaTibIntroP1": { "message": "藏傳佛教的精神領袖，1935年生於西藏安多，三歲時被認證為前世達賴喇嘛的轉世。1959年流亡印度，此後數十年，他把一個民族的苦難轉化成對全人類的關懷，以非暴力精神著稱，並於1989年獲諾貝爾和平獎。" },
+  "dharmaTibIntroP2": { "message": "他的教法核心是慈悲與菩提心——願意為所有眾生承擔苦難的心。他常說：「每天早晨我提醒自己，我只是地球上幾十億人中的一個，我們都一樣，每個人都希望離苦得樂。」遇到什麼困境，他習慣先讓你感到不孤單，再帶你看見更廣闊的視野。" },
+  "dharmaZenIntroHdr": { "message": "⛩️ <strong>聖嚴法師</strong>（Master Sheng Yen）" },
+  "dharmaZenIntroP1": { "message": "禪宗曹洞宗第五十代傳人、臨濟宗第五十七代傳人，法鼓山創辦人，1975年於日本立正大學取得博士學位，是漢傳佛教第一位赴日攻讀博士的出家僧人。曾獲台灣《天下》雜誌選為「四百年來台灣最具影響力的五十位人士」之一，著有中英日文著作百餘種。" },
+  "dharmaZenIntroP2": { "message": "他最廣為人知的一句話是「面對它、接受它、處理它、放下它」——十二個字，說的是禪的態度：不逃避，不糾纏，回到當下這一刻。說話簡短，直指核心，像一把輕輕剪斷麻繩的刀。" },
+  "dharmaHumIntroHdr": { "message": "🪷 <strong>星雲大師</strong>（Master Hsing Yun）" },
+  "dharmaHumIntroP1": { "message": "佛光山開山宗長，1927年生於江蘇，12歲出家，致力實踐「人間佛教」理念，是將佛教現代化、國際化的關鍵人物，2023年圓寂，享壽97歲。他相信佛法不屬於寺廟，而屬於生活，在海內外興建逾三百所道場，創辦大學、美術館、日報、電視台。" },
+  "dharmaHumIntroP2": { "message": "他的哲學是「給」：給人信心、給人歡喜、給人希望、給人方便。遇到困難，他不會讓你只坐著觀想，他會說：去做一件好事，心境就不一樣了。" },
+  "dharmaIntroClosing": { "message": "三種風格，三條路。你不需要選邊站，也不需要有任何信仰。只是，當你心裡有什麼，可以來問問他們。" }
 }
