@@ -789,6 +789,12 @@
     "message": "Política de privacidad",
     "description": "Link to the privacy policy on the options page."
   },
+  "privacyTitle": {
+    "message": "Política de privacidad"
+  },
+  "tutorialTitle": {
+    "message": "Tutorial de la clave API de Gemini"
+  },
   "readerTtsSpeakBtn": {
     "message": "🔊 Hablar",
     "description": "TTS feature: readerTtsSpeakBtn"
@@ -1036,7 +1042,7 @@
     "description": "Hint text showing maximum recording duration under the record button."
   },
   "popupOpenDharma": { "message": "Maestros del Dharma · Mindfulness" },
-  "dharmaTitle": { "message": "Mindfulness & Dharma — Tres Tradiciones" },
+  "dharmaTitle": { "message": "Incognito Mind Ask" },
   "dharmaHeaderTitle": { "message": "Mindfulness & Dharma — Tres Tradiciones" },
   "dharmaHeaderSub": { "message": "Sea cual sea tu estado, puedes hablarlo aquí" },
   "dharmaAboutBtn": { "message": "Acerca de" },

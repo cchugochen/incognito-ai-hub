@@ -841,6 +841,14 @@
     "message": "Privacy Policy",
     "description": "Link to the privacy policy on the options page."
   },
+  "privacyTitle": {
+    "message": "Privacy Policy",
+    "description": "Browser title for the privacy policy page."
+  },
+  "tutorialTitle": {
+    "message": "Gemini API Key Tutorial",
+    "description": "Browser title for the Gemini API key tutorial page."
+  },
   "readerTtsSpeakBtn": {
     "message": "🔊 Speak",
     "description": "TTS feature: readerTtsSpeakBtn"
@@ -1139,7 +1147,7 @@
     "message": "Dharma Masters · Mindfulness",
     "description": "Popup button to open the dharma chat page."
   },
-  "dharmaTitle": { "message": "Mindfulness & Dharma — Three Traditions", "description": "Dharma page title." },
+  "dharmaTitle": { "message": "Incognito Mind Ask", "description": "Dharma page title." },
   "dharmaHeaderTitle": { "message": "Mindfulness & Dharma — Three Traditions", "description": "Dharma page header title." },
   "dharmaHeaderSub": { "message": "Whatever state you're in, you can talk about it here", "description": "Dharma header subtitle." },
   "dharmaAboutBtn": { "message": "About", "description": "About toggle button." },

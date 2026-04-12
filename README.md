@@ -1,4 +1,4 @@
-# PrivoAI 無痕AI工作台 (v28.1.5)
+# PrivoAI 無痕AI工作台 (v28.1.6)
 
 A privacy-first Chrome extension integrating multimodal AI tools for reading, translation, conversation, and mindfulness. All AI requests go directly between your browser and the AI provider — no backend server, no data collection.
 
@@ -7,6 +7,15 @@ A privacy-first Chrome extension integrating multimodal AI tools for reading, tr
 ---
 
 ## Changelog / 更新紀錄
+
+### v28.1.6 — Privacy & Tutorial Refresh / 隱私政策與 API 教學頁更新
+
+- **Privacy page rewritten**: `privacy.html` was reorganized into a clearer bilingual English / Traditional Chinese layout, with updated explanations for storage behavior, request routing, permissions, and practical key-safety guidance.
+- **Tutorial page refreshed**: `tutorial.html` was rewritten into a cleaner side-by-side bilingual setup guide for obtaining a Gemini API key and adding it to the extension, with wording adjusted to be less brittle when Google AI Studio changes its UI.
+- **Page design polish**: `privacy.css` and the tutorial styles in `styles/local_styles.css` were updated for better desktop/mobile readability and stronger visual hierarchy.
+- **Project version bump**: `manifest.json`, the page copy, and this changelog are now aligned to `v28.1.6`.
+
+---
 
 ### v28.1.5 — Local Model Discovery & Connection Testing / 本機模型自動偵測與連線測試
 

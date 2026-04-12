@@ -636,6 +636,12 @@
   "optionsPrivacyLink": {
     "message": "Zásady ochrany soukromí"
   },
+  "privacyTitle": {
+    "message": "Zásady ochrany soukromí"
+  },
+  "tutorialTitle": {
+    "message": "Návod k API klíči Gemini"
+  },
   "readerTtsSpeakBtn": {
     "message": "🔊 Mluvit"
   },
@@ -863,7 +869,7 @@
     "message": "Maximální délka nahrávání: 15 minut."
   },
   "popupOpenDharma": { "message": "Mistři Dharmy · Všímavost" },
-  "dharmaTitle": { "message": "Všímavost & Dharma — Tři tradice" },
+  "dharmaTitle": { "message": "Incognito Mind Ask" },
   "dharmaHeaderTitle": { "message": "Všímavost & Dharma — Tři tradice" },
   "dharmaHeaderSub": { "message": "Ať jsi v jakémkoliv stavu, můžeš o tom tady mluvit" },
   "dharmaAboutBtn": { "message": "O aplikaci" },

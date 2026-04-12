@@ -805,6 +805,12 @@
     "message": "Chính sách bảo mật",
     "description": "Link to the privacy policy on the options page."
   },
+  "privacyTitle": {
+    "message": "Chính sách bảo mật"
+  },
+  "tutorialTitle": {
+    "message": "Hướng dẫn khóa API Gemini"
+  },
   "readerClickHint": {
     "message": "💡 Nhấp vào bất kỳ đoạn văn nào để dịch ngay lập tức.",
     "description": "Hint shown in reader page for voice transcription results."
@@ -1036,7 +1042,7 @@
     "description": "Hint text showing maximum recording duration under the record button."
   },
   "popupOpenDharma": { "message": "Các Thiền Sư · Chánh Niệm" },
-  "dharmaTitle": { "message": "Chánh Niệm & Pháp — Ba Truyền Thống" },
+  "dharmaTitle": { "message": "Incognito Mind Ask" },
   "dharmaHeaderTitle": { "message": "Chánh Niệm & Pháp — Ba Truyền Thống" },
   "dharmaHeaderSub": { "message": "Dù bạn đang ở trạng thái nào, bạn có thể nói chuyện tại đây" },
   "dharmaAboutBtn": { "message": "Giới thiệu" },

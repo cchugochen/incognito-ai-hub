@@ -805,6 +805,12 @@
     "message": "개인정보 처리방침",
     "description": "Link to the privacy policy on the options page."
   },
+  "privacyTitle": {
+    "message": "개인정보 처리방침"
+  },
+  "tutorialTitle": {
+    "message": "Gemini API 키 안내"
+  },
   "readerClickHint": {
     "message": "💡 아무 단락이나 클릭하면 즉시 번역됩니다.",
     "description": "Hint shown in reader page for voice transcription results."
@@ -1036,7 +1042,7 @@
     "description": "Hint text showing maximum recording duration under the record button."
   },
   "popupOpenDharma": { "message": "불교 스승 · 마음챙김" },
-  "dharmaTitle": { "message": "마음챙김 & 법문 — 세 가지 전통" },
+  "dharmaTitle": { "message": "Incognito Mind Ask" },
   "dharmaHeaderTitle": { "message": "마음챙김 & 법문 — 세 가지 전통" },
   "dharmaHeaderSub": { "message": "지금 어떤 상태라도, 여기서 이야기해보세요" },
   "dharmaAboutBtn": { "message": "소개" },

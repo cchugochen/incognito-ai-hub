@@ -840,6 +840,12 @@
     "message": "隱私權政策",
     "description": "Link to the privacy policy on the options page."
   },
+  "privacyTitle": {
+    "message": "隱私權政策"
+  },
+  "tutorialTitle": {
+    "message": "Gemini API 金鑰教學"
+  },
   "readerTtsSpeakBtn": {
     "message": "🔊 朗讀",
     "description": "TTS feature: readerTtsSpeakBtn"
@@ -1102,7 +1108,7 @@
   "popupOpenDharma": {
     "message": "三位禪師 · 心靈正念"
   },
-  "dharmaTitle": { "message": "心靈與正念 — 三宗風格" },
+  "dharmaTitle": { "message": "Incognito Mind Ask" },
   "dharmaHeaderTitle": { "message": "心靈與正念 — 三宗風格" },
   "dharmaHeaderSub": { "message": "不論你現在的狀態，都可以在這裡說說看的" },
   "dharmaAboutBtn": { "message": "關於" },

@@ -3,133 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Get a Free Google Gemini API Key (2026 Guide)</title>
+    <title>__MSG_tutorialTitle__</title>
     <link rel="stylesheet" href="styles/themes.css">
     <link rel="stylesheet" href="styles/local_styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="tutorial-page">
-
-        <header class="tutorial-header">
-            <h1>How to Get a Free Google Gemini API Key</h1>
-            <p class="subtitle">An Easy Guide for "Incognito PrivoAI" Users (2026 Edition)</p>
-            <hr class="lang-divider">
-            <h1>如何申請免費的 Google Gemini API 金鑰</h1>
-            <p class="subtitle">專為「PrivoAI 無痕AI工作台」使用者設計的簡易教學 (2026年版)</p>
+    <main class="tutorial-page">
+        <header class="tutorial-hero">
+            <p class="page-kicker">Gemini API Setup / Gemini API 設定教學</p>
+            <h1>Get a Gemini API key for Incognito PrivoAI</h1>
+            <p class="tutorial-meta">Updated for v28.1.6 · April 2026</p>
+            <div class="pair-grid intro-pair">
+                <section class="lang-card">
+                    <h2>English</h2>
+                    <p>
+                        This guide shows the fastest path to creating a Gemini API key in Google AI Studio and adding it to this extension.
+                        Exact button labels can change over time, but the overall flow stays the same: sign in, create a key, copy it once, and paste it into Options.
+                    </p>
+                </section>
+                <section class="lang-card">
+                    <h2>繁體中文</h2>
+                    <p>
+                        這份教學提供目前最快的流程，帶您在 Google AI Studio 建立 Gemini API 金鑰，並加入本擴充功能。
+                        介面按鈕名稱未來可能微調，但整體步驟通常不變：登入、建立金鑰、複製一次、再貼到選項設定頁。
+                    </p>
+                </section>
+            </div>
         </header>
 
-        <main class="space-y-10">
-            <!-- Introduction -->
-            <div class="info-box info-box--intro">
-                <p class="box-title">Foreword</p>
-                <p>"Incognito PrivoAI" provides powerful translation and recognition features by connecting to Google's Gemini AI model. To ensure your data security and privacy, the tool requires you to use your own API key. The following steps will guide you through the free application process.</p>
-                <div class="lang-sep"><span>中文</span></div>
-                <p class="box-title">前言</p>
-                <p>「PrivoAI 無痕AI工作台」透過串接 Google 的 Gemini AI 模型來提供強大的翻譯與辨識功能。為了確保您的資料安全與隱私，本工具需要您使用自己的 API 金鑰。以下將引導您完成免費申請流程。</p>
-            </div>
+        <section class="tutorial-summary">
+            <article class="summary-chip">
+                <h3>What you need</h3>
+                <p>A Google account and access to Google AI Studio.</p>
+            </article>
+            <article class="summary-chip">
+                <h3>What you will get</h3>
+                <p>A single API key you can paste into the extension's Options page.</p>
+            </article>
+            <article class="summary-chip">
+                <h3>Good to know</h3>
+                <p>The key is project-level access. Keep it private and revoke unused keys.</p>
+            </article>
+        </section>
 
-            <!-- Step 1 -->
-            <div class="step-card">
-                <div class="flex items-start space-x-6">
+        <section class="callout-box callout-box--soft">
+            <div class="pair-grid">
+                <div class="lang-card">
+                    <h2>Before you start</h2>
+                    <ul class="bullet-list">
+                        <li>If a screen looks slightly different, keep going. Google updates AI Studio often.</li>
+                        <li>You do not need to understand Google Cloud in depth for the basic setup.</li>
+                        <li>If you only want local text workflows, the extension can also use a local AI model later.</li>
+                    </ul>
+                </div>
+                <div class="lang-card">
+                    <h2>開始前先知道</h2>
+                    <ul class="bullet-list">
+                        <li>如果畫面和截圖略有不同，通常不用緊張，Google AI Studio 介面更新很常見。</li>
+                        <li>完成基本設定不需要先深入理解整套 Google Cloud。</li>
+                        <li>如果您只想做本機文字任務，之後也可以改用本機 AI 模型。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="step-stack">
+            <article class="step-card">
+                <div class="step-shell">
                     <div class="step-number">1</div>
-                    <div class="step-body">
-                        <h2>Go directly to the API Key page</h2>
-                        <p>Click the button below to open the Google AI Studio API key page directly. You will be asked to sign in with your Google account if you haven't already.</p>
-                        <div class="lang-sep"><span>中文</span></div>
-                        <h2>直接前往 API 金鑰頁面</h2>
-                        <p>點擊下方按鈕，直接開啟 Google AI Studio 的 API 金鑰頁面。若尚未登入，系統會提示您使用 Google 帳號登入。</p>
-                        <a href="https://aistudio.google.com/apikey" target="_blank" class="cta-btn">
-                            Open Google AI Studio API Key Page
-                        </a>
-                        <img src="images/tutorial-step1-aistudio.png" alt="Screenshot of the Google AI Studio API key page" class="screenshot">
+                    <div class="step-main">
+                        <div class="pair-grid">
+                            <div class="lang-card">
+                                <h2>Open the API key page</h2>
+                                <p>
+                                    Go to Google AI Studio's API key page and sign in with your Google account.
+                                    If Google asks you to choose a project first, that is normal.
+                                </p>
+                                <a href="https://aistudio.google.com/apikey" target="_blank" rel="noreferrer noopener" class="cta-btn">Open Google AI Studio</a>
+                            </div>
+                            <div class="lang-card">
+                                <h2>開啟 API 金鑰頁面</h2>
+                                <p>
+                                    前往 Google AI Studio 的 API 金鑰頁面，並使用您的 Google 帳號登入。
+                                    如果系統先要求您選擇專案，也屬正常流程。
+                                </p>
+                            </div>
+                        </div>
+                        <img src="images/tutorial-step1-aistudio.png" alt="Google AI Studio API key page" class="screenshot">
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Step 2 -->
-            <div class="step-card">
-                <div class="flex items-start space-x-6">
+            <article class="step-card">
+                <div class="step-shell">
                     <div class="step-number">2</div>
-                    <div class="step-body">
-                        <h2>Create a New API Key</h2>
-                        <p>On the API key management page, click the blue <strong>"Create API key"</strong> button. In the dialog that appears, select <strong>"Create in new project"</strong> (this is usually the easiest option for first-time users).</p>
-                        <div class="lang-sep"><span>中文</span></div>
-                        <h2>建立新的 API 金鑰</h2>
-                        <p>在 API 金鑰管理頁面，點擊藍色的 <strong>「Create API key」</strong> 按鈕。在彈出的對話框中，選擇 <strong>「Create in new project」</strong>（這對首次使用者來說通常是最簡單的選項）。</p>
-                        <img src="images/tutorial-step2-getkey.png" alt="Diagram showing where to click the Create API key button" class="screenshot">
+                    <div class="step-main">
+                        <div class="pair-grid">
+                            <div class="lang-card">
+                                <h2>Create a key in a project</h2>
+                                <p>
+                                    Click the API-key creation button shown in AI Studio. For first-time users, creating the key in a new project is usually the simplest choice.
+                                    If you already have a project for Gemini API use, you can place the key there instead.
+                                </p>
+                            </div>
+                            <div class="lang-card">
+                                <h2>在專案中建立金鑰</h2>
+                                <p>
+                                    點擊 AI Studio 介面中的 API 金鑰建立按鈕。對第一次使用者來說，直接建立在新專案中通常最簡單。
+                                    如果您已經有專門給 Gemini API 使用的專案，也可以把金鑰建立在既有專案內。
+                                </p>
+                            </div>
+                        </div>
+                        <img src="images/tutorial-step2-getkey.png" alt="Create API key flow in Google AI Studio" class="screenshot">
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Step 3 -->
-            <div class="step-card">
-                <div class="flex items-start space-x-6">
+            <article class="step-card">
+                <div class="step-shell">
                     <div class="step-number">3</div>
-                    <div class="step-body">
-                        <h2>Copy Your API Key</h2>
-                        <p>Your new API key will be displayed on the screen — it starts with <code>AIza</code> and is about 40 characters long. Click the <strong>copy icon</strong> next to the key to copy it to your clipboard. Keep this key safe and never share it publicly.</p>
-                        <div class="lang-sep"><span>中文</span></div>
-                        <h2>複製您的 API 金鑰</h2>
-                        <p>您的新 API 金鑰將顯示在畫面上 — 以 <code>AIza</code> 開頭，約 40 個字元。點擊金鑰旁邊的<strong>複製圖示</strong>，將它複製到剪貼簿。請妥善保管此金鑰，絕對不要公開分享。</p>
-                        <img src="images/tutorial-step3-showkey.png" alt="Diagram showing the API key being displayed and how to copy it" class="screenshot">
+                    <div class="step-main">
+                        <div class="pair-grid">
+                            <div class="lang-card">
+                                <h2>Copy the key and keep it private</h2>
+                                <p>
+                                    Copy the key shown after creation. Gemini API keys often begin with <code>AIza</code>.
+                                    Store it carefully, avoid screenshots in public places, and do not paste it into GitHub, forums, or shared documents.
+                                </p>
+                            </div>
+                            <div class="lang-card">
+                                <h2>複製金鑰並妥善保管</h2>
+                                <p>
+                                    金鑰建立完成後請立即複製。Gemini API 金鑰通常會以 <code>AIza</code> 開頭。
+                                    請小心保存，不要把它貼到 GitHub、論壇、共用文件，或任何可能被他人看到的地方。
+                                </p>
+                            </div>
+                        </div>
+                        <img src="images/tutorial-step3-showkey.png" alt="Gemini API key display in Google AI Studio" class="screenshot">
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Step 4 -->
-            <div class="step-card">
-                <div class="flex items-start space-x-6">
+            <article class="step-card">
+                <div class="step-shell">
                     <div class="step-number">4</div>
-                    <div class="step-body">
-                        <h2>Paste into Extension Settings &amp; Choose a Model</h2>
-                        <p>Return to Chrome. Right-click the <strong>Incognito PrivoAI</strong> extension icon and select <strong>"Options"</strong>. Paste the key you just copied into the <strong>"Gemini API Key"</strong> field, then select your preferred model (Gemini 3.1 Flash Lite is recommended for most users). Click <strong>"Save Settings"</strong>.</p>
-                        <p class="success-text">You're all set! All AI features are now ready to use.</p>
-                        <img src="images/tutorial-step4-model.png" alt="Screenshot showing the API key field and model selection cards in the options page" class="screenshot">
-                        <div class="lang-sep"><span>中文</span></div>
-                        <h2>貼到擴充功能設定中並選擇模型</h2>
-                        <p>回到 Chrome，在 <strong>PrivoAI</strong> 擴充功能圖示上按右鍵，選擇<strong>「選項」</strong>。將剛剛複製的金鑰貼到<strong>「Gemini API 金鑰」</strong>欄位，然後選擇偏好的模型（建議一般使用者選擇 Gemini 3.1 Flash Lite）。點擊<strong>「儲存設定」</strong>。</p>
-                        <p class="success-text">設定完成！所有 AI 功能現在都可以使用了。</p>
+                    <div class="step-main">
+                        <div class="pair-grid">
+                            <div class="lang-card">
+                                <h2>Paste it into the extension</h2>
+                                <p>
+                                    Open the extension's <strong>Options</strong> page, paste the key into the <strong>Gemini API Key</strong> field, and save.
+                                    If you are unsure which model to choose, start with the default or recommended Flash/Lite option shown in the UI.
+                                    Model names can change, so the safest rule is to begin with the default and adjust later if needed.
+                                </p>
+                                <p class="success-text">Once saved, Gemini-based features are ready to use.</p>
+                            </div>
+                            <div class="lang-card">
+                                <h2>貼到擴充功能選項頁</h2>
+                                <p>
+                                    打開擴充功能的<strong>「選項」</strong>頁面，把金鑰貼到<strong>「Gemini API 金鑰」</strong>欄位後儲存。
+                                    如果您不確定該選哪個模型，先使用介面中預設或建議的 Flash / Lite 選項即可。
+                                    模型名稱未來可能變動，因此最穩妥的做法是先用預設值，之後再視需求調整。
+                                </p>
+                                <p class="success-text">儲存完成後，就可以使用基於 Gemini 的功能了。</p>
+                            </div>
+                        </div>
+                        <img src="images/tutorial-step4-model.png" alt="Extension options page with API key and model selection" class="screenshot">
                     </div>
                 </div>
-            </div>
+            </article>
+        </section>
 
-            <!-- Security Warning -->
-            <div class="info-box info-box--warning">
-                <p class="box-title">Important Security Notice</p>
-                <p>Your API key is like a key to your house. <strong>Never</strong> share it with anyone or post it on any public website (such as GitHub or forums) to prevent unauthorized use and unexpected charges.</p>
-                <div class="lang-sep"><span>中文</span></div>
-                <p class="box-title">重要安全性提醒</p>
-                <p>您的 API 金鑰就如同您家裡的鑰匙，<strong>請絕對不要</strong>將它分享給任何人，或張貼在任何公開的網站（如 GitHub、論壇）上，以免被盜用並產生非預期的費用。</p>
+        <section class="callout-box callout-box--warning">
+            <div class="pair-grid">
+                <div class="lang-card">
+                    <h2>Key safety tips</h2>
+                    <ul class="bullet-list">
+                        <li>Use a dedicated key for this extension instead of reusing a key from another project.</li>
+                        <li>Delete or rotate keys you no longer need.</li>
+                        <li>If you manage keys in Google Cloud, restrictions are a good idea, but test carefully because browser-extension clients may behave differently from server apps.</li>
+                    </ul>
+                </div>
+                <div class="lang-card">
+                    <h2>金鑰安全建議</h2>
+                    <ul class="bullet-list">
+                        <li>建議為本擴充功能使用專用金鑰，不要和其他專案共用。</li>
+                        <li>不再使用的金鑰，請主動刪除或輪替。</li>
+                        <li>若您在 Google Cloud 管理金鑰，設定限制通常是好習慣；但瀏覽器擴充功能與伺服器型應用不同，套用限制後請務必實際測試。</li>
+                    </ul>
+                </div>
             </div>
+        </section>
 
-            <!-- Optional: Local Model Note -->
-            <div class="info-box info-box--tip">
-                <p class="box-title">Optional: Add a Local AI Model for Text Tasks</p>
-                <p>If you have <strong>Ollama</strong> or <strong>LM Studio</strong> installed, you can use a local AI model for <strong>text-based tasks</strong> such as chat, translation, and summarization. In Options, scroll down to configure the <strong>Local AI Model</strong> endpoint URL and model name, then choose your preferred <strong>AI Service Mode</strong>:</p>
-                <ul class="mode-list">
-                    <li><strong>Google Gemini Only</strong> — All features use Gemini (default).</li>
-                    <li><strong>Hybrid (Gemini + Local AI)</strong> — Text tasks use your local model; image, voice, and PDF processing still use Gemini.</li>
-                    <li><strong>Local AI Only</strong> — All text tasks use your local model; multimodal features (image, voice, PDF) will be unavailable.</li>
-                </ul>
-                <p class="note-text"><strong>Note:</strong> Voice transcription, text-to-speech, image recognition (OCR), and PDF analysis are multimodal features that always require a Gemini API key.</p>
-                <div class="lang-sep"><span>中文</span></div>
-                <p class="box-title">選配：為文字任務加入本機 AI 模型</p>
-                <p>如果您已安裝 <strong>Ollama</strong> 或 <strong>LM Studio</strong>，可以使用本機 AI 模型來處理<strong>文字類任務</strong>，例如聊天、翻譯與摘要。在選項頁面中，向下捲動設定<strong>「本機 AI 模型」</strong>的端點 URL 與模型名稱，然後選擇偏好的<strong>「AI 服務模式」</strong>：</p>
-                <ul class="mode-list">
-                    <li><strong>僅使用 Google Gemini</strong> — 所有功能均使用 Gemini（預設）。</li>
-                    <li><strong>混合模式（Gemini + 本機 AI）</strong> — 純文字任務使用本機模型，圖片、語音及 PDF 處理仍使用 Gemini。</li>
-                    <li><strong>僅使用本機 AI</strong> — 所有文字任務使用本機模型；多模態功能（圖片、語音、PDF）將無法使用。</li>
-                </ul>
-                <p class="note-text"><strong>請注意：</strong>語音轉文字、文字轉語音、圖片辨識（OCR）及 PDF 分析等多模態功能，始終需要 Gemini API 金鑰。</p>
-                <img src="images/tutorial-step4-aimode.png" alt="Screenshot showing the AI service mode selector and local model configuration" class="screenshot">
+        <section class="callout-box callout-box--soft">
+            <div class="pair-grid">
+                <div class="lang-card">
+                    <h2>Optional: local AI for text tasks</h2>
+                    <p>
+                        This project can also connect to Ollama, LM Studio, or another OpenAI-compatible local endpoint for text-only tasks.
+                        That is useful when you want private local processing for chat or translation. Voice, OCR, image, and PDF features still rely on Gemini.
+                    </p>
+                </div>
+                <div class="lang-card">
+                    <h2>選配：文字任務可改用本機 AI</h2>
+                    <p>
+                        本專案也支援連線到 Ollama、LM Studio 或其他 OpenAI 相容的本機端點，處理純文字任務。
+                        如果您想讓聊天或翻譯走本機處理，這會很實用；但語音、OCR、圖片與 PDF 功能仍然需要 Gemini。
+                    </p>
+                </div>
             </div>
-        </main>
+            <img src="images/tutorial-step4-aimode.png" alt="AI mode and local model configuration in extension options" class="screenshot">
+        </section>
+
+        <section class="reference-box">
+            <p>
+                References:
+                <a href="https://ai.google.dev/gemini-api/docs/quickstart" target="_blank" rel="noreferrer noopener">Gemini API Quickstart</a>,
+                <a href="https://cloud.google.com/api-keys/docs" target="_blank" rel="noreferrer noopener">Google Cloud API Keys documentation</a>.
+            </p>
+        </section>
 
         <footer class="tutorial-footer">
-            <p>&copy; 2026 Incognito PrivoAI | Tutorial co-authored with Gemini</p>
+            <p>&copy; 2026 Incognito PrivoAI · Tutorial refreshed for v28.1.6</p>
         </footer>
-    </div>
+    </main>
+    <script src="i18n.js"></script>
 </body>
 </html>

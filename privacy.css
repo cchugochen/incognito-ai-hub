@@ -1,48 +1,220 @@
-/* privacy.css — v28.0 */
+/* privacy.css — v28.1.6 */
 body {
-    font-family: var(--font-sans);
-    background-color: var(--bg-main);
+    margin: 0;
+    background:
+        radial-gradient(circle at top left, rgba(229, 124, 35, 0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(96, 108, 56, 0.08), transparent 32%),
+        var(--bg-main);
     color: var(--text-primary);
-    line-height: 1.7;
+    font-family: var(--font-sans);
+}
+
+.policy-page {
+    max-width: 1100px;
     margin: 0 auto;
-    max-width: 800px;
-    padding: 32px 20px;
-    box-sizing: border-box;
+    padding: 40px 20px 56px;
 }
-h1 {
-    font-size: 1.5rem;
+
+.policy-hero {
+    margin-bottom: 28px;
+}
+
+.policy-kicker {
+    margin: 0 0 10px;
+    color: var(--color-accent);
+    font-size: 0.82rem;
     font-weight: 700;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 12px;
-    margin-bottom: 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
-h2 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 8px;
-    margin: 1.8em 0 0.6em;
+
+.policy-hero h1 {
+    margin: 0;
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.1;
 }
-h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 1.2em 0 0.4em;
+
+.policy-meta {
+    margin: 12px 0 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.bilingual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.intro-grid {
+    margin-top: 22px;
+}
+
+.lang-panel,
+.summary-card,
+.item-card,
+.permission-card,
+.notice-box {
+    background-color: rgba(255, 255, 255, 0.82);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.lang-panel {
+    padding: 18px 20px;
+}
+
+.lang-panel h3 {
+    margin: 0 0 10px;
     color: var(--color-primary);
+    font-size: 0.98rem;
 }
-p { margin: 0.5em 0 1em; }
-ul { padding-left: 1.25rem; margin: 0.5em 0 1em; }
-li { margin-bottom: 0.5em; }
-a { color: var(--color-primary); }
-a:hover { text-decoration: underline; }
+
+.lang-panel p,
+.lang-panel li,
+.summary-card p,
+.item-card p,
+.permission-card p,
+.notice-box p {
+    color: var(--text-secondary);
+    line-height: 1.72;
+    font-size: 0.96rem;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    padding: 18px;
+}
+
+.summary-card h2 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.policy-section {
+    margin-top: 28px;
+}
+
+.section-heading {
+    margin-bottom: 14px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 1.35rem;
+}
+
+.section-heading p {
+    margin: 8px 0 0;
+    color: var(--text-secondary);
+}
+
+.item-card,
+.permission-card {
+    padding: 20px;
+    margin-bottom: 14px;
+}
+
+.item-card h3,
+.permission-card h3 {
+    margin: 0 0 14px;
+    font-size: 1.02rem;
+}
+
+.emphasis-panel {
+    border-left: 4px solid var(--color-primary);
+}
+
+.permission-list {
+    display: grid;
+    gap: 14px;
+}
+
+.compact-grid {
+    gap: 14px;
+}
+
+.lang-panel ul,
+.permission-card ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.lang-panel li {
+    margin-bottom: 0.6rem;
+}
+
+.notice-box {
+    margin-top: 16px;
+    padding: 16px 18px;
+    background-color: rgba(229, 124, 35, 0.08);
+}
+
+.policy-footer {
+    margin-top: 34px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 code {
     background-color: var(--bg-input);
-    padding: 2px 5px;
-    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.12rem 0.36rem;
     font-family: var(--font-mono);
-    font-size: 0.875em;
+    font-size: 0.88em;
 }
-.last-updated {
-    color: var(--text-secondary);
-    font-size: 0.875em;
-    margin-bottom: 1.5em;
+
+@media (max-width: 900px) {
+    .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .policy-page {
+        padding: 24px 14px 36px;
+    }
+
+    .bilingual-grid,
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lang-panel,
+    .summary-card,
+    .item-card,
+    .permission-card,
+    .notice-box {
+        padding: 16px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .lang-panel,
+    .summary-card,
+    .item-card,
+    .permission-card,
+    .notice-box {
+        background-color: rgba(36, 32, 25, 0.9);
+    }
 }

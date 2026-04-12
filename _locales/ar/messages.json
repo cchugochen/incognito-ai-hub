@@ -789,6 +789,12 @@
     "message": "سياسة الخصوصية",
     "description": "Link to the privacy policy on the options page."
   },
+  "privacyTitle": {
+    "message": "سياسة الخصوصية"
+  },
+  "tutorialTitle": {
+    "message": "دليل مفتاح Gemini API"
+  },
   "readerTtsSpeakBtn": {
     "message": "🔊 نطق",
     "description": "TTS feature: readerTtsSpeakBtn"
@@ -1036,7 +1042,7 @@
     "description": "Hint text showing maximum recording duration under the record button."
   },
   "popupOpenDharma": { "message": "مشايخ الدارما · اليقظة الذهنية" },
-  "dharmaTitle": { "message": "اليقظة والدارما — ثلاث تقاليد" },
+  "dharmaTitle": { "message": "Incognito Mind Ask" },
   "dharmaHeaderTitle": { "message": "اليقظة والدارما — ثلاث تقاليد" },
   "dharmaHeaderSub": { "message": "مهما كانت حالك، يمكنك التحدث عن ذلك هنا" },
   "dharmaAboutBtn": { "message": "حول" },

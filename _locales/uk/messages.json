@@ -805,6 +805,12 @@
     "message": "Політика конфіденційності",
     "description": "Link to the privacy policy on the options page."
   },
+  "privacyTitle": {
+    "message": "Політика конфіденційності"
+  },
+  "tutorialTitle": {
+    "message": "Посібник з API-ключа Gemini"
+  },
   "readerClickHint": {
     "message": "💡 Натисніть на будь-який абзац, щоб миттєво перекласти його.",
     "description": "Hint shown in reader page for voice transcription results."
@@ -1036,7 +1042,7 @@
     "description": "Hint text showing maximum recording duration under the record button."
   },
   "popupOpenDharma": { "message": "Майстри Дхарми · Усвідомленість" },
-  "dharmaTitle": { "message": "Усвідомленість і Дхарма — Три традиції" },
+  "dharmaTitle": { "message": "Incognito Mind Ask" },
   "dharmaHeaderTitle": { "message": "Усвідомленість і Дхарма — Три традиції" },
   "dharmaHeaderSub": { "message": "Хоч би в якому стані ти був — тут можна поговорити" },
   "dharmaAboutBtn": { "message": "Про додаток" },

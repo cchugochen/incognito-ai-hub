@@ -2,59 +2,232 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <title>Incognito PrivoAI - 隱私權政策 (Privacy Policy)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__MSG_privacyTitle__</title>
     <link rel="stylesheet" href="styles/themes.css">
     <link rel="stylesheet" href="privacy.css">
 </head>
 <body>
-    <h1>Incognito PrivoAI 隱私權政策 (Privacy Policy)</h1>
-    <p class="last-updated">最後更新：2026年3月 / Last Updated: March 2026 (v28.0.2)</p>
+    <main class="policy-page">
+        <header class="policy-hero">
+            <p class="policy-kicker">Privacy &amp; Data Handling / 隱私與資料處理</p>
+            <h1>Incognito PrivoAI Privacy Policy</h1>
+            <p class="policy-meta">Last updated: April 2026 · Applies to project version v28.1.6</p>
+            <div class="bilingual-grid intro-grid">
+                <section class="lang-panel">
+                    <p>
+                        Incognito PrivoAI is built so AI requests go directly from your browser to the AI service you choose.
+                        We do not run an application backend, we do not maintain user accounts, and we do not collect or sell your content.
+                    </p>
+                </section>
+                <section class="lang-panel">
+                    <p>
+                        Incognito PrivoAI 的設計原則，是讓 AI 請求直接由您的瀏覽器送往您選擇的 AI 服務。
+                        我們不營運應用程式後端、不建立使用者帳號，也不收集或販售您的內容資料。
+                    </p>
+                </section>
+            </div>
+        </header>
 
-    <h2>核心原則：您的資料，由您掌控</h2>
-    <h2>Our Core Principle: Your Data, Your Control</h2>
-    <p>本擴充功能<strong>完全在您的瀏覽器本機端運作</strong>。我們<strong>沒有</strong>任何後端伺服器，也<strong>不會</strong>收集、儲存或看見任何您處理的內容或個人資訊。</p>
-    <p>This extension operates <strong>entirely locally on your browser</strong>. We do <strong>not</strong> have any backend servers, nor do we collect, store, or see any of the content you process or your personal information.</p>
+        <section class="summary-grid">
+            <article class="summary-card">
+                <h2>No Relay Server</h2>
+                <p>Requests go from your browser to Google Gemini or your own local endpoint.</p>
+            </article>
+            <article class="summary-card">
+                <h2>Settings Stay In Browser</h2>
+                <p>Preferences and API key settings are stored in Chrome extension storage on your device profile.</p>
+            </article>
+            <article class="summary-card">
+                <h2>Temporary Working Data</h2>
+                <p>Some features briefly stage text or file data locally only long enough to complete the workflow.</p>
+            </article>
+            <article class="summary-card">
+                <h2>Local Model Option</h2>
+                <p>If you enable a local model, requests go to the local server you configure instead of our infrastructure.</p>
+            </article>
+        </section>
 
-    <h2>資料處理說明 / How Your Data Is Handled</h2>
+        <section class="policy-section">
+            <div class="section-heading">
+                <h2>1. What the extension stores</h2>
+                <p>What is stored, where it is stored, and why.</p>
+            </div>
 
-    <h3>1. 您的 Google Gemini API 金鑰 (Your API Key)</h3>
-    <ul>
-        <li>您的金鑰會透過 Chrome 的標準儲存 API (<code>chrome.storage.sync</code>) <strong>加密儲存在您自己的瀏覽器中</strong>，且只用於向 Google 的官方 API 端點發送請求。我們絕不會存取或傳輸您的金鑰。</li>
-        <li>Your key is stored <strong>encrypted within your own browser</strong> using Chrome's standard storage API (<code>chrome.storage.sync</code>). It is only used to send requests directly to Google's official API endpoint. We never access or transmit your key.</li>
-    </ul>
+            <div class="item-card">
+                <h3>Settings and API key</h3>
+                <div class="bilingual-grid">
+                    <div class="lang-panel">
+                        <p>
+                            The extension stores your Gemini API key, preferred languages, preset prompts, AI mode, and local-model settings in
+                            <code>chrome.storage.sync</code>. Chrome may sync this data across signed-in browsers if you enable Chrome Sync.
+                            According to Chrome's storage documentation, <code>storage.local</code> and <code>storage.sync</code> are not intended for confidential data,
+                            so use a dedicated or revocable API key if that matters to your workflow.
+                        </p>
+                    </div>
+                    <div class="lang-panel">
+                        <p>
+                            擴充功能會將 Gemini API 金鑰、偏好語言、預設提示語、AI 模式與本機模型設定儲存在
+                            <code>chrome.storage.sync</code>。若您啟用 Chrome Sync，這些設定可能會同步到您登入的其他 Chrome 瀏覽器。
+                            依 Chrome 官方文件，<code>storage.local</code> 與 <code>storage.sync</code> 不應視為機密資料保險箱；
+                            若您在意這點，建議使用可撤銷、可輪替的專用 API 金鑰。
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-    <h3>2. 您處理的內容：文字、圖片、語音 (Your Content)</h3>
-    <ul>
-        <li><strong>一般功能</strong>（翻譯、語音筆記）：內容資料僅會<strong>暫時</strong>儲存於您本機的 <code>chrome.storage.local</code>，並在功能使用完畢後立即清除，不會持久儲存。</li>
-        <li><strong>General Features</strong> (Translation, Voice Notes): Content is <strong>temporarily</strong> stored in your local <code>chrome.storage.local</code> and is cleared immediately after use. Nothing is persisted.</li>
-        <br>
-        <li><strong>無痕對話（最高隱私）</strong>：所有對話（包含文字與圖片）<strong>僅存於您電腦的記憶體 (RAM) 中</strong>。關閉分頁後，紀錄將<strong>立即永久消失</strong>，無法復原，也不會寫入任何儲存空間。</li>
-        <li><strong>Incognito Chat (Highest Privacy)</strong>: All conversations (including text and images) are <strong>stored only in your computer's RAM</strong>. When the tab is closed, this history is <strong>permanently and irretrievably deleted</strong> — nothing is written to any storage.</li>
-    </ul>
+            <div class="item-card">
+                <h3>Temporary content used during a task</h3>
+                <div class="bilingual-grid">
+                    <div class="lang-panel">
+                        <p>
+                            Some workflows temporarily place text or task state in <code>chrome.storage.local</code> so one extension page can hand work to another
+                            page or to the background worker. This temporary data is meant for task completion and is removed after handoff or use.
+                        </p>
+                    </div>
+                    <div class="lang-panel">
+                        <p>
+                            某些流程會暫時把文字內容或任務狀態放在 <code>chrome.storage.local</code>，讓不同擴充頁面或背景 worker 可以完成交接。
+                            這些資料的用途是完成當前流程，通常會在交接完成或使用後刪除。
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-    <h3>3. （選用）本機 AI 模型 — 完全離線 (Optional: Local AI Model — Fully Offline)</h3>
-    <ul>
-        <li>如果您啟用本機模型功能（Ollama 或 LM Studio），所有 AI 請求將發送至您設定的本機端點（例如 <code>http://localhost:11434/v1</code>），而非任何雲端服務。您的資料<strong>完全不會離開您的本機網路</strong>。</li>
-        <li>If you enable the local model feature (Ollama or LM Studio), all AI requests are sent to the local endpoint you configured (e.g., <code>http://localhost:11434/v1</code>), not to any cloud service. Your data <strong>never leaves your local network</strong>.</li>
-    </ul>
+            <div class="item-card">
+                <h3>Incognito chat history</h3>
+                <div class="bilingual-grid">
+                    <div class="lang-panel">
+                        <p>
+                            The chat history in the Incognito chat pages is designed to live only in page memory while that tab is open.
+                            Closing the tab clears that in-memory history.
+                        </p>
+                    </div>
+                    <div class="lang-panel">
+                        <p>
+                            無痕對話頁面的聊天紀錄，設計上只會在該分頁開啟期間保留於頁面記憶體中。
+                            關閉分頁後，這段記憶體中的歷史內容就會一併消失。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>權限使用說明 / Permissions Usage</h2>
-    <ul>
-        <li><strong>activeTab</strong>: 用於存取當前活動分頁的基本資訊（如分頁 ID），以觸發網頁翻譯功能。/ Used to access basic information about the active tab (such as tab ID) in order to trigger the webpage translation feature.</li>
-        <li><strong>storage</strong>: 用於在本機安全地儲存您的 API 金鑰與所有設定（語言偏好、預設提示語等）。/ Used to securely store your API key and all settings (language preferences, preset prompts, etc.) locally.</li>
-        <li><strong>debugger</strong>: 僅在您使用「翻譯當前網頁」功能時臨時啟用，用以擷取完整頁面截圖，擷取後立即分離，不會持續監控頁面。/ Temporarily enabled only when using the "Translate Current Page" feature to capture a full-page screenshot. It is detached immediately after capture and does not continuously monitor the page.</li>
-    </ul>
+        <section class="policy-section">
+            <div class="section-heading">
+                <h2>2. Where your data is sent</h2>
+                <p>The extension does not proxy your requests through a developer-run service.</p>
+            </div>
 
-    <h2>第三方服務 / Third-Party Services</h2>
-    <ul>
-        <li>使用 Gemini 功能時，您的內容（文字、圖片、語音）將依據 <a href="https://policies.google.com/privacy" target="_blank">Google 的隱私權政策</a>傳送至 Google API 進行處理。</li>
-        <li>When using Gemini features, your content (text, images, voice) is sent to Google's API for processing, subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
-        <br>
-        <li>使用本機模型功能時，內容僅發送至您自行設定的本機端點，不涉及任何第三方服務。</li>
-        <li>When using the local model feature, content is only sent to the local endpoint you configured — no third-party services are involved.</li>
-    </ul>
+            <div class="bilingual-grid">
+                <article class="lang-panel emphasis-panel">
+                    <h3>English</h3>
+                    <ul>
+                        <li>When you use Gemini features, requests are sent directly from your browser to Google's Gemini API endpoint.</li>
+                        <li>When you use a local model, requests are sent directly to the local or LAN endpoint that you configured.</li>
+                        <li>The project does not operate its own AI relay server for your prompts, files, or transcripts.</li>
+                        <li>Google's handling of data on its side is governed by Google's own policies and terms.</li>
+                    </ul>
+                </article>
+                <article class="lang-panel emphasis-panel">
+                    <h3>繁體中文</h3>
+                    <ul>
+                        <li>使用 Gemini 功能時，請求會直接從您的瀏覽器送往 Google 的 Gemini API 端點。</li>
+                        <li>使用本機模型時，請求會直接送往您自行設定的本機或區網端點。</li>
+                        <li>本專案不營運自己的 AI 中繼伺服器來轉送您的提示、檔案或語音內容。</li>
+                        <li>資料進入 Google 端後的處理方式，仍以 Google 自己的政策與條款為準。</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
 
-    <p>若有任何疑問，歡迎透過 <a href="https://github.com/cchugochen/hongthai-reader/issues" target="_blank">GitHub Issues</a> 與我們聯繫。</p>
-    <p>If you have any questions, please contact us via <a href="https://github.com/cchugochen/hongthai-reader/issues" target="_blank">GitHub Issues</a>.</p>
+        <section class="policy-section">
+            <div class="section-heading">
+                <h2>3. Permissions used by the extension</h2>
+                <p>These permissions match the current manifest and feature set in v28.1.6.</p>
+            </div>
+
+            <div class="permission-list">
+                <article class="permission-card">
+                    <h3><code>activeTab</code></h3>
+                    <div class="bilingual-grid compact-grid">
+                        <p>Used to work with the current tab when you trigger webpage processing.</p>
+                        <p>用於在您啟動網頁處理時，操作目前使用中的分頁。</p>
+                    </div>
+                </article>
+                <article class="permission-card">
+                    <h3><code>scripting</code></h3>
+                    <div class="bilingual-grid compact-grid">
+                        <p>Used to read page content and run the webpage translation or extraction flow.</p>
+                        <p>用於讀取頁面內容，以及執行網頁翻譯或擷取流程。</p>
+                    </div>
+                </article>
+                <article class="permission-card">
+                    <h3><code>debugger</code></h3>
+                    <div class="bilingual-grid compact-grid">
+                        <p>Used only for the current-page translation workflow that captures a full-page screenshot, then detaches.</p>
+                        <p>僅用於「翻譯目前網頁」流程中的全頁截圖，完成後即解除附加。</p>
+                    </div>
+                </article>
+                <article class="permission-card">
+                    <h3><code>storage</code></h3>
+                    <div class="bilingual-grid compact-grid">
+                        <p>Used to store settings, presets, language preferences, and the API key you choose to keep in the extension.</p>
+                        <p>用於儲存設定、預設提示語、語言偏好，以及您選擇保存在擴充功能中的 API 金鑰。</p>
+                    </div>
+                </article>
+                <article class="permission-card">
+                    <h3>Host access</h3>
+                    <div class="bilingual-grid compact-grid">
+                        <p>Broad host access is required so the extension can process arbitrary webpages and connect to user-configured local AI endpoints.</p>
+                        <p>因為擴充功能需要處理任意網頁，並連線到使用者自行設定的本機 AI 端點，所以需要較廣的主機存取範圍。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="policy-section">
+            <div class="section-heading">
+                <h2>4. Practical privacy guidance</h2>
+                <p>Good defaults you can choose based on your own risk tolerance.</p>
+            </div>
+
+            <div class="bilingual-grid">
+                <article class="lang-panel">
+                    <ul>
+                        <li>Use a dedicated Gemini API key for this extension instead of reusing a key from other projects.</li>
+                        <li>Rotate or revoke keys you no longer need.</li>
+                        <li>If you do not want settings synced across browsers, turn off Chrome Sync for the profile that stores the key.</li>
+                        <li>For sensitive text-only workflows, consider using a local model endpoint.</li>
+                    </ul>
+                </article>
+                <article class="lang-panel">
+                    <ul>
+                        <li>建議為本擴充功能使用專用的 Gemini API 金鑰，不要與其他專案共用。</li>
+                        <li>不再使用的金鑰，請主動輪替或撤銷。</li>
+                        <li>如果您不希望設定同步到其他瀏覽器，可關閉儲存該金鑰之 Chrome 個人資料的同步功能。</li>
+                        <li>若是高敏感、且僅限文字的工作流程，可考慮使用本機模型端點。</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="notice-box">
+                <p>
+                    Official references useful for this page:
+                    <a href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank" rel="noreferrer noopener">Chrome extension storage</a>,
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer noopener">Google Privacy Policy</a>,
+                    <a href="https://cloud.google.com/api-keys/docs" target="_blank" rel="noreferrer noopener">Google Cloud API Keys documentation</a>.
+                </p>
+            </div>
+        </section>
+
+        <footer class="policy-footer">
+            <div class="bilingual-grid compact-grid">
+                <p>If you have questions, please contact us via <a href="https://github.com/cchugochen/hongthai-reader/issues" target="_blank" rel="noreferrer noopener">GitHub Issues</a>.</p>
+                <p>如有疑問，歡迎透過 <a href="https://github.com/cchugochen/hongthai-reader/issues" target="_blank" rel="noreferrer noopener">GitHub Issues</a> 與我們聯繫。</p>
+            </div>
+        </footer>
+    </main>
+    <script src="i18n.js"></script>
 </body>
 </html>

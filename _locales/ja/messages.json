@@ -805,6 +805,12 @@
     "message": "プライバシーポリシー",
     "description": "Link to the privacy policy on the options page."
   },
+  "privacyTitle": {
+    "message": "プライバシーポリシー"
+  },
+  "tutorialTitle": {
+    "message": "Gemini APIキーのチュートリアル"
+  },
   "readerClickHint": {
     "message": "💡 任意の段落をクリックすると即座に翻訳されます。",
     "description": "Hint shown in reader page for voice transcription results."
@@ -1036,7 +1042,7 @@
     "description": "Hint text showing maximum recording duration under the record button."
   },
   "popupOpenDharma": { "message": "三師の法話 · 心と正念" },
-  "dharmaTitle": { "message": "心と正念 — 三宗の対話" },
+  "dharmaTitle": { "message": "Incognito Mind Ask" },
   "dharmaHeaderTitle": { "message": "心と正念 — 三宗の対話" },
   "dharmaHeaderSub": { "message": "今どんな状態でも、ここで話してみてください" },
   "dharmaAboutBtn": { "message": "このアプリについて" },

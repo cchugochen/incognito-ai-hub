@@ -805,6 +805,12 @@
     "message": "Gizlilik Politikası",
     "description": "Link to the privacy policy on the options page."
   },
+  "privacyTitle": {
+    "message": "Gizlilik Politikası"
+  },
+  "tutorialTitle": {
+    "message": "Gemini API Anahtarı Rehberi"
+  },
   "readerClickHint": {
     "message": "💡 Anında çevirmek için herhangi bir paragrafa tıklayın.",
     "description": "Hint shown in reader page for voice transcription results."
@@ -1036,7 +1042,7 @@
     "description": "Hint text showing maximum recording duration under the record button."
   },
   "popupOpenDharma": { "message": "Dharma Ustaları · Farkındalık" },
-  "dharmaTitle": { "message": "Farkındalık & Dharma — Üç Gelenek" },
+  "dharmaTitle": { "message": "Incognito Mind Ask" },
   "dharmaHeaderTitle": { "message": "Farkındalık & Dharma — Üç Gelenek" },
   "dharmaHeaderSub": { "message": "Hangi durumda olursan ol, burada konuşabilirsin" },
   "dharmaAboutBtn": { "message": "Hakkında" },
