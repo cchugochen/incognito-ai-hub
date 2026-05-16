@@ -252,7 +252,7 @@ function initLocalModelUiText() {
 
 function save_options() {
     const selectedModelEl = document.querySelector('input[name="model-select"]:checked');
-    const selectedModel = selectedModelEl ? selectedModelEl.value : 'gemini-3.1-flash-lite-preview';
+    const selectedModel = selectedModelEl ? selectedModelEl.value : 'gemini-3.1-flash-lite';
     const lang = document.getElementById('display-language').value;
     const prefLangs = getPrefLangValues();
     const aiModeEl = document.querySelector('input[name="ai-mode"]:checked');
@@ -290,7 +290,7 @@ async function restore_options() {
     const items = await chrome.storage.sync.get({
         displayLanguage: 'default',
         geminiApiKey: '',
-        translationModel: 'gemini-3.1-flash-lite-preview',
+        translationModel: 'gemini-3.1-flash-lite',
         prefLangs: null,
         prefLangA: '',
         prefLangB: '',
@@ -367,7 +367,7 @@ function reset_options() {
 
     chrome.storage.sync.set({
         geminiApiKey: '',
-        translationModel: 'gemini-3.1-flash-lite-preview',
+        translationModel: 'gemini-3.1-flash-lite',
         prefLangs: ['', '', ''],
         prefLangA: '', prefLangB: '',
         preset_a: '', preset_b: '', preset_c: '', preset_d: '',

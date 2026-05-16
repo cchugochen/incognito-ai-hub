@@ -35,6 +35,16 @@ body {
     letter-spacing: -0.01em;
 }
 
+/* CJK characters look cramped with negative letter-spacing — reset for zh/ja/ko */
+:lang(zh) .page-header,
+:lang(ja) .page-header,
+:lang(ko) .page-header,
+:lang(zh) .section-header,
+:lang(ja) .section-header,
+:lang(ko) .section-header {
+    letter-spacing: 0;
+}
+
 .label {
     display: block;
     font-size: 0.875rem;

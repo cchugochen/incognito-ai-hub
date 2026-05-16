@@ -65,7 +65,7 @@
     "message": "Výchozí model pro překlad webových stránek/obrázků"
   },
   "optionsModelFlashName": {
-    "message": "Gemini 2.5 Flash"
+    "message": "Gemini 3 Flash"
   },
   "optionsModelFlashDesc": {
     "message": "Nejrychlejší a nejefektivnější, vhodný pro rychlé a objemné úlohy překladu a shrnutí."
@@ -357,7 +357,7 @@
     "message": "Výchozí model Gemini"
   },
   "incognitoDefaultModelDesc": {
-    "message": "Model použitý v této kartě závisí na vašem výběru v '⚙️ Nastavení' (výchozí je 2.5 Flash). Nejmenší model je vhodný pro jednoduchý překlad, organizaci textu a zpracování jednoduchých PDF a obrázků."
+    "message": "Model použitý v této kartě závisí na vašem výběru v '⚙️ Nastavení' (výchozí je 3.1 Flash Lite). Nejmenší model je vhodný pro jednoduchý překlad, organizaci textu a zpracování jednoduchých PDF a obrázků."
   },
   "incognitoSendButton": {
     "message": "Odeslat"
@@ -409,7 +409,7 @@
     "message": "Zadejte svou zprávu zde (můžete nahrát obrázky nebo dokumenty)..."
   },
   "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash"
+    "message": "Gemini 3 Flash"
   },
   "incognitoFlashModelDesc": {
     "message": "Vyvážená rychlost a kvalita — zvládá složité otázky, analýzu dokumentů a podrobný překlad. Podporuje obrázky a dokumenty (PDF, TXT, MD, CSV, HTML, XML)."
@@ -734,7 +734,7 @@
     "message": "Gemini 3 Flash"
   },
   "optionsModelGemini3FlashDesc": {
-    "message": "Nová generace rychlostního modelu Google. Zatím oficiálně neoznámena — tato možnost bude odemčena po spuštění."
+    "message": "Rychlostní model Google nové generace. Rychlejší a výkonnější než Gemini 2.5 Flash — skvělý pro překlad ve velkém objemu, sumarizaci a složité úlohy."
   },
   "optionsComingSoonBadge": {
     "message": "Připravujeme"
@@ -934,5 +934,28 @@
   "dharmaHumIntroHdr": { "message": "🪷 <strong>Mistr Hsing Yun</strong> (星雲大師)" },
   "dharmaHumIntroP1": { "message": "Founding abbot of Fo Guang Shan, born in Jiangsu in 1927 and ordained at age 12. He passed away in 2023 at age 97, having built over three hundred monasteries worldwide." },
   "dharmaHumIntroP2": { "message": "His philosophy centered on giving: give people confidence, give people joy, give people hope, give people convenience. When facing difficulties, he would say: go do one good deed, and your state of mind will be different." },
-  "dharmaIntroClosing": { "message": "Tři styly, tři cesty. Nemusíte si vybírat stranu a nepotřebujete žádnou víru. Prostě když máte něco na srdci, můžete se jich přijít zeptat." }
+  "dharmaIntroClosing": { "message": "Tři styly, tři cesty. Nemusíte si vybírat stranu a nepotřebujete žádnou víru. Prostě když máte něco na srdci, můžete se jich přijít zeptat." },
+  "screenTimeSectionHeader": { "message": "Připomenutí času u obrazovky" },
+  "screenTimeDesc": { "message": "Když zůstanete na stejné stránce po zvolenou dobu, do vámi vybraného rohu obrazovky spadne 🍎. Kliknutím ji odstraníte a časovač se vynuluje." },
+  "screenTimeThresholdLabel": { "message": "Připomenutí po setrvání na stránce (minuty)" },
+  "screenTimeOff": { "message": "Vypnuto" },
+  "screenTimeHelp": { "message": "Pozastaví se, když přepnete na jinou kartu/okno nebo jste 60 sekund neaktivní. Nefunguje na stránkách chrome://." },
+  "screenTimeReminderText": {
+    "message": "Strávili jste $MINUTES$ minut — je čas přesunout pozornost a protáhnout se.",
+    "placeholders": { "minutes": { "content": "$1" } }
+  },
+  "screenTimePositionLabel": { "message": "🍎 se objeví v rohu" },
+  "screenTimePositionBR": { "message": "Vpravo dole" },
+  "screenTimePositionBL": { "message": "Vlevo dole" },
+  "screenTimePositionTR": { "message": "Vpravo nahoře" },
+  "screenTimePositionTL": { "message": "Vlevo nahoře" },
+  "screenTimeEnableLabel": { "message": "Zapnout připomenutí času u obrazovky" },
+  "screenTimeMinUnit": { "message": "min" },
+  "screenTimeFirstTimeHint": { "message": "Klikni pro krátkou pauzu a vynulování časovače." },
+  "incognitoEmptyStateTitle": { "message": "Začněte konverzaci" },
+  "incognitoEmptyStateHint": { "message": "Klepněte na některý návrh níže, nebo napište vlastní otázku." },
+  "incognitoStarter1": { "message": "Shrň toto do tří bodů." },
+  "incognitoStarter2": { "message": "Přelož následující do češtiny." },
+  "incognitoStarter3": { "message": "Přepiš to, aby to bylo jasnější a srozumitelnější." },
+  "incognitoStarter4": { "message": "Uveď hlavní tvrzení a doklady pro každé z nich." }
 }

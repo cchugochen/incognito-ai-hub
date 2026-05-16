@@ -81,7 +81,7 @@
     "description": "Label for the model selection radio buttons."
   },
   "optionsModelFlashName": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Name of the Flash model."
   },
   "optionsModelFlashDesc": {
@@ -447,7 +447,7 @@
     "description": "Header for the default model tab."
   },
   "incognitoDefaultModelDesc": {
-    "message": "Das in dieser Registerkarte verwendete Modell hängt von Ihrer Auswahl in '⚙️ Einstellungen' ab (Standard: 2.5 Flash). Das kleinste Modell eignet sich für einfache Übersetzungen und die Verarbeitung einfacher PDFs und Bilder.",
+    "message": "Das in dieser Registerkarte verwendete Modell hängt von Ihrer Auswahl in '⚙️ Einstellungen' ab (Standard: 3.1 Flash Lite). Das kleinste Modell eignet sich für einfache Übersetzungen und die Verarbeitung einfacher PDFs und Bilder.",
     "description": "Description for the default model tab."
   },
   "incognitoSendButton": {
@@ -515,7 +515,7 @@
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
@@ -892,11 +892,11 @@
   },
   "optionsModelGemini3FlashName": {
     "message": "Gemini 3 Flash",
-    "description": "Model name for Gemini 3 Flash placeholder card in options."
+    "description": "Model name for Gemini 3 Flash model card in options."
   },
   "optionsModelGemini3FlashDesc": {
-    "message": "Googles Modell der nächsten Generation. Noch nicht offiziell angekündigt – diese Option wird beim Launch freigeschaltet.",
-    "description": "Description for Gemini 3 Flash placeholder card in options."
+    "message": "Googles Geschwindigkeitsmodell der nächsten Generation. Schneller und leistungsfähiger als Gemini 2.5 Flash — ideal für Übersetzungen in großem Volumen, Zusammenfassungen und komplexe Aufgaben.",
+    "description": "Description for Gemini 3 Flash model card in options."
   },
   "optionsComingSoonBadge": {
     "message": "Demnächst",
@@ -1010,11 +1010,11 @@
   },
   "optionsModelLiteName": {
     "message": "Gemini 3.1 Flash Lite (Default)",
-    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+    "description": "Model card name for gemini-3.1-flash-lite in options."
   },
   "optionsModelLiteDesc": {
     "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
-    "description": "Model card description for gemini-3.1-flash-lite-preview."
+    "description": "Model card description for gemini-3.1-flash-lite."
   },
   "incognitoLiteModelHeader": {
     "message": "Gemini 3.1 Flash Lite",
@@ -1107,5 +1107,28 @@
   "dharmaHumIntroHdr": { "message": "🪷 <strong>Meister Hsing Yun</strong> (星雲大師)" },
   "dharmaHumIntroP1": { "message": "Founding abbot of Fo Guang Shan, born in Jiangsu in 1927 and ordained at age 12. A pivotal figure in modernizing and internationalizing Buddhism, he passed away in 2023 at age 97. He built over three hundred monasteries worldwide, alongside universities, art museums, newspapers, and television stations." },
   "dharmaHumIntroP2": { "message": "His philosophy centered on giving: give people confidence, give people joy, give people hope, give people convenience. When facing difficulties, he would say: go do one good deed, and your state of mind will be different." },
-  "dharmaIntroClosing": { "message": "Drei Stile, drei Wege. Du musst dich für keine Seite entscheiden und brauchst keinen bestimmten Glauben. Wenn dir etwas auf dem Herzen liegt, kannst du einfach kommen und sie fragen." }
+  "dharmaIntroClosing": { "message": "Drei Stile, drei Wege. Du musst dich für keine Seite entscheiden und brauchst keinen bestimmten Glauben. Wenn dir etwas auf dem Herzen liegt, kannst du einfach kommen und sie fragen." },
+  "screenTimeSectionHeader": { "message": "Bildschirmzeit-Erinnerung" },
+  "screenTimeDesc": { "message": "Wenn Sie für die festgelegte Dauer auf derselben Seite bleiben, fällt ein 🍎 in die von Ihnen gewählte Ecke. Klicken Sie darauf, um es auszublenden und den Timer zurückzusetzen." },
+  "screenTimeThresholdLabel": { "message": "Erinnerung nach Verweildauer auf einer Seite (Minuten)" },
+  "screenTimeOff": { "message": "Aus" },
+  "screenTimeHelp": { "message": "Pausiert, während Sie auf einem anderen Tab/Fenster sind oder 60 Sekunden inaktiv waren. Funktioniert nicht auf chrome://-Seiten." },
+  "screenTimeReminderText": {
+    "message": "Sie haben $MINUTES$ Minuten verbracht — Zeit, den Fokus zu wechseln und sich zu bewegen.",
+    "placeholders": { "minutes": { "content": "$1" } }
+  },
+  "screenTimePositionLabel": { "message": "🍎 erscheint" },
+  "screenTimePositionBR": { "message": "Unten rechts" },
+  "screenTimePositionBL": { "message": "Unten links" },
+  "screenTimePositionTR": { "message": "Oben rechts" },
+  "screenTimePositionTL": { "message": "Oben links" },
+  "screenTimeEnableLabel": { "message": "Bildschirmzeit-Erinnerung aktivieren" },
+  "screenTimeMinUnit": { "message": "Min" },
+  "screenTimeFirstTimeHint": { "message": "Klick mich für eine kurze Pause — der Timer wird zurückgesetzt." },
+  "incognitoEmptyStateTitle": { "message": "Eine Unterhaltung beginnen" },
+  "incognitoEmptyStateHint": { "message": "Tippen Sie auf einen Vorschlag oder geben Sie Ihre eigene Frage ein." },
+  "incognitoStarter1": { "message": "Fasse dies in drei Stichpunkten zusammen." },
+  "incognitoStarter2": { "message": "Übersetze Folgendes ins Deutsche." },
+  "incognitoStarter3": { "message": "Schreibe das klarer und leichter lesbar um." },
+  "incognitoStarter4": { "message": "Liste die Hauptaussagen mit jeweiligen Belegen auf." }
 }

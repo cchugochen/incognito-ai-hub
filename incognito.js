@@ -24,6 +24,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- Chat empty-state with starter prompt chips ---
+    const STARTER_KEYS = ['incognitoStarter1', 'incognitoStarter2', 'incognitoStarter3', 'incognitoStarter4'];
+
+    function renderChatEmptyState(chatWindow, promptInput) {
+        if (!chatWindow || !promptInput) return;
+        if (chatWindow.querySelector('.chat-empty-state')) return;
+        if (chatWindow.children.length > 0) return;
+
+        const empty = document.createElement('div');
+        empty.className = 'chat-empty-state';
+
+        const title = document.createElement('div');
+        title.className = 'chat-empty-title';
+        title.textContent = chrome.i18n.getMessage('incognitoEmptyStateTitle') || 'Start a conversation';
+        empty.appendChild(title);
+
+        const hint = document.createElement('div');
+        hint.className = 'chat-empty-hint';
+        hint.textContent = chrome.i18n.getMessage('incognitoEmptyStateHint') ||
+            'Tap a suggestion below, or type your own question.';
+        empty.appendChild(hint);
+
+        const chipsRow = document.createElement('div');
+        chipsRow.className = 'chat-empty-chips';
+        STARTER_KEYS.forEach(key => {
+            const label = chrome.i18n.getMessage(key);
+            if (!label) return;
+            const chip = document.createElement('button');
+            chip.type = 'button';
+            chip.className = 'chat-empty-chip';
+            chip.textContent = label;
+            chip.addEventListener('click', () => {
+                promptInput.value = label;
+                promptInput.focus();
+                promptInput.setSelectionRange(label.length, label.length);
+            });
+            chipsRow.appendChild(chip);
+        });
+        if (chipsRow.children.length > 0) empty.appendChild(chipsRow);
+
+        chatWindow.appendChild(empty);
+    }
+
+    function clearChatEmptyState(chatWindow) {
+        const existing = chatWindow?.querySelector('.chat-empty-state');
+        if (existing) existing.remove();
+    }
+
     // --- Chat Instance Manager (Gemini) ---
     class ChatInstance {
         constructor(modelId, modelName, responseLang) {
@@ -47,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.presetButtons = document.querySelectorAll(`#preset-buttons-container-${modelId} .preset-btn`);
 
             this.attachEventListeners();
+            renderChatEmptyState(this.chatWindow, this.promptInput);
         }
 
         attachEventListeners() {
@@ -268,6 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         displayMessage(text, role, images = [], isError = false) {
+            clearChatEmptyState(this.chatWindow);
             const msgDiv = document.createElement('div');
             msgDiv.className = `msg ${role}${isError ? ' error' : ''}`;
             if (images.length > 0) {
@@ -319,6 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.presetButtons = document.querySelectorAll('#preset-buttons-container-local .preset-btn');
 
             this.attachEventListeners();
+            renderChatEmptyState(this.chatWindow, this.promptInput);
         }
 
         attachEventListeners() {
@@ -369,6 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         displayMessage(text, role, isError = false) {
+            clearChatEmptyState(this.chatWindow);
             const msgDiv = document.createElement('div');
             msgDiv.className = `msg ${role}${isError ? ' error' : ''}`;
             const textPre = document.createElement('pre');
@@ -435,8 +487,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('#lite .submit-btn, #lite .upload-btn, #flash .submit-btn, #flash .upload-btn, #pro .submit-btn, #pro .upload-btn').forEach(btn => btn.disabled = true);
             } else {
                 geminiApiKey = items.geminiApiKey;
-                new ChatInstance('lite',  'gemini-3.1-flash-lite-preview', responseLang);
-                new ChatInstance('flash', 'gemini-2.5-flash',               responseLang);
+                new ChatInstance('lite',  'gemini-3.1-flash-lite', responseLang);
+                new ChatInstance('flash', 'gemini-3-flash-preview',               responseLang);
                 new ChatInstance('pro',   'gemini-3.1-pro-preview',          responseLang);
             }
 

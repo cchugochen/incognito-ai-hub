@@ -31,8 +31,12 @@
     --radius-lg: 12px;
 
     /* ── Font ── */
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
-                 "Noto Sans JP", "Noto Sans KR", "Noto Sans Arabic",
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 "PingFang TC", "PingFang SC",
+                 "Microsoft JhengHei", "Microsoft YaHei",
+                 "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+                 "Noto Sans TC", "Noto Sans SC", "Noto Sans JP", "Noto Sans KR",
+                 "Noto Sans Arabic",
                  Roboto, "Helvetica Neue", Arial, sans-serif;
     --font-mono: "SF Mono", "Cascadia Code", Consolas, "Courier New", monospace;
 }

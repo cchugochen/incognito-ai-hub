@@ -17,7 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     height: calc(100vh - 40px);
-    min-height: 600px;
+    min-height: 0;
     overflow: hidden;
 }
 
@@ -102,6 +102,54 @@ h2 {
 #flash .chat-window { background-color: #fffbeb; }
 #pro .chat-window { background-color: #f1f5f9; }
 #local .chat-window { background-color: #f0fdf4; }
+
+/* --- Empty state (rendered when chat has no messages yet) --- */
+.chat-empty-state {
+    margin: auto;
+    text-align: center;
+    padding: 24px 16px;
+    max-width: 560px;
+    color: var(--text-secondary);
+}
+.chat-empty-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+.chat-empty-hint {
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 16px;
+}
+.chat-empty-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+.chat-empty-chip {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-content);
+    color: var(--text-primary);
+    font-size: 13.5px;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s, transform 0.15s;
+    font-family: var(--font-sans);
+}
+.chat-empty-chip:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--button-text-light);
+    transform: translateY(-1px);
+}
+.chat-empty-chip:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
 
 .msg { padding: 10px 15px; border-radius: 18px; max-width: 85%; line-height: 1.5; word-wrap: break-word; font-size: 15px; }
 .msg.user { background-color: var(--color-primary); color: var(--button-text-light); align-self: flex-end; border-bottom-right-radius: 4px; }
@@ -267,14 +315,29 @@ h2 {
 }
 /* --- v28.0.1: Dark Mode Overrides --- */
 @media (prefers-color-scheme: dark) {
-    /* ── Chat windows: always force day-mode (light) colors ── */
+    /* ── Chat windows: always force day-mode (light) colors,
+       with a soft warm halo so the light area doesn't clash with the dark page ── */
     .chat-window {
         background-color: #F5F5F4;
         color: #292524;
+        border-color: #DCD3C5;
+        box-shadow:
+            inset 0 0 0 1px rgba(255, 250, 240, 0.55),
+            0 0 0 1px rgba(96, 80, 60, 0.18),
+            0 6px 18px rgba(0, 0, 0, 0.35);
     }
-    #flash .chat-window { background-color: #fffbeb; }
-    #pro   .chat-window { background-color: #f1f5f9; }
-    #local .chat-window { background-color: #f0fdf4; }
+    #flash .chat-window {
+        background-color: #fffbeb;
+        border-color: #F1E8C7;
+    }
+    #pro .chat-window {
+        background-color: #f1f5f9;
+        border-color: #D6DEE8;
+    }
+    #local .chat-window {
+        background-color: #f0fdf4;
+        border-color: #CFE7D6;
+    }
 
     /* Messages inside chat windows: keep day-mode colors */
     .chat-window .msg.ai {
@@ -331,8 +394,8 @@ h2 {
     font-weight: 600;
 }
 
-/* --- Compact layout: tight viewport (≤800px tall) --- */
-@media (max-height: 800px) {
+/* --- Compact layout: tight viewport (≤860px tall, covers 13" laptops) --- */
+@media (max-height: 860px) {
     .container {
         padding: 12px 30px 16px;
     }
@@ -344,5 +407,8 @@ h2 {
     }
     .prompt-input {
         height: 4rem;
+    }
+    .chat-window {
+        min-height: 140px;
     }
 }

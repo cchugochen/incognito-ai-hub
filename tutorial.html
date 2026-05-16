@@ -6,65 +6,41 @@
     <title>__MSG_tutorialTitle__</title>
     <link rel="stylesheet" href="styles/themes.css">
     <link rel="stylesheet" href="styles/local_styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
     <main class="tutorial-page">
         <header class="tutorial-hero">
-            <p class="page-kicker">Gemini API Setup / Gemini API 設定教學</p>
-            <h1>Get a Gemini API key for Incognito PrivoAI</h1>
-            <p class="tutorial-meta">Updated for v28.1.6 · April 2026</p>
-            <div class="pair-grid intro-pair">
-                <section class="lang-card">
-                    <h2>English</h2>
-                    <p>
-                        This guide shows the fastest path to creating a Gemini API key in Google AI Studio and adding it to this extension.
-                        Exact button labels can change over time, but the overall flow stays the same: sign in, create a key, copy it once, and paste it into Options.
-                    </p>
-                </section>
-                <section class="lang-card">
-                    <h2>繁體中文</h2>
-                    <p>
-                        這份教學提供目前最快的流程，帶您在 Google AI Studio 建立 Gemini API 金鑰，並加入本擴充功能。
-                        介面按鈕名稱未來可能微調，但整體步驟通常不變：登入、建立金鑰、複製一次、再貼到選項設定頁。
-                    </p>
-                </section>
-            </div>
+            <p class="page-kicker" data-i18n="tutorialHeroKicker"></p>
+            <h1 data-i18n="tutorialHeroTitle"></h1>
+            <p class="tutorial-meta" data-i18n="tutorialHeroMeta"></p>
+            <section class="lang-card intro-pair">
+                <p data-i18n="tutorialHeroIntro"></p>
+            </section>
         </header>
 
         <section class="tutorial-summary">
             <article class="summary-chip">
-                <h3>What you need</h3>
-                <p>A Google account and access to Google AI Studio.</p>
+                <h3 data-i18n="tutorialSummaryNeedTitle"></h3>
+                <p data-i18n="tutorialSummaryNeedDesc"></p>
             </article>
             <article class="summary-chip">
-                <h3>What you will get</h3>
-                <p>A single API key you can paste into the extension's Options page.</p>
+                <h3 data-i18n="tutorialSummaryGetTitle"></h3>
+                <p data-i18n="tutorialSummaryGetDesc"></p>
             </article>
             <article class="summary-chip">
-                <h3>Good to know</h3>
-                <p>The key is project-level access. Keep it private and revoke unused keys.</p>
+                <h3 data-i18n="tutorialSummaryKnowTitle"></h3>
+                <p data-i18n="tutorialSummaryKnowDesc"></p>
             </article>
         </section>
 
         <section class="callout-box callout-box--soft">
-            <div class="pair-grid">
-                <div class="lang-card">
-                    <h2>Before you start</h2>
-                    <ul class="bullet-list">
-                        <li>If a screen looks slightly different, keep going. Google updates AI Studio often.</li>
-                        <li>You do not need to understand Google Cloud in depth for the basic setup.</li>
-                        <li>If you only want local text workflows, the extension can also use a local AI model later.</li>
-                    </ul>
-                </div>
-                <div class="lang-card">
-                    <h2>開始前先知道</h2>
-                    <ul class="bullet-list">
-                        <li>如果畫面和截圖略有不同，通常不用緊張，Google AI Studio 介面更新很常見。</li>
-                        <li>完成基本設定不需要先深入理解整套 Google Cloud。</li>
-                        <li>如果您只想做本機文字任務，之後也可以改用本機 AI 模型。</li>
-                    </ul>
-                </div>
+            <div class="lang-card">
+                <h2 data-i18n="tutorialBeforeTitle"></h2>
+                <ul class="bullet-list">
+                    <li data-i18n="tutorialBeforeBullet1"></li>
+                    <li data-i18n="tutorialBeforeBullet2"></li>
+                    <li data-i18n="tutorialBeforeBullet3"></li>
+                </ul>
             </div>
         </section>
 
@@ -73,22 +49,10 @@
                 <div class="step-shell">
                     <div class="step-number">1</div>
                     <div class="step-main">
-                        <div class="pair-grid">
-                            <div class="lang-card">
-                                <h2>Open the API key page</h2>
-                                <p>
-                                    Go to Google AI Studio's API key page and sign in with your Google account.
-                                    If Google asks you to choose a project first, that is normal.
-                                </p>
-                                <a href="https://aistudio.google.com/apikey" target="_blank" rel="noreferrer noopener" class="cta-btn">Open Google AI Studio</a>
-                            </div>
-                            <div class="lang-card">
-                                <h2>開啟 API 金鑰頁面</h2>
-                                <p>
-                                    前往 Google AI Studio 的 API 金鑰頁面，並使用您的 Google 帳號登入。
-                                    如果系統先要求您選擇專案，也屬正常流程。
-                                </p>
-                            </div>
+                        <div class="lang-card">
+                            <h2 data-i18n="tutorialStep1Title"></h2>
+                            <p data-i18n="tutorialStep1Body"></p>
+                            <a href="https://aistudio.google.com/apikey" target="_blank" rel="noreferrer noopener" class="cta-btn" data-i18n="tutorialStep1Cta"></a>
                         </div>
                         <img src="images/tutorial-step1-aistudio.png" alt="Google AI Studio API key page" class="screenshot">
                     </div>
@@ -99,21 +63,9 @@
                 <div class="step-shell">
                     <div class="step-number">2</div>
                     <div class="step-main">
-                        <div class="pair-grid">
-                            <div class="lang-card">
-                                <h2>Create a key in a project</h2>
-                                <p>
-                                    Click the API-key creation button shown in AI Studio. For first-time users, creating the key in a new project is usually the simplest choice.
-                                    If you already have a project for Gemini API use, you can place the key there instead.
-                                </p>
-                            </div>
-                            <div class="lang-card">
-                                <h2>在專案中建立金鑰</h2>
-                                <p>
-                                    點擊 AI Studio 介面中的 API 金鑰建立按鈕。對第一次使用者來說，直接建立在新專案中通常最簡單。
-                                    如果您已經有專門給 Gemini API 使用的專案，也可以把金鑰建立在既有專案內。
-                                </p>
-                            </div>
+                        <div class="lang-card">
+                            <h2 data-i18n="tutorialStep2Title"></h2>
+                            <p data-i18n="tutorialStep2Body"></p>
                         </div>
                         <img src="images/tutorial-step2-getkey.png" alt="Create API key flow in Google AI Studio" class="screenshot">
                     </div>
@@ -124,21 +76,9 @@
                 <div class="step-shell">
                     <div class="step-number">3</div>
                     <div class="step-main">
-                        <div class="pair-grid">
-                            <div class="lang-card">
-                                <h2>Copy the key and keep it private</h2>
-                                <p>
-                                    Copy the key shown after creation. Gemini API keys often begin with <code>AIza</code>.
-                                    Store it carefully, avoid screenshots in public places, and do not paste it into GitHub, forums, or shared documents.
-                                </p>
-                            </div>
-                            <div class="lang-card">
-                                <h2>複製金鑰並妥善保管</h2>
-                                <p>
-                                    金鑰建立完成後請立即複製。Gemini API 金鑰通常會以 <code>AIza</code> 開頭。
-                                    請小心保存，不要把它貼到 GitHub、論壇、共用文件，或任何可能被他人看到的地方。
-                                </p>
-                            </div>
+                        <div class="lang-card">
+                            <h2 data-i18n="tutorialStep3Title"></h2>
+                            <p data-i18n="tutorialStep3Body"></p>
                         </div>
                         <img src="images/tutorial-step3-showkey.png" alt="Gemini API key display in Google AI Studio" class="screenshot">
                     </div>
@@ -149,25 +89,10 @@
                 <div class="step-shell">
                     <div class="step-number">4</div>
                     <div class="step-main">
-                        <div class="pair-grid">
-                            <div class="lang-card">
-                                <h2>Paste it into the extension</h2>
-                                <p>
-                                    Open the extension's <strong>Options</strong> page, paste the key into the <strong>Gemini API Key</strong> field, and save.
-                                    If you are unsure which model to choose, start with the default or recommended Flash/Lite option shown in the UI.
-                                    Model names can change, so the safest rule is to begin with the default and adjust later if needed.
-                                </p>
-                                <p class="success-text">Once saved, Gemini-based features are ready to use.</p>
-                            </div>
-                            <div class="lang-card">
-                                <h2>貼到擴充功能選項頁</h2>
-                                <p>
-                                    打開擴充功能的<strong>「選項」</strong>頁面，把金鑰貼到<strong>「Gemini API 金鑰」</strong>欄位後儲存。
-                                    如果您不確定該選哪個模型，先使用介面中預設或建議的 Flash / Lite 選項即可。
-                                    模型名稱未來可能變動，因此最穩妥的做法是先用預設值，之後再視需求調整。
-                                </p>
-                                <p class="success-text">儲存完成後，就可以使用基於 Gemini 的功能了。</p>
-                            </div>
+                        <div class="lang-card">
+                            <h2 data-i18n="tutorialStep4Title"></h2>
+                            <p data-i18n="tutorialStep4Body"></p>
+                            <p class="success-text" data-i18n="tutorialStep4Success"></p>
                         </div>
                         <img src="images/tutorial-step4-model.png" alt="Extension options page with API key and model selection" class="screenshot">
                     </div>
@@ -176,56 +101,30 @@
         </section>
 
         <section class="callout-box callout-box--warning">
-            <div class="pair-grid">
-                <div class="lang-card">
-                    <h2>Key safety tips</h2>
-                    <ul class="bullet-list">
-                        <li>Use a dedicated key for this extension instead of reusing a key from another project.</li>
-                        <li>Delete or rotate keys you no longer need.</li>
-                        <li>If you manage keys in Google Cloud, restrictions are a good idea, but test carefully because browser-extension clients may behave differently from server apps.</li>
-                    </ul>
-                </div>
-                <div class="lang-card">
-                    <h2>金鑰安全建議</h2>
-                    <ul class="bullet-list">
-                        <li>建議為本擴充功能使用專用金鑰，不要和其他專案共用。</li>
-                        <li>不再使用的金鑰，請主動刪除或輪替。</li>
-                        <li>若您在 Google Cloud 管理金鑰，設定限制通常是好習慣；但瀏覽器擴充功能與伺服器型應用不同，套用限制後請務必實際測試。</li>
-                    </ul>
-                </div>
+            <div class="lang-card">
+                <h2 data-i18n="tutorialSafetyTitle"></h2>
+                <ul class="bullet-list">
+                    <li data-i18n="tutorialSafetyBullet1"></li>
+                    <li data-i18n="tutorialSafetyBullet2"></li>
+                    <li data-i18n="tutorialSafetyBullet3"></li>
+                </ul>
             </div>
         </section>
 
         <section class="callout-box callout-box--soft">
-            <div class="pair-grid">
-                <div class="lang-card">
-                    <h2>Optional: local AI for text tasks</h2>
-                    <p>
-                        This project can also connect to Ollama, LM Studio, or another OpenAI-compatible local endpoint for text-only tasks.
-                        That is useful when you want private local processing for chat or translation. Voice, OCR, image, and PDF features still rely on Gemini.
-                    </p>
-                </div>
-                <div class="lang-card">
-                    <h2>選配：文字任務可改用本機 AI</h2>
-                    <p>
-                        本專案也支援連線到 Ollama、LM Studio 或其他 OpenAI 相容的本機端點，處理純文字任務。
-                        如果您想讓聊天或翻譯走本機處理，這會很實用；但語音、OCR、圖片與 PDF 功能仍然需要 Gemini。
-                    </p>
-                </div>
+            <div class="lang-card">
+                <h2 data-i18n="tutorialLocalTitle"></h2>
+                <p data-i18n="tutorialLocalBody"></p>
             </div>
             <img src="images/tutorial-step4-aimode.png" alt="AI mode and local model configuration in extension options" class="screenshot">
         </section>
 
         <section class="reference-box">
-            <p>
-                References:
-                <a href="https://ai.google.dev/gemini-api/docs/quickstart" target="_blank" rel="noreferrer noopener">Gemini API Quickstart</a>,
-                <a href="https://cloud.google.com/api-keys/docs" target="_blank" rel="noreferrer noopener">Google Cloud API Keys documentation</a>.
-            </p>
+            <p data-i18n="tutorialReferences"></p>
         </section>
 
         <footer class="tutorial-footer">
-            <p>&copy; 2026 Incognito PrivoAI · Tutorial refreshed for v28.1.6</p>
+            <p data-i18n="tutorialFooter"></p>
         </footer>
     </main>
     <script src="i18n.js"></script>

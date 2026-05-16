@@ -7,6 +7,17 @@ import { buildGeminiUrl, geminiApiCall } from './scripts/gemini-api.js';
 import { supportedLanguages } from './scripts/language_manager.js';
 import { getLocalModelConfig } from './scripts/local-api.js';
 
+// First-install onboarding: open the Options page so users can set their API key.
+// Only triggers on fresh install — not on updates, browser restart, or chrome refresh.
+chrome.runtime.onInstalled.addListener((details) => {
+    if (details.reason !== 'install') return;
+    try {
+        chrome.tabs.create({ url: chrome.runtime.getURL('options.html') });
+    } catch (e) {
+        console.warn('[onInstalled] could not open options page:', e.message);
+    }
+});
+
 /**
  * Standalone DOM extraction function injected into the active tab.
  * Must be self-contained (no closures / external references).
@@ -286,7 +297,7 @@ async function callGeminiVision(base64ImageData, sourceLang = 'auto') {
 
     const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
         geminiApiKey: '',
-        translationModel: 'gemini-3.1-flash-lite-preview'
+        translationModel: 'gemini-3.1-flash-lite'
     });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
@@ -315,7 +326,7 @@ async function callGeminiVisionTranslate(base64ImageData, targetLang) {
 
     const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
         geminiApiKey: '',
-        translationModel: 'gemini-3.1-flash-lite-preview'
+        translationModel: 'gemini-3.1-flash-lite'
     });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
@@ -340,7 +351,7 @@ async function callGeminiSpeechToText(audioData, spokenLang) {
 
     const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
         geminiApiKey: '',
-        translationModel: 'gemini-3.1-flash-lite-preview'
+        translationModel: 'gemini-3.1-flash-lite'
     });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
@@ -453,7 +464,7 @@ async function summarizeText({ text, fileData, ttsPrompt, language }) {
         // --- Gemini path ---
         const { geminiApiKey, translationModel } = await chrome.storage.sync.get({
             geminiApiKey: '',
-            translationModel: 'gemini-3.1-flash-lite-preview'
+            translationModel: 'gemini-3.1-flash-lite'
         });
         if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
         const apiUrl = buildGeminiUrl(translationModel, geminiApiKey);
@@ -487,9 +498,10 @@ async function summarizeText({ text, fileData, ttsPrompt, language }) {
 /**
  * Generate TTS audio via Gemini TTS API.
  * Returns base64 PCM audio data (audio/L16; rate=24000) for WAV conversion in the page.
- * Uses gemini-2.5-flash-preview-tts model (works with existing Gemini API key).
+ * Uses gemini-3.1-flash-tts-preview. Voice: Kore (Firm) — gentle but composed delivery
+ * via system_instruction. Style: warm, soft yet steady and clear.
  */
-async function generateTts({ text, voiceName = 'Aoede' }) {
+async function generateTts({ text, voiceName = 'Kore' }) {
     if (!text || typeof text !== 'string' || text.trim().length === 0) {
         throw new Error('Text is required for TTS');
     }
@@ -499,10 +511,13 @@ async function generateTts({ text, voiceName = 'Aoede' }) {
     const { geminiApiKey } = await chrome.storage.sync.get({ geminiApiKey: '' });
     if (!geminiApiKey) throw new Error(chrome.i18n.getMessage("errorNoApiKey"));
 
-    const TTS_MODEL = 'gemini-2.5-flash-preview-tts';
+    const TTS_MODEL = 'gemini-3.1-flash-tts-preview';
     const apiUrl = buildGeminiUrl(TTS_MODEL, geminiApiKey);
 
     const payload = {
+        system_instruction: {
+            parts: [{ text: 'Speak with a warm, gentle, and composed tone. Your delivery should be soft yet steady — calm, measured, and reassuring. Remain approachable and clear; never rushed or cold.' }]
+        },
         contents: [{ parts: [{ text: text.slice(0, 5000) }] }], // TTS has input limit
         generationConfig: {
             response_modalities: ['AUDIO'],

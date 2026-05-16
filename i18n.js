@@ -22,20 +22,24 @@ function localizeHtmlPage() {
     // Localize elements that have a data-i18n attribute.
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const messageKey = element.getAttribute('data-i18n');
+        const localized = chrome.i18n.getMessage(messageKey);
+        if (!localized) return;
         // Use innerHTML to support simple HTML tags like <b> in messages.json
-        element.innerHTML = chrome.i18n.getMessage(messageKey);
+        element.innerHTML = localized;
     });
 
     // Localize placeholder attributes.
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
         const messageKey = element.getAttribute('data-i18n-placeholder');
-        element.placeholder = chrome.i18n.getMessage(messageKey);
+        const localized = chrome.i18n.getMessage(messageKey);
+        if (localized) element.placeholder = localized;
     });
 
     // Localize title attributes (for tooltips).
     document.querySelectorAll('[data-i18n-title]').forEach(element => {
         const messageKey = element.getAttribute('data-i18n-title');
-        element.title = chrome.i18n.getMessage(messageKey);
+        const localized = chrome.i18n.getMessage(messageKey);
+        if (localized) element.title = localized;
     });
 }
 

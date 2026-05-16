@@ -81,7 +81,7 @@
     "description": "Label for the model selection radio buttons."
   },
   "optionsModelFlashName": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Name of the Flash model."
   },
   "optionsModelFlashDesc": {
@@ -89,11 +89,11 @@
     "description": "Description of the Flash model."
   },
   "optionsModelProName": {
-    "message": "Gemini 2.5 Pro",
+    "message": "Gemini 3.1 Pro",
     "description": "Name of the Pro model."
   },
   "optionsModelProDesc": {
-    "message": "能力最強，理解複雜情境與圖片的準確度更高，但成本較高。",
+    "message": "適合複雜文件、長上下文，以及較困難的圖片/PDF 理解；速度較慢，通常成本也較高。",
     "description": "Description of the Pro model."
   },
   "optionsPresetSectionHeader": {
@@ -435,7 +435,7 @@
     "description": "Header for the default model tab."
   },
   "incognitoDefaultModelDesc": {
-    "message": "此分頁使用的模型將根據您在「⚙️ 設定」中的選擇而定 (預設為 2.5 Flash Lite)。最小的模型適合簡單翻譯與文字整理，處理簡單的PDF與圖片。",
+    "message": "此分頁使用的模型將根據您在「⚙️ 設定」中的選擇而定 (預設為 3.1 Flash Lite)。最小的模型適合簡單翻譯與文字整理，處理簡單的PDF與圖片。",
     "description": "Description for the default model tab."
   },
   "incognitoSendButton": {
@@ -503,7 +503,7 @@
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
@@ -956,11 +956,11 @@
   },
   "optionsModelGemini3FlashName": {
     "message": "Gemini 3 Flash",
-    "description": "Model name for Gemini 3 Flash placeholder card in options."
+    "description": "Model name for Gemini 3 Flash model card in options."
   },
   "optionsModelGemini3FlashDesc": {
-    "message": "Google 次世代高速模型，尚未正式公佈，敬請期待。屆時將更新解鎖此選項。",
-    "description": "Description for Gemini 3 Flash placeholder card in options."
+    "message": "Google 次世代高速模型，比 Gemini 2.5 Flash 更快、更強大，適合大量翻譯、摘要與複雜任務。",
+    "description": "Description for Gemini 3 Flash model card in options."
   },
   "optionsComingSoonBadge": {
     "message": "即將推出",
@@ -1080,11 +1080,11 @@
   },
   "optionsModelLiteName": {
     "message": "Gemini 3.1 Flash Lite（預設）",
-    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+    "description": "Model card name for gemini-3.1-flash-lite in options."
   },
   "optionsModelLiteDesc": {
     "message": "速度最快、最省費用。適合日常任務、摘要與快速回應。",
-    "description": "Model card description for gemini-3.1-flash-lite-preview."
+    "description": "Model card description for gemini-3.1-flash-lite."
   },
   "incognitoLiteModelHeader": {
     "message": "Gemini 3.1 Flash Lite",
@@ -1173,5 +1173,60 @@
   "dharmaHumIntroHdr": { "message": "🪷 <strong>星雲大師</strong>（Master Hsing Yun）" },
   "dharmaHumIntroP1": { "message": "佛光山開山宗長，1927年生於江蘇，12歲出家，致力實踐「人間佛教」理念，是將佛教現代化、國際化的關鍵人物，2023年圓寂，享壽97歲。他相信佛法不屬於寺廟，而屬於生活，在海內外興建逾三百所道場，創辦大學、美術館、日報、電視台。" },
   "dharmaHumIntroP2": { "message": "他的哲學是「給」：給人信心、給人歡喜、給人希望、給人方便。遇到困難，他不會讓你只坐著觀想，他會說：去做一件好事，心境就不一樣了。" },
-  "dharmaIntroClosing": { "message": "三種風格，三條路。你不需要選邊站，也不需要有任何信仰。只是，當你心裡有什麼，可以來問問他們。" }
+  "dharmaIntroClosing": { "message": "三種風格，三條路。你不需要選邊站，也不需要有任何信仰。只是，當你心裡有什麼，可以來問問他們。" },
+  "screenTimeSectionHeader": { "message": "螢幕使用時間提醒" },
+  "screenTimeDesc": { "message": "當您停留在同一個網址達到指定時間時，畫面上會落下一顆蘋果到您選擇的角落。點擊蘋果即可消失，並重新計時。" },
+  "screenTimeThresholdLabel": { "message": "停留在同一網址（分鐘）後提醒" },
+  "screenTimeOff": { "message": "關閉" },
+  "screenTimeHelp": { "message": "切換到其他分頁/視窗或閒置 60 秒時會暫停計時。chrome:// 等系統頁面無法顯示。" },
+  "screenTimeReminderText": {
+    "message": "您已使用 $MINUTES$ 分鐘，建議轉換注意力、起身動一動。",
+    "placeholders": { "minutes": { "content": "$1" } }
+  },
+  "screenTimePositionLabel": { "message": "蘋果出現位置" },
+  "screenTimePositionBR": { "message": "右下" },
+  "screenTimePositionBL": { "message": "左下" },
+  "screenTimePositionTR": { "message": "右上" },
+  "screenTimePositionTL": { "message": "左上" },
+  "screenTimeEnableLabel": { "message": "啟用螢幕使用時間提醒" },
+  "screenTimeMinUnit": { "message": "分" },
+  "screenTimeFirstTimeHint": { "message": "點我休息一下，重新計時" },
+  "incognitoEmptyStateTitle": { "message": "開始對話" },
+  "incognitoEmptyStateHint": { "message": "點選下方建議快速開始，或直接輸入您的問題。" },
+  "incognitoStarter1": { "message": "請用三點摘要這段內容。" },
+  "incognitoStarter2": { "message": "請翻譯成繁體中文。" },
+  "incognitoStarter3": { "message": "請改寫得更清楚易讀。" },
+  "incognitoStarter4": { "message": "請列出主要論點與佐證。" },
+  "tutorialHeroKicker": { "message": "Gemini API 設定教學" },
+  "tutorialHeroTitle": { "message": "為 Incognito PrivoAI 取得 Gemini API 金鑰" },
+  "tutorialHeroMeta": { "message": "更新對應 v28.1.6 · 2026 年 4 月" },
+  "tutorialHeroIntro": { "message": "這份教學提供目前最快的流程，帶您在 Google AI Studio 建立 Gemini API 金鑰，並加入本擴充功能。介面按鈕名稱未來可能微調，但整體步驟通常不變：登入、建立金鑰、複製一次、再貼到選項設定頁。" },
+  "tutorialSummaryNeedTitle": { "message": "您需要準備" },
+  "tutorialSummaryNeedDesc": { "message": "一個 Google 帳號，以及 Google AI Studio 的存取權。" },
+  "tutorialSummaryGetTitle": { "message": "完成後會獲得" },
+  "tutorialSummaryGetDesc": { "message": "一組可貼到擴充功能「選項」頁面的 API 金鑰。" },
+  "tutorialSummaryKnowTitle": { "message": "值得了解的事" },
+  "tutorialSummaryKnowDesc": { "message": "金鑰具有專案層級的存取權限，請妥善保管，並撤銷不再使用的金鑰。" },
+  "tutorialBeforeTitle": { "message": "開始前先知道" },
+  "tutorialBeforeBullet1": { "message": "如果畫面和截圖略有不同，通常不用緊張，Google AI Studio 介面更新很常見。" },
+  "tutorialBeforeBullet2": { "message": "完成基本設定不需要先深入理解整套 Google Cloud。" },
+  "tutorialBeforeBullet3": { "message": "如果您只想做本機文字任務，之後也可以改用本機 AI 模型。" },
+  "tutorialStep1Title": { "message": "開啟 API 金鑰頁面" },
+  "tutorialStep1Body": { "message": "前往 Google AI Studio 的 API 金鑰頁面，並使用您的 Google 帳號登入。如果系統先要求您選擇專案，也屬正常流程。" },
+  "tutorialStep1Cta": { "message": "開啟 Google AI Studio" },
+  "tutorialStep2Title": { "message": "在專案中建立金鑰" },
+  "tutorialStep2Body": { "message": "點擊 AI Studio 介面中的 API 金鑰建立按鈕。對第一次使用者來說，直接建立在新專案中通常最簡單。如果您已經有專門給 Gemini API 使用的專案，也可以把金鑰建立在既有專案內。" },
+  "tutorialStep3Title": { "message": "複製金鑰並妥善保管" },
+  "tutorialStep3Body": { "message": "金鑰建立完成後請立即複製。Gemini API 金鑰通常會以 <code>AIza</code> 開頭。請小心保存，不要把它貼到 GitHub、論壇、共用文件，或任何可能被他人看到的地方。" },
+  "tutorialStep4Title": { "message": "貼到擴充功能選項頁" },
+  "tutorialStep4Body": { "message": "打開擴充功能的<strong>「選項」</strong>頁面，把金鑰貼到<strong>「Gemini API 金鑰」</strong>欄位後儲存。如果您不確定該選哪個模型，先使用介面中預設或建議的 Flash / Lite 選項即可。模型名稱未來可能變動，因此最穩妥的做法是先用預設值，之後再視需求調整。" },
+  "tutorialStep4Success": { "message": "儲存完成後，就可以使用基於 Gemini 的功能了。" },
+  "tutorialSafetyTitle": { "message": "金鑰安全建議" },
+  "tutorialSafetyBullet1": { "message": "建議為本擴充功能使用專用金鑰，不要和其他專案共用。" },
+  "tutorialSafetyBullet2": { "message": "不再使用的金鑰，請主動刪除或輪替。" },
+  "tutorialSafetyBullet3": { "message": "若您在 Google Cloud 管理金鑰，設定限制通常是好習慣；但瀏覽器擴充功能與伺服器型應用不同，套用限制後請務必實際測試。" },
+  "tutorialLocalTitle": { "message": "選配：文字任務可改用本機 AI" },
+  "tutorialLocalBody": { "message": "本專案也支援連線到 Ollama、LM Studio 或其他 OpenAI 相容的本機端點，處理純文字任務。如果您想讓聊天或翻譯走本機處理，這會很實用；但語音、OCR、圖片與 PDF 功能仍然需要 Gemini。" },
+  "tutorialReferences": { "message": "參考資料：<a href=\"https://ai.google.dev/gemini-api/docs/quickstart\" target=\"_blank\" rel=\"noreferrer noopener\">Gemini API 快速入門</a>、<a href=\"https://cloud.google.com/api-keys/docs\" target=\"_blank\" rel=\"noreferrer noopener\">Google Cloud API Keys 文件</a>。" },
+  "tutorialFooter": { "message": "© 2026 Incognito PrivoAI · 教學更新於 v28.1.6" }
 }

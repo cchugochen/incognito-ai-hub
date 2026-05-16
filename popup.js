@@ -38,12 +38,17 @@ document.getElementById('open-voice-summary').addEventListener('click', () => {
   window.close();
 });
 
-document.getElementById('open-dharma').addEventListener('click', () => {
-  chrome.tabs.create({ url: 'dharma.html' });
+document.getElementById('open-options').addEventListener('click', () => {
+  chrome.runtime.openOptionsPage();
   window.close();
 });
 
 document.getElementById('open-tutorial').addEventListener('click', () => {
   chrome.tabs.create({ url: 'tutorial.html' });
+  window.close();
+});
+
+document.getElementById('open-privacy').addEventListener('click', () => {
+  chrome.tabs.create({ url: 'privacy.html' });
   window.close();
 });

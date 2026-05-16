@@ -81,7 +81,7 @@
     "description": "Label for the model selection radio buttons."
   },
   "optionsModelFlashName": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Name of the Flash model."
   },
   "optionsModelFlashDesc": {
@@ -419,7 +419,7 @@
     "description": "Header for the default model tab."
   },
   "incognitoDefaultModelDesc": {
-    "message": "Mô hình được sử dụng trong tab này phụ thuộc vào lựa chọn của bạn trong '⚙️ Cài đặt' (mặc định là 2.5 Flash). Mô hình nhỏ nhất phù hợp để dịch đơn giản, sắp xếp văn bản và xử lý các tệp PDF và hình ảnh đơn giản.",
+    "message": "Mô hình được sử dụng trong tab này phụ thuộc vào lựa chọn của bạn trong '⚙️ Cài đặt' (mặc định là 3.1 Flash Lite). Mô hình nhỏ nhất phù hợp để dịch đơn giản, sắp xếp văn bản và xử lý các tệp PDF và hình ảnh đơn giản.",
     "description": "Description for the default model tab."
   },
   "incognitoSendButton": {
@@ -475,7 +475,7 @@
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
@@ -892,11 +892,11 @@
   },
   "optionsModelGemini3FlashName": {
     "message": "Gemini 3 Flash",
-    "description": "Model name for Gemini 3 Flash placeholder card in options."
+    "description": "Model name for Gemini 3 Flash model card in options."
   },
   "optionsModelGemini3FlashDesc": {
-    "message": "Mô hình tốc độ thế hệ tiếp theo của Google. Chưa được công bố chính thức — tùy chọn này sẽ được mở khóa khi ra mắt.",
-    "description": "Description for Gemini 3 Flash placeholder card in options."
+    "message": "Mô hình tốc độ thế hệ tiếp theo của Google. Nhanh hơn và mạnh hơn Gemini 2.5 Flash — lý tưởng cho dịch thuật khối lượng lớn, tóm tắt và các tác vụ phức tạp.",
+    "description": "Description for Gemini 3 Flash model card in options."
   },
   "optionsComingSoonBadge": {
     "message": "Sắp ra mắt",
@@ -1010,11 +1010,11 @@
   },
   "optionsModelLiteName": {
     "message": "Gemini 3.1 Flash Lite (Default)",
-    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+    "description": "Model card name for gemini-3.1-flash-lite in options."
   },
   "optionsModelLiteDesc": {
     "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
-    "description": "Model card description for gemini-3.1-flash-lite-preview."
+    "description": "Model card description for gemini-3.1-flash-lite."
   },
   "incognitoLiteModelHeader": {
     "message": "Gemini 3.1 Flash Lite",
@@ -1107,5 +1107,28 @@
   "dharmaHumIntroHdr": { "message": "🪷 <strong>Đại sư Tinh Vân</strong> (Master Hsing Yun)" },
   "dharmaHumIntroP1": { "message": "Founding abbot of Fo Guang Shan, born in Jiangsu in 1927 and ordained at age 12. He passed away in 2023 at age 97, having built over three hundred monasteries worldwide." },
   "dharmaHumIntroP2": { "message": "His philosophy centered on giving: give people confidence, give people joy, give people hope, give people convenience. When facing difficulties, he would say: go do one good deed, and your state of mind will be different." },
-  "dharmaIntroClosing": { "message": "Ba phong cách, ba con đường. Bạn không cần phải chọn phe, cũng không cần có bất kỳ niềm tin nào. Chỉ cần khi trong lòng có điều gì đó, bạn có thể đến và hỏi các ngài." }
+  "dharmaIntroClosing": { "message": "Ba phong cách, ba con đường. Bạn không cần phải chọn phe, cũng không cần có bất kỳ niềm tin nào. Chỉ cần khi trong lòng có điều gì đó, bạn có thể đến và hỏi các ngài." },
+  "screenTimeSectionHeader": { "message": "Nhắc nhở thời gian dùng màn hình" },
+  "screenTimeDesc": { "message": "Khi bạn ở lại cùng một trang trong khoảng thời gian đã chọn, một quả 🍎 sẽ rơi vào góc bạn đã chọn. Nhấn để đóng và đặt lại bộ đếm thời gian." },
+  "screenTimeThresholdLabel": { "message": "Nhắc sau khi ở lại trang (phút)" },
+  "screenTimeOff": { "message": "Tắt" },
+  "screenTimeHelp": { "message": "Tạm dừng khi bạn chuyển sang tab/cửa sổ khác hoặc không hoạt động trong 60 giây. Không hoạt động trên các trang chrome://." },
+  "screenTimeReminderText": {
+    "message": "Bạn đã dùng $MINUTES$ phút — đến lúc chuyển sự chú ý và vận động một chút.",
+    "placeholders": { "minutes": { "content": "$1" } }
+  },
+  "screenTimePositionLabel": { "message": "🍎 xuất hiện ở" },
+  "screenTimePositionBR": { "message": "Góc dưới phải" },
+  "screenTimePositionBL": { "message": "Góc dưới trái" },
+  "screenTimePositionTR": { "message": "Góc trên phải" },
+  "screenTimePositionTL": { "message": "Góc trên trái" },
+  "screenTimeEnableLabel": { "message": "Bật nhắc nhở thời gian dùng màn hình" },
+  "screenTimeMinUnit": { "message": "phút" },
+  "screenTimeFirstTimeHint": { "message": "Nhấn để nghỉ một chút — bộ đếm sẽ được đặt lại." },
+  "incognitoEmptyStateTitle": { "message": "Bắt đầu cuộc trò chuyện" },
+  "incognitoEmptyStateHint": { "message": "Nhấn vào một gợi ý bên dưới, hoặc nhập câu hỏi của bạn." },
+  "incognitoStarter1": { "message": "Tóm tắt nội dung này thành 3 ý chính." },
+  "incognitoStarter2": { "message": "Dịch nội dung sau sang tiếng Việt." },
+  "incognitoStarter3": { "message": "Viết lại cho rõ ràng và dễ đọc hơn." },
+  "incognitoStarter4": { "message": "Liệt kê các luận điểm chính và bằng chứng cho từng luận điểm." }
 }

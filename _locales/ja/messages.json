@@ -81,7 +81,7 @@
     "description": "Label for the model selection radio buttons."
   },
   "optionsModelFlashName": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Name of the Flash model."
   },
   "optionsModelFlashDesc": {
@@ -419,7 +419,7 @@
     "description": "Header for the default model tab."
   },
   "incognitoDefaultModelDesc": {
-    "message": "このタブで使用されるモデルは「⚙️ 設定」での選択に依存します（デフォルトは2.5 Flash）。最小モデルは、簡単な翻訳、テキスト整理、簡単なPDFや画像の処理に適しています。",
+    "message": "このタブで使用されるモデルは「⚙️ 設定」での選択に依存します（デフォルトは3.1 Flash Lite）。最小モデルは、簡単な翻訳、テキスト整理、簡単なPDFや画像の処理に適しています。",
     "description": "Description for the default model tab."
   },
   "incognitoSendButton": {
@@ -475,7 +475,7 @@
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
@@ -892,11 +892,11 @@
   },
   "optionsModelGemini3FlashName": {
     "message": "Gemini 3 Flash",
-    "description": "Model name for Gemini 3 Flash placeholder card in options."
+    "description": "Model name for Gemini 3 Flash model card in options."
   },
   "optionsModelGemini3FlashDesc": {
-    "message": "Googleの次世代高速モデル。まだ正式発表されていません — リリース時にこのオプションが解放されます。",
-    "description": "Description for Gemini 3 Flash placeholder card in options."
+    "message": "Googleの次世代高速モデル。Gemini 2.5 Flashより高速で高性能 — 大量翻訳、要約、複雑なタスクに最適です。",
+    "description": "Description for Gemini 3 Flash model card in options."
   },
   "optionsComingSoonBadge": {
     "message": "近日公開",
@@ -1010,11 +1010,11 @@
   },
   "optionsModelLiteName": {
     "message": "Gemini 3.1 Flash Lite (Default)",
-    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+    "description": "Model card name for gemini-3.1-flash-lite in options."
   },
   "optionsModelLiteDesc": {
     "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
-    "description": "Model card description for gemini-3.1-flash-lite-preview."
+    "description": "Model card description for gemini-3.1-flash-lite."
   },
   "incognitoLiteModelHeader": {
     "message": "Gemini 3.1 Flash Lite",
@@ -1107,5 +1107,28 @@
   "dharmaHumIntroHdr": { "message": "🪷 <strong>星雲大師</strong>（Master Hsing Yun）" },
   "dharmaHumIntroP1": { "message": "佛光山の開山祖師。1927年江蘇省生まれ、12歳で出家し、「人間仏教」の理念を実践した仏教の近代化・国際化の要。2023年に97歳で遷化。仏法は寺院のものではなく生活のものだと信じ、国内外に300以上の道場を建立し、大学・美術館・新聞・テレビ局を設立。" },
   "dharmaHumIntroP2": { "message": "彼の哲学は「与える」こと：人に自信を与え、喜びを与え、希望を与え、便宜を与える。困難に直面したとき、ただ座って瞑想するだけではなく、「一つ善いことをしなさい、そうすれば心境が変わる」と言うでしょう。" },
-  "dharmaIntroClosing": { "message": "三つのスタイル、三つの道。どちらかを選ぶ必要はなく、信仰も必要ありません。ただ、心に何かあるとき、彼らに聞いてみてください。" }
+  "dharmaIntroClosing": { "message": "三つのスタイル、三つの道。どちらかを選ぶ必要はなく、信仰も必要ありません。ただ、心に何かあるとき、彼らに聞いてみてください。" },
+  "screenTimeSectionHeader": { "message": "スクリーンタイムのリマインダー" },
+  "screenTimeDesc": { "message": "同じページに指定した時間以上滞在すると、選択した角に🍎が落ちてきます。クリックすると非表示になり、タイマーがリセットされます。" },
+  "screenTimeThresholdLabel": { "message": "同じページに滞在してから通知するまでの時間（分）" },
+  "screenTimeOff": { "message": "オフ" },
+  "screenTimeHelp": { "message": "他のタブ／ウィンドウに切り替えるか、60 秒間操作がないと計測が一時停止します。chrome:// などのシステムページでは動作しません。" },
+  "screenTimeReminderText": {
+    "message": "$MINUTES$ 分が経ちました。気分転換に立ち上がって体を動かしましょう。",
+    "placeholders": { "minutes": { "content": "$1" } }
+  },
+  "screenTimePositionLabel": { "message": "🍎 が表示される位置" },
+  "screenTimePositionBR": { "message": "右下" },
+  "screenTimePositionBL": { "message": "左下" },
+  "screenTimePositionTR": { "message": "右上" },
+  "screenTimePositionTL": { "message": "左上" },
+  "screenTimeEnableLabel": { "message": "スクリーンタイムのリマインダーを有効にする" },
+  "screenTimeMinUnit": { "message": "分" },
+  "screenTimeFirstTimeHint": { "message": "クリックすると一休みして、タイマーがリセットされます。" },
+  "incognitoEmptyStateTitle": { "message": "会話を始める" },
+  "incognitoEmptyStateHint": { "message": "下の候補をタップするか、ご自身で質問を入力してください。" },
+  "incognitoStarter1": { "message": "この内容を 3 つのポイントで要約してください。" },
+  "incognitoStarter2": { "message": "次の内容を日本語に翻訳してください。" },
+  "incognitoStarter3": { "message": "もっと分かりやすく読みやすい文章に書き直してください。" },
+  "incognitoStarter4": { "message": "主な主張とそれぞれの根拠を箇条書きで挙げてください。" }
 }

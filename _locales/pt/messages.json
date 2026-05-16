@@ -82,7 +82,7 @@
     "description": "Label for the model selection radio buttons."
   },
   "optionsModelFlashName": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Name of the Flash model."
   },
   "optionsModelFlashDesc": {
@@ -436,7 +436,7 @@
     "description": "Header for the default model tab."
   },
   "incognitoDefaultModelDesc": {
-    "message": "O modelo usado nesta guia depende da sua seleção em '⚙️ Configurações' (o padrão é 2.5 Flash). O menor modelo é adequado para tradução simples, organização de texto e manipulação de PDFs e imagens simples.",
+    "message": "O modelo usado nesta guia depende da sua seleção em '⚙️ Configurações' (o padrão é 3.1 Flash Lite). O menor modelo é adequado para tradução simples, organização de texto e manipulação de PDFs e imagens simples.",
     "description": "Description for the default model tab."
   },
   "incognitoSendButton": {
@@ -504,7 +504,7 @@
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
@@ -893,11 +893,11 @@
   },
   "optionsModelGemini3FlashName": {
     "message": "Gemini 3 Flash",
-    "description": "Model name for Gemini 3 Flash placeholder card in options."
+    "description": "Model name for Gemini 3 Flash model card in options."
   },
   "optionsModelGemini3FlashDesc": {
-    "message": "O modelo de velocidade de próxima geração do Google. Ainda não anunciado oficialmente — esta opção será desbloqueada no lançamento.",
-    "description": "Description for Gemini 3 Flash placeholder card in options."
+    "message": "Modelo de velocidade de próxima geração da Google. Mais rápido e capaz que o Gemini 2.5 Flash — ideal para tradução de alto volume, resumo e tarefas complexas.",
+    "description": "Description for Gemini 3 Flash model card in options."
   },
   "optionsComingSoonBadge": {
     "message": "Em breve",
@@ -1045,11 +1045,11 @@
   },
   "optionsModelLiteName": {
     "message": "Gemini 3.1 Flash Lite (Padrão)",
-    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+    "description": "Model card name for gemini-3.1-flash-lite in options."
   },
   "optionsModelLiteDesc": {
     "message": "O mais rápido e económico. Ideal para tarefas do dia a dia, resumos e respostas rápidas.",
-    "description": "Model card description for gemini-3.1-flash-lite-preview."
+    "description": "Model card description for gemini-3.1-flash-lite."
   },
   "incognitoLiteModelHeader": {
     "message": "Gemini 3.1 Flash Lite",
@@ -1136,5 +1136,28 @@
   "dharmaHumIntroHdr": { "message": "🪷 <strong>Mestre Hsing Yun</strong> (星雲大師)" },
   "dharmaHumIntroP1": { "message": "Founding abbot of Fo Guang Shan, born in Jiangsu in 1927 and ordained at age 12. He passed away in 2023 at age 97, having built over three hundred monasteries worldwide." },
   "dharmaHumIntroP2": { "message": "His philosophy centered on giving: give people confidence, give people joy, give people hope, give people convenience. When facing difficulties, he would say: go do one good deed, and your state of mind will be different." },
-  "dharmaIntroClosing": { "message": "Três estilos, três caminhos. Não precisas de escolher um lado nem de ter qualquer crença. Simplesmente, quando houver algo no teu coração, podes vir e perguntar-lhes." }
+  "dharmaIntroClosing": { "message": "Três estilos, três caminhos. Não precisas de escolher um lado nem de ter qualquer crença. Simplesmente, quando houver algo no teu coração, podes vir e perguntar-lhes." },
+  "screenTimeSectionHeader": { "message": "Lembrete de tempo de ecrã" },
+  "screenTimeDesc": { "message": "Quando ficar na mesma página durante o tempo escolhido, uma 🍎 cairá no canto que escolher. Clique para a dispensar e reiniciar o temporizador." },
+  "screenTimeThresholdLabel": { "message": "Lembrar após permanecer numa página (minutos)" },
+  "screenTimeOff": { "message": "Desligado" },
+  "screenTimeHelp": { "message": "Pausa enquanto estiver noutro separador/janela ou inativo durante 60 segundos. Não funciona em páginas chrome://." },
+  "screenTimeReminderText": {
+    "message": "Já usou $MINUTES$ minutos — está na hora de mudar o foco e mexer-se.",
+    "placeholders": { "minutes": { "content": "$1" } }
+  },
+  "screenTimePositionLabel": { "message": "A 🍎 aparece" },
+  "screenTimePositionBR": { "message": "Em baixo à direita" },
+  "screenTimePositionBL": { "message": "Em baixo à esquerda" },
+  "screenTimePositionTR": { "message": "Em cima à direita" },
+  "screenTimePositionTL": { "message": "Em cima à esquerda" },
+  "screenTimeEnableLabel": { "message": "Ativar lembrete de tempo de ecrã" },
+  "screenTimeMinUnit": { "message": "min" },
+  "screenTimeFirstTimeHint": { "message": "Clica para fazer uma pausa — o temporizador será reiniciado." },
+  "incognitoEmptyStateTitle": { "message": "Começar uma conversa" },
+  "incognitoEmptyStateHint": { "message": "Toque numa sugestão abaixo ou escreva a sua própria pergunta." },
+  "incognitoStarter1": { "message": "Resuma isto em três tópicos." },
+  "incognitoStarter2": { "message": "Traduza o seguinte para português." },
+  "incognitoStarter3": { "message": "Reescreva para ficar mais claro e fácil de ler." },
+  "incognitoStarter4": { "message": "Liste as principais afirmações e a respetiva evidência." }
 }

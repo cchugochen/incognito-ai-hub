@@ -81,7 +81,7 @@
     "description": "Label for the model selection radio buttons."
   },
   "optionsModelFlashName": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Name of the Flash model."
   },
   "optionsModelFlashDesc": {
@@ -447,7 +447,7 @@
     "description": "Header for the default model tab."
   },
   "incognitoDefaultModelDesc": {
-    "message": "يعتمد النموذج المستخدم في هذا التبويب على اختيارك في '⚙️ الإعدادات' (الافتراضي: 2.5 Flash). النموذج الأصغر مناسب للترجمات البسيطة ومعالجة ملفات PDF والصور الأساسية.",
+    "message": "يعتمد النموذج المستخدم في هذا التبويب على اختيارك في '⚙️ الإعدادات' (الافتراضي: 3.1 Flash Lite). النموذج الأصغر مناسب للترجمات البسيطة ومعالجة ملفات PDF والصور الأساسية.",
     "description": "Description for the default model tab."
   },
   "incognitoSendButton": {
@@ -515,7 +515,7 @@
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
@@ -892,11 +892,11 @@
   },
   "optionsModelGemini3FlashName": {
     "message": "Gemini 3 Flash",
-    "description": "Model name for Gemini 3 Flash placeholder card in options."
+    "description": "Model name for Gemini 3 Flash model card in options."
   },
   "optionsModelGemini3FlashDesc": {
-    "message": "نموذج الجيل القادم من Google. لم يُعلَن عنه رسمياً بعد — سيتم إتاحة هذا الخيار عند الإطلاق.",
-    "description": "Description for Gemini 3 Flash placeholder card in options."
+    "message": "نموذج الجيل القادم من Google. أسرع وأكثر قدرةً من Gemini 2.5 Flash — مثالي للترجمة بكميات كبيرة والتلخيص والمهام المعقدة.",
+    "description": "Description for Gemini 3 Flash model card in options."
   },
   "optionsComingSoonBadge": {
     "message": "قريباً",
@@ -1010,11 +1010,11 @@
   },
   "optionsModelLiteName": {
     "message": "Gemini 3.1 Flash Lite (Default)",
-    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+    "description": "Model card name for gemini-3.1-flash-lite in options."
   },
   "optionsModelLiteDesc": {
     "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
-    "description": "Model card description for gemini-3.1-flash-lite-preview."
+    "description": "Model card description for gemini-3.1-flash-lite."
   },
   "incognitoLiteModelHeader": {
     "message": "Gemini 3.1 Flash Lite",
@@ -1107,5 +1107,28 @@
   "dharmaHumIntroHdr": { "message": "🪷 <strong>المعلم هسينج يون</strong> (星雲大師)" },
   "dharmaHumIntroP1": { "message": "Founding abbot of Fo Guang Shan, born in Jiangsu in 1927 and ordained at age 12. He passed away in 2023 at age 97, having built over three hundred monasteries worldwide." },
   "dharmaHumIntroP2": { "message": "His philosophy centered on giving: give people confidence, give people joy, give people hope, give people convenience. When facing difficulties, he would say: go do one good deed, and your state of mind will be different." },
-  "dharmaIntroClosing": { "message": "ثلاثة أساليب، وثلاثة طرق. لا تحتاج إلى الانحياز لأي طرف، ولا تحتاج إلى أي معتقدات. ببساطة، عندما يكون في قلبك شيء ما، يمكنك أن تأتي وتسألهم." }
+  "dharmaIntroClosing": { "message": "ثلاثة أساليب، وثلاثة طرق. لا تحتاج إلى الانحياز لأي طرف، ولا تحتاج إلى أي معتقدات. ببساطة، عندما يكون في قلبك شيء ما، يمكنك أن تأتي وتسألهم." },
+  "screenTimeSectionHeader": { "message": "تذكير وقت الشاشة" },
+  "screenTimeDesc": { "message": "عند بقائك على الصفحة نفسها للمدة المحددة، ستسقط 🍎 في الزاوية التي اخترتها. انقر عليها لإغلاقها وإعادة ضبط المؤقت." },
+  "screenTimeThresholdLabel": { "message": "تذكير بعد البقاء على الصفحة (بالدقائق)" },
+  "screenTimeOff": { "message": "إيقاف" },
+  "screenTimeHelp": { "message": "يتوقف المؤقت عند التبديل إلى علامة تبويب/نافذة أخرى أو الخمول لمدة 60 ثانية. لا يعمل على صفحات chrome://." },
+  "screenTimeReminderText": {
+    "message": "لقد استخدمت $MINUTES$ دقيقة — حان وقت تغيير التركيز والتحرك قليلاً.",
+    "placeholders": { "minutes": { "content": "$1" } }
+  },
+  "screenTimePositionLabel": { "message": "موضع ظهور 🍎" },
+  "screenTimePositionBR": { "message": "أسفل اليمين" },
+  "screenTimePositionBL": { "message": "أسفل اليسار" },
+  "screenTimePositionTR": { "message": "أعلى اليمين" },
+  "screenTimePositionTL": { "message": "أعلى اليسار" },
+  "screenTimeEnableLabel": { "message": "تفعيل تذكير وقت الشاشة" },
+  "screenTimeMinUnit": { "message": "دقيقة" },
+  "screenTimeFirstTimeHint": { "message": "انقر لأخذ استراحة وإعادة ضبط المؤقت." },
+  "incognitoEmptyStateTitle": { "message": "ابدأ محادثة" },
+  "incognitoEmptyStateHint": { "message": "اضغط على أحد الاقتراحات أدناه أو اكتب سؤالك الخاص." },
+  "incognitoStarter1": { "message": "لخّص هذا في ثلاث نقاط." },
+  "incognitoStarter2": { "message": "ترجم ما يلي إلى العربية." },
+  "incognitoStarter3": { "message": "أعد صياغة هذا ليكون أوضح وأسهل في القراءة." },
+  "incognitoStarter4": { "message": "اذكر الادعاءات الرئيسية والأدلة على كل منها." }
 }

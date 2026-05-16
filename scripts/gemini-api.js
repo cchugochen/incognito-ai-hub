@@ -7,7 +7,7 @@
 /**
  * Builds the correct Gemini API endpoint URL.
  * Supports both full "models/..." paths and short model names.
- * @param {string} model - The model name (e.g., "gemini-2.5-flash" or "models/gemini-2.5-flash")
+ * @param {string} model - The model name (e.g., "gemini-3-flash-preview" or "models/gemini-3-flash-preview")
  * @param {string} apiKey - The user's Gemini API key
  * @param {string} [method="generateContent"] - The API method to call
  * @returns {string} The full API URL
@@ -77,7 +77,7 @@ export async function geminiApiCall(apiUrl, payload) {
 export async function getStoredApiConfig(defaults = {}) {
     return chrome.storage.sync.get({
         geminiApiKey: '',
-        translationModel: 'gemini-3.1-flash-lite-preview',
+        translationModel: 'gemini-3.1-flash-lite',
         ...defaults
     });
 }

@@ -81,7 +81,7 @@
     "description": "Label for the model selection radio buttons."
   },
   "optionsModelFlashName": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Name of the Flash model."
   },
   "optionsModelFlashDesc": {
@@ -419,7 +419,7 @@
     "description": "Header for the default model tab."
   },
   "incognitoDefaultModelDesc": {
-    "message": "Bu sekmede kullanılan model, '⚙️ Ayarlar'daki seçiminize bağlıdır (varsayılan olarak 2.5 Flash). En küçük model basit çeviri, metin düzenleme ve basit PDF ve görüntüleri işlemek için uygundur.",
+    "message": "Bu sekmede kullanılan model, '⚙️ Ayarlar'daki seçiminize bağlıdır (varsayılan olarak 3.1 Flash Lite). En küçük model basit çeviri, metin düzenleme ve basit PDF ve görüntüleri işlemek için uygundur.",
     "description": "Description for the default model tab."
   },
   "incognitoSendButton": {
@@ -475,7 +475,7 @@
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
@@ -892,11 +892,11 @@
   },
   "optionsModelGemini3FlashName": {
     "message": "Gemini 3 Flash",
-    "description": "Model name for Gemini 3 Flash placeholder card in options."
+    "description": "Model name for Gemini 3 Flash model card in options."
   },
   "optionsModelGemini3FlashDesc": {
-    "message": "Google'ın yeni nesil hız modeli. Henüz resmî olarak duyurulmadı — bu seçenek lansmanda açılacak.",
-    "description": "Description for Gemini 3 Flash placeholder card in options."
+    "message": "Google'ın yeni nesil hız modeli. Gemini 2.5 Flash'tan daha hızlı ve yetenekli — yüksek hacimli çeviri, özetleme ve karmaşık görevler için harika.",
+    "description": "Description for Gemini 3 Flash model card in options."
   },
   "optionsComingSoonBadge": {
     "message": "Yakında",
@@ -1010,11 +1010,11 @@
   },
   "optionsModelLiteName": {
     "message": "Gemini 3.1 Flash Lite (Default)",
-    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+    "description": "Model card name for gemini-3.1-flash-lite in options."
   },
   "optionsModelLiteDesc": {
     "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
-    "description": "Model card description for gemini-3.1-flash-lite-preview."
+    "description": "Model card description for gemini-3.1-flash-lite."
   },
   "incognitoLiteModelHeader": {
     "message": "Gemini 3.1 Flash Lite",
@@ -1107,5 +1107,28 @@
   "dharmaHumIntroHdr": { "message": "🪷 <strong>Üstat Hsing Yun</strong> (星雲大師)" },
   "dharmaHumIntroP1": { "message": "Founding abbot of Fo Guang Shan, born in Jiangsu in 1927 and ordained at age 12. He passed away in 2023 at age 97, having built over three hundred monasteries worldwide." },
   "dharmaHumIntroP2": { "message": "His philosophy centered on giving: give people confidence, give people joy, give people hope, give people convenience. When facing difficulties, he would say: go do one good deed, and your state of mind will be different." },
-  "dharmaIntroClosing": { "message": "Üç tarz, üç yol. Taraf seçmeniz de herhangi bir inanca sahip olmanız da gerekmez. İçinizde bir şey olduğunda, gelip onlara sorabilirsiniz." }
+  "dharmaIntroClosing": { "message": "Üç tarz, üç yol. Taraf seçmeniz de herhangi bir inanca sahip olmanız da gerekmez. İçinizde bir şey olduğunda, gelip onlara sorabilirsiniz." },
+  "screenTimeSectionHeader": { "message": "Ekran Süresi Hatırlatıcısı" },
+  "screenTimeDesc": { "message": "Aynı sayfada seçtiğiniz süre kadar kaldığınızda seçtiğiniz köşeye bir 🍎 düşer. Tıklayarak kapatın; sayaç sıfırlanır." },
+  "screenTimeThresholdLabel": { "message": "Bir sayfada kalmanın ardından hatırlat (dakika)" },
+  "screenTimeOff": { "message": "Kapalı" },
+  "screenTimeHelp": { "message": "Başka bir sekme/pencereye geçtiğinizde veya 60 saniye boyunca etkin değilseniz duraklar. chrome:// sayfalarında çalışmaz." },
+  "screenTimeReminderText": {
+    "message": "$MINUTES$ dakikadır kullanıyorsunuz — odak değiştirip biraz hareket etmenin tam zamanı.",
+    "placeholders": { "minutes": { "content": "$1" } }
+  },
+  "screenTimePositionLabel": { "message": "🍎 nerede görünsün?" },
+  "screenTimePositionBR": { "message": "Sağ alt" },
+  "screenTimePositionBL": { "message": "Sol alt" },
+  "screenTimePositionTR": { "message": "Sağ üst" },
+  "screenTimePositionTL": { "message": "Sol üst" },
+  "screenTimeEnableLabel": { "message": "Ekran süresi hatırlatıcısını etkinleştir" },
+  "screenTimeMinUnit": { "message": "dk" },
+  "screenTimeFirstTimeHint": { "message": "Mola vermek için tıkla — sayaç sıfırlanır." },
+  "incognitoEmptyStateTitle": { "message": "Sohbete başla" },
+  "incognitoEmptyStateHint": { "message": "Aşağıdaki bir öneriye dokun veya kendi sorunu yaz." },
+  "incognitoStarter1": { "message": "Bunu üç maddede özetle." },
+  "incognitoStarter2": { "message": "Aşağıdakini Türkçeye çevir." },
+  "incognitoStarter3": { "message": "Daha açık ve okunması kolay olacak şekilde yeniden yaz." },
+  "incognitoStarter4": { "message": "Ana iddiaları ve her birinin kanıtını listele." }
 }

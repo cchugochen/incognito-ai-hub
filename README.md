@@ -1,4 +1,4 @@
-# PrivoAI 無痕AI工作台 (v28.1.6)
+# PrivoAI 無痕AI工作台 (v28.2.0)
 
 A privacy-first Chrome extension integrating multimodal AI tools for reading, translation, conversation, and mindfulness. All AI requests go directly between your browser and the AI provider — no backend server, no data collection.
 
@@ -7,6 +7,19 @@ A privacy-first Chrome extension integrating multimodal AI tools for reading, tr
 ---
 
 ## Changelog / 更新紀錄
+
+### v28.2.0 — Product Architecture, Screen-Time Reminder & Model Refresh / 產品架構、螢幕使用時間提醒與模型更新
+
+- **Popup information architecture**: Added direct Settings and Privacy Policy entries to the popup, so first-time users can find API keys, AI mode, language preferences, and privacy details from the primary launcher.
+- **Screen-time reminder stabilized**: The apple reminder now uses a low-frequency alarm tick, so it can trigger while the user remains on the same page without switching tabs. It also pauses on idle/focus changes and avoids counting long sleep gaps as active use.
+- **Reminder copy matches settings**: The apple toast now displays the selected minute threshold instead of a fixed 25-minute message.
+- **Overlay accessibility polish**: The apple is now keyboard-focusable, screen-reader labeled, safe-area aware, and respects reduced-motion preferences.
+- **Gemini model refresh**: `gemini-3.1-flash-lite-preview` promoted to the official release `gemini-3.1-flash-lite` as the default model. The Gemini 2.5 Flash slot is replaced by **Gemini 3 Flash** (`gemini-3-flash-preview`), now active across all chat tabs, translation defaults, and settings. `gemini-3.1-pro-preview` unchanged.
+- **TTS model and voice upgrade**: Text-to-speech upgraded to `gemini-3.1-flash-tts-preview`. Default voice changed from Aoede to **Kore** (Firm), paired with a `system_instruction` for warm, gentle, and composed delivery — soft yet steady and clear.
+- **i18n model string cleanup**: All 14 locale files updated — chat tab headers, options descriptions, and default-model tooltip text now reflect the new model names. No stale "2.5 Flash" or "flash-lite-preview" strings remain in the UI.
+- **Version/documentation sync**: Manifest version, feature behavior, and README changelog are aligned for release review.
+
+---
 
 ### v28.1.6 — Privacy & Tutorial Refresh / 隱私政策與 API 教學頁更新
 
@@ -360,11 +373,13 @@ Refer to the built-in **[Tutorial (📖)](tutorial.html)** (accessible from the 
 | 🎙️ Voice Notes | Open voice recording / transcription |
 | 💬 Incognito Gemini Chat | Open 4-tab AI chat |
 | 🔧 Smart Translation Workbench | Open text/image translation |
-| 🌐 Translate Current Page | Capture & translate active tab |
 | **Beta** | |
 | 🔊 AI摘要朗讀podcast | Summarize & read aloud content |
+| 🌐 Translate Current Page | Capture & translate active tab |
 | 🪷 三位禪師 · 心靈正念 | Three Dharma Teachers mindfulness chat |
+| ⚙️ Settings | Configure API key, AI mode, languages, presets, and screen-time reminder |
 | 📖 Tutorial | How to get a Gemini API key |
+| 🔒 Privacy Policy | Review privacy, storage, and request-routing behavior |
 
 ---
 
@@ -372,10 +387,10 @@ Refer to the built-in **[Tutorial (📖)](tutorial.html)** (accessible from the 
 
 - HTML, CSS, JavaScript (ES6 Modules)
 - Chrome Extension Manifest V3
-- Google Gemini API (`gemini-3.1-flash-lite`, `gemini-2.5-flash`, `gemini-3.1-pro`)
+- Google Gemini API (`gemini-3.1-flash-lite`, `gemini-3-flash-preview`, `gemini-3.1-pro-preview`, `gemini-3.1-flash-tts-preview`)
 - Web Speech API (`SpeechSynthesisUtterance`) for Text-to-Speech
 - OpenAI-compatible API format (`/v1/chat/completions`) for local models
-- Module architecture: `scripts/gemini-api.js`, `scripts/local-api.js`, `scripts/language_manager.js`
+- Module architecture: `scripts/gemini-api.js`, `scripts/local-api.js`, `scripts/language_manager.js`, `scripts/screen_time_v2.js`
 - i18n support: 14 locales (en, zh_TW, ja, ko, pt, pt_BR, ru, tr, uk, vi, es, de, ar, cs)
 
 ---

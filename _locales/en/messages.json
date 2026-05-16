@@ -82,7 +82,7 @@
     "description": "Label for the model selection radio buttons."
   },
   "optionsModelFlashName": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Name of the Flash model."
   },
   "optionsModelFlashDesc": {
@@ -90,11 +90,11 @@
     "description": "Description of the Flash model."
   },
   "optionsModelProName": {
-    "message": "Gemini 2.5 Pro",
+    "message": "Gemini 3.1 Pro",
     "description": "Name of the Pro model."
   },
   "optionsModelProDesc": {
-    "message": "Most powerful, with higher accuracy for understanding complex contexts and images, but at a higher cost.",
+    "message": "Best for complex documents, dense context, and harder image/PDF understanding. Slower and typically higher cost.",
     "description": "Description of the Pro model."
   },
   "optionsPresetSectionHeader": {
@@ -436,7 +436,7 @@
     "description": "Header for the default model tab."
   },
   "incognitoDefaultModelDesc": {
-    "message": "The model used in this tab depends on your selection in '⚙️ Settings' (defaults to 2.5 Flash). The smallest model is suitable for simple translation, text organization, and handling simple PDFs and images.",
+    "message": "The model used in this tab depends on your selection in '⚙️ Settings' (defaults to 3.1 Flash Lite). The smallest model is suitable for simple translation, text organization, and handling simple PDFs and images.",
     "description": "Description for the default model tab."
   },
   "incognitoSendButton": {
@@ -504,7 +504,7 @@
     "description": "Placeholder for the prompt input area."
   },
   "incognitoFlashModelHeader": {
-    "message": "Gemini 2.5 Flash",
+    "message": "Gemini 3 Flash",
     "description": "Header for the Flash model tab."
   },
   "incognitoFlashModelDesc": {
@@ -963,11 +963,11 @@
   },
   "optionsModelGemini3FlashName": {
     "message": "Gemini 3 Flash",
-    "description": "Model name for Gemini 3 Flash placeholder card in options."
+    "description": "Model name for Gemini 3 Flash model card in options."
   },
   "optionsModelGemini3FlashDesc": {
-    "message": "Google's next-generation speed model. Not yet officially announced — this option will be unlocked when it launches.",
-    "description": "Description for Gemini 3 Flash placeholder card in options."
+    "message": "Google's next-generation speed model. Faster and more capable than Gemini 2.5 Flash — great for high-volume translation, summarization, and complex tasks.",
+    "description": "Description for Gemini 3 Flash model card in options."
   },
   "optionsComingSoonBadge": {
     "message": "Coming Soon",
@@ -1118,11 +1118,11 @@
   },
   "optionsModelLiteName": {
     "message": "Gemini 3.1 Flash Lite (Default)",
-    "description": "Model card name for gemini-3.1-flash-lite-preview in options."
+    "description": "Model card name for gemini-3.1-flash-lite in options."
   },
   "optionsModelLiteDesc": {
     "message": "Fastest and most cost-efficient. Best for everyday tasks, summarization, and quick responses.",
-    "description": "Model card description for gemini-3.1-flash-lite-preview."
+    "description": "Model card description for gemini-3.1-flash-lite."
   },
   "incognitoLiteModelHeader": {
     "message": "Gemini 3.1 Flash Lite",
@@ -1212,5 +1212,60 @@
   "dharmaHumIntroHdr": { "message": "🪷 <strong>Master Hsing Yun</strong> (星雲大師)" },
   "dharmaHumIntroP1": { "message": "Founding abbot of Fo Guang Shan, born in Jiangsu in 1927 and ordained at age 12. A pivotal figure in modernizing and internationalizing Buddhism, he passed away in 2023 at age 97. He believed that the Dharma belongs not to temples but to life itself, and built over three hundred monasteries worldwide, alongside universities, art museums, newspapers, and television stations." },
   "dharmaHumIntroP2": { "message": "His philosophy centered on giving: give people confidence, give people joy, give people hope, give people convenience. When facing difficulties, he wouldn't just ask you to sit and meditate — he would say: go do one good deed, and your state of mind will be different." },
-  "dharmaIntroClosing": { "message": "Three styles, three paths. You don't need to choose sides, and you don't need any beliefs. Simply, when something is in your heart, you can come and ask them." }
+  "dharmaIntroClosing": { "message": "Three styles, three paths. You don't need to choose sides, and you don't need any beliefs. Simply, when something is in your heart, you can come and ask them." },
+  "screenTimeSectionHeader": { "message": "Screen Time Reminder" },
+  "screenTimeDesc": { "message": "When you stay on the same page for the chosen duration, a 🍎 will fall onto the corner you choose. Click it to dismiss and reset the timer." },
+  "screenTimeThresholdLabel": { "message": "Reminder after staying on a page (minutes)" },
+  "screenTimeOff": { "message": "Off" },
+  "screenTimeHelp": { "message": "Pauses while you're on another tab/window or idle for 60 seconds. Does not work on chrome:// pages." },
+  "screenTimeReminderText": {
+    "message": "You've used $MINUTES$ minutes — time to shift focus and move around.",
+    "placeholders": { "minutes": { "content": "$1" } }
+  },
+  "screenTimePositionLabel": { "message": "Apple appears at" },
+  "screenTimePositionBR": { "message": "Bottom right" },
+  "screenTimePositionBL": { "message": "Bottom left" },
+  "screenTimePositionTR": { "message": "Top right" },
+  "screenTimePositionTL": { "message": "Top left" },
+  "screenTimeEnableLabel": { "message": "Enable screen time reminder" },
+  "screenTimeMinUnit": { "message": "min" },
+  "screenTimeFirstTimeHint": { "message": "Click me to take a break and reset the timer." },
+  "incognitoEmptyStateTitle": { "message": "Start a conversation" },
+  "incognitoEmptyStateHint": { "message": "Tap a suggestion below, or type your own question." },
+  "incognitoStarter1": { "message": "Summarize this in 3 bullet points." },
+  "incognitoStarter2": { "message": "Translate the following into Traditional Chinese." },
+  "incognitoStarter3": { "message": "Rewrite this to be clearer and easier to read." },
+  "incognitoStarter4": { "message": "List the main claims and the evidence for each." },
+  "tutorialHeroKicker": { "message": "Gemini API Setup" },
+  "tutorialHeroTitle": { "message": "Get a Gemini API key for Incognito PrivoAI" },
+  "tutorialHeroMeta": { "message": "Updated for v28.1.6 · April 2026" },
+  "tutorialHeroIntro": { "message": "This guide shows the fastest path to creating a Gemini API key in Google AI Studio and adding it to this extension. Exact button labels can change over time, but the overall flow stays the same: sign in, create a key, copy it once, and paste it into Options." },
+  "tutorialSummaryNeedTitle": { "message": "What you need" },
+  "tutorialSummaryNeedDesc": { "message": "A Google account and access to Google AI Studio." },
+  "tutorialSummaryGetTitle": { "message": "What you will get" },
+  "tutorialSummaryGetDesc": { "message": "A single API key you can paste into the extension's Options page." },
+  "tutorialSummaryKnowTitle": { "message": "Good to know" },
+  "tutorialSummaryKnowDesc": { "message": "The key is project-level access. Keep it private and revoke unused keys." },
+  "tutorialBeforeTitle": { "message": "Before you start" },
+  "tutorialBeforeBullet1": { "message": "If a screen looks slightly different, keep going. Google updates AI Studio often." },
+  "tutorialBeforeBullet2": { "message": "You do not need to understand Google Cloud in depth for the basic setup." },
+  "tutorialBeforeBullet3": { "message": "If you only want local text workflows, the extension can also use a local AI model later." },
+  "tutorialStep1Title": { "message": "Open the API key page" },
+  "tutorialStep1Body": { "message": "Go to Google AI Studio's API key page and sign in with your Google account. If Google asks you to choose a project first, that is normal." },
+  "tutorialStep1Cta": { "message": "Open Google AI Studio" },
+  "tutorialStep2Title": { "message": "Create a key in a project" },
+  "tutorialStep2Body": { "message": "Click the API-key creation button shown in AI Studio. For first-time users, creating the key in a new project is usually the simplest choice. If you already have a project for Gemini API use, you can place the key there instead." },
+  "tutorialStep3Title": { "message": "Copy the key and keep it private" },
+  "tutorialStep3Body": { "message": "Copy the key shown after creation. Gemini API keys often begin with <code>AIza</code>. Store it carefully, avoid screenshots in public places, and do not paste it into GitHub, forums, or shared documents." },
+  "tutorialStep4Title": { "message": "Paste it into the extension" },
+  "tutorialStep4Body": { "message": "Open the extension's <strong>Options</strong> page, paste the key into the <strong>Gemini API Key</strong> field, and save. If you are unsure which model to choose, start with the default or recommended Flash/Lite option shown in the UI. Model names can change, so the safest rule is to begin with the default and adjust later if needed." },
+  "tutorialStep4Success": { "message": "Once saved, Gemini-based features are ready to use." },
+  "tutorialSafetyTitle": { "message": "Key safety tips" },
+  "tutorialSafetyBullet1": { "message": "Use a dedicated key for this extension instead of reusing a key from another project." },
+  "tutorialSafetyBullet2": { "message": "Delete or rotate keys you no longer need." },
+  "tutorialSafetyBullet3": { "message": "If you manage keys in Google Cloud, restrictions are a good idea, but test carefully because browser-extension clients may behave differently from server apps." },
+  "tutorialLocalTitle": { "message": "Optional: local AI for text tasks" },
+  "tutorialLocalBody": { "message": "This project can also connect to Ollama, LM Studio, or another OpenAI-compatible local endpoint for text-only tasks. That is useful when you want private local processing for chat or translation. Voice, OCR, image, and PDF features still rely on Gemini." },
+  "tutorialReferences": { "message": "References: <a href=\"https://ai.google.dev/gemini-api/docs/quickstart\" target=\"_blank\" rel=\"noreferrer noopener\">Gemini API Quickstart</a>, <a href=\"https://cloud.google.com/api-keys/docs\" target=\"_blank\" rel=\"noreferrer noopener\">Google Cloud API Keys documentation</a>." },
+  "tutorialFooter": { "message": "© 2026 Incognito PrivoAI · Tutorial refreshed for v28.1.6" }
 }
