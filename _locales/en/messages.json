@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Voice-to-text, AI chat, web translation, AI reading & mindfulness. Gemini API key or local AI — no backend, data stays in browser.",
+    "message": "Voice-to-text, AI chat, web translation, AI reading. Gemini API key or local AI — no backend, data stays in browser.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -1143,129 +1143,165 @@
     "message": "Maximum recording: 15 minutes.",
     "description": "Hint text showing maximum recording duration under the record button."
   },
-  "popupOpenDharma": {
-    "message": "Dharma Masters · Mindfulness",
-    "description": "Popup button to open the dharma chat page."
+  "screenTimeSectionHeader": {
+    "message": "Screen Time Reminder"
   },
-  "dharmaTitle": { "message": "Incognito Mind Ask", "description": "Dharma page title." },
-  "dharmaHeaderTitle": { "message": "Mindfulness & Dharma — Three Traditions", "description": "Dharma page header title." },
-  "dharmaHeaderSub": { "message": "Whatever state you're in, you can talk about it here", "description": "Dharma header subtitle." },
-  "dharmaAboutBtn": { "message": "About", "description": "About toggle button." },
-  "dharmaAboutCloseBtn": { "message": "Close", "description": "Close/collapse about panel button." },
-  "dharmaNoApiKeyBefore": { "message": "Gemini API Key not set. Please go to", "description": "Text before settings link in API key banner." },
-  "dharmaNoApiKeyLink": { "message": "Settings", "description": "Settings link text in API key banner." },
-  "dharmaNoApiKeyAfter": { "message": "to enter your API Key.", "description": "Text after settings link in API key banner." },
-  "dharmaTabCompare": { "message": "⚖️ Compare", "description": "Compare all three traditions tab." },
-  "dharmaTabTib": { "message": "🙏 Dalai", "description": "Tibetan/Dalai Lama tab." },
-  "dharmaTabZen": { "message": "⛰️ DDM", "description": "Dharma Drum Mountain tab." },
-  "dharmaTabHum": { "message": "🪷 FGS", "description": "Fo Guang Shan tab." },
-  "dharmaCmpColTibLabel": { "message": "🙏 Dalai", "description": "Tibetan column label in compare view." },
-  "dharmaCmpColTibTag": { "message": "Tibetan · Compassion", "description": "Tibetan tradition tag." },
-  "dharmaCmpColZenLabel": { "message": "⛰️ DDM", "description": "DDM column label in compare view." },
-  "dharmaCmpColZenTag": { "message": "Chan · Awareness", "description": "Chan tradition tag." },
-  "dharmaCmpColHumLabel": { "message": "🪷 FGS", "description": "FGS column label in compare view." },
-  "dharmaCmpColHumTag": { "message": "Humanistic · Action", "description": "Humanistic tradition tag." },
-  "dharmaCmpTibWelcomeName": { "message": "Tibetan Buddhism · Gelug" },
-  "dharmaCmpTibWelcomeDesc": { "message": "Embracing suffering with compassion<br>Bodhicitta · Emptiness · Compassion" },
-  "dharmaCmpTibWelcomeSub": { "message": "Bodhicitta · Emptiness · Compassion" },
-  "dharmaCmpZenWelcomeName": { "message": "Dharma Drum Mountain · Master Sheng Yen" },
-  "dharmaCmpZenWelcomeDesc": { "message": "Direct pointing to awareness<br>Returning to the present moment" },
-  "dharmaCmpZenWelcomeSub": { "message": "No-self · Mindfulness · Spiritual ecology" },
-  "dharmaCmpHumWelcomeName": { "message": "Fo Guang Shan · Humanistic Buddhism" },
-  "dharmaCmpHumWelcomeDesc": { "message": "Dharma in everyday life<br>Warmth and positive action" },
-  "dharmaCmpHumWelcomeSub": { "message": "Dependent origination · Altruism · Pure Land on Earth" },
-  "dharmaCmpInputPlaceholder": { "message": "Enter a question to compare all three traditions' responses…" },
-  "dharmaCmpLabel": { "message": "3 Traditions" },
-  "dharmaTibWelcomeName": { "message": "Dalai Lama Style · Tibetan Compassion" },
-  "dharmaTibWelcomeDesc": { "message": "Guided by bodhicitta<br>Lam Rim · Four Noble Truths · Bodhisattvacaryāvatāra" },
-  "dharmaTibWelcomeSub": { "message": "Gelug · Compassion · Emptiness" },
-  "dharmaZenWelcomeName": { "message": "Master Sheng Yen Style · DDM Chan" },
-  "dharmaZenWelcomeDesc": { "message": "Face it · Accept it · Deal with it · Let it go<br>Spiritual ecology · Present awareness" },
-  "dharmaZenWelcomeSub": { "message": "Caodong · Linji · No-self" },
-  "dharmaHumWelcomeName": { "message": "Master Hsing Yun Style · Humanistic Buddhism" },
-  "dharmaHumWelcomeDesc": { "message": "Fo Guang Shan · Dharma in daily life<br>Āgama · Lotus Sūtra · Avataṃsaka" },
-  "dharmaHumWelcomeSub": { "message": "Pure Land · Dependent Origination · Practice" },
-  "dharmaTibInputPlaceholder": { "message": "Share what's troubling you…" },
-  "dharmaZenInputPlaceholder": { "message": "What's happening right now?" },
-  "dharmaHumInputPlaceholder": { "message": "What would you like to talk about?" },
-  "dharmaFooterTitle": { "message": "Disclaimer" },
-  "dharmaFooterNote": { "message": "Content is AI-generated using large language models for personal self-exploration and reading reference. It cannot replace diagnosis or treatment by medical or mental health professionals. If you are in immediate danger or at risk of self-harm or harming others, please contact local emergency services or seek medical attention immediately. If you find this helpful, feel free to support via the Buy Me a Coffee link." },
-  "dharmaSugg1": { "message": "I've been worried lately and don't know what the future holds" },
-  "dharmaSugg2": { "message": "I had an argument with my family and I feel very sad" },
-  "dharmaSugg3": { "message": "I feel like nothing I do has any meaning" },
-  "dharmaSugg4": { "message": "I can't sleep — my mind keeps racing" },
-  "dharmaSugg5": { "message": "I feel very lost" },
-  "dharmaSugg6": { "message": "Work stress is overwhelming — I don't know how long I can hold on" },
-  "dharmaUserLabel": { "message": "You" },
-  "dharmaApiKeyMissing": { "message": "Please enter your Gemini API Key in Settings first" },
-  "dharmaErrorMsg": { "message": "(Error: $ERROR$)", "placeholders": { "error": { "content": "$1" } } },
-  "dharmaApiBlocked": { "message": "API rejected response: " },
-  "dharmaNoResponse": { "message": "Unable to get a response" },
-  "dharmaIntroP1": { "message": "Before the age of psychotherapy or psychiatry, many people in Taiwan facing life difficulties would seek guidance from temple caretakers or monks. In East Asia, the wisdom of certain Buddhist sages has been passed down through generations. This is an extended version of the private chat — whatever state you're in, you can talk about it here." },
-  "dharmaIntroP2": { "message": "The three conversation styles here come from three of the most influential Buddhist thinkers of the twentieth century. Each worked in a different land, in a different way, responding to the same question: when people suffer, what can they do?" },
-  "dharmaTibIntroHdr": { "message": "🙏 <strong>The Dalai Lama</strong> (Tenzin Gyatso)" },
-  "dharmaTibIntroP1": { "message": "The spiritual leader of Tibetan Buddhism, born in 1935 in Amdo, Tibet, and recognized at age three as the reincarnation of the previous Dalai Lama. After fleeing to India in 1959, he spent decades transforming one people's suffering into compassion for all humanity. He is renowned for his commitment to nonviolence and was awarded the Nobel Peace Prize in 1989." },
-  "dharmaTibIntroP2": { "message": "At the core of his teaching is compassion and bodhicitta — the aspiration to bear the suffering of all beings. He often says: \"Each morning I remind myself that I am just one of billions of people on this earth. We are all the same — each of us wishes to be free from suffering.\" When you face difficulty, he first helps you feel less alone, then guides you to see a broader perspective." },
-  "dharmaZenIntroHdr": { "message": "⛩️ <strong>Master Sheng Yen</strong> (聖嚴法師)" },
-  "dharmaZenIntroP1": { "message": "The 50th-generation heir of the Caodong lineage and 57th of the Linji lineage of Chan Buddhism, and founder of Dharma Drum Mountain. He earned his doctorate from Rissho University in Japan in 1975 — the first ordained Chinese Buddhist monk to do so. Named by CommonWealth magazine as one of the 50 most influential people in Taiwan over four centuries, he authored over a hundred works in Chinese, English, and Japanese." },
-  "dharmaZenIntroP2": { "message": "His most celebrated teaching is: \"Face it, accept it, deal with it, let it go\" — expressing the Chan attitude of neither avoiding nor clinging, returning to this very moment. His words are brief and direct, cutting to the core like a blade that gently severs a tangled rope." },
-  "dharmaHumIntroHdr": { "message": "🪷 <strong>Master Hsing Yun</strong> (星雲大師)" },
-  "dharmaHumIntroP1": { "message": "Founding abbot of Fo Guang Shan, born in Jiangsu in 1927 and ordained at age 12. A pivotal figure in modernizing and internationalizing Buddhism, he passed away in 2023 at age 97. He believed that the Dharma belongs not to temples but to life itself, and built over three hundred monasteries worldwide, alongside universities, art museums, newspapers, and television stations." },
-  "dharmaHumIntroP2": { "message": "His philosophy centered on giving: give people confidence, give people joy, give people hope, give people convenience. When facing difficulties, he wouldn't just ask you to sit and meditate — he would say: go do one good deed, and your state of mind will be different." },
-  "dharmaIntroClosing": { "message": "Three styles, three paths. You don't need to choose sides, and you don't need any beliefs. Simply, when something is in your heart, you can come and ask them." },
-  "screenTimeSectionHeader": { "message": "Screen Time Reminder" },
-  "screenTimeDesc": { "message": "When you stay on the same page for the chosen duration, a 🍎 will fall onto the corner you choose. Click it to dismiss and reset the timer." },
-  "screenTimeThresholdLabel": { "message": "Reminder after staying on a page (minutes)" },
-  "screenTimeOff": { "message": "Off" },
-  "screenTimeHelp": { "message": "Pauses while you're on another tab/window or idle for 60 seconds. Does not work on chrome:// pages." },
+  "screenTimeDesc": {
+    "message": "When you stay on the same page for the chosen duration, a 🍎 will fall onto the corner you choose. Click it to dismiss and reset the timer."
+  },
+  "screenTimeThresholdLabel": {
+    "message": "Reminder after staying on a page (minutes)"
+  },
+  "screenTimeOff": {
+    "message": "Off"
+  },
+  "screenTimeHelp": {
+    "message": "Pauses while you're on another tab/window or idle for 60 seconds. Does not work on chrome:// pages."
+  },
   "screenTimeReminderText": {
     "message": "You've used $MINUTES$ minutes — time to shift focus and move around.",
-    "placeholders": { "minutes": { "content": "$1" } }
+    "placeholders": {
+      "minutes": {
+        "content": "$1"
+      }
+    }
   },
-  "screenTimePositionLabel": { "message": "Apple appears at" },
-  "screenTimePositionBR": { "message": "Bottom right" },
-  "screenTimePositionBL": { "message": "Bottom left" },
-  "screenTimePositionTR": { "message": "Top right" },
-  "screenTimePositionTL": { "message": "Top left" },
-  "screenTimeEnableLabel": { "message": "Enable screen time reminder" },
-  "screenTimeMinUnit": { "message": "min" },
-  "screenTimeFirstTimeHint": { "message": "Click me to take a break and reset the timer." },
-  "incognitoEmptyStateTitle": { "message": "Start a conversation" },
-  "incognitoEmptyStateHint": { "message": "Tap a suggestion below, or type your own question." },
-  "incognitoStarter1": { "message": "Summarize this in 3 bullet points." },
-  "incognitoStarter2": { "message": "Translate the following into Traditional Chinese." },
-  "incognitoStarter3": { "message": "Rewrite this to be clearer and easier to read." },
-  "incognitoStarter4": { "message": "List the main claims and the evidence for each." },
-  "tutorialHeroKicker": { "message": "Gemini API Setup" },
-  "tutorialHeroTitle": { "message": "Get a Gemini API key for Incognito PrivoAI" },
-  "tutorialHeroMeta": { "message": "Updated for v28.1.6 · April 2026" },
-  "tutorialHeroIntro": { "message": "This guide shows the fastest path to creating a Gemini API key in Google AI Studio and adding it to this extension. Exact button labels can change over time, but the overall flow stays the same: sign in, create a key, copy it once, and paste it into Options." },
-  "tutorialSummaryNeedTitle": { "message": "What you need" },
-  "tutorialSummaryNeedDesc": { "message": "A Google account and access to Google AI Studio." },
-  "tutorialSummaryGetTitle": { "message": "What you will get" },
-  "tutorialSummaryGetDesc": { "message": "A single API key you can paste into the extension's Options page." },
-  "tutorialSummaryKnowTitle": { "message": "Good to know" },
-  "tutorialSummaryKnowDesc": { "message": "The key is project-level access. Keep it private and revoke unused keys." },
-  "tutorialBeforeTitle": { "message": "Before you start" },
-  "tutorialBeforeBullet1": { "message": "If a screen looks slightly different, keep going. Google updates AI Studio often." },
-  "tutorialBeforeBullet2": { "message": "You do not need to understand Google Cloud in depth for the basic setup." },
-  "tutorialBeforeBullet3": { "message": "If you only want local text workflows, the extension can also use a local AI model later." },
-  "tutorialStep1Title": { "message": "Open the API key page" },
-  "tutorialStep1Body": { "message": "Go to Google AI Studio's API key page and sign in with your Google account. If Google asks you to choose a project first, that is normal." },
-  "tutorialStep1Cta": { "message": "Open Google AI Studio" },
-  "tutorialStep2Title": { "message": "Create a key in a project" },
-  "tutorialStep2Body": { "message": "Click the API-key creation button shown in AI Studio. For first-time users, creating the key in a new project is usually the simplest choice. If you already have a project for Gemini API use, you can place the key there instead." },
-  "tutorialStep3Title": { "message": "Copy the key and keep it private" },
-  "tutorialStep3Body": { "message": "Copy the key shown after creation. Gemini API keys often begin with <code>AIza</code>. Store it carefully, avoid screenshots in public places, and do not paste it into GitHub, forums, or shared documents." },
-  "tutorialStep4Title": { "message": "Paste it into the extension" },
-  "tutorialStep4Body": { "message": "Open the extension's <strong>Options</strong> page, paste the key into the <strong>Gemini API Key</strong> field, and save. If you are unsure which model to choose, start with the default or recommended Flash/Lite option shown in the UI. Model names can change, so the safest rule is to begin with the default and adjust later if needed." },
-  "tutorialStep4Success": { "message": "Once saved, Gemini-based features are ready to use." },
-  "tutorialSafetyTitle": { "message": "Key safety tips" },
-  "tutorialSafetyBullet1": { "message": "Use a dedicated key for this extension instead of reusing a key from another project." },
-  "tutorialSafetyBullet2": { "message": "Delete or rotate keys you no longer need." },
-  "tutorialSafetyBullet3": { "message": "If you manage keys in Google Cloud, restrictions are a good idea, but test carefully because browser-extension clients may behave differently from server apps." },
-  "tutorialLocalTitle": { "message": "Optional: local AI for text tasks" },
-  "tutorialLocalBody": { "message": "This project can also connect to Ollama, LM Studio, or another OpenAI-compatible local endpoint for text-only tasks. That is useful when you want private local processing for chat or translation. Voice, OCR, image, and PDF features still rely on Gemini." },
-  "tutorialReferences": { "message": "References: <a href=\"https://ai.google.dev/gemini-api/docs/quickstart\" target=\"_blank\" rel=\"noreferrer noopener\">Gemini API Quickstart</a>, <a href=\"https://cloud.google.com/api-keys/docs\" target=\"_blank\" rel=\"noreferrer noopener\">Google Cloud API Keys documentation</a>." },
-  "tutorialFooter": { "message": "© 2026 Incognito PrivoAI · Tutorial refreshed for v28.1.6" }
+  "screenTimePositionLabel": {
+    "message": "Apple appears at"
+  },
+  "screenTimePositionBR": {
+    "message": "Bottom right"
+  },
+  "screenTimePositionBL": {
+    "message": "Bottom left"
+  },
+  "screenTimePositionTR": {
+    "message": "Top right"
+  },
+  "screenTimePositionTL": {
+    "message": "Top left"
+  },
+  "screenTimeEnableLabel": {
+    "message": "Enable screen time reminder"
+  },
+  "screenTimeMinUnit": {
+    "message": "min"
+  },
+  "screenTimeFirstTimeHint": {
+    "message": "Click me to take a break and reset the timer."
+  },
+  "incognitoEmptyStateTitle": {
+    "message": "Start a conversation"
+  },
+  "incognitoEmptyStateHint": {
+    "message": "Tap a suggestion below, or type your own question."
+  },
+  "incognitoStarter1": {
+    "message": "Summarize this in 3 bullet points."
+  },
+  "incognitoStarter2": {
+    "message": "Translate the following into Traditional Chinese."
+  },
+  "incognitoStarter3": {
+    "message": "Rewrite this to be clearer and easier to read."
+  },
+  "incognitoStarter4": {
+    "message": "List the main claims and the evidence for each."
+  },
+  "tutorialHeroKicker": {
+    "message": "Gemini API Setup"
+  },
+  "tutorialHeroTitle": {
+    "message": "Get a Gemini API key for Incognito PrivoAI"
+  },
+  "tutorialHeroMeta": {
+    "message": "Updated for v28.1.6 · April 2026"
+  },
+  "tutorialHeroIntro": {
+    "message": "This guide shows the fastest path to creating a Gemini API key in Google AI Studio and adding it to this extension. Exact button labels can change over time, but the overall flow stays the same: sign in, create a key, copy it once, and paste it into Options."
+  },
+  "tutorialSummaryNeedTitle": {
+    "message": "What you need"
+  },
+  "tutorialSummaryNeedDesc": {
+    "message": "A Google account and access to Google AI Studio."
+  },
+  "tutorialSummaryGetTitle": {
+    "message": "What you will get"
+  },
+  "tutorialSummaryGetDesc": {
+    "message": "A single API key you can paste into the extension's Options page."
+  },
+  "tutorialSummaryKnowTitle": {
+    "message": "Good to know"
+  },
+  "tutorialSummaryKnowDesc": {
+    "message": "The key is project-level access. Keep it private and revoke unused keys."
+  },
+  "tutorialBeforeTitle": {
+    "message": "Before you start"
+  },
+  "tutorialBeforeBullet1": {
+    "message": "If a screen looks slightly different, keep going. Google updates AI Studio often."
+  },
+  "tutorialBeforeBullet2": {
+    "message": "You do not need to understand Google Cloud in depth for the basic setup."
+  },
+  "tutorialBeforeBullet3": {
+    "message": "If you only want local text workflows, the extension can also use a local AI model later."
+  },
+  "tutorialStep1Title": {
+    "message": "Open the API key page"
+  },
+  "tutorialStep1Body": {
+    "message": "Go to Google AI Studio's API key page and sign in with your Google account. If Google asks you to choose a project first, that is normal."
+  },
+  "tutorialStep1Cta": {
+    "message": "Open Google AI Studio"
+  },
+  "tutorialStep2Title": {
+    "message": "Create a key in a project"
+  },
+  "tutorialStep2Body": {
+    "message": "Click the API-key creation button shown in AI Studio. For first-time users, creating the key in a new project is usually the simplest choice. If you already have a project for Gemini API use, you can place the key there instead."
+  },
+  "tutorialStep3Title": {
+    "message": "Copy the key and keep it private"
+  },
+  "tutorialStep3Body": {
+    "message": "Copy the key shown after creation. Gemini API keys often begin with <code>AIza</code>. Store it carefully, avoid screenshots in public places, and do not paste it into GitHub, forums, or shared documents."
+  },
+  "tutorialStep4Title": {
+    "message": "Paste it into the extension"
+  },
+  "tutorialStep4Body": {
+    "message": "Open the extension's <strong>Options</strong> page, paste the key into the <strong>Gemini API Key</strong> field, and save. If you are unsure which model to choose, start with the default or recommended Flash/Lite option shown in the UI. Model names can change, so the safest rule is to begin with the default and adjust later if needed."
+  },
+  "tutorialStep4Success": {
+    "message": "Once saved, Gemini-based features are ready to use."
+  },
+  "tutorialSafetyTitle": {
+    "message": "Key safety tips"
+  },
+  "tutorialSafetyBullet1": {
+    "message": "Use a dedicated key for this extension instead of reusing a key from another project."
+  },
+  "tutorialSafetyBullet2": {
+    "message": "Delete or rotate keys you no longer need."
+  },
+  "tutorialSafetyBullet3": {
+    "message": "If you manage keys in Google Cloud, restrictions are a good idea, but test carefully because browser-extension clients may behave differently from server apps."
+  },
+  "tutorialLocalTitle": {
+    "message": "Optional: local AI for text tasks"
+  },
+  "tutorialLocalBody": {
+    "message": "This project can also connect to Ollama, LM Studio, or another OpenAI-compatible local endpoint for text-only tasks. That is useful when you want private local processing for chat or translation. Voice, OCR, image, and PDF features still rely on Gemini."
+  },
+  "tutorialReferences": {
+    "message": "References: <a href=\"https://ai.google.dev/gemini-api/docs/quickstart\" target=\"_blank\" rel=\"noreferrer noopener\">Gemini API Quickstart</a>, <a href=\"https://cloud.google.com/api-keys/docs\" target=\"_blank\" rel=\"noreferrer noopener\">Google Cloud API Keys documentation</a>."
+  },
+  "tutorialFooter": {
+    "message": "© 2026 Incognito PrivoAI · Tutorial refreshed for v28.1.6"
+  }
 }

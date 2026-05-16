@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "Hlas→text, AI chat, překlad webu, AI čtení, mindfulness. Gemini API klíč nebo lokální AI — bez serveru, data v prohlížeči.",
+    "message": "Hlas→text, AI chat, překlad webu, AI čtení. Gemini API klíč nebo lokální AI — bez serveru, data v prohlížeči.",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -594,21 +594,69 @@
   "localModelNamePlaceholder": {
     "message": "llama3.2"
   },
-  "localModelTestButton": { "message": "Test Connection" },
-  "localModelRefreshButton": { "message": "Refresh Models" },
-  "localModelSelectLabel": { "message": "Detected Models" },
-  "localModelSelectPlaceholder": { "message": "Choose a detected model..." },
-  "localModelSelectEmpty": { "message": "No models detected yet" },
-  "localModelManualHint": { "message": "If auto-detection fails, you can still enter the model name manually below." },
-  "localModelDetectedHint": { "message": "Detected via $SOURCE$. Selecting a model will fill the field below.", "placeholders": { "source": { "content": "$1" } } },
-  "localModelStatusNeedEndpoint": { "message": "Enter an endpoint URL first." },
-  "localModelStatusTesting": { "message": "Testing endpoint and fetching model list..." },
-  "localModelStatusLoading": { "message": "Fetching model list..." },
-  "localModelStatusSuccess": { "message": "Connected. Found $COUNT$ models via $SOURCE$.", "placeholders": { "count": { "content": "$1" }, "source": { "content": "$2" } } },
-  "localModelStatusNoModels": { "message": "Connected, but no installed models were reported via $SOURCE$.", "placeholders": { "source": { "content": "$1" } } },
-  "localModelStatusError": { "message": "Could not reach the server or retrieve a model list." },
-  "localModelSourceOpenAI": { "message": "/v1/models" },
-  "localModelSourceOllama": { "message": "Ollama /api/tags" },
+  "localModelTestButton": {
+    "message": "Test Connection"
+  },
+  "localModelRefreshButton": {
+    "message": "Refresh Models"
+  },
+  "localModelSelectLabel": {
+    "message": "Detected Models"
+  },
+  "localModelSelectPlaceholder": {
+    "message": "Choose a detected model..."
+  },
+  "localModelSelectEmpty": {
+    "message": "No models detected yet"
+  },
+  "localModelManualHint": {
+    "message": "If auto-detection fails, you can still enter the model name manually below."
+  },
+  "localModelDetectedHint": {
+    "message": "Detected via $SOURCE$. Selecting a model will fill the field below.",
+    "placeholders": {
+      "source": {
+        "content": "$1"
+      }
+    }
+  },
+  "localModelStatusNeedEndpoint": {
+    "message": "Enter an endpoint URL first."
+  },
+  "localModelStatusTesting": {
+    "message": "Testing endpoint and fetching model list..."
+  },
+  "localModelStatusLoading": {
+    "message": "Fetching model list..."
+  },
+  "localModelStatusSuccess": {
+    "message": "Connected. Found $COUNT$ models via $SOURCE$.",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "source": {
+        "content": "$2"
+      }
+    }
+  },
+  "localModelStatusNoModels": {
+    "message": "Connected, but no installed models were reported via $SOURCE$.",
+    "placeholders": {
+      "source": {
+        "content": "$1"
+      }
+    }
+  },
+  "localModelStatusError": {
+    "message": "Could not reach the server or retrieve a model list."
+  },
+  "localModelSourceOpenAI": {
+    "message": "/v1/models"
+  },
+  "localModelSourceOllama": {
+    "message": "Ollama /api/tags"
+  },
   "localModelTabName": {
     "message": "Lokální model"
   },
@@ -868,94 +916,69 @@
   "voiceLimitHint": {
     "message": "Maximální délka nahrávání: 15 minut."
   },
-  "popupOpenDharma": { "message": "Mistři Dharmy · Všímavost" },
-  "dharmaTitle": { "message": "Incognito Mind Ask" },
-  "dharmaHeaderTitle": { "message": "Všímavost & Dharma — Tři tradice" },
-  "dharmaHeaderSub": { "message": "Ať jsi v jakémkoliv stavu, můžeš o tom tady mluvit" },
-  "dharmaAboutBtn": { "message": "O aplikaci" },
-  "dharmaAboutCloseBtn": { "message": "Zavřít" },
-  "dharmaNoApiKeyBefore": { "message": "Klíč API Gemini není nastaven. Přejdi do" },
-  "dharmaNoApiKeyLink": { "message": "Nastavení" },
-  "dharmaNoApiKeyAfter": { "message": "a zadej svůj klíč API." },
-  "dharmaTabCompare": { "message": "⚖️ Porovnat" },
-  "dharmaTabTib": { "message": "🙏 Dalai" },
-  "dharmaTabZen": { "message": "⛰️ DDM" },
-  "dharmaTabHum": { "message": "🪷 FGS" },
-  "dharmaCmpColTibLabel": { "message": "🙏 Dalai" },
-  "dharmaCmpColTibTag": { "message": "Tibetský · Soucit" },
-  "dharmaCmpColZenLabel": { "message": "⛰️ DDM" },
-  "dharmaCmpColZenTag": { "message": "Chan · Všímavost" },
-  "dharmaCmpColHumLabel": { "message": "🪷 FGS" },
-  "dharmaCmpColHumTag": { "message": "Humanistický · Čin" },
-  "dharmaCmpTibWelcomeName": { "message": "Tibetský buddhismus · Gelug" },
-  "dharmaCmpTibWelcomeDesc": { "message": "Přijmout utrpení se soucitem<br>Bódhičitta · Prázdnota · Soucit" },
-  "dharmaCmpTibWelcomeSub": { "message": "Bódhičitta · Prázdnota · Soucit" },
-  "dharmaCmpZenWelcomeName": { "message": "Dharma Drum Mountain · Mistr Sheng Yen" },
-  "dharmaCmpZenWelcomeDesc": { "message": "Přímé ukázání na uvědomění<br>Návrat do přítomného okamžiku" },
-  "dharmaCmpZenWelcomeSub": { "message": "Bezjáství · Všímavost · Duchovní ekologie" },
-  "dharmaCmpHumWelcomeName": { "message": "Fo Guang Shan · Humanistický buddhismus" },
-  "dharmaCmpHumWelcomeDesc": { "message": "Dharma v každodenním životě<br>Teplo a pozitivní čin" },
-  "dharmaCmpHumWelcomeSub": { "message": "Závislé vznikání · Altruismus · Čistá země" },
-  "dharmaCmpInputPlaceholder": { "message": "Zadej otázku pro porovnání tří tradic…" },
-  "dharmaCmpLabel": { "message": "3 tradice" },
-  "dharmaTibWelcomeName": { "message": "Styl Dalajlámy · Tibetský soucit" },
-  "dharmaTibWelcomeDesc": { "message": "Vedeni bódhičittou<br>Lam Rim · Čtyři vznešené pravdy" },
-  "dharmaTibWelcomeSub": { "message": "Gelug · Soucit · Prázdnota" },
-  "dharmaZenWelcomeName": { "message": "Styl Mistra Sheng Yen · Chan DDM" },
-  "dharmaZenWelcomeDesc": { "message": "Čelit · Přijmout · Vyřešit · Pustit<br>Duchovní ekologie · Přítomnost" },
-  "dharmaZenWelcomeSub": { "message": "Caodong · Linji · Bezjáství" },
-  "dharmaHumWelcomeName": { "message": "Styl Mistra Hsing Yun · Humanistický buddhismus" },
-  "dharmaHumWelcomeDesc": { "message": "Fo Guang Shan · Dharma v životě<br>Āgama · Lotosová sútra · Avataṃsaka" },
-  "dharmaHumWelcomeSub": { "message": "Čistá země · Závislé vznikání · Praxe" },
-  "dharmaTibInputPlaceholder": { "message": "Řekni mi, co tě trápí…" },
-  "dharmaZenInputPlaceholder": { "message": "Co se teď děje?" },
-  "dharmaHumInputPlaceholder": { "message": "O čem chceš mluvit?" },
-  "dharmaFooterTitle": { "message": "Prohlášení o vyloučení odpovědnosti" },
-  "dharmaFooterNote": { "message": "Obsah generuje umělá inteligence pomocí jazykových modelů pro osobní sebepoznání. Nemůže nahradit diagnózu nebo léčbu zdravotnickými odborníky. V případě bezprostředního nebezpečí nebo rizika sebepoškozování se okamžitě obraťte na záchranné složky." },
-  "dharmaSugg1": { "message": "Poslední dobou se hodně stresuju a nevím, co přinese budoucnost" },
-  "dharmaSugg2": { "message": "Pohádal jsem se s rodinou a jsem z toho velmi smutný" },
-  "dharmaSugg3": { "message": "Cítím, že nic, co dělám, nemá smysl" },
-  "dharmaSugg4": { "message": "Nemůžu spát — myšlenky se nezastaví" },
-  "dharmaSugg5": { "message": "Cítím se velmi ztracený" },
-  "dharmaSugg6": { "message": "Pracovní stres je zdrcující — nevím, jak dlouho to ještě vydržím" },
-  "dharmaUserLabel": { "message": "Ty" },
-  "dharmaApiKeyMissing": { "message": "Nejprve zadej svůj klíč API Gemini v Nastavení" },
-  "dharmaErrorMsg": { "message": "(Chyba: $ERROR$)", "placeholders": { "error": { "content": "$1" } } },
-  "dharmaApiBlocked": { "message": "API odmítlo odpovědět: " },
-  "dharmaNoResponse": { "message": "Nepodařilo se získat odpověď" },
-  "dharmaIntroP1": { "message": "Ještě před dobou psychoterapie a psychiatrie mnoho lidí na Tchaj-wanu, kteří čelili životním potížím, hledalo radu u správců chrámů nebo mnichů. Ve východní Asii se moudrost některých buddhistických mudrců předává z generace na generaci. Toto je rozšířená verze soukromého chatu — ať jste v jakémkoli rozpoložení, můžete tady mluvit." },
-  "dharmaIntroP2": { "message": "Tři styly rozhovoru zde vycházejí ze tří nejvlivnějších buddhistických myslitelů dvacátého století. Každý působil v jiné zemi a jiným způsobem, ale odpovídal na tutéž otázku: co mohou lidé dělat, když trpí?" },
-  "dharmaTibIntroHdr": { "message": "🙏 <strong>Dalajláma</strong> (Tenzin Gyatso)" },
-  "dharmaTibIntroP1": { "message": "Duchovní vůdce tibetského buddhismu, narozený v roce 1935 v Amdu v Tibetu. Po útěku do Indie v roce 1959 strávil desítky let tím, že proměňoval utrpení jednoho národa v soucit s celým lidstvem. V roce 1989 obdržel Nobelovu cenu za mír." },
-  "dharmaTibIntroP2": { "message": "At the core of his teaching is compassion and bodhicitta — the aspiration to bear the suffering of all beings. He often says: \"Each morning I remind myself that I am just one of billions of people on this earth. We are all the same — each of us wishes to be free from suffering.\"" },
-  "dharmaZenIntroHdr": { "message": "⛩️ <strong>Mistr Sheng Yen</strong> (聖嚴法師)" },
-  "dharmaZenIntroP1": { "message": "Founder of Dharma Drum Mountain and heir of the Caodong and Linji Chan lineages. He earned his doctorate from Rissho University in Japan in 1975, and authored over a hundred works in Chinese, English, and Japanese." },
-  "dharmaZenIntroP2": { "message": "Jeho nejznámější učení zní: „Postav se tomu, přijmi to, vypořádej se s tím a pusť to“ — vyjadřuje čchanový postoj nevyhýbat se ani nelpět a vracet se do této přítomné chvíle." },
-  "dharmaHumIntroHdr": { "message": "🪷 <strong>Mistr Hsing Yun</strong> (星雲大師)" },
-  "dharmaHumIntroP1": { "message": "Founding abbot of Fo Guang Shan, born in Jiangsu in 1927 and ordained at age 12. He passed away in 2023 at age 97, having built over three hundred monasteries worldwide." },
-  "dharmaHumIntroP2": { "message": "His philosophy centered on giving: give people confidence, give people joy, give people hope, give people convenience. When facing difficulties, he would say: go do one good deed, and your state of mind will be different." },
-  "dharmaIntroClosing": { "message": "Tři styly, tři cesty. Nemusíte si vybírat stranu a nepotřebujete žádnou víru. Prostě když máte něco na srdci, můžete se jich přijít zeptat." },
-  "screenTimeSectionHeader": { "message": "Připomenutí času u obrazovky" },
-  "screenTimeDesc": { "message": "Když zůstanete na stejné stránce po zvolenou dobu, do vámi vybraného rohu obrazovky spadne 🍎. Kliknutím ji odstraníte a časovač se vynuluje." },
-  "screenTimeThresholdLabel": { "message": "Připomenutí po setrvání na stránce (minuty)" },
-  "screenTimeOff": { "message": "Vypnuto" },
-  "screenTimeHelp": { "message": "Pozastaví se, když přepnete na jinou kartu/okno nebo jste 60 sekund neaktivní. Nefunguje na stránkách chrome://." },
+  "screenTimeSectionHeader": {
+    "message": "Připomenutí času u obrazovky"
+  },
+  "screenTimeDesc": {
+    "message": "Když zůstanete na stejné stránce po zvolenou dobu, do vámi vybraného rohu obrazovky spadne 🍎. Kliknutím ji odstraníte a časovač se vynuluje."
+  },
+  "screenTimeThresholdLabel": {
+    "message": "Připomenutí po setrvání na stránce (minuty)"
+  },
+  "screenTimeOff": {
+    "message": "Vypnuto"
+  },
+  "screenTimeHelp": {
+    "message": "Pozastaví se, když přepnete na jinou kartu/okno nebo jste 60 sekund neaktivní. Nefunguje na stránkách chrome://."
+  },
   "screenTimeReminderText": {
     "message": "Strávili jste $MINUTES$ minut — je čas přesunout pozornost a protáhnout se.",
-    "placeholders": { "minutes": { "content": "$1" } }
+    "placeholders": {
+      "minutes": {
+        "content": "$1"
+      }
+    }
   },
-  "screenTimePositionLabel": { "message": "🍎 se objeví v rohu" },
-  "screenTimePositionBR": { "message": "Vpravo dole" },
-  "screenTimePositionBL": { "message": "Vlevo dole" },
-  "screenTimePositionTR": { "message": "Vpravo nahoře" },
-  "screenTimePositionTL": { "message": "Vlevo nahoře" },
-  "screenTimeEnableLabel": { "message": "Zapnout připomenutí času u obrazovky" },
-  "screenTimeMinUnit": { "message": "min" },
-  "screenTimeFirstTimeHint": { "message": "Klikni pro krátkou pauzu a vynulování časovače." },
-  "incognitoEmptyStateTitle": { "message": "Začněte konverzaci" },
-  "incognitoEmptyStateHint": { "message": "Klepněte na některý návrh níže, nebo napište vlastní otázku." },
-  "incognitoStarter1": { "message": "Shrň toto do tří bodů." },
-  "incognitoStarter2": { "message": "Přelož následující do češtiny." },
-  "incognitoStarter3": { "message": "Přepiš to, aby to bylo jasnější a srozumitelnější." },
-  "incognitoStarter4": { "message": "Uveď hlavní tvrzení a doklady pro každé z nich." }
+  "screenTimePositionLabel": {
+    "message": "🍎 se objeví v rohu"
+  },
+  "screenTimePositionBR": {
+    "message": "Vpravo dole"
+  },
+  "screenTimePositionBL": {
+    "message": "Vlevo dole"
+  },
+  "screenTimePositionTR": {
+    "message": "Vpravo nahoře"
+  },
+  "screenTimePositionTL": {
+    "message": "Vlevo nahoře"
+  },
+  "screenTimeEnableLabel": {
+    "message": "Zapnout připomenutí času u obrazovky"
+  },
+  "screenTimeMinUnit": {
+    "message": "min"
+  },
+  "screenTimeFirstTimeHint": {
+    "message": "Klikni pro krátkou pauzu a vynulování časovače."
+  },
+  "incognitoEmptyStateTitle": {
+    "message": "Začněte konverzaci"
+  },
+  "incognitoEmptyStateHint": {
+    "message": "Klepněte na některý návrh níže, nebo napište vlastní otázku."
+  },
+  "incognitoStarter1": {
+    "message": "Shrň toto do tří bodů."
+  },
+  "incognitoStarter2": {
+    "message": "Přelož následující do češtiny."
+  },
+  "incognitoStarter3": {
+    "message": "Přepiš to, aby to bylo jasnější a srozumitelnější."
+  },
+  "incognitoStarter4": {
+    "message": "Uveď hlavní tvrzení a doklady pro každé z nich."
+  }
 }

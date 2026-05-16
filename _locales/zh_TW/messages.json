@@ -4,7 +4,7 @@
     "description": "The name of the extension."
   },
   "appDesc": {
-    "message": "語音轉文字、AI無痕對話、網頁翻譯、AI語音朗讀、心靈正念。使用您自己的Gemini API金鑰或本機AI模型，確保隱私—無後台伺服器，資料不離開瀏覽器。",
+    "message": "語音轉文字、AI無痕對話、網頁翻譯、AI語音朗讀。使用您自己的Gemini API金鑰或本機AI模型，確保隱私—無後台伺服器，資料不離開瀏覽器。",
     "description": "The description of the extension in the manifest."
   },
   "popupTranslatePage": {
@@ -1105,128 +1105,165 @@
     "message": "最長錄音：15 分鐘。",
     "description": "Hint text showing maximum recording duration under the record button."
   },
-  "popupOpenDharma": {
-    "message": "三位禪師 · 心靈正念"
+  "screenTimeSectionHeader": {
+    "message": "螢幕使用時間提醒"
   },
-  "dharmaTitle": { "message": "Incognito Mind Ask" },
-  "dharmaHeaderTitle": { "message": "心靈與正念 — 三宗風格" },
-  "dharmaHeaderSub": { "message": "不論你現在的狀態，都可以在這裡說說看的" },
-  "dharmaAboutBtn": { "message": "關於" },
-  "dharmaAboutCloseBtn": { "message": "收起" },
-  "dharmaNoApiKeyBefore": { "message": "尚未設定 Gemini API Key，請先至" },
-  "dharmaNoApiKeyLink": { "message": "設定頁面" },
-  "dharmaNoApiKeyAfter": { "message": "輸入 API Key。" },
-  "dharmaTabCompare": { "message": "⚖️ 同題比較" },
-  "dharmaTabTib": { "message": "🙏 達賴" },
-  "dharmaTabZen": { "message": "⛰️ 法鼓" },
-  "dharmaTabHum": { "message": "🪷 人間" },
-  "dharmaCmpColTibLabel": { "message": "🙏 達賴" },
-  "dharmaCmpColTibTag": { "message": "藏傳 · 慈悲" },
-  "dharmaCmpColZenLabel": { "message": "⛰️ 法鼓" },
-  "dharmaCmpColZenTag": { "message": "禪宗 · 覺照" },
-  "dharmaCmpColHumLabel": { "message": "🪷 人間" },
-  "dharmaCmpColHumTag": { "message": "人間佛教 · 行動" },
-  "dharmaCmpTibWelcomeName": { "message": "藏傳佛教 · 格魯派" },
-  "dharmaCmpTibWelcomeDesc": { "message": "慈悲承接苦難<br>菩提心 · 空性 · 慈悲" },
-  "dharmaCmpTibWelcomeSub": { "message": "菩提心 · 空性 · 慈悲" },
-  "dharmaCmpZenWelcomeName": { "message": "法鼓山 · 聖嚴法師" },
-  "dharmaCmpZenWelcomeDesc": { "message": "直指覺照根本<br>回到當下覺照" },
-  "dharmaCmpZenWelcomeSub": { "message": "無我 · 覺照 · 心靈環保" },
-  "dharmaCmpHumWelcomeName": { "message": "佛光山 · 人間佛教" },
-  "dharmaCmpHumWelcomeDesc": { "message": "佛法落實日常<br>溫暖與積極" },
-  "dharmaCmpHumWelcomeSub": { "message": "緣起 · 利他 · 人間淨土" },
-  "dharmaCmpInputPlaceholder": { "message": "輸入同一個問題，同時比較三種傳統的回應……" },
-  "dharmaCmpLabel": { "message": "三宗回答" },
-  "dharmaTibWelcomeName": { "message": "達賴喇嘛風格 · 藏傳慈悲" },
-  "dharmaTibWelcomeDesc": { "message": "菩提心引導<br>詮釋逆次第 · 苦諦諦行論" },
-  "dharmaTibWelcomeSub": { "message": "格魯派 · 慈悲 · 空性" },
-  "dharmaZenWelcomeName": { "message": "聖嚴法師風格 · 法鼓禪宗" },
-  "dharmaZenWelcomeDesc": { "message": "面對它接受它處理它放下它<br>心靈環保 · 覺照當下" },
-  "dharmaZenWelcomeSub": { "message": "聖嚴宗 · 曹洞宗 · 無我" },
-  "dharmaHumWelcomeName": { "message": "星雲大師風格 · 人間佛教" },
-  "dharmaHumWelcomeDesc": { "message": "佛光山 · 佛法生活化<br>阿含經 · 法華經 · 華嚴經" },
-  "dharmaHumWelcomeSub": { "message": "人間淨土 · 緣起 · 諦諦行" },
-  "dharmaTibInputPlaceholder": { "message": "說說你的困擾……" },
-  "dharmaZenInputPlaceholder": { "message": "現在發生什麼事？" },
-  "dharmaHumInputPlaceholder": { "message": "有什麼想聊的？" },
-  "dharmaFooterTitle": { "message": "使用聲明" },
-  "dharmaFooterNote": { "message": "內容為AI應用LLM生成，供生活自我探索與閱讀參考，不能取代醫療或心理專業人士的診斷與治療。若你正面臨急迫危險、自傷或傷人風險，請立即聯繫當地緊急資源或就醫。如果您覺得好用，歡迎小額贊助連結本人的 Buy Me a Coffee 網頁，用實際行動贊助。" },
-  "dharmaSugg1": { "message": "我最近很煩惱，不知道未來怎樣" },
-  "dharmaSugg2": { "message": "我和家人吵架了，心裡很難過" },
-  "dharmaSugg3": { "message": "我覺得自己做什麼都沒有意義" },
-  "dharmaSugg4": { "message": "睡不著，腦子一直轉不下來" },
-  "dharmaSugg5": { "message": "我覺得很失落" },
-  "dharmaSugg6": { "message": "工作壓力很大，不知道撐不撐得住" },
-  "dharmaUserLabel": { "message": "你" },
-  "dharmaApiKeyMissing": { "message": "請先至設定頁面輸入 Gemini API Key" },
-  "dharmaErrorMsg": { "message": "（錯誤：$ERROR$）", "placeholders": { "error": { "content": "$1" } } },
-  "dharmaApiBlocked": { "message": "API 拒絕回應：" },
-  "dharmaNoResponse": { "message": "無法取得回應" },
-  "dharmaIntroP1": { "message": "在還沒有心理治療或精神醫學的年代，許多台灣人遇到生活困擾，可能會去找廟裡面的廟公或寺廟的師父。在東亞地區，有些佛教智者的智慧語錄流傳深遠。這是無痕對話的延伸版本，不論你現在的狀態，都可以在這裡說說看的。" },
-  "dharmaIntroP2": { "message": "這裡的三種對話風格，來自二十世紀最具影響力的三位佛教思想家。他們各自在不同的土地上，用不同的方式，回應同一個問題：人在苦難中，能怎麼辦？" },
-  "dharmaTibIntroHdr": { "message": "🙏 <strong>達賴喇嘛</strong>（Tenzin Gyatso）" },
-  "dharmaTibIntroP1": { "message": "藏傳佛教的精神領袖，1935年生於西藏安多，三歲時被認證為前世達賴喇嘛的轉世。1959年流亡印度，此後數十年，他把一個民族的苦難轉化成對全人類的關懷，以非暴力精神著稱，並於1989年獲諾貝爾和平獎。" },
-  "dharmaTibIntroP2": { "message": "他的教法核心是慈悲與菩提心——願意為所有眾生承擔苦難的心。他常說：「每天早晨我提醒自己，我只是地球上幾十億人中的一個，我們都一樣，每個人都希望離苦得樂。」遇到什麼困境，他習慣先讓你感到不孤單，再帶你看見更廣闊的視野。" },
-  "dharmaZenIntroHdr": { "message": "⛩️ <strong>聖嚴法師</strong>（Master Sheng Yen）" },
-  "dharmaZenIntroP1": { "message": "禪宗曹洞宗第五十代傳人、臨濟宗第五十七代傳人，法鼓山創辦人，1975年於日本立正大學取得博士學位，是漢傳佛教第一位赴日攻讀博士的出家僧人。曾獲台灣《天下》雜誌選為「四百年來台灣最具影響力的五十位人士」之一，著有中英日文著作百餘種。" },
-  "dharmaZenIntroP2": { "message": "他最廣為人知的一句話是「面對它、接受它、處理它、放下它」——十二個字，說的是禪的態度：不逃避，不糾纏，回到當下這一刻。說話簡短，直指核心，像一把輕輕剪斷麻繩的刀。" },
-  "dharmaHumIntroHdr": { "message": "🪷 <strong>星雲大師</strong>（Master Hsing Yun）" },
-  "dharmaHumIntroP1": { "message": "佛光山開山宗長，1927年生於江蘇，12歲出家，致力實踐「人間佛教」理念，是將佛教現代化、國際化的關鍵人物，2023年圓寂，享壽97歲。他相信佛法不屬於寺廟，而屬於生活，在海內外興建逾三百所道場，創辦大學、美術館、日報、電視台。" },
-  "dharmaHumIntroP2": { "message": "他的哲學是「給」：給人信心、給人歡喜、給人希望、給人方便。遇到困難，他不會讓你只坐著觀想，他會說：去做一件好事，心境就不一樣了。" },
-  "dharmaIntroClosing": { "message": "三種風格，三條路。你不需要選邊站，也不需要有任何信仰。只是，當你心裡有什麼，可以來問問他們。" },
-  "screenTimeSectionHeader": { "message": "螢幕使用時間提醒" },
-  "screenTimeDesc": { "message": "當您停留在同一個網址達到指定時間時，畫面上會落下一顆蘋果到您選擇的角落。點擊蘋果即可消失，並重新計時。" },
-  "screenTimeThresholdLabel": { "message": "停留在同一網址（分鐘）後提醒" },
-  "screenTimeOff": { "message": "關閉" },
-  "screenTimeHelp": { "message": "切換到其他分頁/視窗或閒置 60 秒時會暫停計時。chrome:// 等系統頁面無法顯示。" },
+  "screenTimeDesc": {
+    "message": "當您停留在同一個網址達到指定時間時，畫面上會落下一顆蘋果到您選擇的角落。點擊蘋果即可消失，並重新計時。"
+  },
+  "screenTimeThresholdLabel": {
+    "message": "停留在同一網址（分鐘）後提醒"
+  },
+  "screenTimeOff": {
+    "message": "關閉"
+  },
+  "screenTimeHelp": {
+    "message": "切換到其他分頁/視窗或閒置 60 秒時會暫停計時。chrome:// 等系統頁面無法顯示。"
+  },
   "screenTimeReminderText": {
     "message": "您已使用 $MINUTES$ 分鐘，建議轉換注意力、起身動一動。",
-    "placeholders": { "minutes": { "content": "$1" } }
+    "placeholders": {
+      "minutes": {
+        "content": "$1"
+      }
+    }
   },
-  "screenTimePositionLabel": { "message": "蘋果出現位置" },
-  "screenTimePositionBR": { "message": "右下" },
-  "screenTimePositionBL": { "message": "左下" },
-  "screenTimePositionTR": { "message": "右上" },
-  "screenTimePositionTL": { "message": "左上" },
-  "screenTimeEnableLabel": { "message": "啟用螢幕使用時間提醒" },
-  "screenTimeMinUnit": { "message": "分" },
-  "screenTimeFirstTimeHint": { "message": "點我休息一下，重新計時" },
-  "incognitoEmptyStateTitle": { "message": "開始對話" },
-  "incognitoEmptyStateHint": { "message": "點選下方建議快速開始，或直接輸入您的問題。" },
-  "incognitoStarter1": { "message": "請用三點摘要這段內容。" },
-  "incognitoStarter2": { "message": "請翻譯成繁體中文。" },
-  "incognitoStarter3": { "message": "請改寫得更清楚易讀。" },
-  "incognitoStarter4": { "message": "請列出主要論點與佐證。" },
-  "tutorialHeroKicker": { "message": "Gemini API 設定教學" },
-  "tutorialHeroTitle": { "message": "為 Incognito PrivoAI 取得 Gemini API 金鑰" },
-  "tutorialHeroMeta": { "message": "更新對應 v28.1.6 · 2026 年 4 月" },
-  "tutorialHeroIntro": { "message": "這份教學提供目前最快的流程，帶您在 Google AI Studio 建立 Gemini API 金鑰，並加入本擴充功能。介面按鈕名稱未來可能微調，但整體步驟通常不變：登入、建立金鑰、複製一次、再貼到選項設定頁。" },
-  "tutorialSummaryNeedTitle": { "message": "您需要準備" },
-  "tutorialSummaryNeedDesc": { "message": "一個 Google 帳號，以及 Google AI Studio 的存取權。" },
-  "tutorialSummaryGetTitle": { "message": "完成後會獲得" },
-  "tutorialSummaryGetDesc": { "message": "一組可貼到擴充功能「選項」頁面的 API 金鑰。" },
-  "tutorialSummaryKnowTitle": { "message": "值得了解的事" },
-  "tutorialSummaryKnowDesc": { "message": "金鑰具有專案層級的存取權限，請妥善保管，並撤銷不再使用的金鑰。" },
-  "tutorialBeforeTitle": { "message": "開始前先知道" },
-  "tutorialBeforeBullet1": { "message": "如果畫面和截圖略有不同，通常不用緊張，Google AI Studio 介面更新很常見。" },
-  "tutorialBeforeBullet2": { "message": "完成基本設定不需要先深入理解整套 Google Cloud。" },
-  "tutorialBeforeBullet3": { "message": "如果您只想做本機文字任務，之後也可以改用本機 AI 模型。" },
-  "tutorialStep1Title": { "message": "開啟 API 金鑰頁面" },
-  "tutorialStep1Body": { "message": "前往 Google AI Studio 的 API 金鑰頁面，並使用您的 Google 帳號登入。如果系統先要求您選擇專案，也屬正常流程。" },
-  "tutorialStep1Cta": { "message": "開啟 Google AI Studio" },
-  "tutorialStep2Title": { "message": "在專案中建立金鑰" },
-  "tutorialStep2Body": { "message": "點擊 AI Studio 介面中的 API 金鑰建立按鈕。對第一次使用者來說，直接建立在新專案中通常最簡單。如果您已經有專門給 Gemini API 使用的專案，也可以把金鑰建立在既有專案內。" },
-  "tutorialStep3Title": { "message": "複製金鑰並妥善保管" },
-  "tutorialStep3Body": { "message": "金鑰建立完成後請立即複製。Gemini API 金鑰通常會以 <code>AIza</code> 開頭。請小心保存，不要把它貼到 GitHub、論壇、共用文件，或任何可能被他人看到的地方。" },
-  "tutorialStep4Title": { "message": "貼到擴充功能選項頁" },
-  "tutorialStep4Body": { "message": "打開擴充功能的<strong>「選項」</strong>頁面，把金鑰貼到<strong>「Gemini API 金鑰」</strong>欄位後儲存。如果您不確定該選哪個模型，先使用介面中預設或建議的 Flash / Lite 選項即可。模型名稱未來可能變動，因此最穩妥的做法是先用預設值，之後再視需求調整。" },
-  "tutorialStep4Success": { "message": "儲存完成後，就可以使用基於 Gemini 的功能了。" },
-  "tutorialSafetyTitle": { "message": "金鑰安全建議" },
-  "tutorialSafetyBullet1": { "message": "建議為本擴充功能使用專用金鑰，不要和其他專案共用。" },
-  "tutorialSafetyBullet2": { "message": "不再使用的金鑰，請主動刪除或輪替。" },
-  "tutorialSafetyBullet3": { "message": "若您在 Google Cloud 管理金鑰，設定限制通常是好習慣；但瀏覽器擴充功能與伺服器型應用不同，套用限制後請務必實際測試。" },
-  "tutorialLocalTitle": { "message": "選配：文字任務可改用本機 AI" },
-  "tutorialLocalBody": { "message": "本專案也支援連線到 Ollama、LM Studio 或其他 OpenAI 相容的本機端點，處理純文字任務。如果您想讓聊天或翻譯走本機處理，這會很實用；但語音、OCR、圖片與 PDF 功能仍然需要 Gemini。" },
-  "tutorialReferences": { "message": "參考資料：<a href=\"https://ai.google.dev/gemini-api/docs/quickstart\" target=\"_blank\" rel=\"noreferrer noopener\">Gemini API 快速入門</a>、<a href=\"https://cloud.google.com/api-keys/docs\" target=\"_blank\" rel=\"noreferrer noopener\">Google Cloud API Keys 文件</a>。" },
-  "tutorialFooter": { "message": "© 2026 Incognito PrivoAI · 教學更新於 v28.1.6" }
+  "screenTimePositionLabel": {
+    "message": "蘋果出現位置"
+  },
+  "screenTimePositionBR": {
+    "message": "右下"
+  },
+  "screenTimePositionBL": {
+    "message": "左下"
+  },
+  "screenTimePositionTR": {
+    "message": "右上"
+  },
+  "screenTimePositionTL": {
+    "message": "左上"
+  },
+  "screenTimeEnableLabel": {
+    "message": "啟用螢幕使用時間提醒"
+  },
+  "screenTimeMinUnit": {
+    "message": "分"
+  },
+  "screenTimeFirstTimeHint": {
+    "message": "點我休息一下，重新計時"
+  },
+  "incognitoEmptyStateTitle": {
+    "message": "開始對話"
+  },
+  "incognitoEmptyStateHint": {
+    "message": "點選下方建議快速開始，或直接輸入您的問題。"
+  },
+  "incognitoStarter1": {
+    "message": "請用三點摘要這段內容。"
+  },
+  "incognitoStarter2": {
+    "message": "請翻譯成繁體中文。"
+  },
+  "incognitoStarter3": {
+    "message": "請改寫得更清楚易讀。"
+  },
+  "incognitoStarter4": {
+    "message": "請列出主要論點與佐證。"
+  },
+  "tutorialHeroKicker": {
+    "message": "Gemini API 設定教學"
+  },
+  "tutorialHeroTitle": {
+    "message": "為 Incognito PrivoAI 取得 Gemini API 金鑰"
+  },
+  "tutorialHeroMeta": {
+    "message": "更新對應 v28.1.6 · 2026 年 4 月"
+  },
+  "tutorialHeroIntro": {
+    "message": "這份教學提供目前最快的流程，帶您在 Google AI Studio 建立 Gemini API 金鑰，並加入本擴充功能。介面按鈕名稱未來可能微調，但整體步驟通常不變：登入、建立金鑰、複製一次、再貼到選項設定頁。"
+  },
+  "tutorialSummaryNeedTitle": {
+    "message": "您需要準備"
+  },
+  "tutorialSummaryNeedDesc": {
+    "message": "一個 Google 帳號，以及 Google AI Studio 的存取權。"
+  },
+  "tutorialSummaryGetTitle": {
+    "message": "完成後會獲得"
+  },
+  "tutorialSummaryGetDesc": {
+    "message": "一組可貼到擴充功能「選項」頁面的 API 金鑰。"
+  },
+  "tutorialSummaryKnowTitle": {
+    "message": "值得了解的事"
+  },
+  "tutorialSummaryKnowDesc": {
+    "message": "金鑰具有專案層級的存取權限，請妥善保管，並撤銷不再使用的金鑰。"
+  },
+  "tutorialBeforeTitle": {
+    "message": "開始前先知道"
+  },
+  "tutorialBeforeBullet1": {
+    "message": "如果畫面和截圖略有不同，通常不用緊張，Google AI Studio 介面更新很常見。"
+  },
+  "tutorialBeforeBullet2": {
+    "message": "完成基本設定不需要先深入理解整套 Google Cloud。"
+  },
+  "tutorialBeforeBullet3": {
+    "message": "如果您只想做本機文字任務，之後也可以改用本機 AI 模型。"
+  },
+  "tutorialStep1Title": {
+    "message": "開啟 API 金鑰頁面"
+  },
+  "tutorialStep1Body": {
+    "message": "前往 Google AI Studio 的 API 金鑰頁面，並使用您的 Google 帳號登入。如果系統先要求您選擇專案，也屬正常流程。"
+  },
+  "tutorialStep1Cta": {
+    "message": "開啟 Google AI Studio"
+  },
+  "tutorialStep2Title": {
+    "message": "在專案中建立金鑰"
+  },
+  "tutorialStep2Body": {
+    "message": "點擊 AI Studio 介面中的 API 金鑰建立按鈕。對第一次使用者來說，直接建立在新專案中通常最簡單。如果您已經有專門給 Gemini API 使用的專案，也可以把金鑰建立在既有專案內。"
+  },
+  "tutorialStep3Title": {
+    "message": "複製金鑰並妥善保管"
+  },
+  "tutorialStep3Body": {
+    "message": "金鑰建立完成後請立即複製。Gemini API 金鑰通常會以 <code>AIza</code> 開頭。請小心保存，不要把它貼到 GitHub、論壇、共用文件，或任何可能被他人看到的地方。"
+  },
+  "tutorialStep4Title": {
+    "message": "貼到擴充功能選項頁"
+  },
+  "tutorialStep4Body": {
+    "message": "打開擴充功能的<strong>「選項」</strong>頁面，把金鑰貼到<strong>「Gemini API 金鑰」</strong>欄位後儲存。如果您不確定該選哪個模型，先使用介面中預設或建議的 Flash / Lite 選項即可。模型名稱未來可能變動，因此最穩妥的做法是先用預設值，之後再視需求調整。"
+  },
+  "tutorialStep4Success": {
+    "message": "儲存完成後，就可以使用基於 Gemini 的功能了。"
+  },
+  "tutorialSafetyTitle": {
+    "message": "金鑰安全建議"
+  },
+  "tutorialSafetyBullet1": {
+    "message": "建議為本擴充功能使用專用金鑰，不要和其他專案共用。"
+  },
+  "tutorialSafetyBullet2": {
+    "message": "不再使用的金鑰，請主動刪除或輪替。"
+  },
+  "tutorialSafetyBullet3": {
+    "message": "若您在 Google Cloud 管理金鑰，設定限制通常是好習慣；但瀏覽器擴充功能與伺服器型應用不同，套用限制後請務必實際測試。"
+  },
+  "tutorialLocalTitle": {
+    "message": "選配：文字任務可改用本機 AI"
+  },
+  "tutorialLocalBody": {
+    "message": "本專案也支援連線到 Ollama、LM Studio 或其他 OpenAI 相容的本機端點，處理純文字任務。如果您想讓聊天或翻譯走本機處理，這會很實用；但語音、OCR、圖片與 PDF 功能仍然需要 Gemini。"
+  },
+  "tutorialReferences": {
+    "message": "參考資料：<a href=\"https://ai.google.dev/gemini-api/docs/quickstart\" target=\"_blank\" rel=\"noreferrer noopener\">Gemini API 快速入門</a>、<a href=\"https://cloud.google.com/api-keys/docs\" target=\"_blank\" rel=\"noreferrer noopener\">Google Cloud API Keys 文件</a>。"
+  },
+  "tutorialFooter": {
+    "message": "© 2026 Incognito PrivoAI · 教學更新於 v28.1.6"
+  }
 }

@@ -1,22 +1,20 @@
 # PrivoAI 無痕AI工作台 (v28.2.0)
 
-A privacy-first Chrome extension integrating multimodal AI tools for reading, translation, conversation, and mindfulness. All AI requests go directly between your browser and the AI provider — no backend server, no data collection.
+A privacy-first Chrome extension integrating multimodal AI tools for reading, translation, and conversation. All AI requests go directly between your browser and the AI provider — no backend server, no data collection.
 
-「無痕AI工作台」是一款以隱私為核心的 Chrome 擴充功能，整合了多模態 AI 工具，用於閱讀、翻譯、對話與心靈正念。所有 AI 請求直接在瀏覽器與 AI 服務商之間完成，無後台伺服器，不收集任何資料。
+「無痕AI工作台」是一款以隱私為核心的 Chrome 擴充功能，整合了多模態 AI 工具，用於閱讀、翻譯與對話。所有 AI 請求直接在瀏覽器與 AI 服務商之間完成，無後台伺服器，不收集任何資料。
 
 ---
 
 ## Changelog / 更新紀錄
 
-### v28.2.0 — Product Architecture, Screen-Time Reminder & Model Refresh / 產品架構、螢幕使用時間提醒與模型更新
+### v28.2.0 — Popup Architecture & Model Refresh / 快捷選單架構與模型更新
 
-- **Popup information architecture**: Added direct Settings and Privacy Policy entries to the popup, so first-time users can find API keys, AI mode, language preferences, and privacy details from the primary launcher.
-- **Screen-time reminder stabilized**: The apple reminder now uses a low-frequency alarm tick, so it can trigger while the user remains on the same page without switching tabs. It also pauses on idle/focus changes and avoids counting long sleep gaps as active use.
-- **Reminder copy matches settings**: The apple toast now displays the selected minute threshold instead of a fixed 25-minute message.
-- **Overlay accessibility polish**: The apple is now keyboard-focusable, screen-reader labeled, safe-area aware, and respects reduced-motion preferences.
+- **Popup information architecture**: Added direct Settings, Tutorial, and Privacy Policy entries to the popup, so first-time users can find API keys, AI mode, language preferences, and privacy details from the primary launcher.
 - **Gemini model refresh**: `gemini-3.1-flash-lite-preview` promoted to the official release `gemini-3.1-flash-lite` as the default model. The Gemini 2.5 Flash slot is replaced by **Gemini 3 Flash** (`gemini-3-flash-preview`), now active across all chat tabs, translation defaults, and settings. `gemini-3.1-pro-preview` unchanged.
 - **TTS model and voice upgrade**: Text-to-speech upgraded to `gemini-3.1-flash-tts-preview`. Default voice changed from Aoede to **Kore** (Firm), paired with a `system_instruction` for warm, gentle, and composed delivery — soft yet steady and clear.
 - **i18n model string cleanup**: All 14 locale files updated — chat tab headers, options descriptions, and default-model tooltip text now reflect the new model names. No stale "2.5 Flash" or "flash-lite-preview" strings remain in the UI.
+- **Public build scope trim**: The mindfulness/Dharma chat is no longer included in the public build; related strings have been removed from the manifest description, popup menu, and feature documentation. (Historical v28.1 changelog entries are retained for accuracy.)
 - **Version/documentation sync**: Manifest version, feature behavior, and README changelog are aligned for release review.
 
 ---
@@ -314,26 +312,6 @@ Connect to **Ollama** or **LM Studio** (or any OpenAI-compatible server) for pri
 
 ---
 
-### 7. Three Dharma Teachers / 三位禪師 · 心靈正念 [Beta]
-
-A mindfulness chat page with three Buddhist dialogue styles powered by Gemini:
-
-- 🙏 **Dalai** — Tibetan Gelug compassion and bodhicitta guidance
-- ⛰️ **Dharma Drum** — Chan/Zen directness inspired by Master Sheng Yen
-- 🪷 **Humanistic** — Fo Guang Shan's action-oriented daily Buddhism
-
-Features side-by-side comparison mode and individual conversation tabs. Uses the same Gemini API key as other features — no additional setup required.
-
-以三種佛教對話風格提供心靈正念對話：
-
-- 🙏 **達賴** — 藏傳格魯派慈悲與菩提心引導
-- ⛰️ **法鼓** — 聖嚴法師禪宗直指風格
-- 🪷 **人間** — 佛光山人間佛教，貼近日常的行動佛法
-
-支援同題比較模式與各風格獨立對話分頁。使用既有的 Gemini API Key，無需額外設定。
-
----
-
 ## Privacy & Security / 隱私與安全
 
 - **Bring Your Own Key (BYOK)**: All Gemini requests use your own API key directly between your browser and Google's servers.
@@ -376,8 +354,7 @@ Refer to the built-in **[Tutorial (📖)](tutorial.html)** (accessible from the 
 | **Beta** | |
 | 🔊 AI摘要朗讀podcast | Summarize & read aloud content |
 | 🌐 Translate Current Page | Capture & translate active tab |
-| 🪷 三位禪師 · 心靈正念 | Three Dharma Teachers mindfulness chat |
-| ⚙️ Settings | Configure API key, AI mode, languages, presets, and screen-time reminder |
+| ⚙️ Settings | Configure API key, AI mode, languages, and prompt presets |
 | 📖 Tutorial | How to get a Gemini API key |
 | 🔒 Privacy Policy | Review privacy, storage, and request-routing behavior |
 
